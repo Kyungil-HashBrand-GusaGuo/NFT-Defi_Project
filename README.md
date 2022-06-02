@@ -2,6 +2,7 @@
 
 ## 💜 프로젝트 진행 기간
 2022.06.02(목) ~ 2022.07.25(월) (--일간 진행)
+</br>
 경일게임 아카데미 블록체인 4기 기업협약 프로젝트(with HashBrand)
 
 </br>
@@ -23,11 +24,6 @@
 **Backend - Express.js**
 - Visual Studio Code
 - Node.js 16.14
-- PRISMA 2
-- ethers 5.6.2
-- Dotenv
-- Morgan
-- Winston
 - MariaDB
 
 **BlockChain - Ethereum**
@@ -42,19 +38,10 @@
 **Frontend**
 - React
 - Redux
-- MUi
-- Toast UI Editor
-- Unity
-- Photon
-- WebGL
-- Web3.js
+
 
 **Environment**
-- AWS EC2
-- NGINX
-- SSL
-- Docker
-- Portainer
+
 
 ## ✔ 프로젝트 구조
 ---
