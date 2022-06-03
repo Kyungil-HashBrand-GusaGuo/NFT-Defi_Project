@@ -1,7 +1,7 @@
 import './App.css';
 import { Routes, Route } from 'react-router-dom';
 import { MainPage, PreMintingPage } from './pages';
-import { Navbar, Footer } from './components/global'
+import { Navbar, Footer } from './components'
 // import Navbar from './components/Navbar';
 
 function App() {
