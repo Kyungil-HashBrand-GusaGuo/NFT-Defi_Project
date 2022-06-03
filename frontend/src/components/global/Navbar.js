@@ -15,7 +15,7 @@ function Navbar() {
             <div className='rightSide'>
                 <div className='links' id={showLinks ? "hidden" : ""}>
                     <a href='/pre-minting'>민팅페이지</a>
-                    <a href='/whitepaper'>NFT조회</a>
+                    <a href='/mypage'>마이페이지</a>
                     <a href='/admin'>관리자페이지</a>
                     <a><button>Connect Wallet</button></a>
                 </div>
