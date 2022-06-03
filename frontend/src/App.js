@@ -1,7 +1,7 @@
 import './App.css';
 import { Routes, Route } from 'react-router-dom';
 import { MainPage } from './pages';
-import { Navbar } from './components'
+import { Navbar, Footer } from './components/global'
 // import Navbar from './components/Navbar';
 
 function App() {
@@ -11,6 +11,7 @@ function App() {
       <Routes>
         <Route path='/' element={<MainPage/>} />
       </Routes>
+      <Footer/>
     </div>
   );
 }
