@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import './Navbar.css';
 import { MdReorder } from "react-icons/md";
-import {HeadImg} from '../images'
+import {HeadImg} from '../../images'
 
 function Navbar() {
 
@@ -16,10 +16,10 @@ function Navbar() {
                 <div className='links' id={showLinks ? "hidden" : ""}>
                     <a href='/pre-minting'>민팅페이지</a>
                     <a href='/whitepaper'>NFT조회</a>
-                    <a href='/'>관리자페이지</a>
-                    <button>Connect Wallet</button>
+                    <a href='/admin'>관리자페이지</a>
+                    <a><button>Connect Wallet</button></a>
                 </div>
-                    {" "}
+                    {/* <button>open</button> */}
                     <MdReorder className='listicon' size={40} onClick={()=>setShowLinks(!showLinks)}/>
             </div>
 

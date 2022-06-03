@@ -1,7 +1,7 @@
 import './App.css';
 import { Routes, Route } from 'react-router-dom';
 import { MainPage, PreMintingPage } from './pages';
-import { Navbar } from './components'
+import { Navbar, Footer } from './components/global'
 // import Navbar from './components/Navbar';
 
 function App() {
@@ -12,6 +12,7 @@ function App() {
         <Route path='/' element={<MainPage/>} />
         <Route path='/pre-minting' element={<PreMintingPage/>} />
       </Routes>
+      <Footer/>
     </div>
   );
 }
