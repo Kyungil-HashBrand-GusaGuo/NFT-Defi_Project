@@ -1,110 +1,16 @@
 .mintingContainer {
     display: flex;
+    width: 100%;
     height: 90vh;
 }
 
-.leftSideCotainer {
+
+.whiteListText {
     width: 50vw;
-    background-color: #193257;
-    color: whitesmoke;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.leftMintigSection {
-    width: 500px;
-    height: 600px;
-}
-
-.leftMintigSectionDetail1 {
-    height: 80px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.leftMintigSectionDetail2 {
-    height: 220px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.testImageBox {
-    width: 300px;
-    height: 220px;
-    border-radius: 30px;
-    border: 1px solid white;
-    background-color: whitesmoke;
-}
-
-.leftMintigSectionDetail3 {
-    height: 100px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.leftMintigSectionDetail3_button1 {
-    width: 50px;
-    height: 50px;
-    border: 1px solid whitesmoke;
-    border-radius: 50%;
-    margin: 50px;
-    font-size: 25px;
-}
-
-.leftMintigSectionDetail3_button2 {
-    width: 150px;
-    height: 50px;
-    color: whitesmoke;
-    background-color: #193257;
-    border: 1px solid whitesmoke;
-    border-radius: 15px;
-    font-size: 20px;
-}
-
-.leftMintigSectionDetail4 {
-    height: 100px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.leftMintigSectionDetail4 h3{
-    margin-left: 25px;
-    margin-right: 25px;
-}
-
-.leftMintigSectionDetail5 {
-    height: 80px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.leftMintigSectionDetail5 button {
-    width: 500px;
-    height: 40px;
-    font-size: 20px;
-    border: 1px solid whitesmoke;
-    border-radius: 30px;
-}
-
-/* Right Side */
-
-.rightSideCotainer {
-    width: 50vw;
+    height: 90vh;
     background-color: whitesmoke;
     color: #193257;
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-.rightMintigSection {
-    width: 500px;
-    height: 600px;
-    border: 2px solid #193257;
 }
