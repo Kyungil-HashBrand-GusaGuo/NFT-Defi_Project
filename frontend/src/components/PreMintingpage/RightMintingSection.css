@@ -1,0 +1,89 @@
+.rightSideCotainer {
+    width: 50vw;
+    height: 90vh;
+    background-color: whitesmoke;
+    color: #193257;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.rightMintigSection {
+    width: 500px;
+    height: 600px;
+}
+
+.rightMintigSectionDetail1 {
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.rightMintigSectionDetail2 {
+    height: 220px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.testImageBox2 {
+    width: 300px;
+    height: 220px;
+    border-radius: 30px;
+    border: 1px solid #193257; 
+    background-color: #193257;
+}
+
+.rightMintigSectionDetail3 {
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.rightMintigSectionDetail3_button1 {
+    width: 50px;
+    height: 50px;
+    border: 1px solid #193257;
+    border-radius: 50%;
+    margin: 50px;
+    font-size: 25px;
+}
+
+.rightMintigSectionDetail3_button2 {
+    width: 150px;
+    height: 50px;
+    color: #193257;
+    background-color: whitesmoke;
+    border: 1px solid #193257;
+    border-radius: 15px;
+    font-size: 20px;
+}
+
+.rightMintigSectionDetail4 {
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.rightMintigSectionDetail4 h3{
+    margin-right: 25px;
+    margin-right: 25px;
+}
+
+.rightMintigSectionDetail5 {
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.rightMintigSectionDetail5 button {
+    width: 500px;
+    height: 40px;
+    font-size: 20px;
+    border: 1px solid #193257;
+    border-radius: 30px;
+}

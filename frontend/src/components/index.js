@@ -1,5 +1,7 @@
 import Navbar from './global/Navbar';
 import Footer from './global/Footer';
 import MyCardList from './MyPage/MyCardList'
+import LeftMintingSection from './PreMintingpage/LeftMintingSection';
+import RightMintingSection from './PreMintingpage/RightMintingSection'
 
-export { Navbar, Footer, MyCardList }
+export { Navbar, Footer, LeftMintingSection, RightMintingSection, MyCardList }

@@ -1,4 +1,6 @@
 import MainPage from './MainPage';
 import MyPage from './MyPage';
+import PreMintingPage from './PreMintingPage'
+import AdminPage from './AdminPage'
 
-export { MainPage, MyPage }
+export { MainPage, PreMintingPage, AdminPage, MyPage}
