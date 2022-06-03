@@ -1,7 +1,19 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './LeftMintingSection.css'
 
 const LeftMintingSection = () => {
+
+    const [mintingCount , setMintingCount] = useState(0);
+
+    const mintingCountUp = () => {
+        setMintingCount(mintingCount+1)
+    }
+
+    const mintingCountDown = () => {
+        if(mintingCount > 0)
+        setMintingCount(mintingCount-1)
+    }
+
   return (
     <div>
         <div className='leftSideCotainer'>
@@ -15,9 +27,9 @@ const LeftMintingSection = () => {
                     </div>
                 </div>
                 <div className='leftMintigSectionDetail3'>
-                    <button className='leftMintigSectionDetail3_button1'> - </button>
-                    <button className='leftMintigSectionDetail3_button2'> MINT : 4 </button>
-                    <button className='leftMintigSectionDetail3_button1'> + </button>
+                    <button className='leftMintigSectionDetail3_button1' onClick={mintingCountDown}> - </button>
+                    <button className='leftMintigSectionDetail3_button2'> MINT : {mintingCount} </button>
+                    <button className='leftMintigSectionDetail3_button1' onClick={mintingCountUp}> + </button>
                 </div>
                 <div className='leftMintigSectionDetail4'>
                     <h3>Price : 60 klay</h3>

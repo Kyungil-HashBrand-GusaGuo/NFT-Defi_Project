@@ -1,6 +1,6 @@
 import './App.css';
 import { Routes, Route } from 'react-router-dom';
-import { MainPage, PreMintingPage } from './pages';
+import { MainPage, PreMintingPage, AdminPage } from './pages';
 import { Navbar, Footer } from './components'
 // import Navbar from './components/Navbar';
 
@@ -11,6 +11,7 @@ function App() {
       <Routes>
         <Route path='/' element={<MainPage/>} />
         <Route path='/pre-minting' element={<PreMintingPage/>} />
+        <Route path='/admin' element={<AdminPage/>} />
       </Routes>
       <Footer/>
     </div>
