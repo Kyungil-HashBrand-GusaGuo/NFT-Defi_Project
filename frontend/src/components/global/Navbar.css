@@ -1,6 +1,6 @@
 .Navbar {
     background-color: #021E39;
-    width: 100%;
+    width: 100vw;
     height: 100px;
     display: flex;
 }
@@ -23,6 +23,7 @@
 
 .Navbar .rightSide .links {
     max-height: 80px;
+    margin-right: 50px;
 }
 
 .Navbar .rightSide .links a{
@@ -37,7 +38,7 @@
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    padding-right: 25px;
+    /* padding-right: 25px; */
 }
 
 .Navbar .rightSide button {
