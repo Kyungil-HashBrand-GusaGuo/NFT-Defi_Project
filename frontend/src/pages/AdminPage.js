@@ -1,15 +1,16 @@
 import React from 'react'
 import './AdminPage.css'
-import { FaSearch } from "react-icons/fa";
+//import { FaSearch } from "react-icons/fa";
+import { BsJournalPlus } from "react-icons/bs";
 
 const AdminPage = () => {
   return (
     <div className='adminContainer'>
         {/* onSubmit */}
         <form>
-            <input className='adminInput' />
-            {/* <button className='adminButton'>asdfasdf</button> */}
-            <input className='adminButton'/>
+            <input type="text" className='adminInput' placeholder='Add WhiteList' />
+            <button className='adminButton'><BsJournalPlus/></button>
+            {/* <input type="submit" className='adminButton' value='+'/> */}
         </form>
     </div>
   )
