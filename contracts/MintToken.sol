@@ -8,12 +8,13 @@ import "@openzeppelin/contracts/utils/Strings.sol";
 // contract의 주인이 맞는지 확인해주는 함수를 제공하는 openzepplin 라이브러리 
 import "@openzeppelin/contracts/access/Ownable.sol";
 
+
 contract MintToken is ERC721Enumerable, Ownable {
     // NFT 발행 수 제한
     uint constant public MAX_TOKEN_COUNT = 1000;
-    uint constant public TOKEN_RANK_LENGTH = 4;
-    uint constant public TOKEN_TYPE_LENGTH = 4;
-
+    uint constant public MAX_SPECIALTOKEN_COUNT = 20;
+    uint public WhiteURI = 2;
+    uint public NormalURI = 1;
     string public metadataURI;
 
     uint public gemTokenPrice = 10 * 18;
@@ -28,20 +29,32 @@ contract MintToken is ERC721Enumerable, Ownable {
         uint gemTokenType;
     }
 
+    struct specialTokenData {
+        uint specialTokenType;
+    }
+
     // tokenId를 넣으면 그에맞는 rank, type 출력 매핑
     mapping(uint => GemTokenData) public gemTokenData;
+    mapping(uint => specialTokenData) public specialData;
     mapping(address => bool) public isWhiteList;
 
-    uint[TOKEN_RANK_LENGTH][TOKEN_TYPE_LENGTH] public gemTokenCount;
+ 
 
     // ERC721에서 tokenURI함수를 기본적으로 제공 해 주나 이 프로젝트에서는 그 함수를 프로젝트 취지에 맞춰서 사용
-    function tokenURI(uint _tokenId) override public view returns (string memory) {
+    function tokenURI(uint _tokenId) public override view returns (string memory) {
         // String.toString() openzeppelin 형변환 라이브러리 사용
         string memory gemTokenType = Strings.toString(gemTokenData[_tokenId].gemTokenType);
-
+        string memory specialDataType = Strings.toString(specialData[_tokenId].specialTokenType);
+        string memory whiteURI = Strings.toString(WhiteURI);
+        string memory normalURI = Strings.toString(NormalURI);
         // abi.encodePacked(arg) arg들을 하나로 합쳐주는 함수
         // ex) https://gateway.pinata.cloud/ipfs/Qma7X5uQUmZDYWVmeJa7UKv2T89pRem5htGCa5o8p7hL3G/1/1.json
-        return string(abi.encodePacked(metadataURI, '/', gemTokenType, '.json'));
+        if(isWhiteList[msg.sender]) {
+        return string(abi.encodePacked(metadataURI, '/', whiteURI, '/', specialDataType, '.json'));
+        } else {
+
+        return string(abi.encodePacked(metadataURI, '/', normalURI, '/', gemTokenType, '.json'));
+        }
     }
 
 
@@ -54,15 +67,27 @@ contract MintToken is ERC721Enumerable, Ownable {
         require(gemTokenPrice <= msg.value, "Not enough klay");
         // totalSupply ERC721 Enumerable에서 제공되는 기능 이 NFT 프로젝트의 총 NFT 발행량 return  
         uint tokenId = totalSupply() + 1;
-
         GemTokenData memory randomTokenData = randomGenerator(msg.sender, tokenId);
-
         gemTokenData[tokenId] = GemTokenData(randomTokenData.gemTokenType);
 
         payable(owner()).transfer(msg.value);
 
         // 발행자, totkalSupply를 통해 구한 tokenId
         _mint(msg.sender, tokenId);
+    }
+
+
+     function specialmintToken() public payable {
+     // require(isWhiteList[msg.sender], "Only WhiteList");
+     require(MAX_SPECIALTOKEN_COUNT > totalSupply(), "Nomore mintin is possible");
+     require(gemTokenPrice <= msg.value, "Not enough klay");
+     // totalSupply ERC721 Enumerable에서 제공되는 기능 이 NFT 프로젝트의 총 NFT 발행량 return  
+     uint tokenId = totalSupply() + 1;
+     specialTokenData memory specialrandomTokenData = WhiterandomGenerator(msg.sender, tokenId);
+     specialData[tokenId] = specialTokenData(specialrandomTokenData.specialTokenType);
+     payable(owner()).transfer(msg.value);
+     // 발행자, totkalSupply를 통해 구한 tokenId
+     _mint(msg.sender, tokenId);
     }
 
     // 토큰아이디를 받아 그 NFT가 어떤 타입을 가지고있는지 반환하는 함수
@@ -79,4 +104,14 @@ contract MintToken is ERC721Enumerable, Ownable {
         return randomTokenData;
 
     }
+
+        function WhiterandomGenerator(address _msgSender, uint _tokenId) private view returns (specialTokenData memory) {
+
+        specialTokenData memory specialrandomTokenData;
+        specialrandomTokenData.specialTokenType = uint(keccak256(abi.encodePacked(blockhash(block.timestamp), _msgSender, _tokenId))) % 20;
+
+        return specialrandomTokenData;
+
+    }
+
 }
