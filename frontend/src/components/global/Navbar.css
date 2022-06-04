@@ -121,9 +121,9 @@ button:hover {
     }
 
 
-    /* .Navbar .rightSide .listicon {
-        
-    } */
+    .Navbar .rightSide .listicon {
+        cursor:Pointer;
+    }
 
     /* .Navbar .rightSide button {
         
