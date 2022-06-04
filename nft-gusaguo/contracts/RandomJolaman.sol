@@ -118,9 +118,9 @@ contract RandomJolaman is ERC721Enumerable, Ownable, AccessControl {
         JolamanTokenData memory randomTokenData = randomGenerator(msg.sender, tokenId);
         mappedJolamanTokenData[tokenId] = JolamanTokenData(randomTokenData.jolamanTokenType);
 
-        mappingWrap(tokenId, to); //위줄도 wrap에 추가할 예정
-        // tokenOwner[tokenId] = to;
-        // totalOwnedTokens[msg.sender].push(tokenId);
+        // mappingWrap(tokenId, to); //위줄도 wrap에 추가할 예정
+        tokenOwner[tokenId] = to;
+        totalOwnedTokens[msg.sender].push(tokenId);
         _mint(to, tokenId);
     }
 
@@ -128,7 +128,7 @@ contract RandomJolaman is ERC721Enumerable, Ownable, AccessControl {
         bool paymentStatus = payment();
         if (paymentStatus) {
             safeMint(msg.sender);
-            // renounceRole(MINTER_ROLE, msg.sender);
+            renounceRole(MINTER_ROLE, msg.sender);
         }
     }
 
@@ -144,6 +144,8 @@ contract RandomJolaman is ERC721Enumerable, Ownable, AccessControl {
         mappedJolamanTokenData[tokenId] = JolamanTokenData(randomTokenData.jolamanTokenType);
 
         mappingWrap(tokenId, to);
+        // tokenOwner[tokenId] = to;
+        // totalOwnedTokens[msg.sender].push(tokenId);
         _mint(to, tokenId);
     }
 
@@ -163,34 +165,54 @@ contract RandomJolaman is ERC721Enumerable, Ownable, AccessControl {
 
     // 랜덤 jolamanTokenType 발행 함수 => jolamanTokenType.toString().json == metadata
     function randomGenerator(address _msgSender, uint _tokenId) private returns (JolamanTokenData memory) {
-
         JolamanTokenData memory randomTokenData;
-        uint tempNumer = uint(keccak256(abi.encodePacked(blockhash(block.timestamp), _msgSender, _tokenId))) % 1000;
-        
-        while (!AlreadyMint[tempNumer]) {
-            tempNumer = uint(keccak256(abi.encodePacked(blockhash(block.timestamp), _msgSender, _tokenId))) % 1000;
-        }
-        if (!AlreadyMint[tempNumer]) {
-            AlreadyMint[tempNumer] = true;
-            randomTokenData.jolamanTokenType = tempNumer;
-        }
+        uint newTokenType = getRandTokenType(_msgSender, _tokenId);
+        AlreadyMint[newTokenType] = true;
+        randomTokenData.jolamanTokenType = newTokenType;
+
+        // while (!AlreadyMint[tempNumer]) {
+        //     tempNumer = uint(keccak256(abi.encodePacked(blockhash(block.timestamp), _msgSender, _tokenId))) % 1000;
+        // }
+        // if (!AlreadyMint[tempNumer]) {
+
+        // }
         return randomTokenData;
 
     }
     function specialRandomGenerator(address _msgSender, uint _tokenId) private returns (JolamanTokenData memory) {
         JolamanTokenData memory randomTokenData;
-        uint tempNumer = (uint(keccak256(abi.encodePacked(blockhash(block.timestamp), _msgSender, _tokenId))) % 20) + 10000;
+        uint newTokenType = getRandSpecialTokenType(_msgSender, _tokenId);
+        SpecialAlreadyMint[newTokenType] = true;
+        randomTokenData.jolamanTokenType = newTokenType;
         
-        while (!SpecialAlreadyMint[tempNumer]) {
-            tempNumer = (uint(keccak256(abi.encodePacked(blockhash(block.timestamp), _msgSender, _tokenId))) % 20) + 10000;
-        }
-        if (!SpecialAlreadyMint[tempNumer]) {
-            SpecialAlreadyMint[tempNumer] = true;
-            randomTokenData.jolamanTokenType = tempNumer;
-        }
+        // while (!SpecialAlreadyMint[tempNumer]) {
+        //     tempNumer = (uint(keccak256(abi.encodePacked(blockhash(block.timestamp), _msgSender, _tokenId))) % 20) + 10000;
+        // }
+        // if (!SpecialAlreadyMint[tempNumer]) {
+        //     SpecialAlreadyMint[tempNumer] = true;
+        //     randomTokenData.jolamanTokenType = tempNumer;
+        // }
         return randomTokenData;
     }
 
+    function getRandTokenType(address _msgSender, uint _tokenId) private returns (uint) {
+        uint tempNumber = uint(keccak256(abi.encodePacked(blockhash(block.timestamp), _msgSender, _tokenId))) % 1000;
+        if (!AlreadyMint[tempNumber]) {
+            return tempNumber;
+        } else { 
+            tempNumber = getRandTokenType(_msgSender, _tokenId);
+            return tempNumber;
+        }
+    }
+    function getRandSpecialTokenType(address _msgSender, uint _tokenId) private returns (uint) {
+        uint tempNumber = (uint(keccak256(abi.encodePacked(blockhash(block.timestamp), _msgSender, _tokenId))) % 20) + 10000;
+        if (!AlreadyMint[tempNumber]) {
+            return tempNumber;
+        } else { 
+            tempNumber = getRandTokenType(_msgSender, _tokenId);
+            return tempNumber;
+        }
+    }
 
     function getBalance() public view returns (uint256) {
         return msg.sender.balance;
@@ -223,6 +245,9 @@ contract RandomJolaman is ERC721Enumerable, Ownable, AccessControl {
             mintingPrice, 
             totalIncome
         );
+    }
+    function totalOwnedTokens(address _owner) public view returns (uint[]) {
+        return totalOwnedTokens[_owner];
     }
 
     // The following functions are overrides required by Solidity.
