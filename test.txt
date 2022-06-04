@@ -1,1 +1,14 @@
 jaewon test commit
+
+truffle console --network baobab
+let instance = await RandomJolaman.deployed();
+
+instance.getBalance().then(i => i.toString())
+
+let bal = await instance.getBalance()
+bal.toString()
+
+
+paywithVal = await instance.pay({value: 2*10**18});
+보내지는것 같지만 msg.value에 들어가지 않음 0원 처리;
+같았지만 0.000000090 Klay = 90000000000 이라서 표가 안났던거임

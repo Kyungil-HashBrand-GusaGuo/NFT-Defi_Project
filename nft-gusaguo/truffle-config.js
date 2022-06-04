@@ -50,8 +50,11 @@ module.exports = {
 
   networks: {
     baobab: {
-      provider: () => { return new HDWalletProvider(env.privateKey, 
-      "https://api.baobab.klaytn.net:8651") },
+      provider: () => { 
+        return new HDWalletProvider(
+          env.privateKey, 
+          "https://api.baobab.klaytn.net:8651") 
+        },
       network_id: '1001', //Klaytn baobab testnet's network id
       gas: '8500000',
       gasPrice: null
