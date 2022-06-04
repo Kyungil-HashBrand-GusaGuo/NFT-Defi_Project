@@ -452,6 +452,25 @@
 			{
 				"inputs": [
 					{
+						"internalType": "address",
+						"name": "ownerAddress",
+						"type": "address"
+					}
+				],
+				"name": "getTotalOwnedTokens",
+				"outputs": [
+					{
+						"internalType": "uint256[]",
+						"name": "",
+						"type": "uint256[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
 						"internalType": "bytes32",
 						"name": "role",
 						"type": "bytes32"
@@ -1217,11 +1236,11 @@
 			]
 		},
 		"contracts/RandomJolaman.sol": {
-			"keccak256": "0xc53dd99244e67570b7fa6c4ad7b7cac948b0e8d7d69a4e9964a46dd3ecbfe4c2",
+			"keccak256": "0xab700b860cce84bc46fa76cfe547c4354529a104e0f16128bed5fa5cb03e2ef5",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://7a03c0191da49e8b6d97bb0da8b3564aba831c1d06933415c117c3f068e489ab",
-				"dweb:/ipfs/QmNMcSWBZokyTRGvWGy7819RcooQBEYdnjdSLBGzNThn9o"
+				"bzz-raw://02a1b8a09cea778d6860452f30ce07a9d4886bc2b7806ff82ad44140a0f96f85",
+				"dweb:/ipfs/Qmc5RNERXvUAZZ3k9SrtxnSgGBVUGE4epGgG41ivif1c3z"
 			]
 		}
 	},

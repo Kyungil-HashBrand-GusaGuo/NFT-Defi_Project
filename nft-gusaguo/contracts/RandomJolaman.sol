@@ -83,11 +83,11 @@ contract RandomJolaman is ERC721Enumerable, Ownable, AccessControl {
 
     function addWhiteList(address _toWhiteList) public onlyOwner{
         isWhiteList[_toWhiteList] = true;
-        _grantRole(SPECIAL_MINTER_ROLE, msg.sender);
+        _grantRole(SPECIAL_MINTER_ROLE, _toWhiteList);
     }
     function removeWhiteList(address _toWhiteList) public onlyOwner{
         isWhiteList[_toWhiteList] = false;
-        renounceRole(SPECIAL_MINTER_ROLE, msg.sender);
+        renounceRole(SPECIAL_MINTER_ROLE, _toWhiteList);
     }
     function mappingWrap(uint _tokenId, address to) private {
         tokenOwner[_tokenId] = to;
@@ -120,7 +120,7 @@ contract RandomJolaman is ERC721Enumerable, Ownable, AccessControl {
 
         // mappingWrap(tokenId, to); //위줄도 wrap에 추가할 예정
         tokenOwner[tokenId] = to;
-        totalOwnedTokens[msg.sender].push(tokenId);
+        totalOwnedTokens[msg.sender].push(randomTokenData.jolamanTokenType);
         _mint(to, tokenId);
     }
 
@@ -140,12 +140,12 @@ contract RandomJolaman is ERC721Enumerable, Ownable, AccessControl {
 
         uint256 tokenId = _specialTokenIdCount;
         _specialTokenIdCount = _specialTokenIdCount.add(1);
-        JolamanTokenData memory randomTokenData = randomGenerator(msg.sender, tokenId);
+        JolamanTokenData memory randomTokenData = specialRandomGenerator(msg.sender, tokenId);
         mappedJolamanTokenData[tokenId] = JolamanTokenData(randomTokenData.jolamanTokenType);
 
-        mappingWrap(tokenId, to);
-        // tokenOwner[tokenId] = to;
-        // totalOwnedTokens[msg.sender].push(tokenId);
+        // mappingWrap(tokenId, to);
+        tokenOwner[tokenId] = to;
+        totalOwnedTokens[msg.sender].push(randomTokenData.jolamanTokenType);
         _mint(to, tokenId);
     }
 
@@ -169,13 +169,6 @@ contract RandomJolaman is ERC721Enumerable, Ownable, AccessControl {
         uint newTokenType = getRandTokenType(_msgSender, _tokenId);
         AlreadyMint[newTokenType] = true;
         randomTokenData.jolamanTokenType = newTokenType;
-
-        // while (!AlreadyMint[tempNumer]) {
-        //     tempNumer = uint(keccak256(abi.encodePacked(blockhash(block.timestamp), _msgSender, _tokenId))) % 1000;
-        // }
-        // if (!AlreadyMint[tempNumer]) {
-
-        // }
         return randomTokenData;
 
     }
@@ -185,13 +178,6 @@ contract RandomJolaman is ERC721Enumerable, Ownable, AccessControl {
         SpecialAlreadyMint[newTokenType] = true;
         randomTokenData.jolamanTokenType = newTokenType;
         
-        // while (!SpecialAlreadyMint[tempNumer]) {
-        //     tempNumer = (uint(keccak256(abi.encodePacked(blockhash(block.timestamp), _msgSender, _tokenId))) % 20) + 10000;
-        // }
-        // if (!SpecialAlreadyMint[tempNumer]) {
-        //     SpecialAlreadyMint[tempNumer] = true;
-        //     randomTokenData.jolamanTokenType = tempNumer;
-        // }
         return randomTokenData;
     }
 
@@ -246,8 +232,8 @@ contract RandomJolaman is ERC721Enumerable, Ownable, AccessControl {
             totalIncome
         );
     }
-    function totalOwnedTokens(address _owner) public view returns (uint[]) {
-        return totalOwnedTokens[_owner];
+    function getTotalOwnedTokens(address ownerAddress) public view returns (uint[] memory) {
+        return totalOwnedTokens[ownerAddress];
     }
 
     // The following functions are overrides required by Solidity.
