@@ -50,11 +50,9 @@ function App() {
       })
       if(response.status) {
         const response = await RandomJolamanContract.methods.getLatestJolamanData().call()
-        let abc = response;
-        console.log(abc);
-        // setMetaDataURI(response)     
+        let metaDataURI = response; 
         const getMetaData = async() => {
-          const response = await axios.get(`https://gateway.pinata.cloud/ipfs/QmZ9QKfGeqLjNjaiHa2tcwsGyRDDUc85ZkoUzMWuPohajc/${abc}.json`);
+          const response = await axios.get(`https://gateway.pinata.cloud/ipfs/QmZ9QKfGeqLjNjaiHa2tcwsGyRDDUc85ZkoUzMWuPohajc/${metaDataURI}.json`);
           console.log(response.data)         
         }
         getMetaData();
@@ -74,7 +72,15 @@ function App() {
         gas: "3000000",
         data: RandomJolamanContract.methods.specialPayandMint().encodeABI(),
       })
-      console.log(response);
+      if(response.status) {
+        const response = await RandomJolamanContract.methods.getLatestJolamanData().call()
+        let metaDataURI = response; 
+        const getMetaData = async() => {
+          const response = await axios.get(`https://gateway.pinata.cloud/ipfs/QmZ9QKfGeqLjNjaiHa2tcwsGyRDDUc85ZkoUzMWuPohajc/${metaDataURI}.json`);
+          console.log(response.data)         
+        }
+        getMetaData();
+      }
     } catch (error){
       console.error(error);
     }
@@ -87,7 +93,7 @@ function App() {
         from: account,
         to: MINT_CONTRACT_ADDRESS,
         gas: "3000000",
-        data: RandomJolamanContract.methods.addWhiteList("0x663C6cBA85bA17d949F9d14232bDAEE5b543Bac0").encodeABI(),
+        data: RandomJolamanContract.methods.addWhiteList(testAccount).encodeABI(),
       });
       console.log(response)
     } catch(error) {
@@ -102,7 +108,7 @@ function App() {
         from: account,
         to: MINT_CONTRACT_ADDRESS,
         gas: "3000000",
-        data: RandomJolamanContract.methods.removeWhiteList("0x663C6cBA85bA17d949F9d14232bDAEE5b543Bac0").encodeABI(),
+        data: RandomJolamanContract.methods.removeWhiteList(testAccount).encodeABI(),
       });
       console.log(response)
     } catch(error) {
