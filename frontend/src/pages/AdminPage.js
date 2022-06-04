@@ -9,7 +9,7 @@ const AdminPage = () => {
         <form>
             <input className='adminInput' />
             {/* <button className='adminButton'>asdfasdf</button> */}
-            <input className='adminButton' value=''/>
+            <input className='adminButton'/>
         </form>
     </div>
   )
