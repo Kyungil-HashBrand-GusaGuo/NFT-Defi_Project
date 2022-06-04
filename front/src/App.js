@@ -1,17 +1,24 @@
 import './App.css';
 import { useEffect, useState } from "react";
-import { caver, mintTokenContract, MINT_CONTRACT_ADDRESS } from "./caverConfig.js";
+import { caver, RandomJolamanContract, MINT_CONTRACT_ADDRESS } from "./caverConfig.js";
+import axios from "axios";
 
 
 
 function App() {
-  const val = 1;
+  const val = 2;
+  const klaytn = 10 ** 18;
+  const testAccount = "0x663C6cBA85bA17d949F9d14232bDAEE5b543Bac0"
   const [account, setAccount] = useState("");
+  const [myBalance, setMyBalance] = useState(0);
+  const [Whitelist, setWhitelist] = useState("");
+  const [myTokenId, setMyTokenId] = useState([]);
+  // const [metaDataURI, setMetaDataURI] = useState(undefined);
+
 
   const getAccount = async() => {
     try {
       const accounts = await window.klaytn.enable();
-      console.log(accounts)
       setAccount(accounts[0]);
     } catch(error) {
       console.error(error);
@@ -25,40 +32,47 @@ function App() {
     }
   }, []);
 
-  // useEffect(() => {
-  //   if(window.klaytn) {
-  //     setCaver(Caver(window.klaytn))
-  //   }
-  // }, []);
-
-  // useEffect(() => {
-  //   if(!caver) return;
-  //   setMintTokenContract(caver.contract.create(MINT_CONTRACT_ADDRESS, MINT_CONTRACT_ABI));
-  // }, [caver]);
-
-
-    // useEffect(() => console.log(caver), [caver]);
-    // useEffect(() => console.log(mintTokenContract), [mintTokenContract])
-
   const test = async() => {
-    const response = await mintTokenContract.methods.totalSupply().call();
-    console.log(response);
+    const response = await RandomJolamanContract.methods.isWhiteList(account).call();
+    setWhitelist(response);
   }
 
-  const test2 = async() => {
-    const response = await mintTokenContract.methods.balanceOf(account).call();
-    console.log(response)
-  }
 
+  // 일반 민팅 
   const onClickMint = async() => {
     try {
       const response = await caver.klay.sendTransaction({
-        type: "SMART_CONTRACT_EXECUTION",
         from: account,
         to: MINT_CONTRACT_ADDRESS,
         value: caver.utils.convertToPeb(val, "KLAY"),
         gas: "3000000",
-        data: mintTokenContract.methods.mintGemToken().encodeABI(),
+        data: RandomJolamanContract.methods.payandMint().encodeABI(),
+      })
+      if(response.status) {
+        const response = await RandomJolamanContract.methods.getLatestJolamanData().call()
+        let abc = response;
+        console.log(abc);
+        // setMetaDataURI(response)     
+        const getMetaData = async() => {
+          const response = await axios.get(`https://gateway.pinata.cloud/ipfs/QmZ9QKfGeqLjNjaiHa2tcwsGyRDDUc85ZkoUzMWuPohajc/${abc}.json`);
+          console.log(response.data)         
+        }
+        getMetaData();
+      }
+    } catch (error){
+      console.error(error);
+    }
+  }
+
+  // whiteList 민팅 함수
+  const onClickSpecialMint = async() => {
+    try {
+      const response = await caver.klay.sendTransaction({
+        from: account,
+        to: MINT_CONTRACT_ADDRESS,
+        value: caver.utils.convertToPeb(val, "KLAY"),
+        gas: "3000000",
+        data: RandomJolamanContract.methods.specialPayandMint().encodeABI(),
       })
       console.log(response);
     } catch (error){
@@ -66,12 +80,65 @@ function App() {
     }
   }
 
+// 화이트리스트 추가
+  const onClickaddWhiteList = async() => {
+    try {
+      const response = await caver.klay.sendTransaction({
+        from: account,
+        to: MINT_CONTRACT_ADDRESS,
+        gas: "3000000",
+        data: RandomJolamanContract.methods.addWhiteList("0x663C6cBA85bA17d949F9d14232bDAEE5b543Bac0").encodeABI(),
+      });
+      console.log(response)
+    } catch(error) {
+      console.error(error);
+    }
+  }
+
+  // 화이트리스트 삭제
+  const onClickRemoveWhiteList = async() => {
+    try {
+      const response = await caver.klay.sendTransaction({
+        from: account,
+        to: MINT_CONTRACT_ADDRESS,
+        gas: "3000000",
+        data: RandomJolamanContract.methods.removeWhiteList("0x663C6cBA85bA17d949F9d14232bDAEE5b543Bac0").encodeABI(),
+      });
+      console.log(response)
+    } catch(error) {
+      console.error(error);
+    }
+  }
+
+  // 보유 토큰ID 조회 
+  const ownedTokenId = async() => {
+    const response = await RandomJolamanContract.methods.getTotalOwnedTokens(account).call()
+    setMyTokenId(response);
+  }
+
+  // 보유 klay 조회
+
+  const BalanceKlay = async() => {
+    const response = await RandomJolamanContract.methods.getBalance(account).call()
+    setMyBalance(response);
+  }
+
+
+
+  
 
   useEffect(() => {
     test();
-    test2();
+    ownedTokenId();
+    BalanceKlay();
   },[account])
- 
+
+  const myBalanceForKlay = (myBalance / klaytn).toFixed(3);
+
+  console.log(account)
+  console.log(Whitelist);
+  console.log(myTokenId);
+  console.log(myBalanceForKlay);
 
   return (
     <div>
@@ -79,9 +146,14 @@ function App() {
     <br />
     <h2>{account}</h2>
     <br />
-    <h2>balance : </h2>
+    <h2>Balance : </h2>
     <br />
+    <h2>{myBalanceForKlay} KLAY</h2>
     <button onClick={onClickMint}>MINT</button>
+    <button onClick={onClickSpecialMint}>SpecialMINT</button>
+    <br />
+    <button onClick={onClickaddWhiteList}>addWhiteList</button>
+    <button onClick={onClickRemoveWhiteList}>RemoveWhiteList</button>
     </div>
     
   );
