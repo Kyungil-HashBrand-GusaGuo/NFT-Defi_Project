@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap');
+
+*{
+    font-family: 'Fjalla One', sans-serif;
+    /* font-family: 'Staatliches', cursive; */
+    margin: 0;
+    padding: 0;
+}
+
+.mainContainer {
+    padding-top: 100px;
+    height: 2000px;
+    background: url('./images/spbg.jpeg');
+    background-size: 100%;
+}
+
+.myPageContainer {
+    padding-top: 100px;
+    display: flex;
+    /* height: 1000px; */
+}
