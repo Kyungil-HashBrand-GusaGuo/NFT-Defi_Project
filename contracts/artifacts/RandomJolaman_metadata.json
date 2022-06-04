@@ -1152,7 +1152,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"contracts/1.sol": "RandomJolaman"
+			"contracts/RandomJolaman.sol": "RandomJolaman"
 		},
 		"evmVersion": "london",
 		"libraries": {},
@@ -1286,7 +1286,7 @@
 				"dweb:/ipfs/QmQJquTMtc6fgm5JQzGdsGpA2fqBe3MHWEdt2qzaLySMdN"
 			]
 		},
-		"contracts/1.sol": {
+		"contracts/RandomJolaman.sol": {
 			"keccak256": "0x62ec87c8a28d0702d4a1b9ac7e9011935c2293660d61aaf6a9682c6854f3e735",
 			"license": "MIT",
 			"urls": [
