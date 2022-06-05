@@ -33,7 +33,7 @@ const RightMintingSection = () => {
                     <button className='rightMintigSectionDetail3_button1' onClick={mintingCountUp}> + </button>
                 </div>
                 <div className='rightMintigSectionDetail4'>
-                    <h3>Price : 100 klay</h3>
+                    <h3>Price : 2 klay</h3>
                     <h3>Count : 150 / 2000</h3>
                 </div>
                 <div className='rightMintigSectionDetail5'>
