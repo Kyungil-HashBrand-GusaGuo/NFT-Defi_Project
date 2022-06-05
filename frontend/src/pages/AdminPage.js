@@ -1,20 +1,29 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './AdminPage.css'
-import { useSelector } from 'react-redux';
-//import { FaSearch } from "react-icons/fa";
+import { useDispatch, useSelector } from 'react-redux';
 import { BsJournalPlus } from "react-icons/bs";
+import { addWhiteListAccount } from '../redux/actiion/addWhiteListAccount';
 
 const AdminPage = () => {
+  const dispatch = useDispatch();
+  const {account} = useSelector(state => state.account);
+  const [address, setAddress] = useState();
 
-  //const {account} = useSelector(state => state.account)
+  const addWhiteList = () => {
+    dispatch(addWhiteListAccount.addWhiteList(account, address))
+  }
+
+  const changeAddress = (e) => {
+    setAddress(e.target.value);
+  }
 
   return (
     <div className='adminContainer'>
         {/* onSubmit */}
         {/* <div>{account}</div> */}
-        <form>
-            <input type="text" className='adminInput' placeholder='Add WhiteList' />
-            <button className='adminButton'><BsJournalPlus/></button>
+        <form onSubmit={addWhiteList}>
+            <input type="text" className='adminInput' placeholder='Add WhiteList' onChange={changeAddress} />
+            <button type="submit" className='adminButton'><BsJournalPlus/></button>
             {/* <input type="submit" className='adminButton' value='+'/> */}
         </form>
     </div>

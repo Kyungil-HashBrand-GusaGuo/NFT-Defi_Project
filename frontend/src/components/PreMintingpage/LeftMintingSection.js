@@ -8,7 +8,7 @@ const LeftMintingSection = () => {
     const dispatch = useDispatch()
 
     const {account} = useSelector(state => state.account)
-    const {mintdata} = useSelector(state => state.mintdata)
+    const {mintdata, maxNormalTokenCount, normalTokenCount} = useSelector(state => state.mintdata)
     const [test, setTest] = useState(true)
     console.log("페이지",mintdata)
 
@@ -52,7 +52,7 @@ const LeftMintingSection = () => {
                 </div>
                 <div className='leftMintigSectionDetail4'>
                     <h3>Price : 2 klay</h3>
-                    <h3>Count : 150 / 2000</h3>
+                    <h3>Count : {normalTokenCount} / {maxNormalTokenCount}</h3>
                 </div>
                 <div className='leftMintigSectionDetail5'>
                     <button onClick={minting}>Minting</button>

@@ -1,10 +1,11 @@
 import React, { useState } from 'react'
+import { useSelector } from 'react-redux';
 import './RightMintingSection.css'
 
 const RightMintingSection = () => {
 
     const [mintingCount , setMintingCount] = useState(0);
-
+    const {maxSpecialTokenCount, specialTokenCount} = useSelector(state => state.mintdata)
     const mintingCountUp = () => {
         setMintingCount(mintingCount+1)
     }
@@ -34,7 +35,7 @@ const RightMintingSection = () => {
                 </div>
                 <div className='rightMintigSectionDetail4'>
                     <h3>Price : 2 klay</h3>
-                    <h3>Count : 150 / 2000</h3>
+                    <h3>Count : {specialTokenCount} / {maxSpecialTokenCount}</h3>
                 </div>
                 <div className='rightMintigSectionDetail5'>
                     <button>Minting</button>
