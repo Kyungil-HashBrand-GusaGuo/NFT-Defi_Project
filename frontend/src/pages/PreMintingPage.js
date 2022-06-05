@@ -1,10 +1,17 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import './PreMintingPage.css';
 import { LeftMintingSection, RightMintingSection } from '../components'
+import { useDispatch } from 'react-redux';
 
 const PreMintingPage = () => {
 
-    const [test, setTest] = useState(true)
+  const dispatch = useDispatch()
+
+  const [test, setTest] = useState(true)
+
+  useEffect( () => {
+    dispatch()
+  },[])
 
   return (
     <div className='mintingContainer'>

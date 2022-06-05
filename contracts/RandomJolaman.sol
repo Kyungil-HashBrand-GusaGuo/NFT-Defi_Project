@@ -44,7 +44,8 @@ contract RandomJolaman is ERC721Enumerable, Ownable, AccessControl {
 
 
     mapping(uint => bool) public AlreadyMint;
-    mapping(uint => bool) public SpecialAlreadyMint;  
+    mapping(uint => bool) public SpecialAlreadyMint;
+    
 
     
     constructor(string memory _metadataURI) ERC721("Jolaman", "JL") {
@@ -69,6 +70,7 @@ contract RandomJolaman is ERC721Enumerable, Ownable, AccessControl {
     mapping(address => uint[]) public totalOwnedTokens;
     mapping(address => bool) public isWhiteList;
     uint[] public latestJolamanData;
+    mapping(uint => uint[]) public totalJolamanData;
 
     // uint[TOKEN_RANK_LENGTH][TOKEN_TYPE_LENGTH] public gemTokenCount; // 무슨용도인지?
 
@@ -127,6 +129,7 @@ contract RandomJolaman is ERC721Enumerable, Ownable, AccessControl {
         tokenOwner[tokenId] = to;
         totalOwnedTokens[msg.sender].push(randomTokenData.jolamanTokenType);
         setLatestJolamanData(randomTokenData.jolamanTokenType);
+        totalJolamanData[0].push(randomTokenData.jolamanTokenType);
         _mint(to, tokenId);
     }
 
@@ -152,6 +155,7 @@ contract RandomJolaman is ERC721Enumerable, Ownable, AccessControl {
         // mappingWrap(tokenId, to);
         tokenOwner[tokenId] = to;
         totalOwnedTokens[msg.sender].push(randomTokenData.jolamanTokenType);
+        totalJolamanData[0].push(randomTokenData.jolamanTokenType);
         setLatestJolamanData(randomTokenData.jolamanTokenType);
         _mint(to, tokenId);
     }
@@ -189,21 +193,21 @@ contract RandomJolaman is ERC721Enumerable, Ownable, AccessControl {
     }
 
     function getRandTokenType(address _msgSender, uint _tokenId) private returns (uint) {
-        uint tempNumber = uint(keccak256(abi.encodePacked(blockhash(block.timestamp), _msgSender, _tokenId))) % 1000;
-        if (!AlreadyMint[tempNumber]) {
+        uint tempNumber = (uint(keccak256(abi.encodePacked(blockhash(block.timestamp), _msgSender, _tokenId))) % 1000) + 1;
+        if (AlreadyMint[tempNumber] == false) {
             return tempNumber;
         } else { 
-            tempNumber = getRandTokenType(_msgSender, _tokenId);
-            return tempNumber;
+            uint newTempNumber = getRandTokenType(_msgSender, _tokenId);
+            return newTempNumber;
         }
     }
     function getRandSpecialTokenType(address _msgSender, uint _tokenId) private returns (uint) {
         uint tempNumber = (uint(keccak256(abi.encodePacked(blockhash(block.timestamp), _msgSender, _tokenId))) % 20) + 10000;
-        if (!AlreadyMint[tempNumber]) {
+        if (SpecialAlreadyMint[tempNumber] == false) {
             return tempNumber;
         } else { 
-            tempNumber = getRandTokenType(_msgSender, _tokenId);
-            return tempNumber;
+            uint newTempNumber = getRandSpecialTokenType(_msgSender, _tokenId);
+            return newTempNumber;
         }
     }
 
@@ -247,6 +251,10 @@ contract RandomJolaman is ERC721Enumerable, Ownable, AccessControl {
 
     function getLatestJolamanData() public view returns (uint) {
         return latestJolamanData[latestJolamanData.length - 1];
+    }
+
+    function getTotalJolamanData(uint x) public view returns(uint[] memory) {
+        return totalJolamanData[x];
     }
 
 
