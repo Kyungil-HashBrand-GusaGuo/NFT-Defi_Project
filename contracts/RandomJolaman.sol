@@ -22,8 +22,8 @@ import "@openzeppelin/contracts/utils/Strings.sol";
 contract RandomJolaman is ERC721Enumerable, Ownable, AccessControl {
     using SafeMath for uint256;
     
-    uint private _normalTokenIdCount;
-    uint private _specialTokenIdCount; // whitelist 전용 token count
+    uint public _normalTokenIdCount;
+    uint public _specialTokenIdCount; // whitelist 전용 token count
 
     bytes32 public constant MINTER_ROLE = keccak256("MINTER_ROLE");
     bytes32 public constant SPECIAL_MINTER_ROLE = keccak256("SPECIAL_MINTER_ROLE"); // whitelist 전용 minter role
@@ -248,6 +248,7 @@ contract RandomJolaman is ERC721Enumerable, Ownable, AccessControl {
     function getLatestJolamanData() public view returns (uint) {
         return latestJolamanData[latestJolamanData.length - 1];
     }
+
 
     // The following functions are overrides required by Solidity.
 

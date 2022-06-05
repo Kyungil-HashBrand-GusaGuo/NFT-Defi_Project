@@ -290,12 +290,38 @@
 			},
 			{
 				"inputs": [],
+				"name": "_normalTokenIdCount",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
 				"name": "_owner",
 				"outputs": [
 					{
 						"internalType": "address",
 						"name": "",
 						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "_specialTokenIdCount",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
 					}
 				],
 				"stateMutability": "view",
@@ -1287,11 +1313,11 @@
 			]
 		},
 		"contracts/RandomJolaman.sol": {
-			"keccak256": "0x668655003ce2b6404ed2e8307398f1c8bbfd22da3f24dc695d7b6145d5cfbd50",
+			"keccak256": "0x708f3cbfdefc1341f77765332f1aba6cc582373b88d6816286ca34cae9ef2d2f",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://5e16370f25aa86f6bdf0c75f62cb46be191e190cd902c4a2b76e9e43fbd1db81",
-				"dweb:/ipfs/QmSd8YjTYH6gbUsWTQfGDak9gegfMcytqUD3xqCGSSC6oA"
+				"bzz-raw://644071af49206e63eabb9117a83d2ce7560c6002f9fef64ed57514cfd86ff1f9",
+				"dweb:/ipfs/QmQKbuTWdRo8vfe8sxJvJ8t2aMKVB4qtdW93dPeQ99EJiX"
 			]
 		}
 	},

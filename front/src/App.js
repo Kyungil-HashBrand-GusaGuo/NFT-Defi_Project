@@ -13,7 +13,11 @@ function App() {
   const [myBalance, setMyBalance] = useState(0);
   const [Whitelist, setWhitelist] = useState("");
   const [myTokenId, setMyTokenId] = useState([]);
-  // const [metaDataURI, setMetaDataURI] = useState(undefined);
+  const [maxNormal, setMaxNormal] = useState("");
+  const [maxSpecial, setMaxSpecial] = useState("");
+  const [currentNormal, setCurrentNormal] = useState("");
+  const [currentSpecial, setCurrentSpecial] = useState("");
+
 
 
   const getAccount = async() => {
@@ -32,7 +36,7 @@ function App() {
     }
   }, []);
 
-  const test = async() => {
+  const isWhiteList = async() => {
     const response = await RandomJolamanContract.methods.isWhiteList(account).call();
     setWhitelist(response);
   }
@@ -129,12 +133,40 @@ function App() {
     setMyBalance(response);
   }
 
+  // normal Token 총 발행량
+  const MAX_NORMAL_TOKEN_COUNT = async() => {
+    const response = await RandomJolamanContract.methods.MAX_NORMAL_TOKEN_COUNT().call()
+    setMaxNormal(response);
+  }
 
+  // special Token 총 발행량
+  const MAX_SPECIAL_TOKEN_COUNT = async() => {
+    const response = await RandomJolamanContract.methods.MAX_SPECIAL_TOKEN_COUNT().call()
+    setMaxSpecial(response);
+  }
 
-  
+  // 현재 normal Token 발행된 갯수
+  const CURRENT_NORMAL_TOKEN_COUNT = async() => {
+    const response = await RandomJolamanContract.methods._normalTokenIdCount().call()
+    setCurrentNormal(response);
+  }
+
+  // 현재 special Token 발행된 갯수
+  const CURRENT_SPECIAL_TOKEN_COUNT = async() => {
+    const response = await RandomJolamanContract.methods._specialTokenIdCount().call()
+    setCurrentSpecial(response);
+  }
 
   useEffect(() => {
-    test();
+    MAX_NORMAL_TOKEN_COUNT()
+    MAX_SPECIAL_TOKEN_COUNT()
+    CURRENT_NORMAL_TOKEN_COUNT()
+    CURRENT_SPECIAL_TOKEN_COUNT()
+  },[])
+
+
+  useEffect(() => {
+    isWhiteList();
     ownedTokenId();
     BalanceKlay();
   },[account])
@@ -145,6 +177,10 @@ function App() {
   console.log(Whitelist);
   console.log(myTokenId);
   console.log(myBalanceForKlay);
+  console.log(maxNormal)
+  console.log(maxSpecial)
+  console.log(currentNormal)
+  console.log(currentSpecial)
 
   return (
     <div>
