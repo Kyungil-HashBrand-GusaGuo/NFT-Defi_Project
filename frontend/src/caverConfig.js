@@ -1,6 +1,6 @@
 import Caver from "caver-js";
 export const MINT_CONTRACT_ADDRESS = 
-"0xbEDec806990D6EcEe6Bd3E449B56211f9dDd1a01";
+"0x5a3E49Ae36EF8185B3D015C778BB292107144Bc3";
 
 export const MINT_CONTRACT_ABI = [
 	{
@@ -682,6 +682,25 @@ export const MINT_CONTRACT_ABI = [
 	{
 		"inputs": [
 			{
+				"internalType": "uint256",
+				"name": "x",
+				"type": "uint256"
+			}
+		],
+		"name": "getTotalJolamanData",
+		"outputs": [
+			{
+				"internalType": "uint256[]",
+				"name": "",
+				"type": "uint256[]"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
 				"internalType": "address",
 				"name": "ownerAddress",
 				"type": "address"
@@ -1053,6 +1072,30 @@ export const MINT_CONTRACT_ABI = [
 				"internalType": "string",
 				"name": "",
 				"type": "string"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"name": "totalJolamanData",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
 			}
 		],
 		"stateMutability": "view",

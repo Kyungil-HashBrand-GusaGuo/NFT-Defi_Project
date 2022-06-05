@@ -2,30 +2,36 @@ import React, { useState } from 'react'
 import './AdminPage.css'
 import { useDispatch, useSelector } from 'react-redux';
 import { BsJournalPlus } from "react-icons/bs";
-import { addWhiteListAccount } from '../redux/actiion/addWhiteListAccount';
+import { addWhiteListAccount } from '../redux/action/addWhiteListAccount';
 
 const AdminPage = () => {
   const dispatch = useDispatch();
   const {account} = useSelector(state => state.account);
   const [address, setAddress] = useState();
 
-  const addWhiteList = () => {
-    dispatch(addWhiteListAccount.addWhiteList(account, address))
+  const addWhiteList = async() => {
+    await dispatch(addWhiteListAccount.addWhiteList(account, address))
   }
 
   const changeAddress = (e) => {
+    e.preventDefault();
     setAddress(e.target.value);
   }
 
   return (
     <div className='adminContainer'>
-        {/* onSubmit */}
-        {/* <div>{account}</div> */}
-        <form onSubmit={addWhiteList}>
-            <input type="text" className='adminInput' placeholder='Add WhiteList' onChange={changeAddress} />
-            <button type="submit" className='adminButton'><BsJournalPlus/></button>
-            {/* <input type="submit" className='adminButton' value='+'/> */}
-        </form>
+        <div className='adminSection'>
+          <form onSubmit={addWhiteList}>
+              <input type="text" className='adminInput' placeholder='Add WhiteList' onChange={changeAddress} />
+              <button type="submit" className='adminButton'><BsJournalPlus/></button>
+          </form>
+        </div>
+        <div className='adminSection'>
+          <form onSubmit={addWhiteList}>
+              <input type="text" className='adminInput' placeholder='Delete WhiteList' onChange={changeAddress} />
+              <button type="submit" className='adminButton'><BsJournalPlus/></button>
+          </form>
+        </div>
     </div>
   )
 }
