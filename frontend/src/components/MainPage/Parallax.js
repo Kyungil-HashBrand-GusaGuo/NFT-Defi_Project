@@ -63,7 +63,7 @@ const Parallax = () => {
             opacity: (position - 700) / 50,
           }}
         >
-          Duis aute irure dolor
+          Duis aute irure dolordsfdsf
         </p>
         <p
           className="desc3"
