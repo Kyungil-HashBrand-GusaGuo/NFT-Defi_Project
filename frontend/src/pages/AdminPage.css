@@ -9,18 +9,28 @@
 }
 
 .adminInput {
-    width: 800px;
+    width: 600px;
     height: 50px;
     border-top-left-radius: 30px;
     border-bottom-left-radius: 30px;
-    border: 2px solid whitesmoke;
+    border: none;
+    outline: none;
+    padding: 0 50px;
+    font-size: 25px;
+    text-align: center;
 }
 
 .adminButton {
-    width: 50px;
+    width: 80px;
     height: 50px;
     border-top-right-radius: 30px;
     border-bottom-right-radius: 30px;
-    border: 2px solid lightgray;
-    background-color: lightgray;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    background-color: lightslategray;
+    color: whitesmoke;
+    left: -5px;
+    font-size: 25px;
+    text-align: center;
 }
