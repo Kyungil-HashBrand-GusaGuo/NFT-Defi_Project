@@ -1,0 +1,26 @@
+.cardListContainer {
+    /* display: flex; */
+    width: 320px;
+    height: 440px;
+    border: 2px solid black;
+}
+
+.myNftCard img {
+    width: 320px;
+    height: 320px;
+}
+
+.cardListContainer .cardlisttxt {
+    display: flex;
+}
+
+.cardListContainer .cardlisttxt .cardlisttitle {
+    flex: 50%;
+    /* display: flex; */
+}
+
+.cardListContainer .cardlisttxt .cardlistprice {
+    /* display: flex; */
+    flex: 50%;
+    justify-content: flex-end;
+}
