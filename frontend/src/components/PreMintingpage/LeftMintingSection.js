@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import './LeftMintingSection.css'
 import { useDispatch, useSelector } from 'react-redux';
-import { mintingAction } from '../../redux/actiion/mintingAction';
+import { mintingAction } from '../../redux/actions/mintingAction';
 
 const LeftMintingSection = () => {
 

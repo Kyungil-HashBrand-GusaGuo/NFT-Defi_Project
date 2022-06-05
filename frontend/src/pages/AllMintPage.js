@@ -1,21 +1,14 @@
 import React, { useState, useEffect } from 'react'
-// import { MyCardList } from '../components'
-import {RandomJolamanContract} from '../caverConfig'
-import { useSelector } from 'react-redux';
-import './MyPage.css'
+import { RandomJolamanContract } from '../caverConfig'
+import './AllMintPage.css';
 
-const MyPage = () => {
+const AllMintPage = () => {
 
-  // const { account } = useSelector(state => state.account);
-  // console.log("acccouuunntt", account)
-
-
-  let account = "0x249c1Fb7e4815dD56E31EAe33761A53Dd100121F";
-  const [showmint, setShowmint] = useState("");
-  const ownedTokenId = async() => {
-    const response = await RandomJolamanContract.methods.getTotalOwnedTokens(account).call()
+    const [showmint, setShowmint] = useState("");
+    const ownedTokenId = async() => {
+    const response = await RandomJolamanContract.methods.getTotalJolamanData(0).call()
     setShowmint(response);
-    console.log("내민팅",response);
+    console.log("모든민팅",response);
   }
 
   useEffect(()=> {
@@ -23,7 +16,7 @@ const MyPage = () => {
   },[])
 
   return (
-    <div className='myPageContainer'>
+    <div className='AllMintPageContainer'>
         { showmint ===""? null : 
         showmint.map((item, index)=>(
             <div className='cardListContainer'>
@@ -45,12 +38,13 @@ const MyPage = () => {
                     <p>{item}</p>
                     <p>price</p>
                 </div>
+            
+                
             </div> 
-                    <p>지갑주소 : {account}</p>
         </div>
         ))}
     </div>
   )
 }
 
-export default MyPage
+export default AllMintPage

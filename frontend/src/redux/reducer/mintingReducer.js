@@ -8,7 +8,7 @@ let initialState = {
 
 function mintingReducer(state=initialState,action) {
     let {type, payload} = action
-    console.log(payload)
+    // console.log(payload)
 
     switch(type) {
         case "GET_MINTDATA" :
