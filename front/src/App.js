@@ -8,7 +8,7 @@ import axios from "axios";
 function App() {
   const val = 2;
   const klaytn = 10 ** 18;
-  const testAccount = "0x663C6cBA85bA17d949F9d14232bDAEE5b543Bac0"
+  const testAccount = "0x24Cd3020691814062Dfa1310613b426851fe628B"
   const [account, setAccount] = useState("");
   const [myBalance, setMyBalance] = useState(0);
   const [Whitelist, setWhitelist] = useState("");
@@ -116,7 +116,7 @@ function App() {
     }
   }
 
-  // 보유 토큰ID 조회 
+  // 보유 토큰 졸라맨 타입 조회 
   const ownedTokenId = async() => {
     const response = await RandomJolamanContract.methods.getTotalOwnedTokens(account).call()
     setMyTokenId(response);

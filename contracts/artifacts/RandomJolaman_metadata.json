@@ -1287,11 +1287,11 @@
 			]
 		},
 		"contracts/RandomJolaman.sol": {
-			"keccak256": "0x62ec87c8a28d0702d4a1b9ac7e9011935c2293660d61aaf6a9682c6854f3e735",
+			"keccak256": "0x668655003ce2b6404ed2e8307398f1c8bbfd22da3f24dc695d7b6145d5cfbd50",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://881f04ee640a9801f4b6520c0f82dbd1a7d99597346e80d840d8d88b490f5750",
-				"dweb:/ipfs/QmVEJhKcX7RK29dYAhA7e3gBzdy14Qa8Lyb9ppERJauS62"
+				"bzz-raw://5e16370f25aa86f6bdf0c75f62cb46be191e190cd902c4a2b76e9e43fbd1db81",
+				"dweb:/ipfs/QmSd8YjTYH6gbUsWTQfGDak9gegfMcytqUD3xqCGSSC6oA"
 			]
 		}
 	},

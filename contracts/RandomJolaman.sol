@@ -88,7 +88,7 @@ contract RandomJolaman is ERC721Enumerable, Ownable, AccessControl {
     }
     function removeWhiteList(address _toWhiteList) public onlyOwner{
         isWhiteList[_toWhiteList] = false;
-        renounceRole(SPECIAL_MINTER_ROLE, _toWhiteList);
+        _revokeRole(SPECIAL_MINTER_ROLE, _toWhiteList);
     }
     function mappingWrap(uint _tokenId, address to) private {
         tokenOwner[_tokenId] = to;
