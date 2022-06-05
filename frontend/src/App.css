@@ -10,8 +10,8 @@
 .mainContainer {
     padding-top: 100px;
     height: 2000px;
-    background: url('./images/spbg.jpeg');
-    background-size: 100%;
+    /* background: url('./images/spbg.jpeg');
+    background-size: 100%; */
 }
 
 .myPageContainer {
@@ -19,3 +19,71 @@
     display: flex;
     /* height: 1000px; */
 }
+
+/* body,
+html {
+	height: 100%;
+}
+
+body {
+	position: relative;
+	display: grid;
+	overflow: hidden;
+	grid-template: "body";
+	place-content: center;
+	place-items: center;
+	margin: 0;
+	background-color: #ffdd40;
+    z-index: 8;
+    height: 100%;
+}
+
+body > *,
+body::before {
+	grid-area: body;
+}
+
+body::before {
+	content: '';
+	width: 150vmax;
+	height: 150vmax;
+	opacity: 0.4;
+	background: repeating-conic-gradient(from 0deg, white 0deg 15deg, transparent 15deg 30deg);
+	-webkit-mask-image: radial-gradient(hsla(0 0% 0% / 1), hsla(0 0% 0% / 0) 50%);
+	animation: rotate 20s linear infinite;
+}
+
+body::after {
+	content: '';
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100vw;
+	height: calc(50vh + 1em);
+	background-color: inherit;
+}
+
+
+@keyframes movement {
+	20% { transform: scaleY(1.4) skew(10deg)  }
+	50% { transform: scaleY(1)   skew(0)      }
+	70% { transform: scaleY(1.4) skew(-10deg) }
+}
+
+@keyframes shadow {
+	20% { transform: var(--transform-alt) }
+	50% { transform: var(--transform)     }
+	70% { transform: var(--transform-alt) }
+}
+
+@keyframes rotate {
+	to { transform: rotate(1turn) }
+}
+
+@media (prefers-reduced-motion: reduce) {
+	*,
+	*::before,
+	*::after {
+		animation: none !important;
+	}
+} */
