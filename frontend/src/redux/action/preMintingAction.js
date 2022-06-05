@@ -1,7 +1,7 @@
 import { caver, RandomJolamanContract, MINT_CONTRACT_ADDRESS } from "../../caverConfig";
 import axios from "axios";
 
-function mintAction(account) {
+function preMintAction(account) {
 
     console.log(account)
 
@@ -21,7 +21,7 @@ function mintAction(account) {
               const getMetaData = async() => {
                 const response = await axios.get(`https://gateway.pinata.cloud/ipfs/QmQJGKnjHtgBeWRarsBHwK8uY7hsHoPJpuaPezBTrGac7K/${metaDataURI}.json`);
                 console.log( "if문 안",response.data)
-                dispatch({type : "GET_MINTDATA", payload : {mintdata : response.data}})         
+                dispatch({type : "GET_PRE_MINTDATA", payload : {premintdata : response.data}})         
               }
               getMetaData();
             }
@@ -34,4 +34,4 @@ function mintAction(account) {
     }
 }
 
-export const mintingAction = {mintAction}
+export const preMintingAction = {preMintAction}

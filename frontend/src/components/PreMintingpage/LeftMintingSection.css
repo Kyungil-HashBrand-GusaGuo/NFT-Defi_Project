@@ -28,11 +28,14 @@
 }
 
 .testImageBox1 {
-    width: 300px;
+    width: 220px;
     height: 220px;
     border-radius: 30px;
     border: 1px solid white;
     background-color: whitesmoke;
+    background-image: url("https://gateway.pinata.cloud/ipfs/QmbqfWrFSDF5ieNB792KgwxdXr5AHDDRE8u47MvdaAJrpS/906.png");
+    background-size: contain;
+    background-repeat: no-repeat;
 }
 
 .leftMintigSectionDetail3 {
