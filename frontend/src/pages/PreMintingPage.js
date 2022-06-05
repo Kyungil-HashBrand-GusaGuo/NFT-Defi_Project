@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import './PreMintingPage.css';
 import { LeftMintingSection, RightMintingSection } from '../components'
 import { useDispatch } from 'react-redux';
+import { mintingCount } from '../redux/action/mintingCount';
 
 const PreMintingPage = () => {
 
@@ -10,7 +11,7 @@ const PreMintingPage = () => {
   const [test, setTest] = useState(true)
 
   useEffect( () => {
-    dispatch()
+    dispatch(mintingCount.mintCount())
   },[])
 
   return (
