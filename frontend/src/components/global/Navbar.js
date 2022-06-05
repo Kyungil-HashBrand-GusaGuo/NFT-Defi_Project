@@ -3,7 +3,7 @@ import './Navbar.css';
 import { MdReorder } from "react-icons/md";
 import {HeadImg} from '../../images'
 import { useDispatch, useSelector } from 'react-redux';
-import { connectAccount } from '../../redux/action/connectAccount' 
+import { connectAccount } from '../../redux/actions/connectAccount' 
 
 function Navbar() {
 
@@ -33,6 +33,7 @@ function Navbar() {
                     <a href='/pre-minting'>민팅페이지</a>
                     <a href='/mypage'>마이페이지</a>
                     <a href='/admin'>관리자페이지</a>
+                    <a href='/all-minting'>ALL</a>
                     {
                         whiteListCheck ? <a>special</a> : null
                     }

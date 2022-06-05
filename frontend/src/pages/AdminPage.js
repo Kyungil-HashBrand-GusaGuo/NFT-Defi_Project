@@ -2,9 +2,7 @@ import React, { useState, useEffect } from 'react'
 import './AdminPage.css'
 import { useDispatch, useSelector } from 'react-redux';
 import { BsJournalPlus } from "react-icons/bs";
-import { addWhiteListAccount } from '../redux/action/addWhiteListAccount';
-//import { caver, RandomJolamanContract, MINT_CONTRACT_ADDRESS } from "../caverConfig";
-
+import { addWhiteListAccount } from '../redux/actions/addWhiteListAccount';
 
 const AdminPage = () => {
   const dispatch = useDispatch();
