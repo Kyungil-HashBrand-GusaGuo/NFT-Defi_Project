@@ -1,30 +1,9 @@
 import './App.css';
-import { useEffect, useState } from "react";
 import { Routes, Route } from 'react-router-dom';
 import { MainPage, PreMintingPage, AdminPage, MyPage, AllMintPage } from './pages';
 import { Navbar, Footer } from './components'
 
 function App() {
-
-  // const [account, setAccount] = useState();
-
-  // const getAccount = async() => {
-  //   try {
-  //     const accounts = await window.klaytn.enable();
-  //     console.log(accounts)
-  //     setAccount(accounts[0]);
-  //   } catch(error) {
-  //     console.error(error);
-  //   }   
-  // }
-
-
-  // useEffect(() => {
-  //   if(window.klaytn) {
-  //     getAccount();
-  //   }
-  // }, []);
-
 
   return (
     <>

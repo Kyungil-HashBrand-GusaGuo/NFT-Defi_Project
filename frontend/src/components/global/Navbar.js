@@ -10,7 +10,8 @@ function Navbar() {
     const dispatch = useDispatch();
 
     const [showLinks, setShowLinks] = useState(false); 
-    const {account} = useSelector(state => state.account)
+    const {account, whiteListCheck} = useSelector(state => state.account)
+    console.log("화이트리스트 체크",whiteListCheck)
 
     const connectWallet = () => {
         if(window.klaytn)
@@ -33,6 +34,9 @@ function Navbar() {
                     <a href='/mypage'>마이페이지</a>
                     <a href='/admin'>관리자페이지</a>
                     <a href='/all-minting'>ALL</a>
+                    {
+                        whiteListCheck ? <a>special</a> : null
+                    }
                     {
                         account === '' ? <a><button onClick={connectWallet}>Connect Wallet</button></a> 
                         : <a><button>{account.substr(0,6)}...{account.slice(-6)}</button></a> 

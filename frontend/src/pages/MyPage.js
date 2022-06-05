@@ -10,7 +10,7 @@ const MyPage = () => {
   // console.log("acccouuunntt", account)
 
 
-  let account = "0x249c1Fb7e4815dD56E31EAe33761A53Dd100121F";
+  let account = "0xaC0d580B21118dB9Ea5d752d8950e9C2436575DE";
   const [showmint, setShowmint] = useState("");
   const ownedTokenId = async() => {
     const response = await RandomJolamanContract.methods.getTotalOwnedTokens(account).call()
@@ -46,7 +46,6 @@ const MyPage = () => {
                     <p>price</p>
                 </div>
             </div> 
-                    <p>지갑주소 : {account}</p>
         </div>
         ))}
     </div>
