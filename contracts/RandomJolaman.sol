@@ -21,7 +21,12 @@ import "@openzeppelin/contracts/utils/Strings.sol";
 
 contract RandomJolaman is ERC721Enumerable, Ownable, AccessControl {
     using SafeMath for uint256;
-    
+
+    uint[1000] private normal_token_ids;
+    uint[20] private special_token_ids;
+    uint private normal_token_index;
+    uint private special_token_index;
+
     uint public _normalTokenIdCount;
     uint public _specialTokenIdCount; // whitelist 전용 token count
 
@@ -122,7 +127,7 @@ contract RandomJolaman is ERC721Enumerable, Ownable, AccessControl {
 
         uint256 tokenId = _normalTokenIdCount;
         _normalTokenIdCount = _normalTokenIdCount.add(1);
-        JolamanTokenData memory randomTokenData = randomGenerator(msg.sender, tokenId);
+        JolamanTokenData memory randomTokenData = randomGenerator();
         mappedJolamanTokenData[tokenId] = JolamanTokenData(randomTokenData.jolamanTokenType);
 
         // mappingWrap(tokenId, to); //위줄도 wrap에 추가할 예정
@@ -149,7 +154,7 @@ contract RandomJolaman is ERC721Enumerable, Ownable, AccessControl {
 
         uint256 tokenId = _specialTokenIdCount;
         _specialTokenIdCount = _specialTokenIdCount.add(1);
-        JolamanTokenData memory randomTokenData = specialRandomGenerator(msg.sender, tokenId);
+        JolamanTokenData memory randomTokenData = specialRandomGenerator();
         mappedJolamanTokenData[tokenId] = JolamanTokenData(randomTokenData.jolamanTokenType);
 
         // mappingWrap(tokenId, to);
@@ -175,40 +180,50 @@ contract RandomJolaman is ERC721Enumerable, Ownable, AccessControl {
     }
 
     // 랜덤 jolamanTokenType 발행 함수 => jolamanTokenType.toString().json == metadata
-    function randomGenerator(address _msgSender, uint _tokenId) private returns (JolamanTokenData memory) {
+    function randomGenerator() private returns (JolamanTokenData memory) {
         JolamanTokenData memory randomTokenData;
-        uint newTokenType = getRandTokenType(_msgSender, _tokenId);
+        uint256 _random = uint256(keccak256(abi.encodePacked(normal_token_index, msg.sender, block.timestamp, blockhash(block.number-1))));
+        uint newTokenType = getRandTokenType(_random);
         AlreadyMint[newTokenType] = true;
         randomTokenData.jolamanTokenType = newTokenType;
         return randomTokenData;
 
     }
-    function specialRandomGenerator(address _msgSender, uint _tokenId) private returns (JolamanTokenData memory) {
+    function specialRandomGenerator() private returns (JolamanTokenData memory) {
         JolamanTokenData memory randomTokenData;
-        uint newTokenType = getRandSpecialTokenType(_msgSender, _tokenId);
+        uint256 _random = uint256(keccak256(abi.encodePacked(special_token_index, msg.sender, block.timestamp, blockhash(block.number-1))));
+        uint newTokenType = getRandSpecialTokenType(_random);
         SpecialAlreadyMint[newTokenType] = true;
         randomTokenData.jolamanTokenType = newTokenType;
-        
         return randomTokenData;
     }
 
-    function getRandTokenType(address _msgSender, uint _tokenId) private returns (uint) {
-        uint tempNumber = (uint(keccak256(abi.encodePacked(blockhash(block.timestamp), _msgSender, _tokenId))) % 1000) + 1;
-        if (AlreadyMint[tempNumber] == false) {
-            return tempNumber;
-        } else { 
-            uint newTempNumber = getRandTokenType(_msgSender, _tokenId);
-            return newTempNumber;
-        }
+    // uint[1000] private normal_token_ids;
+    // uint[20] private special_token_ids;
+    // uint private normal_token_index;
+    // uint private special_token_index;
+
+    
+    // uint public _normalTokenIdCount;
+    // uint public _specialTokenIdCount;
+
+    function getRandTokenType(uint random) private returns (uint) {
+        uint len = normal_token_ids.length - normal_token_index++;
+        require(len > 0, 'no ids left');
+        uint randomIndex = random % len;
+        uint id = normal_token_ids[randomIndex] != 0 ? normal_token_ids[randomIndex] + 1 : randomIndex + 1;
+        normal_token_ids[randomIndex] = uint(normal_token_ids[len - 1] == 0 ? len - 1 : normal_token_ids[len - 1]);
+        normal_token_ids[len - 1] = 0;
+        return id;
     }
-    function getRandSpecialTokenType(address _msgSender, uint _tokenId) private returns (uint) {
-        uint tempNumber = (uint(keccak256(abi.encodePacked(blockhash(block.timestamp), _msgSender, _tokenId))) % 20) + 10000;
-        if (SpecialAlreadyMint[tempNumber] == false) {
-            return tempNumber;
-        } else { 
-            uint newTempNumber = getRandSpecialTokenType(_msgSender, _tokenId);
-            return newTempNumber;
-        }
+    function getRandSpecialTokenType(uint random) private returns (uint) {
+        uint len = special_token_ids.length - special_token_index++;
+        require(len > 0, 'no ids left');
+        uint randomIndex = random % len;
+        uint id = special_token_ids[randomIndex] != 0 ? special_token_ids[randomIndex] + 10000 : randomIndex + 10000;
+        special_token_ids[randomIndex] = uint(special_token_ids[len - 1] == 0 ? len - 1 : special_token_ids[len - 1]);
+        special_token_ids[len - 1] = 0;
+        return id;
     }
 
     function getBalance(address _to) public view returns (uint256) {

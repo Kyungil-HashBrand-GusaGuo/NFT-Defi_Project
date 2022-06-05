@@ -1,6 +1,6 @@
 import Caver from "caver-js";
 export const MINT_CONTRACT_ADDRESS = 
-"0x672Feb7E038eb11cdc2f497C594FCC31082C7260";
+"0xFbEC7699Dde7f5F300ee50127c11E7bB5177c807";
 
 export const MINT_CONTRACT_ABI = [
 	{
