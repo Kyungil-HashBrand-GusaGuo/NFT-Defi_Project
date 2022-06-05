@@ -19,14 +19,10 @@ const AdminPage = () => {
 
   return (
     <div className='adminContainer'>
-        {/* onSubmit */}
-        {/* <div>{account}</div> */}
-        <form onSubmit={addWhiteList}>
             <input type="text" className='adminInput' placeholder='Add WhiteList' onChange={changeAddress} />
-            <button type="submit" className='adminButton'><BsJournalPlus/></button>
-            {/* <input type="submit" className='adminButton' value='+'/> */}
-        </form>
+            <button type="submit" className='adminButton' onClick={addWhiteList}><BsJournalPlus/></button>
     </div>
+    
   )
 }
 
