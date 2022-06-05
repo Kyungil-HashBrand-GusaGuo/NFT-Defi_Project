@@ -9,9 +9,9 @@ const PreMintingPage = () => {
 
   const [test, setTest] = useState(true)
 
-  useEffect( () => {
-    dispatch()
-  },[])
+  // useEffect( () => {
+  //   dispatch()
+  // },[])
 
   return (
     <div className='mintingContainer'>
