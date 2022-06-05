@@ -33,7 +33,7 @@ function Navbar() {
                     <a href='/mypage'>마이페이지</a>
                     <a href='/admin'>관리자페이지</a>
                     {
-                        account === '' ? <a><button onClick={()=>connectWallet()}>Connect Wallet</button></a> 
+                        account === '' ? <a><button onClick={connectWallet}>Connect Wallet</button></a> 
                         : <a><button>{account.substr(0,6)}...{account.slice(-6)}</button></a> 
                     }
                 </div>

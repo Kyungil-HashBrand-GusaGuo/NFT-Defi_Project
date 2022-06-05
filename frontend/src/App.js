@@ -3,7 +3,6 @@ import { useEffect, useState } from "react";
 import { Routes, Route } from 'react-router-dom';
 import { MainPage, PreMintingPage, AdminPage, MyPage } from './pages';
 import { Navbar, Footer } from './components'
-// import Navbar from './components/Navbar';
 
 function App() {
 
