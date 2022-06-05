@@ -1,20 +1,18 @@
 import React, { useEffect } from 'react';
 import './MyCardList.css';
 import { Test } from '../../images'
-import { useDispatch, useSelector } from 'react-redux';
-import { test } from '../../redux/action/test';
 
 const MyCardList = () => {
 
-    const dispatch = useDispatch();
-    const { account } = useSelector(state => state.account)
+    // const dispatch = useDispatch();
+    // const { account } = useSelector(state => state.account)
 
-    console.log("여기", account)
+    // console.log("여기", account)
 
 
-    useEffect( () => {
-        dispatch(test.testMy(account))
-    })
+    // useEffect( () => {
+    //     dispatch(test.testMy(account))
+    // })
 
 
   return (

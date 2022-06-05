@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import './LeftMintingSection.css'
 import { useDispatch, useSelector } from 'react-redux';
 import { preMintingAction } from '../../redux/action/preMintingAction';
@@ -9,7 +9,6 @@ const LeftMintingSection = () => {
 
     const {account} = useSelector(state => state.account)
     const {premintdata, maxNormalTokenCount, normalTokenCount} = useSelector(state => state.mintdata)
-    const [test, setTest] = useState(true)
     console.log("프리민팅 데이터",premintdata)
 
     const [mintingCount , setMintingCount] = useState(0);
