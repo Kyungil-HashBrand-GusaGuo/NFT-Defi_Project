@@ -1,7 +1,16 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import './LeftMintingSection.css'
+import { useDispatch, useSelector } from 'react-redux';
+import { mintingAction } from '../../redux/actions/mintingAction';
 
 const LeftMintingSection = () => {
+
+    const dispatch = useDispatch()
+
+    const {account} = useSelector(state => state.account)
+    const {mintdata} = useSelector(state => state.mintdata)
+    const [test, setTest] = useState(true)
+    console.log("페이지",mintdata)
 
     const [mintingCount , setMintingCount] = useState(0);
 
@@ -12,6 +21,16 @@ const LeftMintingSection = () => {
     const mintingCountDown = () => {
         if(mintingCount > 0)
         setMintingCount(mintingCount-1)
+    }
+    
+    const minting = () => {
+        dispatch(mintingAction.mintAction(account))
+        // if(mintdata !== ''){
+        //     const checkMinting = async() => {
+        //         await alert("민팅완료!") 
+        //     }
+        //     checkMinting()
+        // }
     }
 
   return (
@@ -32,11 +51,11 @@ const LeftMintingSection = () => {
                     <button className='leftMintigSectionDetail3_button1' onClick={mintingCountUp}> + </button>
                 </div>
                 <div className='leftMintigSectionDetail4'>
-                    <h3>Price : 60 klay</h3>
+                    <h3>Price : 2 klay</h3>
                     <h3>Count : 150 / 2000</h3>
                 </div>
                 <div className='leftMintigSectionDetail5'>
-                    <button>Minting</button>
+                    <button onClick={minting}>Minting</button>
                 </div>
             </div>   
         </div>

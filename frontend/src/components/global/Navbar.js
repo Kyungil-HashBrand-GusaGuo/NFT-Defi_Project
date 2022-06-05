@@ -3,7 +3,7 @@ import './Navbar.css';
 import { MdReorder } from "react-icons/md";
 import {HeadImg} from '../../images'
 import { useDispatch, useSelector } from 'react-redux';
-import { connectAccount } from '../../redux/actiion/connectAccount' 
+import { connectAccount } from '../../redux/actions/connectAccount' 
 
 function Navbar() {
 

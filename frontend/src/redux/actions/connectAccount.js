@@ -1,11 +1,11 @@
-function showMyCard() {
+function getAccount() {
     return async (dispatch) => {
         try {
             const accounts = await window.klaytn.enable();
-            console.log(accounts)
+            // console.log(accounts)
             let account = accounts[0]
             //dispatch({type : "GET_DATA", payload : {test}})
-            dispatch({type : "SHOW_MYMINTING", payload : {account}})
+            dispatch({type : "GET_ACCOUNT", payload : {account}})
         } 
         catch(error) {
             console.error(error)
@@ -13,4 +13,4 @@ function showMyCard() {
     }
 }
 
-export const mypageComple = {showMyCard}
+export const connectAccount = {getAccount}

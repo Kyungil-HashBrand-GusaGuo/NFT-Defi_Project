@@ -1,8 +1,21 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './MyCardList.css';
 import { Test } from '../../images'
+import { useDispatch, useSelector } from 'react-redux';
+import { mypageAction } from '../../redux/actions/mypageAction';
+
 
 const MyCardList = () => {
+
+    const dispatch = useDispatch()
+
+    const { account } = useSelector(state=> state.account)
+    console.log("minting양",account);
+    
+    useEffect(()=>{
+        dispatch(mypageAction.myMintingAction(account))
+    },[])
+    // console.log(showminting);
   return (
     <div className='cardListContainer'>
         <div className='myNftCard'>
