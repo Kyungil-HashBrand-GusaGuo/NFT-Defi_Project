@@ -1,5 +1,5 @@
 let initialState = {
-    account : ''
+    mymintdata : ''
 }
 
 const myPageMintingReducer = (state=initialState,action) => {
@@ -8,7 +8,7 @@ const myPageMintingReducer = (state=initialState,action) => {
 
     switch(type) {
         case "GET_MYMINTINGDATA" :
-            return {...state, account : payload.account}
+            return {...state, mymintdata : payload.response}
 
         default :
             return {...state}

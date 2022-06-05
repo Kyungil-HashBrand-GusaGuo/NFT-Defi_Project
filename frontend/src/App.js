@@ -1,7 +1,7 @@
 import './App.css';
 import { useEffect, useState } from "react";
 import { Routes, Route } from 'react-router-dom';
-import { MainPage, PreMintingPage, AdminPage, MyPage } from './pages';
+import { MainPage, PreMintingPage, AdminPage, MyPage, AllMintPage } from './pages';
 import { Navbar, Footer } from './components'
 
 function App() {
@@ -35,6 +35,7 @@ function App() {
         <Route path='/mypage' element={<MyPage/>} />
         <Route path='/pre-minting' element={<PreMintingPage/>} />
         <Route path='/admin' element={<AdminPage/>} />
+        <Route path='/all-minting' element={<AllMintPage/>} />
       </Routes>
       <Footer/>
     </div>
