@@ -497,6 +497,25 @@
 			{
 				"inputs": [
 					{
+						"internalType": "uint256",
+						"name": "x",
+						"type": "uint256"
+					}
+				],
+				"name": "getTotalJolamanData",
+				"outputs": [
+					{
+						"internalType": "uint256[]",
+						"name": "",
+						"type": "uint256[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
 						"internalType": "address",
 						"name": "ownerAddress",
 						"type": "address"
@@ -1027,6 +1046,30 @@
 			{
 				"inputs": [
 					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "totalJolamanData",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
 						"internalType": "address",
 						"name": "",
 						"type": "address"
@@ -1313,11 +1356,11 @@
 			]
 		},
 		"contracts/RandomJolaman.sol": {
-			"keccak256": "0x708f3cbfdefc1341f77765332f1aba6cc582373b88d6816286ca34cae9ef2d2f",
+			"keccak256": "0xeeece69ec8ca46fe2d8ea7ae2a7a0a3c69acb8fac4577029522ca47156089b73",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://644071af49206e63eabb9117a83d2ce7560c6002f9fef64ed57514cfd86ff1f9",
-				"dweb:/ipfs/QmQKbuTWdRo8vfe8sxJvJ8t2aMKVB4qtdW93dPeQ99EJiX"
+				"bzz-raw://8ab0c51a4831f60607905904f81eaac774852d3d2ba1c717d3a911f44213fad4",
+				"dweb:/ipfs/QmPPXbZS3LQWowH1Q8ChQQSrB3rHxiwF4xTKU6Jg48Cq8d"
 			]
 		}
 	},
