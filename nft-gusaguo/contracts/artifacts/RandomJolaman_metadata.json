@@ -290,12 +290,38 @@
 			},
 			{
 				"inputs": [],
+				"name": "_normalTokenIdCount",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
 				"name": "_owner",
 				"outputs": [
 					{
 						"internalType": "address",
 						"name": "",
 						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "_specialTokenIdCount",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
 					}
 				],
 				"stateMutability": "view",
@@ -371,7 +397,13 @@
 				"type": "function"
 			},
 			{
-				"inputs": [],
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_to",
+						"type": "address"
+					}
+				],
 				"name": "getBalance",
 				"outputs": [
 					{
@@ -431,6 +463,19 @@
 				"type": "function"
 			},
 			{
+				"inputs": [],
+				"name": "getLatestJolamanData",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
 				"inputs": [
 					{
 						"internalType": "bytes32",
@@ -444,6 +489,25 @@
 						"internalType": "bytes32",
 						"name": "",
 						"type": "bytes32"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "x",
+						"type": "uint256"
+					}
+				],
+				"name": "getTotalJolamanData",
+				"outputs": [
+					{
+						"internalType": "uint256[]",
+						"name": "",
+						"type": "uint256[]"
 					}
 				],
 				"stateMutability": "view",
@@ -548,6 +612,25 @@
 						"internalType": "bool",
 						"name": "",
 						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "latestJolamanData",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
 					}
 				],
 				"stateMutability": "view",
@@ -817,6 +900,19 @@
 			{
 				"inputs": [
 					{
+						"internalType": "uint256",
+						"name": "joldata",
+						"type": "uint256"
+					}
+				],
+				"name": "setLatestJolamanData",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
 						"internalType": "uint64",
 						"name": "_price",
 						"type": "uint64"
@@ -942,6 +1038,30 @@
 						"internalType": "string",
 						"name": "",
 						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "totalJolamanData",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
 					}
 				],
 				"stateMutability": "view",
@@ -1236,11 +1356,11 @@
 			]
 		},
 		"contracts/RandomJolaman.sol": {
-			"keccak256": "0xab700b860cce84bc46fa76cfe547c4354529a104e0f16128bed5fa5cb03e2ef5",
+			"keccak256": "0x146f40c00cbad7339b6395f997495864d38b7964b06a0807d8ae10f46353f37b",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://02a1b8a09cea778d6860452f30ce07a9d4886bc2b7806ff82ad44140a0f96f85",
-				"dweb:/ipfs/Qmc5RNERXvUAZZ3k9SrtxnSgGBVUGE4epGgG41ivif1c3z"
+				"bzz-raw://b1dcc44d9a2bbe10c8c2428e11b909d65f50fe0c133ce1535a589a59cd61f142",
+				"dweb:/ipfs/Qmaqzt13gU7Ma8spGdVyr5FNhZhYf138aZNXgMZmoNvrJM"
 			]
 		}
 	},
