@@ -56,7 +56,7 @@ function App() {
         const response = await RandomJolamanContract.methods.getLatestJolamanData().call()
         let metaDataURI = response; 
         const getMetaData = async() => {
-          const response = await axios.get(`https://gateway.pinata.cloud/ipfs/QmZ9QKfGeqLjNjaiHa2tcwsGyRDDUc85ZkoUzMWuPohajc/${metaDataURI}.json`);
+          const response = await axios.get(`https://gateway.pinata.cloud/ipfs/QmQJGKnjHtgBeWRarsBHwK8uY7hsHoPJpuaPezBTrGac7K/${metaDataURI}.json`);
           console.log(response.data)         
         }
         getMetaData();
