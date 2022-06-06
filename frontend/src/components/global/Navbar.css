@@ -7,6 +7,10 @@
     z-index: 20;
 }
 
+.Navbar a:hover {
+    transform: scale(1.2);
+}
+
 .Navbar .leftSide {
     flex: 20%;
     display: flex;
@@ -48,12 +52,32 @@
     width: 200px;
     height: 40px;
     font-size: 16px;
+    background-color: whitesmoke;
+    border: none;
+    border-radius: 30px;
     /* margin-left: 15px; */
 }
 
-/* .Navbar .rightSide .listicon {
+.Navbar .rightSide button:hover {
+    background-color: #021E39;
+    border: 2px solid whitesmoke;
+    color: whitesmoke;
+}
+
+.userInfoBox {
+    position: absolute;
+    right: 50px;
+    top: 75px;
+    width: 200px;
+    height: 100px;
     color: white;
-} */
+    background-color: rgba(2, 30, 57, 0.9);
+    border: 1px solid gray;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
 .Navbar .rightSide #hidden {
     display: flex;

@@ -10,6 +10,7 @@ function Navbar() {
     const dispatch = useDispatch();
 
     const [showLinks, setShowLinks] = useState(false); 
+    const [userInfoCheck, setUserInfoCheck] = useState('none')
     const {account, whiteListCheck} = useSelector(state => state.account)
     console.log("화이트리스트 체크",whiteListCheck)
 
@@ -17,6 +18,15 @@ function Navbar() {
         if(window.klaytn)
         dispatch(connectAccount.getAccount())
         //getAccount();
+    }
+
+    const userInfo = () => {
+        if(userInfoCheck === 'none'){
+            setUserInfoCheck('')
+        }
+        else{
+            setUserInfoCheck('none')
+        }
     }
 
     useEffect(() => {
@@ -39,10 +49,10 @@ function Navbar() {
                     }
                     {
                         account === '' ? <a><button onClick={connectWallet}>Connect Wallet</button></a> 
-                        : <a><button>{account.substr(0,6)}...{account.slice(-6)}</button></a> 
+                        : <a><button onClick={userInfo}>{account.substr(0,6)}...{account.slice(-6)}</button></a> 
                     }
+                    <div className='userInfoBox' style={{display:userInfoCheck}}>Test</div>
                 </div>
-                    {/* <button>open</button> */}
                     <MdReorder className='listicon' size={40} onClick={()=>setShowLinks(!showLinks)}/>
             </div>
 
