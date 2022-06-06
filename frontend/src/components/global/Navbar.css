@@ -1,0 +1,143 @@
+.Navbar {
+    position: fixed;
+    background-color: #021E39;
+    width: 100vw;
+    height: 100px;
+    display: flex;
+    z-index: 20;
+}
+
+.Navbar .leftSide {
+    flex: 20%;
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+}
+
+.Navbar .leftSide a img {
+    width: 90px;
+    height: 130px;
+    display: flex;
+    justify-content: flex-start;
+    margin-left: 50px;
+    
+}
+
+.Navbar .rightSide .links {
+    max-height: 80px;
+    margin-right: 50px;
+}
+
+.Navbar .rightSide .links a{
+    text-decoration: none;
+    color: white;
+    font-size: 30px;
+    margin-left: 15px;
+}
+
+.Navbar .rightSide {
+    flex: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+}
+
+.Navbar .rightSide button {
+    /* display: flex; */
+    width: 200px;
+    height: 40px;
+    font-size: 16px;
+    /* margin-left: 15px; */
+}
+
+/* .Navbar .rightSide .listicon {
+    color: white;
+} */
+
+.Navbar .rightSide #hidden {
+    display: flex;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+.Navbar .rightSide .listicon {
+    display: none;
+    color: white;
+}
+
+/* @media only screen and (max-width: 1200px) {
+    .Navbar .leftSide .links a {
+        font-size: 30px;
+    }
+}  */
+
+/* @media only screen and (max-width: 820px) {
+    .Navbar .rightSide .links a{
+        text-decoration: none;
+        color: white;
+        font-size: 20px;
+        margin-left: 15px;
+    }
+    
+    .Navbar .rightSide button {
+        display: flex;
+        width: 150px;
+        height: 30px;
+        font-size: 13px;
+        margin-left: 15px;
+    }
+} */
+
+
+
+@media only screen and (max-width: 819px) {
+    .Navbar .rightSide .listicon {
+        display: flex;
+    }
+
+    .Navbar .rightSide .links {
+        display: none;
+    }
+
+    .Navbar .rightSide #hidden {
+        position: absolute;
+        left: 0px;
+        top: 80px;
+        height: 230px;
+        max-height: 230px;
+        width: 100%;
+        background-color: #021E39;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .Navbar .rightSide #hidden a{
+        margin: 10px;
+        font-size: 25px;
+        display: flex;
+        justify-content: center;
+    }
+
+
+    .Navbar .rightSide .listicon {
+        cursor:Pointer;
+    }
+
+    /* .Navbar .rightSide button {
+        
+        width: 200px;
+        height: 40px;
+        font-size: 16px;
+        
+    } */
+
+} 
+
+
+
+
+
+
