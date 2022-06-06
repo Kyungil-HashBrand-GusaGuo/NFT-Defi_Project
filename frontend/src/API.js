@@ -6,6 +6,8 @@ import axios from "axios";
 
 
 function App() {
+  
+
   const val = 2;
   const klaytn = 10 ** 18;
   const testAccount = "0x24Cd3020691814062Dfa1310613b426851fe628B"
@@ -36,9 +38,11 @@ function App() {
       getAccount();
     }
   }, []);
+  const API_server_domain = "http://localhost:9495";
 
   const isWhiteList = async() => {
     const response = await RandomJolamanContract.methods.isWhiteList(account).call();
+    // axios.post(AP_server_domain+"/isWhiteList", { account : account});
     setWhitelist(response);
   }
 
