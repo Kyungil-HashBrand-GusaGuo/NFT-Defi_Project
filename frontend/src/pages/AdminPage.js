@@ -2,18 +2,17 @@ import React, { useState } from 'react'
 import './AdminPage.css'
 import { useDispatch, useSelector } from 'react-redux';
 import { BsJournalPlus } from "react-icons/bs";
-import { addWhiteListAccount } from '../redux/action/addWhiteListAccount';
+import { addWhiteListAccount } from '../redux/actions/addWhiteListAccount';
 
 const AdminPage = () => {
   const dispatch = useDispatch();
   const {account} = useSelector(state => state.account);
   const [address, setAddress] = useState();
 
-
-
   const addWhiteList = () => {
-    dispatch(addWhiteListAccount.addWhiteList(account,address))
+    dispatch(addWhiteListAccount.addWhiteList(account, address))
   }
+
 
   const changeAddress = (e) => {
     e.preventDefault();

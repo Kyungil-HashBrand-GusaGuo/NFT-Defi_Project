@@ -4,12 +4,12 @@ let initialState = {
     maxNormalTokenCount : '',
     maxSpecialTokenCount : '',
     normalTokenCount : '',
-    specialTokenCount : ''
+    specialTokenCount : '',
 }
 
 function mintingReducer(state=initialState,action) {
     let {type, payload} = action
-    console.log(payload)
+    // console.log(payload)
 
     switch(type) {
         case "GET_PRE_MINTDATA" :

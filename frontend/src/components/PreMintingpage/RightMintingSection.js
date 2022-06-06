@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import './RightMintingSection.css'
-import { whiteMintingAction } from '../../redux/action/whiteMintingAction';
+import { whiteMintingAction } from '../../redux/actions/whiteMintingAction';
 
 const RightMintingSection = () => {
 
