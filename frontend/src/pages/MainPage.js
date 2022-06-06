@@ -1,11 +1,13 @@
 import React from 'react'
+import './MainPage.css';
+// import Parallax from '../components'
+import Parallax from '../components/MainPage/Parallax'
 
 const MainPage = () => {
     
   return (
-    <div>
-        <h3>Hello NFT-Defi Project!</h3>
-        <h4>Main Page</h4>
+    <div className='mainpagecontainer'>
+        <Parallax/>
     </div>
   )
 }
