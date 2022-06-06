@@ -7,10 +7,6 @@
     z-index: 20;
 }
 
-.Navbar a:hover {
-    transform: scale(1.2);
-}
-
 .Navbar .leftSide {
     flex: 20%;
     display: flex;
@@ -35,8 +31,12 @@
 .Navbar .rightSide .links a{
     text-decoration: none;
     color: white;
-    font-size: 30px;
+    font-size: 25px;
     margin-left: 15px;
+}
+
+.Navbar .rightSide .links a:hover{
+    font-size: 28px;
 }
 
 .Navbar .rightSide {

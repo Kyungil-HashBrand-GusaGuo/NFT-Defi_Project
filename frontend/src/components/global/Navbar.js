@@ -40,18 +40,18 @@ function Navbar() {
             </div>
             <div className='rightSide'>
                 <div className='links' id={showLinks ? "hidden" : ""}>
-                    <a href='/pre-minting'>민팅페이지</a>
-                    <a href='/mypage'>마이페이지</a>
-                    <a href='/admin'>관리자페이지</a>
-                    <a href='/all-minting'>ALL</a>
-                    {
-                        whiteListCheck ? <a>special</a> : null
-                    }
+                    <a href='/pre-minting'>Minting</a>
+                    <a href='/all-minting'>Collection</a>
+                    <a href='/mypage'>Mypage</a>
+                    <a href='/admin'>Admin</a>
                     {
                         account === '' ? <a><button onClick={connectWallet}>Connect Wallet</button></a> 
                         : <a><button onClick={userInfo}>{account.substr(0,6)}...{account.slice(-6)}</button></a> 
                     }
-                    <div className='userInfoBox' style={{display:userInfoCheck}}>Test</div>
+                    {
+                        whiteListCheck ? <div className='userInfoBox' style={{display:userInfoCheck}}>White List</div>
+                        : <div className='userInfoBox' style={{display:userInfoCheck}}>Normal</div>
+                    }
                 </div>
                     <MdReorder className='listicon' size={40} onClick={()=>setShowLinks(!showLinks)}/>
             </div>
