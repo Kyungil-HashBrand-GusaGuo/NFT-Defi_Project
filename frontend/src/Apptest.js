@@ -17,7 +17,6 @@ function App() {
   const [maxSpecial, setMaxSpecial] = useState("");
   const [currentNormal, setCurrentNormal] = useState("");
   const [currentSpecial, setCurrentSpecial] = useState("");
-  const [totalJolData, setTotalJolData] = useState([]);
 
 
 
@@ -127,12 +126,6 @@ function App() {
     setMyTokenId(response);
   }
 
-  // 전체 jolamanData 가져오는 함수
-  const totalJolamanData = async() => {
-    const response = await RandomJolamanContract.methods.getTotalJolamanData(0).call()
-  }
-  
-
   // 보유 klay 조회
 
   const BalanceKlay = async() => {
@@ -164,18 +157,11 @@ function App() {
     setCurrentSpecial(response);
   }
 
-  // 전체 jolamanData 가져오는 함수
-  const totalJolamanData = async() => {
-    const response = await RandomJolamanContract.methods.getTotalJolamanData(0).call()
-    setTotalJolData(response);
-  }
-
   useEffect(() => {
     MAX_NORMAL_TOKEN_COUNT()
     MAX_SPECIAL_TOKEN_COUNT()
     CURRENT_NORMAL_TOKEN_COUNT()
     CURRENT_SPECIAL_TOKEN_COUNT()
-    totalJolamanData()
   },[])
 
 
@@ -195,7 +181,6 @@ function App() {
   console.log(maxSpecial)
   console.log(currentNormal)
   console.log(currentSpecial)
-  console.log(totalJolData);
 
   return (
     <div>

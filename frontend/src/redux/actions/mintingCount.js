@@ -1,5 +1,4 @@
-import { caver, RandomJolamanContract, MINT_CONTRACT_ADDRESS } from "../../caverConfig";
-import axios from "axios";
+import { RandomJolamanContract } from "../../caverConfig";
 
 function mintCount() {
 

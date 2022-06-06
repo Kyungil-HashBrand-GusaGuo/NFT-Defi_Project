@@ -1,16 +1,15 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import './LeftMintingSection.css'
 import { useDispatch, useSelector } from 'react-redux';
-import { mintingAction } from '../../redux/actiion/mintingAction';
+import { preMintingAction } from '../../redux/actions/preMintingAction';
 
 const LeftMintingSection = () => {
 
     const dispatch = useDispatch()
 
     const {account} = useSelector(state => state.account)
-    const {mintdata, maxNormalTokenCount, normalTokenCount} = useSelector(state => state.mintdata)
-    const [test, setTest] = useState(true)
-    console.log("페이지",mintdata)
+    const {premintdata, maxNormalTokenCount, normalTokenCount} = useSelector(state => state.mintdata)
+    console.log("프리민팅 데이터",premintdata)
 
     const [mintingCount , setMintingCount] = useState(0);
 
@@ -24,7 +23,7 @@ const LeftMintingSection = () => {
     }
     
     const minting = () => {
-        dispatch(mintingAction.mintAction(account))
+        dispatch(preMintingAction.preMintAction(account))
         // if(mintdata !== ''){
         //     const checkMinting = async() => {
         //         await alert("민팅완료!") 

@@ -1,11 +1,16 @@
 import React, { useState } from 'react'
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import './RightMintingSection.css'
+import { whiteMintingAction } from '../../redux/actions/whiteMintingAction';
 
 const RightMintingSection = () => {
 
+    const dispatch = useDispatch()
+
+    const {account} = useSelector(state => state.account)
     const [mintingCount , setMintingCount] = useState(0);
-    const {maxSpecialTokenCount, specialTokenCount} = useSelector(state => state.mintdata)
+    const {whitemintdata,maxSpecialTokenCount, specialTokenCount} = useSelector(state => state.mintdata)
+    console.log("화이트민팅 데이터",whitemintdata)
     const mintingCountUp = () => {
         setMintingCount(mintingCount+1)
     }
@@ -13,6 +18,16 @@ const RightMintingSection = () => {
     const mintingCountDown = () => {
         if(mintingCount > 0)
         setMintingCount(mintingCount-1)
+    }
+
+    const minting = () => {
+        dispatch(whiteMintingAction.whiteMintAction(account))
+        // if(mintdata !== ''){
+        //     const checkMinting = async() => {
+        //         await alert("민팅완료!") 
+        //     }
+        //     checkMinting()
+        // }
     }
 
 
@@ -38,7 +53,7 @@ const RightMintingSection = () => {
                     <h3>Count : {specialTokenCount} / {maxSpecialTokenCount}</h3>
                 </div>
                 <div className='rightMintigSectionDetail5'>
-                    <button>Minting</button>
+                    <button onClick={minting}>Minting</button>
                 </div>
             </div>   
         </div>
