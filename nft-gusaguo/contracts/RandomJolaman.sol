@@ -14,8 +14,6 @@ import "@openzeppelin/contracts/utils/Strings.sol";
 // import "@openzeppelin/contracts/utils/Counters.sol";
 
 
-
-
 // 클레이튼 토큰 import 
 // contract '0xce146236fe4e48240cd8f7d22c38c07c7a6bab0b'
 
@@ -47,11 +45,8 @@ contract RandomJolaman is ERC721Enumerable, Ownable, AccessControl {
 
     string public metadataURI; // metadata url public? or private?
 
-
     mapping(uint => bool) public AlreadyMint;
     mapping(uint => bool) public SpecialAlreadyMint;
-    
-
     
     constructor(string memory _metadataURI) ERC721("Jolaman", "JL") {
         _owner = msg.sender;
