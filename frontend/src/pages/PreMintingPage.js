@@ -28,7 +28,7 @@ const PreMintingPage = () => {
         {
           premintdata ==='' ? null : <MintingModal premintdata={premintdata}/>
         }
-                {
+        {
           whitemintdata ==='' ? null : <MintingModal whitemintdata={whitemintdata}/>
         }
     </div>
