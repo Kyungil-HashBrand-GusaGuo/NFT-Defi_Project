@@ -6,11 +6,11 @@ import './MyPage.css'
 
 const MyPage = () => {
 
-  // const { account } = useSelector(state => state.account);
-  // console.log("acccouuunntt", account)
+  const { account } = useSelector(state => state.account);
 
 
-  let account = "0xaC0d580B21118dB9Ea5d752d8950e9C2436575DE";
+
+  // let account = "0xaC0d580B21118dB9Ea5d752d8950e9C2436575DE";
   const [showmint, setShowmint] = useState("");
   const ownedTokenId = async() => {
     const response = await RandomJolamanContract.methods.getTotalOwnedTokens(account).call()
@@ -20,7 +20,7 @@ const MyPage = () => {
 
   useEffect(()=> {
     ownedTokenId();
-  },[])
+  },[account])
 
   return (
     <div className='myPageContainer'>
