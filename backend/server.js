@@ -3,6 +3,10 @@ const app = express();
 const cors = require("cors");
 const router = require("./routes");
 const nunjucks = require("nunjucks");
+const { RandomJolamanContract, MINT_CONTRACT_ADDRESS } = require("./jolamanContract.js");
+
+RandomJolamanContract.methods.MAX_NORMAL_TOKEN_COUNT().call().then(e => console.log(e))
+// await를 안썻으므로 .then() method 사용한것
 
 app.set("view engine", "html");
 nunjucks.configure("views", {

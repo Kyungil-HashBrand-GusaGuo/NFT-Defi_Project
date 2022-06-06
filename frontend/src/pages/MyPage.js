@@ -25,6 +25,9 @@ const MyPage = () => {
   const backtest = async () => {
     await axios.get("http://localhost:9495/test?name=test");
   };
+  const backtest2 = async () => {
+    await axios.post("http://localhost:9495/test", {data:'123'});
+  };
 
   return (
     <div className="myPageContainer">
@@ -55,6 +58,7 @@ const MyPage = () => {
           ))}
       <div>
         <button onClick={backtest}>back</button>
+        <button onClick={backtest2}>back2</button>
       </div>
     </div>
   );
