@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import './LeftMintingSection.css'
 import { useDispatch, useSelector } from 'react-redux';
 import { preMintingAction } from '../../redux/actions/preMintingAction';
+import MintingModal from './MintingModal'
 
 const LeftMintingSection = () => {
 
@@ -45,17 +46,21 @@ const LeftMintingSection = () => {
                         
                     </div>
                 </div>
-                <div className='leftMintigSectionDetail3'>
+                {/* <div className='leftMintigSectionDetail3'>
                     <button className='leftMintigSectionDetail3_button1' onClick={mintingCountDown}> - </button>
                     <button className='leftMintigSectionDetail3_button2'> MINT : {mintingCount} </button>
                     <button className='leftMintigSectionDetail3_button1' onClick={mintingCountUp}> + </button>
-                </div>
+                </div> */}
                 <div className='leftMintigSectionDetail4'>
                     <h3>Price : 2 klay</h3>
                     <h3>Count : {normalTokenCount} / {maxNormalTokenCount}</h3>
                 </div>
                 <div className='leftMintigSectionDetail5'>
                     <button onClick={minting}>Minting</button>
+                    {
+                        premintdata ==='' ? null : premintdata.name
+                    }
+                    {/* <MintingModal/> */}
                 </div>
             </div>   
         </div>
