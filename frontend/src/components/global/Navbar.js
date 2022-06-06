@@ -40,10 +40,10 @@ function Navbar() {
             </div>
             <div className='rightSide'>
                 <div className='links' id={showLinks ? "hidden" : ""}>
-                    <a href='/pre-minting'>Minting</a>
+                    <a href='/pre-minting'>Pre-Minting</a>
                     <a href='/all-minting'>Collection</a>
-                    <a href='/mypage'>Mypage</a>
-                    <a href='/admin'>Admin</a>
+                    <a href='/mypage'>MyPage</a>
+                    <a href='/admin'>AdminPage</a>
                     {
                         account === '' ? <a><button onClick={connectWallet}>Connect Wallet</button></a> 
                         : <a><button onClick={userInfo}>{account.substr(0,6)}...{account.slice(-6)}</button></a> 

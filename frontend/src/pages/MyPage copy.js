@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from 'react'
 // import { MyCardList } from '../components'
-import {RandomJolamanContract} from '../../caverConfig'
-// import { useSelector } from 'react-redux';
-import './MyCardList.css'
-import klayIcon2 from '../../images/klaytn.jpeg'
+import {RandomJolamanContract} from '../caverConfig'
+import { useSelector } from 'react-redux';
+import './MyPage.css'
 
-const MyCardList = () => {
+const MyPage = () => {
 
   // const { account } = useSelector(state => state.account);
   // console.log("acccouuunntt", account)
@@ -24,10 +23,10 @@ const MyCardList = () => {
   },[])
 
   return (
-    <div className='myCardListContainer'>
+    <div className='myPageContainer'>
         { showmint ===""? null : 
         showmint.map((item, index)=>(
-        <div className='cardListContainer'>
+            <div className='cardListContainer'>
             <div className='myNftCard'
              style={{
                 backgroundImage:
@@ -36,30 +35,21 @@ const MyCardList = () => {
                     ")"
             }}
             >
-            </div>
-            <div className='cardtxtContainer'>
-                <div className='cardtxt'>
-                    <div className='cardlisttitle'>
-                        <p>Zolaman nft</p> 
-
-                    </div>
-                    <div className='cardlistname'>
-                        <p>Zola Man #{item}</p>
-                    </div>
+            </div> 
+            <div className='cardlisttxt'>
+                <div className='cardlisttitle'>
+                    <p>Zolaman nft</p>
+                    <p>Zolaman nft </p>
                 </div>
-                <div className='cardtxt'>
-                    <div className='cardlisttitle'>
-                    <p>Price </p>
-                    </div>
-                    <div className='cardlistprice'>
-                        <img className='klayicon' src={klayIcon2}/><p>2.0</p>
-                    </div>
+                <div className='cardlistprice'>
+                    <p>{item}</p>
+                    <p>price</p>
                 </div>
-            </div>
+            </div> 
         </div>
         ))}
     </div>
   )
 }
 
-export default MyCardList
+export default MyPage
