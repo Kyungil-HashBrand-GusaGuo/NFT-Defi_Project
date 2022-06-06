@@ -55,6 +55,9 @@ const LeftMintingSection = () => {
                 </div>
                 <div className='leftMintigSectionDetail5'>
                     <button onClick={minting}>Minting</button>
+                    {
+                        premintdata ==='' ? null : premintdata.name
+                    }
                 </div>
             </div>   
         </div>
