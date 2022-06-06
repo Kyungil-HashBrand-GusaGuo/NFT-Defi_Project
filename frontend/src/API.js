@@ -1,16 +1,20 @@
-import './App.css';
+import "./App.css";
 import { useEffect, useState } from "react";
-import { caver, RandomJolamanContract, MINT_CONTRACT_ADDRESS } from "./caverConfig.js";
+import {
+  caver,
+  RandomJolamanContract,
+  MINT_CONTRACT_ADDRESS,
+} from "./caverConfig.js";
 import axios from "axios";
 
-
+// const server = "http://localhost:9495";
 
 function App() {
   
 
   const val = 2;
   const klaytn = 10 ** 18;
-  const testAccount = "0x24Cd3020691814062Dfa1310613b426851fe628B"
+  const testAccount = "0x24Cd3020691814062Dfa1310613b426851fe628B";
   const [account, setAccount] = useState("");
   const [myBalance, setMyBalance] = useState(0);
   const [Whitelist, setWhitelist] = useState("");
@@ -21,34 +25,32 @@ function App() {
   const [currentSpecial, setCurrentSpecial] = useState("");
   const [totalJolData, setTotalJolData] = useState([]);
 
-
-
-  const getAccount = async() => {
+  const getAccount = async () => {
     try {
       const accounts = await window.klaytn.enable();
       setAccount(accounts[0]);
-    } catch(error) {
+    } catch (error) {
       console.error(error);
-    }  
-  }
-
+    }
+  };
 
   useEffect(() => {
-    if(window.klaytn) {
+    if (window.klaytn) {
       getAccount();
     }
   }, []);
   const API_server_domain = "http://localhost:9495";
 
-  const isWhiteList = async() => {
-    const response = await RandomJolamanContract.methods.isWhiteList(account).call();
-    // axios.post(AP_server_domain+"/isWhiteList", { account : account});
+  // axios.post("server/block/isWhiteList", {"account" : "account"});
+  const isWhiteList = async () => {
+    const response = await RandomJolamanContract.methods
+      .isWhiteList(account)
+      .call();
     setWhitelist(response);
-  }
+  };
 
-
-  // 일반 민팅 
-  const onClickMint = async() => {
+  // 일반 민팅
+  const onClickMint = async () => {
     try {
       const response = await caver.klay.sendTransaction({
         from: account,
@@ -56,23 +58,27 @@ function App() {
         value: caver.utils.convertToPeb(val, "KLAY"),
         gas: "3000000",
         data: RandomJolamanContract.methods.payandMint().encodeABI(),
-      })
-      if(response.status) {
-        const response = await RandomJolamanContract.methods.getLatestJolamanData().call()
-        let metaDataURI = response; 
-        const getMetaData = async() => {
-          const response = await axios.get(`https://gateway.pinata.cloud/ipfs/QmQJGKnjHtgBeWRarsBHwK8uY7hsHoPJpuaPezBTrGac7K/${metaDataURI}.json`);
-          console.log(response.data)         
-        }
+      });
+      if (response.status) {
+        const response = await RandomJolamanContract.methods
+          .getLatestJolamanData()
+          .call();
+        let metaDataURI = response;
+        const getMetaData = async () => {
+          const response = await axios.get(
+            `https://gateway.pinata.cloud/ipfs/QmQJGKnjHtgBeWRarsBHwK8uY7hsHoPJpuaPezBTrGac7K/${metaDataURI}.json`
+          );
+          console.log(response.data);
+        };
         getMetaData();
       }
-    } catch (error){
+    } catch (error) {
       console.error(error);
     }
-  }
+  };
 
   // whiteList 민팅 함수
-  const onClickSpecialMint = async() => {
+  const onClickSpecialMint = async () => {
     try {
       const response = await caver.klay.sendTransaction({
         from: account,
@@ -80,137 +86,163 @@ function App() {
         value: caver.utils.convertToPeb(val, "KLAY"),
         gas: "3000000",
         data: RandomJolamanContract.methods.specialPayandMint().encodeABI(),
-      })
-      if(response.status) {
-        const response = await RandomJolamanContract.methods.getLatestJolamanData().call()
-        let metaDataURI = response; 
-        const getMetaData = async() => {
-          const response = await axios.get(`https://gateway.pinata.cloud/ipfs/QmZ9QKfGeqLjNjaiHa2tcwsGyRDDUc85ZkoUzMWuPohajc/${metaDataURI}.json`);
-          console.log(response.data)         
-        }
+      });
+      if (response.status) {
+        const response = await RandomJolamanContract.methods
+          .getLatestJolamanData()
+          .call();
+        let metaDataURI = response;
+        const getMetaData = async () => {
+          const response = await axios.get(
+            `https://gateway.pinata.cloud/ipfs/QmZ9QKfGeqLjNjaiHa2tcwsGyRDDUc85ZkoUzMWuPohajc/${metaDataURI}.json`
+          );
+          console.log(response.data);
+        };
         getMetaData();
       }
-    } catch (error){
+    } catch (error) {
       console.error(error);
     }
-  }
+  };
 
-// 화이트리스트 추가
-  const onClickaddWhiteList = async() => {
+  // 화이트리스트 추가
+  const onClickaddWhiteList = async () => {
     try {
       const response = await caver.klay.sendTransaction({
         from: account,
         to: MINT_CONTRACT_ADDRESS,
         gas: "3000000",
-        data: RandomJolamanContract.methods.addWhiteList(testAccount).encodeABI(),
+        data: RandomJolamanContract.methods
+          .addWhiteList(testAccount)
+          .encodeABI(),
       });
-      console.log(response)
-    } catch(error) {
+      console.log(response);
+    } catch (error) {
       console.error(error);
     }
-  }
+  };
 
   // 화이트리스트 삭제
-  const onClickRemoveWhiteList = async() => {
+  const onClickRemoveWhiteList = async () => {
     try {
       const response = await caver.klay.sendTransaction({
         from: account,
         to: MINT_CONTRACT_ADDRESS,
         gas: "3000000",
-        data: RandomJolamanContract.methods.removeWhiteList(testAccount).encodeABI(),
+        data: RandomJolamanContract.methods
+          .removeWhiteList(testAccount)
+          .encodeABI(),
       });
-      console.log(response)
-    } catch(error) {
+      console.log(response);
+    } catch (error) {
       console.error(error);
     }
-  }
+  };
 
-  // 보유 토큰 졸라맨 타입 조회 
-  const ownedTokenId = async() => {
-    const response = await RandomJolamanContract.methods.getTotalOwnedTokens(account).call()
+  // 보유 토큰 졸라맨 타입 조회
+  // axios.post("server/block/ownedTokenId", {"account" : "account"});
+  const ownedTokenId = async () => {
+    const response = await RandomJolamanContract.methods
+      .getTotalOwnedTokens(account)
+      .call();
     setMyTokenId(response);
-  }
-
-  // 보유 klay 조회
-
-  const BalanceKlay = async() => {
-    const response = await RandomJolamanContract.methods.getBalance(account).call()
-    setMyBalance(response);
-  }
-
-  // normal Token 총 발행량
-  const MAX_NORMAL_TOKEN_COUNT = async() => {
-    const response = await RandomJolamanContract.methods.MAX_NORMAL_TOKEN_COUNT().call()
-    setMaxNormal(response);
-  }
-
-  // special Token 총 발행량
-  const MAX_SPECIAL_TOKEN_COUNT = async() => {
-    const response = await RandomJolamanContract.methods.MAX_SPECIAL_TOKEN_COUNT().call()
-    setMaxSpecial(response);
-  }
-
-  // 현재 normal Token 발행된 갯수
-  const CURRENT_NORMAL_TOKEN_COUNT = async() => {
-    const response = await RandomJolamanContract.methods._normalTokenIdCount().call()
-    setCurrentNormal(response);
-  }
-
-  // 현재 special Token 발행된 갯수
-  const CURRENT_SPECIAL_TOKEN_COUNT = async() => {
-    const response = await RandomJolamanContract.methods._specialTokenIdCount().call()
-    setCurrentSpecial(response);
-  }
+  };
 
   // 전체 jolamanData 가져오는 함수
-  const totalJolamanData = async() => {
-    const response = await RandomJolamanContract.methods.getTotalJolamanData(0).call()
+  // axios.get("server/block/totalJolamanData");
+  const totalJolamanData = async () => {
+    const response = await RandomJolamanContract.methods
+      .getTotalJolamanData(0)
+      .call();
     setTotalJolData(response);
-  }
+  };
+
+  // 보유 klay 조회
+  // axios.post("server/block/balanceKlay", {"account" : "account"});
+  const BalanceKlay = async () => {
+    const response = await RandomJolamanContract.methods
+      .getBalance(account)
+      .call();
+    setMyBalance(response);
+  };
+
+  // normal Token 총 발행량
+  // axios.get("server/block/normalAll");
+  const MAX_NORMAL_TOKEN_COUNT = async () => {
+    const response = await RandomJolamanContract.methods
+      .MAX_NORMAL_TOKEN_COUNT()
+      .call();
+    setMaxNormal(response);
+  };
+
+  // special Token 총 발행량
+  // axios.get("server/block/specialAll");
+  const MAX_SPECIAL_TOKEN_COUNT = async () => {
+    const response = await RandomJolamanContract.methods
+      .MAX_SPECIAL_TOKEN_COUNT()
+      .call();
+    setMaxSpecial(response);
+  };
+
+  // 현재 normal Token 발행된 갯수
+  // axios.get("server/block/normalCurrent");
+  const CURRENT_NORMAL_TOKEN_COUNT = async () => {
+    const response = await RandomJolamanContract.methods
+      ._normalTokenIdCount()
+      .call();
+    setCurrentNormal(response);
+  };
+
+  // 현재 special Token 발행된 갯수
+  // axios.get("server/block/specialCurrent");
+  const CURRENT_SPECIAL_TOKEN_COUNT = async () => {
+    const response = await RandomJolamanContract.methods
+      ._specialTokenIdCount()
+      .call();
+    setCurrentSpecial(response);
+  };
 
   useEffect(() => {
-    MAX_NORMAL_TOKEN_COUNT()
-    MAX_SPECIAL_TOKEN_COUNT()
-    CURRENT_NORMAL_TOKEN_COUNT()
-    CURRENT_SPECIAL_TOKEN_COUNT()
-    totalJolamanData()
-  },[])
-
+    MAX_NORMAL_TOKEN_COUNT();
+    MAX_SPECIAL_TOKEN_COUNT();
+    CURRENT_NORMAL_TOKEN_COUNT();
+    CURRENT_SPECIAL_TOKEN_COUNT();
+    totalJolamanData();
+  }, []);
 
   useEffect(() => {
     isWhiteList();
     ownedTokenId();
     BalanceKlay();
-  },[account])
+  }, [account]);
 
   const myBalanceForKlay = (myBalance / klaytn).toFixed(3);
 
-  console.log(account)
+  console.log(account);
   console.log(Whitelist);
   console.log(myTokenId);
   console.log(myBalanceForKlay);
-  console.log(maxNormal)
-  console.log(maxSpecial)
-  console.log(currentNormal)
-  console.log(currentSpecial)
+  console.log(maxNormal);
+  console.log(maxSpecial);
+  console.log(currentNormal);
+  console.log(currentSpecial);
   console.log(totalJolData);
 
   return (
     <div>
-    <h2>account : </h2>
-    <br />
-    <h2>{account}</h2>
-    <br />
-    <h2>Balance : </h2>
-    <br />
-    <h2>{myBalanceForKlay} KLAY</h2>
-    <button onClick={onClickMint}>MINT</button>
-    <button onClick={onClickSpecialMint}>SpecialMINT</button>
-    <br />
-    <button onClick={onClickaddWhiteList}>addWhiteList</button>
-    <button onClick={onClickRemoveWhiteList}>RemoveWhiteList</button>
+      <h2>account : </h2>
+      <br />
+      <h2>{account}</h2>
+      <br />
+      <h2>Balance : </h2>
+      <br />
+      <h2>{myBalanceForKlay} KLAY</h2>
+      <button onClick={onClickMint}>MINT</button>
+      <button onClick={onClickSpecialMint}>SpecialMINT</button>
+      <br />
+      <button onClick={onClickaddWhiteList}>addWhiteList</button>
+      <button onClick={onClickRemoveWhiteList}>RemoveWhiteList</button>
     </div>
-    
   );
 }
 

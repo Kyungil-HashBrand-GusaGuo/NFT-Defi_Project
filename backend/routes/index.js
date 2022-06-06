@@ -1,11 +1,11 @@
 const express = require("express");
 const router = express.Router();
-const blockRouter = require("./blockchain");
+const blockRouter = require("./block");
 
 router.get("/", (req, res) => {
   res.render("index");
 });
 
-router.use(blockRouter);
+router.use("/block", blockRouter);
 
 module.exports = router;

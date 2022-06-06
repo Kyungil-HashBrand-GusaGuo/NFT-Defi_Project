@@ -3,7 +3,6 @@ import React, { useState, useEffect } from "react";
 import { RandomJolamanContract } from "../caverConfig";
 import { useSelector } from "react-redux";
 import "./MyPage.css";
-import axios from "axios";
 
 const MyPage = () => {
   const { account } = useSelector((state) => state.account);
@@ -21,13 +20,6 @@ const MyPage = () => {
   useEffect(() => {
     ownedTokenId();
   }, [account]);
-
-  const backtest = async () => {
-    await axios.get("http://localhost:9495/test?name=test");
-  };
-  const backtest2 = async () => {
-    await axios.post("http://localhost:9495/test", {data:'123'});
-  };
 
   return (
     <div className="myPageContainer">
@@ -56,10 +48,6 @@ const MyPage = () => {
               </div>
             </div>
           ))}
-      <div>
-        <button onClick={backtest}>back</button>
-        <button onClick={backtest2}>back2</button>
-      </div>
     </div>
   );
 };
