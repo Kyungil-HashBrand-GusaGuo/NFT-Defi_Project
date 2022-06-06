@@ -89,3 +89,89 @@
     border: 1px solid #193257;
     border-radius: 30px;
 }
+
+@media only screen and (max-width: 1010px) {
+    .rightMintigSectionDetail5 button {
+        width: 350px;
+        height: 40px;
+        font-size: 20px;
+        border: 1px solid #193257;
+        border-radius: 30px;
+    }
+}
+
+@media only screen and (max-width: 710px){
+
+    .rightMintigSectionDetail1 {
+        height: 80px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 15px;
+    }
+    
+    .rightMintigSectionDetail2 {
+        height: 220px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .testImageBox2 {
+        width: 180px;
+        height: 180px;
+        border-radius: 30px;
+        border: 1px solid #193257; 
+        background-image: url("https://gateway.pinata.cloud/ipfs/QmbqfWrFSDF5ieNB792KgwxdXr5AHDDRE8u47MvdaAJrpS/10015.png");
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+    
+
+    .rightMintigSectionDetail3 {
+        height: 100px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .rightMintigSectionDetail3_button1 {
+        width: 30px;
+        height: 30px;
+        border: 1px solid #193257;
+        border-radius: 50%;
+        margin: 30px;
+        font-size: 20px;
+    }
+    
+    .rightMintigSectionDetail3_button2 {
+        width: 100px;
+        height: 40px;
+        color: #193257;
+        background-color: whitesmoke;
+        border: 1px solid #193257;
+        border-radius: 15px;
+        font-size: 15px;
+    }
+
+    .rightMintigSectionDetail4 {
+        height: 100px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .rightMintigSectionDetail4 h3{
+        margin-right: 25px;
+        margin-right: 25px;
+        font-size: 15px;
+    }
+
+    .rightMintigSectionDetail5 button {
+        width: 200px;
+        height: 40px;
+        font-size: 20px;
+        border: 1px solid #193257;
+        border-radius: 30px;
+    }
+}

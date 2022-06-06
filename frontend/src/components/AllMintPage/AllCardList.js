@@ -1,30 +1,23 @@
 import React, { useState, useEffect } from 'react'
-// import { MyCardList } from '../components'
-import {RandomJolamanContract} from '../../caverConfig'
-// import { useSelector } from 'react-redux';
-import './MyCardList.css'
-import klayIcon2 from '../../images/klaytn.jpeg'
-
-const MyCardList = () => {
-
-  // const { account } = useSelector(state => state.account);
-  // console.log("acccouuunntt", account)
+import { RandomJolamanContract } from '../../caverConfig'
+import './AllCardList.css';
+import klayIcon from '../../images/klaytn-klay-logo.png'
 
 
-  let account = "0x249c1Fb7e4815dD56E31EAe33761A53Dd100121F";
-  const [showmint, setShowmint] = useState("");
-  const ownedTokenId = async() => {
-    const response = await RandomJolamanContract.methods.getTotalOwnedTokens(account).call()
+const AllCardList = () => {
+
+    const [showmint, setShowmint] = useState("");
+    const ownedTokenId = async() => {
+    const response = await RandomJolamanContract.methods.getTotalJolamanData(0).call()
     setShowmint(response);
-    console.log("내민팅",response);
+    console.log("모든민팅",response);
   }
 
   useEffect(()=> {
     ownedTokenId();
   },[])
-
   return (
-    <div className='myCardListContainer'>
+    <div className='AllCradListContainer'>
         { showmint ===""? null : 
         showmint.map((item, index)=>(
         <div className='cardListContainer'>
@@ -36,7 +29,7 @@ const MyCardList = () => {
                     ")"
             }}
             >
-            </div>
+            </div> 
             <div className='cardtxtContainer'>
                 <div className='cardtxt'>
                     <div className='cardlisttitle'>
@@ -49,17 +42,17 @@ const MyCardList = () => {
                 </div>
                 <div className='cardtxt'>
                     <div className='cardlisttitle'>
-                    <p>Price </p>
+                    <p>Zolaman nft </p>
                     </div>
                     <div className='cardlistprice'>
-                        <img className='klayicon' src={klayIcon2}/><p>2.0</p>
+                        <img className='klayicon' src={klayIcon}/><p>2.0</p>
                     </div>
                 </div>
-            </div>
+            </div> 
         </div>
         ))}
     </div>
   )
 }
 
-export default MyCardList
+export default AllCardList

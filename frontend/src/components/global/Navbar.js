@@ -30,10 +30,10 @@ function Navbar() {
             </div>
             <div className='rightSide'>
                 <div className='links' id={showLinks ? "hidden" : ""}>
-                    <a href='/pre-minting'>민팅페이지</a>
-                    <a href='/mypage'>마이페이지</a>
-                    <a href='/admin'>관리자페이지</a>
-                    <a href='/all-minting'>ALL</a>
+                    <a href='/pre-minting'>Pre-Minting</a>
+                    <a href='/mypage'>MyPage</a>
+                    <a href='/admin'>AdminPage</a>
+                    <a href='/all-minting'>All</a>
                     {
                         whiteListCheck ? <a>special</a> : null
                     }
