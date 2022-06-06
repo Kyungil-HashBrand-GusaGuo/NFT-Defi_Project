@@ -1,17 +1,14 @@
 import React, { useState, useEffect } from 'react'
 // import { MyCardList } from '../components'
 import {RandomJolamanContract} from '../../caverConfig'
-// import { useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import './MyCardList.css'
 import klayIcon2 from '../../images/klaytn.jpeg'
 
 const MyCardList = () => {
 
-  // const { account } = useSelector(state => state.account);
-  // console.log("acccouuunntt", account)
+  const { account } = useSelector(state => state.account);
 
-
-  let account = "0x249c1Fb7e4815dD56E31EAe33761A53Dd100121F";
   const [showmint, setShowmint] = useState("");
   const ownedTokenId = async() => {
     const response = await RandomJolamanContract.methods.getTotalOwnedTokens(account).call()
@@ -21,7 +18,7 @@ const MyCardList = () => {
 
   useEffect(()=> {
     ownedTokenId();
-  },[])
+  },[account])
 
   return (
     <div className='myCardListContainer'>
