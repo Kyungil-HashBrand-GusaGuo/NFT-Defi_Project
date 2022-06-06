@@ -1,17 +1,15 @@
 import React, { useState } from 'react'
 import './AdminPage.css'
 import { useDispatch, useSelector } from 'react-redux';
-import { BsJournalPlus } from "react-icons/bs";
+import { FiUserPlus, FiUserMinus } from "react-icons/fi";
 import { addWhiteListAccount } from '../redux/actions/addWhiteListAccount';
+import { deleteWhiteListAccount } from '../redux/actions/deleteWhiteListAccount';
 
 const AdminPage = () => {
   const dispatch = useDispatch();
   const {account} = useSelector(state => state.account);
   const [address, setAddress] = useState();
 
-  const addWhiteList = () => {
-    dispatch(addWhiteListAccount.addWhiteList(account, address))
-  }
 
 
   const changeAddress = (e) => {
@@ -20,10 +18,6 @@ const AdminPage = () => {
   }
 
   return (
-    <div className='adminContainer'>
-            <input type="text" className='adminInput' placeholder='Add WhiteList' onChange={changeAddress} />
-            <button type="submit" className='adminButton' onClick={addWhiteList}><BsJournalPlus/></button>
-    </div>
     
   )
 }
