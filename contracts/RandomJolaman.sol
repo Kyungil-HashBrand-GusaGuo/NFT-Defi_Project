@@ -38,11 +38,6 @@ contract RandomJolaman is ERC721Enumerable, Ownable, AccessControl {
 
     string public metadataURI; // metadata url public? or private?
 
-
-    mapping(uint => bool) public AlreadyMint;
-    mapping(uint => bool) public SpecialAlreadyMint;
-    
-
     
     constructor(string memory _metadataURI) ERC721("Jolaman", "JL") {
         _owner = msg.sender;
@@ -65,6 +60,7 @@ contract RandomJolaman is ERC721Enumerable, Ownable, AccessControl {
     mapping(address => bool) public isWhiteList;
     uint[] public latestJolamanData;
     mapping(uint => uint[]) public totalJolamanData;
+    mapping(uint => address) public jolamanTokenTypeOfOwner;
 
 
     // ERC721에서 tokenURI함수를 기본적으로 제공 해 주나 이 프로젝트에서는 그 함수를 프로젝트 취지에 맞춰서 사용
@@ -122,6 +118,7 @@ contract RandomJolaman is ERC721Enumerable, Ownable, AccessControl {
         totalOwnedTokens[msg.sender].push(randomTokenData.jolamanTokenType);
         setLatestJolamanData(randomTokenData.jolamanTokenType);
         totalJolamanData[0].push(randomTokenData.jolamanTokenType);
+        jolamanTokenTypeOfOwner[randomTokenData.jolamanTokenType] = msg.sender;
         _mint(to, tokenId);
     }
 
@@ -148,6 +145,7 @@ contract RandomJolaman is ERC721Enumerable, Ownable, AccessControl {
         totalOwnedTokens[msg.sender].push(randomTokenData.jolamanTokenType);
         totalJolamanData[0].push(randomTokenData.jolamanTokenType);
         setLatestJolamanData(randomTokenData.jolamanTokenType);
+        jolamanTokenTypeOfOwner[randomTokenData.jolamanTokenType] = msg.sender;
         _mint(to, tokenId);
     }
 
@@ -169,7 +167,6 @@ contract RandomJolaman is ERC721Enumerable, Ownable, AccessControl {
         JolamanTokenData memory randomTokenData;
         uint256 _random = uint256(keccak256(abi.encodePacked(normal_token_index, msg.sender, block.timestamp, blockhash(block.number-1))));
         uint newTokenType = getRandTokenType(_random);
-        AlreadyMint[newTokenType] = true;
         randomTokenData.jolamanTokenType = newTokenType;
         return randomTokenData;
 
@@ -178,7 +175,6 @@ contract RandomJolaman is ERC721Enumerable, Ownable, AccessControl {
         JolamanTokenData memory randomTokenData;
         uint256 _random = uint256(keccak256(abi.encodePacked(special_token_index, msg.sender, block.timestamp, blockhash(block.number-1))));
         uint newTokenType = getRandSpecialTokenType(_random);
-        SpecialAlreadyMint[newTokenType] = true;
         randomTokenData.jolamanTokenType = newTokenType;
         return randomTokenData;
     }
@@ -227,14 +223,6 @@ contract RandomJolaman is ERC721Enumerable, Ownable, AccessControl {
         }
     }
 
-    function getCurrent() public view returns (uint, uint, uint, uint) {
-        return (
-            _normalTokenIdCount, 
-            _specialTokenIdCount, 
-            mintingPrice, 
-            totalIncome
-        );
-    }
     function getTotalOwnedTokens(address ownerAddress) public view returns (uint[] memory) {
         return totalOwnedTokens[ownerAddress];
     }
@@ -249,6 +237,9 @@ contract RandomJolaman is ERC721Enumerable, Ownable, AccessControl {
         return totalJolamanData[x];
     }
 
+    function getjolamanTokenTypeOfOwner(uint _jolType) public view returns(address) {
+        return jolamanTokenTypeOfOwner[_jolType];
+    }
 
     // The following functions are overrides required by Solidity.
 
