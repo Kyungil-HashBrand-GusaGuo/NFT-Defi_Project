@@ -45,7 +45,6 @@ const AllCardList = () => {
                 <div className='cardtxt'>
                     <div className='cardlisttitle'>
                         <p>Zolaman nft</p> 
-
                     </div>
                     <div className='cardlistname'>
                         <p>{item.data.name}</p>
