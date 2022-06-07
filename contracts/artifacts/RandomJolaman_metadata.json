@@ -186,25 +186,6 @@
 				"type": "event"
 			},
 			{
-				"inputs": [
-					{
-						"internalType": "uint256",
-						"name": "",
-						"type": "uint256"
-					}
-				],
-				"name": "AlreadyMint",
-				"outputs": [
-					{
-						"internalType": "bool",
-						"name": "",
-						"type": "bool"
-					}
-				],
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
 				"inputs": [],
 				"name": "DEFAULT_ADMIN_ROLE",
 				"outputs": [
@@ -264,25 +245,6 @@
 						"internalType": "bytes32",
 						"name": "",
 						"type": "bytes32"
-					}
-				],
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"inputs": [
-					{
-						"internalType": "uint256",
-						"name": "",
-						"type": "uint256"
-					}
-				],
-				"name": "SpecialAlreadyMint",
-				"outputs": [
-					{
-						"internalType": "bool",
-						"name": "",
-						"type": "bool"
 					}
 				],
 				"stateMutability": "view",
@@ -416,34 +378,6 @@
 				"type": "function"
 			},
 			{
-				"inputs": [],
-				"name": "getCurrent",
-				"outputs": [
-					{
-						"internalType": "uint256",
-						"name": "",
-						"type": "uint256"
-					},
-					{
-						"internalType": "uint256",
-						"name": "",
-						"type": "uint256"
-					},
-					{
-						"internalType": "uint256",
-						"name": "",
-						"type": "uint256"
-					},
-					{
-						"internalType": "uint256",
-						"name": "",
-						"type": "uint256"
-					}
-				],
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
 				"inputs": [
 					{
 						"internalType": "uint256",
@@ -535,6 +469,25 @@
 			{
 				"inputs": [
 					{
+						"internalType": "uint256",
+						"name": "_jolType",
+						"type": "uint256"
+					}
+				],
+				"name": "getjolamanTokenTypeOfOwner",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
 						"internalType": "bytes32",
 						"name": "role",
 						"type": "bytes32"
@@ -612,6 +565,25 @@
 						"internalType": "bool",
 						"name": "",
 						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "jolamanTokenTypeOfOwner",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
 					}
 				],
 				"stateMutability": "view",
@@ -1356,11 +1328,11 @@
 			]
 		},
 		"contracts/RandomJolaman.sol": {
-			"keccak256": "0x2c773309966953f3d26829fca043e38425017ee06670444352d53ee540b1cb80",
+			"keccak256": "0x8ca07771fcc7aaa6b9947881ca2f63d4614a56a0b11c06a19cd4bf8eba7f29f4",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://8074bc57420d1866b9ab24e1a61b6f3c384eacd6fb12cc0fa330f4fffb60cbae",
-				"dweb:/ipfs/QmbepDNpMTHH7oQVubRMDgxtVFhfDNx5oWoRNQE1sW1GoD"
+				"bzz-raw://0e1355cd4961280d562ce2d878f6acbf29fbefc2f38f1832ec10fb0a20f85685",
+				"dweb:/ipfs/QmNZyj9Tevvf1LZu8rWYaDDAiuZ5Loh6V4hWa9ospgHHqm"
 			]
 		}
 	},

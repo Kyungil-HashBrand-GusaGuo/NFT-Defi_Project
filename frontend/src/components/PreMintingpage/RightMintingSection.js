@@ -9,7 +9,7 @@ const RightMintingSection = () => {
 
     const {account} = useSelector(state => state.account)
     const [mintingCount , setMintingCount] = useState(0);
-    const {whitemintdata,maxSpecialTokenCount, specialTokenCount} = useSelector(state => state.mintdata)
+    const {whitemintdata, maxSpecialTokenCount, specialTokenCount} = useSelector(state => state.mintdata)
     console.log("화이트민팅 데이터",whitemintdata)
     const mintingCountUp = () => {
         setMintingCount(mintingCount+1)
@@ -43,11 +43,11 @@ const RightMintingSection = () => {
                         
                     </div>
                 </div>
-                <div className='rightMintigSectionDetail3'>
+                {/* <div className='rightMintigSectionDetail3'>
                     <button className='rightMintigSectionDetail3_button1' onClick={mintingCountDown}> - </button>
                     <button className='rightMintigSectionDetail3_button2'> MINT : {mintingCount} </button>
                     <button className='rightMintigSectionDetail3_button1' onClick={mintingCountUp}> + </button>
-                </div>
+                </div> */}
                 <div className='rightMintigSectionDetail4'>
                     <h3>Price : 2 klay</h3>
                     <h3>Count : {specialTokenCount} / {maxSpecialTokenCount}</h3>
