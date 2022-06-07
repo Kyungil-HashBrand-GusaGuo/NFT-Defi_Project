@@ -4,6 +4,7 @@
     height: 100px;
     display: flex;
     /* position: fixed; */
+    bottom: 0;
 }
 
 .Footer .leftSide {
@@ -15,6 +16,7 @@
 
 .Footer .leftSide a{
     margin-left: 20px;
+    cursor:Pointer;
 }
 
 .Footer .rightSide {

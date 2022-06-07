@@ -1,12 +1,12 @@
 import React from 'react'
-import { MyCardList } from '../components'
+import './MyPage.css'
+import { MyCardList } from '../components';
 
 const MyPage = () => {
+
+
   return (
     <div className='myPageContainer'>
-        <MyCardList/>
-        <MyCardList/>
-        <MyCardList/>
         <MyCardList/>
     </div>
   )

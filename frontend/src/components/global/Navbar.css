@@ -1,9 +1,10 @@
 .Navbar {
     position: fixed;
-    background-color: #021E39;
+    /* background-color: #021E39; */
     width: 100vw;
     height: 100px;
     display: flex;
+    z-index: 20;
 }
 
 .Navbar .leftSide {
@@ -29,9 +30,13 @@
 
 .Navbar .rightSide .links a{
     text-decoration: none;
-    color: white;
-    font-size: 30px;
+    color: black;
+    font-size: 25px;
     margin-left: 15px;
+}
+
+.Navbar .rightSide .links a:hover{
+    font-size: 28px;
 }
 
 .Navbar .rightSide {
@@ -47,12 +52,32 @@
     width: 200px;
     height: 40px;
     font-size: 16px;
+    background-color: whitesmoke;
+    border: none;
+    border-radius: 30px;
     /* margin-left: 15px; */
 }
 
-/* .Navbar .rightSide .listicon {
+.Navbar .rightSide button:hover {
+    background-color: #021E39;
+    border: 2px solid whitesmoke;
+    color: whitesmoke;
+}
+
+.userInfoBox {
+    position: absolute;
+    right: 50px;
+    top: 75px;
+    width: 200px;
+    height: 100px;
     color: white;
-} */
+    background-color: rgba(2, 30, 57, 0.9);
+    border: 1px solid gray;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
 .Navbar .rightSide #hidden {
     display: flex;
@@ -121,9 +146,9 @@ button:hover {
     }
 
 
-    /* .Navbar .rightSide .listicon {
-        
-    } */
+    .Navbar .rightSide .listicon {
+        cursor:Pointer;
+    }
 
     /* .Navbar .rightSide button {
         
