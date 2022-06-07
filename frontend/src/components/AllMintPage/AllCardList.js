@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { RandomJolamanContract } from '../../caverConfig'
 import './AllCardList.css';
 import klayIcon from '../../images/klaytn-klay-logo.png'
+import axios from 'axios';
 
 
 const AllCardList = () => {
@@ -9,8 +10,18 @@ const AllCardList = () => {
     const [showmint, setShowmint] = useState("");
     const ownedTokenId = async() => {
     const response = await RandomJolamanContract.methods.getTotalJolamanData(0).call()
-    setShowmint(response);
     console.log("모든민팅",response);
+
+    let array = []
+
+    for(let i=0; i < response.length; i++){
+        
+        const mintJSON = await axios.get(`https://gateway.pinata.cloud/ipfs/QmQJGKnjHtgBeWRarsBHwK8uY7hsHoPJpuaPezBTrGac7K/${response[i]}.json`)
+        // console.log(mintJSON)
+        // console.log(mintJSON.data.name)
+        array.push(mintJSON)
+    }
+    setShowmint(array);
   }
 
   useEffect(()=> {
@@ -18,14 +29,14 @@ const AllCardList = () => {
   },[])
   return (
     <div className='AllCradListContainer'>
-        { showmint ===""? null : 
-        showmint.slice(0).reverse().map((item, index)=>(
-        <div className='cardListContainer'>
+        { showmint === "" ? null : 
+        showmint.reverse().map((item, index)=>(
+        <div className='cardListContainer' key={index}>
             <div className='myNftCard'
              style={{
                 backgroundImage:
                     "url(" + 
-                    ` https://gateway.pinata.cloud/ipfs/QmbqfWrFSDF5ieNB792KgwxdXr5AHDDRE8u47MvdaAJrpS/${item}.png` + 
+                    `${item.data.image}` + 
                     ")"
             }}
             >
@@ -37,7 +48,7 @@ const AllCardList = () => {
 
                     </div>
                     <div className='cardlistname'>
-                        <p>Zola Man #{item}</p>
+                        <p>{item.data.name}</p>
                     </div>
                 </div>
                 <div className='cardtxt'>
