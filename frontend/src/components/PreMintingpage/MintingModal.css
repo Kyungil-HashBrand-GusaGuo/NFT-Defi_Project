@@ -57,3 +57,66 @@
     border: 2px solid #193257;
     border-radius: 30px;
 }
+
+@media only screen and (max-width: 700px) {
+    .overlay {
+        background-color: rgba(0, 0, 0, 0.7);
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        color: white;
+        display: flex;
+        justify-content: center;
+    }
+    
+    .modalContainer {
+        width: 500px;
+        height: 300px;
+        margin-top: 150px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 2px solid #193257;
+        border-radius: 30px;
+        background-color: whitesmoke;
+    }
+    
+    .mintingImageSection {
+        width: 200px;
+        height: 220px;
+        margin: 15px;
+        border: 2px solid #193257;
+        border-radius: 10px;
+        background-size: contain;
+    }
+    
+    .mintingInfoSection {
+        width: 200px;
+        height: 220px;
+        margin: 15px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid whitesmoke;
+        color: #193257;
+    }
+    
+    .mintingName {
+        margin-bottom: 90px;
+    }
+    
+    .mintingMessage {
+        margin-bottom: 90px;
+    }
+    
+    .modalEndButton {
+        width: 150px;
+        height: 30px;
+        font-size: 15px;
+        color: #193257;
+        border: 2px solid #193257;
+        border-radius: 30px;
+    }
+
+}

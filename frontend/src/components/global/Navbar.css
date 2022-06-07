@@ -1,6 +1,6 @@
 .Navbar {
     position: fixed;
-    background-color: #021E39;
+    /* background-color: #021E39; */
     width: 100vw;
     height: 100px;
     display: flex;
@@ -30,7 +30,7 @@
 
 .Navbar .rightSide .links a{
     text-decoration: none;
-    color: white;
+    color: black;
     font-size: 25px;
     margin-left: 15px;
 }

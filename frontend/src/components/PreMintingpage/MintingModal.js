@@ -3,8 +3,8 @@ import { useNavigate } from 'react-router-dom'
 import "./MintingModal.css"
 
 const MintingModal = ({premintdata, whitemintdata}) => {
-    // console.log('모달 프리', premintdata)
-    // console.log('모달 화이트', whitemintdata)
+    console.log('모달 프리', premintdata)
+    console.log('모달 화이트', whitemintdata)
 
     const navigate = useNavigate();
     const [state, setState] = useState();

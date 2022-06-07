@@ -1,6 +1,6 @@
 import './App.css';
 import { Routes, Route } from 'react-router-dom';
-import { MainPage, PreMintingPage, AdminPage, MyPage, AllMintPage } from './pages';
+import { MainPage, PreMintingPage, AdminPage, MyPage, AllMintPage, TestPage } from './pages';
 import { Navbar, Footer } from './components'
 
 function App() {

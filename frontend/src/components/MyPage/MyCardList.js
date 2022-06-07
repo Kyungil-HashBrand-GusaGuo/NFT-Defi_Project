@@ -7,10 +7,16 @@ import klayIcon2 from '../../images/klaytn.jpeg'
 
 const MyCardList = () => {
 
-  const { account } = useSelector(state => state.account);
+        const name = await axios.get(`https://gateway.pinata.cloud/ipfs/QmQJGKnjHtgBeWRarsBHwK8uY7hsHoPJpuaPezBTrGac7K/${metaDataURI}.json`);
+        console.log( "if문 안",name)
+      }
+    // const { premintdata } = useSelector(state => state.mindata);
+    // console.log ("민트데이터",premintdata)
+    const { account } = useSelector(state => state.account);
+    // console.log(respon)
 
-  const [showmint, setShowmint] = useState("");
-  const ownedTokenId = async() => {
+    const [showmint, setShowmint] = useState("");
+    const ownedTokenId = async() => {
     const response = await RandomJolamanContract.methods.getTotalOwnedTokens(account).call()
     setShowmint(response);
     console.log("내민팅",response);
@@ -23,7 +29,7 @@ const MyCardList = () => {
   return (
     <div className='myCardListContainer'>
         { showmint ===""? null : 
-        showmint.map((item, index)=>(
+        showmint.slice(0).reverse().map((item, index)=>(
         <div className='cardListContainer'>
             <div className='myNftCard'
              style={{
@@ -41,7 +47,7 @@ const MyCardList = () => {
 
                     </div>
                     <div className='cardlistname'>
-                        <p>Zola Man #{item}</p>
+                        <p>{item.name}</p>
                     </div>
                 </div>
                 <div className='cardtxt'>
