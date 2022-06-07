@@ -56,7 +56,7 @@ button {
     transition: transform 150ms cubic-bezier(0, 0, 0.58, 1), box-shadow 150ms cubic-bezier(0, 0, 0.58, 1), -webkit-transform 150ms cubic-bezier(0, 0, 0.58, 1);
   }
   button.learn-more:hover {
-    background: black;
+    background: lightgray;
     -webkit-transform: translate(0, 0.25em);
             transform: translate(0, 0.25em);
   }
@@ -79,10 +79,12 @@ button {
 
 .leftMintigSection {
     width: 500px;
-    height: 600px;
+    height: 570px;
     border: 2px solid black;
     border-radius: 20px;
-    background-color: whitesmoke;
+    background-color: rgba(255, 255, 255, 0.7);
+    box-shadow: 5px 5px 5px 5px rgb(132 81 61 / 35%);
+    margin-left: 200px;
 }
 
 .leftMintigSectionDetail1 {
@@ -97,11 +99,11 @@ button {
 
 .leftMintigSectionDetail1 h2{
     color: whitesmoke;
-    background-color: black;
+    background-color: #272727;
     padding: 15px;
     padding-left: 20px;
     padding-right: 20px;
-    border: 1px solid black;
+    border: 1px solid #272727;
     border-radius: 10px;
 }
 
@@ -121,6 +123,7 @@ button {
     background-image: url("https://gateway.pinata.cloud/ipfs/QmbqfWrFSDF5ieNB792KgwxdXr5AHDDRE8u47MvdaAJrpS/546.png");
     background-size: contain;
     background-repeat: no-repeat;
+    box-shadow: 5px 5px 5px 5px rgb(132 81 61 / 35%);
 }
 
 .leftMintigSectionDetail3 {
@@ -162,6 +165,13 @@ button {
     margin-right: 25px;
 }
 
+.mintKlayicon {
+    width: 17px;
+    height: 17px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
 .leftMintigSectionDetail5 {
     height: 80px;
     padding-top: 40px;
@@ -169,6 +179,7 @@ button {
     justify-content: center;
     align-items: center;
 }
+
 
 
 @media only screen and (max-width: 700px){

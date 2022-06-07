@@ -5,6 +5,9 @@
     height: 100px;
     display: flex;
     z-index: 20;
+    border-bottom: 2px solid #141414;
+    /* box-shadow: 5px 5px rgb(132 81 61 / 35%) */
+    font-weight: bold;
 }
 
 .Navbar .leftSide {
@@ -53,14 +56,14 @@
     height: 40px;
     font-size: 16px;
     background-color: whitesmoke;
-    border: none;
+    border: 1px solid #141414;
     border-radius: 30px;
     /* margin-left: 15px; */
 }
 
 .Navbar .rightSide button:hover {
-    background-color: #021E39;
-    border: 2px solid whitesmoke;
+    background-color: #141414;
+    border: 2px solid #141414;
     color: whitesmoke;
 }
 
@@ -71,7 +74,7 @@
     width: 200px;
     height: 100px;
     color: white;
-    background-color: rgba(2, 30, 57, 0.9);
+    background-color: rgba(14, 14, 14, 0.9);
     border: 1px solid gray;
     border-radius: 10px;
     display: flex;

@@ -2,6 +2,7 @@ import React from 'react'
 import './LeftMintingSection.css'
 import { useDispatch, useSelector } from 'react-redux';
 import { preMintingAction } from '../../redux/actions/preMintingAction';
+import klayIcon from '../../images/klaytn-klay-logo.png'
 
 const LeftMintingSection = () => {
 
@@ -29,7 +30,7 @@ const LeftMintingSection = () => {
                     </div>
                 </div>
                 <div className='leftMintigSectionDetail4'>
-                    <h3>Price : 2 klay</h3>
+                    <h3>Price : <img className='mintKlayicon' src={klayIcon}/> 2.0 klay</h3>
                     <h3>Count : {normalTokenCount} / {maxNormalTokenCount}</h3>
                 </div>
                 <div className='leftMintigSectionDetail5'>

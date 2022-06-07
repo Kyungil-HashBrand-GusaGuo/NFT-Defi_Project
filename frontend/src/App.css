@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kdam+Thmor+Pro&display=swap');
 
 :root {
 	--color-black: #000000;
@@ -39,11 +39,9 @@
  
 
 *{
-    font-family: 'Fjalla One', sans-serif;
-    /* font-family: 'Staatliches', cursive; */
+	font-family: 'Kdam Thmor Pro', sans-serif;
     margin: 0;
     padding: 0;
-	/* background-color: ; */
   	
 }
 
