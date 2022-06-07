@@ -1,12 +1,11 @@
 import { caver, RandomJolamanContract, MINT_CONTRACT_ADDRESS } from "../../caverConfig";
 
-
 function addWhiteList(account, address) {
+  
+  // console.log("해당계정", account)  
+  // console.log("추가계정", address)
 
-    console.log("해당계정", account)  // 정현이코드에선 작동할듯 계정 가져오기때문에
-    console.log("추가계정", address)
-
-    return async (dispatch) => {
+  return async (dispatch) => {
         try {
             const response = await caver.klay.sendTransaction({
               from: account,

@@ -1,11 +1,10 @@
-import React, { useState, useEffect } from 'react'
-// import { MyCardList } from '../components'
-import {RandomJolamanContract} from '../caverConfig'
-import { useSelector } from 'react-redux';
+import React from 'react'
 import './MyPage.css'
+import { MyCardList } from '../components';
 
 const MyPage = () => {
 
+<<<<<<< HEAD
   const { account } = useSelector(state => state.account);
 
 
@@ -21,33 +20,12 @@ const MyPage = () => {
   useEffect(()=> {
     ownedTokenId();
   },[account])
+=======
+>>>>>>> 83aba416c34e5633b4c85608912abd5140abf6d8
 
   return (
     <div className='myPageContainer'>
-        { showmint ===""? null : 
-        showmint.map((item, index)=>(
-            <div className='cardListContainer'>
-            <div className='myNftCard'
-             style={{
-                backgroundImage:
-                    "url(" + 
-                    ` https://gateway.pinata.cloud/ipfs/QmbqfWrFSDF5ieNB792KgwxdXr5AHDDRE8u47MvdaAJrpS/${item}.png` + 
-                    ")"
-            }}
-            >
-            </div> 
-            <div className='cardlisttxt'>
-                <div className='cardlisttitle'>
-                    <p>Zolaman nft</p>
-                    <p>Zolaman nft </p>
-                </div>
-                <div className='cardlistprice'>
-                    <p>{item}</p>
-                    <p>price</p>
-                </div>
-            </div> 
-        </div>
-        ))}
+        <MyCardList/>
     </div>
   )
 }
