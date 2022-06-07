@@ -7,9 +7,9 @@ import klayIcon2 from '../../images/klaytn.jpeg'
 
 const MyCardList = () => {
 
-        const name = await axios.get(`https://gateway.pinata.cloud/ipfs/QmQJGKnjHtgBeWRarsBHwK8uY7hsHoPJpuaPezBTrGac7K/${metaDataURI}.json`);
-        console.log( "if문 안",name)
-      }
+    //     const name = await axios.get(`https://gateway.pinata.cloud/ipfs/QmQJGKnjHtgBeWRarsBHwK8uY7hsHoPJpuaPezBTrGac7K/${metaDataURI}.json`);
+    //     console.log( "if문 안",name)
+    //   }
     // const { premintdata } = useSelector(state => state.mindata);
     // console.log ("민트데이터",premintdata)
     const { account } = useSelector(state => state.account);
