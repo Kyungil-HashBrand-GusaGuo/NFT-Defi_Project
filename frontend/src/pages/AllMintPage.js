@@ -4,7 +4,6 @@ import './AllMintPage.css';
 
 const AllMintPage = () => {
 
-    
 
   return (
     <div className='AllMintPageContainer'>
