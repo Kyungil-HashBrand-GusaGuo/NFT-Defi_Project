@@ -39,6 +39,9 @@
 .cardListContainer .cardtxtContainer {
     width: 320px;
     height: 80px;
+    /* display: flex; */
+    /* justify-content: center;
+    align-items: center; */
 }
 
 .cardListContainer .cardtxtContainer .cardtxt {
@@ -53,13 +56,13 @@
     display: flex;
     justify-content: center;
     align-items: center;
-
+    font-size: 15px;
 }
 .cardListContainer .cardtxtContainer .cardtxt .cardlistname {
     flex: 50%;
     display: flex;
     align-items: center;
-    
+    font-size: 15px;
 }
 
 

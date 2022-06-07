@@ -23,21 +23,21 @@ const Parallax = () => {
         <div className='titlecontainer'>
           <h1 className='maintitle'>ZOLAMAN NFT</h1>
         </div>
+
         <div
-          className="bg bg1"
+          className="mainimg1"
           style={{
             backgroundPositionY: position / 2,
           }}
+          
         >
-          <div>설명그림</div>
         </div>
         <div
-          className="bg bg2"
+          className="mainimg2"
           style={{
             backgroundPositionY: position / -3,
           }}
         >
-          <div>nft</div>
         </div>
         <p
           className="desc"

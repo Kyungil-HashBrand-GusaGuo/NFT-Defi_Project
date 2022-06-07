@@ -45,13 +45,14 @@ function Navbar() {
                     <a href='/mypage'>MyPage</a>
                     <a href='/admin'>AdminPage</a>
                     {
-                        account === '' ? <a><button onClick={connectWallet}>Connect Wallet</button></a> 
-                        : <a><button onClick={userInfo}>{account.substr(0,6)}...{account.slice(-6)}</button></a> 
-                    }
-                    {
                         whiteListCheck ? <div className='userInfoBox' style={{display:userInfoCheck}}>White List</div>
                         : <div className='userInfoBox' style={{display:userInfoCheck}}>Normal</div>
                     }
+                    {
+                        account === '' ? <a><button onClick={connectWallet}>Connect Wallet</button></a> 
+                        : <a><button onClick={userInfo}>{account.substr(0,6)}...{account.slice(-6)}</button></a> 
+                    }
+                    
                 </div>
                     <MdReorder className='listicon' size={40} onClick={()=>setShowLinks(!showLinks)}/>
             </div>

@@ -16,8 +16,8 @@ function whiteMintAction(account) {
             })
             console.log("화이트 if문 전",response)
             if(response.status) {
-                const response = await RandomJolamanContract.methods.getLatestJolamanData().call()
-                let metaDataURI = response; 
+                const response = await RandomJolamanContract.methods.getTotalOwnedTokens(account).call()
+                let metaDataURI = response[response.length-1]; 
                 const getMetaData = async() => {
                 const response = await axios.get(`https://gateway.pinata.cloud/ipfs/QmZ9QKfGeqLjNjaiHa2tcwsGyRDDUc85ZkoUzMWuPohajc/${metaDataURI}.json`);
                 console.log( "if문 안",response.data)
@@ -25,7 +25,6 @@ function whiteMintAction(account) {
               }
               getMetaData();
             }
-
             
 
           } catch (error){

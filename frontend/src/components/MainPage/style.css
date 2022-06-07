@@ -1,11 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Londrina+Solid:wght@300&display=swap');
 
-body,
-html {
+.maincontainer,
+.maincontainer {
 	height: 100%;
 }
 
-body {
+.subcontainer {
 	position: relative;
 	display: grid;
 	overflow: hidden;
@@ -16,12 +16,12 @@ body {
 	background-color: #ffdd40;
 }
 
-body > *,
-body::before {
+.subcontainer > .maincontainer,
+.subcontainer::before {
 	grid-area: body;
 }
 
-body::before {
+.subcontainer::before {
 	content: '';
 	width: 150vmax;
 	height: 150vmax;
@@ -31,7 +31,7 @@ body::before {
 	animation: rotate 20s linear infinite;
 }
 
-body::after {
+.subcontainer::after {
 	content: '';
 	position: absolute;
 	bottom: 0;
@@ -122,9 +122,9 @@ p::after {
 }
 
 @media (prefers-reduced-motion: reduce) {
-	*,
-	*::before,
-	*::after {
+	.maincontainer,
+	.maincontainer::before,
+	.maincontainer::after {
 		animation: none !important;
 	}
 }
