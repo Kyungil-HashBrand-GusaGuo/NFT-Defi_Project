@@ -22,7 +22,7 @@ const PreMintingPage = () => {
         {
             whiteListCheck ? <RightMintingSection/> :
             <div className='whiteListText'>
-                <h1>화이트리스트 민팅 권한이 없습니다.</h1>
+                <h1>None permission to whitelist minting.</h1>
             </div> 
         }
         {

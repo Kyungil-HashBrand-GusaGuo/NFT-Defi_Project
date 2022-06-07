@@ -10,9 +10,9 @@
 .whiteListText {
     width: 50vw;
     height: 79vh;
-    background-color: whitesmoke;
-    color: #193257;
+    color: #141414;
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-right: 200px;
 }
