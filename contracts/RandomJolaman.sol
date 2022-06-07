@@ -13,6 +13,7 @@ import "@openzeppelin/contracts/utils/Strings.sol";
 
 
 
+
 contract RandomJolaman is ERC721Enumerable, Ownable, AccessControl {
     using SafeMath for uint256;
 
@@ -165,7 +166,7 @@ contract RandomJolaman is ERC721Enumerable, Ownable, AccessControl {
     // 랜덤 jolamanTokenType 발행 함수 => jolamanTokenType.toString().json == metadata
     function randomGenerator() private returns (JolamanTokenData memory) {
         JolamanTokenData memory randomTokenData;
-        uint256 _random = uint256(keccak256(abi.encodePacked(normal_token_index, msg.sender, block.timestamp, blockhash(block.number-1))));
+        uint256 _random = uint256(keccak256(abi.encodePacked(block.timestamp, blockhash(block.number-1), normal_token_index, msg.sender)));
         uint newTokenType = getRandTokenType(_random);
         randomTokenData.jolamanTokenType = newTokenType;
         return randomTokenData;
@@ -173,7 +174,7 @@ contract RandomJolaman is ERC721Enumerable, Ownable, AccessControl {
     }
     function specialRandomGenerator() private returns (JolamanTokenData memory) {
         JolamanTokenData memory randomTokenData;
-        uint256 _random = uint256(keccak256(abi.encodePacked(special_token_index, msg.sender, block.timestamp, blockhash(block.number-1))));
+        uint256 _random = uint256(keccak256(abi.encodePacked(block.timestamp, blockhash(block.number-1), special_token_index, msg.sender)));
         uint newTokenType = getRandSpecialTokenType(_random);
         randomTokenData.jolamanTokenType = newTokenType;
         return randomTokenData;

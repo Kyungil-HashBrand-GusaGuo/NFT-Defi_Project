@@ -1328,11 +1328,11 @@
 			]
 		},
 		"contracts/RandomJolaman.sol": {
-			"keccak256": "0xf46714ebe483dc3aa5dfe4e1c04eb371ac159afced898dd796b773f3e7c115e6",
+			"keccak256": "0x8ca07771fcc7aaa6b9947881ca2f63d4614a56a0b11c06a19cd4bf8eba7f29f4",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://9f56cff5a9986343f1d95510d3b0acf42f250cbb2122be96bea920d8712e7db2",
-				"dweb:/ipfs/QmZSQ1Mwo4efDMD7aLs9tgQfYFefQvgCfUS8h8MTogCKug"
+				"bzz-raw://0e1355cd4961280d562ce2d878f6acbf29fbefc2f38f1832ec10fb0a20f85685",
+				"dweb:/ipfs/QmNZyj9Tevvf1LZu8rWYaDDAiuZ5Loh6V4hWa9ospgHHqm"
 			]
 		}
 	},
