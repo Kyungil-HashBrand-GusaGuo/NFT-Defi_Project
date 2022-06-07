@@ -1,0 +1,59 @@
+.overlay {
+    background-color: rgba(0, 0, 0, 0.7);
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    color: white;
+    display: flex;
+    justify-content: center;
+}
+
+.modalContainer {
+    width: 700px;
+    height: 400px;
+    margin-top: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #193257;
+    border-radius: 30px;
+    background-color: whitesmoke;
+}
+
+.mintingImageSection {
+    width: 300px;
+    height: 320px;
+    margin: 15px;
+    border: 2px solid #193257;
+    border-radius: 10px;
+    background-size: contain;
+}
+
+.mintingInfoSection {
+    width: 300px;
+    height: 320px;
+    margin: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid whitesmoke;
+    color: #193257;
+}
+
+.mintingName {
+    margin-bottom: 90px;
+}
+
+.mintingMessage {
+    margin-bottom: 90px;
+}
+
+.modalEndButton {
+    width: 250px;
+    height: 40px;
+    font-size: 20px;
+    color: #193257;
+    border: 2px solid #193257;
+    border-radius: 30px;
+}
