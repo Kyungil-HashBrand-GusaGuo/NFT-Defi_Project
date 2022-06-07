@@ -36,8 +36,8 @@ const MintingModal = ({premintdata, whitemintdata}) => {
           : null
         }
         <div className='mintingInfoSection'>
-          { state != null ? <h1 className='mintingName'>{state.name}</h1> : null }  
-          <h2 className='mintingMessage'>Minting Success !!</h2>
+          { state != null ? <h2 className='mintingName'>{state.name}</h2> : null }  
+          <h3 className='mintingMessage'>Minting Success !!</h3>
           <button className='modalEndButton' onClick={goToMypage}>Go to Mypage</button>
         </div>
       </div>
