@@ -2,6 +2,7 @@ import React from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import './RightMintingSection.css'
 import { whiteMintingAction } from '../../redux/actions/whiteMintingAction';
+import klayIcon from '../../images/klaytn-klay-logo.png'
 
 const RightMintingSection = () => {
 
@@ -22,7 +23,7 @@ const RightMintingSection = () => {
         <div className='rightSideCotainer'>
             <div className='rightMintigSection'>
                 <div className='rightMintigSectionDetail1'>
-                    <h2>화이트리스트 민팅</h2>
+                    <h2>WhiteList Minting</h2>
                 </div>
                 <div className='rightMintigSectionDetail2'>
                     <div className='testImageBox2'>
@@ -31,7 +32,7 @@ const RightMintingSection = () => {
                 </div>
 
                 <div className='rightMintigSectionDetail4'>
-                    <h3>Price : 2 klay</h3>
+                    <h3>Price : <img className='mintKlayicon' src={klayIcon}/> 2.0 klay</h3>
                     <h3>Count : {specialTokenCount} / {maxSpecialTokenCount}</h3>
                 </div>
                 <div className='rightMintigSectionDetail5'>
