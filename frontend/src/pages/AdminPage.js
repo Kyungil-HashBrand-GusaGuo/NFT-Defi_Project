@@ -1,25 +1,21 @@
-import React, { useState } from 'react'
-import './AdminPage.css'
-import { useDispatch, useSelector } from 'react-redux';
+import React, { useState } from "react";
+import "./AdminPage.css";
+import { useDispatch, useSelector } from "react-redux";
 import { FiUserPlus, FiUserMinus } from "react-icons/fi";
-import { addWhiteListAccount } from '../redux/actions/addWhiteListAccount';
-import { deleteWhiteListAccount } from '../redux/actions/deleteWhiteListAccount';
+import { addWhiteListAccount } from "../redux/actions/addWhiteListAccount";
+import { deleteWhiteListAccount } from "../redux/actions/deleteWhiteListAccount";
 
 const AdminPage = () => {
   const dispatch = useDispatch();
-  const {account} = useSelector(state => state.account);
+  const { account } = useSelector((state) => state.account);
   const [address, setAddress] = useState();
-
-
 
   const changeAddress = (e) => {
     e.preventDefault();
     setAddress(e.target.value);
-  }
+  };
 
-  return (
-    
-  )
-}
+  return <div></div>;
+};
 
-export default AdminPage
+export default AdminPage;
