@@ -16,8 +16,8 @@ function preMintAction(account) {
             })
             console.log("if문 전",response)
             if(response.status) {
-              const response = await RandomJolamanContract.methods.getLatestJolamanData().call()
-              let metaDataURI = response; 
+              const response = await RandomJolamanContract.methods.getTotalOwnedTokens(account).call()
+              let metaDataURI = response[response.length-1]; 
               const getMetaData = async() => {
                 const response = await axios.get(`https://gateway.pinata.cloud/ipfs/QmQJGKnjHtgBeWRarsBHwK8uY7hsHoPJpuaPezBTrGac7K/${metaDataURI}.json`);
                 console.log( "if문 안",response.data)
