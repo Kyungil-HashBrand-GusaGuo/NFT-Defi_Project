@@ -1,39 +1,5 @@
 .AllMintPageContainer {
     width: 100%;
     display: flex;
-    flex-direction: row ;
-    flex-wrap: wrap;
-    padding-top: 100px;
-}
-
-.allmintcontainer {
-    margin-top: 100px;
-}
-.cardListContainer {
-    /* display: flex; */
-    width: 320px;
-    height: 440px;
-    border: 2px solid black;
-}
-
-.myNftCard {
-    width: 320px;
-    height: 320px;
-    background-size: contain;
     
-}
-
-.cardListContainer .cardlisttxt {
-    display: flex;
-}
-
-.cardListContainer .cardlisttxt .cardlisttitle {
-    flex: 50%;
-    /* display: flex; */
-}
-
-.cardListContainer .cardlisttxt .cardlistprice {
-    /* display: flex; */
-    flex: 50%;
-    justify-content: flex-end;
 }
