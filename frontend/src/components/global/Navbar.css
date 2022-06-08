@@ -27,8 +27,7 @@
     height: 80px;
     display: flex;
     justify-content: flex-start;
-    margin-left: 50px;
-    
+    margin-left: 50px;    
 }
 
 .Navbar .rightSide .links {
@@ -64,6 +63,7 @@
     border: 1px solid #141414;
     border-radius: 30px;
     /* margin-left: 15px; */
+    box-shadow: 3px 3px 3px 3px rgb(132 81 61 / 35%);
 }
 
 .Navbar .rightSide button:hover {
