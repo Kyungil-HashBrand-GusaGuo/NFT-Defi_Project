@@ -18,7 +18,6 @@
 
 .TeamIntro {
     width: 100%;
-    height: 500px;
     display: flex;
     flex-direction: row ;
     flex-wrap: wrap;
