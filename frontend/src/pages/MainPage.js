@@ -11,7 +11,7 @@ const MainPage = () => {
         <RoadMap/>
         <TeamIntro/>
         <Partners/>
-        <Parallax/>
+        {/* <Parallax/> */}
 
     </div>
   )
