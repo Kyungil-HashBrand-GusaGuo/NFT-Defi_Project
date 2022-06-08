@@ -1,50 +1,16 @@
-@import url('https://fonts.googleapis.com/css2?family=Londrina+Solid:wght@300&display=swap');
-
-.maincontainer,
-.maincontainer {
-	height: 100%;
+.titleContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    padding-top: 100px;
+    margin-bottom: 150px;  
+	height: 600px;
 }
 
-.subcontainer {
-	position: relative;
-	display: grid;
-	overflow: hidden;
-	grid-template: "body";
-	place-content: center;
-	place-items: center;
-	margin: 0;
-	background-color: #ffdd40;
-}
-
-.subcontainer > .maincontainer,
-.subcontainer::before {
-	grid-area: body;
-}
-
-.subcontainer::before {
-	content: '';
-	width: 150vmax;
-	height: 150vmax;
-	opacity: 0.4;
-	background: repeating-conic-gradient(from 0deg, white 0deg 15deg, transparent 15deg 30deg);
-	-webkit-mask-image: radial-gradient(hsla(0 0% 0% / 1), hsla(0 0% 0% / 0) 50%);
-	animation: rotate 20s linear infinite;
-}
-
-.subcontainer::after {
-	content: '';
-	position: absolute;
-	bottom: 0;
-	left: 0;
-	width: 100vw;
-	height: calc(50vh + 1em);
-	background-color: inherit;
-}
-
-p {
+.maintitle {
 	--duration: 1200ms;
 	--text-shadow-color: hsl(0 0% 100%);
-	
+  margin-top: 100px;
 	position: relative;
 	display: inline-block;
 	z-index: 1;
@@ -70,11 +36,11 @@ p {
 	animation: movement var(--duration) cubic-bezier(0.65, 0, 0.35, 1) infinite;
 }
 
-p::after {
+.maintitle::after {
 	--transform: scaleY(-1) translateY(-30%) rotateX(-35deg) scaleY(1.2) translateY(calc(-30% + 2px));
 	--transform-alt: scaleY(-1) translateY(-30%) rotateX(-55deg) scaleY(1.4) translateY(calc(-30% + 2px));
 	
-	content: 'Good Morning Friends' / '';
+	content: 'ZOLAMAN NFT' / '';
 	display: block;
 	position: absolute;
 	top: 0;
@@ -122,9 +88,9 @@ p::after {
 }
 
 @media (prefers-reduced-motion: reduce) {
-	.maincontainer,
-	.maincontainer::before,
-	.maincontainer::after {
+	.maintitle,
+	.maintitle::before,
+	.maintitle::after {
 		animation: none !important;
 	}
 }

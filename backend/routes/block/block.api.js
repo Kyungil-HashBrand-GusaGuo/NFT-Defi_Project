@@ -18,10 +18,10 @@ const isWhiteList = async (req, res) => {
 
 // 보유 토큰 졸라맨 타입 조회
 const ownedTokenId = async (req, res) => {
-  console.log(req.body.account);
+  console.log("확인",req.body.account);
   const result = await setDataContract.methods
     .getTotalOwnedTokens(req.body.account)
-    .call();
+    .call()
   res.json(result);
 };
 
