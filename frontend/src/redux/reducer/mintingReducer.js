@@ -5,6 +5,8 @@ let initialState = {
     maxSpecialTokenCount : '',
     normalTokenCount : '',
     specialTokenCount : '',
+    mymintdata : '',
+    allmintdata : ''
 }
 
 function mintingReducer(state=initialState,action) {
@@ -25,6 +27,12 @@ function mintingReducer(state=initialState,action) {
                 normalTokenCount : payload.normalTokenCount,
                 specialTokenCount : payload.specialTokenCount - 10000
             }
+
+        case "GET_MY_MINTDATA" :
+            return {...state, mymintdata : payload.mymintdata}
+
+        case "GET_ALL_MINTDATA" :
+            return {...state, allmintdata : payload.allmintdata}
 
         default :
             return {...state}
