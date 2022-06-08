@@ -13,7 +13,6 @@ import "@openzeppelin/contracts/utils/Strings.sol";
 
 
 
-
 contract RandomJolaman is ERC721Enumerable, Ownable, AccessControl {
     using SafeMath for uint256;
 
@@ -40,7 +39,7 @@ contract RandomJolaman is ERC721Enumerable, Ownable, AccessControl {
     string public metadataURI; // metadata url public? or private?
 
     
-    constructor(string memory _metadataURI) ERC721("Jolaman", "JL") {
+    constructor(string memory _metadataURI) ERC721("Jolaman", "JLT") {
         _owner = msg.sender;
         metadataURI = _metadataURI;
         totalIncome = 0;
@@ -62,6 +61,8 @@ contract RandomJolaman is ERC721Enumerable, Ownable, AccessControl {
     uint[] public latestJolamanData;
     mapping(uint => uint[]) public totalJolamanData;
     mapping(uint => address) public jolamanTokenTypeOfOwner;
+    mapping(uint => uint) public typeToId;
+    mapping(uint => bool) public AlreadyMint;
 
 
     // ERC721에서 tokenURI함수를 기본적으로 제공 해 주나 이 프로젝트에서는 그 함수를 프로젝트 취지에 맞춰서 사용
@@ -87,14 +88,10 @@ contract RandomJolaman is ERC721Enumerable, Ownable, AccessControl {
         totalOwnedTokens[msg.sender].push(_tokenId);
     }
 
-    function setLatestJolamanData(uint joldata) public{
-        latestJolamanData.push(joldata);
-    }
-
     //   payment는 msg.value 값을 넘겨줘야함
     function payment() public payable returns (bool) {
-        require(checkBalance(), "check balance");
-        require(checkVal(), "check price");
+        require(msg.sender.balance >= msg.value, "check balance");
+        require(mintingPrice == msg.value, "check price");
         (bool success,) = _owner.call{value: msg.value}(""); //owner에게 msg.sender가 msg.value만큼 송금
         // payable(_owner).transfer(value);
         require(success, "Failed to send money");
@@ -114,18 +111,21 @@ contract RandomJolaman is ERC721Enumerable, Ownable, AccessControl {
         _normalTokenIdCount = _normalTokenIdCount.add(1);
         JolamanTokenData memory randomTokenData = randomGenerator();
         mappedJolamanTokenData[tokenId] = JolamanTokenData(randomTokenData.jolamanTokenType);
+        require(AlreadyMint[randomTokenData.jolamanTokenType] == false, "Already Mint");
+        AlreadyMint[randomTokenData.jolamanTokenType] = true;
 
         tokenOwner[tokenId] = to;
         totalOwnedTokens[msg.sender].push(randomTokenData.jolamanTokenType);
-        setLatestJolamanData(randomTokenData.jolamanTokenType);
+        latestJolamanData.push(randomTokenData.jolamanTokenType);
         totalJolamanData[0].push(randomTokenData.jolamanTokenType);
         jolamanTokenTypeOfOwner[randomTokenData.jolamanTokenType] = msg.sender;
+        typeToId[randomTokenData.jolamanTokenType] = tokenId;
         _mint(to, tokenId);
     }
 
     function payandMint() public payable {
-        bool paymentStatus = payment();
-        if (paymentStatus) {
+        // bool paymentStatus = payment();
+        if (payment()) {
             safeMint(msg.sender);
             renounceRole(MINTER_ROLE, msg.sender);
         }
@@ -141,18 +141,21 @@ contract RandomJolaman is ERC721Enumerable, Ownable, AccessControl {
         _specialTokenIdCount = _specialTokenIdCount.add(1);
         JolamanTokenData memory randomTokenData = specialRandomGenerator();
         mappedJolamanTokenData[tokenId] = JolamanTokenData(randomTokenData.jolamanTokenType);
+        require(AlreadyMint[randomTokenData.jolamanTokenType] == false, "Already Mint");
+        AlreadyMint[randomTokenData.jolamanTokenType] = true;
 
         tokenOwner[tokenId] = to;
         totalOwnedTokens[msg.sender].push(randomTokenData.jolamanTokenType);
         totalJolamanData[0].push(randomTokenData.jolamanTokenType);
-        setLatestJolamanData(randomTokenData.jolamanTokenType);
+        latestJolamanData.push(randomTokenData.jolamanTokenType);
         jolamanTokenTypeOfOwner[randomTokenData.jolamanTokenType] = msg.sender;
+        typeToId[randomTokenData.jolamanTokenType] = tokenId;
         _mint(to, tokenId);
     }
 
     function specialPayandMint() public payable {
-        bool paymentStatus = payment();
-        if (paymentStatus) {
+        // bool paymentStatus = payment();
+        if (payment()) {
             safeMintforWhitelist(msg.sender);
             // _revokeRole(SPECIAL_MINTER_ROLE, msg.sender); // removeWhiteList 에서 Revoke하기로함          
         }
@@ -166,7 +169,7 @@ contract RandomJolaman is ERC721Enumerable, Ownable, AccessControl {
     // 랜덤 jolamanTokenType 발행 함수 => jolamanTokenType.toString().json == metadata
     function randomGenerator() private returns (JolamanTokenData memory) {
         JolamanTokenData memory randomTokenData;
-        uint256 _random = uint256(keccak256(abi.encodePacked(block.timestamp, blockhash(block.number-1), normal_token_index, msg.sender)));
+        uint256 _random = uint256(keccak256(abi.encodePacked(normal_token_index, msg.sender, block.timestamp, blockhash(block.number-1))));
         uint newTokenType = getRandTokenType(_random);
         randomTokenData.jolamanTokenType = newTokenType;
         return randomTokenData;
@@ -174,7 +177,7 @@ contract RandomJolaman is ERC721Enumerable, Ownable, AccessControl {
     }
     function specialRandomGenerator() private returns (JolamanTokenData memory) {
         JolamanTokenData memory randomTokenData;
-        uint256 _random = uint256(keccak256(abi.encodePacked(block.timestamp, blockhash(block.number-1), special_token_index, msg.sender)));
+        uint256 _random = uint256(keccak256(abi.encodePacked(special_token_index, msg.sender, block.timestamp, blockhash(block.number-1))));
         uint newTokenType = getRandSpecialTokenType(_random);
         randomTokenData.jolamanTokenType = newTokenType;
         return randomTokenData;
@@ -200,28 +203,13 @@ contract RandomJolaman is ERC721Enumerable, Ownable, AccessControl {
         return id;
     }
 
-    function getBalance(address _to) public view returns (uint256) {
-        return _to.balance;
-    }
-
-    function setMintingPrice(uint64 _price) public {
-        mintingPrice = _price;
+    // function setMintingPrice(uint64 _price) public {
+    //     mintingPrice = _price;
        
-    }
+    // }
 
-    function checkBalance() private view returns (bool) {
-        if (msg.sender.balance < msg.value) {
-            return false;
-        } else {
-            return true;
-        }
-    }
-    function checkVal() private view returns (bool) {
-        if (mintingPrice != msg.value) {
-            return false;
-        } else {
-            return true;
-        }
+    function gettypeToId(uint joldata) public view returns(uint) {
+        return typeToId[joldata];
     }
 
     function getTotalOwnedTokens(address ownerAddress) public view returns (uint[] memory) {

@@ -186,6 +186,25 @@
 				"type": "event"
 			},
 			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "AlreadyMint",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
 				"inputs": [],
 				"name": "DEFAULT_ADMIN_ROLE",
 				"outputs": [
@@ -361,25 +380,6 @@
 			{
 				"inputs": [
 					{
-						"internalType": "address",
-						"name": "_to",
-						"type": "address"
-					}
-				],
-				"name": "getBalance",
-				"outputs": [
-					{
-						"internalType": "uint256",
-						"name": "",
-						"type": "uint256"
-					}
-				],
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"inputs": [
-					{
 						"internalType": "uint256",
 						"name": "_tokenId",
 						"type": "uint256"
@@ -480,6 +480,25 @@
 						"internalType": "address",
 						"name": "",
 						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "joldata",
+						"type": "uint256"
+					}
+				],
+				"name": "gettypeToId",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
 					}
 				],
 				"stateMutability": "view",
@@ -870,32 +889,6 @@
 				"type": "function"
 			},
 			{
-				"inputs": [
-					{
-						"internalType": "uint256",
-						"name": "joldata",
-						"type": "uint256"
-					}
-				],
-				"name": "setLatestJolamanData",
-				"outputs": [],
-				"stateMutability": "nonpayable",
-				"type": "function"
-			},
-			{
-				"inputs": [
-					{
-						"internalType": "uint64",
-						"name": "_price",
-						"type": "uint64"
-					}
-				],
-				"name": "setMintingPrice",
-				"outputs": [],
-				"stateMutability": "nonpayable",
-				"type": "function"
-			},
-			{
 				"inputs": [],
 				"name": "specialPayandMint",
 				"outputs": [],
@@ -1110,6 +1103,25 @@
 				"name": "transferOwnership",
 				"outputs": [],
 				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "typeToId",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
 				"type": "function"
 			}
 		],
@@ -1328,11 +1340,11 @@
 			]
 		},
 		"contracts/RandomJolaman.sol": {
-			"keccak256": "0x8ca07771fcc7aaa6b9947881ca2f63d4614a56a0b11c06a19cd4bf8eba7f29f4",
+			"keccak256": "0xa6397367060f34881e871645d4df49b01a7ff7cc0b24f483df7962da1a5e0d37",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://0e1355cd4961280d562ce2d878f6acbf29fbefc2f38f1832ec10fb0a20f85685",
-				"dweb:/ipfs/QmNZyj9Tevvf1LZu8rWYaDDAiuZ5Loh6V4hWa9ospgHHqm"
+				"bzz-raw://04654ea10eee2565a88a3004b94870771a402a80bfe8afe6ab472923d6ba2ebf",
+				"dweb:/ipfs/QmWpvSbqsWJv4hLpccfiuSYNRFm29RDXNjJW3mtDWpqzgM"
 			]
 		}
 	},
