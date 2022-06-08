@@ -1,5 +1,4 @@
 .rightSideCotainer {
-    width: 50vw;
     height: 100%;
     color: black;
     display: flex;
@@ -29,7 +28,7 @@
     text-transform: uppercase;
     padding: 1.25em 2em;
     background: whitesmoke;
-    border: 2px solid black;
+    border: 0.104vw solid black;
     border-radius: 0.75em;
     -webkit-transform-style: preserve-3d;
             transform-style: preserve-3d;
@@ -69,131 +68,131 @@
             transform: translate(0em, 0.75em);
   }
   button.learn-more:active::before {
-    box-shadow: 0 0 0 2px black, 0 0 black;
+    box-shadow: 0 0 0 0.104vw black, 0 0 black;
     -webkit-transform: translate3d(0, 0, -1em);
             transform: translate3d(0, 0, -1em);
   } */
 
 
 .rightMintigSection {
-    width: 500px;
-    height: 570px;
-    border: 2px solid black;
-    border-radius: 20px;
+    width: 26.042vw;
+    height: 29.688vw;
+    border: 0.104vw solid black;
+    border-radius: 1.042vw;
     background-color: rgba(255, 255, 255);
-    box-shadow: 5px 5px 5px 5px rgb(132 81 61 / 35%);
-    /* margin-right: 200px; */
+    box-shadow: 0.26vw 0.26vw 0.26vw 0.26vw rgb(132 81 61 / 35%);
+    /* margin-right: 10.417vw; */
 }
 
 .rightMintigSectionDetail1 {
-    height: 80px;
+    height: 4.167vw;
     display: flex;
     justify-content: center;
     align-items: center;
     transform:rotate(-3deg);
     position: relative;
-    top: -40px;
+    top: -2.083vw;
 }
 
 .rightMintigSectionDetail1 h2{
     color: whitesmoke;
     background-color: #272727;
-    padding: 15px;
-    padding-left: 20px;
-    padding-right: 20px;
-    border: 1px solid #272727;
-    border-radius: 10px;
+    padding: 0.781vw;
+    padding-left: 1.042vw;
+    padding-right: 1.042vw;
+    border: 0.052vw solid #272727;
+    border-radius: 0.521vw;
 }
 
 .rightMintigSectionDetail2 {
-    height: 220px;
+    height: 11.458vw;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 .testImageBox2 {
-    width: 220px;
-    height: 220px;
-    border-radius: 30px;
-    border: 1px solid black;
+    width: 11.458vw;
+    height: 11.458vw;
+    border-radius: 1.563vw;
+    border: 0.052vw solid black;
     background-color: whitesmoke;
     background-image: url("https://gateway.pinata.cloud/ipfs/QmbqfWrFSDF5ieNB792KgwxdXr5AHDDRE8u47MvdaAJrpS/10015.png");
     background-size: contain;
     background-repeat: no-repeat;
-    box-shadow: 5px 5px 5px 5px rgb(132 81 61 / 35%);
+    box-shadow: 0.26vw 0.26vw 0.26vw 0.26vw rgb(132 81 61 / 35%);
 }
 
 .rightMintigSectionDetail3 {
-    height: 100px;
+    height: 5.208vw;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 /* .leftMintigSectionDetail3_button1 {
-    width: 50px;
-    height: 50px;
-    border: 1px solid whitesmoke;
+    width: 2.604vw;
+    height: 2.604vw;
+    border: 0.052vw solid whitesmoke;
     border-radius: 50%;
-    margin: 50px;
-    font-size: 25px;
+    margin: 2.604vw;
+    font-size: 1.302vw;
 }
 
 .leftMintigSectionDetail3_button2 {
-    width: 150px;
-    height: 50px;
+    width: 7.813vw;
+    height: 2.604vw;
     color: whitesmoke;
     background-color: #193257;
-    border: 1px solid whitesmoke;
-    border-radius: 15px;
-    font-size: 20px;
+    border: 0.052vw solid whitesmoke;
+    border-radius: 0.781vw;
+    font-size: 1.042vw;
 } */
 
 .rightMintigSectionDetail4 {
-    height: 100px;
+    height: 5.208vw;
     display: flex;
     justify-content: center;
     align-items: center;
-    border-bottom:  1px solid black;
+    border-bottom:  0.052vw solid black;
 }
 
 .rightMintigSectionDetail4 h3{
-    margin-left: 25px;
-    margin-right: 25px;
+    margin-left: 1.302vw;
+    margin-right: 1.302vw;
 }
 
 .rightMintigSectionDetail5 {
-    height: 80px;
-    padding-top: 40px;
+    height: 4.167vw;
+    padding-top: 2.083vw;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 
-@media only screen and (max-width: 700px){
+@media only screen and (max-width: 36.458vw){
 
     .rightMintigSectionDetail1 {
-        height: 80px;
+        height: 4.167vw;
         display: flex;
         justify-content: center;
         align-items: center;
-        font-size: 15px;
+        font-size: 0.781vw;
     }
 
     .rightMintigSectionDetail2 {
-        height: 220px;
+        height: 11.458vw;
         display: flex;
         justify-content: center;
         align-items: center;
     }
     
     .testImageBox2 {
-        width: 180px;
-        height: 180px;
-        border-radius: 30px;
-        border: 1px solid white;
+        width: 9.375vw;
+        height: 9.375vw;
+        border-radius: 1.563vw;
+        border: 0.052vw solid white;
         background-color: whitesmoke;
         background-image: url("https://gateway.pinata.cloud/ipfs/QmbqfWrFSDF5ieNB792KgwxdXr5AHDDRE8u47MvdaAJrpS/906.png");
         background-size: contain;
@@ -201,38 +200,38 @@
     }
     
     .rightMintigSectionDetail3 {
-        height: 100px;
+        height: 5.208vw;
         display: flex;
         justify-content: center;
         align-items: center;
     }
     
     .rightMintigSectionDetail4 {
-        height: 100px;
+        height: 5.208vw;
         display: flex;
         justify-content: center;
         align-items: center;
     }
     
     .rightMintigSectionDetail4 h3{
-        margin-left: 25px;
-        margin-right: 25px;
-        font-size: 15px;
+        margin-left: 1.302vw;
+        margin-right: 1.302vw;
+        font-size: 0.781vw;
     }
     
     
 }
 
-@media only screen and (max-width: 547px) {
+@media only screen and (max-width: 28.49vw) {
     .rightMintigSectionDetail4 h3{
-        margin-left: 25px;
-        margin-right: 25px;
-        font-size: 12px;
+        margin-left: 1.302vw;
+        margin-right: 1.302vw;
+        font-size: 0.625vw;
     }
 
     .rightMintigSectionDetail5 .learn-more {
-        width: 100px;
-        height: 50px;
-        font-size: 12px;
+        width: 5.208vw;
+        height: 2.604vw;
+        font-size: 0.625vw;
     }
 }

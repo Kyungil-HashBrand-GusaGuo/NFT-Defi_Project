@@ -34,7 +34,7 @@ const LeftMintingSection = () => {
                     <h3>Count : {normalTokenCount} / {maxNormalTokenCount}</h3>
                 </div>
                 <div className='leftMintigSectionDetail5'>
-                    <button onClick={minting} class="learn-more" >Minting</button>
+                    <button onClick={minting} className="learn-more" >Minting</button>
                 </div>
             </div>   
         </div>
