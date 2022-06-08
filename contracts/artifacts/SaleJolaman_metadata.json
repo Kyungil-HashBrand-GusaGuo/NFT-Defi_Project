@@ -72,6 +72,24 @@
 				"type": "function"
 			},
 			{
+				"inputs": [],
+				"name": "getOnSaleJolamanTypeAndPrice",
+				"outputs": [
+					{
+						"internalType": "uint256[]",
+						"name": "",
+						"type": "uint256[]"
+					},
+					{
+						"internalType": "uint256[]",
+						"name": "",
+						"type": "uint256[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
 				"inputs": [
 					{
 						"internalType": "uint256",
@@ -311,19 +329,19 @@
 			]
 		},
 		"contracts/SaleJolaman.sol": {
-			"keccak256": "0x3e65497b9eefd355bb86ea7a272178ec743d2453232e71217672fb1c378c6bc9",
+			"keccak256": "0x1555ef763205ebb930ea71b40dbdeec2dc72eac62f1b5b75e77abaac38321a05",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://15cc08bddf2380e48d56ee06febfb5eb3898cf68101293bfd70ad0da753e0ffa",
-				"dweb:/ipfs/QmbcQhZPMTNnatxfvzoVMUgCkRoQWgpz9c2pJYvzwpn5ut"
+				"bzz-raw://ecc0dbc0e2530f826da624c0f9d7f31a8e18952f593a53bbadaf74a4dc1ee4ee",
+				"dweb:/ipfs/QmcYmrt46FmNU6Kme9qvU9WV8MHnjgUYBYaUiusAdkmdGr"
 			]
 		},
 		"contracts/SetData.sol": {
-			"keccak256": "0x7e76fc03077f5a20c3b495bfd8a2f28fcd4c19acf165cfa5f10f3c932443075a",
+			"keccak256": "0x7224469c0017e85f14f32c07b4b5b6c68f3dee0e15bcfa881cd4fb712a8a2003",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://2d0ea20f771756909be5eed0d0145c40bca15781e475bf294e3b9a66167998b3",
-				"dweb:/ipfs/QmTKQmCrFy3tpuHTB1YuqYGojooEKu26Ge8PYiJDBF3VJy"
+				"bzz-raw://4ceb5f3e16cfd433475c58b177a36b995f6f22f593f10eb62fbf65633a1ef5de",
+				"dweb:/ipfs/QmePyfc8V71xGgFysgn7GqYzVgM9AcPqwV3eyPzbz95MZd"
 			]
 		}
 	},

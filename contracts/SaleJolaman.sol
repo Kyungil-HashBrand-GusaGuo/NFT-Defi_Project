@@ -56,36 +56,31 @@ contract SaleJolaman {
         SellingJol[_JolamanType] = false;
         sellingJolamanTypeToPrice[_JolamanType] = 0;
         setdata.setJolamanTokenTypeOfOwner(_JolamanType, msg.sender);
-        // for(uint i = 0; i < totalOwnedTokens[tokenOwner[_JolamanType]].length; i++) {
-        //     if(totalOwnedTokens[tokenOwner[_JolamanType]][i] == _JolamanType)
-        //     totalOwnedTokens[tokenOwner[_JolamanType]][i] = totalOwnedTokens[tokenOwner[_JolamanType]][totalOwnedTokens[tokenOwner[_JolamanType]].length - 1];
-        //     totalOwnedTokens[tokenOwner[_JolamanType]].pop();
-        // }
+        setdata.SellOwnedToken(SelltokenOwner, _JolamanType);
         
-        // totalOwnedTokens[msg.sender].push(_JolamanType);
+        setdata.setTotalOwnedTokens(msg.sender, _JolamanType);
 
         popOnSaleToken(_JolamanType);
-        popOnSalePrice(_JolamanType);
     }
 
-    // 판매중인 토큰 배열 제거
+    // 판매시 판매중인 토큰, 가격 배열 제거
     function popOnSaleToken(uint _JolamanType) private {
         for(uint i = 0; i < onSaleJolamanType.length; i++) {
             if(onSaleJolamanType[i] == _JolamanType) {
                 onSaleJolamanType[i] = onSaleJolamanType[onSaleJolamanType.length - 1];
+                onSaleJolamanPrice[i] = onSaleJolamanPrice[onSaleJolamanPrice.length - 1];
                 onSaleJolamanType.pop();
+                onSaleJolamanPrice.pop();
             }
         }
     }
 
-    // 판매중인 토큰 가격 제거    
-    function popOnSalePrice(uint _JolamanType) private {
-        for(uint i = 0; i < onSaleJolamanType.length; i++) {
-            if(onSaleJolamanPrice[i] == _JolamanType) {
-                onSaleJolamanPrice[i] = onSaleJolamanPrice[onSaleJolamanPrice.length - 1];
-                onSaleJolamanPrice.pop();
-            }
-        }
+
+
+    // 판매중인 토큰 배열 조회 함수
+
+    function getOnSaleJolamanTypeAndPrice() public view returns(uint[] memory, uint[] memory) {
+        return (onSaleJolamanType, onSaleJolamanPrice);
     }
 
 }
