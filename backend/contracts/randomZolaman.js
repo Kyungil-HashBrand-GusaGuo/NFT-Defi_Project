@@ -1145,8 +1145,8 @@ const MINT_CONTRACT_ABI = [
 ];
 
 const RandomJolamanContract =
-  MINT_CONTRACT_ABI &&
-  MINT_CONTRACT_ADDRESS &&
+  // MINT_CONTRACT_ABI &&
+  // MINT_CONTRACT_ADDRESS &&
   new caver.klay.Contract(MINT_CONTRACT_ABI, MINT_CONTRACT_ADDRESS);
 
 module.exports = {

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { RandomJolamanContract } from '../../caverConfig'
+import { setDataContract } from '../../caverConfig'
 import './AllCardList.css';
 import klayIcon from '../../images/klaytn-klay-logo.png'
 import axios from 'axios';
@@ -9,7 +9,7 @@ const AllCardList = () => {
 
     const [showmint, setShowmint] = useState("");
     const ownedTokenId = async() => {
-    const response = await RandomJolamanContract.methods.getTotalJolamanData(0).call()
+    const response = await setDataContract.methods.getTotalJolamanData().call()
     console.log("모든민팅",response);
 
     let array = []

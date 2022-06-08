@@ -10,6 +10,6 @@ router.get("/specialCurrent", blockAPI.CURRENT_SPECIAL_TOKEN_COUNT);
 
 router.post("/isWhiteList", blockAPI.isWhiteList);
 router.post("/ownedTokenId", blockAPI.ownedTokenId);
-router.post("/balanceKlay", blockAPI.balanceKlay);
+// router.post("/balanceKlay", blockAPI.balanceKlay);
 
 module.exports = router;
