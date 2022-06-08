@@ -1,4 +1,4 @@
-import { RandomJolamanContract } from "../../caverConfig";
+import { setDataContract } from "../../caverConfig";
 import axios from "axios";
 
 function myMintingAction(account) {
@@ -7,7 +7,7 @@ function myMintingAction(account) {
 
     return async (dispatch) => {
         try {
-            const response =  await RandomJolamanContract.methods.getTotalOwnedTokens(account).call()
+            const response =  await setDataContract.methods.getTotalOwnedTokens(account).call()
             console.log("내민팅" ,response)
 
             // dispatch({type : "GET_MYMINTINGDATA", payload : {response}})
