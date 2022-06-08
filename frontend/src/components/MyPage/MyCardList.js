@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 // import { MyCardList } from '../components'
-import {RandomJolamanContract} from '../../caverConfig'
+import { setDataContract } from '../../caverConfig'
 import { useSelector } from 'react-redux';
 import './MyCardList.css'
 import klayIcon2 from '../../images/klaytn.jpeg'
@@ -13,7 +13,7 @@ const MyCardList = () => {
     const [showmint, setShowmint] = useState("");
 
     const ownedTokenId = async() => {
-    const response = await RandomJolamanContract.methods.getTotalOwnedTokens(account).call()
+    const response = await setDataContract.methods.getTotalOwnedTokens(account).call()
     console.log("내민팅",response);
 
     let array = []

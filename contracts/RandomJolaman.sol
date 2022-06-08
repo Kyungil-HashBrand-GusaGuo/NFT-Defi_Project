@@ -10,10 +10,11 @@ import "@openzeppelin/contracts/access/AccessControl.sol";
 import "@openzeppelin/contracts/utils/math/SafeMath.sol";
 import "@openzeppelin/contracts/utils/Strings.sol";
 
+import "./SetData.sol";
 
 
 
-contract RandomJolaman is ERC721Enumerable, Ownable, AccessControl {
+contract RandomJolaman is ERC721Enumerable, Ownable, AccessControl{
     using SafeMath for uint256;
 
     uint[1000] private normal_token_ids;
@@ -37,11 +38,12 @@ contract RandomJolaman is ERC721Enumerable, Ownable, AccessControl {
     address public _owner;
 
     string public metadataURI; // metadata url public? or private?
-
+    SetData public setdata;
     
-    constructor(string memory _metadataURI) ERC721("Jolaman", "JLT") {
+    constructor(string memory _metadataURI, address _setdata) ERC721("Jolaman", "JLT") {
         _owner = msg.sender;
         metadataURI = _metadataURI;
+        setdata = SetData(_setdata);
         totalIncome = 0;
         _normalTokenIdCount = 0;
         _specialTokenIdCount = 10000;
@@ -52,17 +54,10 @@ contract RandomJolaman is ERC721Enumerable, Ownable, AccessControl {
         uint jolamanTokenType; //일반 1~1000 , special 10000~10019
     }
 
-    // tokenId를 넣으면 그에맞는 rank, type 출력 매핑
+    // tokenId를 넣으면 그에맞는 졸라맨 타입 출력 매핑
     mapping(uint => JolamanTokenData) public mappedJolamanTokenData;
-    // tokenid 넣으면 그에 맞는 address 출력
-    mapping(uint => address) public tokenOwner;
-    mapping(address => uint[]) public totalOwnedTokens;
     mapping(address => bool) public isWhiteList;
-    uint[] public latestJolamanData;
-    mapping(uint => uint[]) public totalJolamanData;
-    mapping(uint => address) public jolamanTokenTypeOfOwner;
-    mapping(uint => uint) public typeToId;
-    mapping(uint => bool) public AlreadyMint;
+    mapping(uint => bool) public AlreadyMint; 
 
 
     // ERC721에서 tokenURI함수를 기본적으로 제공 해 주나 이 프로젝트에서는 그 함수를 프로젝트 취지에 맞춰서 사용
@@ -83,17 +78,12 @@ contract RandomJolaman is ERC721Enumerable, Ownable, AccessControl {
         isWhiteList[_toWhiteList] = false;
         _revokeRole(SPECIAL_MINTER_ROLE, _toWhiteList);
     }
-    function mappingWrap(uint _tokenId, address to) private {
-        tokenOwner[_tokenId] = to;
-        totalOwnedTokens[msg.sender].push(_tokenId);
-    }
 
     //   payment는 msg.value 값을 넘겨줘야함
     function payment() public payable returns (bool) {
         require(msg.sender.balance >= msg.value, "check balance");
         require(mintingPrice == msg.value, "check price");
         (bool success,) = _owner.call{value: msg.value}(""); //owner에게 msg.sender가 msg.value만큼 송금
-        // payable(_owner).transfer(value);
         require(success, "Failed to send money");
 
         totalIncome = totalIncome.add(msg.value);
@@ -114,12 +104,12 @@ contract RandomJolaman is ERC721Enumerable, Ownable, AccessControl {
         require(AlreadyMint[randomTokenData.jolamanTokenType] == false, "Already Mint");
         AlreadyMint[randomTokenData.jolamanTokenType] = true;
 
-        tokenOwner[tokenId] = to;
-        totalOwnedTokens[msg.sender].push(randomTokenData.jolamanTokenType);
-        latestJolamanData.push(randomTokenData.jolamanTokenType);
-        totalJolamanData[0].push(randomTokenData.jolamanTokenType);
-        jolamanTokenTypeOfOwner[randomTokenData.jolamanTokenType] = msg.sender;
-        typeToId[randomTokenData.jolamanTokenType] = tokenId;
+        setdata.setTokenOwner(tokenId, to);
+        setdata.setTotalOwnedTokens(to, randomTokenData.jolamanTokenType);
+        setdata.setTotalJolamanData(randomTokenData.jolamanTokenType);
+
+        setdata.setJolamanTokenTypeOfOwner(randomTokenData.jolamanTokenType, to);
+        setdata.setTypeToId(randomTokenData.jolamanTokenType, tokenId);
         _mint(to, tokenId);
     }
 
@@ -144,20 +134,19 @@ contract RandomJolaman is ERC721Enumerable, Ownable, AccessControl {
         require(AlreadyMint[randomTokenData.jolamanTokenType] == false, "Already Mint");
         AlreadyMint[randomTokenData.jolamanTokenType] = true;
 
-        tokenOwner[tokenId] = to;
-        totalOwnedTokens[msg.sender].push(randomTokenData.jolamanTokenType);
-        totalJolamanData[0].push(randomTokenData.jolamanTokenType);
-        latestJolamanData.push(randomTokenData.jolamanTokenType);
-        jolamanTokenTypeOfOwner[randomTokenData.jolamanTokenType] = msg.sender;
-        typeToId[randomTokenData.jolamanTokenType] = tokenId;
+        setdata.setTokenOwner(tokenId, to);
+        setdata.setTotalOwnedTokens(to, randomTokenData.jolamanTokenType);
+        setdata.setTotalJolamanData(randomTokenData.jolamanTokenType);
+
+        setdata.setJolamanTokenTypeOfOwner(randomTokenData.jolamanTokenType, to);
+        setdata.setTypeToId(randomTokenData.jolamanTokenType, tokenId);
         _mint(to, tokenId);
     }
 
     function specialPayandMint() public payable {
-        // bool paymentStatus = payment();
-        if (payment()) {
-            safeMintforWhitelist(msg.sender);
-            // _revokeRole(SPECIAL_MINTER_ROLE, msg.sender); // removeWhiteList 에서 Revoke하기로함          
+        bool paymentStatus = payment();
+        if (paymentStatus) {
+            safeMintforWhitelist(msg.sender);         
         }
     }
 
@@ -203,31 +192,9 @@ contract RandomJolaman is ERC721Enumerable, Ownable, AccessControl {
         return id;
     }
 
-    // function setMintingPrice(uint64 _price) public {
-    //     mintingPrice = _price;
+    function setMintingPrice(uint64 _price) public {
+        mintingPrice = _price;
        
-    // }
-
-    function gettypeToId(uint joldata) public view returns(uint) {
-        return typeToId[joldata];
-    }
-
-    function getTotalOwnedTokens(address ownerAddress) public view returns (uint[] memory) {
-        return totalOwnedTokens[ownerAddress];
-    }
-
-    // 민팅시 마지막 졸라맨 데이터 받아오는 함수
-
-    function getLatestJolamanData() public view returns (uint) {
-        return latestJolamanData[latestJolamanData.length - 1];
-    }
-
-    function getTotalJolamanData(uint x) public view returns(uint[] memory) {
-        return totalJolamanData[x];
-    }
-
-    function getjolamanTokenTypeOfOwner(uint _jolType) public view returns(address) {
-        return jolamanTokenTypeOfOwner[_jolType];
     }
 
     // The following functions are overrides required by Solidity.

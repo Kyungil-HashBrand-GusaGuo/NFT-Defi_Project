@@ -1,4 +1,4 @@
-import { caver, RandomJolamanContract, MINT_CONTRACT_ADDRESS } from "../../caverConfig";
+import { caver, RandomJolamanContract, MINT_CONTRACT_ADDRESS, setDataContract } from "../../caverConfig";
 import axios from "axios";
 
 function whiteMintAction(account) {
@@ -16,7 +16,7 @@ function whiteMintAction(account) {
             })
             console.log("화이트 if문 전",response)
             if(response.status) {
-                const response = await RandomJolamanContract.methods.getTotalOwnedTokens(account).call()
+                const response = await setDataContract.methods.getTotalOwnedTokens(account).call()
                 let metaDataURI = response[response.length-1]; 
                 const getMetaData = async() => {
                 const response = await axios.get(`https://gateway.pinata.cloud/ipfs/QmZ9QKfGeqLjNjaiHa2tcwsGyRDDUc85ZkoUzMWuPohajc/${metaDataURI}.json`);

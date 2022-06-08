@@ -2,15 +2,18 @@
 pragma solidity ^0.8.4;
 
 import "./RandomJolaman.sol";
+import "./SetData.sol";
 
-contract SaleJolaman is RandomJolaman {
-    // // RandomJolaman public randomJolaman;
+contract SaleJolaman {
+    RandomJolaman public randomJolaman;
+    SetData public setdata;
 
-    // // constructor (address _randomJolaman) {
-    // //     randomJolaman = RandomJolaman(_randomJolaman);
-    // // }
+    constructor (address _setdata, address _randomJolaman) {
+        setdata = SetData(_setdata);
+        randomJolaman = RandomJolaman(_randomJolaman);
+    }
 
-    
+
 
     // 졸라맨 타입 입력 판매 중 여부 확인 매핑
     mapping(uint => bool) public SellingJol;
@@ -24,12 +27,12 @@ contract SaleJolaman is RandomJolaman {
     // 판매 등록 함수
     function SellJolamanToken(uint _JolamanType, uint _price) public {
         
-    address SelltokenOwner = jolamanTokenTypeOfOwner[_JolamanType];
+    address SelltokenOwner = setdata.getJolamanTokenTypeOfOnwer(_JolamanType);
 
     require(SelltokenOwner == msg.sender, "Caller is not TokenOwner.");
     require(_price > 0, "Price is greater than 0.");
     require(SellingJol[_JolamanType] == false, "This token is already on sale.");
-    require(isApprovedForAll(msg.sender, address(this)), "token onwer did not approve token.");
+    require(randomJolaman.isApprovedForAll(msg.sender, address(this)), "token onwer did not approve token.");
 
 
     sellingJolamanTypeToPrice[_JolamanType] = _price;
@@ -41,25 +44,25 @@ contract SaleJolaman is RandomJolaman {
     // 구매 함수
 
     function buyJolamanToken(uint _JolamanType) public payable {
-        address SelltokenOwner = jolamanTokenTypeOfOwner[_JolamanType];
+        address SelltokenOwner = setdata.getJolamanTokenTypeOfOnwer(_JolamanType);
 
         require(SelltokenOwner != msg.sender, "Caller is token owner.");
         require(SellingJol[_JolamanType] == true, "This token not sale.");
         require(sellingJolamanTypeToPrice[_JolamanType] == msg.value, "Caller sent lower than price.");
         
         payable(SelltokenOwner).transfer(msg.value);
-        safeTransferFrom(SelltokenOwner, msg.sender, gettypeToId(_JolamanType));
+        randomJolaman.safeTransferFrom(SelltokenOwner, msg.sender, setdata.gettypeToId(_JolamanType));
 
         SellingJol[_JolamanType] = false;
         sellingJolamanTypeToPrice[_JolamanType] = 0;
-        jolamanTokenTypeOfOwner[_JolamanType] = msg.sender;
-        for(uint i = 0; i < totalOwnedTokens[tokenOwner[_JolamanType]].length; i++) {
-            if(totalOwnedTokens[tokenOwner[_JolamanType]][i] == _JolamanType)
-            totalOwnedTokens[tokenOwner[_JolamanType]][i] = totalOwnedTokens[tokenOwner[_JolamanType]][totalOwnedTokens[tokenOwner[_JolamanType]].length - 1];
-            totalOwnedTokens[tokenOwner[_JolamanType]].pop();
-        }
+        setdata.setJolamanTokenTypeOfOwner(_JolamanType, msg.sender);
+        // for(uint i = 0; i < totalOwnedTokens[tokenOwner[_JolamanType]].length; i++) {
+        //     if(totalOwnedTokens[tokenOwner[_JolamanType]][i] == _JolamanType)
+        //     totalOwnedTokens[tokenOwner[_JolamanType]][i] = totalOwnedTokens[tokenOwner[_JolamanType]][totalOwnedTokens[tokenOwner[_JolamanType]].length - 1];
+        //     totalOwnedTokens[tokenOwner[_JolamanType]].pop();
+        // }
         
-        totalOwnedTokens[msg.sender].push(_JolamanType);
+        // totalOwnedTokens[msg.sender].push(_JolamanType);
 
         popOnSaleToken(_JolamanType);
         popOnSalePrice(_JolamanType);

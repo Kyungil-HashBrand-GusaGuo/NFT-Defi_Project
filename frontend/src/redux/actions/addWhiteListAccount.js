@@ -6,10 +6,6 @@ function addWhiteList(account, address) {
   // console.log("추가계정", address)
 
   return async (dispatch) => {
-<<<<<<< HEAD
-=======
-
->>>>>>> f618f296a5494d89ed15f0bfe92c23fbe9074f4b
         try {
             const response = await caver.klay.sendTransaction({
               from: account,
