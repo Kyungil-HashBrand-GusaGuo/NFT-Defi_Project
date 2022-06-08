@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react'
 import './AllCardList.css';
-import klayIcon from '../../images/klaytn-klay-logo.png'
 import { useDispatch, useSelector } from 'react-redux';
 import { collectionAction } from '../../redux/actions/collectionAction';
+import klayIcon2 from '../../images/klaytn.jpeg'
 
 const AllCardList = () => {
 
@@ -42,7 +42,7 @@ const AllCardList = () => {
                     <p>Price </p>
                     </div>
                     <div className='cardlistprice'>
-                        <img className='klayicon' src={klayIcon}/><p>2.0</p>
+                        <img className='klayicon' src={klayIcon2}/><p>2.0</p>
                     </div>
                 </div>
             </div> 

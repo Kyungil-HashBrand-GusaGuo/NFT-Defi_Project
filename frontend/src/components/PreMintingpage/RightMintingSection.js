@@ -2,7 +2,7 @@ import React from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import './RightMintingSection.css'
 import { whiteMintingAction } from '../../redux/actions/whiteMintingAction';
-import klayIcon from '../../images/klaytn-klay-logo.png'
+import klayIcon from '../../images/klaytn.png'
 
 const RightMintingSection = () => {
 
