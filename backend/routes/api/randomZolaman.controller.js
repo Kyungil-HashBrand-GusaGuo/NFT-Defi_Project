@@ -3,31 +3,11 @@ const {
   MINT_CONTRACT_ADDRESS,
 } = require("../../contracts/randomZolaman");
 
-const {
-  setDataContract,
-  DATA_CONTRACT_ADDRESS,
-} = require("../../contracts/setData");
-
 // 화이트리스트 체크
 const isWhiteList = async (req, res) => {
   const result = await RandomJolamanContract.methods
     .isWhiteList(req.body.account)
     .call();
-  res.json(result);
-};
-
-// 보유 토큰 졸라맨 타입 조회
-const ownedTokenId = async (req, res) => {
-  console.log(req.body.account);
-  const result = await setDataContract.methods
-    .getTotalOwnedTokens(req.body.account)
-    .call();
-  res.json(result);
-};
-
-// 전체 jolamanData 가져오는 함수
-const totalJolamanData = async (req, res) => {
-  const result = await setDataContract.methods.getTotalJolamanData().call();
   res.json(result);
 };
 
@@ -65,8 +45,6 @@ const CURRENT_SPECIAL_TOKEN_COUNT = async (req, res) => {
 
 module.exports = {
   isWhiteList,
-  ownedTokenId,
-  totalJolamanData,
   MAX_NORMAL_TOKEN_COUNT,
   MAX_SPECIAL_TOKEN_COUNT,
   CURRENT_NORMAL_TOKEN_COUNT,
