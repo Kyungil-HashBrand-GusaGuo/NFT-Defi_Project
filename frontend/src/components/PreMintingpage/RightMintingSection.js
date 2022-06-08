@@ -36,7 +36,7 @@ const RightMintingSection = () => {
                     <h3>Count : {specialTokenCount} / {maxSpecialTokenCount}</h3>
                 </div>
                 <div className='rightMintigSectionDetail5'>
-                    <button onClick={minting} class="learn-more">Minting</button>
+                    <button onClick={minting} className="learn-more">Minting</button>
                 </div>
             </div>   
         </div>
