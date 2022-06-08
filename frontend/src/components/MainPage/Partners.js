@@ -5,13 +5,17 @@ import './Partners.css'
 
 const Partners = () => {
   return (
-    <div className='partnersContainer'>
-        <div className='headSection'>Partners</div>
-        <div className='logoSection'>
-          <div className='partnerLogo' style={{backgroundImage:"url(" + logo_DCcomics + ")"}}></div>
-          <div className='partnerLogo' style={{backgroundImage:"url(" + logo_Marvel + ")"}}></div>
-          <div className='partnerLogo' style={{backgroundImage:"url(" + logo_Diseny + ")"}}></div>
-          <div className='partnerLogo' style={{backgroundImage:"url(" + logo_PolaBear + ")"}}></div>
+    <div className='partnerContainer'>
+        <div className='partnerTitle'>
+            <span >Partners</span>
+        </div>
+        <div className='partnerslogofContainer'>
+            <div className='logoSection'>
+              <div className='partnerLogo' style={{backgroundImage:"url(" + logo_DCcomics + ")"}}></div>
+              <div className='partnerLogo' style={{backgroundImage:"url(" + logo_Marvel + ")"}}></div>
+              <div className='partnerLogo' style={{backgroundImage:"url(" + logo_Diseny + ")"}}></div>
+              <div className='partnerLogo' style={{backgroundImage:"url(" + logo_PolaBear + ")"}}></div>
+            </div>
         </div>
     </div>
   )
