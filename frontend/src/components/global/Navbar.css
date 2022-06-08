@@ -8,6 +8,11 @@
     border-bottom: 2px solid #141414;
     /* box-shadow: 5px 5px rgb(132 81 61 / 35%) */
     font-weight: bold;
+    background-color: var(--color-yellow);
+	background-image: radial-gradient(var(--color-dark-yellow) 20%, transparent 0), radial-gradient(var(--color-dark-yellow) 20%, transparent 0);
+	background-size: 20px 20px;
+	background-position: 0 0, 10px 10px;
+    box-shadow: 4px 4px 4px 4px rgb(132 81 61 / 35%);
 }
 
 .Navbar .leftSide {
@@ -18,8 +23,8 @@
 }
 
 .Navbar .leftSide a img {
-    width: 90px;
-    height: 130px;
+    width: 80px;
+    height: 80px;
     display: flex;
     justify-content: flex-start;
     margin-left: 50px;
