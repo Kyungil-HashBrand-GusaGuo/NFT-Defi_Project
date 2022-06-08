@@ -8,8 +8,7 @@
 
 
 .whiteListText {
-    width: 960px;
-    height: 79vh;
+    height: calc(100vh - 10.417vw);
     color: #141414;
     display: flex;
     justify-content: center;
