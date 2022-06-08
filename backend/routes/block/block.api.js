@@ -3,6 +3,7 @@ const {
   MINT_CONTRACT_ADDRESS,
 } = require("../../contracts/jolamanContract");
 
+//
 const isWhiteList = async (req, res) => {
   const result = await RandomJolamanContract.methods
     .isWhiteList(req.body.account)
