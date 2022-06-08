@@ -1,36 +1,23 @@
-import React, { useState, useEffect } from 'react'
-import { RandomJolamanContract } from '../../caverConfig'
+import React, { useEffect } from 'react'
 import './AllCardList.css';
+import { useDispatch, useSelector } from 'react-redux';
+import { collectionAction } from '../../redux/actions/collectionAction';
 import klayIcon2 from '../../images/klaytn.jpeg'
-import axios from 'axios';
-
 
 const AllCardList = () => {
 
-    const [showmint, setShowmint] = useState("");
-    const ownedTokenId = async() => {
-    const response = await RandomJolamanContract.methods.getTotalJolamanData(0).call()
-    console.log("모든민팅",response);
+    const dispatch = useDispatch()
 
-    let array = []
+    const { allmintdata } = useSelector(state => state.mintdata)
 
-    for(let i=0; i < response.length; i++){
-        
-        const mintJSON = await axios.get(`https://gateway.pinata.cloud/ipfs/QmQJGKnjHtgBeWRarsBHwK8uY7hsHoPJpuaPezBTrGac7K/${response[i]}.json`)
-        // console.log(mintJSON)
-        // console.log(mintJSON.data.name)
-        array.push(mintJSON)
-    }
-    setShowmint(array);
-  }
 
   useEffect(()=> {
-    ownedTokenId();
+    dispatch(collectionAction.collectionAct())
   },[])
   return (
     <div className='AllCradListContainer'>
-        { showmint === "" ? null : 
-        showmint.reverse().map((item, index)=>(
+        { allmintdata === "" ? null : 
+        allmintdata.reverse().map((item, index)=>(
         <div className='cardListContainer' key={index}>
             <div className='myNftCard'
              style={{
