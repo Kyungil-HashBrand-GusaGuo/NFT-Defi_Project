@@ -1,18 +1,17 @@
 .mintingContainer {
-    display: flex;
-    width: 100%;
-    height: calc(100vh - 10.417vw);
-    padding-top: 5.208vw;
-    justify-content: space-around;    
+  display: flex;
+  width: 100%;
+  height: calc(100vh - 10.417vw);
+  padding-top: 5.208vw;
+  justify-content: space-around;
 }
 
-
 .whiteListText {
-    width: 960px;
-    height: 79vh;
-    color: #141414;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-right: 10.417vw;
+  width: 960px;
+  height: 79vh;
+  color: #141414;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 10.417vw;
 }
