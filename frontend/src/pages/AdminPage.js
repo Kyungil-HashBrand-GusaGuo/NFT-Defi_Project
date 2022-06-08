@@ -34,7 +34,6 @@ const AdminPage = () => {
               <button type="submit" className='adminButton' onClick={deleteWhiteList}><FiUserMinus/></button>
         </div>
     </div>
-    
   )
 }
 

@@ -120,7 +120,7 @@ function App() {
     }
   }
 
-  // 보유 토큰 졸라맨 타입 조회 
+  // 보유 토큰 졸라맨 타입 조회  account
   const ownedTokenId = async() => {
     const response = await RandomJolamanContract.methods.getTotalOwnedTokens(account).call()
     setMyTokenId(response);

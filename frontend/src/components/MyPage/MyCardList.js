@@ -1,19 +1,31 @@
 import React, { useState, useEffect } from 'react'
 // import { MyCardList } from '../components'
-import {RandomJolamanContract} from '../../caverConfig'
+import { setDataContract } from '../../caverConfig'
 import { useSelector } from 'react-redux';
 import './MyCardList.css'
 import klayIcon2 from '../../images/klaytn.jpeg'
+import axios from 'axios';
 
 const MyCardList = () => {
 
-  const { account } = useSelector(state => state.account);
+    const { account } = useSelector(state => state.account);
 
-  const [showmint, setShowmint] = useState("");
-  const ownedTokenId = async() => {
-    const response = await RandomJolamanContract.methods.getTotalOwnedTokens(account).call()
-    setShowmint(response);
+    const [showmint, setShowmint] = useState("");
+
+    const ownedTokenId = async() => {
+    const response = await setDataContract.methods.getTotalOwnedTokens(account).call()
     console.log("내민팅",response);
+
+    let array = []
+
+    for(let i=0; i < response.length; i++){
+        
+        const mintJSON = await axios.get(`https://gateway.pinata.cloud/ipfs/QmQJGKnjHtgBeWRarsBHwK8uY7hsHoPJpuaPezBTrGac7K/${response[i]}.json`)
+        // console.log(mintJSON)
+        // console.log(mintJSON.data.name)
+        array.push(mintJSON)
+    }
+    setShowmint(array);
   }
 
   useEffect(()=> {
@@ -22,14 +34,15 @@ const MyCardList = () => {
 
   return (
     <div className='myCardListContainer'>
-        { showmint ===""? null : 
-        showmint.map((item, index)=>(
-        <div className='cardListContainer'>
+        { showmint === "" ? null : 
+        //.slice(0).reverse()
+        showmint.reverse().map((item, index)=>(
+        <div className='cardListContainer' key={index}>
             <div className='myNftCard'
              style={{
-                backgroundImage:
+                backgroundImage: 
                     "url(" + 
-                    ` https://gateway.pinata.cloud/ipfs/QmbqfWrFSDF5ieNB792KgwxdXr5AHDDRE8u47MvdaAJrpS/${item}.png` + 
+                    `${item.data.image}` + 
                     ")"
             }}
             >
@@ -41,7 +54,7 @@ const MyCardList = () => {
 
                     </div>
                     <div className='cardlistname'>
-                        <p>Zola Man #{item}</p>
+                        <p>{item.data.name}</p>
                     </div>
                 </div>
                 <div className='cardtxt'>

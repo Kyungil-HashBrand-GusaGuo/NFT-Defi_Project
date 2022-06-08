@@ -11,6 +11,11 @@
 						"internalType": "string",
 						"name": "_metadataURI",
 						"type": "string"
+					},
+					{
+						"internalType": "address",
+						"name": "_setdata",
+						"type": "address"
 					}
 				],
 				"stateMutability": "nonpayable",
@@ -184,6 +189,25 @@
 				],
 				"name": "Transfer",
 				"type": "event"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "AlreadyMint",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
 			},
 			{
 				"inputs": [],
@@ -361,44 +385,12 @@
 			{
 				"inputs": [
 					{
-						"internalType": "address",
-						"name": "_to",
-						"type": "address"
-					}
-				],
-				"name": "getBalance",
-				"outputs": [
-					{
-						"internalType": "uint256",
-						"name": "",
-						"type": "uint256"
-					}
-				],
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"inputs": [
-					{
 						"internalType": "uint256",
 						"name": "_tokenId",
 						"type": "uint256"
 					}
 				],
 				"name": "getJolamanTokenType",
-				"outputs": [
-					{
-						"internalType": "uint256",
-						"name": "",
-						"type": "uint256"
-					}
-				],
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"inputs": [],
-				"name": "getLatestJolamanData",
 				"outputs": [
 					{
 						"internalType": "uint256",
@@ -423,63 +415,6 @@
 						"internalType": "bytes32",
 						"name": "",
 						"type": "bytes32"
-					}
-				],
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"inputs": [
-					{
-						"internalType": "uint256",
-						"name": "x",
-						"type": "uint256"
-					}
-				],
-				"name": "getTotalJolamanData",
-				"outputs": [
-					{
-						"internalType": "uint256[]",
-						"name": "",
-						"type": "uint256[]"
-					}
-				],
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"inputs": [
-					{
-						"internalType": "address",
-						"name": "ownerAddress",
-						"type": "address"
-					}
-				],
-				"name": "getTotalOwnedTokens",
-				"outputs": [
-					{
-						"internalType": "uint256[]",
-						"name": "",
-						"type": "uint256[]"
-					}
-				],
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"inputs": [
-					{
-						"internalType": "uint256",
-						"name": "_jolType",
-						"type": "uint256"
-					}
-				],
-				"name": "getjolamanTokenTypeOfOwner",
-				"outputs": [
-					{
-						"internalType": "address",
-						"name": "",
-						"type": "address"
 					}
 				],
 				"stateMutability": "view",
@@ -565,44 +500,6 @@
 						"internalType": "bool",
 						"name": "",
 						"type": "bool"
-					}
-				],
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"inputs": [
-					{
-						"internalType": "uint256",
-						"name": "",
-						"type": "uint256"
-					}
-				],
-				"name": "jolamanTokenTypeOfOwner",
-				"outputs": [
-					{
-						"internalType": "address",
-						"name": "",
-						"type": "address"
-					}
-				],
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"inputs": [
-					{
-						"internalType": "uint256",
-						"name": "",
-						"type": "uint256"
-					}
-				],
-				"name": "latestJolamanData",
-				"outputs": [
-					{
-						"internalType": "uint256",
-						"name": "",
-						"type": "uint256"
 					}
 				],
 				"stateMutability": "view",
@@ -872,19 +769,6 @@
 			{
 				"inputs": [
 					{
-						"internalType": "uint256",
-						"name": "joldata",
-						"type": "uint256"
-					}
-				],
-				"name": "setLatestJolamanData",
-				"outputs": [],
-				"stateMutability": "nonpayable",
-				"type": "function"
-			},
-			{
-				"inputs": [
-					{
 						"internalType": "uint64",
 						"name": "_price",
 						"type": "uint64"
@@ -893,6 +777,19 @@
 				"name": "setMintingPrice",
 				"outputs": [],
 				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "setdata",
+				"outputs": [
+					{
+						"internalType": "contract SetData",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
 				"type": "function"
 			},
 			{
@@ -981,25 +878,6 @@
 				"inputs": [
 					{
 						"internalType": "uint256",
-						"name": "",
-						"type": "uint256"
-					}
-				],
-				"name": "tokenOwner",
-				"outputs": [
-					{
-						"internalType": "address",
-						"name": "",
-						"type": "address"
-					}
-				],
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"inputs": [
-					{
-						"internalType": "uint256",
 						"name": "_tokenId",
 						"type": "uint256"
 					}
@@ -1010,54 +888,6 @@
 						"internalType": "string",
 						"name": "",
 						"type": "string"
-					}
-				],
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"inputs": [
-					{
-						"internalType": "uint256",
-						"name": "",
-						"type": "uint256"
-					},
-					{
-						"internalType": "uint256",
-						"name": "",
-						"type": "uint256"
-					}
-				],
-				"name": "totalJolamanData",
-				"outputs": [
-					{
-						"internalType": "uint256",
-						"name": "",
-						"type": "uint256"
-					}
-				],
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"inputs": [
-					{
-						"internalType": "address",
-						"name": "",
-						"type": "address"
-					},
-					{
-						"internalType": "uint256",
-						"name": "",
-						"type": "uint256"
-					}
-				],
-				"name": "totalOwnedTokens",
-				"outputs": [
-					{
-						"internalType": "uint256",
-						"name": "",
-						"type": "uint256"
 					}
 				],
 				"stateMutability": "view",
@@ -1328,11 +1158,19 @@
 			]
 		},
 		"contracts/RandomJolaman.sol": {
-			"keccak256": "0x8ca07771fcc7aaa6b9947881ca2f63d4614a56a0b11c06a19cd4bf8eba7f29f4",
+			"keccak256": "0x76724b5edca6036ac48853df9150fdb8c61b8867ed0c9091e0bb86b2f9fcd8f4",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://0e1355cd4961280d562ce2d878f6acbf29fbefc2f38f1832ec10fb0a20f85685",
-				"dweb:/ipfs/QmNZyj9Tevvf1LZu8rWYaDDAiuZ5Loh6V4hWa9ospgHHqm"
+				"bzz-raw://2c2b3b7f91d748ff93b960409cbba8fcaba240f467fe03b2aca1b53ff6189419",
+				"dweb:/ipfs/QmWCK9pKyDyVaU9Z6ip4JTZX5CCeKvSvbYMVYupS3jcfjh"
+			]
+		},
+		"contracts/SetData.sol": {
+			"keccak256": "0x7e76fc03077f5a20c3b495bfd8a2f28fcd4c19acf165cfa5f10f3c932443075a",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://2d0ea20f771756909be5eed0d0145c40bca15781e475bf294e3b9a66167998b3",
+				"dweb:/ipfs/QmTKQmCrFy3tpuHTB1YuqYGojooEKu26Ge8PYiJDBF3VJy"
 			]
 		}
 	},

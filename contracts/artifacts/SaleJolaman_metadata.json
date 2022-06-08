@@ -9,6 +9,11 @@
 				"inputs": [
 					{
 						"internalType": "address",
+						"name": "_setdata",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
 						"name": "_randomJolaman",
 						"type": "address"
 					}
@@ -131,6 +136,19 @@
 						"internalType": "uint256",
 						"name": "",
 						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "setdata",
+				"outputs": [
+					{
+						"internalType": "contract SetData",
+						"name": "",
+						"type": "address"
 					}
 				],
 				"stateMutability": "view",
@@ -285,19 +303,27 @@
 			]
 		},
 		"contracts/RandomJolaman.sol": {
-			"keccak256": "0xedf6e8f88aa26a834aa58255ba61259f3dc1b68821bbdde1177b8efc97b205c5",
+			"keccak256": "0x76724b5edca6036ac48853df9150fdb8c61b8867ed0c9091e0bb86b2f9fcd8f4",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://c45e6f02a91abd28bb4e181840caf097533c531c8659111f41e32f9cdc763390",
-				"dweb:/ipfs/QmSaQZgkgFgvDUBaZSTPU87kfop6iv5iHmYXUF1iVm1BrY"
+				"bzz-raw://2c2b3b7f91d748ff93b960409cbba8fcaba240f467fe03b2aca1b53ff6189419",
+				"dweb:/ipfs/QmWCK9pKyDyVaU9Z6ip4JTZX5CCeKvSvbYMVYupS3jcfjh"
 			]
 		},
 		"contracts/SaleJolaman.sol": {
-			"keccak256": "0xebe339720667485f1ea6cdbb42f0c35e7cbabb357e330b059b36f2515f6c68d1",
+			"keccak256": "0x3e65497b9eefd355bb86ea7a272178ec743d2453232e71217672fb1c378c6bc9",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://6ee9e337aabda5019b3b874c31d2d648eef16e2a7bf1cf8315ca6ca5dcf5b7c1",
-				"dweb:/ipfs/QmXHtnfUthBLS5adUJSdmFWxsYVuq6AwnK9LvNvRXKrDWW"
+				"bzz-raw://15cc08bddf2380e48d56ee06febfb5eb3898cf68101293bfd70ad0da753e0ffa",
+				"dweb:/ipfs/QmbcQhZPMTNnatxfvzoVMUgCkRoQWgpz9c2pJYvzwpn5ut"
+			]
+		},
+		"contracts/SetData.sol": {
+			"keccak256": "0x7e76fc03077f5a20c3b495bfd8a2f28fcd4c19acf165cfa5f10f3c932443075a",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://2d0ea20f771756909be5eed0d0145c40bca15781e475bf294e3b9a66167998b3",
+				"dweb:/ipfs/QmTKQmCrFy3tpuHTB1YuqYGojooEKu26Ge8PYiJDBF3VJy"
 			]
 		}
 	},
