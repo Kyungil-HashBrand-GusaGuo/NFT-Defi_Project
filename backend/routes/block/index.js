@@ -1,14 +1,17 @@
 const express = require("express");
 const router = express.Router();
-const blockAPI = require("./block.api");
+const rController = require("./randomZolaman.controller");
+const sController = require("./setData.controller");
 
-router.get("/totalJolamanData", blockAPI.totalJolamanData);
-router.get("/normalAll", blockAPI.MAX_NORMAL_TOKEN_COUNT);
-router.get("/specialAll", blockAPI.MAX_SPECIAL_TOKEN_COUNT);
-router.get("/normalCurrent", blockAPI.CURRENT_NORMAL_TOKEN_COUNT);
-router.get("/specialCurrent", blockAPI.CURRENT_SPECIAL_TOKEN_COUNT);
+// randomZolaman controller
+router.get("/normalAll", rController.MAX_NORMAL_TOKEN_COUNT);
+router.get("/specialAll", rController.MAX_SPECIAL_TOKEN_COUNT);
+router.get("/normalCurrent", rController.CURRENT_NORMAL_TOKEN_COUNT);
+router.get("/specialCurrent", rController.CURRENT_SPECIAL_TOKEN_COUNT);
+router.post("/isWhiteList", rController.isWhiteList);
 
-router.post("/isWhiteList", blockAPI.isWhiteList);
-router.post("/ownedTokenId", blockAPI.ownedTokenId);
+// setData controller
+router.get("/totalJolamanData", sController.totalJolamanData);
+router.post("/ownedTokenId", sController.ownedTokenId);
 
 module.exports = router;
