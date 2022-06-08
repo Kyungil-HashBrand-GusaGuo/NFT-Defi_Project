@@ -13,9 +13,7 @@ const TeamIntro = () => {
                         <img src={Team1}></img>
                     </div>
                     <div className='teamtxt'>
-                        <div>
-                            <span>JunghyunB</span>
-                        </div>
+                        <span>JunghyunB</span>
                         <span>Block Chain</span>
                     </div>
                 </div>
