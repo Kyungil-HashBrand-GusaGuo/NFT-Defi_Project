@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { RandomJolamanContract } from '../../caverConfig'
 import './AllCardList.css';
-import klayIcon from '../../images/klaytn-klay-logo.png'
+import klayIcon2 from '../../images/klaytn.jpeg'
 import axios from 'axios';
 
 
@@ -55,7 +55,7 @@ const AllCardList = () => {
                     <p>Price </p>
                     </div>
                     <div className='cardlistprice'>
-                        <img className='klayicon' src={klayIcon}/><p>2.0</p>
+                        <img className='klayicon' src={klayIcon2}/><p>2.0</p>
                     </div>
                 </div>
             </div> 

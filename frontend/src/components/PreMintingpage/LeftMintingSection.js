@@ -2,7 +2,7 @@ import React from 'react'
 import './LeftMintingSection.css'
 import { useDispatch, useSelector } from 'react-redux';
 import { preMintingAction } from '../../redux/actions/preMintingAction';
-import klayIcon from '../../images/klaytn-klay-logo.png'
+import klayIcon from '../../images/klaytn.png'
 
 const LeftMintingSection = () => {
 

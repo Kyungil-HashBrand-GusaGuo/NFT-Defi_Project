@@ -33,7 +33,7 @@
 	perspective: 3em;
 	transform-origin: bottom center;
 	transform-style: preserve-3d;
-	/* animation: movement var(--duration) cubic-bezier(0.65, 0, 0.35, 1) infinite; */
+	animation: movement var(--duration) cubic-bezier(0.65, 0, 0.35, 1) infinite;
 }
 
 .maintitle::after {
@@ -68,7 +68,7 @@
 		);
 	opacity: 0.8;
 	transform: var(--transform);
-	/* animation: shadow var(--duration) cubic-bezier(0.65, 0, 0.35, 1) infinite; */
+	animation: shadow var(--duration) cubic-bezier(0.65, 0, 0.35, 1) infinite;
 }
 
 @keyframes movement {
