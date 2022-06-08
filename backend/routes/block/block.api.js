@@ -25,14 +25,6 @@ const ownedTokenId = async (req, res) => {
   res.json(result);
 };
 
-// 보유 klay 조회
-// const balanceKlay = async (req, res) => {
-//   const result = await RandomJolamanContract.methods
-//     .getBalance(req.body.account)
-//     .call();
-//   res.json(result);
-// };
-
 // 전체 jolamanData 가져오는 함수
 const totalJolamanData = async (req, res) => {
   const result = await setDataContract.methods.getTotalJolamanData().call();
@@ -74,7 +66,6 @@ const CURRENT_SPECIAL_TOKEN_COUNT = async (req, res) => {
 module.exports = {
   isWhiteList,
   ownedTokenId,
-  // balanceKlay,
   totalJolamanData,
   MAX_NORMAL_TOKEN_COUNT,
   MAX_SPECIAL_TOKEN_COUNT,
