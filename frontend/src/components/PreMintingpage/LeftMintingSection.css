@@ -103,6 +103,7 @@ button {
     padding-right: 1.042vw;
     border: 0.052vw solid #272727;
     border-radius: 0.521vw;
+    font-size: 1.406vw;
 }
 
 .leftMintigSectionDetail2 {
@@ -144,8 +145,7 @@ button {
 .leftMintigSectionDetail4 h3{
     margin-left: 1.302vw;
     margin-right: 1.302vw;
-    font-size: 1.25vw;
-    
+    font-size: 1.198vw;
 }
 
 .mintKlayicon {
