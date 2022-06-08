@@ -13,9 +13,7 @@ const TeamIntro = () => {
                         <img src={Team1}></img>
                     </div>
                     <div className='teamtxt'>
-                        <div>
-                            <span>JunghyunB</span>
-                        </div>
+                        <span className='spanName'>JunghyunB</span>
                         <span>Block Chain</span>
                     </div>
                 </div>
@@ -24,7 +22,7 @@ const TeamIntro = () => {
                         <img src={Team2}></img>
                     </div>
                     <div className='teamtxt'>
-                        <span>Rmfkxhxh</span>
+                        <span  className='spanName'>Rmfkxhxh</span>
                         <span>Block Chain</span>
                     </div>
                 </div>
@@ -33,7 +31,7 @@ const TeamIntro = () => {
                         <img src={Team3}></img>
                     </div>
                     <div className='teamtxt'>
-                        <span>Sieun95</span>
+                        <span className='spanName'>Sieun95</span>
                         <span>Back end</span>
                     </div>
                 </div>
@@ -42,7 +40,7 @@ const TeamIntro = () => {
                         <img src={Team4}></img>
                     </div>
                     <div className='teamtxt'>
-                        <span>Jaewoneeee</span>
+                        <span className='spanName'>Jaewoneeee</span>
                         <span>Front end</span>
                     </div>
                 </div>
@@ -51,7 +49,7 @@ const TeamIntro = () => {
                         <img src={Team5}></img>
                     </div>
                     <div className='teamtxt'>
-                        <span>Taehhh8</span>
+                        <span className='spanName'>Taehhh8</span>
                         <span>Front end</span>
                     </div>
                 </div>
