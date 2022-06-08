@@ -4,9 +4,8 @@ import { MainPage, PreMintingPage, AdminPage, MyPage, AllMintPage } from './page
 import { Navbar, Footer } from './components'
 
 function App() {
-
   return (
-    <>
+    <div>
     <div>
       <Navbar/>
       <Routes>
@@ -16,9 +15,9 @@ function App() {
         <Route path='/admin' element={<AdminPage/>} />
         <Route path='/all-minting' element={<AllMintPage/>} />
       </Routes>
-      <Footer/>
     </div>
-    </>
+      <Footer/>
+    </div >
   );
 }
 
