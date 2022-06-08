@@ -8,6 +8,10 @@ import Team2 from './Team2.png'
 import Team3 from './Team3.png'
 import Team4 from './Team4.png'
 import Team5 from './Team5.png'
+import logo_DCcomics from './logo_DCcomics.png'
+import logo_Diseny from './logo_Diseny.png'
+import logo_Marvel from './logo_Marvel.png'
+import logo_PolaBear from './logo_PolaBear.png'
 
 
 export {HeadImg,
@@ -18,5 +22,10 @@ export {HeadImg,
     Team3,
     Team4,
     Team5,
+    logo_DCcomics,
+    logo_Diseny, 
+    logo_Marvel, 
+    logo_PolaBear
 
 }
+
