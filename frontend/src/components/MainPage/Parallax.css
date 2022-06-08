@@ -110,6 +110,7 @@
   .mainimg1 {
     /* padding-top: 200px; */
     width: 100%;
+    margin-top: 150px;
     /* margin: 0 auto; */
     display: flex;
     height: 400px;
