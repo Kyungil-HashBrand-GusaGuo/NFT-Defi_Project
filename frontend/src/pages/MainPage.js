@@ -1,6 +1,6 @@
 import React from 'react'
 import './MainPage.css';
-import { Gallery, MainTitle, Parallax, Partners, RoadMap, Story, TeamIntro} from '../components'
+import { Gallery, MainTitle, Partners, RoadMap, Story, TeamIntro} from '../components'
 
 const MainPage = () => {
     
@@ -12,8 +12,6 @@ const MainPage = () => {
         <RoadMap/>
         <TeamIntro/>
         <Partners/>
-        {/* <Parallax/> */}
-
     </div>
   )
 }

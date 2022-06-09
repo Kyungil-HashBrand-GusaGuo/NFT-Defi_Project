@@ -14,7 +14,7 @@
     
 }
 .partnerTitle span{
-    font-size: 4.861vw;
+    font-size: 70px;
 }
 .partnerslogofContainer {
     width: 100%;
@@ -44,7 +44,8 @@
     background-position: center;
 }
 
-/* .partnerLogo img {
-    background-size: contain;
-
-} */
+@media only screen and (max-width: 875px) {
+    .partnerTitle span{
+        font-size: 40px;
+    }
+}
