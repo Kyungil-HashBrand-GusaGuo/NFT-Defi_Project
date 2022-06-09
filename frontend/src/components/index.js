@@ -11,6 +11,7 @@ import Partners from './MainPage/Partners';
 import RoadMap from './MainPage/RoadMap';
 import Story from './MainPage/Story';
 import TeamIntro from './MainPage/TeamIntro';
+import Gallery from './MainPage/Gallery'
 
 export { 
     Navbar, 
@@ -24,5 +25,6 @@ export {
     Partners,
     RoadMap,
     Story,
-    TeamIntro
+    TeamIntro,
+    Gallery,
 }

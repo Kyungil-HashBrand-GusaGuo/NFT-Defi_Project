@@ -4,14 +4,15 @@
     justify-content: center; 
     padding-top: 100px;
     margin-bottom: 150px;  
-	height: 600px;
+	height: 300px;
 	overflow: hidden;
 }
 
 .maintitle {
 	--duration: 1200ms;
 	--text-shadow-color: hsl(0 0% 100%);
-  margin-top: 100px;
+	/* width: 100%; */
+ 	margin-top: 100px;
 	position: relative;
 	display: inline-block;
 	z-index: 1;
@@ -38,8 +39,8 @@
 }
 
 .maintitle::after {
-	--transform: scaleY(-1) translateY(-30%) rotateX(-35deg) scaleY(1.2) translateY(calc(-30% + 2px));
-	--transform-alt: scaleY(-1) translateY(-30%) rotateX(-55deg) scaleY(1.4) translateY(calc(-30% + 2px));
+	--transform: scaleY(-1) translateY(-1%) rotateX(-35deg) scaleY(1.2) translateY(calc(-30% + 2px));
+	--transform-alt: scaleY(-1) translateY(-1%) rotateX(-55deg) scaleY(1.4) translateY(calc(-30% + 2px));
 	
 	content: 'ZOLAMAN NFT' / '';
 	display: block;
