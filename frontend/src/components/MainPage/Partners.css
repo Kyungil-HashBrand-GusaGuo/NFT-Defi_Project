@@ -1,0 +1,50 @@
+.partnerContainer{
+    margin-top: 70px;
+    position: relative;
+    background-color: rgba(245, 245, 245, 0.4);
+    /* margin-bottom: 100px; */
+
+}
+
+.partnerTitle {
+    display: flex;
+    justify-content: center;
+    padding-top: 50px;
+
+    
+}
+.partnerTitle span{
+    font-size: 70px;
+}
+.partnerslogofContainer {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 30px;
+}
+
+
+.logoSection {
+    display: flex;
+    flex-direction: row ;
+    flex-wrap: wrap;
+}
+
+.partnerLogo{
+    width: 200px;
+    height: 200px;
+    margin: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+/* .partnerLogo img {
+    background-size: contain;
+
+} */

@@ -23,7 +23,7 @@
 
 .cardListContainer:hover {
     
-	border: 3px solid pink;
+	border: 3px solid rgba(44, 14, 2, 0.35)
 }
 
 .myNftCard {
@@ -69,4 +69,5 @@
 .klayicon {
     width: 20px;
     height: 20px;
+    margin-right: 5px;
 }
