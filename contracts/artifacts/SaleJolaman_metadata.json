@@ -72,6 +72,19 @@
 				"type": "function"
 			},
 			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_JolamanType",
+						"type": "uint256"
+					}
+				],
+				"name": "cancleSellJolamnaToken",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
 				"inputs": [],
 				"name": "getOnSaleJolamanTypeAndPrice",
 				"outputs": [
@@ -157,13 +170,6 @@
 					}
 				],
 				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"inputs": [],
-				"name": "setapprove",
-				"outputs": [],
-				"stateMutability": "nonpayable",
 				"type": "function"
 			},
 			{
@@ -336,11 +342,11 @@
 			]
 		},
 		"contracts/SaleJolaman.sol": {
-			"keccak256": "0x211427cc245bd930d40474a0c8f24067d3f58632fbb8d6def19c5a9b74ac9ae2",
+			"keccak256": "0xe3f846528b8bd009b29ba9f1a3de6cca0ca65bfe8a76d623058cf3b2f6337359",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://01f0d84f71aa6c9549a3a76cb0aa3b4e230e431af21459aca277e8c3ec306946",
-				"dweb:/ipfs/Qmb3bdXtxZEYUiqVkxLUZbfF5bn8sdo9ZfrBGw2cnQvB9P"
+				"bzz-raw://08e0eb422af35a8db8b1a064aaae4c4827ea09b5d0495fd0b56b56cd06ddf7e7",
+				"dweb:/ipfs/QmXRXKTs18i8TbT1u17ioz2Mr5fivKzmsqfC1Hii2KP8os"
 			]
 		},
 		"contracts/SetData.sol": {

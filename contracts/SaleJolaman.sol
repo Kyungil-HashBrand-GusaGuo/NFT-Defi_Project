@@ -4,6 +4,7 @@ pragma solidity ^0.8.4;
 import "./RandomJolaman.sol";
 import "./SetData.sol";
 
+
 contract SaleJolaman {
     RandomJolaman public randomJolaman;
     SetData public setdata;
@@ -24,11 +25,6 @@ contract SaleJolaman {
     uint[] public onSaleJolamanType;
     uint[] public onSaleJolamanPrice;
 
-    // 
-    function setapprove() public {
-        
-    }
-
     // 판매 등록 함수
     function SellJolamanToken(uint _JolamanType, uint _price) public {
         
@@ -37,14 +33,23 @@ contract SaleJolaman {
     require(SelltokenOwner == msg.sender, "Caller is not TokenOwner.");
     require(_price > 0, "Price is greater than 0.");
     require(SellingJol[_JolamanType] == false, "This token is already on sale.");
-    // require(randomJolaman.isApprovedForAll(msg.sender, address(this)), "token onwer did not approve token.");
-    randomJolaman.approve(address(this), setdata.gettypeToId(_JolamanType));
 
 
     sellingJolamanTypeToPrice[_JolamanType] = _price;
     SellingJol[_JolamanType] = true;
     onSaleJolamanType.push(_JolamanType);
     onSaleJolamanPrice.push(_price);
+    }
+
+    //판매 등록 취소 함수
+
+    function cancleSellJolamnaToken(uint _JolamanType) public {
+        address SelltokenOwner = setdata.getJolamanTokenTypeOfOnwer(_JolamanType);
+
+        require(SelltokenOwner == msg.sender, "Caller is not TokenOwner.");
+        require(SellingJol[_JolamanType] == true, "This token not Sale");
+        SellingJol[_JolamanType] = true;
+        popOnSaleToken(_JolamanType);
     }
 
     // 구매 함수
@@ -63,7 +68,7 @@ contract SaleJolaman {
         sellingJolamanTypeToPrice[_JolamanType] = 0;
         setdata.setJolamanTokenTypeOfOwner(_JolamanType, msg.sender);
         setdata.SellOwnedToken(SelltokenOwner, _JolamanType);
-        
+        setdata.setTokenOwner(setdata.gettypeToId(_JolamanType), msg.sender);
         setdata.setTotalOwnedTokens(msg.sender, _JolamanType);
 
         popOnSaleToken(_JolamanType);
