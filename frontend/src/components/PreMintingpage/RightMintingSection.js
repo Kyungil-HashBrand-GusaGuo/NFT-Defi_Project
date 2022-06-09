@@ -2,7 +2,7 @@ import React from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import './RightMintingSection.css'
 import { whiteMintingAction } from '../../redux/actions/whiteMintingAction';
-import klayIcon from '../../images/klaytn-klay-logo.png'
+import klayIcon from '../../images/klaytn.png'
 
 const RightMintingSection = () => {
 
@@ -36,7 +36,7 @@ const RightMintingSection = () => {
                     <h3>Count : {specialTokenCount} / {maxSpecialTokenCount}</h3>
                 </div>
                 <div className='rightMintigSectionDetail5'>
-                    <button onClick={minting} class="learn-more">Minting</button>
+                    <button onClick={minting} className="learn-more">Minting</button>
                 </div>
             </div>   
         </div>

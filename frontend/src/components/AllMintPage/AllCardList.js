@@ -1,36 +1,23 @@
-import React, { useState, useEffect } from 'react'
-import { setDataContract } from '../../caverConfig'
+import React, { useEffect } from 'react'
 import './AllCardList.css';
-import klayIcon from '../../images/klaytn-klay-logo.png'
-import axios from 'axios';
-
+import { useDispatch, useSelector } from 'react-redux';
+import { collectionAction } from '../../redux/actions/collectionAction';
+import klayIcon2 from '../../images/klaytn.jpeg'
 
 const AllCardList = () => {
 
-    const [showmint, setShowmint] = useState("");
-    const ownedTokenId = async() => {
-    const response = await setDataContract.methods.getTotalJolamanData().call()
-    console.log("모든민팅",response);
+    const dispatch = useDispatch()
 
-    let array = []
+    const { allmintdata } = useSelector(state => state.mintdata)
 
-    for(let i=0; i < response.length; i++){
-        
-        const mintJSON = await axios.get(`https://gateway.pinata.cloud/ipfs/QmQJGKnjHtgBeWRarsBHwK8uY7hsHoPJpuaPezBTrGac7K/${response[i]}.json`)
-        // console.log(mintJSON)
-        // console.log(mintJSON.data.name)
-        array.push(mintJSON)
-    }
-    setShowmint(array);
-  }
 
   useEffect(()=> {
-    ownedTokenId();
+    dispatch(collectionAction.collectionAct())
   },[])
   return (
     <div className='AllCradListContainer'>
-        { showmint === "" ? null : 
-        showmint.reverse().map((item, index)=>(
+        { allmintdata === "" ? null : 
+        allmintdata.reverse().map((item, index)=>(
         <div className='cardListContainer' key={index}>
             <div className='myNftCard'
              style={{
@@ -55,7 +42,7 @@ const AllCardList = () => {
                     <p>Price </p>
                     </div>
                     <div className='cardlistprice'>
-                        <img className='klayicon' src={klayIcon}/><p>2.0</p>
+                        <img className='klayicon' src={klayIcon2}/><p>2.0</p>
                     </div>
                 </div>
             </div> 

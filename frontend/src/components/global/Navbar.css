@@ -102,7 +102,7 @@ button:hover {
     cursor:Pointer;
 }
 
-@media only screen and (max-width: 1032px) {
+@media only screen and (max-width: 1118px) {
     .Navbar .rightSide .listicon {
         display: flex;
     }
@@ -114,11 +114,15 @@ button:hover {
     .Navbar .rightSide #hidden {
         position: absolute;
         left: 0px;
-        top: 80px;
+        top: 100px;
         height: 400px;
         max-height: 230px;
         width: 100%;
-        background-color:#fad335cf;
+        background-color: var(--color-yellow);
+	    background-image: radial-gradient(var(--color-dark-yellow) 20%, transparent 0), radial-gradient(var(--color-dark-yellow) 20%, transparent 0);
+	    background-size: 20px 20px;
+	    background-position: 0 0, 10px 10px;
+        box-shadow: 4px 4px 4px 4px rgb(132 81 61 / 35%);
         display: flex;
         flex-direction: column;
     }
@@ -128,14 +132,16 @@ button:hover {
         font-size: 25px;
         display: flex;
         justify-content: center;
+        position: relative;
     }
 
     .Navbar .rightSide #hidden .userInfoBox {
         position: absolute;
         width: 200px;
         height: 40px; 
-        right: 300px;
-        top: 270px;
+        left: 50%;
+        transform: translateX(-50%);
+        top: 50px;
         color: white;
         /* background-color: rgba(2, 30, 57, 0.9); */
         border: 1px solid gray;
@@ -154,179 +160,5 @@ button:hover {
         
     } */
 
-    @media only screen and (max-width: 819px) {
-        .Navbar .rightSide #hidden .userInfoBox {
-            position: absolute;
-            width: 200px;
-            height: 40px; 
-            right: 300px;
-            top: 270px;
-            color: white;
-            /* background-color: rgba(2, 30, 57, 0.9); */
-            border: 1px solid gray;
-            border-radius: 10px;
-            font-size: 15px;
-        }
-    }
-
 } 
-@media only screen and (max-width: 800px) {
-    .Navbar .rightSide #hidden .userInfoBox {
-        position: absolute;
-        width: 200px;
-        height: 40px; 
-        right: 290px;
-        top: 260px;
-        color: white;
-        /* background-color: rgba(2, 30, 57, 0.9); */
-        border: 1px solid gray;
-        border-radius: 10px;
-        font-size: 15px;
-    }
-}
-
-@media only screen and (max-width: 775px) {
-    .Navbar .rightSide #hidden .userInfoBox {
-        position: absolute;
-        width: 200px;
-        height: 40px; 
-        right: 280px;
-        top: 260px;
-        color: white;
-        /* background-color: rgba(2, 30, 57, 0.9); */
-        border: 1px solid gray;
-        border-radius: 10px;
-        font-size: 15px;
-    }
-}
-
-@media only screen and (max-width: 750px) {
-    .Navbar .rightSide #hidden .userInfoBox {
-        position: absolute;
-        width: 200px;
-        height: 40px; 
-        right: 270px;
-        top: 260px;
-        color: white;
-        /* background-color: rgba(2, 30, 57, 0.9); */
-        border: 1px solid gray;
-        border-radius: 10px;
-        font-size: 15px;
-    }
-}
-
-@media only screen and (max-width: 725px) {
-    .Navbar .rightSide #hidden .userInfoBox {
-        position: absolute;
-        width: 200px;
-        height: 40px; 
-        right: 255px;
-        top: 260px;
-        color: white;
-        /* background-color: rgba(2, 30, 57, 0.9); */
-        border: 1px solid gray;
-        border-radius: 10px;
-        font-size: 15px;
-    }
-}
-
-@media only screen and (max-width: 700px) {
-    .Navbar .rightSide #hidden .userInfoBox {
-        position: absolute;
-        width: 200px;
-        height: 40px; 
-        right: 250px;
-        top: 260px;
-        color: white;
-        /* background-color: rgba(2, 30, 57, 0.9); */
-        border: 1px solid gray;
-        border-radius: 10px;
-        font-size: 15px;
-    }
-
-}
-
-@media only screen and (max-width: 675px) {
-    .Navbar .rightSide #hidden .userInfoBox {
-        position: absolute;
-        width: 200px;
-        height: 40px; 
-        right: 235px;
-        top: 260px;
-        color: white;
-        /* background-color: rgba(2, 30, 57, 0.9); */
-        border: 1px solid gray;
-        border-radius: 10px;
-        font-size: 15px;
-    }
-
-}
-
-@media only screen and (max-width: 650px) {
-    .Navbar .rightSide #hidden .userInfoBox {
-        position: absolute;
-        width: 200px;
-        height: 40px; 
-        right: 220px;
-        top: 260px;
-        color: white;
-        /* background-color: rgba(2, 30, 57, 0.9); */
-        border: 1px solid gray;
-        border-radius: 10px;
-        font-size: 15px;
-    }
-
-}
-
-@media only screen and (max-width: 625px) {
-    .Navbar .rightSide #hidden .userInfoBox {
-        position: absolute;
-        width: 200px;
-        height: 40px; 
-        right: 210px;
-        top: 260px;
-        color: white;
-        /* background-color: rgba(2, 30, 57, 0.9); */
-        border: 1px solid gray;
-        border-radius: 10px;
-        font-size: 15px;
-    }
-
-}
-
-
-@media only screen and (max-width: 608px) {
-    .Navbar .rightSide #hidden .userInfoBox {
-        position: absolute;
-        width: 200px;
-        height: 40px; 
-        right: 200px;
-        top: 260px;
-        color: white;
-        /* background-color: rgba(2, 30, 57, 0.9); */
-        border: 1px solid gray;
-        border-radius: 10px;
-        font-size: 15px;
-    }
-}
-
-@media only screen and (max-width: 535px) {
-    .Navbar .rightSide #hidden .userInfoBox {
-        position: absolute;
-        width: 200px;
-        height: 40px; 
-        right: 150px;
-        top: 260px;
-        color: white;
-        /* background-color: rgba(2, 30, 57, 0.9); */
-        border: 1px solid gray;
-        border-radius: 10px;
-        font-size: 15px;
-    }
-}
-
-
-
-
-
 

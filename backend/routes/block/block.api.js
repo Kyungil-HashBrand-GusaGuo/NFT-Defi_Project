@@ -1,9 +1,14 @@
 const {
   RandomJolamanContract,
   MINT_CONTRACT_ADDRESS,
-} = require("../../contracts/jolamanContract");
+} = require("../../contracts/randomZolaman");
 
-//
+const {
+  setDataContract,
+  DATA_CONTRACT_ADDRESS,
+} = require("../../contracts/setData");
+
+// 화이트리스트 체크
 const isWhiteList = async (req, res) => {
   const result = await RandomJolamanContract.methods
     .isWhiteList(req.body.account)
@@ -13,25 +18,16 @@ const isWhiteList = async (req, res) => {
 
 // 보유 토큰 졸라맨 타입 조회
 const ownedTokenId = async (req, res) => {
-  console.log(req.body.account);
-  const result = await RandomJolamanContract.methods
+  console.log("확인",req.body.account);
+  const result = await setDataContract.methods
     .getTotalOwnedTokens(req.body.account)
-    .call();
-  res.json(result);
-};
-// 보유 klay 조회
-const balanceKlay = async (req, res) => {
-  const result = await RandomJolamanContract.methods
-    .getBalance(req.body.account)
-    .call();
+    .call()
   res.json(result);
 };
 
 // 전체 jolamanData 가져오는 함수
 const totalJolamanData = async (req, res) => {
-  const result = await RandomJolamanContract.methods
-    .getTotalJolamanData(0)
-    .call();
+  const result = await setDataContract.methods.getTotalJolamanData().call();
   res.json(result);
 };
 
@@ -70,7 +66,6 @@ const CURRENT_SPECIAL_TOKEN_COUNT = async (req, res) => {
 module.exports = {
   isWhiteList,
   ownedTokenId,
-  balanceKlay,
   totalJolamanData,
   MAX_NORMAL_TOKEN_COUNT,
   MAX_SPECIAL_TOKEN_COUNT,

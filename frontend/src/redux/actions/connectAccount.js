@@ -1,5 +1,5 @@
 import { RandomJolamanContract } from "../../caverConfig";
-
+import axios from "axios";
 
 function getAccount() {
     return async (dispatch) => {
@@ -10,8 +10,8 @@ function getAccount() {
             //dispatch({type : "GET_DATA", payload : {test}})
             dispatch({type : "GET_ACCOUNT", payload : {account}})
 
-            const whiteListCheck = await RandomJolamanContract.methods.isWhiteList(account).call();
-            //console.log("화이트리스트 체크",whiteListCheck)
+            const whiteListCheckFunc = await axios.post("http://34.64.61.199:9495/block/isWhiteList", { account });
+            let whiteListCheck = whiteListCheckFunc.data
             dispatch({type : "CHECK_ACCOUNT", payload : {whiteListCheck}})
             
         } 

@@ -1,42 +1,25 @@
-import React, { useState, useEffect } from 'react'
-// import { MyCardList } from '../components'
-import { setDataContract } from '../../caverConfig'
-import { useSelector } from 'react-redux';
+import React, { useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux';
 import './MyCardList.css'
 import klayIcon2 from '../../images/klaytn.jpeg'
-import axios from 'axios';
+import { mypageAction } from '../../redux/actions/mypageAction';
 
 const MyCardList = () => {
 
+    const dispatch = useDispatch()
     const { account } = useSelector(state => state.account);
+    const { mymintdata } = useSelector(state => state.mintdata)
 
-    const [showmint, setShowmint] = useState("");
-
-    const ownedTokenId = async() => {
-    const response = await setDataContract.methods.getTotalOwnedTokens(account).call()
-    console.log("내민팅",response);
-
-    let array = []
-
-    for(let i=0; i < response.length; i++){
-        
-        const mintJSON = await axios.get(`https://gateway.pinata.cloud/ipfs/QmQJGKnjHtgBeWRarsBHwK8uY7hsHoPJpuaPezBTrGac7K/${response[i]}.json`)
-        // console.log(mintJSON)
-        // console.log(mintJSON.data.name)
-        array.push(mintJSON)
-    }
-    setShowmint(array);
-  }
+    console.log(mymintdata)
 
   useEffect(()=> {
-    ownedTokenId();
+    dispatch(mypageAction.mypageAct(account))
   },[account])
 
   return (
     <div className='myCardListContainer'>
-        { showmint === "" ? null : 
-        //.slice(0).reverse()
-        showmint.reverse().map((item, index)=>(
+        { mymintdata === "" ? null : 
+        mymintdata.reverse().map((item, index)=>(
         <div className='cardListContainer' key={index}>
             <div className='myNftCard'
              style={{

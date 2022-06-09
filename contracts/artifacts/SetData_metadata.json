@@ -8,6 +8,24 @@
 			{
 				"inputs": [
 					{
+						"internalType": "address",
+						"name": "sellOwnerAddress",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_JolamanType",
+						"type": "uint256"
+					}
+				],
+				"name": "SellOwnedToken",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
 						"internalType": "uint256",
 						"name": "_JolType",
 						"type": "uint256"
@@ -321,11 +339,11 @@
 	},
 	"sources": {
 		"contracts/SetData.sol": {
-			"keccak256": "0x7e76fc03077f5a20c3b495bfd8a2f28fcd4c19acf165cfa5f10f3c932443075a",
+			"keccak256": "0x7224469c0017e85f14f32c07b4b5b6c68f3dee0e15bcfa881cd4fb712a8a2003",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://2d0ea20f771756909be5eed0d0145c40bca15781e475bf294e3b9a66167998b3",
-				"dweb:/ipfs/QmTKQmCrFy3tpuHTB1YuqYGojooEKu26Ge8PYiJDBF3VJy"
+				"bzz-raw://4ceb5f3e16cfd433475c58b177a36b995f6f22f593f10eb62fbf65633a1ef5de",
+				"dweb:/ipfs/QmePyfc8V71xGgFysgn7GqYzVgM9AcPqwV3eyPzbz95MZd"
 			]
 		}
 	},
