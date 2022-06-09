@@ -161,6 +161,13 @@
 			},
 			{
 				"inputs": [],
+				"name": "setapprove",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
 				"name": "setdata",
 				"outputs": [
 					{
@@ -329,11 +336,11 @@
 			]
 		},
 		"contracts/SaleJolaman.sol": {
-			"keccak256": "0x1555ef763205ebb930ea71b40dbdeec2dc72eac62f1b5b75e77abaac38321a05",
+			"keccak256": "0x211427cc245bd930d40474a0c8f24067d3f58632fbb8d6def19c5a9b74ac9ae2",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://ecc0dbc0e2530f826da624c0f9d7f31a8e18952f593a53bbadaf74a4dc1ee4ee",
-				"dweb:/ipfs/QmcYmrt46FmNU6Kme9qvU9WV8MHnjgUYBYaUiusAdkmdGr"
+				"bzz-raw://01f0d84f71aa6c9549a3a76cb0aa3b4e230e431af21459aca277e8c3ec306946",
+				"dweb:/ipfs/Qmb3bdXtxZEYUiqVkxLUZbfF5bn8sdo9ZfrBGw2cnQvB9P"
 			]
 		},
 		"contracts/SetData.sol": {
