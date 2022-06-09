@@ -16,7 +16,7 @@ const RoadMap = () => {
             </div>
             <div className='roadMaptxtSectionDetail2'>
               <p>
-                dfdsfds
+                1
               </p>
             </div> 
           </div>
@@ -31,7 +31,7 @@ const RoadMap = () => {
             </div>
             <div className='roadMaptxtSectionDetail2'>
               <p>
-                dfdsfds
+                2
               </p>
             </div> 
           </div>
@@ -46,7 +46,7 @@ const RoadMap = () => {
             </div>
             <div className='roadMaptxtSectionDetail2'>
               <p>
-                dfdsfds
+                3
               </p>
             </div> 
           </div>
@@ -60,7 +60,7 @@ const RoadMap = () => {
             </div>
             <div className='roadMaptxtSectionDetail2'>
               <p>
-                dfdsfds
+                4
               </p>
             </div> 
           </div>
@@ -75,7 +75,7 @@ const RoadMap = () => {
             </div>
             <div className='roadMaptxtSectionDetail2'>
               <p>
-                dfdsfds
+                5
               </p>
             </div> 
           </div>
@@ -90,7 +90,7 @@ const RoadMap = () => {
             </div>
             <div className='roadMaptxtSectionDetail2'>
               <p>
-                dfdsfds
+                6
               </p>
             </div> 
           </div>
