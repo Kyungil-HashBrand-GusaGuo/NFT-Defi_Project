@@ -73,6 +73,16 @@
     border-radius: 0.521vw;
 }
 
+.roadMaptxtSectionDetail1 {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.roadMaptxtSectionDetail2 {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
 .arrowContainer {
     display: flex;
     justify-content: center;
