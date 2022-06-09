@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import './MyCardList.css'
-import klayIcon2 from '../../images/klaytn.jpeg'
+import klayIcon2 from '../../images/klaytn.png'
 import { mypageAction } from '../../redux/actions/mypageAction';
 
 const MyCardList = () => {

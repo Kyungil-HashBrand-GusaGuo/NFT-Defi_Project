@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import './AllCardList.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { collectionAction } from '../../redux/actions/collectionAction';
-import klayIcon2 from '../../images/klaytn.jpeg'
+import klayIcon2 from '../../images/klaytn.png'
 
 const AllCardList = () => {
 
