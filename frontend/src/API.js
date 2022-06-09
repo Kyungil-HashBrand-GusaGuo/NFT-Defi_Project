@@ -4,6 +4,9 @@ import {
   caver,
   RandomJolamanContract,
   MINT_CONTRACT_ADDRESS,
+  setDataContract,
+
+
 } from "./caverConfig.js";
 import axios from "axios";
 
@@ -198,6 +201,10 @@ function App() {
       .call();
     setCurrentSpecial(response);
   };
+
+
+
+  // 판매 등록 함수
 
   useEffect(() => {
     MAX_NORMAL_TOKEN_COUNT();
