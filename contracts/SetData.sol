@@ -26,6 +26,15 @@ contract SetData {
         totalOwnedTokens[_tokenOwner].push(_JolType);
     }
 
+    // 보유 토큰 판매시 토큰 보유 배열에서 삭제
+    function SellOwnedToken(address sellOwnerAddress, uint _JolamanType) external {
+        for(uint i = 0; i < totalOwnedTokens[sellOwnerAddress].length; i++) {
+            if(totalOwnedTokens[sellOwnerAddress][i] == _JolamanType)
+            totalOwnedTokens[sellOwnerAddress][i] = totalOwnedTokens[sellOwnerAddress][totalOwnedTokens[sellOwnerAddress].length - 1];
+            totalOwnedTokens[sellOwnerAddress].pop();
+        }
+    }
+
     // ownerAddress별 가지고있는 jolamanToken타입 조회 함수
     function getTotalOwnedTokens(address _ownerAddress) public view returns (uint[] memory) {
         return totalOwnedTokens[_ownerAddress];
@@ -34,6 +43,8 @@ contract SetData {
     function setTotalJolamanData(uint _JolType) external {
         totalJolamanData.push(_JolType);
     }
+
+
 
     // 발행된 모든 졸라맨 타입 데이터 조회 함수
     function getTotalJolamanData() public view returns(uint[] memory) {
