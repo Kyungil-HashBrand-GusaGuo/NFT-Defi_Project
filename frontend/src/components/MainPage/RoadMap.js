@@ -15,9 +15,9 @@ const RoadMap = () => {
               <h2>Phase 00</h2>
             </div>
             <div className='roadMaptxtSectionDetail2'>
-              <p>
-                1
-              </p>
+                <p>
+                  민팅 완료 후 ZOLMAN NFT 보유한 홀더 모두에게 한정판 NFT를 부여
+                </p>
             </div> 
           </div>
         </div>
@@ -31,7 +31,8 @@ const RoadMap = () => {
             </div>
             <div className='roadMaptxtSectionDetail2'>
               <p>
-                2
+                서울시 관할 로드 광고판에 
+                ‘완판 기념’ 광고
               </p>
             </div> 
           </div>
@@ -46,7 +47,8 @@ const RoadMap = () => {
             </div>
             <div className='roadMaptxtSectionDetail2'>
               <p>
-                3
+              거버넌스 기능을
+              홈페이지에 추가
               </p>
             </div> 
           </div>
@@ -60,7 +62,8 @@ const RoadMap = () => {
             </div>
             <div className='roadMaptxtSectionDetail2'>
               <p>
-                4
+              한정판 NFT인 ‘VERYVERYSTRONG ZOLAMAN’을
+              홀더만 구매가 가능하도록 오픈예정
               </p>
             </div> 
           </div>
@@ -75,7 +78,8 @@ const RoadMap = () => {
             </div>
             <div className='roadMaptxtSectionDetail2'>
               <p>
-                5
+                  세계화를 위하여
+                  국내,국제 상위 엔터테인먼트에 협업을 제안
               </p>
             </div> 
           </div>
@@ -90,7 +94,8 @@ const RoadMap = () => {
             </div>
             <div className='roadMaptxtSectionDetail2'>
               <p>
-                6
+                샌드박스에 복셀 아바타와 ZOLAMAN
+                게임 개발 예정
               </p>
             </div> 
           </div>

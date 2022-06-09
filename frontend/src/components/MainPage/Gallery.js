@@ -29,9 +29,9 @@ const Gallery = () => {
 
   return (
       <div className="sliderMainContainer">
-        <div className="sliderTitle">
+        {/* <div className="sliderTitle">
             <span>ZOLAMANS NFT</span>
-        </div>
+        </div> */}
         <div>
             <Slider {...settings}>
             {array.map((item, index)=> {
