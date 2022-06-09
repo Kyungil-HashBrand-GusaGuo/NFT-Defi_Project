@@ -5,7 +5,7 @@
 .sliderTitle{
     display: flex;
     justify-content: center;
-    font-size: 4.861vw;
+    font-size: 70px;
     margin-bottom: 3.472vw;
 }
 
@@ -30,4 +30,13 @@
     border-radius: 1.389vw;
     border: solid 0.139vw black;
     
+}
+
+@media only screen and (max-width: 875px) {
+    .sliderTitle{
+        display: flex;
+        justify-content: center;
+        font-size: 40px;
+        margin-bottom: 3.472vw;
+    }
 }
