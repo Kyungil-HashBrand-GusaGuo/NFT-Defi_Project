@@ -16,7 +16,7 @@ function App() {
         <Route path='/pre-minting' element={<PreMintingPage/>} />
         <Route path='/admin' element={<AdminPage/>} />
         <Route path='/all-minting' element={<AllMintPage/>} />
-        <Route path='/sellpage/:id' element={<SellPage/>}/>
+        <Route path='/sellpage/:edition' element={<SellPage/>}/>
       </Routes>
     </div>
       <Footer/>
