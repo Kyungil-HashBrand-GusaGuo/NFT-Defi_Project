@@ -1,4 +1,4 @@
-import {Ethers} from "ethers";
+import { ethers } from "ethers";
 export const MINT_CONTRACT_ADDRESS = 
 "0x64d317D4cBc097471D93c6D9F0d5A0646047543e";
 
@@ -940,8 +940,7 @@ export const MINT_CONTRACT_ABI = [
 		"stateMutability": "view",
 		"type": "function"
 	}
-]
-export const ethers = new Ethers(window.ethereum);
+];
 
 export const DATA_CONTRACT_ADDRESS = 
 "0x5B355d0d631Ef0280ab21B99Afc8C357Dea4Ff50";
@@ -1252,7 +1251,7 @@ export const DATA_CONTRACT_ABI = [
 		"stateMutability": "view",
 		"type": "function"
 	}
-]
+];
 
 export const SALE_CONTRACT_ADDRESS = 
 "0xB254b24ff16ea99bBF01e04506e6c96F91b639Cc";
@@ -1440,17 +1439,43 @@ export const SALE_CONTRACT_ABI = [
 	}
 ];
 
-export const RandomJolamanContract = new ethers.ethereum.Contract(
-    MINT_CONTRACT_ABI,
-    MINT_CONTRACT_ADDRESS,
-)
+export const ethers = new ethers.providers.Web3Provider(window.ethereum);
 
-export const setDataContract = new ethers.ethereum.Contract(
-	DATA_CONTRACT_ABI,
-	DATA_CONTRACT_ADDRESS
-)
 
-export const SaleContract = new ethers.ethereum.Contract(
-	SALE_CONTRACT_ABI,
-	SALE_CONTRACT_ADDRESS
-)
+
+export const RandomJolamanContract = () => {
+	let tempProvider = new ethers.providers.Web3Provider(window.ethereum);
+	let tempSigner = tempProvider.getSigner();
+	let tempContract = new ethers.Contract(MINT_CONTRACT_ADDRESS, MINT_CONTRACT_ABI, tempSigner);
+	return tempContract;
+}
+export const setDataContract = () => {
+	let tempProvider = new ethers.providers.Web3Provider(window.ethereum);
+	let tempSigner = tempProvider.getSigner();
+	let tempContract = new ethers.Contract(DATA_CONTRACT_ADDRESS, DATA_CONTRACT_ABI, tempSigner);
+	return tempContract;
+}
+export const SaleContract = () => {
+	let tempProvider = new ethers.providers.Web3Provider(window.ethereum);
+	let tempSigner = tempProvider.getSigner();
+	let tempContract = new ethers.Contract(SALE_CONTRACT_ADDRESS, SALE_CONTRACT_ABI, tempSigner);
+	return tempContract;
+}
+
+
+
+// export const RandomJolamanContract = new ethers.ethereum.Contract(
+//     MINT_CONTRACT_ABI,
+//     MINT_CONTRACT_ADDRESS,
+// )
+
+// export const setDataContract = new ethers.ethereum.Contract(
+// 	DATA_CONTRACT_ABI,
+// 	DATA_CONTRACT_ADDRESS
+// )
+
+// export const SaleContract = new ethers.ethereum.Contract(
+// 	SALE_CONTRACT_ABI,
+// 	SALE_CONTRACT_ADDRESS
+// )
+
