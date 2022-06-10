@@ -1,9 +1,11 @@
 const Caver = require("caver-js");
+const Web3 = require("web3");
+const Ethers = require("ethers")
 
 const config = {
   rpcURL: "https://api.baobab.klaytn.net:8651",
 };
-const caver = new Caver(config.rpcURL);
+const web3 = new Ethers(config.rpcURL);
 const DATA_CONTRACT_ADDRESS = "0xedCe74234781ec92EF141a2068Ab024D27477638";
 
 const DATA_CONTRACT_ABI = [
@@ -313,7 +315,7 @@ const DATA_CONTRACT_ABI = [
 		"type": "function"
 	}
 ];
-const setDataContract = new caver.klay.Contract(
+const setDataContract = new web3.ethereum.Contract(
   DATA_CONTRACT_ABI,
   DATA_CONTRACT_ADDRESS
 );

@@ -15,7 +15,7 @@ function Navbar() {
     console.log("화이트리스트 체크",whiteListCheck)
 
     const connectWallet = () => {
-        if(window.klaytn)
+        if(window.ethereum)
         dispatch(connectAccount.getAccount())
         //getAccount();
     }

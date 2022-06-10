@@ -1,6 +1,6 @@
-import Caver from "caver-js";
+import {Ethers} from "ethers";
 export const MINT_CONTRACT_ADDRESS = 
-"0x1Ba505Db12Ef656363f736D783b60a41Ddb64904";
+"0x64d317D4cBc097471D93c6D9F0d5A0646047543e";
 
 export const MINT_CONTRACT_ABI = [
 	{
@@ -941,10 +941,10 @@ export const MINT_CONTRACT_ABI = [
 		"type": "function"
 	}
 ]
-export const caver = new Caver(window.caver);
+export const ethers = new Ethers(window.ethereum);
 
 export const DATA_CONTRACT_ADDRESS = 
-"0xedCe74234781ec92EF141a2068Ab024D27477638";
+"0x5B355d0d631Ef0280ab21B99Afc8C357Dea4Ff50";
 
 export const DATA_CONTRACT_ABI = [
 	{
@@ -1255,7 +1255,7 @@ export const DATA_CONTRACT_ABI = [
 ]
 
 export const SALE_CONTRACT_ADDRESS = 
-"0xFb95eBC0BFD82b0F732cE3EBDA54807c0AF55B52";
+"0xB254b24ff16ea99bBF01e04506e6c96F91b639Cc";
 
 export const SALE_CONTRACT_ABI = [
 	{
@@ -1440,17 +1440,17 @@ export const SALE_CONTRACT_ABI = [
 	}
 ];
 
-export const RandomJolamanContract = new caver.klay.Contract(
+export const RandomJolamanContract = new ethers.ethereum.Contract(
     MINT_CONTRACT_ABI,
     MINT_CONTRACT_ADDRESS,
 )
 
-export const setDataContract = new caver.klay.Contract(
+export const setDataContract = new ethers.ethereum.Contract(
 	DATA_CONTRACT_ABI,
 	DATA_CONTRACT_ADDRESS
 )
 
-export const SaleContract = new caver.klay.Contract(
+export const SaleContract = new ethers.ethereum.Contract(
 	SALE_CONTRACT_ABI,
 	SALE_CONTRACT_ADDRESS
 )

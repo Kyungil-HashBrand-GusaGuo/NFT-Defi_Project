@@ -4,7 +4,7 @@ import axios from "axios";
 function getAccount() {
     return async (dispatch) => {
         try {
-            const accounts = await window.klaytn.enable();
+            const accounts = await window.ethereum.enable();
             // console.log(accounts)
             let account = accounts[0]
             //dispatch({type : "GET_DATA", payload : {test}})

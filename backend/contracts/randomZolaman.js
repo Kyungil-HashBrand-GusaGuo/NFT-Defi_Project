@@ -1,9 +1,10 @@
 const Caver = require("caver-js");
+const Web3 = require("web3");
 
 const config = {
   rpcURL: "https://api.baobab.klaytn.net:8651",
 };
-const caver = new Caver(config.rpcURL);
+const web3 = new Web3(config.rpcURL);
 const MINT_CONTRACT_ADDRESS = "0x1Ba505Db12Ef656363f736D783b60a41Ddb64904";
 
 const MINT_CONTRACT_ABI = [
@@ -949,7 +950,7 @@ const MINT_CONTRACT_ABI = [
 const RandomJolamanContract =
   // MINT_CONTRACT_ABI &&
   // MINT_CONTRACT_ADDRESS &&
-  new caver.klay.Contract(MINT_CONTRACT_ABI, MINT_CONTRACT_ADDRESS);
+  new web3.ethereum.Contract(MINT_CONTRACT_ABI, MINT_CONTRACT_ADDRESS);
 
 module.exports = {
   MINT_CONTRACT_ADDRESS,
