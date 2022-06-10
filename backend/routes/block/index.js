@@ -1,17 +1,25 @@
 const express = require("express");
 const router = express.Router();
-const rController = require("./randomZolaman.controller");
-const sController = require("./setData.controller");
+const randomController = require("./randomZolaman.controller");
+const setController = require("./setData.controller");
+const saleController = require("./saleZolaman.controller");
 
 // randomZolaman controller
-router.get("/normalAll", rController.MAX_NORMAL_TOKEN_COUNT);
-router.get("/specialAll", rController.MAX_SPECIAL_TOKEN_COUNT);
-router.get("/normalCurrent", rController.CURRENT_NORMAL_TOKEN_COUNT);
-router.get("/specialCurrent", rController.CURRENT_SPECIAL_TOKEN_COUNT);
-router.post("/isWhiteList", rController.isWhiteList);
+router.get("/normalAll", randomController.MAX_NORMAL_TOKEN_COUNT);
+router.get("/specialAll", randomController.MAX_SPECIAL_TOKEN_COUNT);
+router.get("/normalCurrent", randomController.CURRENT_NORMAL_TOKEN_COUNT);
+router.get("/specialCurrent", randomController.CURRENT_SPECIAL_TOKEN_COUNT);
+router.post("/isWhiteList", randomController.isWhiteList);
 
 // setData controller
-router.get("/totalJolamanData", sController.totalJolamanData);
-router.post("/ownedTokenId", sController.ownedTokenId);
+router.get("/totalJolamanData", setController.totalJolamanData);
+router.post("/ownedTokenId", setController.ownedTokenId);
+
+// saleJolaman controller
+router.get(
+  "/getOnSaleJolamanTypeAndPrice",
+  saleController.getOnSaleJolamanTypeAndPrice
+);
+router.post("/SellingJol", saleController.SellingJol);
 
 module.exports = router;
