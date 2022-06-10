@@ -3,15 +3,18 @@ pragma solidity ^0.8.4;
 
 import "./RandomJolaman.sol";
 import "./SetData.sol";
+import "@openzeppelin/contracts/access/Ownable.sol";
+import "@openzeppelin/contracts/token/ERC721/utils/ERC721Holder.sol";
+import "@openzeppelin/contracts/token/ERC721/IERC721.sol";
 
-
-contract SaleJolaman {
-    RandomJolaman public randomJolaman;
+contract SaleJolaman is ERC721Holder {
+    // RandomJolaman public randomJolaman;
+    IERC721 public randomJolaman;
     SetData public setdata;
 
-    constructor (address _setdata, address _randomJolaman) {
+    constructor (address _setdata, IERC721 _randomJolaman) {
         setdata = SetData(_setdata);
-        randomJolaman = RandomJolaman(_randomJolaman);
+        randomJolaman = _randomJolaman;
     }
 
 
@@ -33,7 +36,7 @@ contract SaleJolaman {
     require(SelltokenOwner == msg.sender, "Caller is not TokenOwner.");
     require(_price > 0, "Price is greater than 0.");
     require(SellingJol[_JolamanType] == false, "This token is already on sale.");
-
+    randomJolaman.approve(address(this), setdata.gettypeToId(_JolamanType));
 
     sellingJolamanTypeToPrice[_JolamanType] = _price;
     SellingJol[_JolamanType] = true;

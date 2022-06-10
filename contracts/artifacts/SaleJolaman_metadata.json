@@ -13,7 +13,7 @@
 						"type": "address"
 					},
 					{
-						"internalType": "address",
+						"internalType": "contract IERC721",
 						"name": "_randomJolaman",
 						"type": "address"
 					}
@@ -105,6 +105,40 @@
 			{
 				"inputs": [
 					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bytes",
+						"name": "",
+						"type": "bytes"
+					}
+				],
+				"name": "onERC721Received",
+				"outputs": [
+					{
+						"internalType": "bytes4",
+						"name": "",
+						"type": "bytes4"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
 						"internalType": "uint256",
 						"name": "",
 						"type": "uint256"
@@ -145,7 +179,7 @@
 				"name": "randomJolaman",
 				"outputs": [
 					{
-						"internalType": "contract RandomJolaman",
+						"internalType": "contract IERC721",
 						"name": "",
 						"type": "address"
 					}
@@ -188,7 +222,11 @@
 		],
 		"devdoc": {
 			"kind": "dev",
-			"methods": {},
+			"methods": {
+				"onERC721Received(address,address,uint256,bytes)": {
+					"details": "See {IERC721Receiver-onERC721Received}. Always returns `IERC721Receiver.onERC721Received.selector`."
+				}
+			},
 			"version": 1
 		},
 		"userdoc": {
@@ -285,6 +323,14 @@
 				"dweb:/ipfs/QmemujxSd7gX8A9M8UwmNbz4Ms3U9FG9QfudUgxwvTmPWf"
 			]
 		},
+		"@openzeppelin/contracts/token/ERC721/utils/ERC721Holder.sol": {
+			"keccak256": "0x0108bf6a6ebd5f96678bed33a35947537263f96766131ee91461fb6485805028",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://ae2d274bf3d56a6d49a9bbd0a4871c54997a82551eb3eb1c0c39dc98698ff8bf",
+				"dweb:/ipfs/QmTT7ty5DPGAmRnx94Xu3TUDYGSPDVLN2bppJAjjedrg1e"
+			]
+		},
 		"@openzeppelin/contracts/utils/Address.sol": {
 			"keccak256": "0x2ccf9d2313a313d41a791505f2b5abfdc62191b5d4334f7f7a82691c088a1c87",
 			"license": "MIT",
@@ -334,19 +380,19 @@
 			]
 		},
 		"contracts/RandomJolaman.sol": {
-			"keccak256": "0x76724b5edca6036ac48853df9150fdb8c61b8867ed0c9091e0bb86b2f9fcd8f4",
+			"keccak256": "0xa08e98d07e612902bbc9e63a234891028f226d72b1efd495084d4e90eaac00bc",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://2c2b3b7f91d748ff93b960409cbba8fcaba240f467fe03b2aca1b53ff6189419",
-				"dweb:/ipfs/QmWCK9pKyDyVaU9Z6ip4JTZX5CCeKvSvbYMVYupS3jcfjh"
+				"bzz-raw://89339267ba75fde2b16036d8d84223ecda86ee12b2dfb77ebc56b7e4f19474a2",
+				"dweb:/ipfs/QmUXmBqAfPBTHNhcStv2oF39jbhzR75rrMxpGDydCfoTJo"
 			]
 		},
 		"contracts/SaleJolaman.sol": {
-			"keccak256": "0xe3f846528b8bd009b29ba9f1a3de6cca0ca65bfe8a76d623058cf3b2f6337359",
+			"keccak256": "0xd8153ac3afed267e0f8c1b2cb08652934e66a39b9e0dfdfad92ddda24dad1e3a",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://08e0eb422af35a8db8b1a064aaae4c4827ea09b5d0495fd0b56b56cd06ddf7e7",
-				"dweb:/ipfs/QmXRXKTs18i8TbT1u17ioz2Mr5fivKzmsqfC1Hii2KP8os"
+				"bzz-raw://8d6101ea13a364afb9fa5db669b9cc2f583870a3d2f7024f001317286b542cb2",
+				"dweb:/ipfs/QmRCRZoCq9aHsqCZiivVbyeEe9onAyGYjNRANpHqDTGzeq"
 			]
 		},
 		"contracts/SetData.sol": {

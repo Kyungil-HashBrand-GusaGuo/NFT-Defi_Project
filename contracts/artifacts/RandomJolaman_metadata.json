@@ -1158,11 +1158,11 @@
 			]
 		},
 		"contracts/RandomJolaman.sol": {
-			"keccak256": "0x76724b5edca6036ac48853df9150fdb8c61b8867ed0c9091e0bb86b2f9fcd8f4",
+			"keccak256": "0xa08e98d07e612902bbc9e63a234891028f226d72b1efd495084d4e90eaac00bc",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://2c2b3b7f91d748ff93b960409cbba8fcaba240f467fe03b2aca1b53ff6189419",
-				"dweb:/ipfs/QmWCK9pKyDyVaU9Z6ip4JTZX5CCeKvSvbYMVYupS3jcfjh"
+				"bzz-raw://89339267ba75fde2b16036d8d84223ecda86ee12b2dfb77ebc56b7e4f19474a2",
+				"dweb:/ipfs/QmUXmBqAfPBTHNhcStv2oF39jbhzR75rrMxpGDydCfoTJo"
 			]
 		},
 		"contracts/SetData.sol": {
