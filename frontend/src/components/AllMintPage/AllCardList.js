@@ -1,31 +1,29 @@
-import React, { useState, useEffect } from 'react'
-import { RandomJolamanContract } from '../../caverConfig'
+import React, { useEffect } from 'react'
 import './AllCardList.css';
-import klayIcon from '../../images/klaytn-klay-logo.png'
-
+import { useDispatch, useSelector } from 'react-redux';
+import { collectionAction } from '../../redux/actions/collectionAction';
+import klayIcon2 from '../../images/klaytn.png'
 
 const AllCardList = () => {
 
-    const [showmint, setShowmint] = useState("");
-    const ownedTokenId = async() => {
-    const response = await RandomJolamanContract.methods.getTotalJolamanData(0).call()
-    setShowmint(response);
-    console.log("모든민팅",response);
-  }
+    const dispatch = useDispatch()
+
+    const { allmintdata } = useSelector(state => state.mintdata)
+
 
   useEffect(()=> {
-    ownedTokenId();
+    dispatch(collectionAction.collectionAct())
   },[])
   return (
     <div className='AllCradListContainer'>
-        { showmint ===""? null : 
-        showmint.map((item, index)=>(
-        <div className='cardListContainer'>
+        { allmintdata === "" ? null : 
+        allmintdata.reverse().map((item, index)=>(
+        <div className='cardListContainer' key={index}>
             <div className='myNftCard'
              style={{
                 backgroundImage:
                     "url(" + 
-                    ` https://gateway.pinata.cloud/ipfs/QmbqfWrFSDF5ieNB792KgwxdXr5AHDDRE8u47MvdaAJrpS/${item}.png` + 
+                    `${item.data.image}` + 
                     ")"
             }}
             >
@@ -34,18 +32,17 @@ const AllCardList = () => {
                 <div className='cardtxt'>
                     <div className='cardlisttitle'>
                         <p>Zolaman nft</p> 
-
                     </div>
                     <div className='cardlistname'>
-                        <p>Zola Man #{item}</p>
+                        <p>{item.data.name}</p>
                     </div>
                 </div>
                 <div className='cardtxt'>
                     <div className='cardlisttitle'>
-                    <p>Zolaman nft </p>
+                    <p>Price </p>
                     </div>
                     <div className='cardlistprice'>
-                        <img className='klayicon' src={klayIcon}/><p>2.0</p>
+                        <img className='klayicon' src={klayIcon2}/><p>2.0</p>
                     </div>
                 </div>
             </div> 

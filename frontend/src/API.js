@@ -4,10 +4,13 @@ import {
   caver,
   RandomJolamanContract,
   MINT_CONTRACT_ADDRESS,
+  setDataContract,
+
+
 } from "./caverConfig.js";
 import axios from "axios";
 
-// const server = "http://localhost:9495";
+// sever =  34.64.61.199:9495
 
 function App() {
   
@@ -201,6 +204,10 @@ function App() {
       .call();
     setCurrentSpecial(response);
   };
+
+
+
+  // 판매 등록 함수
 
   useEffect(() => {
     MAX_NORMAL_TOKEN_COUNT();

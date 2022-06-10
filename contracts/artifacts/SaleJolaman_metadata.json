@@ -9,6 +9,11 @@
 				"inputs": [
 					{
 						"internalType": "address",
+						"name": "_setdata",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
 						"name": "_randomJolaman",
 						"type": "address"
 					}
@@ -64,6 +69,37 @@
 				"name": "buyJolamanToken",
 				"outputs": [],
 				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_JolamanType",
+						"type": "uint256"
+					}
+				],
+				"name": "cancleSellJolamnaToken",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getOnSaleJolamanTypeAndPrice",
+				"outputs": [
+					{
+						"internalType": "uint256[]",
+						"name": "",
+						"type": "uint256[]"
+					},
+					{
+						"internalType": "uint256[]",
+						"name": "",
+						"type": "uint256[]"
+					}
+				],
+				"stateMutability": "view",
 				"type": "function"
 			},
 			{
@@ -131,6 +167,19 @@
 						"internalType": "uint256",
 						"name": "",
 						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "setdata",
+				"outputs": [
+					{
+						"internalType": "contract SetData",
+						"name": "",
+						"type": "address"
 					}
 				],
 				"stateMutability": "view",
@@ -285,19 +334,27 @@
 			]
 		},
 		"contracts/RandomJolaman.sol": {
-			"keccak256": "0xedf6e8f88aa26a834aa58255ba61259f3dc1b68821bbdde1177b8efc97b205c5",
+			"keccak256": "0x76724b5edca6036ac48853df9150fdb8c61b8867ed0c9091e0bb86b2f9fcd8f4",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://c45e6f02a91abd28bb4e181840caf097533c531c8659111f41e32f9cdc763390",
-				"dweb:/ipfs/QmSaQZgkgFgvDUBaZSTPU87kfop6iv5iHmYXUF1iVm1BrY"
+				"bzz-raw://2c2b3b7f91d748ff93b960409cbba8fcaba240f467fe03b2aca1b53ff6189419",
+				"dweb:/ipfs/QmWCK9pKyDyVaU9Z6ip4JTZX5CCeKvSvbYMVYupS3jcfjh"
 			]
 		},
 		"contracts/SaleJolaman.sol": {
-			"keccak256": "0xebe339720667485f1ea6cdbb42f0c35e7cbabb357e330b059b36f2515f6c68d1",
+			"keccak256": "0xe3f846528b8bd009b29ba9f1a3de6cca0ca65bfe8a76d623058cf3b2f6337359",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://6ee9e337aabda5019b3b874c31d2d648eef16e2a7bf1cf8315ca6ca5dcf5b7c1",
-				"dweb:/ipfs/QmXHtnfUthBLS5adUJSdmFWxsYVuq6AwnK9LvNvRXKrDWW"
+				"bzz-raw://08e0eb422af35a8db8b1a064aaae4c4827ea09b5d0495fd0b56b56cd06ddf7e7",
+				"dweb:/ipfs/QmXRXKTs18i8TbT1u17ioz2Mr5fivKzmsqfC1Hii2KP8os"
+			]
+		},
+		"contracts/SetData.sol": {
+			"keccak256": "0x7224469c0017e85f14f32c07b4b5b6c68f3dee0e15bcfa881cd4fb712a8a2003",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://4ceb5f3e16cfd433475c58b177a36b995f6f22f593f10eb62fbf65633a1ef5de",
+				"dweb:/ipfs/QmePyfc8V71xGgFysgn7GqYzVgM9AcPqwV3eyPzbz95MZd"
 			]
 		}
 	},

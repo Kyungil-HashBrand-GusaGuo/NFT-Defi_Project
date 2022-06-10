@@ -1,0 +1,91 @@
+.roadMapTitle {
+    display: flex;
+    justify-content: center;
+    padding-top: 2.778vw;
+    font-size: 4.861vw;
+    background-color: rgba(245, 245, 245, 0.4);
+    padding-bottom: 2.778vw;
+    padding-top: 2.778vw;
+}
+
+.roadMapContainer {
+    width: 100%;
+    height: 100%;    
+    background-color: rgba(245, 245, 245, 0.4);
+    padding-bottom: 3.472vw;
+
+}
+
+.roadMapContainer1 {
+    width: 100%;
+    height: 20.833vw;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 3.472vw;
+
+}
+.roadMapContainer2 {
+    width: 100%;
+    height: 20.833vw;
+    display: flex;
+    justify-content: center;
+}
+.roadMapContainer3 {
+    width: 100%;
+    height: 20.833vw;
+    display: flex;
+    justify-content: center;
+}
+
+.roadtxtContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.roadMaptxtSection {
+    width: 17.361vw;
+    height: 17.361vw;
+    border: 0.139vw solid black;
+    border-radius: 1.389vw;
+    background-color: rgba(255, 255, 255);
+    box-shadow: 0.26vw 0.26vw 0.26vw 0.26vw rgb(132 81 61 / 35%);
+}
+
+.roadMaptxtSectionDetail1 {
+    height: 4.167vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform:rotate(-3deg);
+    position: relative;
+    top: -2.083vw;
+}
+
+.roadMaptxtSectionDetail1 h2{
+    font-size: 1.389vw;
+    color: whitesmoke;
+    background-color: #272727;
+    padding: 0.781vw;
+    padding-left: 1.042vw;
+    padding-right: 1.042vw;
+    border: 0.052vw solid #272727;
+    border-radius: 0.521vw;
+}
+
+.arrowContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 0.694vw;
+    margin-right: 0.694vw;
+}
+
+.arrowImg {
+    width: 10.417vw;
+    height: 3.472vw;
+}
+
+@media only screen and (max-width: 1130px) {
+
+}

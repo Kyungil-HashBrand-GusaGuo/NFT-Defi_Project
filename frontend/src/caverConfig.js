@@ -1,6 +1,6 @@
 import Caver from "caver-js";
 export const MINT_CONTRACT_ADDRESS = 
-"0x2F0A06B5025D40aDD1ae606B99690f20D81b6F38";
+"0x1Ba505Db12Ef656363f736D783b60a41Ddb64904";
 
 export const MINT_CONTRACT_ABI = [
 	{
@@ -22,6 +22,11 @@ export const MINT_CONTRACT_ABI = [
 				"internalType": "string",
 				"name": "_metadataURI",
 				"type": "string"
+			},
+			{
+				"internalType": "address",
+				"name": "_setdata",
+				"type": "address"
 			}
 		],
 		"stateMutability": "nonpayable",
@@ -381,19 +386,6 @@ export const MINT_CONTRACT_ABI = [
 	{
 		"inputs": [
 			{
-				"internalType": "uint256",
-				"name": "joldata",
-				"type": "uint256"
-			}
-		],
-		"name": "setLatestJolamanData",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
 				"internalType": "uint64",
 				"name": "_price",
 				"type": "uint64"
@@ -514,6 +506,25 @@ export const MINT_CONTRACT_ABI = [
 	{
 		"inputs": [
 			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"name": "AlreadyMint",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
 				"internalType": "address",
 				"name": "owner",
 				"type": "address"
@@ -565,63 +576,12 @@ export const MINT_CONTRACT_ABI = [
 	{
 		"inputs": [
 			{
-				"internalType": "address",
-				"name": "_to",
-				"type": "address"
-			}
-		],
-		"name": "getBalance",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
 				"internalType": "uint256",
 				"name": "_tokenId",
 				"type": "uint256"
 			}
 		],
 		"name": "getJolamanTokenType",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "uint256",
-				"name": "_jolType",
-				"type": "uint256"
-			}
-		],
-		"name": "getjolamanTokenTypeOfOwner",
-		"outputs": [
-			{
-				"internalType": "address",
-				"name": "",
-				"type": "address"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [],
-		"name": "getLatestJolamanData",
 		"outputs": [
 			{
 				"internalType": "uint256",
@@ -646,44 +606,6 @@ export const MINT_CONTRACT_ABI = [
 				"internalType": "bytes32",
 				"name": "",
 				"type": "bytes32"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "uint256",
-				"name": "x",
-				"type": "uint256"
-			}
-		],
-		"name": "getTotalJolamanData",
-		"outputs": [
-			{
-				"internalType": "uint256[]",
-				"name": "",
-				"type": "uint256[]"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "ownerAddress",
-				"type": "address"
-			}
-		],
-		"name": "getTotalOwnedTokens",
-		"outputs": [
-			{
-				"internalType": "uint256[]",
-				"name": "",
-				"type": "uint256[]"
 			}
 		],
 		"stateMutability": "view",
@@ -751,44 +673,6 @@ export const MINT_CONTRACT_ABI = [
 				"internalType": "bool",
 				"name": "",
 				"type": "bool"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"name": "jolamanTokenTypeOfOwner",
-		"outputs": [
-			{
-				"internalType": "address",
-				"name": "",
-				"type": "address"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"name": "latestJolamanData",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
 			}
 		],
 		"stateMutability": "view",
@@ -925,6 +809,19 @@ export const MINT_CONTRACT_ABI = [
 	},
 	{
 		"inputs": [],
+		"name": "setdata",
+		"outputs": [
+			{
+				"internalType": "contract SetData",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
 		"name": "SPECIAL_MINTER_ROLE",
 		"outputs": [
 			{
@@ -1015,6 +912,269 @@ export const MINT_CONTRACT_ABI = [
 		"inputs": [
 			{
 				"internalType": "uint256",
+				"name": "_tokenId",
+				"type": "uint256"
+			}
+		],
+		"name": "tokenURI",
+		"outputs": [
+			{
+				"internalType": "string",
+				"name": "",
+				"type": "string"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "totalSupply",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	}
+]
+export const caver = new Caver(window.caver);
+
+export const DATA_CONTRACT_ADDRESS = 
+"0xedCe74234781ec92EF141a2068Ab024D27477638";
+
+export const DATA_CONTRACT_ABI = [
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "sellOwnerAddress",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_JolamanType",
+				"type": "uint256"
+			}
+		],
+		"name": "SellOwnedToken",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_JolType",
+				"type": "uint256"
+			},
+			{
+				"internalType": "address",
+				"name": "_tokenOwner",
+				"type": "address"
+			}
+		],
+		"name": "setJolamanTokenTypeOfOwner",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_TokenId",
+				"type": "uint256"
+			},
+			{
+				"internalType": "address",
+				"name": "_to",
+				"type": "address"
+			}
+		],
+		"name": "setTokenOwner",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_JolType",
+				"type": "uint256"
+			}
+		],
+		"name": "setTotalJolamanData",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "_tokenOwner",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_JolType",
+				"type": "uint256"
+			}
+		],
+		"name": "setTotalOwnedTokens",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_joldata",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_tokenId",
+				"type": "uint256"
+			}
+		],
+		"name": "setTypeToId",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_JolType",
+				"type": "uint256"
+			}
+		],
+		"name": "getJolamanTokenTypeOfOnwer",
+		"outputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "getLatestJolamanData",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_TokenId",
+				"type": "uint256"
+			}
+		],
+		"name": "getTokenOwner",
+		"outputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "getTotalJolamanData",
+		"outputs": [
+			{
+				"internalType": "uint256[]",
+				"name": "",
+				"type": "uint256[]"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "_ownerAddress",
+				"type": "address"
+			}
+		],
+		"name": "getTotalOwnedTokens",
+		"outputs": [
+			{
+				"internalType": "uint256[]",
+				"name": "",
+				"type": "uint256[]"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "joldata",
+				"type": "uint256"
+			}
+		],
+		"name": "gettypeToId",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"name": "jolamanTokenTypeOfOwner",
+		"outputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
 				"name": "",
 				"type": "uint256"
 			}
@@ -1032,30 +1192,6 @@ export const MINT_CONTRACT_ABI = [
 	},
 	{
 		"inputs": [
-			{
-				"internalType": "uint256",
-				"name": "_tokenId",
-				"type": "uint256"
-			}
-		],
-		"name": "tokenURI",
-		"outputs": [
-			{
-				"internalType": "string",
-				"name": "",
-				"type": "string"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			},
 			{
 				"internalType": "uint256",
 				"name": "",
@@ -1098,8 +1234,14 @@ export const MINT_CONTRACT_ABI = [
 		"type": "function"
 	},
 	{
-		"inputs": [],
-		"name": "totalSupply",
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"name": "typeToId",
 		"outputs": [
 			{
 				"internalType": "uint256",
@@ -1112,10 +1254,203 @@ export const MINT_CONTRACT_ABI = [
 	}
 ]
 
-export const caver = new Caver(window.caver);
+export const SALE_CONTRACT_ADDRESS = 
+"0xFb95eBC0BFD82b0F732cE3EBDA54807c0AF55B52";
 
+export const SALE_CONTRACT_ABI = [
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_JolamanType",
+				"type": "uint256"
+			}
+		],
+		"name": "buyJolamanToken",
+		"outputs": [],
+		"stateMutability": "payable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_JolamanType",
+				"type": "uint256"
+			}
+		],
+		"name": "cancleSellJolamnaToken",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_JolamanType",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_price",
+				"type": "uint256"
+			}
+		],
+		"name": "SellJolamanToken",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "_setdata",
+				"type": "address"
+			},
+			{
+				"internalType": "address",
+				"name": "_randomJolaman",
+				"type": "address"
+			}
+		],
+		"stateMutability": "nonpayable",
+		"type": "constructor"
+	},
+	{
+		"inputs": [],
+		"name": "getOnSaleJolamanTypeAndPrice",
+		"outputs": [
+			{
+				"internalType": "uint256[]",
+				"name": "",
+				"type": "uint256[]"
+			},
+			{
+				"internalType": "uint256[]",
+				"name": "",
+				"type": "uint256[]"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"name": "onSaleJolamanPrice",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"name": "onSaleJolamanType",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "randomJolaman",
+		"outputs": [
+			{
+				"internalType": "contract RandomJolaman",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"name": "SellingJol",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"name": "sellingJolamanTypeToPrice",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "setdata",
+		"outputs": [
+			{
+				"internalType": "contract SetData",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	}
+];
 
 export const RandomJolamanContract = new caver.klay.Contract(
     MINT_CONTRACT_ABI,
-    MINT_CONTRACT_ADDRESS
+    MINT_CONTRACT_ADDRESS,
+)
+
+export const setDataContract = new caver.klay.Contract(
+	DATA_CONTRACT_ABI,
+	DATA_CONTRACT_ADDRESS
+)
+
+export const SaleContract = new caver.klay.Contract(
+	SALE_CONTRACT_ABI,
+	SALE_CONTRACT_ADDRESS
 )

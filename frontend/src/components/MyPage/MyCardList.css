@@ -18,11 +18,12 @@
     box-shadow:gray 0px 2px 20px;
     margin-right: 10px;
     margin-bottom: 10px;
+    background-color: white;
 }
 
 .cardListContainer:hover {
     
-	border: 3px solid pink;
+	border: 3px solid rgba(44, 14, 2, 0.35)
 }
 
 .myNftCard {
@@ -55,7 +56,7 @@
     flex: 50%;
     display: flex;
     align-items: center;
-    
+    font-size: 15px;
 }
 
 
@@ -68,4 +69,5 @@
 .klayicon {
     width: 20px;
     height: 20px;
+    margin-right: 5px;
 }

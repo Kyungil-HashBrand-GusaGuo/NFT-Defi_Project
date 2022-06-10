@@ -1,35 +1,31 @@
-import React, { useState, useEffect } from 'react'
-// import { MyCardList } from '../components'
-import {RandomJolamanContract} from '../../caverConfig'
-import { useSelector } from 'react-redux';
+import React, { useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux';
 import './MyCardList.css'
-import klayIcon2 from '../../images/klaytn.jpeg'
+import klayIcon2 from '../../images/klaytn.png'
+import { mypageAction } from '../../redux/actions/mypageAction';
 
 const MyCardList = () => {
 
-  const { account } = useSelector(state => state.account);
+    const dispatch = useDispatch()
+    const { account } = useSelector(state => state.account);
+    const { mymintdata } = useSelector(state => state.mintdata)
 
-  const [showmint, setShowmint] = useState("");
-  const ownedTokenId = async() => {
-    const response = await RandomJolamanContract.methods.getTotalOwnedTokens(account).call()
-    setShowmint(response);
-    console.log("내민팅",response);
-  }
+    console.log(mymintdata)
 
   useEffect(()=> {
-    ownedTokenId();
+    dispatch(mypageAction.mypageAct(account))
   },[account])
 
   return (
     <div className='myCardListContainer'>
-        { showmint ===""? null : 
-        showmint.map((item, index)=>(
-        <div className='cardListContainer'>
+        { mymintdata === "" ? null : 
+        mymintdata.reverse().map((item, index)=>(
+        <div className='cardListContainer' key={index}>
             <div className='myNftCard'
              style={{
-                backgroundImage:
+                backgroundImage: 
                     "url(" + 
-                    ` https://gateway.pinata.cloud/ipfs/QmbqfWrFSDF5ieNB792KgwxdXr5AHDDRE8u47MvdaAJrpS/${item}.png` + 
+                    `${item.data.image}` + 
                     ")"
             }}
             >
@@ -41,7 +37,7 @@ const MyCardList = () => {
 
                     </div>
                     <div className='cardlistname'>
-                        <p>Zola Man #{item}</p>
+                        <p>{item.data.name}</p>
                     </div>
                 </div>
                 <div className='cardtxt'>

@@ -1,13 +1,19 @@
 import React from 'react'
 import './MainPage.css';
-// import Parallax from '../components'
-import Parallax from '../components/MainPage/Parallax'
+import { Gallery, MainTitle, Parallax, Partners, RoadMap, Story, TeamIntro} from '../components'
 
 const MainPage = () => {
     
   return (
     <div className='mainpagecontainer'>
-        <Parallax/>
+        <MainTitle/>
+        <Gallery/>
+        {/* <Story/> */}
+        <RoadMap/>
+        <TeamIntro/>
+        <Partners/>
+        {/* <Parallax/> */}
+
     </div>
   )
 }

@@ -20,25 +20,6 @@ const Parallax = () => {
   
     return (
       <div className="parallaxContainer">
-        <div className='titlecontainer'>
-          <h1 className='maintitle'>ZOLAMAN NFT</h1>
-        </div>
-        <div
-          className="bg bg1"
-          style={{
-            backgroundPositionY: position / 2,
-          }}
-        >
-          <div>설명그림</div>
-        </div>
-        <div
-          className="bg bg2"
-          style={{
-            backgroundPositionY: position / -3,
-          }}
-        >
-          <div>nft</div>
-        </div>
         <p
           className="desc"
           style={{
@@ -68,7 +49,7 @@ const Parallax = () => {
         <p
           className="desc3"
           style={{
-            opacity: (position - 830) / 50,
+            opacity: (position - 1000) / 50,
           }}
         >
           Lorem ipsum dolor sit amet

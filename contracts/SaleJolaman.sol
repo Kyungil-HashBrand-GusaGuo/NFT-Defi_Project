@@ -2,13 +2,19 @@
 pragma solidity ^0.8.4;
 
 import "./RandomJolaman.sol";
+import "./SetData.sol";
+
 
 contract SaleJolaman {
     RandomJolaman public randomJolaman;
+    SetData public setdata;
 
-    constructor (address _randomJolaman) {
+    constructor (address _setdata, address _randomJolaman) {
+        setdata = SetData(_setdata);
         randomJolaman = RandomJolaman(_randomJolaman);
     }
+
+
 
     // 졸라맨 타입 입력 판매 중 여부 확인 매핑
     mapping(uint => bool) public SellingJol;
@@ -21,12 +27,13 @@ contract SaleJolaman {
 
     // 판매 등록 함수
     function SellJolamanToken(uint _JolamanType, uint _price) public {
-    address tokenOwner = randomJolaman.getjolamanTokenTypeOfOwner(_JolamanType);
+        
+    address SelltokenOwner = setdata.getJolamanTokenTypeOfOnwer(_JolamanType);
 
-    require(tokenOwner == msg.sender, "Caller is not TokenOwner.");
+    require(SelltokenOwner == msg.sender, "Caller is not TokenOwner.");
     require(_price > 0, "Price is greater than 0.");
     require(SellingJol[_JolamanType] == false, "This token is already on sale.");
- 
+
 
     sellingJolamanTypeToPrice[_JolamanType] = _price;
     SellingJol[_JolamanType] = true;
@@ -34,44 +41,57 @@ contract SaleJolaman {
     onSaleJolamanPrice.push(_price);
     }
 
+    //판매 등록 취소 함수
+
+    function cancleSellJolamnaToken(uint _JolamanType) public {
+        address SelltokenOwner = setdata.getJolamanTokenTypeOfOnwer(_JolamanType);
+
+        require(SelltokenOwner == msg.sender, "Caller is not TokenOwner.");
+        require(SellingJol[_JolamanType] == true, "This token not Sale");
+        SellingJol[_JolamanType] = true;
+        popOnSaleToken(_JolamanType);
+    }
+
     // 구매 함수
 
     function buyJolamanToken(uint _JolamanType) public payable {
-        address tokenOwner = randomJolaman.getjolamanTokenTypeOfOwner(_JolamanType);
+        address SelltokenOwner = setdata.getJolamanTokenTypeOfOnwer(_JolamanType);
 
-        require(tokenOwner != msg.sender, "Caller is token owner.");
+        require(SelltokenOwner != msg.sender, "Caller is token owner.");
         require(SellingJol[_JolamanType] == true, "This token not sale.");
         require(sellingJolamanTypeToPrice[_JolamanType] == msg.value, "Caller sent lower than price.");
-        require(randomJolaman.isApprovedForAll(tokenOwner, msg.sender), "token onwer did not approve token.");
+        
+        payable(SelltokenOwner).transfer(msg.value);
+        randomJolaman.safeTransferFrom(SelltokenOwner, msg.sender, setdata.gettypeToId(_JolamanType));
 
-        payable(tokenOwner).transfer(msg.value);
-        randomJolaman.safeTransferFrom(tokenOwner, msg.sender, 1);
-
-        SellingJol[_JolamanType] == false;
+        SellingJol[_JolamanType] = false;
         sellingJolamanTypeToPrice[_JolamanType] = 0;
+        setdata.setJolamanTokenTypeOfOwner(_JolamanType, msg.sender);
+        setdata.SellOwnedToken(SelltokenOwner, _JolamanType);
+        setdata.setTokenOwner(setdata.gettypeToId(_JolamanType), msg.sender);
+        setdata.setTotalOwnedTokens(msg.sender, _JolamanType);
 
         popOnSaleToken(_JolamanType);
-        popOnSalePrice(_JolamanType);
     }
 
-    // 판매중인 토큰 배열 제거
+    // 판매시 판매중인 토큰, 가격 배열 제거
     function popOnSaleToken(uint _JolamanType) private {
         for(uint i = 0; i < onSaleJolamanType.length; i++) {
             if(onSaleJolamanType[i] == _JolamanType) {
                 onSaleJolamanType[i] = onSaleJolamanType[onSaleJolamanType.length - 1];
+                onSaleJolamanPrice[i] = onSaleJolamanPrice[onSaleJolamanPrice.length - 1];
                 onSaleJolamanType.pop();
+                onSaleJolamanPrice.pop();
             }
         }
     }
 
-    // 판매중인 토큰 가격 제거    
-    function popOnSalePrice(uint _JolamanType) private {
-        for(uint i = 0; i < onSaleJolamanType.length; i++) {
-            if(onSaleJolamanPrice[i] == _JolamanType) {
-                onSaleJolamanPrice[i] = onSaleJolamanPrice[onSaleJolamanPrice.length - 1];
-                onSaleJolamanPrice.pop();
-            }
-        }
+
+
+    // 판매중인 토큰 배열 조회 함수
+
+    function getOnSaleJolamanTypeAndPrice() public view returns(uint[] memory, uint[] memory) {
+        return (onSaleJolamanType, onSaleJolamanPrice);
     }
 
 }

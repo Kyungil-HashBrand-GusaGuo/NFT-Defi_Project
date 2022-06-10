@@ -1,0 +1,33 @@
+.sliderMainContainer {
+    padding-bottom: 3.472vw;
+}
+
+.sliderTitle{
+    display: flex;
+    justify-content: center;
+    font-size: 4.861vw;
+    margin-bottom: 3.472vw;
+}
+
+
+.sildernoneContainer {
+    width: 100%;
+    height: 20.833vw;
+    position: relative;
+    
+}
+.silderImgContainer{
+    width: 20.833vw;
+    height: 20.833vw;
+    border-radius: 1.389vw;
+    position: absolute;
+    left: 3.472vw;
+}
+
+.silderImgContainer img {
+    width: 100%;
+    height: 100%;
+    border-radius: 1.389vw;
+    border: solid 0.139vw black;
+    
+}
