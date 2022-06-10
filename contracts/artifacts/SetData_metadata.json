@@ -324,7 +324,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"contracts/SetData.sol": "SetData"
+			"SetData.sol": "SetData"
 		},
 		"evmVersion": "london",
 		"libraries": {},
@@ -338,12 +338,12 @@
 		"remappings": []
 	},
 	"sources": {
-		"contracts/SetData.sol": {
-			"keccak256": "0x7224469c0017e85f14f32c07b4b5b6c68f3dee0e15bcfa881cd4fb712a8a2003",
+		"SetData.sol": {
+			"keccak256": "0x5c10620fcf70ace556b73b5f2384e666d3e96b781674e911724db3cfe4ac04e5",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://4ceb5f3e16cfd433475c58b177a36b995f6f22f593f10eb62fbf65633a1ef5de",
-				"dweb:/ipfs/QmePyfc8V71xGgFysgn7GqYzVgM9AcPqwV3eyPzbz95MZd"
+				"bzz-raw://74bf0cfc7fd02eeb41c7dae1e0564f96fccffeecb130b451ad70ee96fcb6911f",
+				"dweb:/ipfs/QmQF97m9YYQxmNHEq42pHoTAH8WCda7uJFcJn2K9We1vCM"
 			]
 		}
 	},

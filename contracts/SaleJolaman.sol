@@ -3,17 +3,19 @@ pragma solidity ^0.8.4;
 
 import "./RandomJolaman.sol";
 import "./SetData.sol";
+import "@openzeppelin/contracts/token/ERC721/IERC721.sol";
+import "@openzeppelin/contracts/token/ERC721/utils/ERC721Holder.sol";
+import "@openzeppelin/contracts/access/Ownable.sol";
 
-
-contract SaleJolaman {
-    RandomJolaman public randomJolaman;
+contract SaleJolaman is Ownable, ERC721Holder {
+    // RandomJolaman public randomJolaman;
     SetData public setdata;
+    IERC721 public randomJolaman;
 
-    constructor (address _setdata, address _randomJolaman) {
+    constructor (address _setdata, IERC721 _randomJolaman) {
         setdata = SetData(_setdata);
-        randomJolaman = RandomJolaman(_randomJolaman);
+        randomJolaman = _randomJolaman;
     }
-
 
 
     // 졸라맨 타입 입력 판매 중 여부 확인 매핑
@@ -28,17 +30,18 @@ contract SaleJolaman {
     // 판매 등록 함수
     function SellJolamanToken(uint _JolamanType, uint _price) public {
         
-    address SelltokenOwner = setdata.getJolamanTokenTypeOfOnwer(_JolamanType);
+        address SelltokenOwner = setdata.getJolamanTokenTypeOfOnwer(_JolamanType);
 
-    require(SelltokenOwner == msg.sender, "Caller is not TokenOwner.");
-    require(_price > 0, "Price is greater than 0.");
-    require(SellingJol[_JolamanType] == false, "This token is already on sale.");
+        require(SelltokenOwner == msg.sender, "Caller is not TokenOwner.");
+        require(_price > 0, "Price is greater than 0.");
+        require(SellingJol[_JolamanType] == false, "This token is already on sale.");
+        uint _tokenId = setdata.gettypeToId(_JolamanType);
+        randomJolaman.approve(address(this), _tokenId);
 
-
-    sellingJolamanTypeToPrice[_JolamanType] = _price;
-    SellingJol[_JolamanType] = true;
-    onSaleJolamanType.push(_JolamanType);
-    onSaleJolamanPrice.push(_price);
+        sellingJolamanTypeToPrice[_JolamanType] = _price;
+        SellingJol[_JolamanType] = true;
+        onSaleJolamanType.push(_JolamanType);
+        onSaleJolamanPrice.push(_price);
     }
 
     //판매 등록 취소 함수

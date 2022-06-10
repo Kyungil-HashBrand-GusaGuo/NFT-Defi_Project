@@ -13,13 +13,14 @@ contract SetData {
     mapping(uint => uint) public typeToId;
 
 
-    function setTokenOwner(uint _TokenId, address _to) external {
-        tokenOwner[_TokenId] = _to;
-    } 
+
 
     // TokenId 별 TokenOwner 조회 함수 
     function getTokenOwner(uint _TokenId) public view returns(address) {
         return tokenOwner[_TokenId];
+    }
+    function setTokenOwner(uint _TokenId, address _to) external {
+        tokenOwner[_TokenId] = _to;
     } 
 
     function setTotalOwnedTokens(address _tokenOwner, uint _JolType) external {

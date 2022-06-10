@@ -2,8 +2,8 @@
 pragma solidity ^0.8.4;
 
 
-
-import "@openzeppelin/contracts/token/ERC721/extensions/ERC721Enumerable.sol";
+import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
+// import "@openzeppelin/contracts/token/ERC721/extensions/ERC721Enumerable.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
 import "@openzeppelin/contracts/access/AccessControl.sol";
 
@@ -14,7 +14,7 @@ import "./SetData.sol";
 
 
 
-contract RandomJolaman is ERC721Enumerable, Ownable, AccessControl{
+contract RandomJolaman is ERC721, Ownable, AccessControl{
     using SafeMath for uint256;
 
     uint[1000] private normal_token_ids;
@@ -66,7 +66,7 @@ contract RandomJolaman is ERC721Enumerable, Ownable, AccessControl{
         string memory jolamanTokenType = Strings.toString(mappedJolamanTokenData[_tokenId].jolamanTokenType);
 
         // abi.encodePacked(arg) arg들을 하나로 합쳐주는 함수
-        // https://gateway.pinata.cloud/ipfs/QmT4Hef2VNKxr7fuJqZQMKfEPkm5jCLLPKraNrFJeSpg1s
+        // https://gateway.pinata.cloud/ipfs/QmQJGKnjHtgBeWRarsBHwK8uY7hsHoPJpuaPezBTrGac7K
         return string(abi.encodePacked(metadataURI, '/', jolamanTokenType, '.json'));
     }
 
@@ -202,7 +202,7 @@ contract RandomJolaman is ERC721Enumerable, Ownable, AccessControl{
     function supportsInterface(bytes4 interfaceId)
         public
         view
-        override(ERC721Enumerable, AccessControl)
+        override(ERC721, AccessControl)
         returns (bool)
     {
         return super.supportsInterface(interfaceId);
