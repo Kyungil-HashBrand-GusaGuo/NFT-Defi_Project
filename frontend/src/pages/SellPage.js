@@ -21,6 +21,9 @@ const SellPage = () => {
     const [sellModal, setSellModal] = useState(false)
     const [cancelSellModal, setCancelSellModal] = useState(false)
     const [checkSell, setCheckSell] = useState()
+    const [showMint, setShowMint] = useState();
+
+    
 
     const changeSellModalState = () => {
       setSellModal(true)
@@ -29,12 +32,16 @@ const SellPage = () => {
       setCancelSellModal(true)
     }
 
+
     const callSellNft = async() => {
       const response = await axios.get("http://34.64.61.199:9495/block/getOnSaleJolaman");
+      const mintJSON = await axios.get(`https://gateway.pinata.cloud/ipfs/QmXYi44PkJbNzH4nT13ZgEnKaibppUsfPCW4NpDigEBgXE/${edition}.json`);
       let state = response.data[0].includes(edition)
       console.log("배열확인", response.data[0])
       console.log("배열확인", state)
+      console.log("민트", mintJSON.data)
       setCheckSell(state)
+      setShowMint(mintJSON.data);
     }
     
     useEffect(()=>{
@@ -47,9 +54,8 @@ const SellPage = () => {
           <div className='SellTitleContainer'>
               <h2>List item for sale</h2>
           </div>
-          { mymintdata === "" ? null :
-          mymintdata.map((item, index) => (
-          <div className='sellTxtContainer' key={index}>
+          { showMint ? 
+          <div className='sellTxtContainer'>
             <div className='leftSellContainer'>
               <div className='leftSection'>
                 <div className='leftInputContainer'>
@@ -65,29 +71,26 @@ const SellPage = () => {
                     <table>
                       <thead>
                         <tr>
-                          <th>#</th>
-                          <th>First Name</th>
-                          <th>Last Name</th>
-                          <th>Username</th>
+                          <th>{showMint.attributes[0].trait_type}</th>
+                          <th>{showMint.attributes[1].trait_type}</th>
+                          <th>{showMint.attributes[2].trait_type}</th>
+                          <th>{showMint.attributes[3].trait_type}</th>
+                          <th>{showMint.attributes[4].trait_type}</th>
+                          <th>{showMint.attributes[5].trait_type}</th>
+                          <th>{showMint.attributes[6].trait_type}</th>
+                          
                         </tr>
                       </thead>
                       <tbody>
                         <tr>
-                          <td>1</td>
-                          <td>Mark</td>
-                          <td>Otto</td>
-                          <td>@mdo</td>
-                        </tr>
-                        <tr>
-                          <td>2</td>
-                          <td>Jacob</td>
-                          <td>Thornton</td>
-                          <td>@fat</td>
-                        </tr>
-                        <tr>
-                          <td>3</td>
-                          <td colSpan={2}>Larry the Bird</td>
-                          <td>@twitter</td>
+                          <td>{showMint.attributes[0].value}</td>
+                          <td>{showMint.attributes[1].value}</td>
+                          <td>{showMint.attributes[2].value}</td>
+                          <td>{showMint.attributes[3].value}</td>
+                          <td>{showMint.attributes[4].value}</td>
+                          <td>{showMint.attributes[5].value}</td>
+                          <td>{showMint.attributes[6].value}</td>
+                    
                         </tr>
                       </tbody>
                     </table>
@@ -102,7 +105,6 @@ const SellPage = () => {
                     </div>
                   </div>
                   <div className='leftbtn'>
-                    {/* <button onClick={selling} className="learn-more">Complete listing</button> */}
                     {
                       checkSell ? <button onClick={changeCancelSellModalState} className="learn-more">Cancel Sell</button> : <button onClick={changeSellModalState} className="learn-more">Sell</button>
 
@@ -111,6 +113,7 @@ const SellPage = () => {
                 </div>
               </div>
             </div>
+            
             <div className='rightSellContainer'>
               <div className='rightCardMainContainer'>
                 
@@ -119,7 +122,7 @@ const SellPage = () => {
                     style={{
                       backgroundImage: 
                           "url(" + 
-                          `${item.data.image}` + 
+                          `${showMint.image}` + 
                           ")"
                   }}
                   >
@@ -130,7 +133,7 @@ const SellPage = () => {
                               <p>Zolaman nft</p> 
                           </div>
                           <div className='rightCardListName'>
-                              <p>{item.data.name}</p>
+                              <p>{showMint.name}</p>
                           </div>
                         </div>
                         <div className='rightCardTxt'>
@@ -142,15 +145,17 @@ const SellPage = () => {
                           </div>
                         </div>
                         <div className='cardDna'>
-                          <p>{item.data.dna}</p>
+                          <p>{showMint.dna}</p>
                         </div>
                   </div>
                 </div>
                 
               </div>
-            </div>  
-          </div> /*여기 */
-          ))}
+            </div>
+           
+          </div>
+          : null  
+          }
         </div>
       </div>
   )
