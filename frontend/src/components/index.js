@@ -10,6 +10,8 @@ import RoadMap from './MainPage/RoadMap';
 import Story from './MainPage/Story';
 import TeamIntro from './MainPage/TeamIntro';
 import Gallery from './MainPage/Gallery'
+import SellModal from './SellPage/SellModal';
+import CancelSellModal from './SellPage/CancelSellModal';
 
 export { 
     Navbar, 
@@ -24,4 +26,6 @@ export {
     Story,
     TeamIntro,
     Gallery,
+    SellModal,
+    CancelSellModal
 }

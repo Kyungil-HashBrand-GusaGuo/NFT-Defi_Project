@@ -1,22 +1,43 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useParams } from 'react-router-dom'
-import { test } from '../redux/actions/test';
+import { SellModal, CancelSellModal } from '../components';
+import { cancelSellingAction } from '../redux/actions/cancelSellingAction';
+import axios from 'axios';
+//import {caver, SaleContract, SALE_CONTRACT_ADDRESS} from '../caverConfig'
+
+
 
 const SellPage = () => {
 
     const dispatch = useDispatch();
     let {edition} = useParams()
-    console.log(edition)
+    //console.log(edition)
     const { account } = useSelector(state => state.account)
-    console.log(account)
+    //const { sellingNftSuccess } = useSelector(state => state.transactionNFT)
+    //console.log( "NFT판매여부", sellingNftSuccess)
+    const [sellModal, setSellModal] = useState(false)
+    const [cancelSellModal, setCancelSellModal] = useState(false)
+    const [checkSell, setCheckSell] = useState()
 
-    const selling = () => {
-        dispatch(test.testAction(edition, account))
-        // 모달창으로 가고, 모달창에서 이런것들을 줘야겠네. 아 이거를 props로 넘겨줘야겠다
-        // 모달창에서 useEffect 써서 바로 함수 실행될 수 있도록 
-        // 오버레이 처리해주고 
+    const changeSellModalState = () => {
+      setSellModal(true)
     }
+    const changeCancelSellModalState = () => {
+      setCancelSellModal(true)
+    }
+
+    const callSellNft = async() => {
+      const response = await axios.get("http://34.64.61.199:9495/block/getOnSaleJolaman");
+      let state = response.data[0].includes(edition)
+      console.log("배열확인", response.data[0])
+      console.log("배열확인", state)
+      setCheckSell(state)
+    }
+    
+    useEffect(()=>{
+      callSellNft()
+    },[])
 
   return (
     <>
@@ -25,12 +46,20 @@ const SellPage = () => {
     <div>SellPage</div>
     <div>SellPage</div>
     <div>SellPage</div>
+    {
+      sellModal ? <SellModal edition={edition} account={account}/> : null
+    }
+    {
+      cancelSellModal ? <CancelSellModal edition={edition} account={account}/> : null
+    }
     <div>SellPage</div>
     <div>SellPage</div>
     <div>SellPage{account}</div>
     <div>SellPage{edition}</div>
-    <div>SellPage{edition}</div>
-    <button onClick={selling}>Sell 사실 이제 이거 눌렀을떄 일단 모달창으로 가고, 모달에서 처리해야함</button>
+    {
+      checkSell ? <button onClick={changeCancelSellModalState}>Cancel Sell</button> : <button onClick={changeSellModalState}>Sell</button>
+
+    }
     </>
   )
 }
