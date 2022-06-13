@@ -12,6 +12,7 @@ import TeamIntro from './MainPage/TeamIntro';
 import Gallery from './MainPage/Gallery'
 import SellModal from './SellPage/SellModal';
 import CancelSellModal from './SellPage/CancelSellModal';
+import BuyModal from './BuyPage/BuyModal';
 
 export { 
     Navbar, 
@@ -27,5 +28,6 @@ export {
     TeamIntro,
     Gallery,
     SellModal,
-    CancelSellModal
+    CancelSellModal,
+    BuyModal
 }
