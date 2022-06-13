@@ -1439,7 +1439,7 @@ export const SALE_CONTRACT_ABI = [
 	}
 ];
 
-export const ethers = new ethers.providers.Web3Provider(window.ethereum);
+// export const ethers = new ethers.providers.Web3Provider(window.ethereum);
 
 
 
@@ -1462,7 +1462,7 @@ export const SaleContract = () => {
 	return tempContract;
 }
 
-
+console.log(RandomJolamanContract);
 
 // export const RandomJolamanContract = new ethers.ethereum.Contract(
 //     MINT_CONTRACT_ABI,

@@ -2,7 +2,7 @@ const Caver = require("caver-js");
 const Web3 = require("web3");
 
 const config = {
-  rpcURL: "https://api.baobab.klaytn.net:8651",
+  rpcURL: "http:localhost:9495",
 };
 const web3 = new Web3(config.rpcURL);
 const MINT_CONTRACT_ADDRESS = "0x1Ba505Db12Ef656363f736D783b60a41Ddb64904";

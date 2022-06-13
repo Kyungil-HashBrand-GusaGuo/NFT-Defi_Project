@@ -1,4 +1,5 @@
-import { ethers, caver, RandomJolamanContract, MINT_CONTRACT_ADDRESS, setDataContract } from "../../caverConfig";
+import { RandomJolamanContract, MINT_CONTRACT_ADDRESS, setDataContract } from "../../caverConfig";
+import { ethers } from "ethers";
 import axios from "axios";
 
 function whiteMintAction(account) {
@@ -7,10 +8,10 @@ function whiteMintAction(account) {
 
     return async (dispatch) => {
         try {
-            const response = await ethers.ethereum.sendTransaction({
+            const response = await window.ethereum.sendTransaction({
                 from: account,
                 to: MINT_CONTRACT_ADDRESS,
-                value: ethers.utils.convertToPeb(2, "Ether"),
+                value: ethers.utils.formatEther(2, "Ether"),
                 gas: "3000000",
                 data: RandomJolamanContract.methods.specialPayandMint().encodeABI(),
             })

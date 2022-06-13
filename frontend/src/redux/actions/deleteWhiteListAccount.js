@@ -1,4 +1,5 @@
-import { ethers, caver, RandomJolamanContract, MINT_CONTRACT_ADDRESS } from "../../caverConfig";
+import { RandomJolamanContract, MINT_CONTRACT_ADDRESS } from "../../caverConfig";
+import { ethers } from "ethers";
 
 function deleteWhiteList(account, address) {
   
@@ -7,7 +8,7 @@ function deleteWhiteList(account, address) {
 
   return async (dispatch) => {
         try {
-            const response = await ethers.klay.sendTransaction({
+            const response = await window.ethereum.sendTransaction({
                 from: account,
                 to: MINT_CONTRACT_ADDRESS,
                 gas: "3000000",

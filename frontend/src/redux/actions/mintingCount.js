@@ -1,18 +1,19 @@
 import { RandomJolamanContract } from "../../caverConfig";
+
 import axios from "axios";
 
 function mintCount() {
-
+    const api = "http://localhost:9495"
     return async (dispatch) => {
         try {
                 // const MAX_NORMAL_TOKEN_COUNT = RandomJolamanContract.methods.MAX_NORMAL_TOKEN_COUNT().call()
-                const MAX_NORMAL_TOKEN_COUNT = await axios.get("http://34.64.61.199:9495/block/normalAll")
+                const MAX_NORMAL_TOKEN_COUNT = await axios.get(api+"/normalAll")
             
-                const MAX_SPECIAL_TOKEN_COUNT = await axios.get("http://34.64.61.199:9495/block/specialAll")
+                const MAX_SPECIAL_TOKEN_COUNT = await axios.get(api+"/specialAll")
 
-                const NORMAL_TOKEN_COUNT = await axios.get("http://34.64.61.199:9495/block/normalCurrent")
+                const NORMAL_TOKEN_COUNT = await axios.get(api+"/normalCurrent")
 
-                const SPECIAL_TOKEN_COUNT = await axios.get("http://34.64.61.199:9495/block/specialCurrent")
+                const SPECIAL_TOKEN_COUNT = await axios.get(api+"/block/specialCurrent")
 
                 let [ maxNormalTokenCount, maxSpecialTokenCount, normalTokenCount, specialTokenCount ] = await Promise.all([MAX_NORMAL_TOKEN_COUNT.data, MAX_SPECIAL_TOKEN_COUNT.data, NORMAL_TOKEN_COUNT.data, SPECIAL_TOKEN_COUNT.data])
                 // console.log("MAX_NORMAL_TOKEN_COUNT",maxNormalTokenCount)
