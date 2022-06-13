@@ -3,17 +3,22 @@ pragma solidity ^0.8.4;
 
 import "./RandomJolaman.sol";
 import "./SetData.sol";
+import "@openzeppelin/contracts/access/Ownable.sol";
+import "@openzeppelin/contracts/token/ERC721/utils/ERC721Holder.sol";
+import "@openzeppelin/contracts/token/ERC721/IERC721.sol";
 
-
-contract SaleJolaman {
-    RandomJolaman public randomJolaman;
+contract SaleJolaman is ERC721Holder {
+    // RandomJolaman public randomJolaman;
+    IERC721 public randomJolaman;
     SetData public setdata;
 
-    constructor (address _setdata, address _randomJolaman) {
+    constructor (address _setdata, IERC721 _randomJolaman) {
         setdata = SetData(_setdata);
-        randomJolaman = RandomJolaman(_randomJolaman);
+        randomJolaman = _randomJolaman;
     }
 
+    uint public constant KlayTn = 10 ** 18;
+    
 
 
     // 졸라맨 타입 입력 판매 중 여부 확인 매핑
@@ -33,12 +38,12 @@ contract SaleJolaman {
     require(SelltokenOwner == msg.sender, "Caller is not TokenOwner.");
     require(_price > 0, "Price is greater than 0.");
     require(SellingJol[_JolamanType] == false, "This token is already on sale.");
+    require(randomJolaman.getApproved(setdata.gettypeToId(_JolamanType)) == address(this));
 
-
-    sellingJolamanTypeToPrice[_JolamanType] = _price;
+    sellingJolamanTypeToPrice[_JolamanType] = KlayTn * _price;
     SellingJol[_JolamanType] = true;
     onSaleJolamanType.push(_JolamanType);
-    onSaleJolamanPrice.push(_price);
+    onSaleJolamanPrice.push(KlayTn * _price);
     }
 
     //판매 등록 취소 함수
@@ -48,7 +53,7 @@ contract SaleJolaman {
 
         require(SelltokenOwner == msg.sender, "Caller is not TokenOwner.");
         require(SellingJol[_JolamanType] == true, "This token not Sale");
-        SellingJol[_JolamanType] = true;
+        SellingJol[_JolamanType] = false;
         popOnSaleToken(_JolamanType);
     }
 
