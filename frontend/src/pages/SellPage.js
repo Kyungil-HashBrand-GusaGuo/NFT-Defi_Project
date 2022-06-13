@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useParams } from 'react-router-dom'
+import klayIcon2 from '../images/klaytn.png';
+import './SellPage.css'
 import { SellModal, CancelSellModal } from '../components';
-import { cancelSellingAction } from '../redux/actions/cancelSellingAction';
 import axios from 'axios';
-//import {caver, SaleContract, SALE_CONTRACT_ADDRESS} from '../caverConfig'
 
 
 
@@ -12,10 +12,12 @@ const SellPage = () => {
 
     const dispatch = useDispatch();
     let {edition} = useParams()
-    //console.log(edition)
+    console.log("sfsdfs",edition)
     const { account } = useSelector(state => state.account)
-    //const { sellingNftSuccess } = useSelector(state => state.transactionNFT)
-    //console.log( "NFT판매여부", sellingNftSuccess)
+    console.log("account",account)
+    const { mymintdata } = useSelector(state => state.mintdata)
+    console.log("mintdata", mymintdata)
+    //console.log(edition)
     const [sellModal, setSellModal] = useState(false)
     const [cancelSellModal, setCancelSellModal] = useState(false)
     const [checkSell, setCheckSell] = useState()
@@ -40,27 +42,117 @@ const SellPage = () => {
     },[])
 
   return (
-    <>
-    <div>SellPage</div>
-    <div>SellPage</div>
-    <div>SellPage</div>
-    <div>SellPage</div>
-    <div>SellPage</div>
-    {
-      sellModal ? <SellModal edition={edition} account={account}/> : null
-    }
-    {
-      cancelSellModal ? <CancelSellModal edition={edition} account={account}/> : null
-    }
-    <div>SellPage</div>
-    <div>SellPage</div>
-    <div>SellPage{account}</div>
-    <div>SellPage{edition}</div>
-    {
-      checkSell ? <button onClick={changeCancelSellModalState}>Cancel Sell</button> : <button onClick={changeSellModalState}>Sell</button>
+      <div className='sellMainContainer'>
+        <div className='SellMainSection'>
+          <div className='SellTitleContainer'>
+              <h2>List item for sale</h2>
+          </div>
+          { mymintdata === "" ? null :
+          mymintdata.map((item, index) => (
+          <div className='sellTxtContainer' key={index}>
+            <div className='leftSellContainer'>
+              <div className='leftSection'>
+                <div className='leftInputContainer'>
+                  <div>
+                  {
+                    sellModal ? <SellModal edition={edition} account={account}/> : null
+                  }
+                  {
+                    cancelSellModal ? <CancelSellModal edition={edition} account={account}/> : null
+                  }
+                  </div>
+                  <div className='leftAttributeContainer'>
+                    <table>
+                      <thead>
+                        <tr>
+                          <th>#</th>
+                          <th>First Name</th>
+                          <th>Last Name</th>
+                          <th>Username</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>1</td>
+                          <td>Mark</td>
+                          <td>Otto</td>
+                          <td>@mdo</td>
+                        </tr>
+                        <tr>
+                          <td>2</td>
+                          <td>Jacob</td>
+                          <td>Thornton</td>
+                          <td>@fat</td>
+                        </tr>
+                        <tr>
+                          <td>3</td>
+                          <td colSpan={2}>Larry the Bird</td>
+                          <td>@twitter</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <div className='leftInput'>
+                    <div className='leftInputTitle'>
+                    <p>Price</p>
+                    </div>
+                    <div className='leftInputsection'>
+                      <input type="image" src={klayIcon2} className="lefticoninput"></input>
+                      <input type="text" placeholder='Amount' className='lefttxtinput'/>
+                    </div>
+                  </div>
+                  <div className='leftbtn'>
+                    {/* <button onClick={selling} className="learn-more">Complete listing</button> */}
+                    {
+                      checkSell ? <button onClick={changeCancelSellModalState} className="learn-more">Cancel Sell</button> : <button onClick={changeSellModalState} className="learn-more">Sell</button>
 
-    }
-    </>
+                    }
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className='rightSellContainer'>
+              <div className='rightCardMainContainer'>
+                
+                <div className='rightCardList'>
+                  <div className='rightNftCard'
+                    style={{
+                      backgroundImage: 
+                          "url(" + 
+                          `${item.data.image}` + 
+                          ")"
+                  }}
+                  >
+                  </div>
+                  <div className='rightCardtxtContainer'>
+                        <div className='rightCardTxt'>
+                          <div className='rightCardListTitle'>
+                              <p>Zolaman nft</p> 
+                          </div>
+                          <div className='rightCardListName'>
+                              <p>{item.data.name}</p>
+                          </div>
+                        </div>
+                        <div className='rightCardTxt'>
+                          <div className='rightCardListTitle'>
+                          <p>Price </p>
+                          </div>
+                          <div className='rightCardListPrice'>
+                              <img className='klayicon' src={klayIcon2}/><p>2.0</p>
+                          </div>
+                        </div>
+                        <div className='cardDna'>
+                          <p>{item.data.dna}</p>
+                        </div>
+                  </div>
+                </div>
+                
+              </div>
+            </div>  
+          </div> /*여기 */
+          ))}
+        </div>
+      </div>
   )
 }
 
