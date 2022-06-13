@@ -19,7 +19,7 @@ function whiteMintAction(account) {
                 const response = await setDataContract.methods.getTotalOwnedTokens(account).call()
                 let metaDataURI = response[response.length-1]; 
                 const getMetaData = async() => {
-                const response = await axios.get(`https://gateway.pinata.cloud/ipfs/QmZ9QKfGeqLjNjaiHa2tcwsGyRDDUc85ZkoUzMWuPohajc/${metaDataURI}.json`);
+                const response = await axios.get(`https://gateway.pinata.cloud/ipfs/QmXYi44PkJbNzH4nT13ZgEnKaibppUsfPCW4NpDigEBgXE/${metaDataURI}.json`);
                 console.log( "if문 안",response.data)
                 dispatch({type : "GET_WHITE_MINTDATA", payload : {whitemintdata : response.data}})         
               }
