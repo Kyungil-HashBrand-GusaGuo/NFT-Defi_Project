@@ -35,7 +35,8 @@ const SellPage = () => {
 
     const callSellNft = async() => {
       const response = await axios.get("http://34.64.61.199:9495/block/getOnSaleJolaman");
-      const mintJSON = await axios.get(`https://gateway.pinata.cloud/ipfs/QmXYi44PkJbNzH4nT13ZgEnKaibppUsfPCW4NpDigEBgXE/${edition}.json`);
+      const mintJSON = await axios.get(`https://gateway.pinata.cloud/ipfs/QmXYi44PkJbNzH4nT13ZgEnKaibppUsfPCW4NpDigEBgXE/${edition}.json`)
+      console.log("민트데이터",mintJSON)
       let state = response.data[0].includes(edition)
       console.log("배열확인", response.data[0])
       console.log("배열확인", state)
