@@ -1,7 +1,6 @@
 import HeadImg from './headzol.png'
 // import HeadImg from './zol1.png'
 // import SpImg from './spbg.jpeg'
-import Test from './test1.png'
 import zolmain1 from './zolca10.png'
 import Team1 from './Team1.png'
 import Team2 from './Team2.png'
@@ -37,7 +36,6 @@ import white20 from './mainsilder/20.png'
 
 
 export {HeadImg,
-    Test,
     zolmain1,
     Team1,
     Team2,

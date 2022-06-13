@@ -1,63 +1,109 @@
-.sellMainContainer {
-    padding-top: 100px;
+/* .sellMainContainer {
     display: flex;
+    height: calc(100vh - 250px);
     height: 100%;
+    padding-top: 150px;
+    justify-content: space-around; 
     width: 100%;
+} */
+
+
+.sellMainContainer {
+    display: flex;
+    height: calc(100vh - 250px);
+    height: 100%;
+    padding-top: 200px;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 100px;
+}
+
+.SellMainSection {
+    width: 1200px;
+    height: 600px;
+    border: 2.002px solid black;
+    border-radius: 20.002px;
+    /* background-color: rgba(255, 255, 255); */
+    box-shadow: 3.744px 3.744px 3.744px 3.744px rgb(132 81 61 / 35%);
+}
+
+
+
+.SellTitleContainer {
+    height: 60.005px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform:rotate(-3deg);
+    position: relative;
+    top: -29.995px;
+}
+
+.SellTitleContainer h2{
+    font-size: 40px;
+    color: whitesmoke;
+    background-color: #272727;
+    padding: 11.246px;
+    padding-left: 15.005px;
+    padding-right: 15.005px;
+    border: 0.749px solid #272727;
+    border-radius: 7.502px;
+}
+
+.sellTxtContainer {
+    display: flex;
+}
+
+.leftTxtContainer {
+    flex: 50%;
+    background-color: red;
+    width: 600px;
+    height: 540px;
+}
+.rightTxtContainer {
+    flex: 50%;
+    background-color: black;
+    width: 600px;
+    height: 540px;
 }
 
 .sellMainContainer .leftSellContainer {
     flex: 50%;
     display: flex;
-    background-color: aqua;
     width: 100%;
-    height: 700px;
+    height: 100%;
     justify-content: center;
     align-items: center;
 }
 
-.sellMainContainer .rightSellContainer {
-    /* display: flex; */
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 700px;
-    flex: 50%;
-}
-
-.leftSection {
-    /* display: flex; */
+.leftInputContainer {
+    width: 500px;
+    height: 440.006px;
     background-color: white;
-    width: 400px;
-    height: 500px;
-}
-
-.leftSellContainer .leftTitle{
-    display: flex;
-    justify-content: center;
-    margin-bottom: 20px;
+    border-radius: 15.005px;
+    box-shadow:gray 0px 2.002px 20.002px;
 }
 
 .leftInputsection {
     display: flex;
     justify-content: center;
-    margin-bottom: 20px;
+    margin-bottom: 20.002px;
 }
 
 .leftInputTitle {
     display: flex;
     justify-content: center;
-    margin-bottom: 10px;
+    margin-bottom: 9.994px;
 }
 
 .lefticoninput {
     /* display: flex; */
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
 }
-
 .lefttxtinput {
     /* display: flex; */
-    height: 50px;
+    height: 49.997px;
     width: 180px;
 }
 
@@ -66,71 +112,89 @@
     justify-content: center;
 }
 
+.sellMainContainer .rightSellContainer {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    flex: 50%;
+    /* padding-left: 100px; */
+}
+/* .rightCardMainContainer {
+    width: 400.003px;
+    height: 499.997px;
+} */
+
 
 .rightTitle {
     /* display: flex; */
     /* position: fixed */
 }
 
-.cardListContainer {
+.rightCardList {
     /* display: flex; */
-    width: 320px;
-    height: 440px;
-    /* border: 2px solid black; */
-    border-radius: 15px;
-    box-shadow:gray 0px 2px 20px;
-    margin-right: 10px;
-    margin-bottom: 10px;
+    width: 319.997px;
+    height: 440.006px;
+    /* border: 0.139vw solid black; */
+    border-radius: 15.005px;
+    box-shadow:gray 0px 2.002px 20.002px;
+    margin-right: 9.994px;
+    margin-bottom: 9.994px;
     background-color: white;
 }
 
-.cardListContainer:hover {
+.rightCardList:hover {
     
-	border: 3px solid rgba(44, 14, 2, 0.35)
+	border: 0.208vw solid rgba(44, 14, 2, 0.35)
 }
 
-.myNftCard {
-    width: 320px;
-    height: 320px;
+.rightNftCard {
+    width: 319.997px;
+    height: 319.997px;
     background-size: contain;
-    border-radius: 15px;
+    border-radius: 15.005px;
 }
 
-.cardListContainer .cardtxtContainer {
-    width: 320px;
-    height: 80px;
+.rightCardList .rightCardtxtContainer {
+    width: 319.997px;
+    height: 80.006px;
 }
 
-.cardListContainer .cardtxtContainer .cardtxt {
+.rightCardList .rightCardtxtContainer .rightCardTxt {
     display: flex;
-    /* margin-bottom: 20px; */
-    height: 40px;
+    /* margin-bottom: 1.389vw; */
+    height: 40.003px;
     /* justify-content: center; */
 }
 
-.cardListContainer .cardtxtContainer .cardtxt .cardlisttitle {
+.rightCardList .rightCardtxtContainer .rightCardTxt .rightCardListTitle {
     flex: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
 
 }
-.cardListContainer .cardtxtContainer .cardtxt .cardlistname {
+.rightCardList .rightCardtxtContainer .rightCardTxt .rightCardListName {
     flex: 50%;
     display: flex;
     align-items: center;
-    font-size: 15px;
+    font-size: 15.005px;
 }
 
 
-.cardListContainer  .cardtxtContainer .cardtxt .cardlistprice {
+.rightCardList .rightCardtxtContainer .rightCardTxt .rightCardListPrice {
     flex: 50%;
     display: flex;
     align-items: center;
+}
+
+.cardDna p{
+    font-size: 13px;
 }
 
 .klayicon {
-    width: 20px;
-    height: 20px;
-    margin-right: 5px;
+    width: 20.002px;
+    height: 20.002px;
+    margin-right: 4.997px;
 }
