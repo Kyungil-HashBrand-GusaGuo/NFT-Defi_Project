@@ -18,7 +18,7 @@ function sellAction(edition, account) {
         console.log(edition)
         try {
             if(edition && account !== ""){
-              const res = await setDataContract.methods.gettypeToId(167).call()
+              const res = await setDataContract.methods.gettypeToId(edition).call()
               console.log(edition)
               let tokenId = res;
               console.log("확인",res)
@@ -26,22 +26,24 @@ function sellAction(edition, account) {
                   from: account,
                   to: MINT_CONTRACT_ADDRESS,
                   gas: "3000000",
-                  data: RandomJolamanContract.methods.approve(MINT_CONTRACT_ADDRESS, tokenId).encodeABI()   
+                  data: RandomJolamanContract.methods.approve(SALE_CONTRACT_ADDRESS, tokenId).encodeABI()   
                   })
                   // 판매 등록 함수 판매 등록시 두번쨰 함수
                         console.log(response)
                         if(response.status) {
                           console.log("들어오나?")
                             //let price = 2
+                            console.log("계정확인",account)
                             const SellNFT = async() => {
-                                await caver.klay.sendTransaction({
+                               const response = await caver.klay.sendTransaction({
                                   from: account,
                                   to: SALE_CONTRACT_ADDRESS,
                                   gas: "3000000",
-                                  data: SaleContract.methods.SellJolamanToken(167, 2)
+                                  data: SaleContract.methods.SellJolamanToken(edition, 4).encodeABI()
                                 })
                               } 
                               SellNFT()
+                              dispatch({type:"SUCCESS_SELL_NFT", payload : {sellingNftSuccess : true}})
                             }
             }
                 } catch(error) {
