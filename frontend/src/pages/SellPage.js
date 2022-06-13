@@ -2,6 +2,8 @@ import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useParams } from 'react-router-dom'
 import { test } from '../redux/actions/test';
+import klayIcon2 from '../images/klaytn.png';
+import './SellPage.css'
 
 const SellPage = () => {
 
@@ -19,19 +21,59 @@ const SellPage = () => {
     }
 
   return (
-    <>
-    <div>SellPage</div>
-    <div>SellPage</div>
-    <div>SellPage</div>
-    <div>SellPage</div>
-    <div>SellPage</div>
-    <div>SellPage</div>
-    <div>SellPage</div>
-    <div>SellPage{account}</div>
-    <div>SellPage{edition}</div>
-    <div>SellPage{edition}</div>
-    <button onClick={selling}>Sell 사실 이제 이거 눌렀을떄 일단 모달창으로 가고, 모달에서 처리해야함</button>
-    </>
+    <div className='sellMainContainer'>
+      <div className='leftSellContainer'>
+        <div className='leftSection'>
+          <div className='leftTitle'>
+            <h1>
+              List item for sale
+            </h1>
+          </div>
+          <div className='leftInput'>
+            <div className='leftInputTitle'>
+              <p>Price</p>
+            </div>
+            <div className='leftInputsection'>
+              <input type="image" src={klayIcon2} className="lefticoninput"></input>
+              <input type="text" placeholder='Amount' className='lefttxtinput'/>
+            </div>
+          </div>
+          <div className='leftbtn'>
+            <button onClick={selling} className="learn-more">Complete listing</button>
+          </div>
+        </div>
+      </div>
+      <div className='rightSellContainer'>
+          <div className='rightTitle'>
+            <h1>PreView</h1>
+          </div>
+        <div className='cardListContainer'>
+              <div className='myNftCard'>
+              </div>
+              <div className='cardtxtContainer'>
+                  <div className='cardtxt'>
+                      <div className='cardlisttitle'>
+                          <p>Zolaman nft</p> 
+                      </div>
+                      <div className='cardlistname'>
+                          <p></p>
+                      </div>
+                  </div>
+                  <div className='cardtxt'>
+                      <div className='cardlisttitle'>
+                      <p>Price </p>
+                      </div>
+                      <div className='cardlistprice'>
+                          <img className='klayicon' src={klayIcon2}/><p>2.0</p>
+                      </div>
+                  </div>
+              </div>
+        </div>
+      </div>
+      {/* <div>SellPage{account}</div>
+      <div>SellPage{edition}</div>
+      <div>SellPage{edition}</div> */}
+    </div>
   )
 }
 
