@@ -1,10 +1,10 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useParams } from 'react-router-dom'
-import { test } from '../redux/actions/test';
 import klayIcon2 from '../images/klaytn.png';
 import './SellPage.css'
-
+import { SellModal, CancelSellModal } from '../components';
+import axios from 'axios';
 
 
 
@@ -17,13 +17,29 @@ const SellPage = () => {
     console.log("account",account)
     const { mymintdata } = useSelector(state => state.mintdata)
     console.log("mintdata", mymintdata)
+    //console.log(edition)
+    const [sellModal, setSellModal] = useState(false)
+    const [cancelSellModal, setCancelSellModal] = useState(false)
+    const [checkSell, setCheckSell] = useState()
 
-    const selling = () => {
-        dispatch(test.testAction(edition, account))
-        // 모달창으로 가고, 모달창에서 이런것들을 줘야겠네. 아 이거를 props로 넘겨줘야겠다
-        // 모달창에서 useEffect 써서 바로 함수 실행될 수 있도록 
-        // 오버레이 처리해주고 
+    const changeSellModalState = () => {
+      setSellModal(true)
     }
+    const changeCancelSellModalState = () => {
+      setCancelSellModal(true)
+    }
+
+    const callSellNft = async() => {
+      const response = await axios.get("http://34.64.61.199:9495/block/getOnSaleJolaman");
+      let state = response.data[0].includes(edition)
+      console.log("배열확인", response.data[0])
+      console.log("배열확인", state)
+      setCheckSell(state)
+    }
+    
+    useEffect(()=>{
+      callSellNft()
+    },[])
 
   return (
       <div className='sellMainContainer'>
@@ -37,6 +53,14 @@ const SellPage = () => {
             <div className='leftSellContainer'>
               <div className='leftSection'>
                 <div className='leftInputContainer'>
+                  <div>
+                  {
+                    sellModal ? <SellModal edition={edition} account={account}/> : null
+                  }
+                  {
+                    cancelSellModal ? <CancelSellModal edition={edition} account={account}/> : null
+                  }
+                  </div>
                   <div className='leftAttributeContainer'>
                     <table>
                       <thead>
@@ -78,7 +102,11 @@ const SellPage = () => {
                     </div>
                   </div>
                   <div className='leftbtn'>
-                    <button onClick={selling} className="learn-more">Complete listing</button>
+                    {/* <button onClick={selling} className="learn-more">Complete listing</button> */}
+                    {
+                      checkSell ? <button onClick={changeCancelSellModalState} className="learn-more">Cancel Sell</button> : <button onClick={changeSellModalState} className="learn-more">Sell</button>
+
+                    }
                   </div>
                 </div>
               </div>
@@ -125,9 +153,6 @@ const SellPage = () => {
           ))}
         </div>
       </div>
-    // <div>SellPage{account}</div>
-    // <div>SellPage{edition}</div>
-    // <div>SellPage{edition}</div>
   )
 }
 

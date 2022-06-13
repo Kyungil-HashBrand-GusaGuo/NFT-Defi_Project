@@ -1,6 +1,6 @@
 import './App.css';
 import { Routes, Route } from 'react-router-dom';
-import { MainPage, PreMintingPage, AdminPage, MyPage, AllMintPage, SellPage } from './pages';
+import { MainPage, PreMintingPage, AdminPage, MyPage, AllMintPage, SellPage, SalePage } from './pages';
 import { Navbar, Footer } from './components'
 
 
@@ -17,6 +17,7 @@ function App() {
         <Route path='/admin' element={<AdminPage/>} />
         <Route path='/all-minting' element={<AllMintPage/>} />
         <Route path='/sellpage/:edition' element={<SellPage/>}/>
+        <Route path='/sale' element={<SalePage/>}/>
       </Routes>
     </div>
       <Footer/>

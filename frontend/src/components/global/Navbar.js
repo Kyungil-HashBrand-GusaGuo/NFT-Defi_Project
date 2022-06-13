@@ -43,6 +43,7 @@ function Navbar() {
                     <a href='/pre-minting'>Pre-Minting</a>
                     <a href='/all-minting'>Collection</a>
                     <a href='/mypage'>MyPage</a>
+                    <a href='/sale'>Market</a>
                     <a href='/admin'>AdminPage</a>
                     {
                         account === '' ? <a><button onClick={connectWallet}>Connect Wallet</button>
