@@ -19,7 +19,7 @@ function preMintAction(account) {
               const response = await setDataContract.methods.getTotalOwnedTokens(account).call()
               let metaDataURI = response[response.length-1]; 
               const getMetaData = async() => {
-                const response = await axios.get(`https://gateway.pinata.cloud/ipfs/QmQJGKnjHtgBeWRarsBHwK8uY7hsHoPJpuaPezBTrGac7K/${metaDataURI}.json`);
+                const response = await axios.get(`https://gateway.pinata.cloud/ipfs/QmXYi44PkJbNzH4nT13ZgEnKaibppUsfPCW4NpDigEBgXE/${metaDataURI}.json`);
                 console.log( "if문 안",response.data)
                 dispatch({type : "GET_PRE_MINTDATA", payload : {premintdata : response.data}})         
               }
