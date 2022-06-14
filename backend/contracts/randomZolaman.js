@@ -4,7 +4,7 @@ const config = {
   rpcURL: "https://api.baobab.klaytn.net:8651",
 };
 const caver = new Caver(config.rpcURL);
-const MINT_CONTRACT_ADDRESS = "0x4315EAe51035Ce926f7bf0d16663C4dfF8d49D93";
+const MINT_CONTRACT_ADDRESS = "0xA6fe2A0E733dd341354776a6A50012d8a4414D2e";
 
 const MINT_CONTRACT_ABI = [
 	{

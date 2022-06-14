@@ -86,17 +86,19 @@ contract StakingSystem is Ownable, ERC721Holder, JolamanToken {
 
     // 스테이킹 세부 로직
     function _stake(address _user, uint256 _JolamanType) internal {
+        bool boolean = true;
         require(initialised, "Staking System: the staking has not started");
         require(
             randomJolaman.ownerOf(setdata.gettypeToId(_JolamanType)) == _user,
             "user must be the owner of the token"
         );
+        require(setdata.getSellingJolTypeToBool(_JolamanType) == false, "This token already Sale");
         Staker storage staker = stakers[_user];
 
         staker.JolamanType.push(_JolamanType);
         staker.tokenStakingCoolDown[_JolamanType] = block.timestamp;
         tokenOwner[_JolamanType] = _user;
-
+        setdata.setStakedJolamanType(_JolamanType, boolean);
         randomJolaman.safeTransferFrom(_user, address(this), setdata.gettypeToId(_JolamanType));
 
         emit Staked(_user, _JolamanType);
@@ -119,19 +121,9 @@ contract StakingSystem is Ownable, ERC721Holder, JolamanToken {
         }
     }
 
-    // 긴급상황 스테이킹 해제 
-    function emergencyUnstake(uint256 _JolamanType) public {
-        require(
-            tokenOwner[_JolamanType] == msg.sender,
-            "nft._unstake: Sender must have staked tokenID"
-        );
-        _unstake(msg.sender, _JolamanType);
-        emit EmergencyUnstake(msg.sender, _JolamanType);
-    }
-
-
     // 스테이킹 해제 세부 로직
     function _unstake(address _user, uint256 _JolamanType) internal {
+        bool boolean = false;
         require(
             tokenOwner[_JolamanType] == _user,
             "Nft Staking System: user must be the owner of the staked nft"
@@ -145,7 +137,7 @@ contract StakingSystem is Ownable, ERC721Holder, JolamanToken {
         }
         staker.tokenStakingCoolDown[_JolamanType] = 0;
         delete tokenOwner[_JolamanType];
-
+        setdata.setStakedJolamanType(_JolamanType, boolean);
         randomJolaman.safeTransferFrom(address(this), _user, setdata.gettypeToId(_JolamanType));
 
         emit Unstaked(_user, _JolamanType);
@@ -192,9 +184,6 @@ contract StakingSystem is Ownable, ERC721Holder, JolamanToken {
                 staker.balance +=  token * stakedDays;
 
                 staker.tokenStakingCoolDown[ids[i]] = block.timestamp - partialTime;
-
-                console.logUint(staker.tokenStakingCoolDown[ids[i]]);
-                console.logUint(staker.balance);
             }
         }
     }
@@ -202,8 +191,24 @@ contract StakingSystem is Ownable, ERC721Holder, JolamanToken {
     // 보상 청구 함수
     function claimReward(address _user) public {
         require(tokensClaimable == true, "Tokens cannnot be claimed yet");
-        require(stakers[_user].balance > 0 , "0 rewards yet");
 
+        Staker storage staker = stakers[_user];
+        uint256[] storage ids = staker.JolamanType;
+        for (uint256 i = 0; i < ids.length; i++) {
+            if (
+                staker.tokenStakingCoolDown[ids[i]] <
+                block.timestamp + stakingTime &&
+                staker.tokenStakingCoolDown[ids[i]] > 0
+            ) {
+            
+                uint256 stakedDays = ((block.timestamp - uint(staker.tokenStakingCoolDown[ids[i]]))) / stakingTime;
+                uint256 partialTime = ((block.timestamp - uint(staker.tokenStakingCoolDown[ids[i]]))) % stakingTime;
+                
+                staker.balance +=  token * stakedDays;
+
+                staker.tokenStakingCoolDown[ids[i]] = block.timestamp - partialTime;
+            }
+        }
 
         stakers[_user].rewardsReleased += stakers[_user].balance;
         _grantRole(MINTER_ROLE, msg.sender);
@@ -212,5 +217,11 @@ contract StakingSystem is Ownable, ERC721Holder, JolamanToken {
         stakers[_user].balance = 0;
 
         emit RewardPaid(_user, stakers[_user].balance);
+    }
+
+    // account별 스테이킹된 졸라맨타입 반환함수
+    function getOwnedStakedJolamanType(address _user) public view returns(uint[] memory) {
+        Staker storage staker = stakers[_user];
+        return staker.JolamanType;
     }
 }
