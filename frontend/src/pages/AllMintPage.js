@@ -6,9 +6,16 @@ const AllMintPage = () => {
 
 
   return (
-    <div className='AllMintPageContainer'>
-        <AllCardList/>
-    </div>
+    <>
+      <div className='collectionTitleContainer'>
+              <h2>Collection</h2>
+      </div>
+      <div class="style-five"></div>
+      <hr class="style-five"/> 
+      <div className='AllMintPageContainer'>
+          <AllCardList/>
+      </div>
+    </>
   )
 }
 

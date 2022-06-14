@@ -102,7 +102,7 @@ button:hover {
     cursor:Pointer;
 }
 
-@media only screen and (max-width: 1118px) {
+@media only screen and (max-width: 1246px) {
     .Navbar .rightSide .listicon {
         display: flex;
     }
@@ -116,7 +116,7 @@ button:hover {
         left: 0px;
         top: 100px;
         height: 400px;
-        max-height: 230px;
+        max-height: 360px;
         width: 100%;
         background-color: var(--color-yellow);
 	    background-image: radial-gradient(var(--color-dark-yellow) 20%, transparent 0), radial-gradient(var(--color-dark-yellow) 20%, transparent 0);
