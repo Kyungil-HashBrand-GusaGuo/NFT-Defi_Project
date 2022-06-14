@@ -9,27 +9,10 @@ const MarketPage = () => {
 
   const dispatch = useDispatch()
   const navigate = useNavigate()
-  //const [marketArray, setMarketArray] = useState('')
 
   const { sellingAllNftData } = useSelector(state => state.transactionNFT)
   console.log(sellingAllNftData)
-  // const callSellNft = async() => {
-  //   const response = await axios.get("http://34.64.61.199:9495/block/getOnSaleJolaman");
-  //   // console.log("판매중NFT", response.data)
-  //   // console.log("NFT번호", response.data[0])
-  //   // console.log("NFT가격", response.data[1])
- 
-  //   const idArr = response.data[0];
-  //   const priceArr = response.data[1];
 
-  //   let sellNftArr = [] 
-
-  //   for(let i=0; i < idArr.length; i++){
-  //     let data = { id : idArr[i], price : priceArr[i]}
-  //     sellNftArr.push(data)
-  //   }
-  //   setMarketArray(sellNftArr)
-  // }
   
   const moveBuyPage = (index) => {
     navigate(`/marketpage/${index}`)
@@ -37,7 +20,6 @@ const MarketPage = () => {
 
   useEffect(()=>{
     dispatch(marketAction.marketAct())
-    //callSellNft()
   },[])
 
   return (
