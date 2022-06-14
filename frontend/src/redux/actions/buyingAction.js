@@ -28,6 +28,7 @@ function buyAction(edition, account) {
                     data: SaleContract.methods.buyJolamanToken(edition).encodeABI()
                 })
                 console.log(response)             
+                dispatch({type:"SUCCESS_BUY_NFT", payload : {buyingNftSuccess : true}})
             }
             } catch(error) {
                 console.error(error);
