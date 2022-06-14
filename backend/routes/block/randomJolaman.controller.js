@@ -1,21 +1,27 @@
 const {
   RandomJolamanContract,
   MINT_CONTRACT_ADDRESS,
-} = require("../../contracts/randomZolaman");
+} = require("../../contracts/randomJolaman");
 
 // 화이트리스트 체크
 const isWhiteList = async (req, res) => {
   const result = await RandomJolamanContract.methods
     .isWhiteList(req.body.account)
     .call();
+    
   res.json(result);
 };
 
 // normal Token 총 발행량
 const MAX_NORMAL_TOKEN_COUNT = async (req, res) => {
+  // const result = await RandomJolamanContract.methods
+  //   .MAX_NORMAL_TOKEN_COUNT()
+  //   .call();
+
   const result = await RandomJolamanContract.methods
-    .MAX_NORMAL_TOKEN_COUNT()
-    .call();
+  .MAX_NORMAL_TOKEN_COUNT()
+  .call()
+  // console.log("max normal: ", result)
   res.json(result);
 };
 

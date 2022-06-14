@@ -8,7 +8,7 @@ import "@openzeppelin/contracts/token/ERC721/utils/ERC721Holder.sol";
 import "@openzeppelin/contracts/token/ERC721/IERC721.sol";
 
 contract SaleJolaman is ERC721Holder {
-    // RandomJolaman public randomJolaman;
+
     IERC721 public randomJolaman;
     SetData public setdata;
 
@@ -17,10 +17,11 @@ contract SaleJolaman is ERC721Holder {
         randomJolaman = _randomJolaman;
     }
 
+    uint public constant KlayTn = 10 ** 18;
+    
 
 
     // 졸라맨 타입 입력 판매 중 여부 확인 매핑
-    mapping(uint => bool) public SellingJol;
     mapping(uint => uint) public sellingJolamanTypeToPrice;    
 
     // 판매중인 졸라맨 타입, 가격 배열
@@ -30,28 +31,30 @@ contract SaleJolaman is ERC721Holder {
 
     // 판매 등록 함수
     function SellJolamanToken(uint _JolamanType, uint _price) public {
-        
+    bool boolean = true;    
     address SelltokenOwner = setdata.getJolamanTokenTypeOfOnwer(_JolamanType);
 
     require(SelltokenOwner == msg.sender, "Caller is not TokenOwner.");
     require(_price > 0, "Price is greater than 0.");
-    require(SellingJol[_JolamanType] == false, "This token is already on sale.");
-    randomJolaman.approve(address(this), setdata.gettypeToId(_JolamanType));
+    require(setdata.getSellingJolTypeToBool(_JolamanType) == false, "This token is already on sale");
+    require(randomJolaman.getApproved(setdata.gettypeToId(_JolamanType)) == address(this));
 
-    sellingJolamanTypeToPrice[_JolamanType] = _price;
-    SellingJol[_JolamanType] = true;
+    sellingJolamanTypeToPrice[_JolamanType] = KlayTn * _price;
+
+    setdata.setSellingJolTypeToBool(_JolamanType, boolean);
     onSaleJolamanType.push(_JolamanType);
-    onSaleJolamanPrice.push(_price);
+    onSaleJolamanPrice.push(KlayTn * _price);
     }
 
     //판매 등록 취소 함수
 
     function cancleSellJolamnaToken(uint _JolamanType) public {
         address SelltokenOwner = setdata.getJolamanTokenTypeOfOnwer(_JolamanType);
-
+        bool boolean = false;
         require(SelltokenOwner == msg.sender, "Caller is not TokenOwner.");
-        require(SellingJol[_JolamanType] == true, "This token not Sale");
-        SellingJol[_JolamanType] = true;
+        require(setdata.getSellingJolTypeToBool(_JolamanType) == true, "This token not Sale");
+
+        setdata.setSellingJolTypeToBool(_JolamanType, boolean);
         popOnSaleToken(_JolamanType);
     }
 
@@ -59,15 +62,17 @@ contract SaleJolaman is ERC721Holder {
 
     function buyJolamanToken(uint _JolamanType) public payable {
         address SelltokenOwner = setdata.getJolamanTokenTypeOfOnwer(_JolamanType);
-
+        bool boolean = false;
         require(SelltokenOwner != msg.sender, "Caller is token owner.");
-        require(SellingJol[_JolamanType] == true, "This token not sale.");
+ 
+        require(setdata.getSellingJolTypeToBool(_JolamanType) == true, "This token not sale");
         require(sellingJolamanTypeToPrice[_JolamanType] == msg.value, "Caller sent lower than price.");
         
         payable(SelltokenOwner).transfer(msg.value);
         randomJolaman.safeTransferFrom(SelltokenOwner, msg.sender, setdata.gettypeToId(_JolamanType));
 
-        SellingJol[_JolamanType] = false;
+        
+        setdata.setSellingJolTypeToBool(_JolamanType, boolean);
         sellingJolamanTypeToPrice[_JolamanType] = 0;
         setdata.setJolamanTokenTypeOfOwner(_JolamanType, msg.sender);
         setdata.SellOwnedToken(SelltokenOwner, _JolamanType);
@@ -96,5 +101,6 @@ contract SaleJolaman is ERC721Holder {
     function getOnSaleJolamanTypeAndPrice() public view returns(uint[] memory, uint[] memory) {
         return (onSaleJolamanType, onSaleJolamanPrice);
     }
+
 
 }

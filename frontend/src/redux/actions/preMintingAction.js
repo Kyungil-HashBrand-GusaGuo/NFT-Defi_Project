@@ -1,4 +1,4 @@
-import { RandomJolamanContract, MINT_CONTRACT_ADDRESS, setDataContract } from "../../caverConfig";
+import { RandomJolamanContract, MINT_CONTRACT_ADDRESS, setDataContract } from "../../ropstenConfig";
 import { ethers } from "ethers";
 import axios from "axios";
 

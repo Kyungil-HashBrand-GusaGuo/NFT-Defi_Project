@@ -1,5 +1,5 @@
 import axios from "axios"
-import { setDataContract } from "../../caverConfig";
+import { setDataContract } from "../../ropstenConfig";
 
 
 function mypageAct(account) {
@@ -9,14 +9,14 @@ function mypageAct(account) {
             console.log("액션쪽",account)
             if(account !== "")
             {
-              const response = await axios.post("http://34.64.61.199:9495/block/ownedTokenId", { account : account });
+              const response = await axios.post("http://localhost:9495/block/ownedTokenId", { account : account });
               //const response = await setDataContract.methods.getTotalOwnedTokens(account).call()
               let array = []
               let myMintingData = response.data
   
               for(let i=0; i < myMintingData.length; i++){
           
-                const mintJSON = await axios.get(`https://gateway.pinata.cloud/ipfs/QmQJGKnjHtgBeWRarsBHwK8uY7hsHoPJpuaPezBTrGac7K/${myMintingData[i]}.json`)
+                const mintJSON = await axios.get(`https://gateway.pinata.cloud/ipfs/QmaavyzfX6XzVNJx4zKCQVNDJWwQJx9xUC6gmDfddxvQ6p/${myMintingData[i]}.json`)
                 array.push(mintJSON)
               }
               console.log(array)

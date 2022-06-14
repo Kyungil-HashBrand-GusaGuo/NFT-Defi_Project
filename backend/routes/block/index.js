@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const rController = require("./randomZolaman.controller");
+const rController = require("./randomJolaman.controller");
 const sController = require("./setData.controller");
 
 // randomZolaman controller

@@ -1,4 +1,4 @@
-import { RandomJolamanContract, MINT_CONTRACT_ADDRESS } from "../../caverConfig";
+import { RandomJolamanContract, MINT_CONTRACT_ADDRESS } from "../../ropstenConfig";
 import { ethers } from "ethers";
 
 function deleteWhiteList(account, address) {

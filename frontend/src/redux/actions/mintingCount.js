@@ -1,4 +1,4 @@
-import { RandomJolamanContract } from "../../caverConfig";
+import { RandomJolamanContract } from "../../ropstenConfig";
 
 import axios from "axios";
 
@@ -7,11 +7,11 @@ function mintCount() {
     return async (dispatch) => {
         try {
                 // const MAX_NORMAL_TOKEN_COUNT = RandomJolamanContract.methods.MAX_NORMAL_TOKEN_COUNT().call()
-                const MAX_NORMAL_TOKEN_COUNT = await axios.get(api+"/normalAll")
+                const MAX_NORMAL_TOKEN_COUNT = await axios.get(api+"/block/normalAll")
             
-                const MAX_SPECIAL_TOKEN_COUNT = await axios.get(api+"/specialAll")
+                const MAX_SPECIAL_TOKEN_COUNT = await axios.get(api+"/block/specialAll")
 
-                const NORMAL_TOKEN_COUNT = await axios.get(api+"/normalCurrent")
+                const NORMAL_TOKEN_COUNT = await axios.get(api+"/block/normalCurrent")
 
                 const SPECIAL_TOKEN_COUNT = await axios.get(api+"/block/specialCurrent")
 

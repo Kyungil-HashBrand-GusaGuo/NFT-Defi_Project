@@ -1,4 +1,4 @@
-import { RandomJolamanContract, MINT_CONTRACT_ADDRESS } from "../../caverConfig";
+import { RandomJolamanContract, MINT_CONTRACT_ADDRESS } from "../../ropstenConfig";
 
 
 function addWhiteList(account, address) {

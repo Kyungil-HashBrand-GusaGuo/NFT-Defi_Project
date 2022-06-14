@@ -10,7 +10,8 @@ import {
 } from "./caverConfig.js";
 import axios from "axios";
 
-// sever =  34.64.61.199:9495
+// sever =  localhost:9495
+// for ropsten
 
 function App() {
   const val = 2;
@@ -28,7 +29,7 @@ function App() {
 
   const getAccount = async () => {
     try {
-      const accounts = await window.klaytn.enable();
+      const accounts = await window.eth.getAccounts();
       setAccount(accounts[0]);
     } catch (error) {
       console.error(error);
@@ -36,7 +37,7 @@ function App() {
   };
 
   useEffect(() => {
-    if (window.klaytn) {
+    if (window.eth) {
       getAccount();
     }
   }, []);
