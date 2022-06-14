@@ -13,6 +13,12 @@ contract SetData {
     mapping(uint => uint) public typeToId;
 
 
+    // saleJolaman.sol
+    mapping(uint => bool) public SellingJol;
+
+    // StakingSystem.sol
+    mapping(uint => bool) public StakedJolamanType;
+
     function setTokenOwner(uint _TokenId, address _to) external {
         tokenOwner[_TokenId] = _to;
     } 
@@ -74,4 +80,28 @@ contract SetData {
         return typeToId[joldata];
     }
 
+    // SaleJolaman.sol
+    
+    function setSellingJolTypeToBool(uint _JolamanType, bool boolean) external {
+        SellingJol[_JolamanType] = boolean;
+    }
+
+    
+    // 졸라맨 타입 입력 판매 중 여부 확인 매핑 조회 함수
+
+    function getSellingJolTypeToBool(uint _JolamanType) public view returns(bool) {
+        return SellingJol[_JolamanType];
+    }
+
+    // StakingSystem.sol
+
+    function setStakedJolamanType(uint _JolamanType, bool boolean) external {
+        StakedJolamanType[_JolamanType] = boolean;
+    }
+
+    // 졸라맨 타입 입력시 스테이킹 여부 확인 매핑 조회 함수
+
+    function getStakedJolamanType(uint _JolamanType) public view returns(bool) {
+        return StakedJolamanType[_JolamanType];
+    }
 }
