@@ -4,13 +4,13 @@ import "./MarketPage.css"
 import { useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { marketAction } from '../redux/actions/marketAction';
-import { Dropdown, DropdownButton } from 'react-bootstrap';
-// import 'bootstrap/dist/css/bootstrap.min.css';
+import Dropdown from '../components/MarketPage/DropDown';
 
 const MarketPage = () => {
 
   const dispatch = useDispatch()
   const navigate = useNavigate()
+  const [dropdownVisibility, setDropdownVisibility] = React.useState(false);
 
   const { sellingAllNftData } = useSelector(state => state.transactionNFT)
   console.log(sellingAllNftData)
@@ -24,10 +24,21 @@ const MarketPage = () => {
     dispatch(marketAction.marketAct())
   },[])
 
+  // {
+  //   sellingAllNftData !== '' ? 
+  //   sellingAllNftData.map((item, index) => {
+  //     return <div className='testMarketBox' key={index} onClick={() => moveBuyPage(item.id)}>
+  //       <h2>{item.id}</h2>
+  //       <h2>{item.price}</h2>
+  //     </div>
+  //   })
+  //   : null
+  // }
+
   return (
     <>
       <div className='marketTitleContainer'>
-                <h2>Market</h2>
+                <h2>ZOLAMAN Market</h2>
       </div>
       <div class="style-five"></div>
       <hr class="style-five"/> 
@@ -41,37 +52,109 @@ const MarketPage = () => {
         <div className='rightMarketContainer'>
           <div className=' rightMarketSection'>
             <div className='rightMarketTitle'>
-              <p>Filter</p>
-              <DropdownButton id="dropdown-basic-button" title="Sort by">
-                <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
-                <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
-                <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
-              </DropdownButton>
-
+              <span>Filter</span>
+              <button onClick={e => setDropdownVisibility(!dropdownVisibility)}>
+                {
+                    dropdownVisibility
+                        ? 'Close'
+                        : 'Open'
+                }
+              </button>
+              <Dropdown visibility={dropdownVisibility}>
+                  <ul>
+                      <li>background</li>
+                      <li>cloak</li>
+                      <li>eyes</li>
+                      <li>clothes</li>
+                      <li>weapon</li>
+                  </ul>
+              </Dropdown>
             </div>
-            <div>
-
+            <div className='rightMarketCardContainer'>                
+                <div className='rightMarketCardList'>
+                  <div className='rightMarketNftCard'
+                  //   style={{
+                  //     backgroundImage: 
+                  //         "url(" + 
+                  //         `${showMint.image}` + 
+                  //         ")"
+                  // }}
+                  >
+                  </div>
+                  <div className='rightMarketCardTxtContainer'>
+                    <div className='rightMarketCardTxtSection'>
+                      <div className='rightMarketCardDnaTxt'>
+                        <span className='rightMarketCardDnaTxt1'>Create By </span>
+                        <span className='rightMarketCardDnaTxt2'> GusaGuO</span>
+                      </div>
+                      <div className='rightMarketCardNum'>
+                        <span>NO.1234</span>
+                      </div>
+                    </div>    
+                  </div>
+                </div>
+                <div className='rightMarketCardList'>
+                  <div className='rightMarketNftCard'
+                  //   style={{
+                  //     backgroundImage: 
+                  //         "url(" + 
+                  //         `${showMint.image}` + 
+                  //         ")"
+                  // }}
+                  >
+                  </div>
+                  <div className='rightMarketCardtxtContainer'>
+                        <div className='rightMarketCardTxt'>
+                          <div className='rightMarketCardListTitle'>
+                              <p>Zolaman nft</p> 
+                          </div>
+                          <div className='rightMarketCardListName'>
+                              <p></p>
+                          </div>
+                        </div>
+                        <div className='rightMarketCardTxt'>
+                          <div className='rightMarketCardListTitle'>
+                          <p>Price </p>
+                          </div>
+                          <div className='rightMarketCardListPrice'>
+                              <p>2.0</p>
+                          </div>
+                        </div>
+                  </div>
+                </div>
+                <div className='rightMarketCardList'>
+                  <div className='rightMarketNftCard'
+                  //   style={{
+                  //     backgroundImage: 
+                  //         "url(" + 
+                  //         `${showMint.image}` + 
+                  //         ")"
+                  // }}
+                  >
+                  </div>
+                  <div className='rightMarketCardtxtContainer'>
+                        <div className='rightMarketCardTxt'>
+                          <div className='rightMarketCardListTitle'>
+                              <p>Zolaman nft</p> 
+                          </div>
+                          <div className='rightMarketCardListName'>
+                              <p></p>
+                          </div>
+                        </div>
+                        <div className='rightMarketCardTxt'>
+                          <div className='rightMarketCardListTitle'>
+                          <p>Price </p>
+                          </div>
+                          <div className='rightMarketCardListPrice'>
+                              <p>2.0</p>
+                          </div>
+                        </div>
+                  </div>
+                </div>
             </div>
           </div>
         </div>
       </div>
-      {/* <div className='MarketPageContainer'>
-        <div>
-        {
-          sellingAllNftData !== '' ? 
-          sellingAllNftData.map((item, index) => {
-            return <div className='testMarketBox' key={index} onClick={() => moveBuyPage(item.id)}>
-              <h2>{item.id}</h2>
-              <h2>{item.price}</h2>
-            </div>
-          })
-          : null
-        }
-        </div>
-
-        <div>SalePage</div>
-        <div>SalePage</div>
-      </div> */}
     </>
   )
 }
