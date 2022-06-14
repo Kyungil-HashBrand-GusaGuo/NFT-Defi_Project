@@ -2,3 +2,4 @@ node_modules/
 .env
 kas-credential-KASKCN3A870D85W8Q26IY9O1.json
 frontend/src/ropstenConfig copy.js
+.vscode/settings.json

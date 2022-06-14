@@ -1582,7 +1582,7 @@ const SALE_CONTRACT_ABI = [
 
 
 
-export const RandomJolamanContract = () => {
+export const RandomJolamanContract = async () => {
 	let tempProvider = new ethers.providers.Web3Provider(window.ethereum);
 	let tempSigner = tempProvider.getSigner();
 	let tempContract = new ethers.Contract(MINT_CONTRACT_ADDRESS, MINT_CONTRACT_ABI, tempSigner);

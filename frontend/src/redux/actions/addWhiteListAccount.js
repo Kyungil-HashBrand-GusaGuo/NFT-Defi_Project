@@ -12,7 +12,7 @@ function addWhiteList(account, address) {
               from: account,
               to: MINT_CONTRACT_ADDRESS,
               gas: "3000000",
-              data: RandomJolamanContract.methods.addWhiteList(address).encodeABI(),
+              data: RandomJolamanContract().addWhiteList(address).encodeABI(),
             });
             console.log(response)
           } catch(error) {
