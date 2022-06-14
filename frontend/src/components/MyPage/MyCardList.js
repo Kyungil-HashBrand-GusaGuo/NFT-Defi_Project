@@ -5,7 +5,6 @@ import klayIcon2 from '../../images/klaytn.png'
 import { mypageAction } from '../../redux/actions/mypageAction';
 import { useNavigate } from 'react-router-dom';
 import { marketAction } from '../../redux/actions/marketAction';
-import axios from 'axios';
 
 const MyCardList = () => {
 
@@ -13,10 +12,11 @@ const MyCardList = () => {
     const navigate = useNavigate()
     const { account } = useSelector(state => state.account);
     const { mymintdata } = useSelector(state => state.mintdata)
-    const [checkSell, setCheckSell] = useState()
     const { sellingNftId } = useSelector(state => state.transactionNFT)
     console.log("판매중인 Id 확인", sellingNftId)
     console.log("나의 민팅데이터",mymintdata)
+
+    const revmymintdata = [...mymintdata].reverse() 
 
     const moveSellPage = (index) => {
         navigate(`/sellpage/${index}`)
@@ -29,8 +29,8 @@ const MyCardList = () => {
 
   return (
     <div className='myCardListContainer'>
-        { mymintdata !== "" && sellingNftId !== '' ? 
-        mymintdata.reverse().map((item, index)=>(
+        { revmymintdata !== "" && sellingNftId !== '' ? 
+        revmymintdata.map((item, index)=>(
         <div className='cardListContainer' key={index} onClick={()=>moveSellPage(item.data.edition)}>
             <div className='myNftCard'
              style={{
