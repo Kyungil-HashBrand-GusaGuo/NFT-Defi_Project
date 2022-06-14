@@ -27,8 +27,8 @@ const MarketPage = () => {
       <div className='marketTitleContainer'>
                 <h2>Market</h2>
       </div>
-      <div class="style-five"></div>
-      <hr class="style-five"/> 
+      <div className="style-five"></div>
+      <hr className="style-five"/> 
       <div className='MarketPageContainer'>
         <div>SalePage</div>
         <div>SalePage</div>
