@@ -7,6 +7,7 @@ contract SetData {
     mapping(uint => address) public tokenOwner;
     mapping(address => uint[]) public totalOwnedTokens;
 
+
     uint[] public totalJolamanData;
 
     mapping(uint => address) public jolamanTokenTypeOfOwner;
@@ -15,9 +16,12 @@ contract SetData {
 
     // saleJolaman.sol
     mapping(uint => bool) public SellingJol;
+ 
+    
 
     // StakingSystem.sol
     mapping(uint => bool) public StakedJolamanType;
+    mapping(address => uint[]) public exceptSellOwnedJolamanType;
 
     function setTokenOwner(uint _TokenId, address _to) external {
         tokenOwner[_TokenId] = _to;
@@ -49,8 +53,6 @@ contract SetData {
     function setTotalJolamanData(uint _JolType) external {
         totalJolamanData.push(_JolType);
     }
-
-
 
     // 발행된 모든 졸라맨 타입 데이터 조회 함수
     function getTotalJolamanData() public view returns(uint[] memory) {
@@ -104,4 +106,23 @@ contract SetData {
     function getStakedJolamanType(uint _JolamanType) public view returns(bool) {
         return StakedJolamanType[_JolamanType];
     }
+
+    function setExceptSellOwnedJolamanType(address _tokenOwner, uint _JolType) external {
+        exceptSellOwnedJolamanType[_tokenOwner].push(_JolType);
+    }
+
+    function setDeleteExceptSellOwnedJolamanType(address _tokenOwner, uint _JolType) external {
+        for(uint i = 0; i < exceptSellOwnedJolamanType[_tokenOwner].length; i++) {
+            if(exceptSellOwnedJolamanType[_tokenOwner][i] == _JolType) {
+                exceptSellOwnedJolamanType[_tokenOwner][i] = exceptSellOwnedJolamanType[_tokenOwner][exceptSellOwnedJolamanType[_tokenOwner].length - 1];
+                exceptSellOwnedJolamanType[_tokenOwner].pop();
+            }
+        }
+    }
+
+    // 판매등록 되어있지 않고 스테이킹 되어있지 않는 계좌별 졸라맨타입 배열
+    function getExceptSellOwnedJolamanType(address _tokenOwner) public view returns(uint[] memory) {
+        return exceptSellOwnedJolamanType[_tokenOwner];
+    }
+
 }

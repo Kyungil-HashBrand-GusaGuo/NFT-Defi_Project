@@ -10,14 +10,14 @@ const AllCardList = () => {
 
     const { allmintdata } = useSelector(state => state.mintdata)
 
-
+    const revmintdata = [...allmintdata].reverse()
   useEffect(()=> {
     dispatch(collectionAction.collectionAct())
   },[])
   return (
     <div className='AllCradListContainer'>
-        { allmintdata === "" ? null : 
-        allmintdata.reverse().map((item, index)=>(
+        { revmintdata === "" ? null : 
+        revmintdata.map((item, index)=>(
         <div className='cardListContainer' key={index}>
             <div className='myNftCard'
              style={{

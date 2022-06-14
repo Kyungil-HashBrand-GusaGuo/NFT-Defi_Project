@@ -12,7 +12,7 @@ const MyCardList = () => {
     const { account } = useSelector(state => state.account);
     const { mymintdata } = useSelector(state => state.mintdata)
 
-    console.log(mymintdata)
+    const revmymintdata = [...mymintdata].reverse() 
 
     const moveSellPage = (index) => {
         navigate(`/sellpage/${index}`)
@@ -24,8 +24,8 @@ const MyCardList = () => {
 
   return (
     <div className='myCardListContainer'>
-        { mymintdata === "" ? null : 
-        mymintdata.reverse().map((item, index)=>(
+        { revmymintdata === "" ? null : 
+        revmymintdata.map((item, index)=>(
         <div className='cardListContainer' key={index} onClick={()=>moveSellPage(item.data.edition)}>
             <div className='myNftCard'
              style={{
