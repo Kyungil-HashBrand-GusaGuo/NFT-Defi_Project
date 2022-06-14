@@ -13,12 +13,20 @@ function marketAct(account) {
             const priceArr = response.data[1];
         
             let sellNftArr = [] 
-        
+            let sellIdArr = []
+
             for(let i=0; i < idArr.length; i++){ 
               let data = { id : idArr[i], price : (priceArr[i]/10**18).toFixed(1)} // 가격 1자리수로 남기고, 소주점2자리수에서 반올림
               sellNftArr.push(data)
+              let id = Number(idArr[i])
+              sellIdArr.push(id)
             }
-            dispatch({type : "GET_ALL_SELL_NFT", payload : { sellingAllNftData : sellNftArr}})
+            dispatch({type : "GET_ALL_SELL_NFT", 
+            payload : { 
+              sellingAllNftData : sellNftArr, 
+              sellingNftId : sellIdArr,
+              sellingNftPrice : priceArr
+            }})
 
           } catch (error){
             console.error(error);
