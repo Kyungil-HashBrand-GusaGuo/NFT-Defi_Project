@@ -104,20 +104,37 @@ const SellPage = () => {
                       </tbody>
                     </table>
                   </div>
-                  <div className='leftInput' >
-                    <div className='leftInputTitle'>
-                    <p>Price</p>
-                    </div>
-                    <div className='leftInputsection'>
-                      <input type="image" src={klayIcon2} className="lefticoninput"></input>
-                      <input type="number" min="1" placeholder='Amount' className='lefttxtinput' onChange={changePrice}/>
-                    </div>
-                  </div>
-                  <div className='leftbtn'>
                     {
+<<<<<<< HEAD
                       checkSell ? <button onClick={changeCancelSellModalState} className="learn-more">Cancel Sell</button> : <button onClick={changeSellModalState} className="learn-more">Sell</button>
+=======
+                      checkSell ?  
+                      <>
+                        <div className='leftInput' >
+                          <div className='leftInputTitle'>
+                            <p>Stop Selling</p>
+                          </div>
+                        </div>
+                        <div className='leftbtn'>
+                          <button onClick={changeCancelSellModalState} className="learn-more">Cancel Sell</button>
+                        </div>
+                      </>
+                     : <>
+                        <div className='leftInput' >
+                          <div className='leftInputTitle'>
+                            <p>Price</p>
+                          </div>
+                          <div className='leftInputsection'>
+                            <input type="image" src={klayIcon2} className="lefticoninput"></input>
+                            <input type="number" min="1" placeholder='Amount' className='lefttxtinput' onChange={changePrice}/>
+                          </div>
+                        </div>
+                        <div className='leftbtn'>
+                          <button onClick={changeSellModalState} className="learn-more">Sell</button>
+                        </div>
+                     </>
+>>>>>>> 7632c8aff11641cfe83d42b824957dc94857f0b2
                     }
-                  </div>
                 </div>
               </div>
             </div>

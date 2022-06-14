@@ -6,9 +6,16 @@ const MyPage = () => {
 
 
   return (
-    <div className='myPageContainer'>
-        <MyCardList/>
-    </div>
+    <>
+      <div className='collectionTitleContainer'>
+              <h2>MyPage</h2>
+      </div>
+      <div class="style-five"></div>
+      <hr class="style-five"/> 
+      <div className='myPageContainer'>
+          <MyCardList/>
+      </div>
+    </>
   )
 }
 
