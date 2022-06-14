@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { sellingAction } from '../../redux/actions/sellingAction'
 import { useNavigate } from 'react-router-dom'
+import "./SellModal.css"
 
 const SellModal = ({edition, account, price}) => {
 
@@ -20,10 +21,12 @@ const SellModal = ({edition, account, price}) => {
 
   return (
     <div className='overlay'>
-        SellModal
-        {
-          sellingNftSuccess ? <button onClick={goToMarket}>Go to Market</button> : null
-        }
+        <div className='sellModalContainer'>
+          <div className='sellMintingInfoSection'>  
+            <h3 className='sellMintingMessage'>SellModal</h3>
+            { sellingNftSuccess ? <button className='sellModalEndButton' onClick={goToMarket}>Go to Market</button> : null }
+          </div>
+      </div>
     </div>
   )
 }
