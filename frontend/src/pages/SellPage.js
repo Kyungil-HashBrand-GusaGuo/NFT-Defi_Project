@@ -105,9 +105,6 @@ const SellPage = () => {
                     </table>
                   </div>
                     {
-<<<<<<< HEAD
-                      checkSell ? <button onClick={changeCancelSellModalState} className="learn-more">Cancel Sell</button> : <button onClick={changeSellModalState} className="learn-more">Sell</button>
-=======
                       checkSell ?  
                       <>
                         <div className='leftInput' >
@@ -133,7 +130,6 @@ const SellPage = () => {
                           <button onClick={changeSellModalState} className="learn-more">Sell</button>
                         </div>
                      </>
->>>>>>> 7632c8aff11641cfe83d42b824957dc94857f0b2
                     }
                 </div>
               </div>
