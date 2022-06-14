@@ -1,9 +1,11 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import './MyCardList.css'
 import klayIcon2 from '../../images/klaytn.png'
 import { mypageAction } from '../../redux/actions/mypageAction';
 import { useNavigate } from 'react-router-dom';
+import { marketAction } from '../../redux/actions/marketAction';
+import axios from 'axios';
 
 const MyCardList = () => {
 
@@ -11,8 +13,10 @@ const MyCardList = () => {
     const navigate = useNavigate()
     const { account } = useSelector(state => state.account);
     const { mymintdata } = useSelector(state => state.mintdata)
-
-    console.log(mymintdata)
+    const [checkSell, setCheckSell] = useState()
+    const { sellingNftId } = useSelector(state => state.transactionNFT)
+    console.log("판매중인 Id 확인", sellingNftId)
+    console.log("나의 민팅데이터",mymintdata)
 
     const moveSellPage = (index) => {
         navigate(`/sellpage/${index}`)
@@ -20,11 +24,12 @@ const MyCardList = () => {
 
   useEffect(()=> {
     dispatch(mypageAction.mypageAct(account))
+    dispatch(marketAction.marketAct())
   },[account])
 
   return (
     <div className='myCardListContainer'>
-        { mymintdata === "" ? null : 
+        { mymintdata !== "" && sellingNftId !== '' ? 
         mymintdata.reverse().map((item, index)=>(
         <div className='cardListContainer' key={index} onClick={()=>moveSellPage(item.data.edition)}>
             <div className='myNftCard'
@@ -46,17 +51,28 @@ const MyCardList = () => {
                         <p>{item.data.name}</p>
                     </div>
                 </div>
-                <div className='cardtxt'>
-                    <div className='cardlisttitle'>
-                    <p>Price </p>
-                    </div>
-                    <div className='cardlistprice'>
-                        <img className='klayicon' src={klayIcon2}/><p>2.0</p>
-                    </div>
-                </div>
+                {
+                    sellingNftId.includes(item.data.edition) ?
+                    <div className='cardtxt'>
+                        <div className='cardlisttitle'>
+                        <p>판매중 </p>
+                        </div>
+                        <div className='cardlistprice'>
+                            <img className='klayicon' src={klayIcon2}/><p></p>
+                        </div>
+                    </div> :
+                    <div className='cardtxt'>
+                        <div className='cardlisttitle'>
+                        <p>판매가능 </p>
+                        </div>
+                        <div className='cardlistprice'>
+                            <img className='klayicon' src={klayIcon2}/><p></p>
+                        </div>
+                    </div>                     
+                }
             </div>
         </div>
-        ))}
+        )): null} 
     </div>
   )
 }

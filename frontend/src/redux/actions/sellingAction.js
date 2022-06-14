@@ -1,20 +1,16 @@
 import {
-    caver,
-    RandomJolamanContract,
-    MINT_CONTRACT_ADDRESS,
-    SALE_CONTRACT_ADDRESS,
-    setDataContract,
-    SaleContract
-  
-  } from "../../caverConfig.js";
-
-
-//const res = await setDataContract.methods.gettypeToId().call()
+  caver,
+  RandomJolamanContract,
+  MINT_CONTRACT_ADDRESS,
+  SALE_CONTRACT_ADDRESS,
+  setDataContract,
+  SaleContract,
+} from "../../caverConfig.js";
 
 function sellAction(edition, account, price) {
-    console.log(edition)
-    console.log(account)
-    console.log(price)
+    // console.log(edition)
+    // console.log(account)
+    // console.log(price)
     return async (dispatch) => {
         //onsole.log(edition)
         try {
@@ -51,6 +47,7 @@ function sellAction(edition, account, price) {
                 console.error(error);
             }
     }
-}
+  };
 
-export const sellingAction = {sellAction}
+
+export const sellingAction = { sellAction };
