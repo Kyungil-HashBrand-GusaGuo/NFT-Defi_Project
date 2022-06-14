@@ -64,6 +64,49 @@
 			{
 				"inputs": [
 					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "exceptSellOwnedJolamanType",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_tokenOwner",
+						"type": "address"
+					}
+				],
+				"name": "getExceptSellOwnedJolamanType",
+				"outputs": [
+					{
+						"internalType": "uint256[]",
+						"name": "",
+						"type": "uint256[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
 						"internalType": "uint256",
 						"name": "_JolType",
 						"type": "uint256"
@@ -218,6 +261,42 @@
 					}
 				],
 				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_tokenOwner",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_JolType",
+						"type": "uint256"
+					}
+				],
+				"name": "setDeleteExceptSellOwnedJolamanType",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_tokenOwner",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_JolType",
+						"type": "uint256"
+					}
+				],
+				"name": "setExceptSellOwnedJolamanType",
+				"outputs": [],
+				"stateMutability": "nonpayable",
 				"type": "function"
 			},
 			{
@@ -451,11 +530,11 @@
 	},
 	"sources": {
 		"contracts/SetData.sol": {
-			"keccak256": "0x556d64eab01887c082bf953b2275f01034b1c3b58ee4acf31af51f8cfb0c6e67",
+			"keccak256": "0xba4cf797bfa2e89df42b925013659cc461c6dd0ecfc2c198157db9e9d3f80041",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://5c9d3eb1c7d32d5b77cf766a41f8a0e7ddae29a95fbaf261fd62cf29ee3a32d5",
-				"dweb:/ipfs/QmWxzGCypVdXsFH6wzH65BtpJCqddkR4QWsDcWoXYyq532"
+				"bzz-raw://5d05067d32fb7c38f36da162cd147520ce405c122a7099c343558e5e1738d4da",
+				"dweb:/ipfs/QmVWFkoyXzkhm2WWZHUPZuZeiFbhWYkCQSoe45WDNQwtrN"
 			]
 		}
 	},

@@ -60,13 +60,14 @@ const SellPage = () => {
     },[])
 
   return (
-      <div className='sellMainContainer'>
-          {
-            sellModal ? <SellModal edition={edition} account={account} price={price}/> : null
-          }
-          {
-            cancelSellModal ? <CancelSellModal edition={edition} account={account} price={price}/> : null
-          }
+    <>
+        {
+          sellModal ? <SellModal edition={edition} account={account} price={price}/> : null
+        }
+        {
+          cancelSellModal ? <CancelSellModal edition={edition} account={account} price={price}/> : null
+        }
+    <div className='sellMainContainer'>
         <div className='SellMainSection'>
           <div className='SellTitleContainer'>
               <h2>List item for sale</h2>
@@ -194,6 +195,7 @@ const SellPage = () => {
           }
         </div>
       </div>
+      </>
   )
 }
 
