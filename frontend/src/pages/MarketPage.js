@@ -23,28 +23,35 @@ const MarketPage = () => {
   },[])
 
   return (
-    <div className='MarketPageContainer'>
-      <div>SalePage</div>
-      <div>SalePage</div>
-      <div>SalePage</div>
-      <div>SalePage</div>
-      <div>SalePage</div>
-      <div>
-      {
-        sellingAllNftData !== '' ? 
-        sellingAllNftData.map((item, index) => {
-          return <div className='testMarketBox' key={index} onClick={() => moveBuyPage(item.id)}>
-            <h2>{item.id}</h2>
-            <h2>{item.price}</h2>
-          </div>
-        })
-        : null
-      }
+    <>
+      <div className='marketTitleContainer'>
+                <h2>Market</h2>
       </div>
+      <div class="style-five"></div>
+      <hr class="style-five"/> 
+      <div className='MarketPageContainer'>
+        <div>SalePage</div>
+        <div>SalePage</div>
+        <div>SalePage</div>
+        <div>SalePage</div>
+        <div>SalePage</div>
+        <div>
+        {
+          sellingAllNftData !== '' ? 
+          sellingAllNftData.map((item, index) => {
+            return <div className='testMarketBox' key={index} onClick={() => moveBuyPage(item.id)}>
+              <h2>{item.id}</h2>
+              <h2>{item.price}</h2>
+            </div>
+          })
+          : null
+        }
+        </div>
 
-      <div>SalePage</div>
-      <div>SalePage</div>
-    </div>
+        <div>SalePage</div>
+        <div>SalePage</div>
+      </div>
+    </>
   )
 }
 

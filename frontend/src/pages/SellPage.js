@@ -11,18 +11,15 @@ import axios from 'axios';
 const SellPage = () => {
 
     let {edition} = useParams()
-    console.log("sfsdfs",edition)
     const { account } = useSelector(state => state.account)
-    console.log("account",account)
-    const { mymintdata } = useSelector(state => state.mintdata)
-    console.log("mintdata", mymintdata)
-    //console.log(edition)
+    const { sellingAllNftData } = useSelector(state => state.transactionNFT)
     const [sellModal, setSellModal] = useState(false)
     const [cancelSellModal, setCancelSellModal] = useState(false)
     const [checkSell, setCheckSell] = useState()
     const [showMint, setShowMint] = useState();
     const [price, setPrice] = useState();
-
+    const [sellPrice, setSellPrice] = useState();
+    //console.log("NFT데이터",sellingAllNftData)
     
 
     const changeSellModalState = () => {
@@ -36,28 +33,41 @@ const SellPage = () => {
     const callSellNft = async() => {
       const response = await axios.get("http://34.64.61.199:9495/block/getOnSaleJolaman");
       const mintJSON = await axios.get(`https://gateway.pinata.cloud/ipfs/QmaavyzfX6XzVNJx4zKCQVNDJWwQJx9xUC6gmDfddxvQ6p/${edition}.json`)
-      console.log("민트데이터",mintJSON)
       let state = response.data[0].includes(edition)
-      console.log("배열확인", response.data[0])
-      console.log("배열확인", state)
-      console.log("민트", mintJSON.data)
+      // console.log("민트데이터",mintJSON)
+      // console.log("배열확인", response.data[0])
+      // console.log("배열확인", state)
+      // console.log("민트", mintJSON.data)
       setCheckSell(state)
       setShowMint(mintJSON.data);
+
+      console.log("NFT데이터22",sellingAllNftData)
+
+      for(let i=0; i < sellingAllNftData.length; i++){
+        let check = edition
+        if (sellingAllNftData[i].id == check) {
+          setSellPrice(sellingAllNftData[i].price)
+        }
+      }
     }
     
     const changePrice = (e) => {
       setPrice(e.target.value)
     }
 
-    console.log(price)
-    
-
     useEffect(()=>{
       callSellNft()
     },[])
 
   return (
-      <div className='sellMainContainer'>
+    <>
+        {
+          sellModal ? <SellModal edition={edition} account={account} price={price}/> : null
+        }
+        {
+          cancelSellModal ? <CancelSellModal edition={edition} account={account} price={price}/> : null
+        }
+    <div className='sellMainContainer'>
         <div className='SellMainSection'>
           <div className='SellTitleContainer'>
               <h2>List item for sale</h2>
@@ -68,12 +78,9 @@ const SellPage = () => {
               <div className='leftSection'>
                 <div className='leftInputContainer'>
                   <div>
-                  {
-                    sellModal ? <SellModal edition={edition} account={account} price={price}/> : null
-                  }
-                  {
-                    cancelSellModal ? <CancelSellModal edition={edition} account={account} price={price}/> : null
-                  }
+                  </div>
+                  <div className='leftTableTitle'>
+                    <p>NFT Attributes</p>
                   </div>
                   <div className='leftAttributeContainer'>
                     <table>
@@ -86,7 +93,6 @@ const SellPage = () => {
                           <th>{showMint.attributes[4].trait_type}</th>
                           <th>{showMint.attributes[5].trait_type}</th>
                           <th>{showMint.attributes[6].trait_type}</th>
-                          
                         </tr>
                       </thead>
                       <tbody>
@@ -98,26 +104,37 @@ const SellPage = () => {
                           <td>{showMint.attributes[4].value}</td>
                           <td>{showMint.attributes[5].value}</td>
                           <td>{showMint.attributes[6].value}</td>
-                    
                         </tr>
                       </tbody>
                     </table>
                   </div>
-                  <div className='leftInput' >
-                    <div className='leftInputTitle'>
-                    <p>Price</p>
-                    </div>
-                    <div className='leftInputsection'>
-                      <input type="image" src={klayIcon2} className="lefticoninput"></input>
-                      <input type="number" min="1" placeholder='Amount' className='lefttxtinput' onChange={changePrice}/>
-                    </div>
-                  </div>
-                  <div className='leftbtn'>
                     {
-                      checkSell ? <button onClick={changeCancelSellModalState} className="learn-more">Cancel Sell</button> : <button onClick={changeSellModalState} className="learn-more">Sell</button>
-
+                      checkSell ?  
+                      <>
+                        <div className='leftInput' >
+                          <div className='leftInputTitle'>
+                            <p>Stop Selling</p>
+                          </div>
+                        </div>
+                        <div className='leftbtn'>
+                          <button onClick={changeCancelSellModalState} className="learn-more">Cancel Sell</button>
+                        </div>
+                      </>
+                     : <>
+                        <div className='leftInput' >
+                          <div className='leftInputTitle'>
+                            <p>Price</p>
+                          </div>
+                          <div className='leftInputsection'>
+                            <input type="image" src={klayIcon2} className="lefticoninput"></input>
+                            <input type="number" min="1" placeholder='Amount' className='lefttxtinput' onChange={changePrice}/>
+                          </div>
+                        </div>
+                        <div className='leftbtn'>
+                          <button onClick={changeSellModalState} className="learn-more">Sell</button>
+                        </div>
+                     </>
                     }
-                  </div>
                 </div>
               </div>
             </div>
@@ -144,17 +161,29 @@ const SellPage = () => {
                               <p>{showMint.name}</p>
                           </div>
                         </div>
-                        <div className='rightCardTxt'>
-                          <div className='rightCardListTitle'>
-                          <p>Price </p>
-                          </div>
-                          <div className='rightCardListPrice'>
-                              <img className='klayicon' src={klayIcon2}/><p>2.0</p>
-                          </div>
-                        </div>
-                        <div className='cardDna'>
-                          <p>{showMint.dna}</p>
-                        </div>
+                        {
+                          checkSell ?  
+                          <>
+                            <div className='rightCardTxt'>
+                              <div className='rightCardListTitle'>
+                              <p>Price </p>
+                              </div>
+                              <div className='rightCardListPrice'>
+                                  <img className='klayicon' src={klayIcon2}/><p>{sellPrice}</p>
+                              </div>
+                            </div>
+                          </>
+                        : <>
+                            <div className='rightCardTxt'>
+                              {/* <div className='rightCardListTitle'>
+                              <p>Price </p>
+                              </div>
+                              <div className='rightCardListPrice'>
+                                  <img className='klayicon' src={klayIcon2}/><p>2.0</p>
+                              </div> */}
+                            </div>
+                        </>
+                        }
                   </div>
                 </div>
                 
@@ -166,6 +195,7 @@ const SellPage = () => {
           }
         </div>
       </div>
+      </>
   )
 }
 

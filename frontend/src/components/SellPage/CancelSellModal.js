@@ -20,10 +20,12 @@ const CancelSellModal = ({edition, account}) => {
 
   return (
     <div className='overlay'>
-        CancelSellModal
-        {
-          sellingNftCancel ? <button onClick={goToMypage}>Go to Mypage</button> : null
-        }
+      <div className='sellModalContainer'>
+        <div className='sellMintingInfoSection'>  
+            <h3 className='sellMintingMessage'>Cancel SellModal</h3>
+            { sellingNftCancel ? <button className='sellModalEndButton' onClick={goToMypage}>Go to Mypage</button> : null }
+        </div>
+      </div>
     </div>
   )
 }

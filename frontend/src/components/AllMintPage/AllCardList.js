@@ -15,6 +15,7 @@ const AllCardList = () => {
     dispatch(collectionAction.collectionAct())
   },[])
   return (
+    <>
     <div className='AllCradListContainer'>
         { revmintdata === "" ? null : 
         revmintdata.map((item, index)=>(
@@ -49,6 +50,7 @@ const AllCardList = () => {
         </div>
         ))}
     </div>
+    </>
   )
 }
 
