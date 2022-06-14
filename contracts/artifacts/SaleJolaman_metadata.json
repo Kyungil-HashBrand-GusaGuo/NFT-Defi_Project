@@ -382,11 +382,11 @@
 			]
 		},
 		"contracts/SaleJolaman.sol": {
-			"keccak256": "0x7c57dde9dcfcc4494fde93c553bda1b6b5492230f910dec81878e39497a1c7a5",
+			"keccak256": "0x7e2a8a0da03d4e24f1828d81b03863d2f8ee61088cbc369f94bcaa72ebf5b1cc",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://18cf1d4695191d952a13b34120320898129956b355cac5639bac3f43a6e4cbdc",
-				"dweb:/ipfs/QmNmMJvsJBzo5hnxGBmhKM77YY6jQy1hUwQsYZYxwQxNUa"
+				"bzz-raw://ec5ec36a06010984e8e0c9d327c0a00e0942443c3a633a5f9ff7858b30de78b0",
+				"dweb:/ipfs/QmZdCzKVbrNJKMqrEZjFoEURWDN76CQ38yBFS4bZUj4mXF"
 			]
 		},
 		"contracts/SetData.sol": {

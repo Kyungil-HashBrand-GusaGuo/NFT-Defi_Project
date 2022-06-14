@@ -4,7 +4,7 @@ const config = {
   rpcURL: "https://api.baobab.klaytn.net:8651",
 };
 const caver = new Caver(config.rpcURL);
-const DATA_CONTRACT_ADDRESS = "0x1e2aBeCb9AfB067EDB7198ADDc9E9DBf62EE64C4";
+const DATA_CONTRACT_ADDRESS = "0xD3dD72db98D4cE2F9C0efAadACe1a3Aa4D4488c6";
 
 const DATA_CONTRACT_ABI = [
 	{
@@ -23,6 +23,44 @@ const DATA_CONTRACT_ABI = [
 		"name": "SellOwnedToken",
 		"outputs": [],
 		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"name": "SellingJol",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"name": "StakedJolamanType",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"stateMutability": "view",
 		"type": "function"
 	},
 	{
@@ -52,6 +90,44 @@ const DATA_CONTRACT_ABI = [
 				"internalType": "uint256",
 				"name": "",
 				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_JolamanType",
+				"type": "uint256"
+			}
+		],
+		"name": "getSellingJolTypeToBool",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_JolamanType",
+				"type": "uint256"
+			}
+		],
+		"name": "getStakedJolamanType",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "",
+				"type": "bool"
 			}
 		],
 		"stateMutability": "view",
@@ -160,6 +236,42 @@ const DATA_CONTRACT_ABI = [
 			}
 		],
 		"name": "setJolamanTokenTypeOfOwner",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_JolamanType",
+				"type": "uint256"
+			},
+			{
+				"internalType": "bool",
+				"name": "boolean",
+				"type": "bool"
+			}
+		],
+		"name": "setSellingJolTypeToBool",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_JolamanType",
+				"type": "uint256"
+			},
+			{
+				"internalType": "bool",
+				"name": "boolean",
+				"type": "bool"
+			}
+		],
+		"name": "setStakedJolamanType",
 		"outputs": [],
 		"stateMutability": "nonpayable",
 		"type": "function"
