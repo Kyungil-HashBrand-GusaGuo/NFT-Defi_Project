@@ -3,14 +3,20 @@ import { useDispatch, useSelector } from 'react-redux';
 import './MyCardList.css'
 import klayIcon2 from '../../images/klaytn.png'
 import { mypageAction } from '../../redux/actions/mypageAction';
+import { useNavigate } from 'react-router-dom';
 
 const MyCardList = () => {
 
     const dispatch = useDispatch()
+    const navigate = useNavigate()
     const { account } = useSelector(state => state.account);
     const { mymintdata } = useSelector(state => state.mintdata)
 
     console.log(mymintdata)
+
+    const moveSellPage = (index) => {
+        navigate(`/sellpage/${index}`)
+    }
 
   useEffect(()=> {
     dispatch(mypageAction.mypageAct(account))
@@ -20,7 +26,7 @@ const MyCardList = () => {
     <div className='myCardListContainer'>
         { mymintdata === "" ? null : 
         mymintdata.reverse().map((item, index)=>(
-        <div className='cardListContainer' key={index}>
+        <div className='cardListContainer' key={index} onClick={()=>moveSellPage(item.data.edition)}>
             <div className='myNftCard'
              style={{
                 backgroundImage: 
