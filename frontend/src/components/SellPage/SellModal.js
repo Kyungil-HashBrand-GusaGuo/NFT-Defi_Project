@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { sellingAction } from '../../redux/actions/sellingAction'
-import { setDataContract } from '../../caverConfig'
 import { useNavigate } from 'react-router-dom'
 
 const SellModal = ({edition, account}) => {

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
+import { useSelector } from 'react-redux'
 import { useParams } from 'react-router-dom'
 import klayIcon2 from '../images/klaytn.png';
 import './SellPage.css'
@@ -10,7 +10,6 @@ import axios from 'axios';
 
 const SellPage = () => {
 
-    const dispatch = useDispatch();
     let {edition} = useParams()
     console.log("sfsdfs",edition)
     const { account } = useSelector(state => state.account)
