@@ -1,8 +1,8 @@
 import { ethers } from "ethers";
-export const MINT_CONTRACT_ADDRESS = 
-"0xE05CF80c11a3cbC3a36fB62327a674e8d78efcE8";
 
-const MINT_CONTRACT_ABI =  [
+export const MINT_CONTRACT_ADDRESS = "0xE05CF80c11a3cbC3a36fB62327a674e8d78efcE8";
+
+export const MINT_CONTRACT_ABI =  [
 	{
 		"inputs": [
 			{
@@ -1601,7 +1601,7 @@ export const SaleContract = () => {
 	return tempContract;
 }
 
-console.log(RandomJolamanContract);
+// console.log(RandomJolamanContract);
 
 // export const RandomJolamanContract = new ethers.ethereum.Contract(
 //     MINT_CONTRACT_ABI,
