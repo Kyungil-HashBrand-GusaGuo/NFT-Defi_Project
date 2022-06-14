@@ -36,19 +36,7 @@ contract StakingSystem is Ownable, ERC721Holder, JolamanToken {
 
     mapping(address => Staker) public stakers;
     mapping(uint256 => address) public tokenOwner;
-    bool public tokensClaimable;
     bool initialised;
-
-
-    event Staked(address owner, uint256 amount);
-
-    event Unstaked(address owner, uint256 amount);
-
-    event RewardPaid(address indexed user, uint256 reward);
-
-    event ClaimableStatusUpdated(bool status);
-
-    event EmergencyUnstake(address indexed user, uint256 tokenId);
 
     // 스테이킹 시작 관리자만 가능 initstaking을 해야만 staking을 할 수 있음
     function initStaking() public onlyOwner {
@@ -57,11 +45,6 @@ contract StakingSystem is Ownable, ERC721Holder, JolamanToken {
         initialised = true;
     }
 
-    // 토큰 보상 청구권 기능 실행 관리자만 가능 이 기능 실행 해야만 모든 유저가 토큰 보상 청구 가능
-    function setTokensClaimable(bool _enabled) public onlyOwner {
-        tokensClaimable = _enabled;
-        emit ClaimableStatusUpdated(_enabled);
-    }
 
     // 유저별 스테이킹한 졸라맨 타입 조회 함수
     function getStakedTokens(address _user)
@@ -95,13 +78,14 @@ contract StakingSystem is Ownable, ERC721Holder, JolamanToken {
         require(setdata.getSellingJolTypeToBool(_JolamanType) == false, "This token already Sale");
         Staker storage staker = stakers[_user];
 
+        setdata.setDeleteExceptSellOwnedJolamanType(_user, _JolamanType);
         staker.JolamanType.push(_JolamanType);
         staker.tokenStakingCoolDown[_JolamanType] = block.timestamp;
         tokenOwner[_JolamanType] = _user;
         setdata.setStakedJolamanType(_JolamanType, boolean);
         randomJolaman.safeTransferFrom(_user, address(this), setdata.gettypeToId(_JolamanType));
 
-        emit Staked(_user, _JolamanType);
+        // emit Staked(_user, _JolamanType);
         stakedTotal++;
     }
 
@@ -137,10 +121,11 @@ contract StakingSystem is Ownable, ERC721Holder, JolamanToken {
         }
         staker.tokenStakingCoolDown[_JolamanType] = 0;
         delete tokenOwner[_JolamanType];
+        setdata.setExceptSellOwnedJolamanType(_user, _JolamanType);
         setdata.setStakedJolamanType(_JolamanType, boolean);
         randomJolaman.safeTransferFrom(address(this), _user, setdata.gettypeToId(_JolamanType));
 
-        emit Unstaked(_user, _JolamanType);
+        // emit Unstaked(_user, _JolamanType);
         stakedTotal--;
     }
 
@@ -190,7 +175,6 @@ contract StakingSystem is Ownable, ERC721Holder, JolamanToken {
 
     // 보상 청구 함수
     function claimReward(address _user) public {
-        require(tokensClaimable == true, "Tokens cannnot be claimed yet");
 
         Staker storage staker = stakers[_user];
         uint256[] storage ids = staker.JolamanType;
@@ -215,8 +199,6 @@ contract StakingSystem is Ownable, ERC721Holder, JolamanToken {
         mint(_user, stakers[_user].balance);
         _revokeRole(MINTER_ROLE, msg.sender);
         stakers[_user].balance = 0;
-
-        emit RewardPaid(_user, stakers[_user].balance);
     }
 
     // account별 스테이킹된 졸라맨타입 반환함수
