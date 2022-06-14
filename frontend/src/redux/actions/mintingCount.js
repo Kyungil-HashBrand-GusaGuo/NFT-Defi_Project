@@ -6,13 +6,13 @@ function mintCount() {
     return async (dispatch) => {
         try {
                 // const MAX_NORMAL_TOKEN_COUNT = RandomJolamanContract.methods.MAX_NORMAL_TOKEN_COUNT().call()
-                const MAX_NORMAL_TOKEN_COUNT = await axios.get("http://34.64.61.199:9495/block/normalAll")
+                const MAX_NORMAL_TOKEN_COUNT = await axios.get("http://localhost:9495/block/normalAll")
             
-                const MAX_SPECIAL_TOKEN_COUNT = await axios.get("http://34.64.61.199:9495/block/specialAll")
+                const MAX_SPECIAL_TOKEN_COUNT = await axios.get("http://localhost:9495/block/specialAll")
 
-                const NORMAL_TOKEN_COUNT = await axios.get("http://34.64.61.199:9495/block/normalCurrent")
+                const NORMAL_TOKEN_COUNT = await axios.get("http://localhost:9495/block/normalCurrent")
 
-                const SPECIAL_TOKEN_COUNT = await axios.get("http://34.64.61.199:9495/block/specialCurrent")
+                const SPECIAL_TOKEN_COUNT = await axios.get("http://localhost:9495/block/specialCurrent")
 
                 let [ maxNormalTokenCount, maxSpecialTokenCount, normalTokenCount, specialTokenCount ] = await Promise.all([MAX_NORMAL_TOKEN_COUNT.data, MAX_SPECIAL_TOKEN_COUNT.data, NORMAL_TOKEN_COUNT.data, SPECIAL_TOKEN_COUNT.data])
                 // console.log("MAX_NORMAL_TOKEN_COUNT",maxNormalTokenCount)
