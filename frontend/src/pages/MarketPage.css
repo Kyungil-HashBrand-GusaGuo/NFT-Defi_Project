@@ -1,3 +1,6 @@
+
+
+
 .MarketPageContainer {
     width: 100%;
     padding-top: 100px;
@@ -50,3 +53,158 @@ hr.style-five {
     background: linear-gradient(90deg, rgba(222,127,127,1) 0%, rgba(240,26,26,1) 100%); */
     }
 
+    .mainMarketContainer {
+        display: flex;
+        height: 100vh;
+        width: 100%;
+        background-color: blue;
+        margin-top: 50px;
+    }
+
+    .leftMarketContainer {
+        flex: 30%;
+        background-color: blueviolet;
+        margin: 0 auto 10px;
+        padding: 50px 30px 30px 30px
+    }
+
+    .leftMarketSection {
+        width: 100%;
+        height: 100%;
+        background-color: lime;
+    }
+
+    .rightMarketContainer {
+        flex: 70%;
+        background-color: aqua;
+        padding: 50px 50px 50px 50px;
+        
+    }
+
+    .rightMarketSection {
+        width: 100%;
+        height: 100%;
+        background-color: firebrick;
+    }
+
+    .rightMarketTitle {
+        margin-bottom: 50px;
+    }
+
+    .rightMarketTitle p {
+        font-size: 40px;
+    }
+
+    .rightMarketCardContainer {
+        height: 100%;
+        background-color: chartreuse;
+        width: 100%;
+        display: flex;
+    /* align-items: center; */
+    /* margin-top: 30px; */
+        justify-content: center;
+        flex-direction: row ;
+        flex-wrap: wrap; 
+    }
+
+   
+
+    .rightMarketCardList {
+        /* display: flex; */
+        width: 250px;
+        height: 350px;
+        /* border: 0.139vw solid black; */
+        border-radius: 15.005px;
+        box-shadow:gray 0px 2.002px 20.002px;
+        margin-bottom: 15px;
+        background-color: white;
+        margin-right: 15px;
+        margin-left: 15px;
+    }
+    
+    .rightMarketCardList:hover {
+        
+        border: 0.208vw solid rgba(44, 14, 2, 0.35)
+    }
+    
+    .rightMarketNftCard {
+        width: 250px;
+        height: 230px;
+        background-size: contain;
+        border-radius: 15.005px;
+    }
+
+    .rightMarketCardTxtContainer {
+        width: 230px;
+        height: 100px;
+        background-color: aqua;
+        padding: 10px 10px 10px 10px;
+    }
+
+    .rightMarketCardTxtSection {
+        background-color: blueviolet;
+    }
+    
+    .rightMarketCardDnaTxt1 {
+        font-size: 15px;
+    }
+
+    .rightMarketCardDnaTxt2 {
+        margin-right: 20px;
+        font-size: 13px;
+    }
+
+    .rightMarketCardNum {
+        background-color: blue;
+        font-size: 20px;
+    }
+
+
+
+
+    /* Dropdown style */
+@keyframes slide-fade-in-dropdown-animation {
+    0% {
+      transform: translateY(-100%);
+    }
+  
+    100% {
+      transform: translateY(0);
+    }
+  }
+  
+  .slide-fade-in-dropdown {
+    overflow: hidden;
+  }
+  
+  .slide-fade-in-dropdown > ul {
+    animation: slide-fade-in-dropdown-animation .4s ease;
+  }
+  
+  @keyframes slide-fade-out-dropdown-animation {
+    0% {
+      transform: translateY(0);
+    }
+  
+    100% {
+      transform: translateY(-100%);
+    }
+  }
+  
+  .slide-fade-out-dropdown {
+    overflow: hidden;
+  }
+  
+  .slide-fade-out-dropdown > ul {
+    animation: slide-fade-out-dropdown-animation 0.4s ease;
+    animation-fill-mode: forwards;
+  }
+  
+  .components-dropdown > ul {
+    position: relative;
+    top: 5px;
+    margin-top: 0;
+    margin-bottom: 5px;
+    padding-left: 0;
+    list-style: none;
+  }
