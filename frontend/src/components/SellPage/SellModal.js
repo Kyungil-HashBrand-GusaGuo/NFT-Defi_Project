@@ -8,10 +8,9 @@ const SellModal = ({edition, account}) => {
     const dispatch = useDispatch()
     const navigate = useNavigate()
     const { sellingNftSuccess } = useSelector(state => state.transactionNFT)
-    console.log("모달창에서 확인",sellingNftSuccess)
 
-    const goToMypage = () => {
-      navigate('/mypage')
+    const goToMarket = () => {
+      navigate('/market')
     }
 
     useEffect( () => {
@@ -22,7 +21,7 @@ const SellModal = ({edition, account}) => {
     <div className='overlay'>
         SellModal
         {
-          sellingNftSuccess ? <button onClick={goToMypage}>Go to Mypage</button> : null
+          sellingNftSuccess ? <button onClick={goToMarket}>Go to Market</button> : null
         }
     </div>
   )

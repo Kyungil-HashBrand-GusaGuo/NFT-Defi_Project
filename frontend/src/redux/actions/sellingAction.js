@@ -43,9 +43,9 @@ function sellAction(edition, account) {
                                 })
                               } 
                               SellNFT()
-                              dispatch({type:"SUCCESS_SELL_NFT", payload : {sellingNftSuccess : true}})
                             }
-            }
+                          }
+                          dispatch({type:"SUCCESS_SELL_NFT", payload : {sellingNftSuccess : true}})
                 } catch(error) {
                 console.error(error);
             }
