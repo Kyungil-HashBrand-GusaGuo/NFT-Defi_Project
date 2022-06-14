@@ -12,7 +12,7 @@ function collectionAct() {
           // 액션
           for(let i=0; i < allMintingData.length; i++){
               
-              const mintJSON = await axios.get(`https://gateway.pinata.cloud/ipfs/QmXYi44PkJbNzH4nT13ZgEnKaibppUsfPCW4NpDigEBgXE/${allMintingData[i]}.json`)
+              const mintJSON = await axios.get(`https://gateway.pinata.cloud/ipfs/QmaavyzfX6XzVNJx4zKCQVNDJWwQJx9xUC6gmDfddxvQ6p/${allMintingData[i]}.json`)
               // console.log(mintJSON)
               // console.log(mintJSON.data.name)
               array.push(mintJSON)
