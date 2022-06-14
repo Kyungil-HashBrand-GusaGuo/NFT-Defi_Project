@@ -2,7 +2,7 @@
     display: flex;
     justify-content: center;
     padding-top: 2.778vw;
-    font-size: 4.861vw;
+    font-size: 70px;
     background-color: rgba(245, 245, 245, 0.4);
     padding-bottom: 2.778vw;
     padding-top: 2.778vw;
@@ -73,6 +73,16 @@
     border-radius: 0.521vw;
 }
 
+.roadMaptxtSectionDetail1 {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.roadMaptxtSectionDetail2 {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
 .arrowContainer {
     display: flex;
     justify-content: center;
@@ -86,6 +96,14 @@
     height: 3.472vw;
 }
 
-@media only screen and (max-width: 1130px) {
-
+@media only screen and (max-width: 875px) {
+    .roadMapTitle {
+        display: flex;
+        justify-content: center;
+        padding-top: 2.778vw;
+        font-size: 40px;
+        background-color: rgba(245, 245, 245, 0.4);
+        padding-bottom: 2.778vw;
+        padding-top: 2.778vw;
+    }
 }

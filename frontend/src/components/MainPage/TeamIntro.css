@@ -15,7 +15,7 @@
     display: flex;
     justify-content: center;
     margin-top: 40px;
-    font-size: 4.861vw;
+    font-size: 70px;
 }
 
 .TeamIntro {
@@ -71,4 +71,13 @@
     font-size: 23px;
     font-weight: bold;
     margin-bottom: 5px;
+}
+
+@media only screen and (max-width: 875px) {
+    .teamIntroTitle {
+        display: flex;
+        justify-content: center;
+        margin-top: 40px;
+        font-size: 40px;
+    }
 }
