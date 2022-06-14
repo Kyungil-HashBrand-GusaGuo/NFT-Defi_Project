@@ -67,6 +67,9 @@ const SellPage = () => {
                     cancelSellModal ? <CancelSellModal edition={edition} account={account}/> : null
                   }
                   </div>
+                  <div className='leftTableTitle'>
+                    <p>NFT Attributes</p>
+                  </div>
                   <div className='leftAttributeContainer'>
                     <table>
                       <thead>
@@ -78,7 +81,6 @@ const SellPage = () => {
                           <th>{showMint.attributes[4].trait_type}</th>
                           <th>{showMint.attributes[5].trait_type}</th>
                           <th>{showMint.attributes[6].trait_type}</th>
-                          
                         </tr>
                       </thead>
                       <tbody>
@@ -90,7 +92,6 @@ const SellPage = () => {
                           <td>{showMint.attributes[4].value}</td>
                           <td>{showMint.attributes[5].value}</td>
                           <td>{showMint.attributes[6].value}</td>
-                    
                         </tr>
                       </tbody>
                     </table>
@@ -107,7 +108,6 @@ const SellPage = () => {
                   <div className='leftbtn'>
                     {
                       checkSell ? <button onClick={changeCancelSellModalState} className="learn-more">Cancel Sell</button> : <button onClick={changeSellModalState} className="learn-more">Sell</button>
-
                     }
                   </div>
                 </div>
