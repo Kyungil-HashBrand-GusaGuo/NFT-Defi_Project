@@ -4,6 +4,8 @@ import "./MarketPage.css"
 import { useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { marketAction } from '../redux/actions/marketAction';
+import { Dropdown, DropdownButton } from 'react-bootstrap';
+// import 'bootstrap/dist/css/bootstrap.min.css';
 
 const MarketPage = () => {
 
@@ -29,12 +31,31 @@ const MarketPage = () => {
       </div>
       <div class="style-five"></div>
       <hr class="style-five"/> 
-      <div className='MarketPageContainer'>
-        <div>SalePage</div>
-        <div>SalePage</div>
-        <div>SalePage</div>
-        <div>SalePage</div>
-        <div>SalePage</div>
+      <div className='mainMarketContainer'>
+        <div className='leftMarketContainer'>
+          <div className='leftMarketSection'>
+
+          </div>
+          
+        </div>
+        <div className='rightMarketContainer'>
+          <div className=' rightMarketSection'>
+            <div className='rightMarketTitle'>
+              <p>Filter</p>
+              <DropdownButton id="dropdown-basic-button" title="Sort by">
+                <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
+                <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
+                <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
+              </DropdownButton>
+
+            </div>
+            <div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      {/* <div className='MarketPageContainer'>
         <div>
         {
           sellingAllNftData !== '' ? 
@@ -50,7 +71,7 @@ const MarketPage = () => {
 
         <div>SalePage</div>
         <div>SalePage</div>
-      </div>
+      </div> */}
     </>
   )
 }
