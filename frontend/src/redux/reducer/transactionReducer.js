@@ -1,7 +1,8 @@
 let initialState = {
     sellingNftSuccess : false,
     sellingNftCancel : false,
-    sellingAllNftData : ''
+    sellingAllNftData : '',
+    buyingNftSuccess : false
 }
 
 function transactionReducer(state=initialState,action) {
@@ -16,6 +17,9 @@ function transactionReducer(state=initialState,action) {
 
         case "GET_ALL_SELL_NFT" :
             return {...state, sellingAllNftData : payload.sellingAllNftData}
+
+        case "SUCCESS_BUY_NFT" :
+            return {...state, buyingNftSuccess : payload.buyingNftSuccess}
 
         default :
             return {...state}

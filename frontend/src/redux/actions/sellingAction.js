@@ -1,27 +1,24 @@
 import {
-    caver,
-    RandomJolamanContract,
-    MINT_CONTRACT_ADDRESS,
-    SALE_CONTRACT_ADDRESS,
-    setDataContract,
-    SaleContract
-  
-  } from "../../caverConfig.js";
+  caver,
+  RandomJolamanContract,
+  MINT_CONTRACT_ADDRESS,
+  SALE_CONTRACT_ADDRESS,
+  setDataContract,
+  SaleContract,
+} from "../../caverConfig.js";
 
-
-//const res = await setDataContract.methods.gettypeToId().call()
-
-function sellAction(edition, account) {
-    console.log(edition)
-    console.log(account)
+function sellAction(edition, account, price) {
+    // console.log(edition)
+    // console.log(account)
+    // console.log(price)
     return async (dispatch) => {
-        console.log(edition)
+        //onsole.log(edition)
         try {
             if(edition && account !== ""){
               const res = await setDataContract.methods.gettypeToId(edition).call()
-              console.log(edition)
+              //console.log(edition)
               let tokenId = res;
-              console.log("확인",res)
+              //console.log("확인",res)
                   const response = await caver.klay.sendTransaction({
                   from: account,
                   to: MINT_CONTRACT_ADDRESS,
@@ -39,17 +36,18 @@ function sellAction(edition, account) {
                                   from: account,
                                   to: SALE_CONTRACT_ADDRESS,
                                   gas: "3000000",
-                                  data: SaleContract.methods.SellJolamanToken(edition, 4).encodeABI()
+                                  data: SaleContract.methods.SellJolamanToken(edition, price).encodeABI()
                                 })
                               } 
                               SellNFT()
-                              dispatch({type:"SUCCESS_SELL_NFT", payload : {sellingNftSuccess : true}})
                             }
-            }
+                          }
+                          dispatch({type:"SUCCESS_SELL_NFT", payload : {sellingNftSuccess : true}})
                 } catch(error) {
                 console.error(error);
             }
     }
-}
+  };
 
-export const sellingAction = {sellAction}
+
+export const sellingAction = { sellAction };

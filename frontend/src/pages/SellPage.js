@@ -21,6 +21,7 @@ const SellPage = () => {
     const [cancelSellModal, setCancelSellModal] = useState(false)
     const [checkSell, setCheckSell] = useState()
     const [showMint, setShowMint] = useState();
+    const [price, setPrice] = useState();
 
     
 
@@ -34,7 +35,7 @@ const SellPage = () => {
 
     const callSellNft = async() => {
       const response = await axios.get("http://34.64.61.199:9495/block/getOnSaleJolaman");
-      const mintJSON = await axios.get(`https://gateway.pinata.cloud/ipfs/QmXYi44PkJbNzH4nT13ZgEnKaibppUsfPCW4NpDigEBgXE/${edition}.json`)
+      const mintJSON = await axios.get(`https://gateway.pinata.cloud/ipfs/QmaavyzfX6XzVNJx4zKCQVNDJWwQJx9xUC6gmDfddxvQ6p/${edition}.json`)
       console.log("민트데이터",mintJSON)
       let state = response.data[0].includes(edition)
       console.log("배열확인", response.data[0])
@@ -44,6 +45,13 @@ const SellPage = () => {
       setShowMint(mintJSON.data);
     }
     
+    const changePrice = (e) => {
+      setPrice(e.target.value)
+    }
+
+    console.log(price)
+    
+
     useEffect(()=>{
       callSellNft()
     },[])
@@ -61,10 +69,10 @@ const SellPage = () => {
                 <div className='leftInputContainer'>
                   <div>
                   {
-                    sellModal ? <SellModal edition={edition} account={account}/> : null
+                    sellModal ? <SellModal edition={edition} account={account} price={price}/> : null
                   }
                   {
-                    cancelSellModal ? <CancelSellModal edition={edition} account={account}/> : null
+                    cancelSellModal ? <CancelSellModal edition={edition} account={account} price={price}/> : null
                   }
                   </div>
                   <div className='leftTableTitle'>
@@ -96,13 +104,13 @@ const SellPage = () => {
                       </tbody>
                     </table>
                   </div>
-                  <div className='leftInput'>
+                  <div className='leftInput' >
                     <div className='leftInputTitle'>
                     <p>Price</p>
                     </div>
                     <div className='leftInputsection'>
                       <input type="image" src={klayIcon2} className="lefticoninput"></input>
-                      <input type="text" placeholder='Amount' className='lefttxtinput'/>
+                      <input type="number" min="1" placeholder='Amount' className='lefttxtinput' onChange={changePrice}/>
                     </div>
                   </div>
                   <div className='leftbtn'>

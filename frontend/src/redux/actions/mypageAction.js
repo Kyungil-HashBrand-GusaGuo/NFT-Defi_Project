@@ -16,7 +16,7 @@ function mypageAct(account) {
   
               for(let i=0; i < myMintingData.length; i++){
           
-                const mintJSON = await axios.get(`https://gateway.pinata.cloud/ipfs/QmXYi44PkJbNzH4nT13ZgEnKaibppUsfPCW4NpDigEBgXE/${myMintingData[i]}.json`)
+                const mintJSON = await axios.get(`https://gateway.pinata.cloud/ipfs/QmaavyzfX6XzVNJx4zKCQVNDJWwQJx9xUC6gmDfddxvQ6p/${myMintingData[i]}.json`)
                 array.push(mintJSON)
               }
               console.log(array)

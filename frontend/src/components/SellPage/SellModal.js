@@ -3,26 +3,26 @@ import { useDispatch, useSelector } from 'react-redux'
 import { sellingAction } from '../../redux/actions/sellingAction'
 import { useNavigate } from 'react-router-dom'
 
-const SellModal = ({edition, account}) => {
+const SellModal = ({edition, account, price}) => {
 
     const dispatch = useDispatch()
     const navigate = useNavigate()
     const { sellingNftSuccess } = useSelector(state => state.transactionNFT)
-    console.log("모달창에서 확인",sellingNftSuccess)
+    console.log("숫자",price)
 
-    const goToMypage = () => {
-      navigate('/mypage')
+    const goToMarket = () => {
+      navigate('/market')
     }
 
     useEffect( () => {
-        dispatch(sellingAction.sellAction(edition,account))
+        dispatch(sellingAction.sellAction(edition,account,price))
     },[])
 
   return (
     <div className='overlay'>
         SellModal
         {
-          sellingNftSuccess ? <button onClick={goToMypage}>Go to Mypage</button> : null
+          sellingNftSuccess ? <button onClick={goToMarket}>Go to Market</button> : null
         }
     </div>
   )
