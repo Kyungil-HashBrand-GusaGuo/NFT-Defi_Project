@@ -10,8 +10,8 @@ const MyPage = () => {
       <div className='collectionTitleContainer'>
               <h2>MyPage</h2>
       </div>
-      <div class="style-five"></div>
-      <hr class="style-five"/> 
+      <div className="style-five"></div>
+      <hr className="style-five"/> 
       <div className='myPageContainer'>
           <MyCardList/>
       </div>
