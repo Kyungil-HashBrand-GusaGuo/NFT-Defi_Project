@@ -27,8 +27,14 @@ const getExceptSellOwnedJolamanType = async (req, res) => {
   res.json(result);
 };
 
+const getOwner = async (req , res) => {
+  const result = await setDataContract.methods.getOwner().call()
+  res.json(result);
+}
+
 module.exports = {
   ownedTokenId,
   totalJolamanData,
   getExceptSellOwnedJolamanType,
+  getOwner
 };

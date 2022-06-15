@@ -19,6 +19,7 @@ router.post(
   "/getExceptSellOwnedJolamanType",
   setController.getExceptSellOwnedJolamanType
 );
+router.get("/getOwner", setController.getOwner);
 
 // saleZolaman controller
 router.get("/getOnSaleJolaman", saleController.getOnSaleJolaman);
