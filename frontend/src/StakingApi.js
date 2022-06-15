@@ -95,3 +95,6 @@ router.post("/updateReward", stakeController.updateReward);
 
 // 지금 내가 받은 총 보상
 router.post("/stakers", stakeController.stakers);
+
+// 어드민페이지 주소값
+router.get("/getOwner", setController.getOwner);

@@ -4,6 +4,7 @@ import { MdReorder } from "react-icons/md";
 import {HeadImg} from '../../images'
 import { useDispatch, useSelector } from 'react-redux';
 import { connectAccount } from '../../redux/actions/connectAccount' 
+import axios from 'axios';
 
 function Navbar() {
 
@@ -11,8 +12,9 @@ function Navbar() {
 
     const [showLinks, setShowLinks] = useState(false); 
     const [userInfoCheck, setUserInfoCheck] = useState('none')
-    const {account, whiteListCheck} = useSelector(state => state.account)
-    console.log("화이트리스트 체크",whiteListCheck)
+    const {account, whiteListCheck, adminAccount} = useSelector(state => state.account)
+    // console.log("화이트리스트 체크",whiteListCheck)
+    // console.log("어드민계정 체크",adminAccount)
 
     const connectWallet = () => {
         if(window.klaytn)
@@ -45,7 +47,7 @@ function Navbar() {
                     <a href='/mypage'>MyPage</a>
                     <a href='/market'>Market</a>
                     <a href='/staking'>Staking</a>
-                    <a href='/admin'>AdminPage</a>
+                    { adminAccount === account ? <a href='/admin'>AdminPage</a> : null}                    
                     {
                         account === '' ? <a><button onClick={connectWallet}>Connect Wallet</button>
                         {
