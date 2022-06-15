@@ -15,7 +15,9 @@ function getAccount() {
 
             // admin계정 가져오기
             const adminAccountFunc = await axios.get("http://34.64.61.199:9495/block/getOwner");
-            let adminAccount = adminAccountFunc.data
+            let adminAccount = adminAccountFunc.data.toLowerCase()
+            console.log(adminAccount);
+
             dispatch({type : "GET_ADMIN_ACCOUNT", payload : {adminAccount}})
         } 
         catch(error) {

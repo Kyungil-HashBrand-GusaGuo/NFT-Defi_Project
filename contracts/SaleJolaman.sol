@@ -80,7 +80,7 @@ contract SaleJolaman is ERC721Holder {
         setdata.SellOwnedToken(SelltokenOwner, _JolamanType);
         setdata.setTokenOwner(setdata.gettypeToId(_JolamanType), msg.sender);
         setdata.setTotalOwnedTokens(msg.sender, _JolamanType);
-
+        setdata.setExceptSellOwnedJolamanType(msg.sender, _JolamanType);
         popOnSaleToken(_JolamanType);
     }
 
