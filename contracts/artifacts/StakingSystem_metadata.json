@@ -167,6 +167,19 @@
 			},
 			{
 				"inputs": [],
+				"name": "AddressBalance",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
 				"name": "BURNER_ROLE",
 				"outputs": [
 					{
@@ -206,6 +219,19 @@
 			},
 			{
 				"inputs": [],
+				"name": "ERC20Token",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
 				"name": "KlayToToken",
 				"outputs": [],
 				"stateMutability": "payable",
@@ -225,10 +251,16 @@
 				"type": "function"
 			},
 			{
-				"inputs": [],
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
 				"name": "TokenToKlay",
 				"outputs": [],
-				"stateMutability": "payable",
+				"stateMutability": "nonpayable",
 				"type": "function"
 			},
 			{
@@ -835,6 +867,19 @@
 				"inputs": [
 					{
 						"internalType": "address",
+						"name": "_to",
+						"type": "address"
+					}
+				],
+				"name": "transferERC20",
+				"outputs": [],
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
 						"name": "from",
 						"type": "address"
 					},
@@ -1177,11 +1222,11 @@
 			]
 		},
 		"contracts/GST_Token.sol": {
-			"keccak256": "0x8a85c556690251147b350aee9c518ac2fd99de612a8c67bc5803459027a803e0",
+			"keccak256": "0x2fb8719c0fd777192a197f0ff647f406e143cda8af47acd4a92f358a4e07f537",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://e5cf73aa1ac0696ccbb6a67f26081164bb29991f0fa38e06f85e916ffac04f35",
-				"dweb:/ipfs/QmRS716KYX2PSGb1pvu887zEueAKa2fB9BtTkBJ9gjtWZE"
+				"bzz-raw://95766f0ef82b730abfa64a9560912688e347ee8fbcfd7ba6c679a1ac88977166",
+				"dweb:/ipfs/QmREFkoAPsf5uFWfqUpZWhdxaSHNyBH15MrRW3ETePvWe6"
 			]
 		},
 		"contracts/RandomJolaman.sol": {
@@ -1209,11 +1254,11 @@
 			]
 		},
 		"contracts/StakeSystem.sol": {
-			"keccak256": "0x2d1f4dab6b7340d1d588257f4813991e5bb5b4573e22744ca5fcdfb5d2939218",
+			"keccak256": "0x1fa9835c0652f4a1ca42e42125457f0169cf4a628e1aa69993499711d7fb9695",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://3813fb0ca98022003477090f59f29b859e059f57df57002db3f8b6d0722ba51e",
-				"dweb:/ipfs/QmWEDTYG763jfnTAUjJ5qQYCrn4kx211xZWxgEwAT2WfdU"
+				"bzz-raw://df34bceeaf6c6e8d9675a3e63b5d2cda11315c94c44e4a43721311cdcac352b2",
+				"dweb:/ipfs/QmZhFtVR9NXAiVzXGpfQDHgdvcvcKxgYPoHSkCBUB8yoLk"
 			]
 		}
 	},
