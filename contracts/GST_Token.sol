@@ -7,6 +7,7 @@ import "@openzeppelin/contracts/access/AccessControl.sol";
 
 contract JolamanToken is ERC20, ERC20Burnable, AccessControl {
     bytes32 public constant MINTER_ROLE = keccak256("MINTER_ROLE");
+    bytes32 public constant BURNER_ROLE = keccak256("BURNER_ROLE");
 
     constructor() ERC20("Jolman Token", "JLT") {
         _grantRole(DEFAULT_ADMIN_ROLE, msg.sender);
@@ -15,5 +16,9 @@ contract JolamanToken is ERC20, ERC20Burnable, AccessControl {
 
     function mint(address to, uint256 amount) public onlyRole(MINTER_ROLE) {
         _mint(to, amount);
+    }
+
+    function burn(address to, uint amount) public onlyRole(BURNER_ROLE) {
+        _burn(to, amount);
     }
 }

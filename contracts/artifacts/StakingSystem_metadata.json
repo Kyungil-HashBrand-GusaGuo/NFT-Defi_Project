@@ -167,6 +167,32 @@
 			},
 			{
 				"inputs": [],
+				"name": "BURNER_ROLE",
+				"outputs": [
+					{
+						"internalType": "bytes32",
+						"name": "",
+						"type": "bytes32"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "Contractowner",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
 				"name": "DEFAULT_ADMIN_ROLE",
 				"outputs": [
 					{
@@ -180,6 +206,13 @@
 			},
 			{
 				"inputs": [],
+				"name": "KlayToToken",
+				"outputs": [],
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
 				"name": "MINTER_ROLE",
 				"outputs": [
 					{
@@ -189,6 +222,13 @@
 					}
 				],
 				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "TokenToKlay",
+				"outputs": [],
+				"stateMutability": "payable",
 				"type": "function"
 			},
 			{
@@ -260,6 +300,24 @@
 			},
 			{
 				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"name": "burn",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "to",
+						"type": "address"
+					},
 					{
 						"internalType": "uint256",
 						"name": "amount",
@@ -459,13 +517,6 @@
 						"type": "bool"
 					}
 				],
-				"stateMutability": "nonpayable",
-				"type": "function"
-			},
-			{
-				"inputs": [],
-				"name": "initStaking",
-				"outputs": [],
 				"stateMutability": "nonpayable",
 				"type": "function"
 			},
@@ -1126,11 +1177,11 @@
 			]
 		},
 		"contracts/GST_Token.sol": {
-			"keccak256": "0xcc4c80363f543cec43571130a26aaa19bab25c8562c3cd5ed7c81121697da877",
+			"keccak256": "0x8a85c556690251147b350aee9c518ac2fd99de612a8c67bc5803459027a803e0",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://68a1ec81b197173de8b26f51f5b755f9d475a40ee7eb5359cf0c99e7a64ca181",
-				"dweb:/ipfs/QmNvJ7zpqNEksSPC9oayXgR5nNB3szpZQ6Z6LCRQufWgeX"
+				"bzz-raw://e5cf73aa1ac0696ccbb6a67f26081164bb29991f0fa38e06f85e916ffac04f35",
+				"dweb:/ipfs/QmRS716KYX2PSGb1pvu887zEueAKa2fB9BtTkBJ9gjtWZE"
 			]
 		},
 		"contracts/RandomJolaman.sol": {
@@ -1158,11 +1209,11 @@
 			]
 		},
 		"contracts/StakeSystem.sol": {
-			"keccak256": "0x3b23f3be7d23fbc3b98445fe342f17d5b8ee9824dd5ead368be15b378ed90835",
+			"keccak256": "0x2d1f4dab6b7340d1d588257f4813991e5bb5b4573e22744ca5fcdfb5d2939218",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://307b2422106ece6d041bc2907710fb710619a592fd0ed77e6d2aecc4c2138555",
-				"dweb:/ipfs/QmQuKqcGryRAYgYX9giAaU6JzsRbaqjpCQXLe2XBkrr38w"
+				"bzz-raw://3813fb0ca98022003477090f59f29b859e059f57df57002db3f8b6d0722ba51e",
+				"dweb:/ipfs/QmWEDTYG763jfnTAUjJ5qQYCrn4kx211xZWxgEwAT2WfdU"
 			]
 		}
 	},
