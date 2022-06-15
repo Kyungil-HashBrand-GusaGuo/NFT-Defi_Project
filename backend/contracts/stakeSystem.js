@@ -4,31 +4,19 @@ const config = {
   rpcURL: "https://api.baobab.klaytn.net:8651",
 };
 const caver = new Caver(config.rpcURL);
-const MINT_CONTRACT_ADDRESS = "0xa1d00BbDD180ed22Df5aFabAB170b3aFDC97705d";
 
-const MINT_CONTRACT_ABI = [
+const STAKING_CONTRACT_ADDRESS = "0xB0cc0e1f150c35f170c634096B403ee8E4499A41";
+
+const STAKING_CONTRACT_ABI = [
   {
     inputs: [
       {
-        internalType: "address",
-        name: "_toWhiteList",
+        internalType: "contract IERC721",
+        name: "_randomJolaman",
         type: "address",
       },
-    ],
-    name: "addWhiteList",
-    outputs: [],
-    stateMutability: "nonpayable",
-    type: "function",
-  },
-  {
-    inputs: [
       {
-        internalType: "string",
-        name: "_metadataURI",
-        type: "string",
-      },
-      {
-        internalType: "address",
+        internalType: "contract SetData",
         name: "_setdata",
         type: "address",
       },
@@ -48,13 +36,13 @@ const MINT_CONTRACT_ABI = [
       {
         indexed: true,
         internalType: "address",
-        name: "approved",
+        name: "spender",
         type: "address",
       },
       {
-        indexed: true,
+        indexed: false,
         internalType: "uint256",
-        name: "tokenId",
+        name: "value",
         type: "uint256",
       },
     ],
@@ -62,45 +50,94 @@ const MINT_CONTRACT_ABI = [
     type: "event",
   },
   {
-    anonymous: false,
     inputs: [
       {
-        indexed: true,
         internalType: "address",
-        name: "owner",
+        name: "spender",
         type: "address",
       },
       {
-        indexed: true,
-        internalType: "address",
-        name: "operator",
-        type: "address",
+        internalType: "uint256",
+        name: "amount",
+        type: "uint256",
       },
+    ],
+    name: "approve",
+    outputs: [
       {
-        indexed: false,
         internalType: "bool",
-        name: "approved",
+        name: "",
         type: "bool",
       },
     ],
-    name: "ApprovalForAll",
-    type: "event",
+    stateMutability: "nonpayable",
+    type: "function",
+  },
+  {
+    inputs: [
+      {
+        internalType: "uint256",
+        name: "amount",
+        type: "uint256",
+      },
+    ],
+    name: "burn",
+    outputs: [],
+    stateMutability: "nonpayable",
+    type: "function",
   },
   {
     inputs: [
       {
         internalType: "address",
-        name: "to",
+        name: "account",
         type: "address",
       },
       {
         internalType: "uint256",
-        name: "tokenId",
+        name: "amount",
         type: "uint256",
       },
     ],
-    name: "approve",
+    name: "burnFrom",
     outputs: [],
+    stateMutability: "nonpayable",
+    type: "function",
+  },
+  {
+    inputs: [
+      {
+        internalType: "address",
+        name: "_user",
+        type: "address",
+      },
+    ],
+    name: "claimReward",
+    outputs: [],
+    stateMutability: "nonpayable",
+    type: "function",
+  },
+  {
+    inputs: [
+      {
+        internalType: "address",
+        name: "spender",
+        type: "address",
+      },
+      {
+        internalType: "uint256",
+        name: "subtractedValue",
+        type: "uint256",
+      },
+    ],
+    name: "decreaseAllowance",
+    outputs: [
+      {
+        internalType: "bool",
+        name: "",
+        type: "bool",
+      },
+    ],
     stateMutability: "nonpayable",
     type: "function",
   },
@@ -123,6 +160,89 @@ const MINT_CONTRACT_ABI = [
     type: "function",
   },
   {
+    inputs: [
+      {
+        internalType: "address",
+        name: "spender",
+        type: "address",
+      },
+      {
+        internalType: "uint256",
+        name: "addedValue",
+        type: "uint256",
+      },
+    ],
+    name: "increaseAllowance",
+    outputs: [
+      {
+        internalType: "bool",
+        name: "",
+        type: "bool",
+      },
+    ],
+    stateMutability: "nonpayable",
+    type: "function",
+  },
+  {
+    inputs: [],
+    name: "initStaking",
+    outputs: [],
+    stateMutability: "nonpayable",
+    type: "function",
+  },
+  {
+    inputs: [
+      {
+        internalType: "address",
+        name: "to",
+        type: "address",
+      },
+      {
+        internalType: "uint256",
+        name: "amount",
+        type: "uint256",
+      },
+    ],
+    name: "mint",
+    outputs: [],
+    stateMutability: "nonpayable",
+    type: "function",
+  },
+  {
+    inputs: [
+      {
+        internalType: "address",
+        name: "",
+        type: "address",
+      },
+      {
+        internalType: "address",
+        name: "",
+        type: "address",
+      },
+      {
+        internalType: "uint256",
+        name: "",
+        type: "uint256",
+      },
+      {
+        internalType: "bytes",
+        name: "",
+        type: "bytes",
+      },
+    ],
+    name: "onERC721Received",
+    outputs: [
+      {
+        internalType: "bytes4",
+        name: "",
+        type: "bytes4",
+      },
+    ],
+    stateMutability: "nonpayable",
+    type: "function",
+  },
+  {
     anonymous: false,
     inputs: [
       {
@@ -140,39 +260,6 @@ const MINT_CONTRACT_ABI = [
     ],
     name: "OwnershipTransferred",
     type: "event",
-  },
-  {
-    inputs: [],
-    name: "payandMint",
-    outputs: [],
-    stateMutability: "payable",
-    type: "function",
-  },
-  {
-    inputs: [],
-    name: "payment",
-    outputs: [
-      {
-        internalType: "bool",
-        name: "",
-        type: "bool",
-      },
-    ],
-    stateMutability: "payable",
-    type: "function",
-  },
-  {
-    inputs: [
-      {
-        internalType: "address",
-        name: "_toWhiteList",
-        type: "address",
-      },
-    ],
-    name: "removeWhiteList",
-    outputs: [],
-    stateMutability: "nonpayable",
-    type: "function",
   },
   {
     inputs: [],
@@ -295,48 +382,25 @@ const MINT_CONTRACT_ABI = [
   {
     inputs: [
       {
-        internalType: "address",
-        name: "to",
-        type: "address",
-      },
-    ],
-    name: "safeMint",
-    outputs: [],
-    stateMutability: "payable",
-    type: "function",
-  },
-  {
-    inputs: [
-      {
-        internalType: "address",
-        name: "to",
-        type: "address",
-      },
-    ],
-    name: "safeMintforWhitelist",
-    outputs: [],
-    stateMutability: "payable",
-    type: "function",
-  },
-  {
-    inputs: [
-      {
-        internalType: "address",
-        name: "from",
-        type: "address",
-      },
-      {
-        internalType: "address",
-        name: "to",
-        type: "address",
-      },
-      {
         internalType: "uint256",
-        name: "tokenId",
+        name: "_JolamanType",
         type: "uint256",
       },
     ],
-    name: "safeTransferFrom",
+    name: "stake",
+    outputs: [],
+    stateMutability: "nonpayable",
+    type: "function",
+  },
+  {
+    inputs: [
+      {
+        internalType: "uint256[]",
+        name: "JolamanType",
+        type: "uint256[]",
+      },
+    ],
+    name: "stakeBatch",
     outputs: [],
     stateMutability: "nonpayable",
     type: "function",
@@ -345,66 +409,24 @@ const MINT_CONTRACT_ABI = [
     inputs: [
       {
         internalType: "address",
-        name: "from",
-        type: "address",
-      },
-      {
-        internalType: "address",
         name: "to",
         type: "address",
       },
       {
         internalType: "uint256",
-        name: "tokenId",
+        name: "amount",
         type: "uint256",
       },
-      {
-        internalType: "bytes",
-        name: "_data",
-        type: "bytes",
-      },
     ],
-    name: "safeTransferFrom",
-    outputs: [],
-    stateMutability: "nonpayable",
-    type: "function",
-  },
-  {
-    inputs: [
-      {
-        internalType: "address",
-        name: "operator",
-        type: "address",
-      },
+    name: "transfer",
+    outputs: [
       {
         internalType: "bool",
-        name: "approved",
+        name: "",
         type: "bool",
       },
     ],
-    name: "setApprovalForAll",
-    outputs: [],
     stateMutability: "nonpayable",
-    type: "function",
-  },
-  {
-    inputs: [
-      {
-        internalType: "uint64",
-        name: "_price",
-        type: "uint64",
-      },
-    ],
-    name: "setMintingPrice",
-    outputs: [],
-    stateMutability: "nonpayable",
-    type: "function",
-  },
-  {
-    inputs: [],
-    name: "specialPayandMint",
-    outputs: [],
-    stateMutability: "payable",
     type: "function",
   },
   {
@@ -423,9 +445,9 @@ const MINT_CONTRACT_ABI = [
         type: "address",
       },
       {
-        indexed: true,
+        indexed: false,
         internalType: "uint256",
-        name: "tokenId",
+        name: "value",
         type: "uint256",
       },
     ],
@@ -446,12 +468,18 @@ const MINT_CONTRACT_ABI = [
       },
       {
         internalType: "uint256",
-        name: "tokenId",
+        name: "amount",
         type: "uint256",
       },
     ],
     name: "transferFrom",
-    outputs: [],
+    outputs: [
+      {
+        internalType: "bool",
+        name: "",
+        type: "bool",
+      },
+    ],
     stateMutability: "nonpayable",
     type: "function",
   },
@@ -469,61 +497,29 @@ const MINT_CONTRACT_ABI = [
     type: "function",
   },
   {
-    inputs: [],
-    name: "_normalTokenIdCount",
-    outputs: [
+    inputs: [
       {
         internalType: "uint256",
-        name: "",
+        name: "_JolamanType",
         type: "uint256",
       },
     ],
-    stateMutability: "view",
-    type: "function",
-  },
-  {
-    inputs: [],
-    name: "_owner",
-    outputs: [
-      {
-        internalType: "address",
-        name: "",
-        type: "address",
-      },
-    ],
-    stateMutability: "view",
-    type: "function",
-  },
-  {
-    inputs: [],
-    name: "_specialTokenIdCount",
-    outputs: [
-      {
-        internalType: "uint256",
-        name: "",
-        type: "uint256",
-      },
-    ],
-    stateMutability: "view",
+    name: "unstake",
+    outputs: [],
+    stateMutability: "nonpayable",
     type: "function",
   },
   {
     inputs: [
       {
-        internalType: "uint256",
-        name: "",
-        type: "uint256",
+        internalType: "uint256[]",
+        name: "JolamanType",
+        type: "uint256[]",
       },
     ],
-    name: "AlreadyMint",
-    outputs: [
-      {
-        internalType: "bool",
-        name: "",
-        type: "bool",
-      },
-    ],
-    stateMutability: "view",
+    name: "unstakeBatch",
+    outputs: [],
+    stateMutability: "nonpayable",
     type: "function",
   },
   {
@@ -533,6 +529,30 @@ const MINT_CONTRACT_ABI = [
         name: "owner",
         type: "address",
       },
+      {
+        internalType: "address",
+        name: "spender",
+        type: "address",
+      },
+    ],
+    name: "allowance",
+    outputs: [
+      {
+        internalType: "uint256",
+        name: "",
+        type: "uint256",
+      },
+    ],
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    inputs: [
+      {
+        internalType: "address",
+        name: "account",
+        type: "address",
+      },
     ],
     name: "balanceOf",
     outputs: [
@@ -540,6 +560,19 @@ const MINT_CONTRACT_ABI = [
         internalType: "uint256",
         name: "",
         type: "uint256",
+      },
+    ],
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    inputs: [],
+    name: "decimals",
+    outputs: [
+      {
+        internalType: "uint8",
+        name: "",
+        type: "uint8",
       },
     ],
     stateMutability: "view",
@@ -561,36 +594,17 @@ const MINT_CONTRACT_ABI = [
   {
     inputs: [
       {
-        internalType: "uint256",
-        name: "tokenId",
-        type: "uint256",
-      },
-    ],
-    name: "getApproved",
-    outputs: [
-      {
         internalType: "address",
-        name: "",
+        name: "_user",
         type: "address",
       },
     ],
-    stateMutability: "view",
-    type: "function",
-  },
-  {
-    inputs: [
-      {
-        internalType: "uint256",
-        name: "_tokenId",
-        type: "uint256",
-      },
-    ],
-    name: "getJolamanTokenType",
+    name: "getOwnedStakedJolamanType",
     outputs: [
       {
-        internalType: "uint256",
+        internalType: "uint256[]",
         name: "",
-        type: "uint256",
+        type: "uint256[]",
       },
     ],
     stateMutability: "view",
@@ -610,6 +624,25 @@ const MINT_CONTRACT_ABI = [
         internalType: "bytes32",
         name: "",
         type: "bytes32",
+      },
+    ],
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    inputs: [
+      {
+        internalType: "address",
+        name: "_user",
+        type: "address",
+      },
+    ],
+    name: "getStakedTokens",
+    outputs: [
+      {
+        internalType: "uint256[]",
+        name: "JolamanType",
+        type: "uint256[]",
       },
     ],
     stateMutability: "view",
@@ -640,107 +673,6 @@ const MINT_CONTRACT_ABI = [
     type: "function",
   },
   {
-    inputs: [
-      {
-        internalType: "address",
-        name: "owner",
-        type: "address",
-      },
-      {
-        internalType: "address",
-        name: "operator",
-        type: "address",
-      },
-    ],
-    name: "isApprovedForAll",
-    outputs: [
-      {
-        internalType: "bool",
-        name: "",
-        type: "bool",
-      },
-    ],
-    stateMutability: "view",
-    type: "function",
-  },
-  {
-    inputs: [
-      {
-        internalType: "address",
-        name: "",
-        type: "address",
-      },
-    ],
-    name: "isWhiteList",
-    outputs: [
-      {
-        internalType: "bool",
-        name: "",
-        type: "bool",
-      },
-    ],
-    stateMutability: "view",
-    type: "function",
-  },
-  {
-    inputs: [
-      {
-        internalType: "uint256",
-        name: "",
-        type: "uint256",
-      },
-    ],
-    name: "mappedJolamanTokenData",
-    outputs: [
-      {
-        internalType: "uint256",
-        name: "jolamanTokenType",
-        type: "uint256",
-      },
-    ],
-    stateMutability: "view",
-    type: "function",
-  },
-  {
-    inputs: [],
-    name: "MAX_NORMAL_TOKEN_COUNT",
-    outputs: [
-      {
-        internalType: "uint256",
-        name: "",
-        type: "uint256",
-      },
-    ],
-    stateMutability: "view",
-    type: "function",
-  },
-  {
-    inputs: [],
-    name: "MAX_SPECIAL_TOKEN_COUNT",
-    outputs: [
-      {
-        internalType: "uint256",
-        name: "",
-        type: "uint256",
-      },
-    ],
-    stateMutability: "view",
-    type: "function",
-  },
-  {
-    inputs: [],
-    name: "metadataURI",
-    outputs: [
-      {
-        internalType: "string",
-        name: "",
-        type: "string",
-      },
-    ],
-    stateMutability: "view",
-    type: "function",
-  },
-  {
     inputs: [],
     name: "MINTER_ROLE",
     outputs: [
@@ -748,19 +680,6 @@ const MINT_CONTRACT_ABI = [
         internalType: "bytes32",
         name: "",
         type: "bytes32",
-      },
-    ],
-    stateMutability: "view",
-    type: "function",
-  },
-  {
-    inputs: [],
-    name: "mintingPrice",
-    outputs: [
-      {
-        internalType: "uint64",
-        name: "",
-        type: "uint64",
       },
     ],
     stateMutability: "view",
@@ -793,17 +712,11 @@ const MINT_CONTRACT_ABI = [
     type: "function",
   },
   {
-    inputs: [
-      {
-        internalType: "uint256",
-        name: "tokenId",
-        type: "uint256",
-      },
-    ],
-    name: "ownerOf",
+    inputs: [],
+    name: "randomJolaman",
     outputs: [
       {
-        internalType: "address",
+        internalType: "contract IERC721",
         name: "",
         type: "address",
       },
@@ -826,12 +739,49 @@ const MINT_CONTRACT_ABI = [
   },
   {
     inputs: [],
-    name: "SPECIAL_MINTER_ROLE",
+    name: "stakedTotal",
     outputs: [
       {
-        internalType: "bytes32",
+        internalType: "uint256",
         name: "",
-        type: "bytes32",
+        type: "uint256",
+      },
+    ],
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    inputs: [
+      {
+        internalType: "address",
+        name: "",
+        type: "address",
+      },
+    ],
+    name: "stakers",
+    outputs: [
+      {
+        internalType: "uint256",
+        name: "balance",
+        type: "uint256",
+      },
+      {
+        internalType: "uint256",
+        name: "rewardsReleased",
+        type: "uint256",
+      },
+    ],
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    inputs: [],
+    name: "stakingStartTime",
+    outputs: [
+      {
+        internalType: "uint256",
+        name: "",
+        type: "uint256",
       },
     ],
     stateMutability: "view",
@@ -873,59 +823,16 @@ const MINT_CONTRACT_ABI = [
     inputs: [
       {
         internalType: "uint256",
-        name: "index",
-        type: "uint256",
-      },
-    ],
-    name: "tokenByIndex",
-    outputs: [
-      {
-        internalType: "uint256",
         name: "",
         type: "uint256",
       },
     ],
-    stateMutability: "view",
-    type: "function",
-  },
-  {
-    inputs: [
+    name: "tokenOwner",
+    outputs: [
       {
         internalType: "address",
-        name: "owner",
+        name: "",
         type: "address",
-      },
-      {
-        internalType: "uint256",
-        name: "index",
-        type: "uint256",
-      },
-    ],
-    name: "tokenOfOwnerByIndex",
-    outputs: [
-      {
-        internalType: "uint256",
-        name: "",
-        type: "uint256",
-      },
-    ],
-    stateMutability: "view",
-    type: "function",
-  },
-  {
-    inputs: [
-      {
-        internalType: "uint256",
-        name: "_tokenId",
-        type: "uint256",
-      },
-    ],
-    name: "tokenURI",
-    outputs: [
-      {
-        internalType: "string",
-        name: "",
-        type: "string",
       },
     ],
     stateMutability: "view",
@@ -944,13 +851,32 @@ const MINT_CONTRACT_ABI = [
     stateMutability: "view",
     type: "function",
   },
+  {
+    inputs: [
+      {
+        internalType: "address",
+        name: "_user",
+        type: "address",
+      },
+    ],
+    name: "updateReward",
+    outputs: [
+      {
+        internalType: "uint256",
+        name: "",
+        type: "uint256",
+      },
+    ],
+    stateMutability: "view",
+    type: "function",
+  },
 ];
-const RandomJolamanContract = new caver.klay.Contract(
-  MINT_CONTRACT_ABI,
-  MINT_CONTRACT_ADDRESS
+const stakeSystemContract = new caver.klay.Contract(
+  STAKING_CONTRACT_ABI,
+  STAKING_CONTRACT_ADDRESS
 );
 
 module.exports = {
-  MINT_CONTRACT_ADDRESS,
-  RandomJolamanContract,
+  stakeSystemContract,
+  STAKING_CONTRACT_ADDRESS,
 };
