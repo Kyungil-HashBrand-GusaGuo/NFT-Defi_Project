@@ -1,6 +1,7 @@
 let initialState = {
     account : '',
-    whiteListCheck : false
+    whiteListCheck : false,
+    adminAccount : ''
 }
 
 function accountReducer(state=initialState,action) {
@@ -12,6 +13,9 @@ function accountReducer(state=initialState,action) {
 
         case "CHECK_ACCOUNT" :
             return {...state, whiteListCheck : payload.whiteListCheck}
+
+        case "GET_ADMIN_ACCOUNT" :
+            return {...state, adminAccount : payload.adminAccount}
 
         default :
             return {...state}
