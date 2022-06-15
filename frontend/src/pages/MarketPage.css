@@ -54,7 +54,7 @@ hr.style-five {
         flex: 30%;
         /* background-color: blueviolet; */
         margin: 0 auto 10px;
-        padding: 50px 30px 30px 30px
+        padding: 50px 50px 50px 50px
     }
 
     .leftMarketSection {
@@ -63,11 +63,16 @@ hr.style-five {
         /* background-color: lime; */
     }
 
+    .leftMarketTxtContainer {
+        padding: 10px 10px 10px 10px;
+    }
+
     .leftMarketNftCardImg {
         border: 0.139vw solid black;
         border-radius: 15.005px;
         width: 384px;
         height: 384px;
+        background-size: cover;
     }
     .leftMarketBtn {
         display: flex;
@@ -86,10 +91,19 @@ hr.style-five {
         border-radius: 20px;
 
     }
+
+    .leftMarketTestSecion {
+        display: flex;
+    }
+
+    .leftMarketcolhr {
+        border-left: 3px solid black;
+        height: 50px;
+    }
     .rightMarketContainer {
         flex: 70%;
         /* background-color: aqua; */
-        padding: 50px 50px 50px 50px;
+        padding: 50px 30px 30px 50px;
         /* height: 100%; */
         
     }
@@ -151,14 +165,14 @@ hr.style-five {
     .rightMarketNftCard {
         width: 250px;
         height: 230px;
-        background-size: contain;
+        background-size: cover;
         border-radius: 15.005px;
     }
 
     .rightMarketCardTxtContainer {
         width: 230px;
         height: 110px;
-        border-radius: 15.005px;
+        /* border-radius: 15.005px; */
         /* background-color: aqua; */
         padding: 10px 10px 10px 10px;
     }

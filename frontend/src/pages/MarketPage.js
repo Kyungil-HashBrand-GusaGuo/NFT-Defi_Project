@@ -16,20 +16,23 @@ const MarketPage = () => {
   const { account } = useSelector(state => state.account);
   const { mymintEditionData } = useSelector(state => state.mintdata)
   const { sellingAllNftData, sellingNftId } = useSelector(state => state.transactionNFT)
+
+  const [showPrice, setShowPrice] = useState(""); // item.price
+  const [showId, setShowId] = useState(""); // item.id
    console.log("나의 NFT",mymintEditionData)
   // console.log("나의 NFT 타입",typeof(mymintdata[0].data.edition))
   // console.log("판매중 NFT",sellingAllNftData)
   // console.log("판매중 NFT 타입",typeof(sellingAllNftData[0].id))
 
   
-  const moveBuyPage = (index) => {
-    navigate(`/marketpage/${index}`)
+  const moveBuyPage = (id) => {
+    navigate(`/marketpage/${id}`)
   }
 
-  // const showNftCard = (index) => {
-  //   navigate(`https://gateway.pinata.cloud/ipfs/QmfDCXHotQP7tH252h5BPEPX6kLmPJSzKzddnVxQUhrw4m/${index}.png`)
-  // }
-
+  const test = (price, id) => {
+    setShowPrice(price);
+    setShowId(id);
+  }
 
 
   useEffect(()=>{
@@ -48,19 +51,40 @@ const MarketPage = () => {
       <div className='mainMarketContainer'>
          <div className='leftMarketContainer'>
           <div className='leftMarketSection'>
-            <div className='leftMarketNftCardImg'>
-              
+            <div className='leftMarketNftCardImg'
+              style={{
+                backgroundImage: 
+                    "url(" + 
+                    `https://gateway.pinata.cloud/ipfs/QmfDCXHotQP7tH252h5BPEPX6kLmPJSzKzddnVxQUhrw4m/${showId}.png` + 
+                    ")"
+              }}
+            >
             </div>
-            <div className='leftMarketTitle'>
-              <span className='leftMarketCardTxt1'>Create By </span>
-              <span className='lefttMarketCardTxt2'> GusaGuO</span>
-            </div>
-            <div>
-              <span>Price : </span>
+            <div className='leftMarketTxtContainer'>
+              <div className='leftMarketTitle'>
+                <span className='leftMarketCardTxt1'>Create By </span>
+                <span className='lefttMarketCardTxt2'> GusaGuO</span>
+              </div>
+              { showId > 9999 ? 
+              <div className='leftMarketCardName'>
+                <span>WhiteList Zola Man #{showId - 9999}</span>
+              </div>
+              :
+              <div className='leftMarketCardName'>
+                <span>Zola Man #{showId}</span>
+              </div>
+              }
+              <div className='leftMarketTestSecion'>
+                <div className='leftMarketCardPrice'>
+                  <span>Price : {showPrice}</span>
+                </div>
+                {/* <div className='leftMarketcolhr'></div> */}
+                {/* <div className='leftMarketCardNum'>No: 123124</div> */}
+              </div>
             </div>
             <div className='leftMarketBtn'>
-              {/* <button onClick={() => moveBuyPage(item.id)} className="learn-more" >Minting</button> */}
-              <button className="learn-more">Buy Now</button>
+              <button onClick={() => moveBuyPage(showId)} className="learn-more">Buy Now</button>
+              {/* <button className="learn-more">Buy Now</button> */}
             </div>
             <hr className='lefthr'/>
           </div>
@@ -91,7 +115,8 @@ const MarketPage = () => {
                 {
                   mymintEditionData !== '' && sellingAllNftData !== '' ? 
                   sellingAllNftData.map((item, index) => {
-                    return <div className='rightMarketMainCardList' key={index} onClick={() => moveBuyPage(item.id)}>
+                    return <div className='rightMarketMainCardList' key={index} onClick={()=> test(item.price, item.id) } >
+                      {/* onClick={() => moveBuyPage(item.id)} */}
                       {
                         item.id > 9999 ? 
                         <div className='rightMarketCardList'>
@@ -122,7 +147,7 @@ const MarketPage = () => {
                                 </div>
                                 <div className='rightMarketOwner2'>
                                   {
-                                  mymintEditionData.includes(item.id) ? <span> MINE </span> : null
+                                  mymintEditionData.includes(item.id) ? <span> Mine </span> : <span> Others </span> 
                                   }
                                 </div>
                               </div>
@@ -159,7 +184,7 @@ const MarketPage = () => {
                                 </div>
                                 <div className='rightMarketOwner2'>
                                   {
-                                  mymintEditionData.includes(item.id) ? <span> MINE </span> : null
+                                  mymintEditionData.includes(item.id) ? <span> MINE </span> : <span> Others </span> 
                                   }
                                 </div>
                               </div>
