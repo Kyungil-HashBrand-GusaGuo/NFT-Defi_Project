@@ -3,6 +3,12 @@ pragma solidity ^0.8.4;
 
 contract SetData {
 
+    address public _owner;
+
+    constructor() {
+        _owner = msg.sender;
+    }
+
     // tokenid 넣으면 그에 맞는 address 출력
     mapping(uint => address) public tokenOwner;
     mapping(address => uint[]) public totalOwnedTokens;
@@ -22,6 +28,12 @@ contract SetData {
     // StakingSystem.sol
     mapping(uint => bool) public StakedJolamanType;
     mapping(address => uint[]) public exceptSellOwnedJolamanType;
+
+    // contract Owner Address 조회 함수
+
+    function getOwner() public view returns(address) {
+        return _owner;
+    }
 
     function setTokenOwner(uint _TokenId, address _to) external {
         tokenOwner[_TokenId] = _to;
