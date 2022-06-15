@@ -1,12 +1,11 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.0;
+pragma solidity ^0.8.4;
 
 import "@openzeppelin/contracts/token/ERC721/IERC721.sol";
 import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
 import "@openzeppelin/contracts/utils/math/SafeMath.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
 import "@openzeppelin/contracts/token/ERC721/utils/ERC721Holder.sol";
-import "hardhat/console.sol";
 import "./SetData.sol";
 import "./SaleJolaman.sol";
 import "./GST_Token.sol";
@@ -85,7 +84,6 @@ contract StakingSystem is Ownable, ERC721Holder, JolamanToken {
         setdata.setStakedJolamanType(_JolamanType, boolean);
         randomJolaman.safeTransferFrom(_user, address(this), setdata.gettypeToId(_JolamanType));
 
-        // emit Staked(_user, _JolamanType);
         stakedTotal++;
     }
 
@@ -152,7 +150,7 @@ contract StakingSystem is Ownable, ERC721Holder, JolamanToken {
 
 
     // 쌓인 보상 조회 함수
-    function updateReward(address _user) public {
+    function updateReward(address _user) public view returns(uint) {
         
         Staker storage staker = stakers[_user];
         uint256[] storage ids = staker.JolamanType;
@@ -164,11 +162,8 @@ contract StakingSystem is Ownable, ERC721Holder, JolamanToken {
             ) {
             
                 uint256 stakedDays = ((block.timestamp - uint(staker.tokenStakingCoolDown[ids[i]]))) / stakingTime;
-                uint256 partialTime = ((block.timestamp - uint(staker.tokenStakingCoolDown[ids[i]]))) % stakingTime;
                 
-                staker.balance +=  token * stakedDays;
-
-                staker.tokenStakingCoolDown[ids[i]] = block.timestamp - partialTime;
+                return stakedDays * token;
             }
         }
     }

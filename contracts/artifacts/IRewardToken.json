@@ -60,7 +60,6 @@
 			"allowance(address,address)": "dd62ed3e",
 			"approve(address,uint256)": "095ea7b3",
 			"balanceOf(address)": "70a08231",
-			"grantRole(bytes32,address)": "2f2ff15d",
 			"mint(address,uint256)": "40c10f19",
 			"totalSupply()": "18160ddd",
 			"transfer(address,uint256)": "a9059cbb",
@@ -183,24 +182,6 @@
 				}
 			],
 			"stateMutability": "view",
-			"type": "function"
-		},
-		{
-			"inputs": [
-				{
-					"internalType": "bytes32",
-					"name": "MINTER_ROLE",
-					"type": "bytes32"
-				},
-				{
-					"internalType": "address",
-					"name": "stakingContract",
-					"type": "address"
-				}
-			],
-			"name": "grantRole",
-			"outputs": [],
-			"stateMutability": "nonpayable",
 			"type": "function"
 		},
 		{
