@@ -867,19 +867,6 @@
 				"inputs": [
 					{
 						"internalType": "address",
-						"name": "_to",
-						"type": "address"
-					}
-				],
-				"name": "transferERC20",
-				"outputs": [],
-				"stateMutability": "payable",
-				"type": "function"
-			},
-			{
-				"inputs": [
-					{
-						"internalType": "address",
 						"name": "from",
 						"type": "address"
 					},
@@ -1222,11 +1209,11 @@
 			]
 		},
 		"contracts/GST_Token.sol": {
-			"keccak256": "0x2fb8719c0fd777192a197f0ff647f406e143cda8af47acd4a92f358a4e07f537",
+			"keccak256": "0xc68983c5eebb2a69f7b3bc918d09eb3a0f194c64136326a6c5f7bbd5570a0696",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://95766f0ef82b730abfa64a9560912688e347ee8fbcfd7ba6c679a1ac88977166",
-				"dweb:/ipfs/QmREFkoAPsf5uFWfqUpZWhdxaSHNyBH15MrRW3ETePvWe6"
+				"bzz-raw://db79c8adfbf07d2e6b5847c90a3a081aadfab9450e35568b15e65ef2150d8ccc",
+				"dweb:/ipfs/QmfV5G3xcwaSKNQivxPyaTn1D7BN7NX4o3HV3kD5i45rAL"
 			]
 		},
 		"contracts/RandomJolaman.sol": {
@@ -1238,11 +1225,11 @@
 			]
 		},
 		"contracts/SaleJolaman.sol": {
-			"keccak256": "0x9cf656eb009b99a1d7a1f6fa14cb84729e26c191f2dfdb763d80558aab6db2f8",
+			"keccak256": "0xacce083f95a2c695e610b4369800a2efa305dbc14d4436f06376c3af0e0ebbc9",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://80538b2432f737245a955d2a56d6a40e1b69d14fad511594a07d03647bc14b02",
-				"dweb:/ipfs/QmYbo57beLZz3udvsB1LKB49uUxPtx38kodv9hziZ6TgXq"
+				"bzz-raw://ab53e6ef6aecec471979c236fcf438148075738495bf4d7b2bcac0daa85b279f",
+				"dweb:/ipfs/QmNqrMT8ZYnwTfDHEFk99wUqDweS4wYMBBRjW8CJ5rPAuv"
 			]
 		},
 		"contracts/SetData.sol": {
@@ -1254,11 +1241,11 @@
 			]
 		},
 		"contracts/StakeSystem.sol": {
-			"keccak256": "0x1fa9835c0652f4a1ca42e42125457f0169cf4a628e1aa69993499711d7fb9695",
+			"keccak256": "0x5956dbbdb90597fc6a7b4ac2eda7f58310fa23ec23ddfc3ee076e74ac3b58e8a",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://df34bceeaf6c6e8d9675a3e63b5d2cda11315c94c44e4a43721311cdcac352b2",
-				"dweb:/ipfs/QmZhFtVR9NXAiVzXGpfQDHgdvcvcKxgYPoHSkCBUB8yoLk"
+				"bzz-raw://f249dcc461c4a58b7accf17a026bfe59722615b407f1660fa5f8b0bf0d8ec29c",
+				"dweb:/ipfs/QmRx6Qoc5Nji1gSC9V1ZKjQSeHUkQtrTV9H83s2rbA6DNN"
 			]
 		}
 	},
