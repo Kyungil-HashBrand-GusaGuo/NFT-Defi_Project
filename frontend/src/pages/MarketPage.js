@@ -4,6 +4,7 @@ import "./MarketPage.css"
 import { useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { marketAction } from '../redux/actions/marketAction';
+import { mypageAction } from '../redux/actions/mypageAction';
 import Dropdown from '../components/MarketPage/DropDown';
 
 const MarketPage = () => {
@@ -12,8 +13,13 @@ const MarketPage = () => {
   const navigate = useNavigate()
   const [dropdownVisibility, setDropdownVisibility] = React.useState(false);
 
-  const { sellingAllNftData } = useSelector(state => state.transactionNFT)
-  console.log(sellingAllNftData)
+  const { account } = useSelector(state => state.account);
+  const { mymintEditionData } = useSelector(state => state.mintdata)
+  const { sellingAllNftData, sellingNftId } = useSelector(state => state.transactionNFT)
+   console.log("나의 NFT",mymintEditionData)
+  // console.log("나의 NFT 타입",typeof(mymintdata[0].data.edition))
+  // console.log("판매중 NFT",sellingAllNftData)
+  // console.log("판매중 NFT 타입",typeof(sellingAllNftData[0].id))
 
   
   const moveBuyPage = (index) => {
@@ -22,7 +28,8 @@ const MarketPage = () => {
 
   useEffect(()=>{
     dispatch(marketAction.marketAct())
-  },[])
+    dispatch(mypageAction.mypageAct(account))
+  },[account])
 
   // {
   //   sellingAllNftData !== '' ? 
@@ -40,8 +47,8 @@ const MarketPage = () => {
       <div className='marketTitleContainer'>
                 <h2>ZOLAMAN Market</h2>
       </div>
-      <div class="style-five"></div>
-      <hr class="style-five"/> 
+      <div className="style-five"></div>
+      <hr className="style-five"/> 
       <div className='mainMarketContainer'>
         <div className='leftMarketContainer'>
           <div className='leftMarketSection'>
@@ -151,6 +158,31 @@ const MarketPage = () => {
                         </div>
                   </div>
                 </div>
+                <>
+                {
+                  mymintEditionData !== '' && sellingAllNftData !== '' ? 
+                  sellingAllNftData.map((item, index) => {
+                    return <div className='testMarketBox' key={index} onClick={() => moveBuyPage(item.id)}>
+                      {
+                        item.id > 9999 ? 
+                        <>
+                        <h2>WhiteList Zola Man #{item.id - 9999}</h2>
+                        <h2>Price : {item.price}</h2>
+                        </>
+                        :
+                        <>
+                        <h2>Zola Man #{item.id}</h2>
+                        <h2>Price : {item.price}</h2>
+                        </> 
+                      }
+                      {
+                        mymintEditionData.includes(item.id) ? <h2> 내꺼 </h2> : null
+                      }
+                    </div>
+                  })
+                  : null
+                }
+                </>
             </div>
           </div>
         </div>

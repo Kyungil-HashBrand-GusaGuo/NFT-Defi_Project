@@ -5,6 +5,7 @@ import klayIcon2 from '../images/klaytn.png';
 import './SellPage.css'
 import { SellModal, CancelSellModal } from '../components';
 import axios from 'axios';
+import { TbArrowBack } from "react-icons/tb";
 
 
 
@@ -72,6 +73,7 @@ const SellPage = () => {
           <div className='SellTitleContainer'>
               <h2>List item for sale</h2>
           </div>
+          <div className='sellBackPage'><h1><TbArrowBack/></h1></div>
           { showMint ? 
           <div className='sellTxtContainer'>
             <div className='leftSellContainer'>
