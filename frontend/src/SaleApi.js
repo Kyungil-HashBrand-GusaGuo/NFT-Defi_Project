@@ -9,14 +9,14 @@ import {
   SaleContract
 
 } from "./caverConfig.js";
-import axios from "axios";
+
 
 // 승인권한 요청 함수 판매등록 시 첫번쨰 함수
 
   const Approval = async(_JolamanType, account) => {
       try {
-    const res = await setDataContract.methods.gettypeToId(_JolamanType).call(_JolamanType)
-    let tokenId = res;
+        const res = await setDataContract.methods.gettypeToId(_JolamanType).call(_JolamanType)
+        let tokenId = res;
         const response = await caver.klay.sendTransaction({
         from: account,
         to: MINT_CONTRACT_ADDRESS,

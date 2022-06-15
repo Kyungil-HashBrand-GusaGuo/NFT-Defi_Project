@@ -40,12 +40,18 @@ const MarketPage = () => {
       <div className="style-five"></div>
       <hr className="style-five"/> 
       <div className='mainMarketContainer'>
-        <div className='leftMarketContainer'>
+         <div className='leftMarketContainer'>
           <div className='leftMarketSection'>
-
+            <div className='leftMarketNftCardImg'>
+              
+            </div>
+            <div className='leftMarketBtn'>
+              {/* <button onClick={() => moveBuyPage(item.id)} className="learn-more" >Minting</button> */}
+              <button className="learn-more" >Buy Now</button>
+            </div>
           </div>
-          
         </div>
+        
         <div className='rightMarketContainer'>
           <div className=' rightMarketSection'>
             <div className='rightMarketTitle'>
@@ -68,111 +74,80 @@ const MarketPage = () => {
               </Dropdown>
             </div>
             <div className='rightMarketCardContainer'>                
-                <div className='rightMarketCardList'>
-                  <div className='rightMarketNftCard'
-                  //   style={{
-                  //     backgroundImage: 
-                  //         "url(" + 
-                  //         `${showMint.image}` + 
-                  //         ")"
-                  // }}
-                  >
-                  </div>
-                  <div className='rightMarketCardTxtContainer'>
-                    <div className='rightMarketCardTxtSection'>
-                      <div className='rightMarketCardDnaTxt'>
-                        <span className='rightMarketCardDnaTxt1'>Create By </span>
-                        <span className='rightMarketCardDnaTxt2'> GusaGuO</span>
-                      </div>
-                      <div className='rightMarketCardNum'>
-                        <span>NO.1234</span>
-                      </div>
-                    </div>    
-                  </div>
-                </div>
-                <div className='rightMarketCardList'>
-                  <div className='rightMarketNftCard'
-                  //   style={{
-                  //     backgroundImage: 
-                  //         "url(" + 
-                  //         `${showMint.image}` + 
-                  //         ")"
-                  // }}
-                  >
-                  </div>
-                  <div className='rightMarketCardtxtContainer'>
-                        <div className='rightMarketCardTxt'>
-                          <div className='rightMarketCardListTitle'>
-                              <p>Zolaman nft</p> 
-                          </div>
-                          <div className='rightMarketCardListName'>
-                              <p></p>
-                          </div>
-                        </div>
-                        <div className='rightMarketCardTxt'>
-                          <div className='rightMarketCardListTitle'>
-                          <p>Price </p>
-                          </div>
-                          <div className='rightMarketCardListPrice'>
-                              <p>2.0</p>
-                          </div>
-                        </div>
-                  </div>
-                </div>
-                <div className='rightMarketCardList'>
-                  <div className='rightMarketNftCard'
-                  //   style={{
-                  //     backgroundImage: 
-                  //         "url(" + 
-                  //         `${showMint.image}` + 
-                  //         ")"
-                  // }}
-                  >
-                  </div>
-                  <div className='rightMarketCardtxtContainer'>
-                        <div className='rightMarketCardTxt'>
-                          <div className='rightMarketCardListTitle'>
-                              <p>Zolaman nft</p> 
-                          </div>
-                          <div className='rightMarketCardListName'>
-                              <p></p>
-                          </div>
-                        </div>
-                        <div className='rightMarketCardTxt'>
-                          <div className='rightMarketCardListTitle'>
-                          <p>Price </p>
-                          </div>
-                          <div className='rightMarketCardListPrice'>
-                              <p>2.0</p>
-                          </div>
-                        </div>
-                  </div>
-                </div>
-                <>
                 {
                   mymintEditionData !== '' && sellingAllNftData !== '' ? 
                   sellingAllNftData.map((item, index) => {
-                    return <div className='testMarketBox' key={index} onClick={() => moveBuyPage(item.id)}>
+                    return <div className='rightMarketMainCardList' key={index} >
                       {
                         item.id > 9999 ? 
-                        <>
-                        <h2>WhiteList Zola Man #{item.id - 9999}</h2>
-                        <h2>Price : {item.price}</h2>
-                        </>
+                        <div className='rightMarketCardList'>
+                          <div className='rightMarketNftCard'
+                            style={{
+                              backgroundImage: 
+                                  "url(" + 
+                                  `https://gateway.pinata.cloud/ipfs/QmfDCXHotQP7tH252h5BPEPX6kLmPJSzKzddnVxQUhrw4m/${item.id}.png` + 
+                                  ")"
+                          }}
+                          >
+                          </div>
+                          <div className='rightMarketCardTxtContainer'>
+                            <div className='rightMarketCardTxtSection'>
+                              <div className='rightMarketCardDnaTxt'>
+                                <span className='rightMarketCardDnaTxt1'>Create By </span>
+                                <span className='rightMarketCardDnaTxt2'> GusaGuO</span>
+                              </div>
+                              <div className='rightMarketCardNum'>
+                                <span>WhiteList Zola Man #{item.id - 9999}</span>
+                              </div>
+                              <div>
+                                <span>Price : {item.price}</span>
+                              </div>
+                              <div>
+                                {
+                                mymintEditionData.includes(item.id) ? <span> 내꺼 </span> : null
+                                }
+                              </div>
+                            </div>    
+                          </div>
+                        </div>
                         :
                         <>
-                        <h2>Zola Man #{item.id}</h2>
-                        <h2>Price : {item.price}</h2>
+                        <div className='rightMarketCardList'>
+                          <div className='rightMarketNftCard'
+                            style={{
+                              backgroundImage: 
+                                  "url(" + 
+                                  `https://gateway.pinata.cloud/ipfs/QmfDCXHotQP7tH252h5BPEPX6kLmPJSzKzddnVxQUhrw4m/${item.id}.png` + 
+                                  ")"
+                          }}
+                          >
+                          </div>
+                          <div className='rightMarketCardTxtContainer'>
+                            <div className='rightMarketCardTxtSection'>
+                              <div className='rightMarketCardDnaTxt'>
+                                <span className='rightMarketCardDnaTxt1'>Create By </span>
+                                <span className='rightMarketCardDnaTxt2'> GusaGuO</span>
+                              </div>
+                              <div className='rightMarketCardNum'>
+                                <span>Zola Man #{item.id}</span>
+                              </div>
+                              <div>
+                                <span>Price : {item.price}</span>
+                              </div>
+                              <div>
+                                {
+                                mymintEditionData.includes(item.id) ? <span> 내꺼 </span> : null
+                                }
+                              </div>
+                            </div>    
+                          </div>
+                        </div>
                         </> 
-                      }
-                      {
-                        mymintEditionData.includes(item.id) ? <h2> 내꺼 </h2> : null
                       }
                     </div>
                   })
                   : null
                 }
-                </>
             </div>
           </div>
         </div>
