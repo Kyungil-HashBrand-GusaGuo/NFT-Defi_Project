@@ -1,6 +1,6 @@
 import Caver from "caver-js";
 export const MINT_CONTRACT_ADDRESS = 
-"0xff0e57DC8224E6069d3bf1C8690Aa416694f0FE3";
+"0x28C1033e6E88a3F575cfA7C1D288D68cfE4160c3";
 
 export const MINT_CONTRACT_ABI = [
 	{
@@ -944,7 +944,7 @@ export const MINT_CONTRACT_ABI = [
 export const caver = new Caver(window.caver);
 
 export const DATA_CONTRACT_ADDRESS = 
-"0x96CA99367D5Ec2257137910350bBEb784F2671e1";
+"0x3C96469cf22263DD1e4914fc6f6A3c5aAa9C0F98";
 
 export const DATA_CONTRACT_ABI = [
 	{
@@ -1477,9 +1477,56 @@ export const DATA_CONTRACT_ABI = [
 ]
 
 export const SALE_CONTRACT_ADDRESS = 
-"0x59422a3F32CFF274a45Df5969122558eaFb97596";
+"0x1784E6AAA09b04C0E1d535e214E0f4F3C04D9f3C";
 
 export const SALE_CONTRACT_ABI = [
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "_setdata",
+				"type": "address"
+			},
+			{
+				"internalType": "contract IERC721",
+				"name": "_randomJolaman",
+				"type": "address"
+			}
+		],
+		"stateMutability": "nonpayable",
+		"type": "constructor"
+	},
+	{
+		"inputs": [],
+		"name": "KlayTn",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_JolamanType",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_price",
+				"type": "uint256"
+			}
+		],
+		"name": "SellJolamanToken",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
 	{
 		"inputs": [
 			{
@@ -1504,6 +1551,24 @@ export const SALE_CONTRACT_ABI = [
 		"name": "cancleSellJolamnaToken",
 		"outputs": [],
 		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "getOnSaleJolamanTypeAndPrice",
+		"outputs": [
+			{
+				"internalType": "uint256[]",
+				"name": "",
+				"type": "uint256[]"
+			},
+			{
+				"internalType": "uint256[]",
+				"name": "",
+				"type": "uint256[]"
+			}
+		],
+		"stateMutability": "view",
 		"type": "function"
 	},
 	{
@@ -1538,71 +1603,6 @@ export const SALE_CONTRACT_ABI = [
 			}
 		],
 		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "uint256",
-				"name": "_JolamanType",
-				"type": "uint256"
-			},
-			{
-				"internalType": "uint256",
-				"name": "_price",
-				"type": "uint256"
-			}
-		],
-		"name": "SellJolamanToken",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "_setdata",
-				"type": "address"
-			},
-			{
-				"internalType": "contract IERC721",
-				"name": "_randomJolaman",
-				"type": "address"
-			}
-		],
-		"stateMutability": "nonpayable",
-		"type": "constructor"
-	},
-	{
-		"inputs": [],
-		"name": "getOnSaleJolamanTypeAndPrice",
-		"outputs": [
-			{
-				"internalType": "uint256[]",
-				"name": "",
-				"type": "uint256[]"
-			},
-			{
-				"internalType": "uint256[]",
-				"name": "",
-				"type": "uint256[]"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [],
-		"name": "KlayTn",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"stateMutability": "view",
 		"type": "function"
 	},
 	{
@@ -1691,7 +1691,7 @@ export const SALE_CONTRACT_ABI = [
 ]
 
 export const STAKING_CONTRACT_ADDRESS = 
-"0x8a5fC3755F266e8436eeE2aCF0d48D15Fc23DFc8";
+"0xb46e93eC9cAad81B7EA4d3188F7CcC6203324096";
 
 export const STAKING_CONTRACT_ABI = [
 	{
@@ -1856,6 +1856,19 @@ export const STAKING_CONTRACT_ABI = [
 	},
 	{
 		"inputs": [],
+		"name": "AddressBalance",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
 		"name": "BURNER_ROLE",
 		"outputs": [
 			{
@@ -1895,6 +1908,19 @@ export const STAKING_CONTRACT_ABI = [
 	},
 	{
 		"inputs": [],
+		"name": "ERC20Token",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
 		"name": "KlayToToken",
 		"outputs": [],
 		"stateMutability": "payable",
@@ -1914,10 +1940,16 @@ export const STAKING_CONTRACT_ABI = [
 		"type": "function"
 	},
 	{
-		"inputs": [],
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "amount",
+				"type": "uint256"
+			}
+		],
 		"name": "TokenToKlay",
 		"outputs": [],
-		"stateMutability": "payable",
+		"stateMutability": "nonpayable",
 		"type": "function"
 	},
 	{
@@ -2608,6 +2640,7 @@ export const STAKING_CONTRACT_ABI = [
 		"type": "function"
 	}
 ]
+
 export const RandomJolamanContract = new caver.klay.Contract(
     MINT_CONTRACT_ABI,
     MINT_CONTRACT_ADDRESS,

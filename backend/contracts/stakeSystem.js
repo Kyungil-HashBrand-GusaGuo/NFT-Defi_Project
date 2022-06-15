@@ -6,7 +6,7 @@ const config = {
 const caver = new Caver(config.rpcURL);
 
 const STAKING_CONTRACT_ADDRESS = 
-"0x8a5fC3755F266e8436eeE2aCF0d48D15Fc23DFc8";
+"0xb46e93eC9cAad81B7EA4d3188F7CcC6203324096";
 
 const STAKING_CONTRACT_ABI = [
 	{
@@ -171,6 +171,19 @@ const STAKING_CONTRACT_ABI = [
 	},
 	{
 		"inputs": [],
+		"name": "AddressBalance",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
 		"name": "BURNER_ROLE",
 		"outputs": [
 			{
@@ -210,6 +223,19 @@ const STAKING_CONTRACT_ABI = [
 	},
 	{
 		"inputs": [],
+		"name": "ERC20Token",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
 		"name": "KlayToToken",
 		"outputs": [],
 		"stateMutability": "payable",
@@ -229,10 +255,16 @@ const STAKING_CONTRACT_ABI = [
 		"type": "function"
 	},
 	{
-		"inputs": [],
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "amount",
+				"type": "uint256"
+			}
+		],
 		"name": "TokenToKlay",
 		"outputs": [],
-		"stateMutability": "payable",
+		"stateMutability": "nonpayable",
 		"type": "function"
 	},
 	{

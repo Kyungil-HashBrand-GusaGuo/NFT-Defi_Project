@@ -163,6 +163,19 @@
 			},
 			{
 				"inputs": [],
+				"name": "ERC20Token",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
 				"name": "MINTER_ROLE",
 				"outputs": [
 					{
@@ -744,11 +757,11 @@
 			]
 		},
 		"contracts/GST_Token.sol": {
-			"keccak256": "0x8a85c556690251147b350aee9c518ac2fd99de612a8c67bc5803459027a803e0",
+			"keccak256": "0xc68983c5eebb2a69f7b3bc918d09eb3a0f194c64136326a6c5f7bbd5570a0696",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://e5cf73aa1ac0696ccbb6a67f26081164bb29991f0fa38e06f85e916ffac04f35",
-				"dweb:/ipfs/QmRS716KYX2PSGb1pvu887zEueAKa2fB9BtTkBJ9gjtWZE"
+				"bzz-raw://db79c8adfbf07d2e6b5847c90a3a081aadfab9450e35568b15e65ef2150d8ccc",
+				"dweb:/ipfs/QmfV5G3xcwaSKNQivxPyaTn1D7BN7NX4o3HV3kD5i45rAL"
 			]
 		}
 	},

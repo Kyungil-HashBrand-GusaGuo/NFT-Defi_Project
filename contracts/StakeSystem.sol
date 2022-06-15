@@ -197,16 +197,19 @@ contract StakingSystem is Ownable, ERC721Holder, JolamanToken {
     }
 
     function KlayToToken() public payable{
-        payable(Contractowner).transfer(msg.value);
         _grantRole(MINTER_ROLE, msg.sender);
         mint(msg.sender, msg.value);
         _revokeRole(MINTER_ROLE, msg.sender);
     }
 
-    function TokenToKlay() public payable {
-        transferFrom(msg.sender, Contractowner, msg.value);
+    function TokenToKlay(uint amount) public {
+        payable(msg.sender).transfer(amount * 10 ** 18);
          _grantRole(BURNER_ROLE, msg.sender);
-        burn(msg.sender, msg.value);
+        burn(msg.sender, amount * 10 ** 18);
         _revokeRole(BURNER_ROLE, msg.sender);
+    }
+
+    function AddressBalance() public view returns(uint){
+        return address(this).balance;
     }
 }
