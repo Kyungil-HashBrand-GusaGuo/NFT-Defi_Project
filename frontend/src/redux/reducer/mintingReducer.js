@@ -6,6 +6,7 @@ let initialState = {
     normalTokenCount : '',
     specialTokenCount : '',
     mymintdata : '',
+    mymintEditionData : '',
     allmintdata : ''
 }
 
@@ -29,7 +30,10 @@ function mintingReducer(state=initialState,action) {
             }
 
         case "GET_MY_MINTDATA" :
-            return {...state, mymintdata : payload.mymintdata}
+            return {...state,
+                mymintdata : payload.mymintdata,
+                mymintEditionData : payload.mymintEditionData
+            }
 
         case "GET_ALL_MINTDATA" :
             return {...state, allmintdata : payload.allmintdata}

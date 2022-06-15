@@ -16,7 +16,7 @@ function marketAct(account) {
             let sellIdArr = []
 
             for(let i=0; i < idArr.length; i++){ 
-              let data = { id : idArr[i], price : (priceArr[i]/10**18).toFixed(1)} // 가격 1자리수로 남기고, 소주점2자리수에서 반올림
+              let data = { id : Number(idArr[i]), price : (priceArr[i]/10**18).toFixed(1)} // 가격 1자리수로 남기고, 소주점2자리수에서 반올림
               sellNftArr.push(data)
               let id = Number(idArr[i])
               sellIdArr.push(id)
