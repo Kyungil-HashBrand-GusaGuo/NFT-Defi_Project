@@ -4,10 +4,10 @@ function stakingViewAct(account) {
     return async (dispatch) => {
         try {
             if(account !== ''){
-                const myNftListApi = await axios.post("http://34.64.61.199:9495/block/getExceptSellOwnedJolamanType", { account });
-                const stakingNftApi = await axios.post("http://34.64.61.199:9495/block/stakedJolaman", { account });
-                const stakingRewardApi = await axios.post("http://34.64.61.199:9495/block/updateReward", { account });
-                const getStakingRewardApi = await axios.post("http://34.64.61.199:9495/block/stakers", { account });
+                const myNftListApi = axios.post("http://34.64.61.199:9495/block/getExceptSellOwnedJolamanType", { account });
+                const stakingNftApi = axios.post("http://34.64.61.199:9495/block/stakedJolaman", { account });
+                const stakingRewardApi = axios.post("http://34.64.61.199:9495/block/updateReward", { account });
+                const getStakingRewardApi = axios.post("http://34.64.61.199:9495/block/stakers", { account });
 
                 let [ myNftList, stakingNft, stakingReward, getStakingReward ] = await Promise.all([myNftListApi, stakingNftApi, stakingRewardApi, getStakingRewardApi ])
                 console.log("나의 NFT목록",myNftList.data)

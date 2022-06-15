@@ -14,6 +14,7 @@ import {
 
 
 // 관리자 페이지 스테이킹 시스템 실행전 필수로 눌러줘야 스테이킹 기능 작동
+// 이거는 이제 제외
 const initStaking = async(account) => {
     try {
         const response = await caver.klay.sendTransaction({
