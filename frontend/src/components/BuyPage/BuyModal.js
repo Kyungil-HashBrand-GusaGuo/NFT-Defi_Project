@@ -18,13 +18,14 @@ const BuyModal = ({edition, account}) => {
     },[])
 
   return (
-    <div className='overlay'>
-        <div>BuyModal</div>
-        <div>{edition}</div>
-        {
-          buyingNftSuccess ? <button onClick={goToMypage}>Go to Mypage</button> : null
-        }
-    </div>
+      <div className='overlay'>
+          <div className='sellModalContainer'>
+            <div className='sellMintingInfoSection'>  
+                <h3 className='sellMintingMessage'>BuyModal</h3>
+                { buyingNftSuccess ? <button className='sellModalEndButton' onClick={goToMypage}>Go to Mypage</button> : null }
+            </div>
+          </div>
+      </div>
   )
 }
 
