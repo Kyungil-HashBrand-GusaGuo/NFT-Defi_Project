@@ -66,7 +66,7 @@ contract RandomJolaman is ERC721Enumerable, Ownable, AccessControl{
         string memory jolamanTokenType = Strings.toString(mappedJolamanTokenData[_tokenId].jolamanTokenType);
 
         // abi.encodePacked(arg) arg들을 하나로 합쳐주는 함수
-        // https://gateway.pinata.cloud/ipfs/QmaavyzfX6XzVNJx4zKCQVNDJWwQJx9xUC6gmDfddxvQ6p/
+        // https://gateway.pinata.cloud/ipfs/QmaavyzfX6XzVNJx4zKCQVNDJWwQJx9xUC6gmDfddxvQ6p
         return string(abi.encodePacked(metadataURI, '/', jolamanTokenType, '.json'));
     }
 
