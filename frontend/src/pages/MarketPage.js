@@ -93,64 +93,6 @@ const MarketPage = () => {
                     </div>    
                   </div>
                 </div>
-                <div className='rightMarketCardList'>
-                  <div className='rightMarketNftCard'
-                  //   style={{
-                  //     backgroundImage: 
-                  //         "url(" + 
-                  //         `${showMint.image}` + 
-                  //         ")"
-                  // }}
-                  >
-                  </div>
-                  <div className='rightMarketCardtxtContainer'>
-                        <div className='rightMarketCardTxt'>
-                          <div className='rightMarketCardListTitle'>
-                              <p>Zolaman nft</p> 
-                          </div>
-                          <div className='rightMarketCardListName'>
-                              <p></p>
-                          </div>
-                        </div>
-                        <div className='rightMarketCardTxt'>
-                          <div className='rightMarketCardListTitle'>
-                          <p>Price </p>
-                          </div>
-                          <div className='rightMarketCardListPrice'>
-                              <p>2.0</p>
-                          </div>
-                        </div>
-                  </div>
-                </div>
-                <div className='rightMarketCardList'>
-                  <div className='rightMarketNftCard'
-                  //   style={{
-                  //     backgroundImage: 
-                  //         "url(" + 
-                  //         `${showMint.image}` + 
-                  //         ")"
-                  // }}
-                  >
-                  </div>
-                  <div className='rightMarketCardtxtContainer'>
-                        <div className='rightMarketCardTxt'>
-                          <div className='rightMarketCardListTitle'>
-                              <p>Zolaman nft</p> 
-                          </div>
-                          <div className='rightMarketCardListName'>
-                              <p></p>
-                          </div>
-                        </div>
-                        <div className='rightMarketCardTxt'>
-                          <div className='rightMarketCardListTitle'>
-                          <p>Price </p>
-                          </div>
-                          <div className='rightMarketCardListPrice'>
-                              <p>2.0</p>
-                          </div>
-                        </div>
-                  </div>
-                </div>
             </div>
           </div>
         </div>
