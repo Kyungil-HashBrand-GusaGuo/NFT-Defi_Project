@@ -167,6 +167,32 @@
 			},
 			{
 				"inputs": [],
+				"name": "BURNER_ROLE",
+				"outputs": [
+					{
+						"internalType": "bytes32",
+						"name": "",
+						"type": "bytes32"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "Contractowner",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
 				"name": "DEFAULT_ADMIN_ROLE",
 				"outputs": [
 					{
@@ -180,6 +206,13 @@
 			},
 			{
 				"inputs": [],
+				"name": "KlayToToken",
+				"outputs": [],
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
 				"name": "MINTER_ROLE",
 				"outputs": [
 					{
@@ -189,6 +222,13 @@
 					}
 				],
 				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "TokenToKlay",
+				"outputs": [],
+				"stateMutability": "payable",
 				"type": "function"
 			},
 			{
@@ -260,6 +300,24 @@
 			},
 			{
 				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"name": "burn",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "to",
+						"type": "address"
+					},
 					{
 						"internalType": "uint256",
 						"name": "amount",
@@ -459,13 +517,6 @@
 						"type": "bool"
 					}
 				],
-				"stateMutability": "nonpayable",
-				"type": "function"
-			},
-			{
-				"inputs": [],
-				"name": "initStaking",
-				"outputs": [],
 				"stateMutability": "nonpayable",
 				"type": "function"
 			},
@@ -857,8 +908,14 @@
 					}
 				],
 				"name": "updateReward",
-				"outputs": [],
-				"stateMutability": "nonpayable",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
 				"type": "function"
 			}
 		],
@@ -1120,11 +1177,11 @@
 			]
 		},
 		"contracts/GST_Token.sol": {
-			"keccak256": "0xcc4c80363f543cec43571130a26aaa19bab25c8562c3cd5ed7c81121697da877",
+			"keccak256": "0x8a85c556690251147b350aee9c518ac2fd99de612a8c67bc5803459027a803e0",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://68a1ec81b197173de8b26f51f5b755f9d475a40ee7eb5359cf0c99e7a64ca181",
-				"dweb:/ipfs/QmNvJ7zpqNEksSPC9oayXgR5nNB3szpZQ6Z6LCRQufWgeX"
+				"bzz-raw://e5cf73aa1ac0696ccbb6a67f26081164bb29991f0fa38e06f85e916ffac04f35",
+				"dweb:/ipfs/QmRS716KYX2PSGb1pvu887zEueAKa2fB9BtTkBJ9gjtWZE"
 			]
 		},
 		"contracts/RandomJolaman.sol": {
@@ -1144,27 +1201,19 @@
 			]
 		},
 		"contracts/SetData.sol": {
-			"keccak256": "0xba4cf797bfa2e89df42b925013659cc461c6dd0ecfc2c198157db9e9d3f80041",
+			"keccak256": "0x186bdf88834f84ea21d16f3b2c60d2adcefa358ef26002ef6b06b72a53f93fd6",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://5d05067d32fb7c38f36da162cd147520ce405c122a7099c343558e5e1738d4da",
-				"dweb:/ipfs/QmVWFkoyXzkhm2WWZHUPZuZeiFbhWYkCQSoe45WDNQwtrN"
+				"bzz-raw://3593c825bb5a854f1307fddcdb57c8fa6a91669b6759d37119bc7b162fbb6e9c",
+				"dweb:/ipfs/QmQ8qNR5x3P8gCTqezSmjuY6h29FF7NyRVFhwrqWdbDvZR"
 			]
 		},
 		"contracts/StakeSystem.sol": {
-			"keccak256": "0x9e49d6c1c58ef99ac933b74efd7abba9cd1b43ce70286dc12bf3569b38a36405",
+			"keccak256": "0x2d1f4dab6b7340d1d588257f4813991e5bb5b4573e22744ca5fcdfb5d2939218",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://8f47a6e070d5342ef8824e743c238dc3b920a96fdca3f24e1b015c231c156824",
-				"dweb:/ipfs/QmRywNDUfbN34HMXtzxSXQYZoDjbJ4p4PtMqBYae7otVKV"
-			]
-		},
-		"hardhat/console.sol": {
-			"keccak256": "0x72b6a1d297cd3b033d7c2e4a7e7864934bb767db6453623f1c3082c6534547f4",
-			"license": "MIT",
-			"urls": [
-				"bzz-raw://a8cb8681076e765c214e0d51cac989325f6b98e315eaae06ee0cbd5a9f084763",
-				"dweb:/ipfs/QmNWGHi4zmjxQTYN3NMGnJd49jBT5dE4bxTdWEaDuJrC6N"
+				"bzz-raw://3813fb0ca98022003477090f59f29b859e059f57df57002db3f8b6d0722ba51e",
+				"dweb:/ipfs/QmWEDTYG763jfnTAUjJ5qQYCrn4kx211xZWxgEwAT2WfdU"
 			]
 		}
 	},

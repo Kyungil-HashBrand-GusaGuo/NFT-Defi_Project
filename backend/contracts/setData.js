@@ -4,9 +4,15 @@ const config = {
   rpcURL: "https://api.baobab.klaytn.net:8651",
 };
 const caver = new Caver(config.rpcURL);
-const DATA_CONTRACT_ADDRESS = "0xD3dD72db98D4cE2F9C0efAadACe1a3Aa4D4488c6";
+const DATA_CONTRACT_ADDRESS = 
+"0x96CA99367D5Ec2257137910350bBEb784F2671e1";
 
 const DATA_CONTRACT_ABI = [
+	{
+		"inputs": [],
+		"stateMutability": "nonpayable",
+		"type": "constructor"
+	},
 	{
 		"inputs": [
 			{
@@ -64,6 +70,62 @@ const DATA_CONTRACT_ABI = [
 		"type": "function"
 	},
 	{
+		"inputs": [],
+		"name": "_owner",
+		"outputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"name": "exceptSellOwnedJolamanType",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "_tokenOwner",
+				"type": "address"
+			}
+		],
+		"name": "getExceptSellOwnedJolamanType",
+		"outputs": [
+			{
+				"internalType": "uint256[]",
+				"name": "",
+				"type": "uint256[]"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
 		"inputs": [
 			{
 				"internalType": "uint256",
@@ -90,6 +152,19 @@ const DATA_CONTRACT_ABI = [
 				"internalType": "uint256",
 				"name": "",
 				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "getOwner",
+		"outputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
 			}
 		],
 		"stateMutability": "view",
@@ -220,6 +295,42 @@ const DATA_CONTRACT_ABI = [
 			}
 		],
 		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "_tokenOwner",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_JolType",
+				"type": "uint256"
+			}
+		],
+		"name": "setDeleteExceptSellOwnedJolamanType",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "_tokenOwner",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_JolType",
+				"type": "uint256"
+			}
+		],
+		"name": "setExceptSellOwnedJolamanType",
+		"outputs": [],
+		"stateMutability": "nonpayable",
 		"type": "function"
 	},
 	{

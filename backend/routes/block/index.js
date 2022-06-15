@@ -3,6 +3,7 @@ const router = express.Router();
 const randomController = require("./randomZolaman.controller");
 const setController = require("./setData.controller");
 const saleController = require("./saleZolaman.controller");
+const stakeController = require("./stakeSystem.controler");
 
 // randomZolaman controller
 router.get("/normalAll", randomController.MAX_NORMAL_TOKEN_COUNT);
@@ -14,8 +15,17 @@ router.post("/isWhiteList", randomController.isWhiteList);
 // setData controller
 router.get("/totalJolamanData", setController.totalJolamanData);
 router.post("/ownedTokenId", setController.ownedTokenId);
+router.post(
+  "/getExceptSellOwnedJolamanType",
+  setController.getExceptSellOwnedJolamanType
+);
+router.get("/getOwner", setController.getOwner);
 
 // saleZolaman controller
 router.get("/getOnSaleJolaman", saleController.getOnSaleJolaman);
 
+// stakeSystem controller
+router.post("/stakedJolaman", stakeController.getOwnedStakedJolamanType);
+router.post("/updateReward", stakeController.updateReward);
+router.post("/stakers", stakeController.stakers);
 module.exports = router;

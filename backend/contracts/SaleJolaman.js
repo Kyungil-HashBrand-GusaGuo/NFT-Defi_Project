@@ -4,7 +4,8 @@ const config = {
   rpcURL: "https://api.baobab.klaytn.net:8651",
 };
 const caver = new Caver(config.rpcURL);
-const SALE_CONTRACT_ADDRESS = "0x313E666C9eeaBd0eB72E5E8D61777D2E576e115b";
+const SALE_CONTRACT_ADDRESS = 
+"0x59422a3F32CFF274a45Df5969122558eaFb97596";
 
 const SALE_CONTRACT_ABI = [
 	{
@@ -218,11 +219,11 @@ const SALE_CONTRACT_ABI = [
 ]
 
 const SaleContract = new caver.klay.Contract(
-    SALE_CONTRACT_ABI,
-    SALE_CONTRACT_ADDRESS
+  SALE_CONTRACT_ABI,
+  SALE_CONTRACT_ADDRESS
 );
 
 module.exports = {
-    SaleContract,
-    SALE_CONTRACT_ADDRESS,
+  SaleContract,
+  SALE_CONTRACT_ADDRESS,
 };
