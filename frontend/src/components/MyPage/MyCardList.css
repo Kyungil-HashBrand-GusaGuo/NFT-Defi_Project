@@ -22,7 +22,7 @@
 }
 
 .cardListContainer:hover {
-    
+    cursor: pointer;
 	border: 3px solid rgba(44, 14, 2, 0.35)
 }
 

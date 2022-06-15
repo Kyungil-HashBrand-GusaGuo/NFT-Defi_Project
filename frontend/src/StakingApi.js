@@ -83,3 +83,18 @@ const claimReWard = async(account) => {
         console.error(error);
     }
 }
+
+// 판매등록X 스테이킹X 나의 NFT목록 (배열)
+router.post("/getExceptSellOwnedJolamanType", setController.getExceptSellOwnedJolamanType);
+
+// 스테이킹된 나의 모든 NFT
+router.post("/stakedJolaman", stakeController.getOwnedStakedJolamanType);
+
+// 스테이킹 보상
+router.post("/updateReward", stakeController.updateReward);
+
+// 지금 내가 받은 총 보상
+router.post("/stakers", stakeController.stakers);
+
+// 어드민페이지 주소값
+router.get("/getOwner", setController.getOwner);
