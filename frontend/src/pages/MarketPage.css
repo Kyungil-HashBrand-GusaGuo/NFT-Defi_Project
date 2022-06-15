@@ -149,10 +149,11 @@ hr.style-five {
 
     .rightMarketTitle {
         margin-bottom: 30px;
+        font-size: 40px;
+
     }
 
     .rightMarketTitle p {
-        font-size: 40px;
     }
 
     .rightMarketCardContainer {

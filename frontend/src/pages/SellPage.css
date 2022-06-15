@@ -40,6 +40,16 @@
     margin-bottom: 2.083vw;
 }
 
+.sellBackPage {
+    position: relative;
+    top: 120%;
+    right: -30%;
+}
+
+.sellBackPage :hover {
+    cursor: pointer;
+}
+
 .SellTitleContainer h2{
     font-size: 2.778vw;
     color: whitesmoke;
@@ -49,18 +59,6 @@
     padding-right: 1.042vw;
     border: 0.052vw solid #272727;
     border-radius: 0.521vw;
-}
-
-.sellBackPage{
-    position: relative;
-    top : -60px;
-    float: right;
-}
-
-.sellBackPage h1{
-    position: relative;
-    right: 50px;
-    font-size: 50px;
 }
 
 .sellTxtContainer {
@@ -95,7 +93,7 @@
     background-color: rgba(255, 255, 255, 0.538);
     border-radius: 1.042vw;
     box-shadow:gray 0vw 0.139vw 1.389vw;
-    margin-left: 70px;
+    margin-left: 120px;
 }
 
 .leftInputsection {
@@ -172,7 +170,7 @@
     flex: 50%;
 }
 
-
+/* cardlist */
 .rightCardList {
     /* display: flex; */
     width: 22.222vw;
@@ -228,14 +226,14 @@
     align-items: center;
 }
 
-.cardDna {
+/* .cardDna {
     display: flex;
     justify-content: center;
 }
 
 .cardDna p{
     font-size: 0.903vw;
-}
+} */
 
 .klayicon {
     width: 1.389vw;
@@ -286,7 +284,6 @@
     }
 
     .sellTxtContainer {
-        position: relative;
         display: flex;
     }
 

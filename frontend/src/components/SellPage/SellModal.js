@@ -24,7 +24,12 @@ const SellModal = ({edition, account, price}) => {
         <div className='sellModalContainer'>
           <div className='sellMintingInfoSection'>  
             <h3 className='sellMintingMessage'>SellModal</h3>
-            { sellingNftSuccess ? <button className='sellModalEndButton' onClick={goToMarket}>Go to Market</button> : null }
+            { sellingNftSuccess ?
+            <div>
+              <h2 className='sellMintingComMessage'>Sell Success!!!</h2>
+              <button className='sellModalEndButton' onClick={goToMarket}>Go to Market</button> 
+            </div>
+            : null }
           </div>
       </div>
     </div>
