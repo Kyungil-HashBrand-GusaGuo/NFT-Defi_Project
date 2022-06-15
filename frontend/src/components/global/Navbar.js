@@ -44,6 +44,7 @@ function Navbar() {
                     <a href='/all-minting'>Collection</a>
                     <a href='/mypage'>MyPage</a>
                     <a href='/market'>Market</a>
+                    <a href='/staking'>Staking</a>
                     <a href='/admin'>AdminPage</a>
                     {
                         account === '' ? <a><button onClick={connectWallet}>Connect Wallet</button>
