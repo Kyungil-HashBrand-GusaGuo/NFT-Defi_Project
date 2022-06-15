@@ -51,6 +51,18 @@
     border-radius: 0.521vw;
 }
 
+.sellBackPage{
+    position: relative;
+    top : -60px;
+    float: right;
+}
+
+.sellBackPage h1{
+    position: relative;
+    right: 50px;
+    font-size: 50px;
+}
+
 .sellTxtContainer {
     display: flex;
 }
@@ -274,6 +286,7 @@
     }
 
     .sellTxtContainer {
+        position: relative;
         display: flex;
     }
 

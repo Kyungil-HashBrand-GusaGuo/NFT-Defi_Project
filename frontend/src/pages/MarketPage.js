@@ -47,8 +47,8 @@ const MarketPage = () => {
       <div className='marketTitleContainer'>
                 <h2>ZOLAMAN Market</h2>
       </div>
-      <div class="style-five"></div>
-      <hr class="style-five"/> 
+      <div className="style-five"></div>
+      <hr className="style-five"/> 
       <div className='mainMarketContainer'>
         <div className='leftMarketContainer'>
           <div className='leftMarketSection'>
