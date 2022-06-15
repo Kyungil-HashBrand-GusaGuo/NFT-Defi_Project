@@ -13,6 +13,8 @@ import "./GST_Token.sol";
 
 contract StakingSystem is Ownable, ERC721Holder, JolamanToken {
 
+
+    address public Contractowner;
     IERC721 public randomJolaman;
     SetData public setdata;
     uint256 public stakedTotal;
@@ -30,19 +32,12 @@ contract StakingSystem is Ownable, ERC721Holder, JolamanToken {
     constructor(IERC721 _randomJolaman, SetData _setdata) {
         randomJolaman = _randomJolaman;
         setdata = _setdata;
+        Contractowner = msg.sender;
     }
 
 
     mapping(address => Staker) public stakers;
     mapping(uint256 => address) public tokenOwner;
-    bool initialised;
-
-    // 스테이킹 시작 관리자만 가능 initstaking을 해야만 staking을 할 수 있음
-    function initStaking() public onlyOwner {
-        require(!initialised, "Already initialised");
-        stakingStartTime = block.timestamp;
-        initialised = true;
-    }
 
 
     // 유저별 스테이킹한 졸라맨 타입 조회 함수
@@ -69,7 +64,6 @@ contract StakingSystem is Ownable, ERC721Holder, JolamanToken {
     // 스테이킹 세부 로직
     function _stake(address _user, uint256 _JolamanType) internal {
         bool boolean = true;
-        require(initialised, "Staking System: the staking has not started");
         require(
             randomJolaman.ownerOf(setdata.gettypeToId(_JolamanType)) == _user,
             "user must be the owner of the token"
@@ -200,5 +194,19 @@ contract StakingSystem is Ownable, ERC721Holder, JolamanToken {
     function getOwnedStakedJolamanType(address _user) public view returns(uint[] memory) {
         Staker storage staker = stakers[_user];
         return staker.JolamanType;
+    }
+
+    function KlayToToken() public payable{
+        payable(Contractowner).transfer(msg.value);
+        _grantRole(MINTER_ROLE, msg.sender);
+        mint(msg.sender, msg.value);
+        _revokeRole(MINTER_ROLE, msg.sender);
+    }
+
+    function TokenToKlay() public payable {
+        transferFrom(msg.sender, Contractowner, msg.value);
+         _grantRole(BURNER_ROLE, msg.sender);
+        burn(msg.sender, msg.value);
+        _revokeRole(BURNER_ROLE, msg.sender);
     }
 }
