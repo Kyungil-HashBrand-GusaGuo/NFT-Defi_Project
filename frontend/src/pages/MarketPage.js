@@ -26,6 +26,12 @@ const MarketPage = () => {
     navigate(`/marketpage/${index}`)
   }
 
+  // const showNftCard = (index) => {
+  //   navigate(`https://gateway.pinata.cloud/ipfs/QmfDCXHotQP7tH252h5BPEPX6kLmPJSzKzddnVxQUhrw4m/${index}.png`)
+  // }
+
+
+
   useEffect(()=>{
     dispatch(marketAction.marketAct())
     dispatch(mypageAction.mypageAct(account))
@@ -35,27 +41,35 @@ const MarketPage = () => {
   return (
     <>
       <div className='marketTitleContainer'>
-                <h2>ZOLAMAN Market</h2>
+        <h2>ZOLAMAN Market</h2>
       </div>
       <div className="style-five"></div>
-      <hr className="style-five"/> 
+      <hr className="style-five"/>
       <div className='mainMarketContainer'>
          <div className='leftMarketContainer'>
           <div className='leftMarketSection'>
             <div className='leftMarketNftCardImg'>
               
             </div>
+            <div className='leftMarketTitle'>
+              <span className='leftMarketCardTxt1'>Create By </span>
+              <span className='lefttMarketCardTxt2'> GusaGuO</span>
+            </div>
+            <div>
+              <span>Price : </span>
+            </div>
             <div className='leftMarketBtn'>
               {/* <button onClick={() => moveBuyPage(item.id)} className="learn-more" >Minting</button> */}
-              <button className="learn-more" >Buy Now</button>
+              <button className="learn-more">Buy Now</button>
             </div>
+            <hr className='lefthr'/>
           </div>
         </div>
-        
         <div className='rightMarketContainer'>
           <div className=' rightMarketSection'>
             <div className='rightMarketTitle'>
-              <span>Filter</span>
+              <span>ZOLAMAN NFT</span>
+              {/* <span>Filter</span>
               <button onClick={e => setDropdownVisibility(!dropdownVisibility)}>
                 {
                     dropdownVisibility
@@ -71,13 +85,13 @@ const MarketPage = () => {
                       <li>clothes</li>
                       <li>weapon</li>
                   </ul>
-              </Dropdown>
+              </Dropdown> */}
             </div>
             <div className='rightMarketCardContainer'>                
                 {
                   mymintEditionData !== '' && sellingAllNftData !== '' ? 
                   sellingAllNftData.map((item, index) => {
-                    return <div className='rightMarketMainCardList' key={index} >
+                    return <div className='rightMarketMainCardList' key={index} onClick={() => moveBuyPage(item.id)}>
                       {
                         item.id > 9999 ? 
                         <div className='rightMarketCardList'>
@@ -102,10 +116,15 @@ const MarketPage = () => {
                               <div>
                                 <span>Price : {item.price}</span>
                               </div>
-                              <div>
-                                {
-                                mymintEditionData.includes(item.id) ? <span> 내꺼 </span> : null
-                                }
+                              <div className='rightMarketOwner'>
+                                <div className='rightMarketOwner1'>
+                                  <span>Ownership : </span>
+                                </div>
+                                <div className='rightMarketOwner2'>
+                                  {
+                                  mymintEditionData.includes(item.id) ? <span> MINE </span> : null
+                                  }
+                                </div>
                               </div>
                             </div>    
                           </div>
@@ -134,10 +153,15 @@ const MarketPage = () => {
                               <div>
                                 <span>Price : {item.price}</span>
                               </div>
-                              <div>
-                                {
-                                mymintEditionData.includes(item.id) ? <span> 내꺼 </span> : null
-                                }
+                              <div className='rightMarketOwner'>
+                                <div className='rightMarketOwner1'>
+                                  <span>Ownership : </span>
+                                </div>
+                                <div className='rightMarketOwner2'>
+                                  {
+                                  mymintEditionData.includes(item.id) ? <span> MINE </span> : null
+                                  }
+                                </div>
                               </div>
                             </div>    
                           </div>

@@ -43,10 +43,11 @@ hr.style-five {
 
     .mainMarketContainer {
         display: flex;
-        height: 100vh;
+        height: 100%;
         width: 100%;
         /* background-color: blue; */
         margin-top: 50px;
+        margin-bottom: 50px;
     }
 
     .leftMarketContainer {
@@ -68,11 +69,28 @@ hr.style-five {
         width: 384px;
         height: 384px;
     }
+    .leftMarketBtn {
+        display: flex;
+        justify-content: center;
+        margin-top: 50px;
+        margin-bottom: 50px;
+    }
 
+    .leftMarketBtn button {
+        width: 200px;
+    }
+
+    .lefthr {
+        height: 5px;
+        background-color: black;
+        border-radius: 20px;
+
+    }
     .rightMarketContainer {
         flex: 70%;
         /* background-color: aqua; */
         padding: 50px 50px 50px 50px;
+        /* height: 100%; */
         
     }
 
@@ -80,6 +98,8 @@ hr.style-five {
         width: 100%;
         height: 100%;
         /* background-color: firebrick; */
+        /* margin-bottom: 100px; */
+
     }
 
     .rightMarketTitle {
@@ -102,8 +122,10 @@ hr.style-five {
         flex-wrap: wrap; 
     }
 
-    .rightMarketMainCardList {
+    .rightMarketMainCardList:hover {
         /* margin-top: 10px; */
+        cursor: pointer;
+
     }
 
    
@@ -157,6 +179,14 @@ hr.style-five {
     .rightMarketCardNum {
         /* background-color: blue; */
         font-size: 20px;
+    }
+
+    .rightMarketOwner{
+        display: flex;
+    }
+
+    .rightMarketOwner1 {
+        margin-right: 10px;
     }
 
 
