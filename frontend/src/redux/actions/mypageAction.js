@@ -1,6 +1,4 @@
 import axios from "axios"
-import { setDataContract } from "../../caverConfig";
-
 
 function mypageAct(account) {
 

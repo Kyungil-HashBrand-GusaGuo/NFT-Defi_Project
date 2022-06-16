@@ -1,13 +1,17 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 import klayIcon2 from '../images/klaytn.png';
 //import './BuyPage.css'
 import { BuyModal } from '../components';
 import axios from 'axios';
+import { TbArrowBack } from "react-icons/tb";
+
 
 const BuyPage = () => {
 
+    const navigate = useNavigate()
     let {edition} = useParams()
     const [sellNftPrice, setSellNftPrice] = useState()
     const [buyModal, setBuyModal] = useState(false)
@@ -31,6 +35,10 @@ const BuyPage = () => {
         setBuyModal(true)
       }
 
+    const previousPage = () => {
+      navigate(`/market`)
+    }
+
     useEffect (() => {
         callBuyNft()
     },[])
@@ -44,6 +52,8 @@ const BuyPage = () => {
     <div className='SellMainSection'>
       <div className='SellTitleContainer'>
           <h2>List item for sale</h2>
+          <div className='sellBackPage'><h1><TbArrowBack size={40} onClick={()=>previousPage()}/></h1>
+          </div>
       </div>
       { showMint ? 
       <div className='sellTxtContainer'>
