@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import './StakingPage.css'
 import { stakingViewAction } from '../redux/actions/stakingViewAction'
@@ -11,7 +11,9 @@ const StakingPage = () => {
     const dispatch = useDispatch()
     const {account} = useSelector(state => state.account)
     const {myNftList, stakingNft, stakingReward , getStakingReward} = useSelector(state => state.stakingView)
-    
+    const [reset, setReset] = useState(true)
+    console.log(reset)
+
     const staking = (edition) => {
       dispatch(stakingAction.stakingAct(account, edition))
     }
@@ -22,6 +24,14 @@ const StakingPage = () => {
 
     const getReward = () => {
       dispatch(stakingRewardAction.stakingRewardAct(account))
+    }
+
+    const changeState = () =>{
+      if(reset) {
+        setReset(false)
+      } else {
+        setReset(true)
+      }
     }
 
     console.log(account)
@@ -36,6 +46,8 @@ const StakingPage = () => {
         <h3>스테이킹 NFT : {stakingNft}</h3>
         <h3>받을스테이킹 : {stakingReward} token</h3>
         <h3>받은스테이킹 : {getStakingReward} token</h3>
+        <button onClick={()=>changeState}>최신화버튼</button>
+        <br></br>
         <br></br>
         <div>============ 나의 전체 NFT ===============</div>
         <div className='stakingBoxContainer'>
