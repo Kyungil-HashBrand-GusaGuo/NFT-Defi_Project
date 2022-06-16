@@ -1,13 +1,13 @@
-import axios from "axios";
+import api from '../api'
 
 function stakingViewAct(account) {
     return async (dispatch) => {
         try {
             if(account !== ''){
-                const myNftListApi = axios.post("http://localhost:9495/block/getExceptSellOwnedJolamanType", { account });
-                const stakingNftApi = axios.post("http://localhost:9495/block/stakedJolaman", { account });
-                const stakingRewardApi = axios.post("http://localhost:9495/block/updateReward", { account });
-                const getStakingRewardApi = axios.post("http://localhost:9495/block/stakers", { account });
+                const myNftListApi = api.post("/getExceptSellOwnedJolamanType", { account });
+                const stakingNftApi = api.post("/stakedJolaman", { account });
+                const stakingRewardApi = api.post("/updateReward", { account });
+                const getStakingRewardApi = api.post("/stakers", { account });
 
                 let [ myNftList, stakingNft, stakingReward, getStakingReward ] = await Promise.all([myNftListApi, stakingNftApi, stakingRewardApi, getStakingRewardApi ])
 
