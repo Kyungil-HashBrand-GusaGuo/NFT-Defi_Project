@@ -4,10 +4,10 @@ import { useNavigate, useParams } from 'react-router-dom'
 import klayIcon2 from '../images/klaytn.png';
 import './SellPage.css'
 import { SellModal, CancelSellModal } from '../components';
-import axios from 'axios';
 import { TbArrowBack } from "react-icons/tb";
 import { stakingViewAction } from '../redux/actions/stakingViewAction'
-
+import api from '../redux/api'
+import pinataApi from '../redux/pinataApi';
 
 const SellPage = () => {
 
@@ -40,8 +40,8 @@ const SellPage = () => {
 
 
     const callSellNft = async() => {
-      const response = await axios.get("http://localhost:9495/block/getOnSaleJolaman");
-      const mintJSON = await axios.get(`https://gateway.pinata.cloud/ipfs/QmaavyzfX6XzVNJx4zKCQVNDJWwQJx9xUC6gmDfddxvQ6p/${edition}.json`)
+      const response = await api.get("/getOnSaleJolaman");
+      const mintJSON = await pinataApi.get(`/${edition}.json`)
       let state = response.data[0].includes(edition)
       // console.log("민트데이터",mintJSON)
       // console.log("배열확인", response.data[0])
