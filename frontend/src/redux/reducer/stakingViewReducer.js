@@ -1,6 +1,7 @@
 let initialState = {
     myNftList : '',
-    stakingNft : '',
+    stakingNftString : '',
+    stakingNftNumber : '',
     stakingReward : '',
     getStakingReward : '',
 }
@@ -14,7 +15,8 @@ function stakingViewReducer(state=initialState,action) {
         case "GET_STAKING_VIEW_SUCCESS" :
             return {...state,
                 myNftList : payload.myNftList,
-                stakingNft : payload.stakingNft,
+                stakingNftString : payload.stakingNftString,
+                stakingNftNumber : payload.stakingNftNumber,
                 stakingReward : payload.stakingReward,
                 getStakingReward : payload.getStakingReward
             }

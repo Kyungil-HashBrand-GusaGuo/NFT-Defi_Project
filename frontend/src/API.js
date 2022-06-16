@@ -10,7 +10,7 @@ import {
 } from "./caverConfig.js";
 import axios from "axios";
 
-// sever =  34.64.61.199:9495
+// sever =  localhost:9495
 
 function App() {
   const val = 2;

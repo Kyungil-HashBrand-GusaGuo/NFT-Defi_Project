@@ -10,9 +10,7 @@ const StakingPage = () => {
 
     const dispatch = useDispatch()
     const {account} = useSelector(state => state.account)
-    const {myNftList, stakingNft, stakingReward , getStakingReward} = useSelector(state => state.stakingView)
-    const [reset, setReset] = useState(true)
-    console.log(reset)
+    const {myNftList, stakingNftString, stakingReward , getStakingReward} = useSelector(state => state.stakingView)
 
     const staking = (edition) => {
       dispatch(stakingAction.stakingAct(account, edition))
@@ -27,11 +25,7 @@ const StakingPage = () => {
     }
 
     const changeState = () =>{
-      if(reset) {
-        setReset(false)
-      } else {
-        setReset(true)
-      }
+      dispatch(stakingViewAction.stakingViewAct(account))
     }
 
     console.log(account)
@@ -43,10 +37,10 @@ const StakingPage = () => {
     <div className='stakingPageContainer'>
         <h3>StakingPage</h3>
         <h3>나의 NFT : {myNftList}</h3>
-        <h3>스테이킹 NFT : {stakingNft}</h3>
+        <h3>스테이킹 NFT : {stakingNftString}</h3>
         <h3>받을스테이킹 : {stakingReward} token</h3>
         <h3>받은스테이킹 : {getStakingReward} token</h3>
-        <button onClick={()=>changeState}>최신화버튼</button>
+        <button onClick={changeState}>최신화버튼</button>
         <br></br>
         <br></br>
         <div>============ 나의 전체 NFT ===============</div>
@@ -66,8 +60,8 @@ const StakingPage = () => {
         <div>============ 스테이킹 NFT ===============</div>
         <div className='stakingBoxContainer'>
           {
-            stakingNft !== '' ?
-            stakingNft.map((item, index)=> {
+            stakingNftString !== '' ?
+            stakingNftString.map((item, index)=> {
               return <div className='stakingBox' key={index}>
                   <div> # {item} </div>
                   <button onClick={()=>cancelStaking(item)}>{item} 스테이킹 취소 함수</button>
