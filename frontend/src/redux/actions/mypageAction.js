@@ -1,4 +1,5 @@
-import axios from "axios"
+import api from '../api'
+import pinataApi from '../pinataApi';
 
 function mypageAct(account) {
 
@@ -7,7 +8,7 @@ function mypageAct(account) {
             console.log("액션쪽",account)
             if(account !== "")
             {
-              const response = await axios.post("http://localhost:9495/block/ownedTokenId", { account : account });
+              const response = await api.post("/ownedTokenId", { account : account });
               //const response = await setDataContract.methods.getTotalOwnedTokens(account).call()
               let array = []
               let editionArr = []
@@ -15,7 +16,7 @@ function mypageAct(account) {
   
               for(let i=0; i < myMintingData.length; i++){
           
-                const mintJSON = await axios.get(`https://gateway.pinata.cloud/ipfs/QmaavyzfX6XzVNJx4zKCQVNDJWwQJx9xUC6gmDfddxvQ6p/${myMintingData[i]}.json`)
+                const mintJSON = await pinataApi.get(`/${myMintingData[i]}.json`)
                 //console.log("여기 어대고",typeof(mintJSON.data.edition))
                 array.push(mintJSON)
                 editionArr.push(mintJSON.data.edition)
