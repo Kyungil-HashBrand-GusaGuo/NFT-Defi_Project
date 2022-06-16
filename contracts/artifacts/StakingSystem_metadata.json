@@ -1217,11 +1217,11 @@
 			]
 		},
 		"contracts/RandomJolaman.sol": {
-			"keccak256": "0x8fa767b82841656b651cf7c3201f5941e2e7152547bf0e0d465bc7b93fdd384f",
+			"keccak256": "0x6c6586897a4791c4ec237884555c5a8e7be67ea4119951166139116db062fe89",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://5f8a0b69fe9ee9b8cd70429991ba216c1749a09d3cfaec7614133d55b09d6116",
-				"dweb:/ipfs/QmbVjHB84kK9aFhFcLXgJmsDcPNdqwUY5VdBGk4iWTS7N7"
+				"bzz-raw://dd1d4b717f006ab6d07d8ebb5a19892a26615af56b02ba0fa7b6c81c790f478b",
+				"dweb:/ipfs/Qma7X7uyH6X7MRtKsUUtUaSvcxnXQEo8Dmyn5hPiyvL3Jo"
 			]
 		},
 		"contracts/SaleJolaman.sol": {

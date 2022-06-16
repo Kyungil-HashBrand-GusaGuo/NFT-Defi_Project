@@ -1198,11 +1198,11 @@
 			]
 		},
 		"contracts/RandomJolaman.sol": {
-			"keccak256": "0x54189180d3bb68782d0aa6b62d9416153b57e30703ea1cc30e61fe1eda58d4a4",
+			"keccak256": "0x6c6586897a4791c4ec237884555c5a8e7be67ea4119951166139116db062fe89",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://2cd45d09c0179432d5c2cae50353f5d541ec5fbb9b06ec32ad55a265212ce45d",
-				"dweb:/ipfs/QmdmByRYtTQQGjAa2MNMsnyw7GSWZW612jv9KtNEaFhqA6"
+				"bzz-raw://dd1d4b717f006ab6d07d8ebb5a19892a26615af56b02ba0fa7b6c81c790f478b",
+				"dweb:/ipfs/Qma7X7uyH6X7MRtKsUUtUaSvcxnXQEo8Dmyn5hPiyvL3Jo"
 			]
 		},
 		"contracts/SetData.sol": {
