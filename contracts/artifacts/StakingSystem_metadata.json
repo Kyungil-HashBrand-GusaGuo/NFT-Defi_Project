@@ -1241,11 +1241,11 @@
 			]
 		},
 		"contracts/StakeSystem.sol": {
-			"keccak256": "0x5956dbbdb90597fc6a7b4ac2eda7f58310fa23ec23ddfc3ee076e74ac3b58e8a",
+			"keccak256": "0x03bb50aa88b2f4d9b8d10f0796f966bd236128572c3bcdc68b208711ce71be9a",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://f249dcc461c4a58b7accf17a026bfe59722615b407f1660fa5f8b0bf0d8ec29c",
-				"dweb:/ipfs/QmRx6Qoc5Nji1gSC9V1ZKjQSeHUkQtrTV9H83s2rbA6DNN"
+				"bzz-raw://dbd7b21b48f1f0cebf5848ecbaceacb0e66233b10932e792fb66f180eedb0ad4",
+				"dweb:/ipfs/QmWxtLL4x4tye6Fq7VBF8CfURVkH2YhaPzLKqkMyvt5Db1"
 			]
 		}
 	},
