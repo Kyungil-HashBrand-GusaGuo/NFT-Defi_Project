@@ -147,9 +147,10 @@ button {
 }
 
 
-.notStakingBoxContainer {
+/* .notStakingBoxContainer {
     display: flex;
-}
+    width: 100%;
+} */
 
 .notStakingBoxSection {
     /* display: flex; */
@@ -157,26 +158,32 @@ button {
     /* height: 400px; */
     padding: 40px 40px 40px 40px;
     /* background-color: blue; */
+    /* display: flex; */
+}
+
+.noStakingCardMainContainer {
+    display: flex;
 }
 
 .notStakingCardContainer {
     display: flex;
-    margin-top: 40px;
+    flex-direction: row ;
+    flex-wrap: wrap; 
+    width: 100%;
+    height: 300px;
 }
 
 .notStakingImgCard {
     width: 130px;
     height: 130px;
     /* background-color: aqua; */
-    
+    background-size: cover;
+    border-radius: 20px;
+
     margin-right: 40px;
 }
 
-.notStakingImgCard img {
-    width: 100%;
-    height: 100%;
-    border-radius: 20px;
-}
+
 
 .notStakingBtn {
     display: flex;
@@ -206,13 +213,20 @@ button {
 
 .comStakingBoxSection {
     /* display: flex; */
-    /* width: 100%; */
+    width: 100%;
     /* height: 400px; */
     padding: 40px 40px 40px 40px;
     /* background-color: blue; */
 }
 
+.comStakginCardMainContainer{
+    height: 150px;
+    display: flex;
+}
+
 .comStakingCardContainer {
+    flex-direction: row ;
+    flex-wrap: wrap;
     display: flex;
     margin-top: 40px;
 }
@@ -222,12 +236,25 @@ button {
     height: 130px;
     /* background-color: aqua; */
     margin-right: 40px;
+    background-size: cover;
+    border-radius: 20px;
+
 }
 
 .comStakingImgCard img {
     width: 100%;
     height: 100%;
-    border-radius: 20px;
+    background-size: cover;
+
+}
+
+.comStakingBtn {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+}
+.comStakingBtn button {
+    width: 800px;
 }
 
 
