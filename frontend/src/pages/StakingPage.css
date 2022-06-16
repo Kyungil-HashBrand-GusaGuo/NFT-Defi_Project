@@ -166,14 +166,14 @@ button {
 
 .noStakingCardMainContainer {
     display: flex;
+    height: 300px;
+
 }
 
 .notStakingCardContainer {
     display: flex;
     flex-direction: row ;
     flex-wrap: wrap; 
-    width: 100%;
-    height: 300px;
 }
 
 .notStakingImgCard {

@@ -5,6 +5,8 @@ import { stakingViewAction } from '../redux/actions/stakingViewAction'
 import { stakingAction } from '../redux/actions/stakingAction'
 import { stakingCancelAction } from '../redux/actions/stakingCancelAction'
 import { stakingRewardAction } from '../redux/actions/stakingRewardAction'
+import { GrRefresh } from "react-icons/gr";
+
 
 const StakingPage = () => {
 
@@ -55,6 +57,10 @@ const StakingPage = () => {
         <div className='stakingZolToken'>
           <span>Your Mining Zola Token</span>
           <span> : {stakingReward} </span>
+          <button className="claimBtn" onClick={changeState}>
+          <GrRefresh />
+          </button>
+          
           <button onClick={getReward} className="claimBtn">Claim</button>
         </div>
         <div className='stakingZolToken'>
