@@ -19,7 +19,7 @@ function preMintAction(account) {
       const contract1 = await RandomJolamanContract();
       const response = await contract1.payandMint({
         from: account,
-        value: ethers.BigNumber.from("2000000000000000000")
+        value: ethers.BigNumber.from("20000000000000000")
       });
       // 1000000000000000000
       console.log("if문 전", response)

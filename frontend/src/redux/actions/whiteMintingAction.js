@@ -11,7 +11,7 @@ function whiteMintAction(account) {
       const contract1 = await RandomJolamanContract();
       const response = await contract1.specialPayandMint({
       from: account,
-      value: ethers.BigNumber.from("2000000000000000000")
+      value: ethers.BigNumber.from("20000000000000000")
       });
       console.log("화이트 if문 전",response)
 
