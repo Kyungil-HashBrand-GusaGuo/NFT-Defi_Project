@@ -145,7 +145,7 @@ contract StakingSystem is Ownable, ERC721Holder, JolamanToken {
 
     // 쌓인 보상 조회 함수
     function updateReward(address _user) public view returns(uint) {
-        
+        uint reward;
         Staker storage staker = stakers[_user];
         uint256[] storage ids = staker.JolamanType;
         for (uint256 i = 0; i < ids.length; i++) {
@@ -156,10 +156,10 @@ contract StakingSystem is Ownable, ERC721Holder, JolamanToken {
             ) {
             
                 uint256 stakedDays = ((block.timestamp - uint(staker.tokenStakingCoolDown[ids[i]]))) / stakingTime;
-                
-                return stakedDays * token;
+                reward += stakedDays * token;
             }
         }
+        return reward;
     }
 
     // 보상 청구 함수

@@ -5,7 +5,7 @@ const config = {
 };
 const caver = new Caver(config.rpcURL);
 const SALE_CONTRACT_ADDRESS = 
-"0x1784E6AAA09b04C0E1d535e214E0f4F3C04D9f3C";
+"0x59F7fC7F31a498B55A842C7F84d3F1A30842D3DB";
 
 const SALE_CONTRACT_ABI = [
 	{
