@@ -31,8 +31,8 @@ function stakingViewAct(account) {
                         myNftList : myNftList.data, 
                         stakingNftString : stakingNft.data,
                         stakingNftNumber : stakingNftNumberData, 
-                        stakingReward : stakingReward.data / 10**18, 
-                        getStakingReward : getStakingReward.data.rewardsReleased / 10**18
+                        stakingReward : (stakingReward.data / 10**18).toFixed(2),
+                        getStakingReward : (getStakingReward.data.rewardsReleased / 10**18).toFixed(2)
                     }
                 })
             }
