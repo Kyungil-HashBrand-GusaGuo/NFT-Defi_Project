@@ -185,7 +185,7 @@ const MarketPage = () => {
                                 </div>
                                 <div className='rightMarketOwner2'>
                                   {
-                                  mymintEditionData.includes(item.id) ? <span> MINE </span> : <span> OThers </span> 
+                                  mymintEditionData.includes(item.id) ? <span> MINE </span> : <span> Others </span> 
                                   }
                                 </div>
                               </div>
