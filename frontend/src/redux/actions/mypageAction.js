@@ -1,5 +1,4 @@
 import axios from "axios"
-import { setDataContract } from "../../ropstenConfig";
 
 
 function mypageAct(account) {

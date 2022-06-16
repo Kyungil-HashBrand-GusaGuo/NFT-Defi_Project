@@ -8,8 +8,8 @@ function addWhiteList(account, address) {
 
   return async (dispatch) => {
         try {
-          const contract = await RandomJolamanContract();
-          const response = await contract.addWhiteList(address);
+          // const contract = await RandomJolamanContract();
+          const response = await RandomJolamanContract.addWhiteList(address);
             // const response = await window.ethereum.sendTransaction({
             //   from: account,
             //   to: MINT_CONTRACT_ADDRESS,

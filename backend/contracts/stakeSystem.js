@@ -1,12 +1,18 @@
 const Caver = require("caver-js");
+const Web3 = require("web3");
+const Ethers = require("ethers")
 
-const config = {
-  rpcURL: "https://api.baobab.klaytn.net:8651",
-};
-const caver = new Caver(config.rpcURL);
+
+const web3 = new Web3(new Web3.providers.HttpProvider('https://ropsten.infura.io/v3/9aa3d95b3bc440fa88ea12eaa4456161')); // Ethereum Ropsten Testnet RPC
+const DATA_CONTRACT_ADDRESS = "0x503a4F105958cA81c561A669349A4d7e56C9237F";
+
+// const config = {
+//   rpcURL: "https://api.baobab.klaytn.net:8651",
+// };
+// const caver = new Caver(config.rpcURL);
 
 const STAKING_CONTRACT_ADDRESS = 
-"0xb46e93eC9cAad81B7EA4d3188F7CcC6203324096";
+"0xB6690fE0212f2219c9B85EDFeC70a337cffC6260";
 
 const STAKING_CONTRACT_ABI = [
 	{
@@ -954,11 +960,14 @@ const STAKING_CONTRACT_ABI = [
 		"stateMutability": "view",
 		"type": "function"
 	}
-]
-const stakeSystemContract = new caver.klay.Contract(
-  STAKING_CONTRACT_ABI,
-  STAKING_CONTRACT_ADDRESS
-);
+];
+
+// const stakeSystemContract = new caver.klay.Contract(
+//   STAKING_CONTRACT_ABI,
+//   STAKING_CONTRACT_ADDRESS
+// );
+
+const stakeSystemContract = new web3.eth.Contract(STAKING_CONTRACT_ABI, STAKING_CONTRACT_ADDRESS);
 
 module.exports = {
   stakeSystemContract,

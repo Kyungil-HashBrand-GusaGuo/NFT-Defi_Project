@@ -4,7 +4,7 @@ const Web3 = require("web3");
 
 
 const web3 = new Web3(new Web3.providers.HttpProvider('https://ropsten.infura.io/v3/9aa3d95b3bc440fa88ea12eaa4456161')); // Ethereum Ropsten Testnet RPC
-const MINT_CONTRACT_ADDRESS = "0xE05CF80c11a3cbC3a36fB62327a674e8d78efcE8";
+const MINT_CONTRACT_ADDRESS = "0x164E4171cDfF62dD8efBF42AC0537DA265CD6b93";
 
 const MINT_CONTRACT_ABI =  [
 	{

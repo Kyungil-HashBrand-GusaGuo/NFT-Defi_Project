@@ -32,7 +32,7 @@ const SellPage = () => {
 
 
     const callSellNft = async() => {
-      const response = await axios.get("http://34.64.61.199:9495/block/getOnSaleJolaman");
+      const response = await axios.get("http://localhost:9495/block/getOnSaleJolaman");
       const mintJSON = await axios.get(`https://gateway.pinata.cloud/ipfs/QmaavyzfX6XzVNJx4zKCQVNDJWwQJx9xUC6gmDfddxvQ6p/${edition}.json`)
       let state = response.data[0].includes(edition)
       // console.log("민트데이터",mintJSON)

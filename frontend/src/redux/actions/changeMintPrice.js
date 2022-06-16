@@ -9,8 +9,8 @@ function changePrice(account, price) {
 
   return async (dispatch) => {
         try {
-          const contract = await RandomJolamanContract();
-          const response = await contract.setMintingPrice(price);
+          // const contract = await RandomJolamanContract();
+          const response = await RandomJolamanContract.setMintingPrice(price);
             // const response = await window.ethereum.sendTransaction({
             //   from: account,
             //   to: MINT_CONTRACT_ADDRESS,

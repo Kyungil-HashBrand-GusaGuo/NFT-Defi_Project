@@ -15,7 +15,7 @@ function getAccount() {
             dispatch({type : "CHECK_ACCOUNT", payload : {whiteListCheck}})
 
             // admin계정 가져오기
-            const adminAccountFunc = await axios.get("http://34.64.61.199:9495/block/getOwner");
+            const adminAccountFunc = await axios.get("http://localhost:9495/block/getOwner"); //http://34.64.61.199:9495
             let adminAccount = adminAccountFunc.data.toLowerCase()
             console.log(adminAccount);
 

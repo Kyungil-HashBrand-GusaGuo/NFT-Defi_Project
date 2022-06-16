@@ -8,16 +8,16 @@ function whiteMintAction(account) {
 
   return async (dispatch) => {
     try {
-      const contract1 = await RandomJolamanContract();
-      const response = await contract1.specialPayandMint({
+      // const contract1 = await RandomJolamanContract();
+      const response = await RandomJolamanContract.specialPayandMint({
       from: account,
       value: ethers.BigNumber.from("20000000000000000")
       });
       console.log("화이트 if문 전",response)
 
       if(response.status) {
-        const contract2 = await setDataContract();
-        const response = await contract2.getTotalOwnedTokens(account);
+        // const contract2 = await setDataContract();
+        const response = await setDataContract.getTotalOwnedTokens(account);
         let metaDataURI = response[response.length-1]; 
         const getMetaData = async() => {
           const response = await axios.get(`https://gateway.pinata.cloud/ipfs/QmaavyzfX6XzVNJx4zKCQVNDJWwQJx9xUC6gmDfddxvQ6p/${metaDataURI}.json`);

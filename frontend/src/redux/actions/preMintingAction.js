@@ -16,16 +16,16 @@ function preMintAction(account) {
       // })
       // await window.ethereum.enable()
       // console.log(RandomJolamanContract().then(e => console.log(e.totalSupply().then(f => console.log(f)))))
-      const contract1 = await RandomJolamanContract();
-      const response = await contract1.payandMint({
+      // const contract1 = await RandomJolamanContract();
+      const response = await RandomJolamanContract.payandMint({
         from: account,
-        value: ethers.BigNumber.from("20000000000000000")
+        value: ethers.BigNumber.from("2000000000000000000")
       });
       // 1000000000000000000
       console.log("if문 전", response)
       if (response.status) {
-        const contract2 = await setDataContract();
-        const response = await contract2.getTotalOwnedTokens(account);
+        // const contract2 = await setDataContract();
+        const response = await setDataContract.getTotalOwnedTokens(account);
         let metaDataURI = response[response.length - 1];
         const getMetaData = async () => {
           const response = await axios.get(`https://gateway.pinata.cloud/ipfs/QmaavyzfX6XzVNJx4zKCQVNDJWwQJx9xUC6gmDfddxvQ6p/${metaDataURI}.json`);
