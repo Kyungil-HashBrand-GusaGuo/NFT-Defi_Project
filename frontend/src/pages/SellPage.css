@@ -1,0 +1,452 @@
+/* .sellMainContainer {
+    display: flex;
+    height: calc(100vh - 17.361vw);
+    height: 100%;
+    padding-top: 10.417vw;
+    justify-content: space-around; 
+    width: 100%;
+} */
+
+
+.sellMainContainer {
+    display: flex;
+    height: calc(100vh - 17.361vw);
+    height: 100%;
+    padding-top: 13.889vw;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 6.944vw;
+}
+
+.SellMainSection {
+    width: 83.333vw;
+    height: 41.667vw;
+    border: 0.139vw solid black;
+    border-radius: 1.389vw;
+    /* background-color: rgba(255, 255, 255); */
+    box-shadow: 0.26vw 0.26vw 0.26vw 0.26vw rgb(132 81 61 / 35%);
+}
+
+
+
+.SellTitleContainer {
+    height: 4.167vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform:rotate(-3deg);
+    position: relative;
+    top: -2.083vw;
+    margin-bottom: 2.083vw;
+}
+
+.SellTitleContainer h2{
+    font-size: 2.778vw;
+    color: whitesmoke;
+    background-color: #272727;
+    padding: 0.781vw;
+    padding-left: 1.042vw;
+    padding-right: 1.042vw;
+    border: 0.052vw solid #272727;
+    border-radius: 0.521vw;
+}
+
+.sellBackPage{
+    position: relative;
+    top : -60px;
+    float: right;
+}
+
+.sellBackPage h1{
+    position: relative;
+    right: 50px;
+    font-size: 50px;
+}
+
+.sellTxtContainer {
+    display: flex;
+}
+
+.leftTxtContainer {
+    flex: 50%;
+    background-color: red;
+    width: 41.667vw;
+    height: 37.5vw;
+}
+.rightTxtContainer {
+    flex: 50%;
+    background-color: black;
+    width: 41.667vw;
+    height: 37.5vw;
+}
+
+.sellMainContainer .leftSellContainer {
+    flex: 50%;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.leftInputContainer {
+    width: 34.722vw;
+    height: 30.556vw;
+    background-color: rgba(255, 255, 255, 0.538);
+    border-radius: 1.042vw;
+    box-shadow:gray 0vw 0.139vw 1.389vw;
+    margin-left: 70px;
+}
+
+.leftInputsection {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1.389vw;
+}
+
+.leftInputTitle {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 0.694vw;
+}
+
+.lefticoninput {
+    /* display: flex; */
+    width: 3.472vw;
+    height: 3.472vw;
+    margin-right: 0.694vw;
+}
+.lefttxtinput {
+    /* display: flex; */
+    height: 3.472vw;
+    width: 12.5vw;
+}
+
+.leftbtn {
+    display: flex;
+    justify-content: center;
+}
+
+.leftTableTitle {
+    display: flex;
+    justify-content: center;
+    
+}
+
+.leftTableTitle p {
+    margin-top: 2.083vw;
+    font-size: 2.083vw;
+}
+
+.leftAttributeContainer {
+    display: flex;
+    justify-content: center;
+    margin-top: 0.694vw;
+    margin-bottom: 1.389vw;
+}
+
+.leftAttributeContainer table {
+    border: 0.139vw solid black;
+    border-collapse: collapse;
+    text-align: center;
+    font-size: 1.181vw;
+}
+
+.leftAttributeContainer th, td {
+    border: 0.139vw solid black;
+    padding: 0.694vw 0.139vw;
+    
+}
+
+.leftAttributeContainer th {
+    background-color: black;
+    color: white;
+}
+
+.sellMainContainer .rightSellContainer {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    flex: 50%;
+}
+
+
+.rightCardList {
+    /* display: flex; */
+    width: 22.222vw;
+    height: 30.556vw;
+    /* border: 2.002px solid black; */
+    border-radius: 1.042vw;
+    box-shadow:gray 0vw 0.139vw 1.389vw;
+    margin-right: 0.694vw;
+    margin-bottom: 0.694vw;
+    background-color: white;
+}
+
+.rightCardList:hover {
+    
+	border: 2.995px solid rgba(44, 14, 2, 0.35)
+}
+
+.rightNftCard {
+    width: 22.222vw;
+    height: 22.222vw;
+    background-size: contain;
+    border-radius: 1.042vw;
+}
+
+.rightCardList .rightCardtxtContainer {
+    width: 22.222vw;
+    height: 5.556vw;
+}
+
+.rightCardList .rightCardtxtContainer .rightCardTxt {
+    display: flex;
+    height: 2.778vw;
+}
+
+.rightCardList .rightCardtxtContainer .rightCardTxt .rightCardListTitle {
+    flex: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.rightCardList .rightCardtxtContainer .rightCardTxt .rightCardListName {
+    flex: 50%;
+    display: flex;
+    align-items: center;
+    font-size: 1.042vw;
+}
+
+
+.rightCardList .rightCardtxtContainer .rightCardTxt .rightCardListPrice {
+    flex: 50%;
+    display: flex;
+    align-items: center;
+}
+
+.cardDna {
+    display: flex;
+    justify-content: center;
+}
+
+.cardDna p{
+    font-size: 0.903vw;
+}
+
+.klayicon {
+    width: 1.389vw;
+    height: 1.389vw;
+    margin-right: 0.347vw;
+}
+
+@media only screen and (max-width: 1110px){
+
+    .sellMainContainer {
+        display: flex;
+        height: calc(100vh - 249.998px);
+        height: 100%;
+        padding-top: 200.002px;
+        justify-content: center;
+        align-items: center;
+        padding-bottom: 99.994px;
+    }
+
+    .SellMainSection {
+        width: 920px;
+        height: 416px;
+        border: 2.002px solid black;
+        border-radius: 20.002px;
+        box-shadow: 3.744px 3.744px 3.744px 3.744px rgb(132 81 61 / 35%);
+    }
+
+    .SellTitleContainer {
+        height: 30.005px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transform:rotate(-3deg);
+        position: relative;
+        top: -29px;
+        margin-bottom: 23px;
+    }
+
+    .SellTitleContainer h2{
+        font-size: 30px;
+        color: whitesmoke;
+        background-color: #272727;
+        padding: 11.246px;
+        padding-left: 15.005px;
+        padding-right: 15.005px;
+        border: 0.749px solid #272727;
+        border-radius: 7.502px;
+    }
+
+    .sellTxtContainer {
+        position: relative;
+        display: flex;
+    }
+
+    .sellMainContainer .leftSellContainer {
+        flex: 50%;
+        display: flex;
+        width: 100%;
+        height: 100%;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .leftInputContainer {
+        width: 383px;
+        height: 337px;
+        background-color: rgba(255, 255, 255, 0.538);
+        border-radius: 15.005px;
+        box-shadow:gray 0px 2.002px 20.002px;
+        margin-left: 4.861vw;
+    }
+
+    .leftInputsection {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 20.002px;
+    }
+
+    .leftInputTitle {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 9.994px;
+    }
+
+    .lefticoninput {
+        width: 38px;
+        height: 38px;
+        margin-right: 7px;
+    }
+    .lefttxtinput {
+        height: 42px;
+        width: 141px;
+    }
+
+    .leftbtn {
+        display: flex;
+        justify-content: center;
+    }
+
+    .leftTableTitle {
+        display: flex;
+        justify-content: center;
+        
+    }
+
+    .leftTableTitle p {
+        margin-top: 22px;
+        font-size: 18px;
+    }
+
+    .leftAttributeContainer {
+        display: flex;
+        justify-content: center;
+        margin-top: 7px;
+        margin-bottom: 15px;
+    }
+
+    .leftAttributeContainer table {
+        border: 2.002px solid black;
+        border-collapse: collapse;
+        text-align: center;
+        font-size: 13px;
+    }
+
+    .leftAttributeContainer th, td {
+        border: 2.002px solid black;
+        padding: 7px 1.3px;
+        
+    }
+
+    .leftAttributeContainer th {
+        background-color: black;
+        color: white;
+    }
+
+    .sellMainContainer .rightSellContainer {
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        width: 100%;
+        height: 100%;
+        flex: 50%;
+    }
+
+
+    .rightCardList {
+        width: 246px;
+        height: 338px;
+        border-radius: 15.005px;
+        box-shadow:gray 0px 2.002px 20.002px;
+        margin-right: 7.6px;
+        margin-bottom: 7.6px;
+        margin-left: 10px;
+        background-color: white;
+    }
+
+    .rightCardList:hover {
+        
+        border: 0.208vw solid rgba(44, 14, 2, 0.35)
+    }
+
+    .rightNftCard {
+        width: 246px;
+        height: 246px;
+        background-size: contain;
+        border-radius: 15.005px;
+    }
+
+    .rightCardList .rightCardtxtContainer {
+        width: 246px;
+        height: 70px;
+    }
+
+    .rightCardList .rightCardtxtContainer .rightCardTxt {
+        display: flex;
+        height: 30.003px;
+    }
+
+    .rightCardList .rightCardtxtContainer .rightCardTxt .rightCardListTitle {
+        flex: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+    }
+    .rightCardList .rightCardtxtContainer .rightCardTxt .rightCardListName {
+        flex: 50%;
+        display: flex;
+        align-items: center;
+        font-size: 11px;
+    }
+
+
+    .rightCardList .rightCardtxtContainer .rightCardTxt .rightCardListPrice {
+        flex: 50%;
+        display: flex;
+        align-items: center;
+    }
+
+    .cardDna {
+        display: flex;
+        justify-content: center;
+    }
+
+    .cardDna p{
+        font-size: 10px;
+    }
+
+    .klayicon {
+        width: 15px;
+        height: 15px;
+        margin-right: 3.8px;
+    }
+}

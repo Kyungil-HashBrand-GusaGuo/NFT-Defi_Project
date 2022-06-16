@@ -41,6 +41,7 @@ contract SaleJolaman is ERC721Holder {
 
     sellingJolamanTypeToPrice[_JolamanType] = KlayTn * _price;
 
+    setdata.setDeleteExceptSellOwnedJolamanType(SelltokenOwner, _JolamanType);
     setdata.setSellingJolTypeToBool(_JolamanType, boolean);
     onSaleJolamanType.push(_JolamanType);
     onSaleJolamanPrice.push(KlayTn * _price);
@@ -54,6 +55,7 @@ contract SaleJolaman is ERC721Holder {
         require(SelltokenOwner == msg.sender, "Caller is not TokenOwner.");
         require(setdata.getSellingJolTypeToBool(_JolamanType) == true, "This token not Sale");
 
+        setdata.setExceptSellOwnedJolamanType(SelltokenOwner, _JolamanType);
         setdata.setSellingJolTypeToBool(_JolamanType, boolean);
         popOnSaleToken(_JolamanType);
     }
@@ -78,7 +80,7 @@ contract SaleJolaman is ERC721Holder {
         setdata.SellOwnedToken(SelltokenOwner, _JolamanType);
         setdata.setTokenOwner(setdata.gettypeToId(_JolamanType), msg.sender);
         setdata.setTotalOwnedTokens(msg.sender, _JolamanType);
-
+        setdata.setExceptSellOwnedJolamanType(msg.sender, _JolamanType);
         popOnSaleToken(_JolamanType);
     }
 

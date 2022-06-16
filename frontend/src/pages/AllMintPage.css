@@ -1,5 +1,47 @@
 .AllMintPageContainer {
     width: 100%;
     display: flex;
-    
+    margin-top: 20px;
 }
+.collectionTitleContainer {
+    padding-top: 150px;
+    height: 4.167vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform:rotate(-3deg);
+    top: -2.083vw;
+    margin-bottom: 0.694vw;
+}
+
+.collectionTitleContainer h2{
+    font-size: 2.778vw;
+    color: whitesmoke;
+    background-color: #272727;
+    padding: 0.781vw;
+    padding-left: 1.042vw;
+    padding-right: 1.042vw;
+    border: 0.052vw solid #272727;
+    border-radius: 0.521vw;
+}
+
+
+div.style-five {
+    height: 80px;
+    background: url(../images/zolhr.png) no-repeat scroll left;
+    background-size: 80px 75px;
+    margin-left: 60px;
+    }
+
+hr.style-five {
+    border-radius: 20px;
+    width: 80%;
+    height: 5px;
+    margin-left: 130px;
+    margin-top: -20px;
+    border: 0;
+    /* border-bottom: 3px dashed #272727; */
+    background: #272727;
+    /* background: rgb(222,127,127);
+    background: linear-gradient(90deg, rgba(222,127,127,1) 0%, rgba(240,26,26,1) 100%); */
+    }

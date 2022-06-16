@@ -1158,19 +1158,27 @@
 			]
 		},
 		"contracts/RandomJolaman.sol": {
+<<<<<<< HEAD
 			"keccak256": "0xa08e98d07e612902bbc9e63a234891028f226d72b1efd495084d4e90eaac00bc",
 			"license": "MIT",
 			"urls": [
 				"bzz-raw://89339267ba75fde2b16036d8d84223ecda86ee12b2dfb77ebc56b7e4f19474a2",
 				"dweb:/ipfs/QmUXmBqAfPBTHNhcStv2oF39jbhzR75rrMxpGDydCfoTJo"
+=======
+			"keccak256": "0x8fa767b82841656b651cf7c3201f5941e2e7152547bf0e0d465bc7b93fdd384f",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://5f8a0b69fe9ee9b8cd70429991ba216c1749a09d3cfaec7614133d55b09d6116",
+				"dweb:/ipfs/QmbVjHB84kK9aFhFcLXgJmsDcPNdqwUY5VdBGk4iWTS7N7"
+>>>>>>> origin/main
 			]
 		},
 		"contracts/SetData.sol": {
-			"keccak256": "0x7224469c0017e85f14f32c07b4b5b6c68f3dee0e15bcfa881cd4fb712a8a2003",
+			"keccak256": "0x186bdf88834f84ea21d16f3b2c60d2adcefa358ef26002ef6b06b72a53f93fd6",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://4ceb5f3e16cfd433475c58b177a36b995f6f22f593f10eb62fbf65633a1ef5de",
-				"dweb:/ipfs/QmePyfc8V71xGgFysgn7GqYzVgM9AcPqwV3eyPzbz95MZd"
+				"bzz-raw://3593c825bb5a854f1307fddcdb57c8fa6a91669b6759d37119bc7b162fbb6e9c",
+				"dweb:/ipfs/QmQ8qNR5x3P8gCTqezSmjuY6h29FF7NyRVFhwrqWdbDvZR"
 			]
 		}
 	},

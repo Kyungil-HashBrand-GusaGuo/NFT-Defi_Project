@@ -1,8 +1,17 @@
 const Caver = require("caver-js");
 const Web3 = require("web3");
 
-const web3 = new Web3(new Web3.providers.HttpProvider('https://ropsten.infura.io/v3/9aa3d95b3bc440fa88ea12eaa4456161')); // Ethereum Ropsten Testnet RPC
+const web3 = new Web3(new Web3.providers.HttpProvider('https://ropsten.infura.io/v3/9aa3d95b3bc440fa88ea12eaa4456161')); 
+// Ethereum Ropsten Testnet RPC
 const SALE_CONTRACT_ADDRESS = "0xFfa9c6B7FbeB54C5e30B8287e31BB5Ba22f23326";
+
+/*baobab*/
+// const config = {
+//   rpcURL: "https://api.baobab.klaytn.net:8651",
+// };
+// const caver = new Caver(config.rpcURL);
+// const SALE_CONTRACT_ADDRESS = 
+// "0x1784E6AAA09b04C0E1d535e214E0f4F3C04D9f3C";
 
 const SALE_CONTRACT_ABI = [
 	{
@@ -213,11 +222,15 @@ const SALE_CONTRACT_ABI = [
 		"stateMutability": "view",
 		"type": "function"
 	}
-];
+]
 
 const SaleContract = new web3.eth.Contract(SALE_CONTRACT_ABI, SALE_CONTRACT_ADDRESS);
+// const SaleContract = new caver.klay.Contract(
+//   SALE_CONTRACT_ABI,
+//   SALE_CONTRACT_ADDRESS
+// );
 
 module.exports = {
-    SaleContract,
-    SALE_CONTRACT_ADDRESS,
+  SaleContract,
+  SALE_CONTRACT_ADDRESS,
 };

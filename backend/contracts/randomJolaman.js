@@ -949,6 +949,11 @@ const MINT_CONTRACT_ABI =  [
 const RandomJolamanContract = new web3.eth.Contract(MINT_CONTRACT_ABI, MINT_CONTRACT_ADDRESS);
 
 
+// const RandomJolamanContract = new caver.klay.Contract(
+//   MINT_CONTRACT_ABI,
+//   MINT_CONTRACT_ADDRESS
+// );
+
 module.exports = {
   MINT_CONTRACT_ADDRESS,
   RandomJolamanContract,

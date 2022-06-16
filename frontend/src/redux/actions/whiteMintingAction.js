@@ -16,7 +16,8 @@ function whiteMintAction(account) {
       console.log("화이트 if문 전",response)
 
       if(response.status) {
-        const response = await setDataContract.methods.getTotalOwnedTokens(account).call()
+        const contract2 = await setDataContract();
+        const response = await contract2.getTotalOwnedTokens(account);
         let metaDataURI = response[response.length-1]; 
         const getMetaData = async() => {
           const response = await axios.get(`https://gateway.pinata.cloud/ipfs/QmaavyzfX6XzVNJx4zKCQVNDJWwQJx9xUC6gmDfddxvQ6p/${metaDataURI}.json`);

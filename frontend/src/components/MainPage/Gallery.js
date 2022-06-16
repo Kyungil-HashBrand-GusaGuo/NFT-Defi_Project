@@ -10,7 +10,7 @@ const Gallery = () => {
 
     const array = [white1, white2, white3, white4, white5, white6, white7, white8, white9, white10
                 , white11, white12, white13, white14, white15, white16, white17, white18, white19, white20];
-    console.log("white",array)
+    //console.log("white",array)
 
     const settings = {
         dots: false,
@@ -29,9 +29,9 @@ const Gallery = () => {
 
   return (
       <div className="sliderMainContainer">
-        <div className="sliderTitle">
+        {/* <div className="sliderTitle">
             <span>ZOLAMANS NFT</span>
-        </div>
+        </div> */}
         <div>
             <Slider {...settings}>
             {array.map((item, index)=> {

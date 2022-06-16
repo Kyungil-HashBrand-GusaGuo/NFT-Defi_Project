@@ -3,15 +3,33 @@ const router = express.Router();
 const rController = require("./randomJolaman.controller");
 const sController = require("./setData.controller");
 
+//TODO
+// const randomController = require("./randomZolaman.controller");
+// const setController = require("./setData.controller");
+// const saleController = require("./saleZolaman.controller");
+// const stakeController = require("./stakeSystem.controler");
+
 // randomZolaman controller
-router.get("/normalAll", rController.MAX_NORMAL_TOKEN_COUNT);
-router.get("/specialAll", rController.MAX_SPECIAL_TOKEN_COUNT);
-router.get("/normalCurrent", rController.CURRENT_NORMAL_TOKEN_COUNT);
-router.get("/specialCurrent", rController.CURRENT_SPECIAL_TOKEN_COUNT);
-router.post("/isWhiteList", rController.isWhiteList);
+router.get("/normalAll", randomController.MAX_NORMAL_TOKEN_COUNT);
+router.get("/specialAll", randomController.MAX_SPECIAL_TOKEN_COUNT);
+router.get("/normalCurrent", randomController.CURRENT_NORMAL_TOKEN_COUNT);
+router.get("/specialCurrent", randomController.CURRENT_SPECIAL_TOKEN_COUNT);
+router.post("/isWhiteList", randomController.isWhiteList);
 
 // setData controller
-router.get("/totalJolamanData", sController.totalJolamanData);
-router.post("/ownedTokenId", sController.ownedTokenId);
+router.get("/totalJolamanData", setController.totalJolamanData);
+router.post("/ownedTokenId", setController.ownedTokenId);
+router.post(
+  "/getExceptSellOwnedJolamanType",
+  setController.getExceptSellOwnedJolamanType
+);
+router.get("/getOwner", setController.getOwner);
 
+// saleZolaman controller
+router.get("/getOnSaleJolaman", saleController.getOnSaleJolaman);
+
+// stakeSystem controller
+router.post("/stakedJolaman", stakeController.getOwnedStakedJolamanType);
+router.post("/updateReward", stakeController.updateReward);
+router.post("/stakers", stakeController.stakers);
 module.exports = router;

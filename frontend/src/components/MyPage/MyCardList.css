@@ -3,7 +3,7 @@
     width: 100%;
     display: flex;
     /* align-items: center; */
-    margin-top: 30px;
+    /* margin-top: 30px; */
     justify-content: center;
     flex-direction: row ;
     flex-wrap: wrap; 
@@ -22,7 +22,7 @@
 }
 
 .cardListContainer:hover {
-    
+    cursor: pointer;
 	border: 3px solid rgba(44, 14, 2, 0.35)
 }
 

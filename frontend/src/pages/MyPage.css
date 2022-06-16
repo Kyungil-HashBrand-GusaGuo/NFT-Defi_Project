@@ -1,7 +1,103 @@
 .myPageContainer {
-    /* height: 1500px; */
-    width: 100%;
+    padding-top: 50px;
     display: flex;
-    
+    /* height: 1000px; */
+	margin-bottom: 30px;
 }
 
+.myPageTitleContainer {
+    /* padding-top: 150px; */
+    height: 4.167vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform:rotate(-3deg);
+    top: -2.083vw;
+    margin-bottom: 10px;
+}
+
+.myPageTitleContainer h2{
+    font-size: 2.778vw;
+    color: whitesmoke;
+    background-color: #272727;
+    padding: 0.781vw;
+    padding-left: 1.042vw;
+    padding-right: 1.042vw;
+    border: 0.052vw solid #272727;
+    border-radius: 0.521vw;
+}
+
+
+div.style-five {
+    height: 80px;
+    background: url(../images/zolhr.png) no-repeat scroll left;
+    background-size: 80px 75px;
+    margin-left: 60px;
+    }
+    hr.style-five
+    {
+    border-radius: 20px;
+    width: 80%;
+    height: 5px;
+    margin-left: 130px;
+    margin-top: -20px;
+    border: 0;
+    /* border-bottom: 3px dashed #272727; */
+    background: #272727;
+    /* background: rgb(222,127,127);
+    background: linear-gradient(90deg, rgba(222,127,127,1) 0%, rgba(240,26,26,1) 100%); */
+    }
+
+
+.testMarketBox {
+  height: 200px;
+}
+
+
+
+/* Dropdown style */
+@keyframes slide-fade-in-dropdown-animation {
+    0% {
+      transform: translateY(-100%);
+    }
+  
+    100% {
+      transform: translateY(0);
+    }
+  }
+  
+  .slide-fade-in-dropdown {
+    overflow: hidden;
+  }
+  
+  .slide-fade-in-dropdown > ul {
+    animation: slide-fade-in-dropdown-animation .4s ease;
+  }
+  
+  @keyframes slide-fade-out-dropdown-animation {
+    0% {
+      transform: translateY(0);
+    }
+  
+    100% {
+      transform: translateY(-100%);
+    }
+  }
+  
+  .slide-fade-out-dropdown {
+    overflow: hidden;
+  }
+  
+  .slide-fade-out-dropdown > ul {
+    animation: slide-fade-out-dropdown-animation 0.4s ease;
+    animation-fill-mode: forwards;
+  }
+  
+  .components-dropdown > ul {
+    position: relative;
+    top: 5px;
+    margin-top: 0;
+    margin-bottom: 5px;
+    padding-left: 0;
+    list-style: none;
+  }

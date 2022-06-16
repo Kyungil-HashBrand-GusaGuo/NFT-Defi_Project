@@ -107,6 +107,7 @@ contract RandomJolaman is ERC721Enumerable, Ownable, AccessControl{
         setdata.setTokenOwner(tokenId, to);
         setdata.setTotalOwnedTokens(to, randomTokenData.jolamanTokenType);
         setdata.setTotalJolamanData(randomTokenData.jolamanTokenType);
+        setdata.setExceptSellOwnedJolamanType(to, randomTokenData.jolamanTokenType);
 
         setdata.setJolamanTokenTypeOfOwner(randomTokenData.jolamanTokenType, to);
         setdata.setTypeToId(randomTokenData.jolamanTokenType, tokenId);
@@ -137,6 +138,8 @@ contract RandomJolaman is ERC721Enumerable, Ownable, AccessControl{
         setdata.setTokenOwner(tokenId, to);
         setdata.setTotalOwnedTokens(to, randomTokenData.jolamanTokenType);
         setdata.setTotalJolamanData(randomTokenData.jolamanTokenType);
+        setdata.setExceptSellOwnedJolamanType(to, randomTokenData.jolamanTokenType);
+
 
         setdata.setJolamanTokenTypeOfOwner(randomTokenData.jolamanTokenType, to);
         setdata.setTypeToId(randomTokenData.jolamanTokenType, tokenId);

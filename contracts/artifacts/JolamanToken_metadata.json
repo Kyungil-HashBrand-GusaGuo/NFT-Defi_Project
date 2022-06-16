@@ -137,12 +137,38 @@
 			},
 			{
 				"inputs": [],
+				"name": "BURNER_ROLE",
+				"outputs": [
+					{
+						"internalType": "bytes32",
+						"name": "",
+						"type": "bytes32"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
 				"name": "DEFAULT_ADMIN_ROLE",
 				"outputs": [
 					{
 						"internalType": "bytes32",
 						"name": "",
 						"type": "bytes32"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "ERC20Token",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
 					}
 				],
 				"stateMutability": "view",
@@ -230,6 +256,24 @@
 			},
 			{
 				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"name": "burn",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "to",
+						"type": "address"
+					},
 					{
 						"internalType": "uint256",
 						"name": "amount",
@@ -713,11 +757,11 @@
 			]
 		},
 		"contracts/GST_Token.sol": {
-			"keccak256": "0xcc4c80363f543cec43571130a26aaa19bab25c8562c3cd5ed7c81121697da877",
+			"keccak256": "0xc68983c5eebb2a69f7b3bc918d09eb3a0f194c64136326a6c5f7bbd5570a0696",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://68a1ec81b197173de8b26f51f5b755f9d475a40ee7eb5359cf0c99e7a64ca181",
-				"dweb:/ipfs/QmNvJ7zpqNEksSPC9oayXgR5nNB3szpZQ6Z6LCRQufWgeX"
+				"bzz-raw://db79c8adfbf07d2e6b5847c90a3a081aadfab9450e35568b15e65ef2150d8ccc",
+				"dweb:/ipfs/QmfV5G3xcwaSKNQivxPyaTn1D7BN7NX4o3HV3kD5i45rAL"
 			]
 		}
 	},

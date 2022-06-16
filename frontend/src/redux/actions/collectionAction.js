@@ -9,7 +9,7 @@ function collectionAct() {
           
           let array = []
           let allMintingData = response.data
-      
+          // 액션
           for(let i=0; i < allMintingData.length; i++){
               
               const mintJSON = await axios.get(`https://gateway.pinata.cloud/ipfs/QmaavyzfX6XzVNJx4zKCQVNDJWwQJx9xUC6gmDfddxvQ6p/${allMintingData[i]}.json`)
@@ -18,7 +18,7 @@ function collectionAct() {
               array.push(mintJSON)
           }
             console.log(array)
-            dispatch({type: "GET_ALL_MINTDATA", payload : { allmintdata : array}})
+            dispatch({type: "GET_ALL_MINTDATA", payload : { allmintdata : array }})
 
           } catch (error){
             console.error(error);

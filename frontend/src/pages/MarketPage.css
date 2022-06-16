@@ -1,0 +1,256 @@
+.marketTitleContainer {
+    padding-top: 150px;
+    height: 4.167vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform:rotate(-3deg);
+    top: -2.083vw;
+    margin-bottom: 10px;
+}
+
+.marketTitleContainer h2{
+    font-size: 2.778vw;
+    color: whitesmoke;
+    background-color: #272727;
+    padding: 0.781vw;
+    padding-left: 1.042vw;
+    padding-right: 1.042vw;
+    border: 0.052vw solid #272727;
+    border-radius: 0.521vw;
+}
+
+
+div.style-five {
+    height: 80px;
+    background: url(../images/zolhr.png) no-repeat scroll left;
+    background-size: 80px 75px;
+    margin-left: 60px;
+    }
+    
+hr.style-five {
+    border-radius: 20px;
+    width: 80%;
+    height: 5px;
+    margin-left: 130px;
+    margin-top: -20px;
+    border: 0;
+    /* border-bottom: 3px dashed #272727; */
+    background: #272727;
+    /* background: rgb(222,127,127);
+    background: linear-gradient(90deg, rgba(222,127,127,1) 0%, rgba(240,26,26,1) 100%); */
+    }
+
+    .mainMarketContainer {
+        display: flex;
+        height: 100%;
+        width: 100%;
+        /* background-color: blue; */
+        margin-top: 50px;
+        margin-bottom: 50px;
+    }
+
+    .leftMarketContainer {
+        flex: 30%;
+        /* background-color: blueviolet; */
+        margin: 0 auto 10px;
+        padding: 50px 50px 50px 50px
+    }
+
+    .leftMarketSection {
+        width: 100%;
+        height: 100%;
+        /* background-color: lime; */
+    }
+
+    .leftMarketTxtContainer {
+        padding: 10px 10px 10px 10px;
+    }
+
+    .leftMarketNftCardImg {
+        border: 0.139vw solid black;
+        border-radius: 15.005px;
+        width: 384px;
+        height: 384px;
+        background-size: cover;
+    }
+    .leftMarketBtn {
+        display: flex;
+        justify-content: center;
+        margin-top: 50px;
+        margin-bottom: 50px;
+    }
+
+    .leftMarketBtn button {
+        width: 200px;
+    }
+
+    .lefthr {
+        height: 5px;
+        background-color: black;
+        border-radius: 20px;
+
+    }
+
+    .leftMarketTestSecion {
+        display: flex;
+    }
+
+    .leftMarketcolhr {
+        border-left: 3px solid black;
+        height: 50px;
+    }
+    .rightMarketContainer {
+        flex: 70%;
+        /* background-color: aqua; */
+        padding: 50px 30px 30px 50px;
+        /* height: 100%; */
+        
+    }
+
+    .rightMarketSection {
+        width: 100%;
+        height: 100%;
+        /* background-color: firebrick; */
+        /* margin-bottom: 100px; */
+
+    }
+
+    .rightMarketTitle {
+        margin-bottom: 30px;
+    }
+
+    .rightMarketTitle p {
+        font-size: 40px;
+    }
+
+    .rightMarketCardContainer {
+        height: 100%;
+        /* background-color: chartreuse; */
+        width: 100%;
+        display: flex;
+    /* align-items: center; */
+    /* margin-top: 30px; */
+        justify-content: center;
+        flex-direction: row ;
+        flex-wrap: wrap; 
+    }
+
+    .rightMarketMainCardList:hover {
+        /* margin-top: 10px; */
+        cursor: pointer;
+
+    }
+
+   
+
+    .rightMarketCardList {
+        /* display: flex; */
+        width: 250px;
+        height: 360px;
+        /* border: 0.139vw solid black; */
+        border-radius: 15.005px;
+        box-shadow:gray 0px 2.002px 20.002px;
+        margin-bottom: 15px;
+        background-color: white;
+        margin-right: 15px;
+        margin-left: 15px;
+    }
+    
+    .rightMarketCardList:hover {
+        
+        border: 0.208vw solid rgba(44, 14, 2, 0.35)
+    }
+    
+    .rightMarketNftCard {
+        width: 250px;
+        height: 230px;
+        background-size: cover;
+        border-radius: 15.005px;
+    }
+
+    .rightMarketCardTxtContainer {
+        width: 230px;
+        height: 110px;
+        /* border-radius: 15.005px; */
+        /* background-color: aqua; */
+        padding: 10px 10px 10px 10px;
+    }
+
+    .rightMarketCardTxtSection {
+        /* background-color: blueviolet; */
+    }
+    
+    .rightMarketCardDnaTxt1 {
+        font-size: 15px;
+    }
+
+    .rightMarketCardDnaTxt2 {
+        margin-right: 20px;
+        font-size: 13px;
+    }
+
+    .rightMarketCardNum {
+        /* background-color: blue; */
+        font-size: 20px;
+    }
+
+    .rightMarketOwner{
+        display: flex;
+    }
+
+    .rightMarketOwner1 {
+        margin-right: 10px;
+    }
+
+
+
+
+
+
+    /* Dropdown style */
+@keyframes slide-fade-in-dropdown-animation {
+    0% {
+      transform: translateY(-100%);
+    }
+  
+    100% {
+      transform: translateY(0);
+    }
+  }
+  
+  .slide-fade-in-dropdown {
+    overflow: hidden;
+  }
+  
+  .slide-fade-in-dropdown > ul {
+    animation: slide-fade-in-dropdown-animation .4s ease;
+  }
+  
+  @keyframes slide-fade-out-dropdown-animation {
+    0% {
+      transform: translateY(0);
+    }
+  
+    100% {
+      transform: translateY(-100%);
+    }
+  }
+  
+  .slide-fade-out-dropdown {
+    overflow: hidden;
+  }
+  
+  .slide-fade-out-dropdown > ul {
+    animation: slide-fade-out-dropdown-animation 0.4s ease;
+    animation-fill-mode: forwards;
+  }
+  
+  .components-dropdown > ul {
+    position: relative;
+    top: 5px;
+    margin-top: 0;
+    margin-bottom: 5px;
+    padding-left: 0;
+    list-style: none;
+  }

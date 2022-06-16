@@ -6,6 +6,11 @@
 	"output": {
 		"abi": [
 			{
+				"inputs": [],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
 				"inputs": [
 					{
 						"internalType": "address",
@@ -21,6 +26,100 @@
 				"name": "SellOwnedToken",
 				"outputs": [],
 				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "SellingJol",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "StakedJolamanType",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "_owner",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "exceptSellOwnedJolamanType",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_tokenOwner",
+						"type": "address"
+					}
+				],
+				"name": "getExceptSellOwnedJolamanType",
+				"outputs": [
+					{
+						"internalType": "uint256[]",
+						"name": "",
+						"type": "uint256[]"
+					}
+				],
+				"stateMutability": "view",
 				"type": "function"
 			},
 			{
@@ -50,6 +149,57 @@
 						"internalType": "uint256",
 						"name": "",
 						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getOwner",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_JolamanType",
+						"type": "uint256"
+					}
+				],
+				"name": "getSellingJolTypeToBool",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_JolamanType",
+						"type": "uint256"
+					}
+				],
+				"name": "getStakedJolamanType",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
 					}
 				],
 				"stateMutability": "view",
@@ -147,6 +297,42 @@
 			{
 				"inputs": [
 					{
+						"internalType": "address",
+						"name": "_tokenOwner",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_JolType",
+						"type": "uint256"
+					}
+				],
+				"name": "setDeleteExceptSellOwnedJolamanType",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_tokenOwner",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_JolType",
+						"type": "uint256"
+					}
+				],
+				"name": "setExceptSellOwnedJolamanType",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
 						"internalType": "uint256",
 						"name": "_JolType",
 						"type": "uint256"
@@ -158,6 +344,42 @@
 					}
 				],
 				"name": "setJolamanTokenTypeOfOwner",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_JolamanType",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bool",
+						"name": "boolean",
+						"type": "bool"
+					}
+				],
+				"name": "setSellingJolTypeToBool",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_JolamanType",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bool",
+						"name": "boolean",
+						"type": "bool"
+					}
+				],
+				"name": "setStakedJolamanType",
 				"outputs": [],
 				"stateMutability": "nonpayable",
 				"type": "function"
@@ -339,11 +561,11 @@
 	},
 	"sources": {
 		"contracts/SetData.sol": {
-			"keccak256": "0x7224469c0017e85f14f32c07b4b5b6c68f3dee0e15bcfa881cd4fb712a8a2003",
+			"keccak256": "0x186bdf88834f84ea21d16f3b2c60d2adcefa358ef26002ef6b06b72a53f93fd6",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://4ceb5f3e16cfd433475c58b177a36b995f6f22f593f10eb62fbf65633a1ef5de",
-				"dweb:/ipfs/QmePyfc8V71xGgFysgn7GqYzVgM9AcPqwV3eyPzbz95MZd"
+				"bzz-raw://3593c825bb5a854f1307fddcdb57c8fa6a91669b6759d37119bc7b162fbb6e9c",
+				"dweb:/ipfs/QmQ8qNR5x3P8gCTqezSmjuY6h29FF7NyRVFhwrqWdbDvZR"
 			]
 		}
 	},

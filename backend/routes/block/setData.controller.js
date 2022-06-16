@@ -18,7 +18,24 @@ const totalJolamanData = async (req, res) => {
   res.json(result);
 };
 
+// 판매등록 되어있지 않고 스테이킹 되어있지 않는 계좌별 졸라맨타입 배열
+const getExceptSellOwnedJolamanType = async (req, res) => {
+  console.log(req.body.account);
+  const result = await setDataContract.methods
+    .getExceptSellOwnedJolamanType(req.body.account)
+    .call();
+  res.json(result);
+};
+
+// contract Owner Address 조회 함수
+const getOwner = async (req, res) => {
+  const result = await setDataContract.methods.getOwner().call();
+  res.json(result);
+};
+
 module.exports = {
   ownedTokenId,
   totalJolamanData,
+  getExceptSellOwnedJolamanType,
+  getOwner,
 };
