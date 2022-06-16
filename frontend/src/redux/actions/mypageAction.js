@@ -1,6 +1,4 @@
 import axios from "axios"
-import { setDataContract } from "../../caverConfig";
-
 
 function mypageAct(account) {
 
@@ -9,7 +7,7 @@ function mypageAct(account) {
             console.log("액션쪽",account)
             if(account !== "")
             {
-              const response = await axios.post("http://34.64.61.199:9495/block/ownedTokenId", { account : account });
+              const response = await axios.post("http://localhost:9495/block/ownedTokenId", { account : account });
               //const response = await setDataContract.methods.getTotalOwnedTokens(account).call()
               let array = []
               let editionArr = []
