@@ -10,7 +10,7 @@ contract JolamanToken is ERC20, ERC20Burnable, AccessControl {
     bytes32 public constant BURNER_ROLE = keccak256("BURNER_ROLE");
     uint public constant ERC20Token = 10 ** 18;
 
-    constructor() ERC20("Jolman Token", "JLT") {
+    constructor() ERC20("Zolaman Token", "ZLT") {
         _grantRole(DEFAULT_ADMIN_ROLE, msg.sender);
         _grantRole(MINTER_ROLE, msg.sender);
         _grantRole(BURNER_ROLE, msg.sender);

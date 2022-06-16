@@ -1,6 +1,6 @@
 import Caver from "caver-js";
 export const MINT_CONTRACT_ADDRESS = 
-"0x79D2125b89dD6c6aFCE666e21b89B9De9037cC58";
+"0x53CD45985697E87245cDDbbD41871D3F783EC1AB";
 
 export const MINT_CONTRACT_ABI = [
 	{
@@ -944,7 +944,7 @@ export const MINT_CONTRACT_ABI = [
 export const caver = new Caver(window.caver);
 
 export const DATA_CONTRACT_ADDRESS = 
-"0x120c09837541538EabB72ec2B0e89c9877254e6F";
+"0x832adAe74c332339Ea8D44eeEd767AC136C38A63";
 
 export const DATA_CONTRACT_ABI = [
 	{
@@ -1477,7 +1477,7 @@ export const DATA_CONTRACT_ABI = [
 ]
 
 export const SALE_CONTRACT_ADDRESS = 
-"0x59F7fC7F31a498B55A842C7F84d3F1A30842D3DB";
+"0xE1Cda5371F7f179059b57e806ae90f748aff6de3";
 
 export const SALE_CONTRACT_ABI = [
 	{
@@ -1691,7 +1691,7 @@ export const SALE_CONTRACT_ABI = [
 ]
 
 export const STAKING_CONTRACT_ADDRESS = 
-"0xa82d6BdB0d5eA1271A2ec4e71F1D868FEE8E190c";
+"0xCE6D09a45E71C3989EB5AD5ffe72c79A83aa38F6";
 
 export const STAKING_CONTRACT_ABI = [
 	{
