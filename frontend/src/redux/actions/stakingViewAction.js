@@ -21,7 +21,7 @@ function stakingViewAct(account) {
                         myNftList : myNftList.data, 
                         stakingNft : stakingNft.data, 
                         stakingReward : stakingReward.data, 
-                        getStakingReward : getStakingReward.data.genres
+                        getStakingReward : getStakingReward.data.rewardsReleased
                     }
                 })
             }
