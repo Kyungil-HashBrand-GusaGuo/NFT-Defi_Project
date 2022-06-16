@@ -49,8 +49,8 @@ const StakingPage = () => {
     <div className='stakingTitleContainer'>
               <h2>Staking</h2>
     </div>
-    <div class="style-five"></div>
-    <hr class="style-five"/> 
+    <div className="style-five"></div>
+    <hr className="style-five"/> 
     <div className='stakingPageContainer'>
         <div className='stakingZolToken'>
           <span>Your Mining Zola Token</span>
