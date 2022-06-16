@@ -1,28 +1,31 @@
 import React, { useEffect, useState } from 'react'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate, useParams } from 'react-router-dom'
 import klayIcon2 from '../images/klaytn.png';
 import './SellPage.css'
 import { SellModal, CancelSellModal } from '../components';
 import axios from 'axios';
 import { TbArrowBack } from "react-icons/tb";
-
+import { stakingViewAction } from '../redux/actions/stakingViewAction'
 
 
 const SellPage = () => {
 
+    const dispatch = useDispatch()
     const navigate = useNavigate()
     let {edition} = useParams()
     const { account } = useSelector(state => state.account)
     const { sellingAllNftData } = useSelector(state => state.transactionNFT)
+    const { stakingNftString } = useSelector(state => state.stakingView)
     const [sellModal, setSellModal] = useState(false)
     const [cancelSellModal, setCancelSellModal] = useState(false)
     const [checkSell, setCheckSell] = useState()
     const [showMint, setShowMint] = useState();
     const [price, setPrice] = useState();
     const [sellPrice, setSellPrice] = useState();
-    //console.log("NFT데이터",sellingAllNftData)
-    
+    console.log("NFT데이터 스테이킹?",stakingNftString)
+    console.log("NFT데이터 스테이킹?",stakingNftString.includes(edition))
+    console.log(typeof(edition))
 
     const changeSellModalState = () => {
       setSellModal(true)
@@ -37,7 +40,7 @@ const SellPage = () => {
 
 
     const callSellNft = async() => {
-      const response = await axios.get("http://34.64.61.199:9495/block/getOnSaleJolaman");
+      const response = await axios.get("http://localhost:9495/block/getOnSaleJolaman");
       const mintJSON = await axios.get(`https://gateway.pinata.cloud/ipfs/QmaavyzfX6XzVNJx4zKCQVNDJWwQJx9xUC6gmDfddxvQ6p/${edition}.json`)
       let state = response.data[0].includes(edition)
       // console.log("민트데이터",mintJSON)
@@ -62,6 +65,7 @@ const SellPage = () => {
     }
 
     useEffect(()=>{
+      dispatch(stakingViewAction.stakingViewAct(account))
       callSellNft()
     },[])
 
@@ -129,7 +133,21 @@ const SellPage = () => {
                           <button onClick={changeCancelSellModalState} className="learn-more">Cancel Sell</button>
                         </div>
                       </>
-                     : <>
+                     :             
+                      (
+                        stakingNftString.includes(edition) ?
+                        <>
+                          <div className='leftInput' >
+                            <div className='leftInputTitle'>
+                              <p>Staking</p>
+                            </div>
+                          </div>
+                          <div className='leftbtn'>
+                            <button className="learn-more">Staking</button>
+                          </div>
+                      </>
+                      : 
+                      <>
                         <div className='leftInput' >
                           <div className='leftInputTitle'>
                             <p>Price</p>
@@ -142,7 +160,8 @@ const SellPage = () => {
                         <div className='leftbtn'>
                           <button onClick={changeSellModalState} className="learn-more">Sell</button>
                         </div>
-                     </>
+                      </>
+                      )
                     }
                 </div>
               </div>
