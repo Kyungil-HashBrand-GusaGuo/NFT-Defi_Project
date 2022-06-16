@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import './StakingPage.css'
 import { stakingViewAction } from '../redux/actions/stakingViewAction'
@@ -10,8 +10,8 @@ const StakingPage = () => {
 
     const dispatch = useDispatch()
     const {account} = useSelector(state => state.account)
-    const {myNftList, stakingNft, stakingReward , getStakingReward} = useSelector(state => state.stakingView)
-    
+    const {myNftList, stakingNftString, stakingReward , getStakingReward} = useSelector(state => state.stakingView)
+
     const staking = (edition) => {
       dispatch(stakingAction.stakingAct(account, edition))
     }
@@ -24,6 +24,10 @@ const StakingPage = () => {
       dispatch(stakingRewardAction.stakingRewardAct(account))
     }
 
+    const changeState = () =>{
+      dispatch(stakingViewAction.stakingViewAct(account))
+    }
+
     console.log(account)
     useEffect( () => {
         dispatch(stakingViewAction.stakingViewAct(account))
@@ -33,9 +37,11 @@ const StakingPage = () => {
     <div className='stakingPageContainer'>
         <h3>StakingPage</h3>
         <h3>나의 NFT : {myNftList}</h3>
-        <h3>스테이킹 NFT : {stakingNft}</h3>
+        <h3>스테이킹 NFT : {stakingNftString}</h3>
         <h3>받을스테이킹 : {stakingReward} token</h3>
         <h3>받은스테이킹 : {getStakingReward} token</h3>
+        <button onClick={changeState}>최신화버튼</button>
+        <br></br>
         <br></br>
         <div>============ 나의 전체 NFT ===============</div>
         <div className='stakingBoxContainer'>
@@ -54,8 +60,8 @@ const StakingPage = () => {
         <div>============ 스테이킹 NFT ===============</div>
         <div className='stakingBoxContainer'>
           {
-            stakingNft !== '' ?
-            stakingNft.map((item, index)=> {
+            stakingNftString !== '' ?
+            stakingNftString.map((item, index)=> {
               return <div className='stakingBox' key={index}>
                   <div> # {item} </div>
                   <button onClick={()=>cancelStaking(item)}>{item} 스테이킹 취소 함수</button>

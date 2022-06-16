@@ -5,7 +5,7 @@ function collectionAct() {
     return async (dispatch) => {
         try {
 
-          const response = await axios.get("http://34.64.61.199:9495/block/totalJolamanData")
+          const response = await axios.get("http://localhost:9495/block/totalJolamanData")
           
           let array = []
           let allMintingData = response.data
