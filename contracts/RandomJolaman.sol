@@ -11,7 +11,7 @@ import "@openzeppelin/contracts/utils/math/SafeMath.sol";
 import "@openzeppelin/contracts/utils/Strings.sol";
 
 import "./SetData.sol";
-
+import "./GST_Token.sol";
 
 
 contract RandomJolaman is ERC721Enumerable, Ownable, AccessControl{
@@ -39,11 +39,13 @@ contract RandomJolaman is ERC721Enumerable, Ownable, AccessControl{
 
     string public metadataURI; // metadata url public? or private?
     SetData public setdata;
+    JolamanToken public jolTok;
     
-    constructor(string memory _metadataURI, address _setdata) ERC721("Jolaman", "JLT") {
+    constructor(string memory _metadataURI, address _setdata, address _jolamanToken) ERC721("Jolaman", "JLT") {
         _owner = msg.sender;
         metadataURI = _metadataURI;
         setdata = SetData(_setdata);
+        jolTok = JolamanToken()
         totalIncome = 0;
         _normalTokenIdCount = 0;
         _specialTokenIdCount = 10000;

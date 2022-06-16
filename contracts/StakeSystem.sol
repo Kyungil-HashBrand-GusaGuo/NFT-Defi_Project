@@ -20,7 +20,8 @@ contract StakingSystem is Ownable, ERC721Holder, JolamanToken {
     uint256 public stakedTotal;
     uint256 public stakingStartTime;
     uint256 constant stakingTime = 10 seconds;
-    uint256 constant token = 10e18;
+    uint256 constant token = 10 ** 16;
+    uint256 constant ERCToken = 10 ** 18;
     
     struct Staker {
         uint256[] JolamanType;
@@ -203,9 +204,9 @@ contract StakingSystem is Ownable, ERC721Holder, JolamanToken {
     }
 
     function TokenToKlay(uint amount) public {
-        payable(msg.sender).transfer(amount * 10 ** 18);
+        payable(msg.sender).transfer(amount * ERCToken);
          _grantRole(BURNER_ROLE, msg.sender);
-        burn(msg.sender, amount * 10 ** 18);
+        burn(msg.sender, amount * ERCToken);
         _revokeRole(BURNER_ROLE, msg.sender);
     }
 
