@@ -140,6 +140,16 @@ button {
     margin-bottom: 10px;
 }
 
+.stakingPageSpan1 {
+    border-right: 2px solid black;
+    padding: 10px;
+}
+
+.stakingPageSpan2 {
+    padding: 10px;
+}
+
+
 .notStakingContainer {
     width: 100%;
     height: 600px;
