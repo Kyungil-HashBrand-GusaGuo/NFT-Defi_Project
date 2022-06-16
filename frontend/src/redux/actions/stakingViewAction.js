@@ -12,16 +12,16 @@ function stakingViewAct(account) {
                 let [ myNftList, stakingNft, stakingReward, getStakingReward ] = await Promise.all([myNftListApi, stakingNftApi, stakingRewardApi, getStakingRewardApi ])
                 console.log("나의 NFT목록",myNftList.data)
                 console.log("스테이킹 NFT",stakingNft.data)
-                console.log("받을 스테이킹 리워드",stakingReward.data)
-                console.log("받은 스테이킹 리워드",getStakingReward.data.rewardsReleased)
+                console.log("받을 스테이킹 리워드",stakingReward.data / 10**18)
+                console.log("받은 스테이킹 리워드",getStakingReward.data.rewardsReleased / 10**18)
 
                 dispatch({
                     type : "GET_STAKING_VIEW_SUCCESS",
                     payload : { 
                         myNftList : myNftList.data, 
                         stakingNft : stakingNft.data, 
-                        stakingReward : stakingReward.data, 
-                        getStakingReward : getStakingReward.data.rewardsReleased
+                        stakingReward : stakingReward.data / 10**18, 
+                        getStakingReward : getStakingReward.data.rewardsReleased / 10**18
                     }
                 })
             }
