@@ -4,7 +4,7 @@ const Ethers = require("ethers")
 
 
 const web3 = new Web3(new Web3.providers.HttpProvider('https://ropsten.infura.io/v3/9aa3d95b3bc440fa88ea12eaa4456161')); // Ethereum Ropsten Testnet RPC
-const DATA_CONTRACT_ADDRESS = "0x503a4F105958cA81c561A669349A4d7e56C9237F";
+const DATA_CONTRACT_ADDRESS = "0x7318d8AEaa0530F2C46355568238345afDb29bC3";
 
 /*baobab */
 // const config = {

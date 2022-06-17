@@ -4,7 +4,7 @@ const tempProvider = new ethers.providers.Web3Provider(window.ethereum);
 const tempSigner = tempProvider.getSigner();
 
 export const MINT_CONTRACT_ADDRESS = 
-"0x164E4171cDfF62dD8efBF42AC0537DA265CD6b93";
+"0xee9F36b8fAdf866cC8AAe2b5b26672DA2aA6a3C4";
 
 export const MINT_CONTRACT_ABI = [
 	{
@@ -945,10 +945,9 @@ export const MINT_CONTRACT_ABI = [
 		"type": "function"
 	}
 ];
-// export const caver = new Caver(window.caver);
 
 export const DATA_CONTRACT_ADDRESS = 
-"0x503a4F105958cA81c561A669349A4d7e56C9237F";
+"0x7318d8AEaa0530F2C46355568238345afDb29bC3";
 
 export const DATA_CONTRACT_ABI = [
 	{
@@ -1481,7 +1480,7 @@ export const DATA_CONTRACT_ABI = [
 ];
 
 export const SALE_CONTRACT_ADDRESS = 
-"0x26F495f91B51432e382b0444741023c89d11B16D";
+"0xc9060b5E577A4ecb4443EaAD6148F3D1054007BE";
 
 export const SALE_CONTRACT_ABI = [
 	{
@@ -2653,4 +2652,3 @@ export const setDataContract = new ethers.Contract(DATA_CONTRACT_ADDRESS, DATA_C
 export const SaleContract = new ethers.Contract(SALE_CONTRACT_ADDRESS, SALE_CONTRACT_ABI, tempSigner);
 
 export const StakingContract = new ethers.Contract(STAKING_CONTRACT_ADDRESS, STAKING_CONTRACT_ABI, tempSigner);
-

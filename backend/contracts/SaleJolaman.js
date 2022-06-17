@@ -3,7 +3,7 @@ const Web3 = require("web3");
 
 const web3 = new Web3(new Web3.providers.HttpProvider('https://ropsten.infura.io/v3/9aa3d95b3bc440fa88ea12eaa4456161')); 
 // Ethereum Ropsten Testnet RPC
-const SALE_CONTRACT_ADDRESS = "0x26F495f91B51432e382b0444741023c89d11B16D";
+const SALE_CONTRACT_ADDRESS = "0xc9060b5E577A4ecb4443EaAD6148F3D1054007BE";
 
 /*baobab*/
 // const config = {
@@ -222,7 +222,7 @@ const SALE_CONTRACT_ABI = [
 		"stateMutability": "view",
 		"type": "function"
 	}
-]
+];
 
 const SaleContract = new web3.eth.Contract(SALE_CONTRACT_ABI, SALE_CONTRACT_ADDRESS);
 // const SaleContract = new caver.klay.Contract(
