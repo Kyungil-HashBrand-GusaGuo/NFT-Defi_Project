@@ -34,6 +34,8 @@ const MarketPage = () => {
     setShowId(id);
   }
 
+  const revmymintdata = [...sellingAllNftData].reverse() 
+
 
   useEffect(()=>{
     dispatch(marketAction.marketAct())
@@ -78,13 +80,12 @@ const MarketPage = () => {
                 <div className='leftMarketCardPrice'>
                   <span>Price : {showPrice}</span>
                 </div>
-                {/* <div className='leftMarketcolhr'></div> */}
-                {/* <div className='leftMarketCardNum'>No: 123124</div> */}
+                <div className='leftMarketcolhr'></div>
+                <div className='leftMarketCardNum'>No : {showId} </div>
               </div>
             </div>
             <div className='leftMarketBtn'>
               <button onClick={() => moveBuyPage(showId)} className="learn-more">Buy Now</button>
-              {/* <button className="learn-more">Buy Now</button> */}
             </div>
             <hr className='lefthr'/>
           </div>
@@ -114,7 +115,7 @@ const MarketPage = () => {
             <div className='rightMarketCardContainer'>                
                 {
                   mymintEditionData !== '' && sellingAllNftData !== '' ? 
-                  sellingAllNftData.map((item, index) => {
+                  revmymintdata.map((item, index) => {
                     return <div className='rightMarketMainCardList' key={index} onClick={()=> test(item.price, item.id) } >
                       {/* onClick={() => moveBuyPage(item.id)} */}
                       {

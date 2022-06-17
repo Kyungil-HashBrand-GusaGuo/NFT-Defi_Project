@@ -52,6 +52,17 @@
     margin-bottom: 90px;
 }
 
+.sellMintingComMessage {
+    margin-bottom: 50px;
+    margin-left: 50px;
+}
+
+.sellMintingCancelMessage {
+    margin-bottom: 50px;
+}
+
+
+
 .sellModalEndButton {
     width: 250px;
     height: 40px;

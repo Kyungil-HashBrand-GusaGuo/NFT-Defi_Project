@@ -2,3 +2,13 @@
     height: 100%;
     padding-top: 100px;
 }    
+
+.stakingBoxContainer {
+    display: flex;
+}
+
+.stakingBox {
+    width: 200px;
+    height: 200px;
+    border: 1px solid black;
+}

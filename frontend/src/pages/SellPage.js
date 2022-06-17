@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux'
-import { useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 import klayIcon2 from '../images/klaytn.png';
 import './SellPage.css'
 import { SellModal, CancelSellModal } from '../components';
@@ -11,6 +11,7 @@ import { TbArrowBack } from "react-icons/tb";
 
 const SellPage = () => {
 
+    const navigate = useNavigate()
     let {edition} = useParams()
     const { account } = useSelector(state => state.account)
     const { sellingAllNftData } = useSelector(state => state.transactionNFT)
@@ -28,6 +29,10 @@ const SellPage = () => {
     }
     const changeCancelSellModalState = () => {
       setCancelSellModal(true)
+    }
+
+    const previousPage = () => {
+      navigate(`/mypage`)
     }
 
 
@@ -72,8 +77,10 @@ const SellPage = () => {
         <div className='SellMainSection'>
           <div className='SellTitleContainer'>
               <h2>List item for sale</h2>
+              <div className='sellBackPage'><h1><TbArrowBack size={40} onClick={()=>previousPage()}/></h1>
+              </div>
           </div>
-          <div className='sellBackPage'><h1><TbArrowBack/></h1></div>
+          
           { showMint ? 
           <div className='sellTxtContainer'>
             <div className='leftSellContainer'>

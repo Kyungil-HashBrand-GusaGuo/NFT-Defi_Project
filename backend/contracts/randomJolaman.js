@@ -1,7 +1,13 @@
-const Caver = require("caver-js");
+// const Caver = require("caver-js");
 const { ethers } = require('ethers');
 const Web3 = require("web3");
 
+// const config = {
+//   rpcURL: "https://api.baobab.klaytn.net:8651",
+// };
+// const caver = new Caver(config.rpcURL);
+// const MINT_CONTRACT_ADDRESS = 
+// "0x79D2125b89dD6c6aFCE666e21b89B9De9037cC58";
 
 const web3 = new Web3(new Web3.providers.HttpProvider('https://ropsten.infura.io/v3/9aa3d95b3bc440fa88ea12eaa4456161')); // Ethereum Ropsten Testnet RPC
 const MINT_CONTRACT_ADDRESS = "0x164E4171cDfF62dD8efBF42AC0537DA265CD6b93";

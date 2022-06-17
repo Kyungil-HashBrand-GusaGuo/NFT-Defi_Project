@@ -1,6 +1,5 @@
 import axios from "axios"
 
-
 function mypageAct(account) {
 
     return async (dispatch) => {
