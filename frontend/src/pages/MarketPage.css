@@ -54,7 +54,8 @@ hr.style-five {
         flex: 30%;
         /* background-color: blueviolet; */
         margin: 0 auto 10px;
-        padding: 50px 50px 50px 50px
+        padding: 50px 50px 50px 50px;
+        /* position: fixed; */
     }
 
     .leftMarketSection {

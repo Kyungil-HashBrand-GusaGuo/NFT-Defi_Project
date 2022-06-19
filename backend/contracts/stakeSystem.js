@@ -7,7 +7,7 @@ const web3 = new Web3(new Web3.providers.HttpProvider('https://ropsten.infura.io
 
 const STAKING_CONTRACT_ADDRESS = 
 "0xd26C7Ef6054d022977a1f03FAA54D9eCAd1F3859";
-// baobab "0xa82d6BdB0d5eA1271A2ec4e71F1D868FEE8E190c";
+// baobab "0xCE6D09a45E71C3989EB5AD5ffe72c79A83aa38F6";
 
 const STAKING_CONTRACT_ABI = [
 	{

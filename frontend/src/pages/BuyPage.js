@@ -5,8 +5,8 @@ import { useNavigate } from 'react-router-dom';
 import klayIcon2 from '../images/klaytn.png';
 //import './BuyPage.css'
 import { BuyModal } from '../components';
-import axios from 'axios';
 import { TbArrowBack } from "react-icons/tb";
+import pinataApi from '../redux/pinataApi';
 
 
 const BuyPage = () => {
@@ -21,7 +21,7 @@ const BuyPage = () => {
 
     
     const callBuyNft = async() => {
-        const mintJSON = await axios.get(`https://gateway.pinata.cloud/ipfs/QmaavyzfX6XzVNJx4zKCQVNDJWwQJx9xUC6gmDfddxvQ6p/${edition}.json`)
+        const mintJSON = await pinataApi.get(`/${edition}.json`)
         setShowMint(mintJSON.data);
 
         for(let i=0; i < sellingAllNftData.length; i++){

@@ -1,10 +1,11 @@
-import axios from "axios"
+import api from '../api'
 
 function marketAct(account) {
 
     return async (dispatch) => {
         try {
-            const response = await axios.get("http://localhost:9495/block/getOnSaleJolaman");
+            // const response = await axios.get("http://localhost:9495/block/getOnSaleJolaman");
+            const response = await api.get("/getOnSaleJolaman");
             // console.log("판매중NFT", response.data)
             // console.log("NFT번호", response.data[0])
             // console.log("NFT가격", response.data[1])

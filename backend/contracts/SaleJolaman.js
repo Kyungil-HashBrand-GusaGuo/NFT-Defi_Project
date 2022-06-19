@@ -1,4 +1,3 @@
-const Caver = require("caver-js");
 const Web3 = require("web3");
 
 const web3 = new Web3(new Web3.providers.HttpProvider('https://ropsten.infura.io/v3/9aa3d95b3bc440fa88ea12eaa4456161')); 
@@ -11,7 +10,7 @@ const SALE_CONTRACT_ADDRESS = "0xc9060b5E577A4ecb4443EaAD6148F3D1054007BE";
 // };
 // const caver = new Caver(config.rpcURL);
 // const SALE_CONTRACT_ADDRESS = 
-// "0x59F7fC7F31a498B55A842C7F84d3F1A30842D3DB";
+// "0xE1Cda5371F7f179059b57e806ae90f748aff6de3";
 
 const SALE_CONTRACT_ABI = [
 	{
