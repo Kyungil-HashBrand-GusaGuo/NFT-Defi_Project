@@ -11,7 +11,7 @@ import "@openzeppelin/contracts/utils/math/SafeMath.sol";
 import "@openzeppelin/contracts/utils/Strings.sol";
 
 import "./SetData.sol";
-
+import "./GST_Token.sol";
 
 
 contract RandomJolaman is ERC721Enumerable, Ownable, AccessControl{
@@ -39,6 +39,7 @@ contract RandomJolaman is ERC721Enumerable, Ownable, AccessControl{
 
     string public metadataURI; // metadata url public? or private?
     SetData public setdata;
+
     
     constructor(string memory _metadataURI, address _setdata) ERC721("Jolaman", "JLT") {
         _owner = msg.sender;

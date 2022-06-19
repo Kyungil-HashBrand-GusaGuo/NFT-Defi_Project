@@ -137,6 +137,16 @@ button {
     margin-bottom: 10px;
 }
 
+.stakingPageSpan1 {
+    border-right: 2px solid black;
+    padding: 10px;
+}
+
+.stakingPageSpan2 {
+    padding: 10px;
+}
+
+
 .notStakingContainer {
     width: 100%;
     height: 600px;
@@ -145,12 +155,6 @@ button {
     border-radius: 20px;
     /* padding: 40px 40px 20px 20px; */
 }
-
-
-/* .notStakingBoxContainer {
-    display: flex;
-    width: 100%;
-} */
 
 .notStakingBoxSection {
     /* display: flex; */
@@ -161,26 +165,26 @@ button {
     /* display: flex; */
 }
 
-.noStakingCardMainContainer {
+.notStakingCardMainContainer {
     display: flex;
     height: 300px;
-
-}
-
-.notStakingCardContainer {
-    display: flex;
     flex-direction: row ;
     flex-wrap: wrap; 
+    width: 100%;
+
+}
+.notStakingCardContainer {
+    display: flex;
+    
 }
 
 .notStakingImgCard {
     width: 130px;
     height: 130px;
-    /* background-color: aqua; */
+    border: 1px solid black;
     background-size: cover;
     border-radius: 20px;
-
-    margin-right: 40px;
+    margin-right: 12px;
 }
 
 
@@ -198,11 +202,9 @@ button {
 /* com */
 .comStakingContainer {
     width: 100%;
-    height: 400px;
-    /* background-color: blueviolet; */
+    height: 100%;
     border: 4px solid black;
     border-radius: 20px;
-    /* padding: 40px 40px 20px 20px; */
     margin-top: 100px;
 }
 
@@ -212,21 +214,18 @@ button {
 }
 
 .comStakingBoxSection {
-    /* display: flex; */
     width: 100%;
-    /* height: 400px; */
     padding: 40px 40px 40px 40px;
-    /* background-color: blue; */
 }
 
 .comStakginCardMainContainer{
-    height: 150px;
     display: flex;
+    flex-direction: row ;
+    flex-wrap: wrap;
 }
 
 .comStakingCardContainer {
-    flex-direction: row ;
-    flex-wrap: wrap;
+    
     display: flex;
     margin-top: 40px;
 }
@@ -234,9 +233,10 @@ button {
 .comStakingImgCard {
     width: 130px;
     height: 130px;
-    /* background-color: aqua; */
-    margin-right: 40px;
+    margin-right: 12px;
     background-size: cover;
+    border: 1px solid black;
+
     border-radius: 20px;
 
 }
@@ -252,9 +252,11 @@ button {
     display: flex;
     justify-content: center;
     margin-top: 40px;
+    margin-bottom: 40px;
 }
 .comStakingBtn button {
     width: 800px;
+    
 }
 
 

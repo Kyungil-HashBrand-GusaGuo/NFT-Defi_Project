@@ -757,11 +757,11 @@
 			]
 		},
 		"contracts/GST_Token.sol": {
-			"keccak256": "0xc68983c5eebb2a69f7b3bc918d09eb3a0f194c64136326a6c5f7bbd5570a0696",
+			"keccak256": "0xbea0a31556a5c0be5434b2e8f058dee93abfd119d5543de329d7b2e7f7698a09",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://db79c8adfbf07d2e6b5847c90a3a081aadfab9450e35568b15e65ef2150d8ccc",
-				"dweb:/ipfs/QmfV5G3xcwaSKNQivxPyaTn1D7BN7NX4o3HV3kD5i45rAL"
+				"bzz-raw://68f6d9016052c1bfbb1a3bdc5a63316500a35a01c2951855a22df466150f68d9",
+				"dweb:/ipfs/QmNoroEfwcF1x8td98oHsySB4iAF98b5njmyvjzjR4DCHL"
 			]
 		}
 	},

@@ -1,14 +1,13 @@
-import { RandomJolamanContract } from "../../caverConfig";
-import axios from "axios";
+import api from '../api'
 
 function mintCount() {
 
     return async (dispatch) => {
         try {
-                const MAX_NORMAL_TOKEN_COUNT = axios.get("http://localhost:9495/block/normalAll")
-                const MAX_SPECIAL_TOKEN_COUNT = axios.get("http://localhost:9495/block/specialAll")
-                const NORMAL_TOKEN_COUNT = axios.get("http://localhost:9495/block/normalCurrent")
-                const SPECIAL_TOKEN_COUNT = axios.get("http://localhost:9495/block/specialCurrent")
+                const MAX_NORMAL_TOKEN_COUNT = api.get("/normalAll")
+                const MAX_SPECIAL_TOKEN_COUNT = api.get("/specialAll")
+                const NORMAL_TOKEN_COUNT = api.get("/normalCurrent")
+                const SPECIAL_TOKEN_COUNT = api.get("/specialCurrent")
 
                 let [ maxNormalTokenCount, maxSpecialTokenCount, normalTokenCount, specialTokenCount ] = await Promise.all([MAX_NORMAL_TOKEN_COUNT, MAX_SPECIAL_TOKEN_COUNT, NORMAL_TOKEN_COUNT, SPECIAL_TOKEN_COUNT])
                 // console.log("MAX_NORMAL_TOKEN_COUNT",maxNormalTokenCount)

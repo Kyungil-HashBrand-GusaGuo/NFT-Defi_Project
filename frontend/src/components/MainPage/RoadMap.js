@@ -16,7 +16,7 @@ const RoadMap = () => {
             </div>
             <div className='roadMaptxtSectionDetail2'>
                 <p>
-                  민팅 완료 후 ZOLMAN NFT 보유한 홀더 모두에게 한정판 NFT를 부여
+                  After minting is complete, all holders of ZOLMAN NFT will receive a limited edition NFT.
                 </p>
             </div> 
           </div>
@@ -31,8 +31,7 @@ const RoadMap = () => {
             </div>
             <div className='roadMaptxtSectionDetail2'>
               <p>
-                서울시 관할 로드 광고판에 
-                ‘완판 기념’ 광고
+              ‘Sold out’ advertisement on a road billboard under the jurisdiction of Seoul
               </p>
             </div> 
           </div>
@@ -47,8 +46,8 @@ const RoadMap = () => {
             </div>
             <div className='roadMaptxtSectionDetail2'>
               <p>
-              거버넌스 기능을
-              홈페이지에 추가
+              governance function
+              add to homepage
               </p>
             </div> 
           </div>
@@ -62,8 +61,8 @@ const RoadMap = () => {
             </div>
             <div className='roadMaptxtSectionDetail2'>
               <p>
-              한정판 NFT인 ‘VERYVERYSTRONG ZOLAMAN’을
-              홀더만 구매가 가능하도록 오픈예정
+              Limited edition NFT ‘VERYVERYSTRONG ZOLAMAN’
+              Scheduled to open so that only holders can purchase
               </p>
             </div> 
           </div>
@@ -78,8 +77,8 @@ const RoadMap = () => {
             </div>
             <div className='roadMaptxtSectionDetail2'>
               <p>
-                  세계화를 위하여
-                  국내,국제 상위 엔터테인먼트에 협업을 제안
+              for globalization
+              Proposal of collaboration with top domestic and international entertainment companies
               </p>
             </div> 
           </div>
@@ -94,8 +93,8 @@ const RoadMap = () => {
             </div>
             <div className='roadMaptxtSectionDetail2'>
               <p>
-                샌드박스에 복셀 아바타와 ZOLAMAN
-                게임 개발 예정
+              Voxel Avatar and ZOLAMAN in the sandbox
+              game development planned
               </p>
             </div> 
           </div>
