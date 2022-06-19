@@ -67,14 +67,14 @@ const StakingPage = () => {
           <h3>My Zola Token : {getStakingReward} token</h3>
         </div>
         <div className='stakingPageTitle'>
-          <span>
-            Total :
+          <span className='stakingPageSpan1'>
+            Total : {myNftList.length + stakingNftString.length}
           </span>
-          <span> 
-            Staking :
+          <span className='stakingPageSpan1'>
+            Not Staking : {myNftList.length}
           </span>
-          <span>
-            Not Staking :
+          <span className='stakingPageSpan2'> 
+            Staking : {stakingNftString.length}
           </span>
         </div>
         <div className='notStakingContainer'>
@@ -85,7 +85,7 @@ const StakingPage = () => {
                   Not Staking NFT : {showid}
                 </h2>
               </div>
-              <div className='noStakingCardMainContainer'>
+              <div className='notStakingCardMainContainer'>
               {
                 myNftList !== '' ?
                 myNftList.map((item, index)=> {
