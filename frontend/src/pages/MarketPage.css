@@ -10,7 +10,7 @@
 }
 
 .marketTitleContainer h2{
-    font-size: 40.003px;
+    font-size: 2.778vw;
     color: whitesmoke;
     background-color: #272727;
     padding: 11.246px;
@@ -68,7 +68,8 @@ hr.style-five1 {
     }
 
     .test1 {
-        position: fixed;
+        /* position: fixed; */
+        margin-top: 13.889vw;
     }
 
 
@@ -326,6 +327,9 @@ hr.style-five1 {
         /* position: fixed;
         left: 30px;
         top: 50px; */
+    }
+    .test1 {
+        /* margin-top: 100px; */
     }
 
     .leftMarketTxtContainer {

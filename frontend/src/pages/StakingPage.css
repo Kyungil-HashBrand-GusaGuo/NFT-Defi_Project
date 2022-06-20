@@ -155,16 +155,16 @@ div.style-five {
 }
 .notStakingCardContainer {
     display: flex;
-    
+    margin-top: 40px;
 }
 
 .notStakingImgCard {
-    width: 130px;
-    height: 130px;
+    width: 220px;
+    height: 220px;
     border: 1px solid black;
     background-size: cover;
     border-radius: 20px;
-    margin-right: 12px;
+    margin-right: 10px;
 }
 
 
@@ -211,17 +211,17 @@ div.style-five {
 }
 
 .comStakingImgCard {
-    width: 130px;
-    height: 130px;
-    margin-right: 12px;
+    width: 220px;
+    height: 220px;
+    margin-right: 10px;
     background-size: cover;
     border: 1px solid black;
-
     border-radius: 20px;
 
 }
 
 .comStakingImgCard img {
+    
     width: 100%;
     height: 100%;
     background-size: cover;
@@ -238,10 +238,6 @@ div.style-five {
     width: 800px;
     
 }
-
-
-
-
 
 .stakingBox {
     width: 200px;
