@@ -55,13 +55,18 @@ const StakingPage = () => {
     <hr className="style-five"/> 
     <div className='stakingPageContainer'>
         <div className='stakingZolToken'>
-          <span>Your Mining Zola Token</span>
-          <span> : {stakingReward} </span>
-          <button className="claimBtn" onClick={changeState}>
-          <GrRefresh />
-          </button>
-          
-          <button onClick={getReward} className="claimBtn">Claim</button>
+          <div className='strkingRewardTitle'>
+            <span>Your Mining Zola Token</span>
+          </div>
+          <div className='stakingReward'>
+            <span> : {stakingReward} </span>
+          </div>
+          <div>
+            <button onClick={changeState} className='refreshBtn'><GrRefresh/></button>
+          </div>
+          <div>
+            <button onClick={getReward} className='claimBtn'>Claim</button>
+          </div>
         </div>
         <div className='stakingZolToken'>
           <h3>My Zola Token : {getStakingReward} token</h3>
