@@ -8,6 +8,8 @@ function stakingViewAct(account) {
                 const stakingNftApi = api.post("/stakedJolaman", { account });
                 const stakingRewardApi = api.post("/updateReward", { account });
                 const getStakingRewardApi = api.post("/stakers", { account });
+                // const balanceKlayApi = api.post("/balanceKlay", { account })
+                // console.log("클레이밸런스확인", balanceKlayApi)
 
                 let [ myNftList, stakingNft, stakingReward, getStakingReward ] = await Promise.all([myNftListApi, stakingNftApi, stakingRewardApi, getStakingRewardApi ])
 
