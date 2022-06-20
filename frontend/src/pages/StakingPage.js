@@ -12,8 +12,6 @@ const StakingPage = () => {
 
     const dispatch = useDispatch()
     const {account} = useSelector(state => state.account)
-    const [showid, setShowid] = useState("");
-    const [unstakeid, setUnstakeid] = useState();
     const {myNftList, stakingNftString, stakingReward , getStakingReward} = useSelector(state => state.stakingView)
 
     const staking = (edition) => {
@@ -32,14 +30,42 @@ const StakingPage = () => {
       dispatch(stakingViewAction.stakingViewAct(account))
     }
 
+    let nonStakeArr = []
+    let comStakeArr = []
+
     const notStake = (id) => {
-      setShowid(id);
+      if(nonStakeArr.includes(id)){
+        for(let i = 0; i < nonStakeArr.length; i++) {
+          if(nonStakeArr[i] === id)  {
+            nonStakeArr.splice(i, 1);
+          }
+        }
+        //console.log("삭제된건가?",nonStakeArr)
+      } else {
+        nonStakeArr.push(id)
+        //console.log("배열들어오니",nonStakeArr)
+      }
+      console.log("Non스테이팅 배열확인", nonStakeArr)
+      // let testaa = nonStakeArr
+      //setShowid(...nonStakeArr)
     }
 
     const comStake = (id) => {
-      setUnstakeid(id);
+      if(comStakeArr.includes(id)){
+        for(let i = 0; i < comStakeArr.length; i++) {
+          if(comStakeArr[i] === id)  {
+            comStakeArr.splice(i, 1);
+          }
+        }
+        //console.log("삭제된건가?",nonStakeArr)
+      } else {
+        comStakeArr.push(id)
+        //console.log("배열들어오니",nonStakeArr)
+      }
+      console.log("스테이킹 배열확인", comStakeArr)
+      // let testaa = nonStakeArr
+      //setShowid(...nonStakeArr)
     }
-
 
     console.log(account)
     useEffect( () => {
@@ -55,7 +81,14 @@ const StakingPage = () => {
     <hr className="style-five"/> 
     <div className='stakingPageContainer'>
         <div className='stakingZolToken'>
-          <span>Your Mining Zola Token</span>
+          <span>Your Mining Zola Token : </span>
+          {/* {
+            nonStakeArr !== null ?
+            nonStakeArr.map((item)=>{
+              return {item} 
+            }) 
+            : null
+          } */}
           <span> : {stakingReward} </span>
           <button className="claimBtn" onClick={changeState}>
           <GrRefresh />
@@ -82,7 +115,7 @@ const StakingPage = () => {
             <div className='notStakingBoxSection'>
               <div>
                 <h2>
-                  Not Staking NFT : {showid}
+                  Not Staking NFT :
                 </h2>
               </div>
               <div className='notStakingCardMainContainer'>
@@ -90,13 +123,14 @@ const StakingPage = () => {
                 myNftList !== '' ?
                 myNftList.map((item, index)=> {
                 return <div className='notStakingCardContainer'  key={index}>
-                <div className='notStakingImgCard' onClick={()=>notStake(item)}
+                <div className='notStakingImgCard'
                 style={{
                   backgroundImage: 
                       "url(" + 
                       `https://gateway.pinata.cloud/ipfs/QmfDCXHotQP7tH252h5BPEPX6kLmPJSzKzddnVxQUhrw4m/${item}.png` + 
                       ")"
                 }}>
+                  <input type='checkbox' onClick={()=>notStake(item)}/>
                 </div>
               </div>
               
@@ -106,7 +140,7 @@ const StakingPage = () => {
               </div>
               <div className='notStakingBtn'>
                 {/* <button className="learn-more">Staking</button> */}
-                <button onClick={()=>staking(showid)} className="learn-more">Staking</button>
+                <button onClick={()=>staking(nonStakeArr)} className="learn-more">Staking</button>
               </div>
             </div>
           </div>
@@ -118,7 +152,7 @@ const StakingPage = () => {
             <div className='comStakingBoxSection'>
                 <div>
                   <h2>
-                    Staking UFT : {unstakeid}
+                    Staking UFT : 
                   </h2>
                 </div>
                 <div className='comStakginCardMainContainer'>
@@ -126,13 +160,14 @@ const StakingPage = () => {
                   stakingNftString !== '' ?
                   stakingNftString.map((item, index)=> {
                     return <div className='comStakingCardContainer' key={index}>
-                    <div className='comStakingImgCard' onClick={()=>comStake(item)}
+                    <div className='comStakingImgCard'
                       style={{
                         backgroundImage: 
                             "url(" + 
                             `https://gateway.pinata.cloud/ipfs/QmfDCXHotQP7tH252h5BPEPX6kLmPJSzKzddnVxQUhrw4m/${item}.png` + 
                             ")"
                       }}>
+                      <input type='checkbox' onClick={()=>comStake(item)}/>
                     </div>
                   </div>
                   })
@@ -140,7 +175,7 @@ const StakingPage = () => {
                   }
                 </div>
                 <div className='comStakingBtn'>
-                  <button onClick={()=>cancelStaking(unstakeid)} className="learn-more">UnStake</button>
+                  <button onClick={()=>cancelStaking(comStakeArr)} className="learn-more">UnStake</button>
                 </div>
             </div>
           </div>

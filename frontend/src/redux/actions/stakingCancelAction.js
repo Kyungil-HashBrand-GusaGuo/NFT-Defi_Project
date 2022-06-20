@@ -11,7 +11,7 @@ function stakingCancelAct(account, edition) {
                 from: account,
                 to: STAKING_CONTRACT_ADDRESS,
                 gas: "3000000",
-                data: StakingContract.methods.unstake(edition).encodeABI()
+                data: StakingContract.methods.unstakeBatch(edition).encodeABI()
             })
             console.log(response);
           } catch (error){
