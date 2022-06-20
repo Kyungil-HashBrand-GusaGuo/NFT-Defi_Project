@@ -45,14 +45,10 @@ const MarketPage = () => {
 
   return (
     <>
-      <div className='marketTitleContainer'>
-        <h2>ZOLAMAN Market</h2>
-      </div>
-      <div className="style-five"></div>
-      <hr className="style-five"/>
       <div className='mainMarketContainer'>
-         <div className='leftMarketContainer'>
+        <div className='leftMarketContainer'>
           <div className='leftMarketSection'>
+          <div className='test1'>
             <div className='leftMarketNftCardImg'
               style={{
                 backgroundImage: 
@@ -65,7 +61,7 @@ const MarketPage = () => {
             <div className='leftMarketTxtContainer'>
               <div className='leftMarketTitle'>
                 <span className='leftMarketCardTxt1'>Create By </span>
-                <span className='lefttMarketCardTxt2'> GusaGuO</span>
+                <span className='leftMarketCardTxt2'> GusaGuO</span>
               </div>
               { showId > 9999 ? 
               <div className='leftMarketCardName'>
@@ -89,11 +85,17 @@ const MarketPage = () => {
             </div>
             <hr className='lefthr'/>
           </div>
+          </div>
         </div>
         <div className='rightMarketContainer'>
+          <div className='marketTitleContainer'>
+          <h2>ZOLAMAN Market</h2>
+          </div>
+          <div className="style-five1"></div>
+          <hr className="style-five1"/>
           <div className=' rightMarketSection'>
             <div className='rightMarketTitle'>
-              <span>ZOLAMAN NFT</span>
+              {/* <span>ZOLAMAN NFT</span> */}
               {/* <span>Filter</span>
               <button onClick={e => setDropdownVisibility(!dropdownVisibility)}>
                 {
@@ -139,7 +141,7 @@ const MarketPage = () => {
                               <div className='rightMarketCardNum'>
                                 <span>WhiteList Zola Man #{item.id - 9999}</span>
                               </div>
-                              <div>
+                              <div className='rightMarketPrice'>
                                 <span>Price : {item.price}</span>
                               </div>
                               <div className='rightMarketOwner'>
@@ -176,7 +178,7 @@ const MarketPage = () => {
                               <div className='rightMarketCardNum'>
                                 <span>Zola Man #{item.id}</span>
                               </div>
-                              <div>
+                              <div className='rightMarketPrice'>
                                 <span>Price : {item.price}</span>
                               </div>
                               <div className='rightMarketOwner'>
