@@ -23,13 +23,12 @@ const SellModal = ({edition, account, price}) => {
     <div className='overlay'>
         <div className='sellModalContainer'>
           <div className='sellMintingInfoSection'>  
-            <h3 className='sellMintingMessage'>SellModal</h3>
             { sellingNftSuccess ?
             <div>
               <h2 className='sellMintingComMessage'>Sell Success!!!</h2>
               <button className='sellModalEndButton' onClick={goToMarket}>Go to Market</button> 
             </div>
-            : null }
+            : <h2 className='sellMintingMessage'> Sell Loading...</h2> }
           </div>
       </div>
     </div>

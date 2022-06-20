@@ -167,7 +167,48 @@ div.style-five {
     margin-right: 10px;
 }
 
+.notStakingImgCard input {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    background-color: black;
+}
 
+/* .nonStakingCheckBox{
+    display: none;
+} */
+
+.nonStakingCheckBoxCircle{
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    border: 1px solid #272727;
+    background-color: white;
+    border-radius: 30px;
+    cursor: pointer;
+}
+
+.nonStakingCheckBoxCircle:after{
+    display: flex;
+    width: 30px;
+    height: 30px;
+    border: 1px solid #272727;
+    background-color: white;
+    border-radius: 30px;
+    cursor: pointer;
+    content: "\2764";
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    position: relative;
+    left: -1px;
+    top: -1px;
+    transition: 0.2s;
+}
+
+.nonStakingCheckBox:checked + .nonStakingCheckBoxCircle:after{
+    opacity: 1;
+}
 
 .notStakingBtn {
     display: flex;

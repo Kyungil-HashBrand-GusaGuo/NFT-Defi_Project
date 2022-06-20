@@ -10,8 +10,8 @@
 }
 
 .sellModalContainer {
-    width: 600px;
-    height: 400px;
+    width: 400px;
+    height: 300px;
     margin-top: 15.625vw;
     display: flex;
     justify-content: center;
@@ -40,7 +40,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    border: 1px solid whitesmoke;
+    /* border: 1px solid whitesmoke; */
     color: #193257;
 }
 

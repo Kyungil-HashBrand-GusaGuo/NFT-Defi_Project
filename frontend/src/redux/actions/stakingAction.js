@@ -1,4 +1,4 @@
-import { caver, RandomJolamanContract, MINT_CONTRACT_ADDRESS, setDataContract, STAKING_CONTRACT_ADDRESS,StakingContract } from "../../caverConfig";
+import { caver, RandomJolamanContract, MINT_CONTRACT_ADDRESS, STAKING_CONTRACT_ADDRESS,StakingContract } from "../../caverConfig";
 
 function stakingAct(account, edition) {
 
@@ -7,13 +7,16 @@ function stakingAct(account, edition) {
 
     return async (dispatch) => {
         try {
-            const res = await setDataContract.methods.gettypeToId(edition).call()
-            let tokenId = res;
+            // -- 하나만 스테이킹하는 코드 --
+            // const res = await setDataContract.methods.gettypeToId(edition).call()
+            // let tokenId = res;
             const response = await caver.klay.sendTransaction({
             from: account,
             to: MINT_CONTRACT_ADDRESS,
             gas: "3000000",
-            data: RandomJolamanContract.methods.approve(STAKING_CONTRACT_ADDRESS, tokenId).encodeABI()   
+            // -- 하나만 스테이킹하는 코드 --
+            // data: RandomJolamanContract.methods.approve(STAKING_CONTRACT_ADDRESS, tokenId).encodeABI()   
+            data: RandomJolamanContract.methods.setApprovalForAll(STAKING_CONTRACT_ADDRESS, true).encodeABI()   
             })
             console.log("스테이킹 if문 전",response)
             if(response.status) {
@@ -21,7 +24,7 @@ function stakingAct(account, edition) {
                     from: account,
                     to: STAKING_CONTRACT_ADDRESS,
                     gas: "3000000",
-                    data: StakingContract.methods.stake(edition).encodeABI()
+                    data: StakingContract.methods.stakeBatch(edition).encodeABI()
                 })
                 console.log("스테이킹 if문 안",response)
             }
