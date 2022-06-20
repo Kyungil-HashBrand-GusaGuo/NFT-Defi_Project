@@ -1,0 +1,6 @@
+.swapPageContainer {
+    width: 100%;
+    height: calc(100vh - 10.417vw);
+    padding-top: 5.208vw;
+    justify-content: space-around;    
+}

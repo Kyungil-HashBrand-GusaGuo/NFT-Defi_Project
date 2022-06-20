@@ -5,7 +5,7 @@ import { stakingViewAction } from '../redux/actions/stakingViewAction'
 import { stakingAction } from '../redux/actions/stakingAction'
 import { stakingCancelAction } from '../redux/actions/stakingCancelAction'
 import { stakingRewardAction } from '../redux/actions/stakingRewardAction'
-import { GrRefresh } from "react-icons/gr";
+import { GrCheckbox, GrRefresh } from "react-icons/gr";
 
 
 const StakingPage = () => {
@@ -13,6 +13,7 @@ const StakingPage = () => {
     const dispatch = useDispatch()
     const {account} = useSelector(state => state.account)
     const {myNftList, stakingNftString, stakingReward , getStakingReward} = useSelector(state => state.stakingView)
+    const [checkNft, setCheckNft] = useState(false)
 
     const staking = (edition) => {
       dispatch(stakingAction.stakingAct(account, edition))
@@ -33,7 +34,7 @@ const StakingPage = () => {
     let nonStakeArr = []
     let comStakeArr = []
 
-    const notStake = (id) => {
+    const nonStake = (id) => {
       if(nonStakeArr.includes(id)){
         for(let i = 0; i < nonStakeArr.length; i++) {
           if(nonStakeArr[i] === id)  {
@@ -57,14 +58,20 @@ const StakingPage = () => {
             comStakeArr.splice(i, 1);
           }
         }
-        //console.log("삭제된건가?",nonStakeArr)
       } else {
         comStakeArr.push(id)
-        //console.log("배열들어오니",nonStakeArr)
       }
       console.log("스테이킹 배열확인", comStakeArr)
-      // let testaa = nonStakeArr
-      //setShowid(...nonStakeArr)
+    }
+
+    const checkingNft = () => {
+      if(checkNft){
+        setCheckNft(false)
+        console.log("상태확인",checkNft)
+      } else {
+        setCheckNft(true)
+        console.log("상태확인",checkNft)
+      }
     }
 
     console.log(account)
@@ -123,17 +130,18 @@ const StakingPage = () => {
                 myNftList !== '' ?
                 myNftList.map((item, index)=> {
                 return <div className='notStakingCardContainer'  key={index}>
-                <div className='notStakingImgCard'
-                style={{
-                  backgroundImage: 
-                      "url(" + 
-                      `https://gateway.pinata.cloud/ipfs/QmfDCXHotQP7tH252h5BPEPX6kLmPJSzKzddnVxQUhrw4m/${item}.png` + 
-                      ")"
-                }}>
-                  <input type='checkbox' onClick={()=>notStake(item)}/>
-                </div>
-              </div>
-              
+                    <div className='notStakingImgCard'
+                      style={{
+                        backgroundImage: 
+                            "url(" + 
+                            `https://gateway.pinata.cloud/ipfs/QmfDCXHotQP7tH252h5BPEPX6kLmPJSzKzddnVxQUhrw4m/${item}.png` + 
+                            ")"
+                      }}>
+                      <input type='checkbox' className='nonStakingCheckBox' onClick={()=>nonStake(item)}/>
+                        <div type='checkbox' className='nonStakingCheckBoxCircle'></div>
+                      
+                    </div>
+                  </div>
                 })
                   : null
               }

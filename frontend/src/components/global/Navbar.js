@@ -5,11 +5,12 @@ import {HeadImg} from '../../images'
 import { useDispatch, useSelector } from 'react-redux';
 import { connectAccount } from '../../redux/actions/connectAccount' 
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 function Navbar() {
 
     const dispatch = useDispatch();
-
+    const navigate = useNavigate();
     const [showLinks, setShowLinks] = useState(false); 
     const [userInfoCheck, setUserInfoCheck] = useState('none')
     const {account, whiteListCheck, adminAccount} = useSelector(state => state.account)
@@ -31,6 +32,10 @@ function Navbar() {
         }
     }
 
+    const goToSwap = () => {
+        navigate("/swap")
+    }
+
     useEffect(() => {
         if(account === '') connectWallet()
       },);
@@ -49,18 +54,23 @@ function Navbar() {
                     <a href='/staking'>Staking</a>
                     { adminAccount === account ? <a href='/admin'>AdminPage</a> : null}                    
                     {
-                        account === '' ? <a><button onClick={connectWallet}>Connect Wallet</button>
-                        {
-                        whiteListCheck ? <div className='userInfoBox' style={{display:userInfoCheck}}>White List</div>
-                        : <div className='userInfoBox' style={{display:userInfoCheck}}>Normal</div>
-                        }
-                        </a> 
-                        : <a><button onClick={userInfo}>{account.substr(0,6)}...{account.slice(-6)}</button>
-                        {
-                        whiteListCheck ? <div className='userInfoBox' style={{display:userInfoCheck}}>White List</div>
-                        : <div className='userInfoBox' style={{display:userInfoCheck}}>Normal</div>
-                        }
-                        </a> 
+                        account === ''  
+                        ?   <a><button onClick={connectWallet}>Connect Wallet</button></a> 
+                        : 
+                            <a><button onClick={userInfo}>{account.substr(0,6)}...{account.slice(-6)}</button>
+                            {
+                            whiteListCheck ? <div className='userInfoBox' style={{display:userInfoCheck}}>
+                                <div className='userInfoBoxTitle'>White List</div>
+                                <div className='userInfoBoxBtn' onClick={goToSwap}>SWAP</div>
+                            </div>
+                            : <>
+                            <div className='userInfoBox' style={{display:userInfoCheck}}>
+                                <div className='userInfoBoxTitle'>Normal</div>
+                                <div className='userInfoBoxBtn' onClick={goToSwap}>SWAP</div>
+                            </div>
+                            </>
+                            }
+                            </a> 
                     }
                     
                 </div>
