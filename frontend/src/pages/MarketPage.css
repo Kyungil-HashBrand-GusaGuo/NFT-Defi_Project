@@ -68,6 +68,12 @@ hr.style-five {
         padding: 10px 10px 10px 10px;
     }
 
+    .test1 {
+        position: fixed;
+        top: 110px;
+        left: 40px;
+    }
+
     .leftMarketCardTxt1 span {
         font-size: 50px;
     }

@@ -52,6 +52,7 @@ const MarketPage = () => {
       <hr className="style-five"/>
       <div className='mainMarketContainer'>
          <div className='leftMarketContainer'>
+          <div className='test1'>
           <div className='leftMarketSection'>
             <div className='leftMarketNftCardImg'
               style={{
@@ -88,6 +89,7 @@ const MarketPage = () => {
               <button onClick={() => moveBuyPage(showId)} className="learn-more">Buy Now</button>
             </div>
             <hr className='lefthr'/>
+            </div>
           </div>
         </div>
         <div className='rightMarketContainer'>
