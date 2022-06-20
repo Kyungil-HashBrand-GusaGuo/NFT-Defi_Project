@@ -9,7 +9,7 @@ const SwapPage = () => {
   const dispatch = useDispatch()
   const [amount, setAmount] = useState()
   const {account} = useSelector(state => state.account)
-  const {getStakingReward} = useSelector(state => state.stakingView)
+  const {getStakingReward, getKlayBalance} = useSelector(state => state.stakingView)
 
 
   const changeAmount = (e) => {
@@ -36,6 +36,7 @@ const SwapPage = () => {
         <div>SwapPage</div>
         <div>SwapPage</div>
         <div>내가 가지고 있는 토큰 : {getStakingReward}</div>
+        <div>Kaly Balance : {getKlayBalance}</div>
         <input type="number" min="1" placeholder='Amount' className='lefttxtinput' onChange={changeAmount}/>
         <button  className="learn-more"onClick={swapTest}>SWAP</button>
     </div>

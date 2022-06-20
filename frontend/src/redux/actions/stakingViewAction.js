@@ -1,4 +1,6 @@
 import api from '../api'
+import { caver } from "../../caverConfig";
+
 
 function stakingViewAct(account) {
     return async (dispatch) => {
@@ -8,10 +10,9 @@ function stakingViewAct(account) {
                 const stakingNftApi = api.post("/stakedJolaman", { account });
                 const stakingRewardApi = api.post("/updateReward", { account });
                 const getStakingRewardApi = api.post("/stakers", { account });
-                // const balanceKlayApi = api.post("/balanceKlay", { account })
-                // console.log("클레이밸런스확인", balanceKlayApi)
+                const getKlayBalanceApi = caver.klay.getBalance(account);
 
-                let [ myNftList, stakingNft, stakingReward, getStakingReward ] = await Promise.all([myNftListApi, stakingNftApi, stakingRewardApi, getStakingRewardApi ])
+                let [ myNftList, stakingNft, stakingReward, getStakingReward, getKlayBalance ] = await Promise.all([myNftListApi, stakingNftApi, stakingRewardApi, getStakingRewardApi, getKlayBalanceApi ])
 
                 //console.log(stakingNft.data[0])
                 let stakingNftNumberData = []
@@ -26,6 +27,7 @@ function stakingViewAct(account) {
                 console.log("스테이킹 NFT",stakingNftNumberData)
                 console.log("받을 스테이킹 리워드",stakingReward.data / 10**18)
                 console.log("받은 스테이킹 리워드",getStakingReward.data.rewardsReleased / 10**18)
+                console.log("클레이밸런스확인",getKlayBalance / 10**18)
 
                 dispatch({
                     type : "GET_STAKING_VIEW_SUCCESS",
@@ -34,7 +36,8 @@ function stakingViewAct(account) {
                         stakingNftString : stakingNft.data,
                         stakingNftNumber : stakingNftNumberData, 
                         stakingReward : (stakingReward.data / 10**18).toFixed(2),
-                        getStakingReward : (getStakingReward.data.rewardsReleased / 10**18).toFixed(2)
+                        getStakingReward : (getStakingReward.data.rewardsReleased / 10**18).toFixed(2),
+                        getKlayBalance : getKlayBalance / 10**18
                     }
                 })
             }
