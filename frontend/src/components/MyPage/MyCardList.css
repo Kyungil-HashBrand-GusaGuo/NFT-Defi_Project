@@ -71,3 +71,29 @@
     height: 20px;
     margin-right: 5px;
 }
+
+.cardtxtButton{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.cardlisttitleButton {
+    width: 200px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    background-color: whitesmoke;
+    border: 1px solid #141414;
+    border-radius: 30px;
+    box-shadow: 3px 3px 3px 3px rgb(132 81 61 / 35%);
+}
+
+.cardlisttitleButton:hover {
+    background-color: #141414;
+    border: 2px solid #141414;
+    color: whitesmoke;
+}

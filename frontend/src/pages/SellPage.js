@@ -90,8 +90,6 @@ const SellPage = () => {
             <div className='leftSellContainer'>
               <div className='leftSection'>
                 <div className='leftInputContainer'>
-                  <div>
-                  </div>
                   <div className='leftTableTitle'>
                     <p>NFT Attributes</p>
                   </div>
@@ -125,8 +123,7 @@ const SellPage = () => {
                       checkSell ?  
                       <>
                         <div className='leftInput' >
-                          <div className='leftInputTitle'>
-                            <p>Stop Selling</p>
+                          <div className='leftInputsection'>
                           </div>
                         </div>
                         <div className='leftbtn'>
@@ -138,8 +135,7 @@ const SellPage = () => {
                         stakingNftString.includes(edition) ?
                         <>
                           <div className='leftInput' >
-                            <div className='leftInputTitle'>
-                              <p>Staking</p>
+                            <div className='leftInputsection'>
                             </div>
                           </div>
                           <div className='leftbtn'>
@@ -149,12 +145,13 @@ const SellPage = () => {
                       : 
                       <>
                         <div className='leftInput' >
-                          <div className='leftInputTitle'>
+                          {/* <div className='leftInputTitle'>
                             <p>Price</p>
-                          </div>
+                          </div> */}
                           <div className='leftInputsection'>
                             <input type="image" src={klayIcon2} className="lefticoninput"></input>
-                            <input type="number" min="1" placeholder='Amount' className='lefttxtinput' onChange={changePrice}/>
+                            <input type="number" min="1" placeholder='Price' className='lefttxtinput' onChange={changePrice}/>
+                            {/* <button onClick={changeSellModalState} className="learn-more">Sell</button> */}
                           </div>
                         </div>
                         <div className='leftbtn'>
@@ -201,16 +198,25 @@ const SellPage = () => {
                               </div>
                             </div>
                           </>
-                        : <>
-                            <div className='rightCardTxt'>
-                              {/* <div className='rightCardListTitle'>
-                              <p>Price </p>
-                              </div>
-                              <div className='rightCardListPrice'>
-                                  <img className='klayicon' src={klayIcon2}/><p>2.0</p>
-                              </div> */}
+                        : 
+                          (
+                          stakingNftString.includes(edition) ?
+                          <div className='rightCardTxt'>
+                            <div className='rightCardtxtButton'>
+                                <div className='rightCardlisttitleButton'>
+                                    Staking
+                                </div>
                             </div>
-                        </>
+                          </div>
+                          :
+                            <div className='rightCardTxt'>
+                              <div className='rightCardtxtButton'>
+                                  <div className='rightCardlisttitleButton'>
+                                      Available for Sale
+                                  </div>
+                              </div>
+                            </div>
+                          )
                         }
                   </div>
                 </div>

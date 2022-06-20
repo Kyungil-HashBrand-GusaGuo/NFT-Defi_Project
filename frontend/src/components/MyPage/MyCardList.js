@@ -62,21 +62,15 @@ const MyCardList = () => {
                     (
                         stakingNftNumber.includes(item.data.edition) 
                         ?    
-                            <div className='cardtxt'>
-                                <div className='cardlisttitle'>
-                                <p>스테이킹중 </p>
-                                </div>
-                                <div className='cardlistprice'>
-                                    <img className='klayicon' src={klayIcon2}/><p></p>
-                                </div>
+                        <div className='cardtxtButton'>
+                            <div className='cardlisttitleButton'>
+                                Staking
                             </div>
+                        </div>
                         : 
-                        <div className='cardtxt'>
-                            <div className='cardlisttitle'>
-                            <p>판매중 </p>
-                            </div>
-                            <div className='cardlistprice'>
-                                <img className='klayicon' src={klayIcon2}/><p></p>
+                        <div className='cardtxtButton'>
+                            <div className='cardlisttitleButton'>
+                                Sale
                             </div>
                         </div>
                     ) 
@@ -84,21 +78,15 @@ const MyCardList = () => {
                     (
                         stakingNftNumber.includes(item.data.edition) 
                         ?    
-                            <div className='cardtxt'>
-                                <div className='cardlisttitle'>
-                                <p>스테이킹중 </p>
-                                </div>
-                                <div className='cardlistprice'>
-                                    <img className='klayicon' src={klayIcon2}/><p></p>
-                                </div>
+                        <div className='cardtxtButton'>
+                            <div className='cardlisttitleButton'>
+                                Staking
                             </div>
+                        </div>
                         : 
-                        <div className='cardtxt'>
-                            <div className='cardlisttitle'>
-                            <p>판매가능 </p>
-                            </div>
-                            <div className='cardlistprice'>
-                                <img className='klayicon' src={klayIcon2}/><p></p>
+                        <div className='cardtxtButton'>
+                            <div className='cardlisttitleButton'>
+                                Available for Sale
                             </div>
                         </div>
                     )                   

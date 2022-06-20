@@ -27,6 +27,9 @@
     box-shadow: 0.26vw 0.26vw 0.26vw 0.26vw rgb(132 81 61 / 35%);
 }
 
+/* .leftSection {
+    display: fle;
+} */
 
 
 .SellTitleContainer {
@@ -60,6 +63,7 @@
     border: 0.052vw solid #272727;
     border-radius: 0.521vw;
 }
+
 
 .sellTxtContainer {
     display: flex;
@@ -99,6 +103,7 @@
 .leftInputsection {
     display: flex;
     justify-content: center;
+    align-items: center;
     margin-bottom: 1.389vw;
 }
 
@@ -112,17 +117,25 @@
     /* display: flex; */
     width: 3.472vw;
     height: 3.472vw;
-    margin-right: 0.694vw;
+    /* margin-right: 0.694vw; */
 }
 .lefttxtinput {
     /* display: flex; */
-    height: 3.472vw;
-    width: 12.5vw;
+    height: 2.604vw;
+    width: 10.417vw;
+    font-size: 1.302vw;
+    text-align: center;
+    margin: 1.042vw;
 }
 
 .leftbtn {
+    margin-top: 50px;
     display: flex;
     justify-content: center;
+}
+
+.leftbtn button {
+    width: 330px;
 }
 
 .leftTableTitle {
@@ -139,7 +152,7 @@
 .leftAttributeContainer {
     display: flex;
     justify-content: center;
-    margin-top: 0.694vw;
+    margin-top: 2.083vw;
     margin-bottom: 1.389vw;
 }
 
@@ -198,11 +211,15 @@
 .rightCardList .rightCardtxtContainer {
     width: 22.222vw;
     height: 5.556vw;
+
 }
 
 .rightCardList .rightCardtxtContainer .rightCardTxt {
     display: flex;
     height: 2.778vw;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0.521vw;
 }
 
 .rightCardList .rightCardtxtContainer .rightCardTxt .rightCardListTitle {
@@ -226,14 +243,25 @@
     align-items: center;
 }
 
-/* .cardDna {
+.rightCardtxtButton{
     display: flex;
     justify-content: center;
+    align-items: center;
+    margin-top: 10px;
 }
 
-.cardDna p{
-    font-size: 0.903vw;
-} */
+.rightCardlisttitleButton {
+    width: 200px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    background-color: whitesmoke;
+    border: 1px solid #141414;
+    border-radius: 30px;
+    box-shadow: 3px 3px 3px 3px rgb(132 81 61 / 35%);
+}
 
 .klayicon {
     width: 1.389vw;
