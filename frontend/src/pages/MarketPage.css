@@ -66,6 +66,12 @@ hr.style-five1 {
         /* background-color: lime; */
     }
 
+    .leftTop.is-active .leftMarketSection {
+        position: fixed;
+        top: -30px;
+        width: 363px;
+    }
+
     .test1 {
         /* position: fixed; */
         margin-top: 13.889vw;
@@ -327,8 +333,7 @@ hr.style-five1 {
     .leftMarketSection {
         margin-top: 157px;
         width: 100%;
-        height: 100%;
-        
+        height: 100%;        
     }
 
     .leftMarketTxtContainer {
