@@ -10,6 +10,8 @@ function stakingViewAct(account) {
                 const stakingNftApi = api.post("/stakedJolaman", { account });
                 const stakingRewardApi = api.post("/updateReward", { account });
                 const getStakingRewardApi = api.post("/stakers", { account });
+                //const getKlayBalanceApi = api.post("/balanceKlay", { account });
+                //console.log("asd",getKlayBalanceApi)
                 const getKlayBalanceApi = caver.klay.getBalance(account);
 
                 let [ myNftList, stakingNft, stakingReward, getStakingReward, getKlayBalance ] = await Promise.all([myNftListApi, stakingNftApi, stakingRewardApi, getStakingRewardApi, getKlayBalanceApi ])
@@ -35,8 +37,8 @@ function stakingViewAct(account) {
                         myNftList : myNftList.data, 
                         stakingNftString : stakingNft.data,
                         stakingNftNumber : stakingNftNumberData, 
-                        stakingReward : (stakingReward.data / 10**18).toFixed(2),
-                        getStakingReward : (getStakingReward.data.rewardsReleased / 10**18).toFixed(2),
+                        stakingReward : (stakingReward.data / 10**18).toFixed(3),
+                        getStakingReward : (getStakingReward.data.rewardsReleased / 10**18).toFixed(3),
                         getKlayBalance : getKlayBalance / 10**18
                     }
                 })
