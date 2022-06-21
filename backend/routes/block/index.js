@@ -11,6 +11,7 @@ router.get("/specialAll", randomController.MAX_SPECIAL_TOKEN_COUNT);
 router.get("/normalCurrent", randomController.CURRENT_NORMAL_TOKEN_COUNT);
 router.get("/specialCurrent", randomController.CURRENT_SPECIAL_TOKEN_COUNT);
 router.post("/isWhiteList", randomController.isWhiteList);
+router.post("/balanceKlay", randomController.BalanceKlay);
 
 // setData controller
 router.get("/totalJolamanData", setController.totalJolamanData);
