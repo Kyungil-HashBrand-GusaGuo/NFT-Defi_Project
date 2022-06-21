@@ -5,21 +5,19 @@ import {CgArrowsExchangeV, CgCloseO} from "react-icons/cg";
 import klayIcon2 from '../../images/klaytn.png'
 import headzol from '../../images/headzol.png'
 import { stakingViewAction } from '../../redux/actions/stakingViewAction'
-import { useLocation, useNavigate } from 'react-router-dom';
+import { swapModalAction } from '../../redux/actions/swapModalAction';
 import { SwapActModal } from '../index'
 
 const SwapModal = () => {
 
     const dispatch = useDispatch()
-    const navigate = useNavigate()
-    const location = useLocation()
     const [amount, setAmount] = useState('')
     const [swapActModalCheck, setSwapActModalCheck] = useState(false)
     const {account} = useSelector(state => state.account)
     const {getKlayBalance, getTokenBalance} = useSelector(state => state.stakingView)
     
     const closePage = () => {
-        navigate(`${location.pathname}`)
+        dispatch(swapModalAction.swapModalAct())
     }
 
     const changeAmount = (e) => {
@@ -44,7 +42,7 @@ const SwapModal = () => {
             <div className='swapModalSection'>
                 <div className='swapModalTitle'>
                     <h2>Swap Page</h2>
-                    {/* <h1 onClick={closePage}><CgCloseO/></h1> */}
+                    <h1 onClick={closePage}><CgCloseO/></h1>
                 </div>  
                 <div className='swapModalInfoSection'>
                     <div className='swapModalBalance'>

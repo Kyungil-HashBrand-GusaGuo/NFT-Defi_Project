@@ -5,6 +5,7 @@ import {HeadImg} from '../../images'
 import { useDispatch, useSelector } from 'react-redux';
 import { connectAccount } from '../../redux/actions/connectAccount' 
 import { SwapModal } from '../index'
+import { swapModalAction } from '../../redux/actions/swapModalAction'
 
 
 function Navbar() {
@@ -14,6 +15,7 @@ function Navbar() {
     const [swapModal, setSwalModal] = useState(false);
     const [userInfoCheck, setUserInfoCheck] = useState('none')
     const {account, whiteListCheck, adminAccount} = useSelector(state => state.account)
+    const {swapModalChange} = useSelector(state => state.stakingView)
     // console.log("화이트리스트 체크",whiteListCheck)
     // console.log("어드민계정 체크",adminAccount)
 
@@ -33,11 +35,12 @@ function Navbar() {
     }
 
     const changeSwapModal = () => {
-        if(swapModal){
-            setSwalModal(false)
-        } else {
-            setSwalModal(true)
-        }
+        // if(swapModal){
+        //     setSwalModal(false)
+        // } else {
+        //     setSwalModal(true)
+        // }
+        dispatch(swapModalAction.swapModalAct("open"))
     }
 
     useEffect(() => {
@@ -82,7 +85,7 @@ function Navbar() {
                     <MdReorder className='listicon' size={40} onClick={()=>setShowLinks(!showLinks)}/>
             </div>
         </div>
-        { swapModal ? <SwapModal/> : null}
+        { swapModalChange ? <SwapModal/> : null}
         </>
     )
 }

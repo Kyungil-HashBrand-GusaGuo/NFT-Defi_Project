@@ -91,7 +91,7 @@ const StakingPage = () => {
     console.log(account)
     useEffect( () => {
         dispatch(stakingViewAction.stakingViewAct(account))
-    },[account])
+    },[account, stakingReward])
 
   return (
     <>
