@@ -46,10 +46,8 @@ const MarketPage = () => {
   return (
     <>
       <div className='mainMarketContainer'>
-         <div className='leftMarketContainer'>
-          <div className='test1'>
+        <div className='leftMarketContainer'>
           <div className='leftMarketSection'>
-          <div className='test1'>
             <div className='leftMarketNftCardImg'
               style={{
                 backgroundImage: 
@@ -85,8 +83,6 @@ const MarketPage = () => {
               <button onClick={() => moveBuyPage(showId)} className="learn-more">Buy Now</button>
             </div>
             <hr className='lefthr'/>
-            </div>
-          </div>
           </div>
         </div>
         <div className='rightMarketContainer'>
