@@ -4,7 +4,9 @@ let initialState = {
     stakingNftNumber : '',
     stakingReward : '',
     getStakingReward : '',
-    getKlayBalance : ''
+    getKlayBalance : '',
+    getTokenBalance : '',
+    swapSuccess : false
 }
 
 function stakingViewReducer(state=initialState,action) {
@@ -20,7 +22,13 @@ function stakingViewReducer(state=initialState,action) {
                 stakingNftNumber : payload.stakingNftNumber,
                 stakingReward : payload.stakingReward,
                 getStakingReward : payload.getStakingReward,
-                getKlayBalance : payload.getKlayBalance
+                getKlayBalance : payload.getKlayBalance,
+                getTokenBalance : payload.getTokenBalance
+            }
+
+        case "SUCCESS_SWAP" :
+            return {...state,
+                swapSuccess : payload.swapSuccess
             }
 
         default :

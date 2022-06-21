@@ -1,0 +1,36 @@
+.overlay {
+    background-color: rgba(0, 0, 0, 0.7);
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    color: white;
+    display: flex;
+    justify-content: center;
+    z-index: 17;
+}
+
+.swapActModalContainer {
+    width: 400px;
+    height: 300px;
+    margin-top: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #141414;
+    border-radius: 30px;
+    background-color: whitesmoke;
+    z-index: 11500;
+}
+
+.swapMintingInfoSection {
+    display: flex;
+    color: black;
+    justify-content: center;
+    align-items: center;
+}
+
+.swapMintingComMessage {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 50px;
+}
