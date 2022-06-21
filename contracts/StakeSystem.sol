@@ -20,7 +20,7 @@ contract StakingSystem is Ownable, ERC721Holder, JolamanToken {
     uint256 public stakedTotal;
     uint256 public stakingStartTime;
     uint256 constant stakingTime = 10 seconds;
-    uint256 constant token = 10 ** 16;
+    uint256 constant token = 10 ** 15;
     uint256 constant ERCToken = 10 ** 18;
     
     struct Staker {
@@ -118,7 +118,6 @@ contract StakingSystem is Ownable, ERC721Holder, JolamanToken {
         setdata.setStakedJolamanType(_JolamanType, boolean);
         randomJolaman.safeTransferFrom(address(this), _user, setdata.gettypeToId(_JolamanType));
 
-        // emit Unstaked(_user, _JolamanType);
         stakedTotal--;
     }
 
@@ -198,12 +197,15 @@ contract StakingSystem is Ownable, ERC721Holder, JolamanToken {
     }
 
     function KlayToToken() public payable{
+        require(msg.sender.balance > msg.value, "Not enough Klay");
         _grantRole(MINTER_ROLE, msg.sender);
         mint(msg.sender, msg.value);
         _revokeRole(MINTER_ROLE, msg.sender);
     }
 
     function TokenToKlay(uint amount) public {
+        require(balanceOf(msg.sender) > amount * ERCToken, "Not enough ZLT");
+        require(address(this).balance > amount * ERCToken, "Not enough Contract Balance");
         payable(msg.sender).transfer(amount * ERCToken);
          _grantRole(BURNER_ROLE, msg.sender);
         burn(msg.sender, amount * ERCToken);

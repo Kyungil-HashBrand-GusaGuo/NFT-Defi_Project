@@ -13,7 +13,7 @@ const StakingPage = () => {
     const dispatch = useDispatch()
     const {account} = useSelector(state => state.account)
     const {myNftList, stakingNftString, stakingReward , getStakingReward} = useSelector(state => state.stakingView)
-    const [checkNft, setCheckNft] = useState(false)
+    //const [checkNft, setCheckNft] = useState(false)
 
     const staking = (edition) => {
       dispatch(stakingAction.stakingAct(account, edition))
@@ -64,15 +64,13 @@ const StakingPage = () => {
       console.log("스테이킹 배열확인", comStakeArr)
     }
 
-    const checkingNft = () => {
-      if(checkNft){
-        setCheckNft(false)
-        console.log("상태확인",checkNft)
+    const checkingNft = (e) => {
+      if(e.checked){
+        e.checked = false
       } else {
-        setCheckNft(true)
-        console.log("상태확인",checkNft)
+        e.checked = true;
       }
-    }
+    } 
 
     console.log(account)
     useEffect( () => {
@@ -89,7 +87,7 @@ const StakingPage = () => {
     <div className='stakingPageContainer'>
         <div className='stakingZolToken'>
           <div className='strkingRewardTitle'>
-            <span>Your Mining Zola Token</span>
+            <span>Zolaman Token currently being mined</span>
           </div>
           <div className='stakingReward'>
             <span> : {stakingReward} </span>
@@ -102,7 +100,7 @@ const StakingPage = () => {
           </div>
         </div>
         <div className='stakingZolToken'>
-          <h3>My Zola Token : {getStakingReward} token</h3>
+          <h3>Total Zolaman Tokens Received : {getStakingReward} token</h3>
         </div>
         <div className='stakingPageTitle'>
           <span className='stakingPageSpan1'>
@@ -135,12 +133,8 @@ const StakingPage = () => {
                             `https://gateway.pinata.cloud/ipfs/QmfDCXHotQP7tH252h5BPEPX6kLmPJSzKzddnVxQUhrw4m/${item}.png` + 
                             ")"
                       }}>
-                      {/* <input type='checkbox' className='nonStakingCheckBox' onClick={()=>nonStake(item)} label='nonStakingCheckBoxCircle'/>
-                        <label type='checkbox' className='nonStakingCheckBoxCircle' onClick={()=>nonStake(item)}></label> */}
-                        <label className='nonStakingCheckBoxCircle' onClick={()=>nonStake(item)} htmlFor='nonStakingCheckBox'>
-                          <input type='checkbox' className='nonStakingCheckBox' onClick={()=>nonStake(item)} label='nonStakingCheckBoxCircle'/>
-                        </label>
-                        {/* 흠.. 여기를 어떻게 해야할까 */}
+                      <input type='checkbox' className='nonStakingCheckBox' />
+                        <label className='nonStakingCheckBoxCircle' onClick={(e)=>{nonStake(item); checkingNft(e.target.parentNode.children[0]);}}></label>
                     </div>
                   </div>
                 })
@@ -176,7 +170,8 @@ const StakingPage = () => {
                             `https://gateway.pinata.cloud/ipfs/QmfDCXHotQP7tH252h5BPEPX6kLmPJSzKzddnVxQUhrw4m/${item}.png` + 
                             ")"
                       }}>
-                      <input type='checkbox' onClick={()=>comStake(item)}/>
+                      <input type='checkbox' className='nonStakingCheckBox' />
+                        <label className='nonStakingCheckBoxCircle' onClick={(e)=>{comStake(item); checkingNft(e.target.parentNode.children[0]);}}></label>
                     </div>
                   </div>
                   })

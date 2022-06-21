@@ -46,9 +46,8 @@ const CURRENT_SPECIAL_TOKEN_COUNT = async (req, res) => {
 };
 
 const BalanceKlay = async (req, res) => {
-  const result = await caver.rpc.klay.getBalance(req.body.account);
-  const balance = caver.utils.hexToNumberString(result);
-  res.json(balance);
+  const result = await caver.klay.getBalance(req.body.account);
+  res.json(result);
 };
 
 module.exports = {

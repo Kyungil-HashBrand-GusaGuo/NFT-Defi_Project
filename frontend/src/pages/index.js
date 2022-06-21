@@ -7,6 +7,5 @@ import SellPage from "./SellPage";
 import MarketPage from "./MarketPage"
 import BuyPage from "./BuyPage"
 import StakingPage from "./StakingPage"
-import SwapPage from "./SwapPage";
 
-export { MainPage, PreMintingPage, AdminPage, MyPage, AllMintPage, SellPage, MarketPage, BuyPage, StakingPage, SwapPage }
+export { MainPage, PreMintingPage, AdminPage, MyPage, AllMintPage, SellPage, MarketPage, BuyPage, StakingPage }
