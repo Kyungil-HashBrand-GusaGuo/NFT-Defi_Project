@@ -4,6 +4,7 @@ let initialState = {
     stakingNftNumber : '',
     stakingReward : '',
     getStakingReward : '',
+    getKlayBalance : ''
 }
 
 function stakingViewReducer(state=initialState,action) {
@@ -18,7 +19,8 @@ function stakingViewReducer(state=initialState,action) {
                 stakingNftString : payload.stakingNftString,
                 stakingNftNumber : payload.stakingNftNumber,
                 stakingReward : payload.stakingReward,
-                getStakingReward : payload.getStakingReward
+                getStakingReward : payload.getStakingReward,
+                getKlayBalance : payload.getKlayBalance
             }
 
         default :
