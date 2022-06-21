@@ -1,14 +1,29 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, Component } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
+import Slider from "react-slick";
 import './StakingPage.css'
 import { stakingViewAction } from '../redux/actions/stakingViewAction'
 import { stakingAction } from '../redux/actions/stakingAction'
 import { stakingCancelAction } from '../redux/actions/stakingCancelAction'
 import { stakingRewardAction } from '../redux/actions/stakingRewardAction'
 import { GrCheckbox, GrRefresh } from "react-icons/gr";
+import { GrGamepad } from "react-icons/gr";
 
 
 const StakingPage = () => {
+
+  const settings = {
+    dots: true,
+      infinite: true,
+      speed: 500,
+      slidesToShow: 5,
+      slidesToScroll: 1
+    // afterChange: function(index) {
+    //   console.log(
+    //     `Slider Changed to: ${index + 1}, background: #222; color: #bada55`
+    //   );
+    // }
+  };
 
     const dispatch = useDispatch()
     const {account} = useSelector(state => state.account)
@@ -30,6 +45,7 @@ const StakingPage = () => {
     const changeState = () =>{
       dispatch(stakingViewAction.stakingViewAct(account))
     }
+
 
     let nonStakeArr = []
     let comStakeArr = []
@@ -87,23 +103,39 @@ const StakingPage = () => {
     <div className="style-five"></div>
     <hr className="style-five"/> 
     <div className='stakingPageContainer'>
-        <div className='stakingZolToken'>
-          <div className='strkingRewardTitle'>
-            <span>Your Mining Zola Token</span>
+      <div className='stakingPageTopSection'>
+        <div>
+          <h1>ZLT Rebate for Trading free</h1>
+        </div>
+        <div className='stakingRewardTxt'>
+          <span>
+            Stake NFT to earn up to 100% ZLT rebate of your trade and reveive AirDrop the rewards at the end of NFT Lottery Game
+          </span>
+          
+        </div>
+        <div className='joinGameContainer'>
+          <span className='joinGameTxt'>
+            Join NFT Lottery Game
+          </span>
+          <GrGamepad size={30} className="gameIcon"/>
+          <button  className='refreshBtn'><GrRefresh onClick={changeState}/></button>
+        </div>
+        <div className='zolTokenAmountContainer'>
+          <div className='miningZolTokenSection'>
+            <div className='miningZolTokenTitle'> <p>Your Mining Zola Token</p> </div>
+            <div className='miningZolTokenAmount'> <p>{stakingReward} ZLT</p> </div>
           </div>
-          <div className='stakingReward'>
-            <span> : {stakingReward} </span>
-          </div>
-          <div>
-            <button onClick={changeState} className='refreshBtn'><GrRefresh/></button>
+          <div className='myZolTokenSection'>
+            <div className='myZolTokenTitle'> <span>My Zola Token</span> </div>
+            <div className='myZolTokenAmount'> <span>{getStakingReward} ZLT</span> </div>
           </div>
           <div>
             <button onClick={getReward} className='claimBtn'>Claim</button>
           </div>
         </div>
-        <div className='stakingZolToken'>
-          <h3>My Zola Token : {getStakingReward} token</h3>
-        </div>
+      </div>
+      <div className='stakingPageMainSection'>
+        <h1>My NFTs</h1>
         <div className='stakingPageTitle'>
           <span className='stakingPageSpan1'>
             Total : {myNftList.length + stakingNftString.length}
@@ -115,80 +147,101 @@ const StakingPage = () => {
             Staking : {stakingNftString.length}
           </span>
         </div>
-        <div className='notStakingContainer'>
-          <div className='notStakingBoxContainer'>
-            <div className='notStakingBoxSection'>
-              <div>
-                <h2>
-                  Not Staking NFT :
-                </h2>
-              </div>
-              <div className='notStakingCardMainContainer'>
-              {
-                myNftList !== '' ?
-                myNftList.map((item, index)=> {
-                return <div className='notStakingCardContainer'  key={index}>
-                    <div className='notStakingImgCard'
-                      style={{
-                        backgroundImage: 
-                            "url(" + 
-                            `https://gateway.pinata.cloud/ipfs/QmfDCXHotQP7tH252h5BPEPX6kLmPJSzKzddnVxQUhrw4m/${item}.png` + 
-                            ")"
-                      }}>
-                      {/* <input type='checkbox' className='nonStakingCheckBox' onClick={()=>nonStake(item)} label='nonStakingCheckBoxCircle'/>
-                        <label type='checkbox' className='nonStakingCheckBoxCircle' onClick={()=>nonStake(item)}></label> */}
-                        <label className='nonStakingCheckBoxCircle' onClick={()=>nonStake(item)} htmlFor='nonStakingCheckBox'>
-                          <input type='checkbox' className='nonStakingCheckBox' onClick={()=>nonStake(item)} label='nonStakingCheckBoxCircle'/>
-                        </label>
-                        {/* 흠.. 여기를 어떻게 해야할까 */}
-                    </div>
-                  </div>
-                })
-                  : null
-              }
-              </div>
-              <div className='notStakingBtn'>
-                {/* <button className="learn-more">Staking</button> */}
-                <button onClick={()=>staking(nonStakeArr)} className="learn-more">Staking</button>
-              </div>
-            </div>
-          </div>
-            
-        </div>
-
-        <div className='comStakingContainer'>
-          <div className='comStakingBoxContainer'>
-            <div className='comStakingBoxSection'>
+          {/* Stake Section */}
+          <div className='notStakingContainer'>
+            <div className='notStakingBoxContainer'>
+              <div className='notStakingBoxSection'>
                 <div>
                   <h2>
-                    Staking UFT : 
+                    UnStake NFT 
                   </h2>
+                  <span className='unStakeTxt'>
+                    Do note that only NFTs that have been staked for afull 24 hours can enjoy the current day's ZLT rebate
+                  </span>
                 </div>
-                <div className='comStakginCardMainContainer'>
+                <div className='notStakingCardMainContainer'>
                 {
-                  stakingNftString !== '' ?
-                  stakingNftString.map((item, index)=> {
-                    return <div className='comStakingCardContainer' key={index}>
-                    <div className='comStakingImgCard'
-                      style={{
-                        backgroundImage: 
-                            "url(" + 
-                            `https://gateway.pinata.cloud/ipfs/QmfDCXHotQP7tH252h5BPEPX6kLmPJSzKzddnVxQUhrw4m/${item}.png` + 
-                            ")"
-                      }}>
-                      <input type='checkbox' onClick={()=>comStake(item)}/>
+                  myNftList !== '' ?
+                <Slider className='firstSlider' {...settings}>
+                {
+                  myNftList.map((item, index)=> {
+                  return<div className='notStakingCardContainer'  key={index}>
+                    
+                      <div className='notStakingImgCard'
+                        style={{
+                          backgroundImage: 
+                              "url(" + 
+                              `https://gateway.pinata.cloud/ipfs/QmfDCXHotQP7tH252h5BPEPX6kLmPJSzKzddnVxQUhrw4m/${item}.png` + 
+                              ")"
+                        }}>
+                        <input type='checkbox' className='nonStakingCheckBox' onClick={()=>nonStake(item)} label='nonStakingCheckBoxCircle'/>
+                          <label type='checkbox' className='nonStakingCheckBoxCircle' onClick={()=>nonStake(item)}></label>
+                          {/* <label className='nonStakingCheckBoxCircle' onClick={()=>nonStake(item)} htmlFor='nonStakingCheckBox'>
+                            <input type='checkbox' className='nonStakingCheckBox' onClick={()=>nonStake(item)} label='nonStakingCheckBoxCircle'/>
+                          </label> */}
+                          {/* 흠.. 여기를 어떻게 해야할까 */}
+                      </div>
                     </div>
-                  </div>
                   })
-                  : null
-                  }
+                }
+                  </Slider>
+                    : null
+                }   
                 </div>
-                <div className='comStakingBtn'>
-                  <button onClick={()=>cancelStaking(comStakeArr)} className="learn-more">UnStake</button>
+                <div className='notStakingBtn'>
+                  {/* <button className="learn-more">Staking</button> */}
+                  <button onClick={()=>staking(nonStakeArr)} className="learn-more">Staking</button>
                 </div>
+              </div>
             </div>
           </div>
-        </div>
+          {/* UnStake section */}
+          <div className='comStakingContainer'>
+            <div className='comStakingBoxContainer'>
+              <div className='comStakingBoxSection'>
+                <div>
+                  <h2>
+                    Staking NFT 
+                  </h2>
+                </div>
+                <div className='comStakingCardMainContainer'>
+                {
+                  stakingNftString !== '' ? 
+                <Slider className='firstSlider' {...settings}>
+                {
+                  stakingNftString.map((item, index)=> {
+                  return<div className='comStakingCardContainer'  key={index}>
+
+                      <div className='comStakingImgCard'
+                        style={{
+                          backgroundImage: 
+                              "url(" + 
+                              `https://gateway.pinata.cloud/ipfs/QmfDCXHotQP7tH252h5BPEPX6kLmPJSzKzddnVxQUhrw4m/${item}.png` + 
+                              ")"
+                        }}>
+                        <input type='checkbox' className='comStakingCheckBox' onClick={()=>nonStake(item)} label='comStakingCheckBoxCircle'/>
+                          <label type='checkbox' className='comStakingCheckBoxCircle' onClick={()=>nonStake(item)}></label>
+                          {/* <label className='nonStakingCheckBoxCircle' onClick={()=>nonStake(item)} htmlFor='nonStakingCheckBox'>
+                            <input type='checkbox' className='nonStakingCheckBox' onClick={()=>nonStake(item)} label='nonStakingCheckBoxCircle'/>
+                          </label> */}
+                          {/* 흠.. 여기를 어떻게 해야할까 */}
+                      </div>
+                    </div>
+                  })
+                }
+                  </Slider>
+                    : null
+                }   
+                </div>
+                <div className='comStakingBtn'>
+
+                  {/* <button className="learn-more">Staking</button> */}
+                  <button onClick={()=>cancelStaking(comStakeArr)} className="learn-more">UnStake</button>
+                </div>
+              </div>
+            </div>
+          </div>
+      </div>
     </div>
     </>
   )
