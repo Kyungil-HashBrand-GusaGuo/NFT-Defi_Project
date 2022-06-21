@@ -29,4 +29,6 @@ router.get("/getOnSaleJolaman", saleController.getOnSaleJolaman);
 router.post("/stakedJolaman", stakeController.getOwnedStakedJolamanType);
 router.post("/updateReward", stakeController.updateReward);
 router.post("/stakers", stakeController.stakers);
+router.post("/balanceOf", stakeController.balanceOf);
+
 module.exports = router;
