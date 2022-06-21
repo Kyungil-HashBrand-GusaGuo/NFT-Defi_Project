@@ -1,6 +1,8 @@
+// const { caver } = require("../../contracts/randomZolaman");
 const {
   RandomJolamanContract,
   MINT_CONTRACT_ADDRESS,
+  caver,
 } = require("../../contracts/randomZolaman");
 
 // 화이트리스트 체크
@@ -43,10 +45,17 @@ const CURRENT_SPECIAL_TOKEN_COUNT = async (req, res) => {
   res.json(result);
 };
 
+const BalanceKlay = async (req, res) => {
+  const result = await caver.rpc.klay.getBalance(req.body.account);
+  const balance = caver.utils.hexToNumberString(result);
+  res.json(balance);
+};
+
 module.exports = {
   isWhiteList,
   MAX_NORMAL_TOKEN_COUNT,
   MAX_SPECIAL_TOKEN_COUNT,
   CURRENT_NORMAL_TOKEN_COUNT,
   CURRENT_SPECIAL_TOKEN_COUNT,
+  BalanceKlay,
 };
