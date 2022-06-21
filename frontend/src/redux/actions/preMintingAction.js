@@ -3,67 +3,51 @@ import { ethers } from "ethers";
 import axios from "axios";
 import pinataApi from "../pinataApi";
 
-function preMintAction(account) {
 
+function preMintAction(account) {
   // console.log(setDataContract.getTotalOwnedTokens(account))
   return async (dispatch) => {
     try {
-      // const response = await window.ethereum.sendTransaction({
-      //   from: account,
-      //   to: MINT_CONTRACT_ADDRESS,
-      //   value: ethers.utils.formatEther(2, "Ether"),
-      //   gas: "3000000",
-      //   data: RandomJolamanContract.payandMint().encodeABI(),
-      // })
-      // await window.ethereum.enable()
-      // console.log(RandomJolamanContract().then(e => console.log(e.totalSupply().then(f => console.log(f)))))
-      // const contract1 = await RandomJolamanContract();
       const response = await RandomJolamanContract.payandMint({
         from: account,
         value: ethers.BigNumber.from("20000000000000000")
       });
       // 1000000000000000000
       console.log("if문 전", response)
-      if (response.status) {
-        // const contract2 = await setDataContract();
-        const response = await setDataContract.getTotalOwnedTokens(account);
-        let metaDataURI = response[response.length - 1];
-        const getMetaData = async () => {
-          const response = await axios.get(`https://gateway.pinata.cloud/ipfs/QmaavyzfX6XzVNJx4zKCQVNDJWwQJx9xUC6gmDfddxvQ6p/${metaDataURI}.json`);
-          console.log("if문 안", response.data)
-          dispatch({ type: "GET_PRE_MINTDATA", payload: { premintdata: response.data } })
-        }
-        getMetaData();
-      }
 
     } catch (error) {
       console.error(error);
-
-    // return async (dispatch) => {
-    //     try {
-    //         const response = await caver.klay.sendTransaction({
-    //           from: account,
-    //           to: MINT_CONTRACT_ADDRESS,
-    //           value: caver.utils.convertToPeb(2, "KLAY"),
-    //           gas: "3000000",
-    //           data: RandomJolamanContract.methods.payandMint().encodeABI(),
-    //         })
-    //         console.log("if문 전",response)
-    //         if(response.status) {
-    //           const response = await setDataContract.methods.getTotalOwnedTokens(account).call()
-    //           let metaDataURI = response[response.length-1]; 
-    //           const getMetaData = async() => {
-    //             const response = await pinataApi.get(`/${metaDataURI}.json`);
-    //             console.log( "if문 안",response.data)
-    //             dispatch({type : "GET_PRE_MINTDATA", payload : {premintdata : response.data}})         
-    //           }
-    //           getMetaData();
-    //         }
-    //       } catch (error){
-    //         console.error(error);
-    //       }
     }
   }
 }
+
+// const getStatus = async (hash) => {
+//   try {
+//     const receiptStatus = web3.eth.getTransactionReceipt(hash).then(e => e.status)
+//     console.log('receiptStatus before ', receiptStatus)
+//     
+//     if (receiptStatus) {
+//       console.log('receiptStatus', receiptStatus)
+//         // const contract2 = await setDataContract();
+//         const response = await setDataContract.getTotalOwnedTokens(account);
+//         let metaDataURI = response[response.length - 1];
+//         const getMetaData = async () => {
+//           const response = await axios.get(`https://gateway.pinata.cloud/ipfs/QmaavyzfX6XzVNJx4zKCQVNDJWwQJx9xUC6gmDfddxvQ6p/${metaDataURI}.json`);
+//           console.log("if문 안", response.data)
+//           dispatch({ type: "GET_PRE_MINTDATA", payload: { premintdata: response.data } })
+//         }
+//         getMetaData();
+//       }
+
+//       setHash(response.hash)
+//       getStatus(hash);
+//       useEffect(() => {
+//         getStatus(hash);
+//       },[hash.status])
+      
+//     } catch (error) { 
+//     console.log(error)
+//   }
+// }
 
 export const preMintingAction = { preMintAction }

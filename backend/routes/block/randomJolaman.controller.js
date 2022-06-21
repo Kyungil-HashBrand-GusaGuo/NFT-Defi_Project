@@ -13,9 +13,11 @@ const {
   
   // normal Token 총 발행량
   const MAX_NORMAL_TOKEN_COUNT = async (req, res) => {
+    
     const result = await RandomJolamanContract.methods
       .MAX_NORMAL_TOKEN_COUNT()
       .call();
+    // console.log(result)
     res.json(result);
   };
   
@@ -32,6 +34,7 @@ const {
     const result = await RandomJolamanContract.methods
       ._normalTokenIdCount()
       .call();
+    // console.log(result)
     res.json(result);
   };
   

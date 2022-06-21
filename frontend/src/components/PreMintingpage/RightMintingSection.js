@@ -10,7 +10,7 @@ const RightMintingSection = () => {
 
     const {account} = useSelector(state => state.account)
     const {whitemintdata, maxSpecialTokenCount, specialTokenCount} = useSelector(state => state.mintdata)
-    console.log("화이트민팅 데이터",whitemintdata)
+    // console.log("화이트민팅 데이터",whitemintdata)
 
 
     const minting = () => {
