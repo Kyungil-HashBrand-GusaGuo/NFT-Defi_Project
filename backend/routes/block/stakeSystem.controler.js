@@ -27,6 +27,7 @@ const stakers = async (req, res) => {
   res.json(result);
 };
 
+
 module.exports = {
   getOwnedStakedJolamanType,
   updateReward,
