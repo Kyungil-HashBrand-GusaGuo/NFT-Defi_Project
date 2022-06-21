@@ -27,8 +27,16 @@ const stakers = async (req, res) => {
   res.json(result);
 };
 
+const balanceOf = async (req, res) => {
+  const result = await stakeSystemContract.methods
+    .balanceOf(req.body.account)
+    .call();
+  res.json(result);
+};
+
 module.exports = {
   getOwnedStakedJolamanType,
   updateReward,
   stakers,
+  balanceOf,
 };

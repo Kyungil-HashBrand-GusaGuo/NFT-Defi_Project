@@ -10,11 +10,12 @@ function stakingViewAct(account) {
                 const stakingNftApi = api.post("/stakedJolaman", { account });
                 const stakingRewardApi = api.post("/updateReward", { account });
                 const getStakingRewardApi = api.post("/stakers", { account });
+                const getRewardErc20Api = api.post("/balanceOf", { account });
                 //const getKlayBalanceApi = api.post("/balanceKlay", { account });
                 //console.log("asd",getKlayBalanceApi)
                 const getKlayBalanceApi = caver.klay.getBalance(account);
 
-                let [ myNftList, stakingNft, stakingReward, getStakingReward, getKlayBalance ] = await Promise.all([myNftListApi, stakingNftApi, stakingRewardApi, getStakingRewardApi, getKlayBalanceApi ])
+                let [ myNftList, stakingNft, stakingReward, getStakingReward, getKlayBalance, getRewardErc20 ] = await Promise.all([myNftListApi, stakingNftApi, stakingRewardApi, getStakingRewardApi, getKlayBalanceApi, getRewardErc20Api ])
 
                 //console.log(stakingNft.data[0])
                 let stakingNftNumberData = []
@@ -25,6 +26,7 @@ function stakingViewAct(account) {
                   }
 
                 console.log("나의 NFT목록",myNftList.data)
+                console.log("ERC20 : ", getRewardErc20);
                 //console.log("스테이킹 NFT",stakingNft.data)
                 console.log("스테이킹 NFT",stakingNftNumberData)
                 console.log("받을 스테이킹 리워드",stakingReward.data / 10**18)
