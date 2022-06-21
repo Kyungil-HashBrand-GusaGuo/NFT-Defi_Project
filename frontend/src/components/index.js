@@ -13,6 +13,8 @@ import Gallery from './MainPage/Gallery'
 import SellModal from './SellPage/SellModal';
 import CancelSellModal from './SellPage/CancelSellModal';
 import BuyModal from './BuyPage/BuyModal';
+import SwapModal from './global/SwapModal';
+import SwapActModal from './global/SwapActModal'
 
 export { 
     Navbar, 
@@ -29,5 +31,7 @@ export {
     Gallery,
     SellModal,
     CancelSellModal,
-    BuyModal
+    BuyModal,
+    SwapModal,
+    SwapActModal
 }

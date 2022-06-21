@@ -28,7 +28,7 @@ const StakingPage = () => {
     const dispatch = useDispatch()
     const {account} = useSelector(state => state.account)
     const {myNftList, stakingNftString, stakingReward , getStakingReward} = useSelector(state => state.stakingView)
-    const [checkNft, setCheckNft] = useState(false)
+    //const [checkNft, setCheckNft] = useState(false)
 
     const staking = (edition) => {
       dispatch(stakingAction.stakingAct(account, edition))
@@ -80,15 +80,13 @@ const StakingPage = () => {
       console.log("스테이킹 배열확인", comStakeArr)
     }
 
-    const checkingNft = () => {
-      if(checkNft){
-        setCheckNft(false)
-        console.log("상태확인",checkNft)
+    const checkingNft = (e) => {
+      if(e.checked){
+        e.checked = false
       } else {
-        setCheckNft(true)
-        console.log("상태확인",checkNft)
+        e.checked = true;
       }
-    }
+    } 
 
     console.log(account)
     useEffect( () => {
@@ -122,11 +120,11 @@ const StakingPage = () => {
         </div>
         <div className='zolTokenAmountContainer'>
           <div className='miningZolTokenSection'>
-            <div className='miningZolTokenTitle'> <p>Your Mining Zola Token</p> </div>
+            <div className='miningZolTokenTitle'> <p>Zolaman Token currently being mined</p> </div>
             <div className='miningZolTokenAmount'> <p>{stakingReward} ZLT</p> </div>
           </div>
           <div className='myZolTokenSection'>
-            <div className='myZolTokenTitle'> <span>My Zola Token</span> </div>
+            <div className='myZolTokenTitle'> <span>Total Zolaman Tokens Received</span> </div>
             <div className='myZolTokenAmount'> <span>{getStakingReward} ZLT</span> </div>
           </div>
           <div>
@@ -148,9 +146,9 @@ const StakingPage = () => {
           </span>
         </div>
           {/* Stake Section */}
-          <div className='notStakingContainer'>
-            <div className='notStakingBoxContainer'>
-              <div className='notStakingBoxSection'>
+          <div className='unStakingContainer'>
+            <div className='unStakingBoxContainer'>
+              <div className='unStakingBoxSection'>
                 <div>
                   <h2>
                     UnStake NFT 
@@ -159,27 +157,23 @@ const StakingPage = () => {
                     Do note that only NFTs that have been staked for afull 24 hours can enjoy the current day's ZLT rebate
                   </span>
                 </div>
-                <div className='notStakingCardMainContainer'>
+                <div className='unStakingCardMainContainer'>
                 {
                   myNftList !== '' ?
                 <Slider className='firstSlider' {...settings}>
                 {
                   myNftList.map((item, index)=> {
-                  return<div className='notStakingCardContainer'  key={index}>
+                  return<div className='unStakingCardContainer'  key={index}>
                     
-                      <div className='notStakingImgCard'
+                      <div className='unStakingImgCard'
                         style={{
                           backgroundImage: 
                               "url(" + 
                               `https://gateway.pinata.cloud/ipfs/QmfDCXHotQP7tH252h5BPEPX6kLmPJSzKzddnVxQUhrw4m/${item}.png` + 
                               ")"
                         }}>
-                        <input type='checkbox' className='nonStakingCheckBox' onClick={()=>nonStake(item)} label='nonStakingCheckBoxCircle'/>
-                          <label type='checkbox' className='nonStakingCheckBoxCircle' onClick={()=>nonStake(item)}></label>
-                          {/* <label className='nonStakingCheckBoxCircle' onClick={()=>nonStake(item)} htmlFor='nonStakingCheckBox'>
-                            <input type='checkbox' className='nonStakingCheckBox' onClick={()=>nonStake(item)} label='nonStakingCheckBoxCircle'/>
-                          </label> */}
-                          {/* 흠.. 여기를 어떻게 해야할까 */}
+                        <input type='checkbox' className='unStakingCheckBox' />
+                        <label className='unStakingCheckBoxCircle' onClick={(e)=>{nonStake(item); checkingNft(e.target.parentNode.children[0]);}}></label>
                       </div>
                     </div>
                   })
@@ -188,7 +182,7 @@ const StakingPage = () => {
                     : null
                 }   
                 </div>
-                <div className='notStakingBtn'>
+                <div className='unStakingBtn'>
                   {/* <button className="learn-more">Staking</button> */}
                   <button onClick={()=>staking(nonStakeArr)} className="learn-more">Staking</button>
                 </div>
@@ -219,12 +213,8 @@ const StakingPage = () => {
                               `https://gateway.pinata.cloud/ipfs/QmfDCXHotQP7tH252h5BPEPX6kLmPJSzKzddnVxQUhrw4m/${item}.png` + 
                               ")"
                         }}>
-                        <input type='checkbox' className='comStakingCheckBox' onClick={()=>nonStake(item)} label='comStakingCheckBoxCircle'/>
-                          <label type='checkbox' className='comStakingCheckBoxCircle' onClick={()=>nonStake(item)}></label>
-                          {/* <label className='nonStakingCheckBoxCircle' onClick={()=>nonStake(item)} htmlFor='nonStakingCheckBox'>
-                            <input type='checkbox' className='nonStakingCheckBox' onClick={()=>nonStake(item)} label='nonStakingCheckBoxCircle'/>
-                          </label> */}
-                          {/* 흠.. 여기를 어떻게 해야할까 */}
+                        <input type='checkbox' className='unStakingCheckBox' />
+                        <label className='unStakingCheckBoxCircle' onClick={(e)=>{comStake(item); checkingNft(e.target.parentNode.children[0]);}}></label>
                       </div>
                     </div>
                   })
@@ -234,7 +224,6 @@ const StakingPage = () => {
                 }   
                 </div>
                 <div className='comStakingBtn'>
-
                   {/* <button className="learn-more">Staking</button> */}
                   <button onClick={()=>cancelStaking(comStakeArr)} className="learn-more">UnStake</button>
                 </div>
