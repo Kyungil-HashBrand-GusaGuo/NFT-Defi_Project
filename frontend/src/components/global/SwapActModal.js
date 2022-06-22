@@ -2,16 +2,15 @@ import React, { useEffect } from 'react'
 import './SwapActModal.css'
 import { swapAction } from '../../redux/actions/swapAction'
 import { useDispatch, useSelector } from 'react-redux'
-import { useNavigate } from 'react-router-dom'
+import { swapModalAction } from '../../redux/actions/swapModalAction';
 
 const SwapActModal = ({account, amount}) => {
 
     const dispatch = useDispatch()
-    const navigate = useNavigate()
     const { swapSuccess } = useSelector(state => state.stakingView)
 
-    const goToStaking = () => {
-        navigate('/staking')
+    const closePage = () => {
+      dispatch(swapModalAction.swapModalAct())
     }
 
     useEffect( () =>{
@@ -25,7 +24,7 @@ const SwapActModal = ({account, amount}) => {
         { swapSuccess ?
         <div>
             <h2 className='swapMintingComMessage'>Swap Success!!!</h2>
-            <button className='sellModalEndButton' onClick={goToStaking} >Go to Staking</button> 
+            <button className='sellModalEndButton' onClick={closePage} >Close Page</button> 
         </div>
         : <h2 className='sellMintingMessage'> Swap Loading...</h2> }
       </div>
