@@ -8,6 +8,9 @@ import { stakingCancelAction } from '../redux/actions/stakingCancelAction'
 import { GrRefresh } from "react-icons/gr";
 import { GrGamepad } from "react-icons/gr";
 import { ClaimModal, StakingModal, UnStakingModal } from '../components';
+import { TbArrowBigLeftLines } from "react-icons/tb";
+import { TbArrowBigRightLines } from "react-icons/tb";
+import { useNavigate } from 'react-router-dom';
 
 
 const StakingPage = () => {
@@ -17,14 +20,16 @@ const StakingPage = () => {
       infinite: true,
       speed: 500,
       slidesToShow: 5,
-      slidesToScroll: 1
+      slidesToScroll: 1,
+      nextArrow: <TbArrowBigRightLines color='black' size={30} />,
+      prevArrow: <TbArrowBigLeftLines color='black'  size={30}/>,
     // afterChange: function(index) {
     //   console.log(
     //     `Slider Changed to: ${index + 1}, background: #222; color: #bada55`
     //   );
     // }
   };
-
+    const navigate = useNavigate()
     const dispatch = useDispatch()
     const {account} = useSelector(state => state.account)
     const {myNftList, stakingNftString, stakingReward , getStakingReward, successStaking, successUnStaking} = useSelector(state => state.stakingView)
@@ -32,6 +37,10 @@ const StakingPage = () => {
 
     const staking = (edition) => {
       dispatch(stakingAction.stakingAct(account, edition))
+    }
+
+    const goToCardGame = () => {
+      navigate('/cardgame')
     }
 
     const cancelStaking = (edition) => {
@@ -98,8 +107,8 @@ const StakingPage = () => {
     <hr className="style-five"/> 
     <div className='stakingPageContainer'>
       <div className='stakingPageTopSection'>
-        <div>
-          <h1>ZLT Rebate for Trading free</h1>
+        <div className='stakingRebateTitle'>
+          <span>ZLT Rebate for Trading free</span>
         </div>
         <div className='stakingRewardTxt'>
           <span>
@@ -111,13 +120,13 @@ const StakingPage = () => {
           <span className='joinGameTxt'>
             Join NFT Lottery Game
           </span>
-          <GrGamepad size={30} className="gameIcon"/>
-          <button  className='refreshBtn'><GrRefresh onClick={changeState}/></button>
+          <GrGamepad className="gameIcon" onClick={goToCardGame}/>
+          <button  className='refreshBtn' onClick={changeState} ><GrRefresh /></button>
         </div>
         <div className='zolTokenAmountContainer'>
           <div className='miningZolTokenSection'>
-            <div className='miningZolTokenTitle'> <p>Zolaman Token currently being mined</p> </div>
-            <div className='miningZolTokenAmount'> <p>{stakingReward} ZLT</p> </div>
+            <div className='miningZolTokenTitle'> <span>Zolaman Token currently being mined</span> </div>
+            <div className='miningZolTokenAmount'> <span>{stakingReward} ZLT</span> </div>
           </div>
           <div className='myZolTokenSection'>
             <div className='myZolTokenTitle'> <span>Total Zolaman Tokens Received</span> </div>
