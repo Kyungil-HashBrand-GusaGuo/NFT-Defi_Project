@@ -10,6 +10,7 @@ import { GrCheckbox, GrRefresh } from "react-icons/gr";
 import { GrGamepad } from "react-icons/gr";
 import { TbArrowBigLeftLines } from "react-icons/tb";
 import { TbArrowBigRightLines } from "react-icons/tb";
+import { useNavigate } from 'react-router-dom';
 
 
 const StakingPage = () => {
@@ -28,7 +29,7 @@ const StakingPage = () => {
     //   );
     // }
   };
-
+    const navigate = useNavigate()
     const dispatch = useDispatch()
     const {account} = useSelector(state => state.account)
     const {myNftList, stakingNftString, stakingReward , getStakingReward} = useSelector(state => state.stakingView)
@@ -36,6 +37,10 @@ const StakingPage = () => {
 
     const staking = (edition) => {
       dispatch(stakingAction.stakingAct(account, edition))
+    }
+
+    const goToCardGame = () => {
+      navigate('/cardgame')
     }
 
     const cancelStaking = (edition) => {
@@ -119,7 +124,7 @@ const StakingPage = () => {
           <span className='joinGameTxt'>
             Join NFT Lottery Game
           </span>
-          <GrGamepad className="gameIcon"/>
+          <GrGamepad className="gameIcon" onClick={goToCardGame}/>
           <button  className='refreshBtn' onClick={changeState} ><GrRefresh /></button>
         </div>
         <div className='zolTokenAmountContainer'>
