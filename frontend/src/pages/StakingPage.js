@@ -1,13 +1,13 @@
-import React, { useEffect, useState, Component } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import Slider from "react-slick";
 import './StakingPage.css'
 import { stakingViewAction } from '../redux/actions/stakingViewAction'
 import { stakingAction } from '../redux/actions/stakingAction'
 import { stakingCancelAction } from '../redux/actions/stakingCancelAction'
-import { stakingRewardAction } from '../redux/actions/stakingRewardAction'
-import { GrCheckbox, GrRefresh } from "react-icons/gr";
+import { GrRefresh } from "react-icons/gr";
 import { GrGamepad } from "react-icons/gr";
+import { ClaimModal, StakingModal, UnStakingModal } from '../components';
 import { TbArrowBigLeftLines } from "react-icons/tb";
 import { TbArrowBigRightLines } from "react-icons/tb";
 import { useNavigate } from 'react-router-dom';
@@ -32,8 +32,8 @@ const StakingPage = () => {
     const navigate = useNavigate()
     const dispatch = useDispatch()
     const {account} = useSelector(state => state.account)
-    const {myNftList, stakingNftString, stakingReward , getStakingReward} = useSelector(state => state.stakingView)
-    //const [checkNft, setCheckNft] = useState(false)
+    const {myNftList, stakingNftString, stakingReward , getStakingReward, successStaking, successUnStaking} = useSelector(state => state.stakingView)
+    const [claimModal, setClaimModal] = useState(false)
 
     const staking = (edition) => {
       dispatch(stakingAction.stakingAct(account, edition))
@@ -47,33 +47,25 @@ const StakingPage = () => {
       dispatch(stakingCancelAction.stakingCancelAct(account, edition))
     }
 
-    const getReward = () => {
-      dispatch(stakingRewardAction.stakingRewardAct(account))
-    }
-
     const changeState = () =>{
       dispatch(stakingViewAction.stakingViewAct(account))
     }
 
-
-    let nonStakeArr = []
+    let unStakeArr = []
     let comStakeArr = []
 
-    const nonStake = (id) => {
-      if(nonStakeArr.includes(id)){
-        for(let i = 0; i < nonStakeArr.length; i++) {
-          if(nonStakeArr[i] === id)  {
-            nonStakeArr.splice(i, 1);
+    const unStake = (id) => {
+
+      if(unStakeArr.includes(id)){
+        for(let i = 0; i < unStakeArr.length; i++) {
+          if(unStakeArr[i] === id)  {
+            unStakeArr.splice(i, 1);
           }
         }
-        //console.log("삭제된건가?",nonStakeArr)
       } else {
-        nonStakeArr.push(id)
-        //console.log("배열들어오니",nonStakeArr)
+        unStakeArr.push(id)
       }
-      console.log("Non스테이팅 배열확인", nonStakeArr)
-      // let testaa = nonStakeArr
-      //setShowid(...nonStakeArr)
+      console.log("Non스테이팅 배열확인", unStakeArr)
     }
 
     const comStake = (id) => {
@@ -104,6 +96,10 @@ const StakingPage = () => {
 
   return (
     <>
+    { claimModal ? <ClaimModal account={account}/> : null }
+    { successStaking ? <StakingModal/> : null }
+    { successUnStaking ? <UnStakingModal/> : null }
+
     <div className='stakingTitleContainer'>
               <h2>Staking</h2>
     </div>
@@ -137,7 +133,7 @@ const StakingPage = () => {
             <div className='myZolTokenAmount'> <span>{getStakingReward} ZLT</span> </div>
           </div>
           <div>
-            <button onClick={getReward} className='claimBtn'>Claim</button>
+            <button onClick={()=>setClaimModal(true)} className='claimBtn'>Claim</button>
           </div>
         </div>
       </div>
@@ -182,7 +178,7 @@ const StakingPage = () => {
                               ")"
                         }}>
                         <input type='checkbox' className='unStakingCheckBox' />
-                        <label className='unStakingCheckBoxCircle' onClick={(e)=>{nonStake(item); checkingNft(e.target.parentNode.children[0]);}}></label>
+                        <label className='unStakingCheckBoxCircle' onClick={(e)=>{unStake(item); checkingNft(e.target.parentNode.children[0]);}}></label>
                       </div>
                     </div>
                   })
@@ -192,8 +188,9 @@ const StakingPage = () => {
                 }   
                 </div>
                 <div className='unStakingBtn'>
-                  {/* <button className="learn-more">Staking</button> */}
-                  <button onClick={()=>staking(nonStakeArr)} className="learn-more">Staking</button>
+                  <button onClick={()=>staking(unStakeArr)} className="learn-more">Staking</button>
+                  {/* 모달창으로 넘기는거 시도 */}
+                  {/* <button onClick={()=>setStakingModal(true)} className="learn-more">Staking</button> */}
                 </div>
               </div>
             </div>
