@@ -13,7 +13,10 @@ function stakingCancelAct(account, edition) {
                 gas: "3000000",
                 data: StakingContract.methods.unstakeBatch(edition).encodeABI()
             })
-            console.log(response);
+            dispatch({
+              type:"SUCCESS_UNSTAKING", 
+              payload : {successUnStaking : true}
+            })
           } catch (error){
             console.error(error);
           }
