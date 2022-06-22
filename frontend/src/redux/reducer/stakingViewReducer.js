@@ -6,7 +6,8 @@ let initialState = {
     getStakingReward : '',
     getKlayBalance : '',
     getTokenBalance : '',
-    swapSuccess : false
+    swapSuccess : false,
+    swapModalChange : false
 }
 
 function stakingViewReducer(state=initialState,action) {
@@ -29,6 +30,11 @@ function stakingViewReducer(state=initialState,action) {
         case "SUCCESS_SWAP" :
             return {...state,
                 swapSuccess : payload.swapSuccess
+            }
+
+        case "CHANGE_SWAP_MODAL" :
+            return {...state,
+                swapModalChange : payload.swapModalChange
             }
 
         default :

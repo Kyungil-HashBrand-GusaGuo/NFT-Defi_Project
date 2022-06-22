@@ -31,6 +31,10 @@
     justify-content: space-between;
 }
 
+.swapModalTitle h1{
+    cursor: pointer;
+}
+
 .swapModalInfoSection {
     height: 380px;
     padding: 10px;
