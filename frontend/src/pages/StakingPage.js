@@ -135,11 +135,11 @@ const StakingPage = () => {
                             `https://gateway.pinata.cloud/ipfs/QmfDCXHotQP7tH252h5BPEPX6kLmPJSzKzddnVxQUhrw4m/${item}.png` + 
                             ")"
                       }}>
-                      {/* <input type='checkbox' className='nonStakingCheckBox' onClick={()=>nonStake(item)} label='nonStakingCheckBoxCircle'/>
-                        <label type='checkbox' className='nonStakingCheckBoxCircle' onClick={()=>nonStake(item)}></label> */}
-                        <label className='nonStakingCheckBoxCircle' onClick={()=>nonStake(item)} htmlFor='nonStakingCheckBox'>
-                          <input type='checkbox' className='nonStakingCheckBox' onClick={()=>nonStake(item)} label='nonStakingCheckBoxCircle'/>
-                        </label>
+                      <input type='checkbox' className='nonStakingCheckBox' onClick={()=>nonStake(item)} label='nonStakingCheckBoxCircle'/>
+                        <label type='checkbox' className='nonStakingCheckBoxCircle' onClick={()=>nonStake(item)}></label>
+                        {/* <label className='nonStakingCheckBoxCircle' onClick={()=>nonStake(item)} htmlFor='nonStakingCheckBox'>
+                          <input type='checkbox' className='nonStakingCheckBox' onClick={()=>nonStake(item)} label='nonStakingCheckBoxCircle'/> */}
+                        {/* </label> */}
                         {/* 흠.. 여기를 어떻게 해야할까 */}
                     </div>
                   </div>

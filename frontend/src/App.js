@@ -21,6 +21,7 @@ function App() {
         <Route path='/marketpage/:edition' element={<BuyPage/>}/>
         <Route path='/staking' element={<StakingPage/>}/>
         <Route path='/swap' element={<SwapPage/>}/>
+
       </Routes>
     </div>
       <Footer/>
