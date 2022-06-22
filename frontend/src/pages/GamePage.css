@@ -1,11 +1,20 @@
 .gameMainContainer {
-    max-width: 660px;
-    margin-left: 40px auto;
-    margin-right: 40px auto;
+    /* width: 100%; */
+    /* min-width: auto; */
+    min-height: auto;
     /* margin-bottom: 40px auto; */
-    padding-top: 100px;
+    padding-top: 120px;
+    padding-left: 200px;
+    padding-right: 200px;
+    padding-bottom: 50px;
   }
 
+  .test10 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
   
   .startBtn {
     background: purple;
@@ -24,7 +33,7 @@
   }
   
   .card-grid {
-    margin-top: 40px;
+    margin-top: 20px;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-gap: 10px;
