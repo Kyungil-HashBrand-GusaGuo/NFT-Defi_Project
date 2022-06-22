@@ -9,4 +9,4 @@ import BuyPage from "./BuyPage"
 import StakingPage from "./StakingPage"
 import GamePage from "./GamePage"
 
-export { MainPage, PreMintingPage, AdminPage, MyPage, AllMintPage, SellPage, MarketPage, BuyPage, StakingPage, GamePage}
+export { MainPage, PreMintingPage, AdminPage, MyPage, AllMintPage, SellPage, MarketPage, BuyPage, StakingPage, GamePage }

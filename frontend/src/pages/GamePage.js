@@ -71,21 +71,22 @@ function GamePage() {
 
   return (
     <div className="gameMainContainer">
-      <h1>Zolaman Memory Game</h1>
-      <button className='startBtn' onClick={shuffleCards}>New game</button>
-
-      <div className="card-grid">
-         {cards.map(card => (
-           <SingleCard 
-              key={card.id} 
-              card={card}
-              handleChoice={handleChoice}
-              flipped={card === choiceOne || card == choiceTwo || card.matched}
-              disabled={disabled}
-            />
-        ))}
-      </div>
-      <p>Turns: {turns}</p>
+        <div className='test10'>
+            <h1>Zolaman Memory Game</h1>
+            <button className='startBtn' onClick={shuffleCards}>New game</button>
+            <p>Turns: {turns}</p>
+            <div className="card-grid">
+                {cards.map(card => (
+                <SingleCard 
+                    key={card.id} 
+                    card={card}
+                    handleChoice={handleChoice}
+                    flipped={card === choiceOne || card == choiceTwo || card.matched}
+                    disabled={disabled}
+                    />
+                ))}
+            </div>
+        </div>
     </div>
   );
 }
