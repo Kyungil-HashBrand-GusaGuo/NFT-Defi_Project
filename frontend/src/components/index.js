@@ -15,6 +15,9 @@ import CancelSellModal from './SellPage/CancelSellModal';
 import BuyModal from './BuyPage/BuyModal';
 import SwapModal from './global/SwapModal';
 import SwapActModal from './global/SwapActModal'
+import ClaimModal from './StakingPage/ClaimModal'
+import StakingModal from './StakingPage/StakingModal'
+import UnStakingModal from './StakingPage/UnStakingModal'
 
 export { 
     Navbar, 
@@ -33,5 +36,8 @@ export {
     CancelSellModal,
     BuyModal,
     SwapModal,
-    SwapActModal
+    SwapActModal,
+    ClaimModal,
+    StakingModal,
+    UnStakingModal
 }
