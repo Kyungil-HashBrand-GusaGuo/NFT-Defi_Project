@@ -20,8 +20,6 @@ function App() {
         <Route path='/market' element={<MarketPage/>}/>
         <Route path='/marketpage/:edition' element={<BuyPage/>}/>
         <Route path='/staking' element={<StakingPage/>}/>
-        <Route path='/swap' element={<SwapPage/>}/>
-
         <Route path='/cardgame' element={<GamePage/>}/>
       </Routes>
     </div>
