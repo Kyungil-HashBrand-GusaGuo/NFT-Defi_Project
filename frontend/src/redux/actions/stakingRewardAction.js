@@ -12,7 +12,10 @@ function stakingRewardAct(account) {
                 gas: "3000000",
                 data: StakingContract.methods.claimReward(account).encodeABI()
             })
-            console.log(response);
+            dispatch({
+              type:"SUCCESS_CLAIM", 
+              payload : {successClaim : true}
+            })
           } catch (error){
             console.error(error);
           }

@@ -36,6 +36,17 @@ const MarketPage = () => {
 
   const revmymintdata = [...sellingAllNftData].reverse() 
 
+  useEffect(()=>{
+    let top = document.querySelector('.leftTop').getBoundingClientRect().top + window.pageYOffset; /* 페이지를 보고있는 곳에 대한 view 위치  */
+    window.onscroll =(e) => {
+      if((top - 200) < window.scrollY){
+        document.querySelector('.leftTop').classList.add("is-active");
+      }
+      else{
+        document.querySelector('.leftTop').classList.remove("is-active");
+      }
+    }
+  },[])
 
   useEffect(()=>{
     dispatch(marketAction.marketAct())
@@ -46,10 +57,9 @@ const MarketPage = () => {
   return (
     <>
       <div className='mainMarketContainer'>
-         <div className='leftMarketContainer'>
-          <div className='test1'>
+        <div className='leftMarketContainer'>
+          <div className='leftTop'>
           <div className='leftMarketSection'>
-          <div className='test1'>
             <div className='leftMarketNftCardImg'
               style={{
                 backgroundImage: 
@@ -79,12 +89,11 @@ const MarketPage = () => {
                 </div>
                 <div className='leftMarketcolhr'></div>
                 <div className='leftMarketCardNum'>No : {showId} </div>
+                
               </div>
             </div>
             <div className='leftMarketBtn'>
               <button onClick={() => moveBuyPage(showId)} className="learn-more">Buy Now</button>
-            </div>
-            <hr className='lefthr'/>
             </div>
           </div>
           </div>
