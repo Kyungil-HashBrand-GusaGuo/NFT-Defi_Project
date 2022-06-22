@@ -1,0 +1,32 @@
+.gameMainContainer {
+    max-width: 660px;
+    margin-left: 40px auto;
+    margin-right: 40px auto;
+    /* margin-bottom: 40px auto; */
+    padding-top: 100px;
+  }
+
+  
+  .startBtn {
+    background: purple;
+    border: 2px solid white;
+    padding: 6px 12px;
+    border-radius: 4px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 1em;
+  }
+  
+  .startBtn:hover {
+    background: green;
+    color: #fff;
+  }
+  
+  .card-grid {
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 10px;
+    cursor: pointer;
+  }

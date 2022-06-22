@@ -1,12 +1,12 @@
 .stakingTitleContainer {
-    padding-top: 150px;
+    padding-top: 150.005px;
     height: 4.167vw;
     display: flex;
     justify-content: center;
     align-items: center;
     transform:rotate(-3deg);
     top: -2.083vw;
-    margin-bottom: 10px;
+    margin-bottom: 0.694vw;
 }
 
 .stakingTitleContainer h2{
@@ -24,16 +24,16 @@
 div.style-five {
     height: 80px;
     background: url(../images/zolhr.png) no-repeat scroll left;
-    background-size: 80px 75px;
-    margin-left: 60px;
+    background-size: 5.556vw 5.208vw;
+    margin-left: 4.167vw;
     }
     hr.style-five
     {
-    border-radius: 20px;
+    border-radius: 1.389vw;
     width: 80%;
     height: 5px;
-    margin-left: 130px;
-    margin-top: -20px;
+    margin-left: 9.028vw;
+    margin-top: -1.389vw;
     border: 0;
     /* border-bottom: 3px dashed #272727; */
     background: #272727;
@@ -49,40 +49,79 @@ div.style-five {
 }
 
 .stakingPageTopSection {
-    padding-left: 100px;
-    padding-right: 100px;
-    padding-top: 30px;
+    padding-left: 6.944vw;
+    padding-right: 6.944vw;
+    padding-top: 2.083vw;
+}
+
+.stakingRebateTitle span {
+    font-size: 2.5vw;
 }
 
 .stakingRewardTxt span{
-    font-size: 14px;
+    font-size: 0.972vw;
 }
 
 .joinGameContainer {
-    margin-top: 10px;
+    margin-top: 0.694vw;
     display: flex;
-    margin-bottom: 30px;
+    margin-bottom: 2.083vw;
+}
+
+.joinGameTxt {
+    display: flex;
+    align-items: center;
+}
+
+.joinGameTxt span{
+    font-size: 1.25vw;
 }
 
 .gameIcon {
-    margin-left: 10px;
+    margin-left: 0.694vw;
     cursor: pointer;
+    width: 2.431vw;
+    height: 2.431vw;
+}
+
+.refreshBtn {
+    margin-left: 30px;
+    width: 6.944vw;
+    height: 2.778vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.389vw;
+    background-color: whitesmoke;
+    border: 1px solid #141414;
+    border-radius: 2.083vw;
+    box-shadow: 0.208vw 0.208vw 0.208vw 0.208vw rgb(132 81 61 / 35%);
+}
+
+.refreshBtn:hover {
+    background-color: whitesmoke;
+    border: 2px solid #141414;
+    color: whitesmoke;
 }
 
 .zolTokenAmountContainer {
-    margin-bottom: 40px;
+    margin-bottom: 2.778vw;
     display: flex;
 }
 
 .miningZolTokenSection {
     border: 3px solid firebrick;
-    border-radius: 20px;
-    width: 400px;
-    height: 100px;
+    border-radius: 1.389vw;
+    width: 27.778vw;
+    height: 6.944vw;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+}
+
+.miningZolTokenSection span {
+    font-size: 1.25vw;
 }
 
 .miningZolTokenTitle {
@@ -96,15 +135,19 @@ div.style-five {
 }
 
 .myZolTokenSection {
-    margin-left: 30px;
-    border: 3px solid red;
-    border-radius: 20px;
-    width: 300px;
-    height: 100px;
+    margin-left: 2.083vw;
+    border: 0.208vw solid red;
+    border-radius: 1.389vw;
+    width: 23.264vw;
+    height: 6.944vw;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+}
+
+.myZolTokenSection span {
+    font-size: 1.25vw;
 }
 
 .myZolTokenTitle {
@@ -121,42 +164,24 @@ div.style-five {
     width: 100%;
 }
 
-.slick-slider.secondSlider {
+.slick-slider .firstSlider .slick-initialized {
     width: 100%;
 }
 
-.refreshBtn {
-    margin-left: 30px;
-    width: 100px;
-    height: 40px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 20px;
-    background-color: whitesmoke;
-    border: 1px solid #141414;
-    border-radius: 30px;
-    box-shadow: 3px 3px 3px 3px rgb(132 81 61 / 35%);
-}
 
-.refreshBtn:hover {
-    background-color: whitesmoke;
-    border: 2px solid #141414;
-    color: whitesmoke;
-}
 
 .claimBtn {
-    margin-left: 30px;
-    width: 200px;
-    height: 100px;
+    margin-left: 2.083vw;
+    width: 13.889vw;
+    height: 6.944vw;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 20px;
+    font-size: 1.389vw;
     background-color: whitesmoke;
-    border: 3px solid #141414;
-    border-radius: 20px;
-    box-shadow: 3px 3px 3px 3px rgb(132 81 61 / 35%);
+    border: 0.208vw solid #141414;
+    border-radius: 1.389vw;
+    box-shadow: 0.208vw 0.208vw 0.208vw 0.208vw rgb(132 81 61 / 35%);
 }
 
 .claimBtn:hover {
@@ -167,49 +192,52 @@ div.style-five {
 
 .stakingPageMainSection {
     background-color: rgba(245, 245, 245, 0.4);
-    padding: 50px 100px 100px 100px;
+    padding: 3.472vw 6.944vw 6.944vw 6.944vw;
 }
 
 .stakingPageTitle {
     /* background-color: yellow; */
-    margin-top: 30px;
-    margin-bottom: 10px;
+    margin-top: 2.083vw;
+    margin-bottom: 0.694vw;
 }
 
 .stakingPageSpan1 {
-    border-right: 2px solid black;
-    padding: 10px;
+    border-right: 0.139vw solid black;
+    padding: 0.694vw;
 }
 
 .stakingPageSpan2 {
-    padding: 10px;
+    padding: 0.694vw;
 }
 
 .unStakingContainer {
     width: 100%;
-    height: 600px;
+    height: 41.667vw;
     /* background-color: blueviolet; */
-    border: 4px solid black;
-    border-radius: 20px;
+    border: 0.278vw solid black;
+    border-radius: 1.389vw;
     /* padding: 40px 40px 20px 20px; */
+}
+
+.unStakingBoxContainer {
+    height: 100%;
 }
 
 .unStakingBoxSection {
     /* display: flex; */
-    /* width: 100%; */
-    /* height: 400px; */
-    padding: 40px 40px 40px 40px;
+    height: 100%;
+    padding: 2.778vw 2.778vw 2.778vw 2.778vw;
     /* background-color: blue; */
     /* display: flex; */
 }
 
 .unStakeTxt {
-    font-size: 14px;
+    font-size: 0.972vw;
 }
 
 .unStakingCardMainContainer {
     display: flex;
-    height: 300px;
+    height: 20.833vw;
     flex-direction: row ;
     flex-wrap: wrap; 
     width: 100%;
@@ -217,7 +245,7 @@ div.style-five {
 
 .unStakingCardContainer {
     display: flex;
-    margin-top: 40px;
+    margin-top: 2.778vw;
 }
 
 .unStakingImgCard {
@@ -225,15 +253,15 @@ div.style-five {
     height: 15.278vw;
     border: 1px solid black;
     background-size: cover;
-    border-radius: 20px;
-    margin-right: 10px;
+    border-radius: 1.389vw;
+    margin-right: 0.694vw;
     display: flex;
     justify-content: space-between;
 }
 
 .unStakingImgCard input {
-    width: 20px;
-    height: 20px;
+    width: 1.389vw;
+    height: 1.389vw;
     cursor: pointer;
     background-color: black;
 }
@@ -246,30 +274,30 @@ div.style-five {
 
 .unStakingCheckBoxCircle{
     display: inline-block;
-    width: 30px;
-    height: 30px;
-    border: 1px solid #272727;
+    width: 2.083vw;
+    height: 2.083vw;
+    border: 0.069vw solid #272727;
     background-color: white;
-    border-radius: 30px;
+    border-radius: 2.083vw;
     cursor: pointer;
-    margin: 10px;
+    margin: 0.694vw;
 }
 
 .unStakingCheckBoxCircle:after{
     display: flex;
-    width: 30px;
-    height: 30px;
-    border: 1px solid #272727;
+    width: 2.083vw;
+    height: 2.083vw;
+    border: 0.069vw solid #272727;
     background-color: white;
-    border-radius: 30px;
+    border-radius: 2.083vw;
     cursor: pointer;
     content: "\2764";
     align-items: center;
     justify-content: center;
     opacity: 0;
     position: relative;
-    left: -1px;
-    top: -1px;
+    left: -0.069vw;
+    top: -0.069vw;
     transition: 0.2s;
 }
 
@@ -280,35 +308,35 @@ div.style-five {
 .unStakingBtn {
     display: flex;
     justify-content: center;
-    margin-top: 40px;
+    margin-top: 2.778vw;
 }
 .unStakingBtn button {
-    width: 800px;
+    width: 55.556vw;
 }
 
 /* com1 */
 .comStakingContainer {
     width: 100%;
-    height: 600px;
+    height: 41.667vw;
     /* background-color: blueviolet; */
-    border: 4px solid black;
-    border-radius: 20px;
-    /* padding: 40px 40px 20px 20px; */
-    margin-top: 100px;
+    border: 0.278vw solid black;
+    border-radius: 1.389vw;
+    /* padding: 2.778vw 2.778vw 1.389vw 1.389vw; */
+    margin-top: 6.944vw;
 }
 
 .comStakingBoxSection {
     /* display: flex; */
     /* width: 100%; */
     /* height: 400px; */
-    padding: 40px 40px 40px 40px;
+    padding: 2.778vw 2.778vw 2.778vw 2.778vw;
     /* background-color: blue; */
     /* display: flex; */
 }
 
 .comStakingCardMainContainer {
     display: flex;
-    height: 300px;
+    height: 20.833vw;
     flex-direction: row ;
     flex-wrap: wrap; 
     width: 100%;
@@ -316,7 +344,7 @@ div.style-five {
 
 .comStakingCardContainer {
     display: flex;
-    margin-top: 40px;
+    margin-top: 2.778vw;
 }
 
 .comStakingImgCard {
@@ -326,13 +354,13 @@ div.style-five {
     height: 15.278vw;
     border: 1px solid black;
     background-size: cover;
-    border-radius: 20px;
-    margin-right: 10px;
+    border-radius: 1.389vw;
+    margin-right: 0.694vw;
 }
 
 .comStakingImgCard input {
-    width: 20px;
-    height: 20px;
+    width: 1.389vw;
+    height: 1.389vw;
     cursor: pointer;
     background-color: black;
 }
@@ -343,29 +371,29 @@ div.style-five {
 
 .comStakingCheckBoxCircle{
     display: inline-block;
-    width: 30px;
-    height: 30px;
-    border: 1px solid #272727;
+    width: 2.083vw;
+    height: 2.083vw;
+    border: 0.069vw solid #272727;
     background-color: white;
-    border-radius: 30px;
+    border-radius: 2.083vw;
     cursor: pointer;
 }
 
 .comStakingCheckBoxCircle:after{
     display: flex;
-    width: 30px;
-    height: 30px;
-    border: 1px solid #272727;
+    width: 2.083vw;
+    height: 2.083vw;
+    border: 0.069vw solid #272727;
     background-color: white;
-    border-radius: 30px;
+    border-radius: 2.083vw;
     cursor: pointer;
     content: "\2764";
     align-items: center;
     justify-content: center;
     opacity: 0;
     position: relative;
-    left: -1px;
-    top: -1px;
+    left: -0.069vw;
+    top: -0.069vw;
     transition: 0.2s;
 }
 
@@ -376,8 +404,173 @@ div.style-five {
 .comStakingBtn {
     display: flex;
     justify-content: center;
-    margin-top: 40px;
+    margin-top: 2.778vw;
 }
 .comStakingBtn button {
-    width: 800px;
+    width: 55.556vw;
 }
+
+/* @media only screen and (max-width: 1104px) {
+    .stakingTitleContainer {
+        padding-top: 150px;
+        height: 60.005px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transform:rotate(-3deg);
+        top: -29.995px;
+        margin-bottom: 9.994px;
+    }
+    
+    .stakingTitleContainer h2{
+        font-size: 40.003px;
+        color: whitesmoke;
+        background-color: #272727;
+        padding: 11.246px;
+        padding-left: 15.005px;
+        padding-right: 15.005px;
+        border: 0.749px solid #272727;
+        border-radius: 7.502px;
+    }
+    
+    
+    div.style-five {
+        height: 5.556vw;
+        background: url(../images/zolhr.png) no-repeat scroll left;
+        background-size: 80.006px 74.995px;
+        margin-left: 60.005px;
+        }
+        hr.style-five
+        {
+        border-radius: 20.002px;
+        width: 80%;
+        height: 0.347vw;
+        margin-left: 130.003px;
+        margin-top: -20.002px;
+        border: 0;
+        background: #272727;
+        }
+    
+    
+    .stakingPageContainer {
+        height: 100%;
+        
+    }
+    
+    .stakingPageTopSection {
+        padding-left: 99.994px;
+        padding-right: 99.994px;
+        padding-top: 29.995px;
+    }
+    
+    .stakingRewardTxt span{
+        font-size: 13.997px;
+    }
+    
+    .joinGameContainer {
+        margin-top: 9.994px;
+        display: flex;
+        margin-bottom: 29.995px;
+    }
+    
+    .gameIcon {
+        margin-left: 9.994px;
+        cursor: pointer;
+    }
+    
+    .zolTokenAmountContainer {
+        margin-bottom: 40.003px;
+        display: flex;
+    }
+    
+    .miningZolTokenSection {
+        border: 0.208vw solid firebrick;
+        border-radius: 20.002px;
+        width: 400.003px;
+        height: 99.994px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    
+    .miningZolTokenTitle {
+        display: flex;
+        justify-content: center;
+    }
+    
+    .miningZolTokenAmount {
+        display: flex;
+        justify-content: center;
+    }
+    
+    .myZolTokenSection {
+        margin-left: 29.995px;
+        border: 2.995px solid red;
+        border-radius: 20.002px;
+        width: 335.002px;
+        height: 99.994px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    
+    .myZolTokenTitle {
+        display: flex;
+        justify-content: center;
+    }
+    
+    .myZolTokenAmount {
+        display: flex;
+        justify-content: center;
+    }
+    
+    .slick-slider.firstSlider {
+        width: 100%;
+    }
+    
+    .slick-slider .firstSlider .slick-initialized {
+        width: 100%;
+    }
+    
+    .refreshBtn {
+        margin-left: 2.083vw;
+        width: 99.994px;
+        height: 40.003px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 20.002px;
+        background-color: whitesmoke;
+        border: 0.069vw solid #141414;
+        border-radius: 29.995px;
+        box-shadow: 2.995px 2.995px 2.995px 2.995px rgb(132 81 61 / 35%);
+    }
+    
+    .refreshBtn:hover {
+        background-color: whitesmoke;
+        border: 0.139vw solid #141414;
+        color: whitesmoke;
+    }
+    
+    .claimBtn {
+        margin-left: 29.995px;
+        width: 200.002px;
+        height: 99.994px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 20.002px;
+        background-color: whitesmoke;
+        border: 2.995px solid #141414;
+        border-radius: 20.002px;
+        box-shadow: 2.995px 2.995px 2.995px 2.995px rgb(132 81 61 / 35%);
+    }
+    
+    .claimBtn:hover {
+        background-color: #141414;
+        border: 0.139vw solid #141414;
+        color: whitesmoke;
+    }
+} */
