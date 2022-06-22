@@ -76,9 +76,35 @@
     margin-right: 15px;
 }
 
+.swapModalInputName {
+    width: 35px;
+}
+
 .swapModalInputIco {
     width: 25px;
     height: 25px;
+}
+
+.swapModalGameIco {
+    color: #193257;
+    font-size: 25px;
+}
+
+.swapModalInputTest {
+    position: absolute;
+    border-radius: 15px;
+    padding: 10px;
+    top: 420px;
+    background-color: rgba(128, 128, 128, 0.274);
+    font-size: 17px;
+    width: 150px;
+    display: flex;
+    justify-content: center;
+}
+
+.swapModalInputToggle {
+    margin-left: 35px;
+    background-color: white;
 }
 
 .swapModalInput input {
@@ -111,12 +137,6 @@
 .swapModalCenterLine hr{
     border-top: 3px solid black;
     width: 100%;
-}
-
-.swapModalCenterLine hr::after{
-    /* content: '\002702';
-    display: inline-block;
-    position: relative; */
 }
 
 .swapModalBtnSection {
