@@ -86,7 +86,7 @@ const SwapModal = () => {
                                     <IoLogoGameControllerB className='swapModalGameIco'/>
                                     {/* <img className='swapModalInputIco' src={headzol}/> */}
                                 </div>
-                                <div className='swapModalInputName'>GMT</div>    
+                                <div className='swapModalInputName'>GZLT</div>    
                                 <button className='swapModalInputToggle'onClick={()=>changeToggle()}><FaCaretDown/></button>
                             </div>
                             <input type="number" min="1" placeholder='Amount' onChange={changeAmount}/>
@@ -111,7 +111,7 @@ const SwapModal = () => {
                         </div>
                     </div>  
                     <div className='swapModalBtnSection'>
-                        <button className='swapModalBtn'>GMT SWAP</button>
+                        <button className='swapModalBtn'>GZLT SWAP</button>
                     </div>
                     </> 
                     :

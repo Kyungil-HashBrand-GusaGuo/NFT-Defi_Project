@@ -5,18 +5,16 @@ import './StakingPage.css'
 import { stakingViewAction } from '../redux/actions/stakingViewAction'
 import { stakingAction } from '../redux/actions/stakingAction'
 import { stakingCancelAction } from '../redux/actions/stakingCancelAction'
-import { GrRefresh } from "react-icons/gr";
-import { GrGamepad } from "react-icons/gr";
+import { GrRefresh, GrGamepad } from "react-icons/gr";
 import { ClaimModal, StakingModal, UnStakingModal } from '../components';
-import { TbArrowBigLeftLines } from "react-icons/tb";
-import { TbArrowBigRightLines } from "react-icons/tb";
+import { TbArrowBigLeftLines, TbArrowBigRightLines } from "react-icons/tb";
 import { useNavigate } from 'react-router-dom';
 
 
 const StakingPage = () => {
 
   const settings = {
-    dots: true,
+      dots: true,
       infinite: true,
       speed: 500,
       slidesToShow: 5,
