@@ -5,17 +5,15 @@ import { useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { marketAction } from '../redux/actions/marketAction';
 import { mypageAction } from '../redux/actions/mypageAction';
-import Dropdown from '../components/MarketPage/DropDown';
 
 const MarketPage = () => {
 
   const dispatch = useDispatch()
   const navigate = useNavigate()
-  const [dropdownVisibility, setDropdownVisibility] = React.useState(false);
 
   const { account } = useSelector(state => state.account);
   const { mymintEditionData } = useSelector(state => state.mintdata)
-  const { sellingAllNftData, sellingNftId } = useSelector(state => state.transactionNFT)
+  const { sellingAllNftData } = useSelector(state => state.transactionNFT)
 
   const [showPrice, setShowPrice] = useState(""); // item.price
   const [showId, setShowId] = useState(""); // item.id
@@ -89,11 +87,14 @@ const MarketPage = () => {
                 </div>
                 <div className='leftMarketcolhr'></div>
                 <div className='leftMarketCardNum'>No : {showId} </div>
-                
               </div>
             </div>
             <div className='leftMarketBtn'>
-              <button onClick={() => moveBuyPage(showId)} className="learn-more">Buy Now</button>
+              {
+                mymintEditionData.includes(showId) ?
+                <button className="learn-more">MINE</button>
+                : <button onClick={() => moveBuyPage(showId)} className="learn-more">Buy Now</button>
+              }
             </div>
           </div>
           </div>

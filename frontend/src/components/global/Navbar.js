@@ -67,10 +67,19 @@ function Navbar() {
                         : 
                             <a><button onClick={userInfo}>{account.substr(0,6)}...{account.slice(-6)}</button>
                             {
-                            whiteListCheck ? <div className='userInfoBox' style={{display:userInfoCheck}}>
-                                <div className='userInfoBoxTitle'>White List</div>
-                                <div className='userInfoBoxBtn' onClick={changeSwapModal}>SWAP</div>
-                            </div>
+                            whiteListCheck ?
+                            (
+                                adminAccount === account ?
+                                <div className='userInfoBox' style={{display:userInfoCheck}}>
+                                    <div className='userInfoBoxTitle'>Admin</div>
+                                    <div className='userInfoBoxBtn' onClick={changeSwapModal}>SWAP</div>
+                                </div>
+                                :
+                                <div className='userInfoBox' style={{display:userInfoCheck}}>
+                                    <div className='userInfoBoxTitle'>White List</div>
+                                    <div className='userInfoBoxBtn' onClick={changeSwapModal}>SWAP</div>
+                                </div>
+                            )
                             : <>
                             <div className='userInfoBox' style={{display:userInfoCheck}}>
                                 <div className='userInfoBoxTitle'>Normal</div>
