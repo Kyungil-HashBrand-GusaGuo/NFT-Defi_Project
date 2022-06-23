@@ -943,6 +943,7 @@ export const MINT_CONTRACT_ABI = [
 ]
 export const caver = new Caver(window.caver);
 
+
 export const DATA_CONTRACT_ADDRESS = 
 "0x32BfEdd4Cb6DEC08e66b7Cd51A949f18464fe8f0";
 
@@ -2641,6 +2642,7 @@ export const STAKING_CONTRACT_ABI = [
 	}
 ]
 
+
 export const RandomJolamanContract = new caver.klay.Contract(
     MINT_CONTRACT_ABI,
     MINT_CONTRACT_ADDRESS,
@@ -2660,3 +2662,4 @@ export const StakingContract = new caver.klay.Contract(
 	STAKING_CONTRACT_ABI,
 	STAKING_CONTRACT_ADDRESS
 )
+

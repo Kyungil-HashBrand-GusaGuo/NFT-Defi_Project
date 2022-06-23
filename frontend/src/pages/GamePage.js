@@ -12,6 +12,8 @@ const cardImages = [
     {"src": "/img/6.png", matched: false },
   ]
 
+  
+
 function GamePage() {
 
   const [cards, setCards] = useState([]);
