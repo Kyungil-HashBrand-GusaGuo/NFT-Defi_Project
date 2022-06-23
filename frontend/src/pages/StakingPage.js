@@ -5,11 +5,9 @@ import './StakingPage.css'
 import { stakingViewAction } from '../redux/actions/stakingViewAction'
 import { stakingAction } from '../redux/actions/stakingAction'
 import { stakingCancelAction } from '../redux/actions/stakingCancelAction'
-import { GrRefresh } from "react-icons/gr";
-import { GrGamepad } from "react-icons/gr";
+import { GrRefresh, GrGamepad } from "react-icons/gr";
 import { ClaimModal, StakingModal, UnStakingModal } from '../components';
-import { TbArrowBigLeftLines } from "react-icons/tb";
-import { TbArrowBigRightLines } from "react-icons/tb";
+import { TbArrowBigLeftLines, TbArrowBigRightLines } from "react-icons/tb";
 import { useNavigate } from 'react-router-dom';
 
 
@@ -21,8 +19,8 @@ const StakingPage = () => {
       speed: 200,
       slidesToShow: 5,
       slidesToScroll: 1,
-      nextArrow: <TbArrowBigRightLines color='black' size={30} />,
-      prevArrow: <TbArrowBigLeftLines color='black'  size={30}/>,
+      nextArrow: <TbArrowBigRightLines color='black' className='nextArrowBtn' />,
+      prevArrow: <TbArrowBigLeftLines color='black'  className='preArrowBtn'/>,
     // afterChange: function(index) {
     //   console.log(
     //     `Slider Changed to: ${index + 1}, background: #222; color: #bada55`
@@ -165,7 +163,7 @@ const StakingPage = () => {
                 <div className='unStakingCardMainContainer'>
                 {
                   myNftList !== '' ?
-                <Slider className='firstSlider' {...settings}>
+                <Slider className='firstSlider' {...settings} >
                 {
                   myNftList.map((item, index)=> {
                   return<div className='unStakingCardContainer'  key={index}>
@@ -207,7 +205,7 @@ const StakingPage = () => {
                 <div className='comStakingCardMainContainer'>
                 {
                   stakingNftString !== '' ? 
-                <Slider className='firstSlider' {...settings}>
+                <Slider className='firstSlider' {...settings} >
                 {
                   stakingNftString.map((item, index)=> {
                   return<div className='comStakingCardContainer'  key={index}>
