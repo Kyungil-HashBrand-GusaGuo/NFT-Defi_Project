@@ -14,15 +14,13 @@ import { useNavigate } from 'react-router-dom';
 const StakingPage = () => {
 
   const settings = {
-      dots: true,
-      infinite: true,
-      speed: 500,
+    dots: true,
+      infinite: false,
+      speed: 200,
       slidesToShow: 5,
       slidesToScroll: 1,
-      currentSlide : '',
-      slideCount : '',
-      nextArrow: <TbArrowBigRightLines color='black' size={30} />,
-      prevArrow: <TbArrowBigLeftLines color='black' size={30} />,
+      nextArrow: <TbArrowBigRightLines color='black' className='nextArrowBtn' />,
+      prevArrow: <TbArrowBigLeftLines color='black'  className='preArrowBtn'/>,
     // afterChange: function(index) {
     //   console.log(
     //     `Slider Changed to: ${index + 1}, background: #222; color: #bada55`
@@ -154,7 +152,7 @@ const StakingPage = () => {
           <div className='unStakingContainer'>
             <div className='unStakingBoxContainer'>
               <div className='unStakingBoxSection'>
-                <div>
+                <div className='unStakingBoxTitle'>
                   <h2>
                     UnStake NFT 
                   </h2>
@@ -199,7 +197,7 @@ const StakingPage = () => {
           <div className='comStakingContainer'>
             <div className='comStakingBoxContainer'>
               <div className='comStakingBoxSection'>
-                <div>
+                <div className='comStakingBoxTitle'>
                   <h2>
                     Staking NFT 
                   </h2>
