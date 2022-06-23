@@ -39,6 +39,7 @@ function GamePage() {
       setCounts(0);
   }
   
+
   // handle a choice
   const handleChoice =(card) => {
     choiceOne ? setChoiceTwo(card) : setChoiceOne(card);
@@ -107,7 +108,8 @@ function GamePage() {
   }
   GameOver();
 
-  setTimeout(GameSet, 1000)
+  // setTimeout(GameSet, 1000)
+  GameSet()
 
   useEffect(() => {
     shuffleCards();
