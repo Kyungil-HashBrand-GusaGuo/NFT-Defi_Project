@@ -19,8 +19,10 @@ const StakingPage = () => {
       speed: 500,
       slidesToShow: 5,
       slidesToScroll: 1,
+      currentSlide : '',
+      slideCount : '',
       nextArrow: <TbArrowBigRightLines color='black' size={30} />,
-      prevArrow: <TbArrowBigLeftLines color='black'  size={30}/>,
+      prevArrow: <TbArrowBigLeftLines color='black' size={30} />,
     // afterChange: function(index) {
     //   console.log(
     //     `Slider Changed to: ${index + 1}, background: #222; color: #bada55`
@@ -163,7 +165,7 @@ const StakingPage = () => {
                 <div className='unStakingCardMainContainer'>
                 {
                   myNftList !== '' ?
-                <Slider className='firstSlider' {...settings}>
+                <Slider className='firstSlider' {...settings} >
                 {
                   myNftList.map((item, index)=> {
                   return<div className='unStakingCardContainer'  key={index}>
@@ -205,7 +207,7 @@ const StakingPage = () => {
                 <div className='comStakingCardMainContainer'>
                 {
                   stakingNftString !== '' ? 
-                <Slider className='firstSlider' {...settings}>
+                <Slider className='firstSlider' {...settings} >
                 {
                   stakingNftString.map((item, index)=> {
                   return<div className='comStakingCardContainer'  key={index}>
