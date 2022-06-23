@@ -167,6 +167,22 @@ div.style-five {
     width: 100%;
 }
 
+.slick-prev, .slick-next {
+    width: 2.778vw;
+    height: 2.778vw;
+}
+
+.slick-slider .slick-track, .slick-slider .slick-list  {
+    margin-left: 0.694vw;
+}
+/* 
+.slick-prev {
+    left: -30px;
+}
+
+.slick-next {
+    right: -20px;
+} */
 
 
 .claimBtn {
@@ -256,12 +272,11 @@ div.style-five {
 }
 
 .unStakingImgCard {
-    width: 15.278vw;
-    height: 15.278vw;
+    width: 13.889vw;
+    height: 13.889vw;
     border: 1px solid black;
     background-size: cover;
     border-radius: 1.389vw;
-    margin-right: 0.694vw;
     display: flex;
     justify-content: space-between;
 }
@@ -361,8 +376,8 @@ div.style-five {
 .comStakingImgCard {
     display: flex;
     justify-content: space-between;
-    width: 15.278vw;
-    height: 15.278vw;
+    width: 13.889vw;
+    height: 13.889vw;
     border: 1px solid black;
     background-size: cover;
     border-radius: 1.389vw;
@@ -679,8 +694,8 @@ div.style-five {
     }
     
     .unStakingImgCard {
-        width: 15.278vw;
-        height: 15.278vw;
+        width: 13.889vw;
+        height: 13.889vw;
         border: 1px solid black;
         background-size: cover;
         border-radius: 20.002px;
@@ -784,8 +799,8 @@ div.style-five {
     .comStakingImgCard {
         display: flex;
         justify-content: space-between;
-        width: 15.278vw;
-        height: 15.278vw;
+        width: 13.889vw;
+        height: 13.889vw;
         border: 0.994px solid black;
         background-size: cover;
         border-radius: 20.002px;
@@ -844,3 +859,17 @@ div.style-five {
         width: 600px;
     }
 }
+
+.slick-slider.firstSlider {
+    width: 100%;
+}
+
+.slick-slider .firstSlider .slick-initialized {
+    width: 100%;
+}
+
+.slick-prev, .slick-next {
+    width: 2.778vw;
+    height: 2.778vw;
+}
+

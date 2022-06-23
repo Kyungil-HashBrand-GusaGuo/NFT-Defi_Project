@@ -21,8 +21,8 @@ const StakingPage = () => {
       speed: 200,
       slidesToShow: 5,
       slidesToScroll: 1,
-      nextArrow: <TbArrowBigRightLines color='black' size={30} />,
-      prevArrow: <TbArrowBigLeftLines color='black'  size={30}/>,
+      nextArrow: <TbArrowBigRightLines color='black' className='nextArrowBtn' />,
+      prevArrow: <TbArrowBigLeftLines color='black'  className='preArrowBtn'/>,
     // afterChange: function(index) {
     //   console.log(
     //     `Slider Changed to: ${index + 1}, background: #222; color: #bada55`
