@@ -1,0 +1,218 @@
+.gamePageMainContainer {
+    padding-top: 100px;
+    /* width: 100%; */
+    height: 100%;
+    /* background: yellow; */
+    padding-bottom: 100px;
+}
+
+.testmain {
+    padding: 50px 100px 0px 100px;
+    /* width: 100%; */
+    height: 100%;
+    /* background-color: #2a3cad; */
+
+}
+
+/* .anitest1 {
+    width: 30px;
+    height: 30px;
+    background-color: black;
+    animation-duration: 2400ms;
+} */
+
+.gamePageTitle {
+    margin-top: 200px;
+    display: flex;
+    justify-content: center;
+}
+.gamePageTitle span {
+    font-size: 30px;
+}
+.testsection {
+    background-color: brown;
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+
+.testmain1{
+    flex: 33%;
+    /* background-color: aqua; */
+    width: 100%;
+    height: 430px; 
+    display: flex;
+    flex-direction: column;  
+    padding: 20px 20px 50px 20px
+}
+
+
+.gameTitle {
+    display: flex;
+    justify-content: center;
+
+}
+
+.gameTitle span {
+    font-size: 30px;
+    
+}
+
+.gameDescriptionTxt {
+    display: flex;
+    justify-content: center;
+}
+
+.gameThumbnail {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+.gameThumbnail img {
+    width: 300px;
+    height: 300px;
+}
+
+.gameStartBtn {
+    display: flex;
+    justify-content: center;
+    /* align-items: flex-end; */
+}
+
+.testmain2{
+    flex: 33%;
+    background-color: #f0a591;
+    width: 100%;
+    height: 400px;
+    padding: 50px 20px 50px 20px
+}
+
+.testmain3 {
+    flex:33%;
+    background-color: bisque;
+    width: 100%;
+    height: 400px;
+    padding: 50px 20px 50px 20px
+}
+
+.gameBoxContainer {
+    display: flex;
+}
+  
+  .content h2{ font-size:19px;}
+  
+  .box{
+    position: absolute;
+    top: 40%;
+    left: 40%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    height: 300px;
+    background: #111845a6;
+    box-sizing: border-box;
+    overflow: hidden;
+    box-shadow: 0 20px 50px rgb(23, 32, 90);
+    border: 2px solid #2a3cad;
+    color: white;
+    padding: 20px;
+  }
+  
+  .box:before{
+    content: '';
+    position:absolute;
+    top:0;
+    left:-100%;
+    width:100%;
+    height:100%;
+    background: rgba(255,255,255,0.1);
+    transition:0.5s;
+    pointer-events: none;
+  }
+  
+  .box:hover:before{
+    left:-50%;
+    transform: skewX(-5deg);
+  }
+  
+  
+  .box .content{
+    position:absolute;
+    top:15px;
+    left:15px;
+    right:15px;
+    bottom:15px;
+    border:1px solid #f0a591;
+    padding:20px;
+    text-align:center;
+    box-shadow: 0 5px 10px rgba(9,0,0,0.5);
+    
+  }
+  
+  .box span{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+    box-sizing: border-box;
+    
+  }
+  
+  .box span:nth-child(1)
+  {
+    transform:rotate(0deg);
+  }
+  
+  .box span:nth-child(2)
+  {
+    transform:rotate(90deg);
+  }
+  
+  .box span:nth-child(3)
+  {
+    transform:rotate(180deg);
+  }
+  
+  .box span:nth-child(4)
+  {
+    transform:rotate(270deg);
+  }
+  
+  .box span:before
+  {
+    content: '';
+    position: absolute;
+    width:100%;
+    height: 2px;
+    background: #50dfdb;
+    animation: animate 4s linear infinite;
+  }
+  
+  @keyframes animate {
+    0% {
+    transform:scaleX(0);
+    transform-origin: left;
+    }
+    50%
+    {
+      transform:scaleX(1);
+    transform-origin: left;
+    }
+    50.1%
+    {
+      transform:scaleX(1);
+    transform-origin: right;
+      
+    }
+    
+    100%
+    {
+      transform:scaleX(0);
+    transform-origin: right;
+      
+    }
+
+  } 
