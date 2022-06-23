@@ -139,13 +139,12 @@ hr.style-five1 {
 
     .leftMarketBtn {
         display: flex;
-        justify-content: center;
         margin-top: 1.389vw;
         margin-bottom: 2.083vw;
     }
 
     .leftMarketBtn button {
-        width: 200px;
+        width: 22.917vw;
     }
 
     .lefthr {
@@ -391,13 +390,12 @@ hr.style-five1 {
 
     .leftMarketBtn {
         display: flex;
-        justify-content: center;
         margin-top: 16px;
         margin-bottom: 24px;
     }
 
     .leftMarketBtn button {
-        width: 165px;
+        width: 276px;
     }
 
     .lefthr {
@@ -621,13 +619,12 @@ hr.style-five1 {
 
     .leftMarketBtn {
         display: flex;
-        justify-content: center;
         margin-top: 16px;
         margin-bottom: 24px;
     }
 
     .leftMarketBtn button {
-        width: 165px;
+        width: 276px;
     }
 
     .lefthr {
