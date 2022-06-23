@@ -17,8 +17,8 @@ const StakingPage = () => {
 
   const settings = {
     dots: true,
-      infinite: true,
-      speed: 500,
+      infinite: false,
+      speed: 200,
       slidesToShow: 5,
       slidesToScroll: 1,
       nextArrow: <TbArrowBigRightLines color='black' size={30} />,
@@ -154,7 +154,7 @@ const StakingPage = () => {
           <div className='unStakingContainer'>
             <div className='unStakingBoxContainer'>
               <div className='unStakingBoxSection'>
-                <div>
+                <div className='unStakingBoxTitle'>
                   <h2>
                     UnStake NFT 
                   </h2>
@@ -199,7 +199,7 @@ const StakingPage = () => {
           <div className='comStakingContainer'>
             <div className='comStakingBoxContainer'>
               <div className='comStakingBoxSection'>
-                <div>
+                <div className='comStakingBoxTitle'>
                   <h2>
                     Staking NFT 
                   </h2>
