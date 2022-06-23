@@ -9,18 +9,26 @@ import { GrRefresh, GrGamepad } from "react-icons/gr";
 import { ClaimModal, StakingModal, UnStakingModal } from '../components';
 import { TbArrowBigLeftLines, TbArrowBigRightLines } from "react-icons/tb";
 import { useNavigate } from 'react-router-dom';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
+import MagicSliderDots from 'react-magic-slider-dots';
+import 'react-magic-slider-dots/dist/magic-dots.css';
 
 
 const StakingPage = () => {
 
   const settings = {
-    dots: true,
+    
+      dots: true,
       infinite: false,
       speed: 200,
       slidesToShow: 5,
       slidesToScroll: 1,
       nextArrow: <TbArrowBigRightLines color='black' className='nextArrowBtn' />,
       prevArrow: <TbArrowBigLeftLines color='black'  className='preArrowBtn'/>,
+      appendDots: dots => {
+        return <MagicSliderDots dots={dots} numDotsToShow={5} dotWidth={30} />;
+      }
     // afterChange: function(index) {
     //   console.log(
     //     `Slider Changed to: ${index + 1}, background: #222; color: #bada55`
@@ -37,8 +45,8 @@ const StakingPage = () => {
       dispatch(stakingAction.stakingAct(account, edition))
     }
 
-    const goToCardGame = () => {
-      navigate('/cardgame')
+    const goToGamePage = () => {
+      navigate('/gamemain')
     }
 
     const cancelStaking = (edition) => {
@@ -118,7 +126,7 @@ const StakingPage = () => {
           <span className='joinGameTxt'>
             Join NFT Lottery Game
           </span>
-          <GrGamepad className="gameIcon" onClick={goToCardGame}/>
+          <GrGamepad className="gameIcon" onClick={goToGamePage}/>
           <button  className='refreshBtn' onClick={changeState} ><GrRefresh /></button>
         </div>
         <div className='zolTokenAmountContainer'>
