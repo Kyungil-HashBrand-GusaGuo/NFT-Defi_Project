@@ -2,6 +2,8 @@ import React from 'react'
 import { useEffect, useState } from 'react';
 import SingleCard from '../components/GamePage/SingleCard';
 import './GamePage.css'
+import { useSelector } from 'react-redux'
+import api from "../redux/api";
 
 const cardImages = [
     {"src": "/img/1.png", matched: false },
@@ -16,11 +18,13 @@ const cardImages = [
 
 function GamePage() {
 
+  const {account} = useSelector(state => state.account)
   const [cards, setCards] = useState([]);
   const [turns, setTurns] = useState(0);
   const [choiceOne, setChoiceOne] = useState(null);
   const [choiceTwo, setChoiceTwo] = useState(null);
   const [disabled, setDisabled] = useState(false);
+  const [counts, setCounts] = useState(0);
 
   // shuffle cards
   const shuffleCards = () => {
@@ -32,8 +36,9 @@ function GamePage() {
       setChoiceTwo(null);
       setCards(shuffledCards);
       setTurns(0);
+      setCounts(0);
   }
-
+  
   // handle a choice
   const handleChoice =(card) => {
     choiceOne ? setChoiceTwo(card) : setChoiceOne(card);
@@ -44,6 +49,7 @@ function GamePage() {
     if (choiceOne && choiceTwo) {
       setDisabled(true);
       if (choiceOne.src === choiceTwo.src) {
+        SetCount();
         setCards(prevCards => {
           return prevCards.map(card => {
             if (card.src === choiceOne.src) {
@@ -60,16 +66,53 @@ function GamePage() {
     }
   }, [choiceOne, choiceTwo])
 
+
+
   const resetTurn = () => {
     setChoiceOne(null);
     setChoiceTwo(null);
     setTurns(prevTurns => prevTurns + 1);
     setDisabled(false);
   }
+  
+  const SetCount = () => {
+    setCounts(prevCounts => prevCounts + 1);
+  }
+  
+  const GameSet = async() => {
+    let result, point;
+    if(turns >=6 && turns <= 8) {
+      result = 5;
+      point = 10;
+    } else if (turns >= 9 && turns <= 11) {
+      result = 3;
+      point = 5;
+    } else if (turns >= 12 && turns <= 14) {
+      result = 1;
+      point = 3;
+    }
+    if(counts === 6) {
+      const response = await api.post("/memorygame", {account, result});
+      if(response.status) {
+      alert(`게임 승리! ${result} GZLT, ${point} GP 획득!`)
+      }
+    }
+  }
+
+  const GameOver = () => {
+    if(turns > 14) {
+      alert("Game Over");
+      shuffleCards()
+    }
+  }
+  GameOver();
+
+  setTimeout(GameSet, 1000)
 
   useEffect(() => {
     shuffleCards();
   }, [])
+
 
   return (
     <div className="gameMainContainer">
