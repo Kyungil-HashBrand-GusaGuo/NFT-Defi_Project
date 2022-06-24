@@ -98,12 +98,14 @@ function CardGame() {
     }
       const response = await api.post("/memorygame", {account, result});
       if(response.status) {
-      //alert(`게임 승리! ${result} GZLT, ${point} GP 획득!`)
-      console.log(result)
+      alert(`게임 승리! ${result} GZLT, ${point} GP 획득!`)
         setGameSetModalCheck(true)
         setGzlt(result);
         setGamePoint(point)
       }
+
+      console.log("게임토큰", result)
+      console.log("게임포인튼", point)
     }
 
 
@@ -116,11 +118,21 @@ function CardGame() {
   }
   GameOver();
 
+<<<<<<< HEAD
+=======
+  // setTimeout(GameSet, 1000)
+  // GameSet()
+>>>>>>> acd86674839f6768961fa4792c62f17391d3ca8e
 
   useEffect(() => {
     shuffleCards();
   }, [])
 
+  useEffect(() => {
+    GameSet();
+  }, [counts])
+
+  console.log("콘솔몇번찍힐까")
 
   return (
     <>
