@@ -19,6 +19,7 @@ import ClaimModal from './StakingPage/ClaimModal'
 import StakingModal from './StakingPage/StakingModal'
 import UnStakingModal from './StakingPage/UnStakingModal'
 import GameSetModal from './GamePage/GameSetModal'
+import GameOverModal from './GamePage/GameOverModal'
 
 export { 
     Navbar, 
@@ -41,5 +42,6 @@ export {
     ClaimModal,
     StakingModal,
     UnStakingModal,
-    GameSetModal
+    GameSetModal,
+    GameOverModal
 }
