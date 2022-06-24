@@ -8,6 +8,7 @@ let initialState = {
     getTokenBalance : '',
     getGameTokenBalance : '',
     swapSuccess : false,
+    swapGzltSuccess : false,
     swapModalChange : false,
     successClaim : false,
     successStaking : false,
@@ -35,6 +36,11 @@ function stakingViewReducer(state=initialState,action) {
         case "SUCCESS_SWAP" :
             return {...state,
                 swapSuccess : payload.swapSuccess
+            }
+
+        case "SUCCESS_GZLT_SWAP" :
+            return {...state,
+                swapGzltSuccess : payload.swapGzltSuccess
             }
 
         case "CHANGE_SWAP_MODAL" :

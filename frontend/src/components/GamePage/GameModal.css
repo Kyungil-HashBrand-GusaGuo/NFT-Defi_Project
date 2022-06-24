@@ -1,0 +1,55 @@
+.overlay {
+    background-color: rgba(0, 0, 0, 0.7);
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    color: white;
+    display: flex;
+    justify-content: center;
+    z-index: 15;
+}
+
+.gameModalContainer {
+    width: 400px;
+    height: 300px;
+    margin-top: 15.625vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #141414;
+    border-radius: 30px;
+    background-color: whitesmoke;
+}
+
+.gameModalInfoSection {
+    width: 300px;
+    height: 320px;
+    margin: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #193257;
+}
+
+.gameModalComMessage {
+    margin-bottom: 50px;    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.gameModalIco {
+    width: 27px;
+    height: 27px;
+    margin-right: 10px;
+}
+
+.gameModalEndButton {
+    width: 250px;
+    height: 40px;
+    font-size: 20px;
+    color: #141414;
+    border: 2px solid #141414;
+    border-radius: 30px;
+}

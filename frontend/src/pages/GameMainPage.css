@@ -14,15 +14,42 @@
 
 }
 
-/* .anitest1 {
-    width: 30px;
-    height: 30px;
-    background-color: black;
-    animation-duration: 2400ms;
-} */
+.gameScoreTable {
+  display: flex;
+  justify-content: center;
+  margin-top: 2.083vw;
+  margin-bottom: 1.389vw;
+}
+
+.gameScoreTable table {
+  border: 0.139vw solid black;
+  width: 800px;
+  height: 200px;
+  border-collapse: collapse;
+  text-align: center;
+  font-size: 25px;
+}
+
+.gameScoreTable th, td {
+  border: 0.139vw solid black;
+  padding: 0.694vw 0.139vw;
+  
+}
+
+.gameScoreTable tbody {
+background-size: cover;
+background-repeat: no-repeat;
+color: black;
+opacity: 0.9;
+}
+
+.gameScoreTable th {
+  background-color: black;
+  color: white;
+}
 
 .gamePageTitle {
-    margin-top: 200px;
+    margin-top: 30px;
     display: flex;
     justify-content: center;
 }
