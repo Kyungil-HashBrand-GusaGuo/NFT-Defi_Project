@@ -1,7 +1,7 @@
 import React from 'react'
 import { useEffect, useState } from 'react';
 import SingleCard from '../components/GamePage/SingleCard';
-import './GamePage.css'
+import './CardGame.css'
 
 const cardImages = [
     {"src": "/img/1.png", matched: false },
@@ -12,7 +12,7 @@ const cardImages = [
     {"src": "/img/6.png", matched: false },
   ]
 
-function GamePage() {
+function CardGame() {
 
   const [cards, setCards] = useState([]);
   const [turns, setTurns] = useState(0);
@@ -71,24 +71,66 @@ function GamePage() {
 
   return (
     <div className="gameMainContainer">
-        <div className='test10'>
-            <h1>Zolaman Memory Game</h1>
-            <button className='startBtn' onClick={shuffleCards}>New game</button>
-            <p>Turns: {turns}</p>
-            <div className="card-grid">
-                {cards.map(card => (
-                <SingleCard 
-                    key={card.id} 
-                    card={card}
-                    handleChoice={handleChoice}
-                    flipped={card === choiceOne || card == choiceTwo || card.matched}
-                    disabled={disabled}
-                    />
-                ))}
-            </div>
+      <div className='cardGameTitle'>
+        <h1>Zolaman Memory Game</h1>
+      </div>
+      <div className='allCardGameContainer'>
+        <div className='cardGameContainer'>
+        <button className='startBtn' onClick={shuffleCards}>New game</button>
+        <p>Turns: {turns}</p>
+        <div className="card-grid">
+            {cards.map(card => (
+            <SingleCard 
+                key={card.id} 
+                card={card}
+                handleChoice={handleChoice}
+                flipped={card === choiceOne || card == choiceTwo || card.matched}
+                disabled={disabled}
+                />
+            ))}
         </div>
+        </div>
+        <div className='gameRoleContainer'>
+        <div className='gameRoleTitle'>
+          <h2>Card Game Role</h2>
+        </div>
+        <div className='gameRoleTable'>
+          <table>
+            <thead>
+              <tr>
+                <th>Turn</th>
+                <th>Token</th>
+                <th>Game Point</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>6~8</td>
+                <td>5 GZLT</td>
+                <td>10</td>
+              </tr>
+              <tr>
+                <td>9~11</td>
+                <td>3 GZLT</td>
+                <td>5</td>
+              </tr>
+              <tr>
+                <td>12~14</td>
+                <td>1 GZLT</td>
+                <td>3</td>
+              </tr>
+              <tr>
+                <td>15</td>
+                <td>X</td>
+                <td>X</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        </div>
+      </div>
     </div>
   );
 }
 
-export default GamePage;
+export default CardGame;

@@ -7,7 +7,7 @@ import SellPage from "./SellPage";
 import MarketPage from "./MarketPage"
 import BuyPage from "./BuyPage"
 import StakingPage from "./StakingPage"
-import GamePage from "./GamePage"
+import CardGame from "./CardGame"
 import GameMainPage from "./GameMainPage"
 
-export { MainPage, PreMintingPage, AdminPage, MyPage, AllMintPage, SellPage, MarketPage, BuyPage, StakingPage, GamePage, GameMainPage }
+export { MainPage, PreMintingPage, AdminPage, MyPage, AllMintPage, SellPage, MarketPage, BuyPage, StakingPage, CardGame, GameMainPage }
