@@ -4,6 +4,7 @@ const randomController = require("./randomZolaman.controller");
 const setController = require("./setData.controller");
 const saleController = require("./saleZolaman.controller");
 const stakeController = require("./stakeSystem.controler");
+const gameController = require("./game.controller");
 
 // randomZolaman controller
 router.get("/normalAll", randomController.MAX_NORMAL_TOKEN_COUNT);
@@ -30,5 +31,9 @@ router.post("/stakedJolaman", stakeController.getOwnedStakedJolamanType);
 router.post("/updateReward", stakeController.updateReward);
 router.post("/stakers", stakeController.stakers);
 router.post("/balanceOf", stakeController.balanceOf);
+
+// game controller 
+router.post("/memorygame", gameController.MemoryGameReward);
+router.post("/balanceOfGZLT", gameController.balanceOfGZLT);
 
 module.exports = router;

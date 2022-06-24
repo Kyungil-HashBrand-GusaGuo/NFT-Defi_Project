@@ -5,7 +5,6 @@ const {
 
 // 보유 토큰 졸라맨 타입 조회
 const ownedTokenId = async (req, res) => {
-  console.log(req.body.account);
   const result = await setDataContract.methods
     .getTotalOwnedTokens(req.body.account)
     .call();
@@ -20,7 +19,6 @@ const totalJolamanData = async (req, res) => {
 
 // 판매등록 되어있지 않고 스테이킹 되어있지 않는 계좌별 졸라맨타입 배열
 const getExceptSellOwnedJolamanType = async (req, res) => {
-  console.log(req.body.account);
   const result = await setDataContract.methods
     .getExceptSellOwnedJolamanType(req.body.account)
     .call();

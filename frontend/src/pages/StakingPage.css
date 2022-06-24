@@ -145,7 +145,24 @@ div.style-five {
     flex-direction: column;
 }
 
+
 .myZolTokenSection span {
+    font-size: 1.25vw;
+}
+
+.myZolGameTokenSection {
+    margin-left: 2.083vw;
+    border: 0.208vw solid rgb(19, 22, 179);
+    border-radius: 1.389vw;
+    width: 23.264vw;
+    height: 6.944vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.myZolGameTokenSection span {
     font-size: 1.25vw;
 }
 
@@ -584,6 +601,22 @@ div.style-five {
     }
     
     .myZolTokenSection span {
+        font-size: 12.5px;
+    }
+    
+    .myZolGameTokenSection {
+        margin-left: 20px;
+        border: 2.995px solid rgb(19, 22, 179);
+        border-radius: 20.002px;
+        width: 237px;
+        height: 75px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    
+    .myZolGameTokenSection span {
         font-size: 12.5px;
     }
     
