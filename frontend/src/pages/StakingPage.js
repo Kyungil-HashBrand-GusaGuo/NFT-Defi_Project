@@ -1,197 +1,221 @@
-import React, { useEffect, useState } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
-import './StakingPage.css'
-import { stakingViewAction } from '../redux/actions/stakingViewAction'
-import { stakingAction } from '../redux/actions/stakingAction'
-import { stakingCancelAction } from '../redux/actions/stakingCancelAction'
-import { stakingRewardAction } from '../redux/actions/stakingRewardAction'
+import React, { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import "./StakingPage.css";
+import { stakingViewAction } from "../redux/actions/stakingViewAction";
+import { stakingAction } from "../redux/actions/stakingAction";
+import { stakingCancelAction } from "../redux/actions/stakingCancelAction";
+import { stakingRewardAction } from "../redux/actions/stakingRewardAction";
 import { GrCheckbox, GrRefresh } from "react-icons/gr";
 
-
 const StakingPage = () => {
+  const dispatch = useDispatch();
+  const { account } = useSelector((state) => state.account);
+  const { myNftList, stakingNftString, stakingReward, getStakingReward } =
+    useSelector((state) => state.stakingView);
+  const [checkNft, setCheckNft] = useState(false);
 
-    const dispatch = useDispatch()
-    const {account} = useSelector(state => state.account)
-    const {myNftList, stakingNftString, stakingReward , getStakingReward} = useSelector(state => state.stakingView)
-    const [checkNft, setCheckNft] = useState(false)
+  const staking = (edition) => {
+    dispatch(stakingAction.stakingAct(account, edition));
+  };
 
-    const staking = (edition) => {
-      dispatch(stakingAction.stakingAct(account, edition))
-    }
+  const cancelStaking = (edition) => {
+    dispatch(stakingCancelAction.stakingCancelAct(account, edition));
+  };
 
-    const cancelStaking = (edition) => {
-      dispatch(stakingCancelAction.stakingCancelAct(account, edition))
-    }
+  const getReward = () => {
+    dispatch(stakingRewardAction.stakingRewardAct(account));
+  };
 
-    const getReward = () => {
-      dispatch(stakingRewardAction.stakingRewardAct(account))
-    }
+  const changeState = () => {
+    dispatch(stakingViewAction.stakingViewAct(account));
+  };
 
-    const changeState = () =>{
-      dispatch(stakingViewAction.stakingViewAct(account))
-    }
+  let nonStakeArr = [];
+  let comStakeArr = [];
 
-    let nonStakeArr = []
-    let comStakeArr = []
-
-    const nonStake = (id) => {
-      if(nonStakeArr.includes(id)){
-        for(let i = 0; i < nonStakeArr.length; i++) {
-          if(nonStakeArr[i] === id)  {
-            nonStakeArr.splice(i, 1);
-          }
+  const nonStake = (id) => {
+    if (nonStakeArr.includes(id)) {
+      for (let i = 0; i < nonStakeArr.length; i++) {
+        if (nonStakeArr[i] === id) {
+          nonStakeArr.splice(i, 1);
         }
-        //console.log("삭제된건가?",nonStakeArr)
-      } else {
-        nonStakeArr.push(id)
-        //console.log("배열들어오니",nonStakeArr)
       }
-      console.log("Non스테이팅 배열확인", nonStakeArr)
-      // let testaa = nonStakeArr
-      //setShowid(...nonStakeArr)
+      //console.log("삭제된건가?",nonStakeArr)
+    } else {
+      nonStakeArr.push(id);
+      //console.log("배열들어오니",nonStakeArr)
     }
+    console.log("Non스테이팅 배열확인", nonStakeArr);
+    // let testaa = nonStakeArr
+    //setShowid(...nonStakeArr)
+  };
 
-    const comStake = (id) => {
-      if(comStakeArr.includes(id)){
-        for(let i = 0; i < comStakeArr.length; i++) {
-          if(comStakeArr[i] === id)  {
-            comStakeArr.splice(i, 1);
-          }
+  const comStake = (id) => {
+    if (comStakeArr.includes(id)) {
+      for (let i = 0; i < comStakeArr.length; i++) {
+        if (comStakeArr[i] === id) {
+          comStakeArr.splice(i, 1);
         }
-      } else {
-        comStakeArr.push(id)
       }
-      console.log("스테이킹 배열확인", comStakeArr)
+    } else {
+      comStakeArr.push(id);
     }
+    console.log("스테이킹 배열확인", comStakeArr);
+  };
 
-    const checkingNft = () => {
-      if(checkNft){
-        setCheckNft(false)
-        console.log("상태확인",checkNft)
-      } else {
-        setCheckNft(true)
-        console.log("상태확인",checkNft)
-      }
+  const checkingNft = () => {
+    if (checkNft) {
+      setCheckNft(false);
+      console.log("상태확인", checkNft);
+    } else {
+      setCheckNft(true);
+      console.log("상태확인", checkNft);
     }
+  };
 
-    console.log(account)
-    useEffect( () => {
-        dispatch(stakingViewAction.stakingViewAct(account))
-    },[account])
+  console.log(account);
+  useEffect(() => {
+    dispatch(stakingViewAction.stakingViewAct(account));
+  }, [account]);
 
   return (
     <>
-    <div className='stakingTitleContainer'>
-              <h2>Staking</h2>
-    </div>
-    <div className="style-five"></div>
-    <hr className="style-five"/> 
-    <div className='stakingPageContainer'>
-        <div className='stakingZolToken'>
-          <div className='strkingRewardTitle'>
+      <div className="stakingTitleContainer">
+        <h2>Staking</h2>
+      </div>
+      <div className="style-five"></div>
+      <hr className="style-five" />
+      <div className="stakingPageContainer">
+        <div className="stakingZolToken">
+          <div className="strkingRewardTitle">
             <span>Your Mining Zola Token</span>
           </div>
-          <div className='stakingReward'>
+          <div className="stakingReward">
             <span> : {stakingReward} </span>
           </div>
           <div>
-            <button onClick={changeState} className='refreshBtn'><GrRefresh/></button>
+            <button onClick={changeState} className="refreshBtn">
+              <GrRefresh />
+            </button>
           </div>
           <div>
-            <button onClick={getReward} className='claimBtn'>Claim</button>
+            <button onClick={getReward} className="claimBtn">
+              Claim
+            </button>
           </div>
         </div>
-        <div className='stakingZolToken'>
+        <div className="stakingZolToken">
           <h3>My Zola Token : {getStakingReward} token</h3>
         </div>
-        <div className='stakingPageTitle'>
-          <span className='stakingPageSpan1'>
+        <div className="stakingPageTitle">
+          <span className="stakingPageSpan1">
             Total : {myNftList.length + stakingNftString.length}
           </span>
-          <span className='stakingPageSpan1'>
+          <span className="stakingPageSpan1">
             Not Staking : {myNftList.length}
           </span>
-          <span className='stakingPageSpan2'> 
+          <span className="stakingPageSpan2">
             Staking : {stakingNftString.length}
           </span>
         </div>
-        <div className='notStakingContainer'>
-          <div className='notStakingBoxContainer'>
-            <div className='notStakingBoxSection'>
+        <div className="notStakingContainer">
+          <div className="notStakingBoxContainer">
+            <div className="notStakingBoxSection">
               <div>
-                <h2>
-                  Not Staking NFT :
-                </h2>
+                <h2>Not Staking NFT :</h2>
               </div>
-              <div className='notStakingCardMainContainer'>
-              {
-                myNftList !== '' ?
-                myNftList.map((item, index)=> {
-                return <div className='notStakingCardContainer'  key={index}>
-                    <div className='notStakingImgCard'
-                      style={{
-                        backgroundImage: 
-                            "url(" + 
-                            `https://gateway.pinata.cloud/ipfs/QmfDCXHotQP7tH252h5BPEPX6kLmPJSzKzddnVxQUhrw4m/${item}.png` + 
-                            ")"
-                      }}>
-                      {/* <input type='checkbox' className='nonStakingCheckBox' onClick={()=>nonStake(item)} label='nonStakingCheckBoxCircle'/>
-                        <label type='checkbox' className='nonStakingCheckBoxCircle' onClick={()=>nonStake(item)}></label> */}
-                        <label className='nonStakingCheckBoxCircle' onClick={()=>nonStake(item)} htmlFor='nonStakingCheckBox'>
+              <div className="notStakingCardMainContainer">
+                {myNftList !== ""
+                  ? myNftList.map((item, index) => {
+                      return (
+                        <div className="notStakingCardContainer" key={index}>
+                          <div
+                            className="notStakingImgCard"
+                            style={{
+                              backgroundImage:
+                                "url(" +
+                                `https://gateway.pinata.cloud/ipfs/QmfDCXHotQP7tH252h5BPEPX6kLmPJSzKzddnVxQUhrw4m/${item}.png` +
+                                ")",
+                            }}
+                          >
+                            <input
+                              type="checkbox"
+                              className="nonStakingCheckBox"
+                              onClick={() => nonStake(item)}
+                              label="nonStakingCheckBoxCircle"
+                            />
+                            <label
+                              type="checkbox"
+                              className="nonStakingCheckBoxCircle"
+                              onClick={() => nonStake(item)}
+                            ></label>
+                            {/* <label className='nonStakingCheckBoxCircle' onClick={()=>nonStake(item)} htmlFor='nonStakingCheckBox'>
                           <input type='checkbox' className='nonStakingCheckBox' onClick={()=>nonStake(item)} label='nonStakingCheckBoxCircle'/>
-                        </label>
-                        {/* 흠.. 여기를 어떻게 해야할까 */}
-                    </div>
-                  </div>
-                })
-                  : null
-              }
+                        </label> */}
+                            {/* 흠.. 여기를 어떻게 해야할까 */}
+                          </div>
+                        </div>
+                      );
+                    })
+                  : null}
               </div>
-              <div className='notStakingBtn'>
+              <div className="notStakingBtn">
                 {/* <button className="learn-more">Staking</button> */}
-                <button onClick={()=>staking(nonStakeArr)} className="learn-more">Staking</button>
+                <button
+                  onClick={() => staking(nonStakeArr)}
+                  className="learn-more"
+                >
+                  Staking
+                </button>
               </div>
             </div>
           </div>
-            
         </div>
 
-        <div className='comStakingContainer'>
-          <div className='comStakingBoxContainer'>
-            <div className='comStakingBoxSection'>
-                <div>
-                  <h2>
-                    Staking UFT : 
-                  </h2>
-                </div>
-                <div className='comStakginCardMainContainer'>
-                {
-                  stakingNftString !== '' ?
-                  stakingNftString.map((item, index)=> {
-                    return <div className='comStakingCardContainer' key={index}>
-                    <div className='comStakingImgCard'
-                      style={{
-                        backgroundImage: 
-                            "url(" + 
-                            `https://gateway.pinata.cloud/ipfs/QmfDCXHotQP7tH252h5BPEPX6kLmPJSzKzddnVxQUhrw4m/${item}.png` + 
-                            ")"
-                      }}>
-                      <input type='checkbox' onClick={()=>comStake(item)}/>
-                    </div>
-                  </div>
-                  })
-                  : null
-                  }
-                </div>
-                <div className='comStakingBtn'>
-                  <button onClick={()=>cancelStaking(comStakeArr)} className="learn-more">UnStake</button>
-                </div>
+        <div className="comStakingContainer">
+          <div className="comStakingBoxContainer">
+            <div className="comStakingBoxSection">
+              <div>
+                <h2>Staking UFT :</h2>
+              </div>
+              <div className="comStakginCardMainContainer">
+                {stakingNftString !== ""
+                  ? stakingNftString.map((item, index) => {
+                      return (
+                        <div className="comStakingCardContainer" key={index}>
+                          <div
+                            className="comStakingImgCard"
+                            style={{
+                              backgroundImage:
+                                "url(" +
+                                `https://gateway.pinata.cloud/ipfs/QmfDCXHotQP7tH252h5BPEPX6kLmPJSzKzddnVxQUhrw4m/${item}.png` +
+                                ")",
+                            }}
+                          >
+                            <input
+                              type="checkbox"
+                              onClick={() => comStake(item)}
+                            />
+                          </div>
+                        </div>
+                      );
+                    })
+                  : null}
+              </div>
+              <div className="comStakingBtn">
+                <button
+                  onClick={() => cancelStaking(comStakeArr)}
+                  className="learn-more"
+                >
+                  UnStake
+                </button>
+              </div>
             </div>
           </div>
         </div>
-    </div>
+      </div>
     </>
-  )
-}
+  );
+};
 
-export default StakingPage
+export default StakingPage;
