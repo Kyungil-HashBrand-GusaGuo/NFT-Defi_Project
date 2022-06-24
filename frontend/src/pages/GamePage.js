@@ -4,6 +4,7 @@ import SingleCard from '../components/GamePage/SingleCard';
 import './GamePage.css'
 import { useSelector } from 'react-redux'
 import api from "../redux/api";
+import {GameSetModal} from '../components/index' 
 
 const cardImages = [
     {"src": "/img/1.png", matched: false },
@@ -25,6 +26,9 @@ function GamePage() {
   const [choiceTwo, setChoiceTwo] = useState(null);
   const [disabled, setDisabled] = useState(false);
   const [counts, setCounts] = useState(0);
+  const [gameSetModalCheck, setGameSetModalCheck] = useState(false)
+  const [gzlt , setGzlt] = useState(0)
+  const [gamePoint , setGamePoint] = useState(0)
 
   // shuffle cards
   const shuffleCards = () => {
@@ -95,7 +99,10 @@ function GamePage() {
     if(counts === 6) {
       const response = await api.post("/memorygame", {account, result});
       if(response.status) {
-      alert(`게임 승리! ${result} GZLT, ${point} GP 획득!`)
+      //alert(`게임 승리! ${result} GZLT, ${point} GP 획득!`)
+        setGameSetModalCheck(true)
+        setGzlt(result);
+        setGamePoint(point)
       }
     }
   }
@@ -117,6 +124,8 @@ function GamePage() {
 
 
   return (
+    <>
+    { gameSetModalCheck ? <GameSetModal gzlt={gzlt} gamePoint={gamePoint}/> : null }
     <div className="gameMainContainer">
         <div className='test10'>
             <h1>Zolaman Memory Game</h1>
@@ -135,6 +144,7 @@ function GamePage() {
             </div>
         </div>
     </div>
+    </>
   );
 }
 
