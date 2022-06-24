@@ -14,6 +14,12 @@ function swapAct(account,amount) {
                 data: StakingContract.methods.TokenToKlay(amount).encodeABI()
             })
             console.log(response);
+
+            // 일단 이부분은 stakingReducer로 보내고있음
+            dispatch({
+              type: "SUCCESS_SWAP",
+              payload: { swapSuccess: true }
+            })
           } catch (error){
             console.error(error);
           }

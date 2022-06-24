@@ -4,7 +4,14 @@ let initialState = {
     stakingNftNumber : '',
     stakingReward : '',
     getStakingReward : '',
-    getKlayBalance : ''
+    getKlayBalance : '',
+    getTokenBalance : '',
+    getGameTokenBalance : '',
+    swapSuccess : false,
+    swapModalChange : false,
+    successClaim : false,
+    successStaking : false,
+    successUnStaking : false
 }
 
 function stakingViewReducer(state=initialState,action) {
@@ -20,7 +27,34 @@ function stakingViewReducer(state=initialState,action) {
                 stakingNftNumber : payload.stakingNftNumber,
                 stakingReward : payload.stakingReward,
                 getStakingReward : payload.getStakingReward,
-                getKlayBalance : payload.getKlayBalance
+                getKlayBalance : payload.getKlayBalance,
+                getTokenBalance : payload.getTokenBalance,
+                getGameTokenBalance : payload.getGameTokenBalance
+            }
+
+        case "SUCCESS_SWAP" :
+            return {...state,
+                swapSuccess : payload.swapSuccess
+            }
+
+        case "CHANGE_SWAP_MODAL" :
+            return {...state,
+                swapModalChange : payload.swapModalChange
+            }
+
+        case "SUCCESS_CLAIM" :
+            return {...state,
+                successClaim : payload.successClaim
+            }
+
+        case "SUCCESS_STAKING" :
+            return {...state,
+                successStaking : payload.successStaking
+            }
+
+        case "SUCCESS_UNSTAKING" :
+            return {...state,
+                successUnStaking : payload.successUnStaking
             }
 
         default :

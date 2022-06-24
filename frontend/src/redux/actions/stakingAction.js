@@ -27,6 +27,10 @@ function stakingAct(account, edition) {
                     data: StakingContract.methods.stakeBatch(edition).encodeABI()
                 })
                 console.log("스테이킹 if문 안",response)
+                dispatch({
+                    type:"SUCCESS_STAKING", 
+                    payload : {successStaking : true}
+                  })
             }
           } catch (error){
             console.error(error);

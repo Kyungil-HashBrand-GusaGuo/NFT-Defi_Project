@@ -32,6 +32,7 @@ import white17 from './mainsilder/17.png'
 import white18 from './mainsilder/18.png'
 import white19 from './mainsilder/19.png'
 import white20 from './mainsilder/20.png'
+import Thum1 from './ThumNail1.png'
 
 
 
@@ -66,6 +67,7 @@ export {HeadImg,
     white17,
     white18,
     white19,
-    white20
+    white20,
+    Thum1
 }
 

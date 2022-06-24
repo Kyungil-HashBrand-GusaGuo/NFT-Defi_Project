@@ -1,12 +1,12 @@
 .stakingTitleContainer {
-    padding-top: 150px;
+    padding-top: 150.005px;
     height: 4.167vw;
     display: flex;
     justify-content: center;
     align-items: center;
     transform:rotate(-3deg);
     top: -2.083vw;
-    margin-bottom: 10px;
+    margin-bottom: 0.694vw;
 }
 
 .stakingTitleContainer h2{
@@ -23,17 +23,16 @@
 
 div.style-five {
     height: 80px;
-    background: url(../images/zolhr.png) no-repeat scroll left;
-    background-size: 80px 75px;
-    margin-left: 60px;
+    background-size: 5.556vw 5.208vw;
+    margin-left: 4.167vw;
     }
     hr.style-five
     {
-    border-radius: 20px;
+    border-radius: 1.389vw;
     width: 80%;
     height: 5px;
-    margin-left: 130px;
-    margin-top: -20px;
+    margin-left: 9.028vw;
+    margin-top: -1.389vw;
     border: 0;
     /* border-bottom: 3px dashed #272727; */
     background: #272727;
@@ -44,45 +43,58 @@ div.style-five {
 
 .stakingPageContainer {
     height: 100%;
-    padding: 100px 100px 100px 100px;
+    /* padding: 50px 100px 100px 100px; */
     /* background-color: red; */
 }
 
-.stakingZolToken {
+.stakingPageTopSection {
+    padding-left: 6.944vw;
+    padding-right: 6.944vw;
+    padding-top: 2.083vw;
+}
+
+.stakingRebateTitle span {
+    font-size: 2.5vw;
+}
+
+.stakingRewardTxt span{
+    font-size: 0.972vw;
+}
+
+.joinGameContainer {
+    margin-top: 0.694vw;
+    display: flex;
+    margin-bottom: 2.083vw;
+}
+
+.joinGameTxt {
     display: flex;
     align-items: center;
-    border: 2px black solid;
-    width: 100%;
-    border-radius: 20px;
-    height: 50px;
-    margin-bottom: 20px;
-    
 }
 
-.strkingRewardTitle {
-    display: flex;
-    margin-left: 20px;
+.joinGameTxt span{
+    font-size: 1.25vw;
 }
 
-.stakingReward {
-    margin-left: 10px;
+.gameIcon {
+    margin-left: 0.694vw;
+    cursor: pointer;
+    width: 2.431vw;
+    height: 2.431vw;
 }
 
-.stakingZolToken h3 {
-    margin-left: 20px;
-}
 .refreshBtn {
     margin-left: 30px;
-    width: 100px;
-    height: 40px;
+    width: 6.944vw;
+    height: 2.778vw;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 20px;
+    font-size: 1.389vw;
     background-color: whitesmoke;
     border: 1px solid #141414;
-    border-radius: 30px;
-    box-shadow: 3px 3px 3px 3px rgb(132 81 61 / 35%);
+    border-radius: 2.083vw;
+    box-shadow: 0.208vw 0.208vw 0.208vw 0.208vw rgb(132 81 61 / 35%);
 }
 
 .refreshBtn:hover {
@@ -91,18 +103,117 @@ div.style-five {
     color: whitesmoke;
 }
 
-.claimBtn {
-    margin-left: 30px;
-    width: 100px;
-    height: 40px;
+.zolTokenAmountContainer {
+    margin-bottom: 2.778vw;
+    display: flex;
+}
+
+.miningZolTokenSection {
+    border: 3px solid firebrick;
+    border-radius: 1.389vw;
+    width: 27.778vw;
+    height: 6.944vw;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 20px;
+    flex-direction: column;
+}
+
+.miningZolTokenSection span {
+    font-size: 1.25vw;
+}
+
+.miningZolTokenTitle {
+    display: flex;
+    justify-content: center;
+}
+
+.miningZolTokenAmount {
+    display: flex;
+    justify-content: center;
+}
+
+.myZolTokenSection {
+    margin-left: 2.083vw;
+    border: 0.208vw solid red;
+    border-radius: 1.389vw;
+    width: 23.264vw;
+    height: 6.944vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+.myZolTokenSection span {
+    font-size: 1.25vw;
+}
+
+.myZolGameTokenSection {
+    margin-left: 2.083vw;
+    border: 0.208vw solid rgb(19, 22, 179);
+    border-radius: 1.389vw;
+    width: 23.264vw;
+    height: 6.944vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.myZolGameTokenSection span {
+    font-size: 1.25vw;
+}
+
+.myZolTokenTitle {
+    display: flex;
+    justify-content: center;
+}
+
+.myZolTokenAmount {
+    display: flex;
+    justify-content: center;
+}
+
+.slick-slider.firstSlider {
+    width: 100%;
+}
+
+.slick-slider .firstSlider .slick-initialized {
+    width: 100%;
+}
+
+.slick-prev, .slick-next {
+    width: 2.778vw;
+    height: 2.778vw;
+}
+
+.slick-slider .slick-track, .slick-slider .slick-list  {
+    margin-left: 0.694vw;
+}
+/* 
+.slick-prev {
+    left: -30px;
+}
+
+.slick-next {
+    right: -20px;
+} */
+
+
+.claimBtn {
+    margin-left: 2.083vw;
+    width: 13.889vw;
+    height: 6.944vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.389vw;
     background-color: whitesmoke;
-    border: 1px solid #141414;
-    border-radius: 30px;
-    box-shadow: 3px 3px 3px 3px rgb(132 81 61 / 35%);
+    border: 0.208vw solid #141414;
+    border-radius: 1.389vw;
+    box-shadow: 0.208vw 0.208vw 0.208vw 0.208vw rgb(132 81 61 / 35%);
 }
 
 .claimBtn:hover {
@@ -111,65 +222,188 @@ div.style-five {
     color: whitesmoke;
 }
 
+.stakingPageMainSection {
+    background-color: rgba(245, 245, 245, 0.4);
+    padding: 3.472vw 6.944vw 6.944vw 6.944vw;
+}
+
+.stakingPageMainSection h1 {
+    font-size: 2.5vw;
+}
+
 .stakingPageTitle {
     /* background-color: yellow; */
-    margin-top: 30px;
-    margin-bottom: 10px;
+    margin-top: 2.083vw;
+    margin-bottom: 0.694vw;
 }
 
 .stakingPageSpan1 {
-    border-right: 2px solid black;
-    padding: 10px;
+    border-right: 0.139vw solid black;
+    padding: 0.694vw;
 }
 
 .stakingPageSpan2 {
-    padding: 10px;
+    padding: 0.694vw;
 }
 
-
-.notStakingContainer {
+.unStakingContainer {
     width: 100%;
-    height: 600px;
+    height: 41.667vw;
     /* background-color: blueviolet; */
-    border: 4px solid black;
-    border-radius: 20px;
+    border: 0.278vw solid black;
+    border-radius: 1.389vw;
     /* padding: 40px 40px 20px 20px; */
 }
 
-.notStakingBoxSection {
+.unStakingBoxContainer {
+    height: 100%;
+}
+
+.unStakingBoxSection {
     /* display: flex; */
-    /* width: 100%; */
-    /* height: 400px; */
-    padding: 40px 40px 40px 40px;
+    height: 100%;
+    padding: 2.778vw 2.778vw 2.778vw 2.778vw;
     /* background-color: blue; */
     /* display: flex; */
 }
 
-.notStakingCardMainContainer {
+.unStakingBoxTitle h2 {
+    font-size: 1.875vw;
+}
+
+.unStakeTxt {
+    font-size: 0.972vw;
+}
+
+.unStakingCardMainContainer {
     display: flex;
-    height: 300px;
+    height: 20.833vw;
     flex-direction: row ;
     flex-wrap: wrap; 
     width: 100%;
-
 }
-.notStakingCardContainer {
+
+.unStakingCardContainer {
     display: flex;
-    margin-top: 40px;
+    margin-top: 2.778vw;
 }
 
-.notStakingImgCard {
-    width: 220px;
-    height: 220px;
+.unStakingImgCard {
+    width: 13.889vw;
+    height: 13.889vw;
     border: 1px solid black;
     background-size: cover;
-    border-radius: 20px;
-    margin-right: 10px;
+    border-radius: 1.389vw;
+    display: flex;
+    justify-content: space-between;
 }
 
-.notStakingImgCard input {
-    width: 20px;
-    height: 20px;
+.unStakingImgCard input {
+    width: 1.389vw;
+    height: 1.389vw;
+    cursor: pointer;
+    background-color: black;
+}
+
+.unStakingCheckBox{
+    visibility: hidden;
+    /* display: none; */
+    /* 아예 꺼버리는것과 숨기는것. 함수가 동작하지 않을 수 있음 */
+}
+
+.unStakingCheckBoxCircle{
+    display: inline-block;
+    width: 2.083vw;
+    height: 2.083vw;
+    border: 0.069vw solid #272727;
+    background-color: white;
+    border-radius: 2.083vw;
+    cursor: pointer;
+    margin: 0.694vw;
+}
+
+.unStakingCheckBoxCircle:after{
+    display: flex;
+    width: 2.083vw;
+    height: 2.083vw;
+    border: 0.069vw solid #272727;
+    background-color: white;
+    border-radius: 2.083vw;
+    cursor: pointer;
+    content: "\2764";
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    position: relative;
+    left: -0.069vw;
+    top: -0.069vw;
+    transition: 0.2s;
+}
+
+.unStakingCheckBox:checked + .unStakingCheckBoxCircle:after{
+    opacity: 1;
+}
+
+.unStakingBtn {
+    display: flex;
+    justify-content: center;
+    margin-top: 2.778vw;
+}
+.unStakingBtn button {
+    width: 55.556vw;
+}
+
+/* com1 */
+.comStakingContainer {
+    width: 100%;
+    height: 41.667vw;
+    /* background-color: blueviolet; */
+    border: 0.278vw solid black;
+    border-radius: 1.389vw;
+    /* padding: 2.778vw 2.778vw 1.389vw 1.389vw; */
+    margin-top: 6.944vw;
+}
+
+.comStakingBoxSection {
+    /* display: flex; */
+    /* width: 100%; */
+    /* height: 400px; */
+    padding: 2.778vw 2.778vw 2.778vw 2.778vw;
+    /* background-color: blue; */
+    /* display: flex; */
+}
+
+.comStakingBoxTitle h2 {
+    font-size: 1.875vw;
+}
+
+.comStakingCardMainContainer {
+    display: flex;
+    height: 20.833vw;
+    flex-direction: row ;
+    flex-wrap: wrap; 
+    width: 100%;
+}
+
+.comStakingCardContainer {
+    display: flex;
+    margin-top: 2.778vw;
+}
+
+.comStakingImgCard {
+    display: flex;
+    justify-content: space-between;
+    width: 13.889vw;
+    height: 13.889vw;
+    border: 1px solid black;
+    background-size: cover;
+    border-radius: 1.389vw;
+    margin-right: 0.694vw;
+}
+
+.comStakingImgCard input {
+    width: 1.389vw;
+    height: 1.389vw;
     cursor: pointer;
     background-color: black;
 }
@@ -178,110 +412,497 @@ div.style-five {
     display: none;
 } */
 
-.nonStakingCheckBoxCircle{
+.comStakingCheckBoxCircle{
     display: inline-block;
-    width: 30px;
-    height: 30px;
-    border: 1px solid #272727;
+    width: 2.083vw;
+    height: 2.083vw;
+    border: 0.069vw solid #272727;
     background-color: white;
-    border-radius: 30px;
+    border-radius: 2.083vw;
     cursor: pointer;
 }
 
-.nonStakingCheckBoxCircle:after{
+.comStakingCheckBoxCircle:after{
     display: flex;
-    width: 30px;
-    height: 30px;
-    border: 1px solid #272727;
+    width: 2.083vw;
+    height: 2.083vw;
+    border: 0.069vw solid #272727;
     background-color: white;
-    border-radius: 30px;
+    border-radius: 2.083vw;
     cursor: pointer;
     content: "\2764";
     align-items: center;
     justify-content: center;
     opacity: 0;
     position: relative;
-    left: -1px;
-    top: -1px;
+    left: -0.069vw;
+    top: -0.069vw;
     transition: 0.2s;
 }
 
-.nonStakingCheckBox:checked + .nonStakingCheckBoxCircle:after{
+.comStakingCheckBox:checked + .comStakingCheckBoxCircle:after{
     opacity: 1;
-}
-
-.notStakingBtn {
-    display: flex;
-    justify-content: center;
-    margin-top: 40px;
-}
-.notStakingBtn button {
-    width: 800px;
-}
-
-
-/* com */
-.comStakingContainer {
-    width: 100%;
-    height: 100%;
-    border: 4px solid black;
-    border-radius: 20px;
-    margin-top: 100px;
-}
-
-
-.comStakingBoxContainer {
-    display: flex;
-}
-
-.comStakingBoxSection {
-    width: 100%;
-    padding: 40px 40px 40px 40px;
-}
-
-.comStakginCardMainContainer{
-    display: flex;
-    flex-direction: row ;
-    flex-wrap: wrap;
-}
-
-.comStakingCardContainer {
-    
-    display: flex;
-    margin-top: 40px;
-}
-
-.comStakingImgCard {
-    width: 220px;
-    height: 220px;
-    margin-right: 10px;
-    background-size: cover;
-    border: 1px solid black;
-    border-radius: 20px;
-
-}
-
-.comStakingImgCard img {
-    
-    width: 100%;
-    height: 100%;
-    background-size: cover;
-
 }
 
 .comStakingBtn {
     display: flex;
     justify-content: center;
-    margin-top: 40px;
-    margin-bottom: 40px;
+    margin-top: 2.778vw;
 }
 .comStakingBtn button {
-    width: 800px;
-    
+    width: 55.556vw;
 }
 
-.stakingBox {
-    width: 200px;
-    height: 200px;
-    border: 1px solid black;
+@media only screen and (max-width: 1000px) {
+    .stakingTitleContainer {
+        padding-top: 150.005px;
+        height: 60.005px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transform:rotate(-3deg);
+        top: -29.995px;
+        margin-bottom: 5px;
+    }
+    
+    .stakingTitleContainer h2{
+        font-size: 27px;
+        color: whitesmoke;
+        background-color: #272727;
+        padding: 7px;
+        padding-left: 10px;
+        padding-right: 10px;
+        border: 0.749px solid #272727;
+        border-radius: 7.502px;
+    }
+    
+    
+    div.style-five {
+        height: 80px;
+        background-size: 80.006px 74.995px;
+        margin-left: 41px;
+        }
+        hr.style-five
+        {
+        border-radius: 20.002px;
+        width: 80%;
+        height: 5px;
+        margin-left: 90px;
+        margin-top: -13.002px;
+        border: 0;
+        /* border-bottom: 3px dashed #272727; */
+        background: #272727;
+        /* background: rgb(222,127,127);
+        background: linear-gradient(90deg, rgba(222,127,127,1) 0%, rgba(240,26,26,1) 100%); */
+        }
+    
+    
+    .stakingPageContainer {
+        height: 100%;
+        /* padding: 50px 100px 100px 100px; */
+        /* background-color: red; */
+    }
+    
+    .stakingPageTopSection {
+        padding-left: 70px;
+        padding-right: 70px;
+        padding-top: 20px;
+    }
+    
+    .stakingRebateTitle span {
+        font-size: 25px;
+    }
+    
+    .stakingRewardTxt span{
+        font-size: 10px;
+    }
+    
+    .joinGameContainer {
+        margin-top: 7px;
+        display: flex;
+        margin-bottom: 20px;
+    }
+    
+    .joinGameTxt {
+        display: flex;
+        align-items: center;
+    }
+    
+    .joinGameTxt span{
+        font-size: 18px;
+    }
+    
+    .gameIcon {
+        margin-left: 7px;
+        cursor: pointer;
+        width: 24px;
+        height: 24px;
+    }
+    
+    .refreshBtn {
+        margin-left: 30px;
+        width: 70px;
+        height: 27px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: whitesmoke;
+        border: 0.994px solid #141414;
+        border-radius: 29.995px;
+        box-shadow: 2.995px 2.995px 2.995px 2.995px rgb(132 81 61 / 35%);
+    }
+    
+    .refreshBtn:hover {
+        background-color: whitesmoke;
+        border: 2px solid #141414;
+        color: whitesmoke;
+    }
+    
+    .zolTokenAmountContainer {
+        margin-bottom: 27px;
+        display: flex;
+    }
+    
+    .miningZolTokenSection {
+        border: 3px solid firebrick;
+        border-radius: 1.389vw;
+        width: 284px;
+        height: 75px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    
+    .miningZolTokenSection span {
+        font-size: 12.5px;
+    }
+    
+    .miningZolTokenTitle {
+        display: flex;
+        justify-content: center;
+    }
+    
+    .miningZolTokenAmount {
+        display: flex;
+        justify-content: center;
+    }
+    
+    .myZolTokenSection {
+        margin-left: 20px;
+        border: 2.995px solid red;
+        border-radius: 20.002px;
+        width: 237px;
+        height: 75px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    
+    .myZolTokenSection span {
+        font-size: 12.5px;
+    }
+    
+    .myZolGameTokenSection {
+        margin-left: 20px;
+        border: 2.995px solid rgb(19, 22, 179);
+        border-radius: 20.002px;
+        width: 237px;
+        height: 75px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    
+    .myZolGameTokenSection span {
+        font-size: 12.5px;
+    }
+    
+    .myZolTokenTitle {
+        display: flex;
+        justify-content: center;
+    }
+    
+    .myZolTokenAmount {
+        display: flex;
+        justify-content: center;
+    }
+    
+    .slick-slider.firstSlider {
+        width: 100%;
+    }
+    
+    .slick-slider .firstSlider .slick-initialized {
+        width: 100%;
+    }
+    
+    
+    
+    .claimBtn {
+        margin-left: 20px;
+        width: 160px;
+        height: 75px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 14px;
+        background-color: whitesmoke;
+        border: 2.995px solid #141414;
+        border-radius: 20.002px;
+        box-shadow: 2.995px 2.995px 2.995px 2.995px rgb(132 81 61 / 35%);
+    }
+    
+    .claimBtn:hover {
+        background-color: #141414;
+        border: 2px solid #141414;
+        color: whitesmoke;
+    }
+    
+    .stakingPageMainSection {
+        background-color: rgba(245, 245, 245, 0.4);
+        padding: 34px 69px 69px 69px ;
+    }
+
+    .stakingPageMainSection h1 {
+        font-size: 25px;
+    }
+    
+    .stakingPageTitle {
+        /* background-color: yellow; */
+        margin-top: 20px;
+        margin-bottom: 7px;
+    }
+    
+    .stakingPageSpan1 {
+        border-right: 0.139vw solid black;
+        padding: 7px;
+    }
+    
+    .stakingPageSpan2 {
+        padding: 7px;
+    }
+    
+    .unStakingContainer {
+        width: 100%;
+        height: 450px;
+        /* background-color: blueviolet; */
+        border: 2px solid black;
+        border-radius: 20.002px;
+        /* padding: 40px 40px 20px 20px; */
+    }
+    
+    .unStakingBoxContainer {
+        height: 100%;
+    }
+    
+    .unStakingBoxSection {
+        /* display: flex; */
+        height: 100%;
+        padding: 27.8px 27.8px 27.8px 27.8px;
+        /* background-color: blue; */
+        /* display: flex; */
+    }
+
+    .unStakingBoxTitle h2 {
+        font-size: 18px;
+    }
+    
+    .unStakeTxt {
+        font-size: 10px;
+    }
+    
+    .unStakingCardMainContainer {
+        display: flex;
+        height: 208.5px;
+        flex-direction: row ;
+        flex-wrap: wrap; 
+        width: 100%;
+    }
+    
+    .unStakingCardContainer {
+        display: flex;
+        margin-top: 40.003px;
+    }
+    
+    .unStakingImgCard {
+        width: 13.889vw;
+        height: 13.889vw;
+        border: 1px solid black;
+        background-size: cover;
+        border-radius: 20.002px;
+        margin-right: 7px;
+        display: flex;
+        justify-content: space-between;
+    }
+    
+    .unStakingImgCard input {
+        width: 20.002px;
+        height: 20.002px;
+        cursor: pointer;
+        background-color: black;
+    }
+    
+    .unStakingCheckBox{
+        visibility: hidden;
+        /* display: none; */
+        /* 아예 꺼버리는것과 숨기는것. 함수가 동작하지 않을 수 있음 */
+    }
+    
+    .unStakingCheckBoxCircle{
+        display: inline-block;
+        width: 29.995px;
+        height: 29.995px;
+        border: 0.994px solid #272727;
+        background-color: white;
+        border-radius: 29.995px;
+        cursor: pointer;
+        margin: 9.994px;
+    }
+    
+    .unStakingCheckBoxCircle:after{
+        display: flex;
+        width: 29.995px;
+        height: 29.995px;
+        border: 0.994px solid #272727;
+        background-color: white;
+        border-radius: 29.995px;
+        cursor: pointer;
+        content: "\2764";
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        position: relative;
+        left: -0.994px;
+        top: -0.994px;
+        transition: 0.2s;
+    }
+    
+    .unStakingCheckBox:checked + .unStakingCheckBoxCircle:after{
+        opacity: 1;
+    }
+    
+    .unStakingBtn {
+        display: flex;
+        justify-content: center;
+        margin-top: 40.003px;
+    }
+    .unStakingBtn button {
+        width: 600px;
+    }
+    
+    /* com1 */
+    .comStakingContainer {
+        width: 100%;
+        height: 400px;
+        /* background-color: blueviolet; */
+        border: 2px solid black;
+        border-radius: 20.002px;
+        /* padding: 40.003px 40.003px 20.002px 20.002px; */
+        margin-top: 70px;
+    }
+    
+    .comStakingBoxSection {
+        /* display: flex; */
+        /* width: 100%; */
+        /* height: 400px; */
+        padding: 27.8px 27.8px 27.8px 27.8px;
+        /* background-color: blue; */
+        /* display: flex; */
+    }
+
+    .comStakingBoxTitle h2 {
+        font-size: 18px;
+    }
+    
+    .comStakingCardMainContainer {
+        display: flex;
+        height: 208.5px;
+        flex-direction: row ;
+        flex-wrap: wrap; 
+        width: 100%;
+    }
+    
+    .comStakingCardContainer {
+        display: flex;
+        margin-top: 40.003px;
+    }
+    
+    .comStakingImgCard {
+        display: flex;
+        justify-content: space-between;
+        width: 13.889vw;
+        height: 13.889vw;
+        border: 0.994px solid black;
+        background-size: cover;
+        border-radius: 20.002px;
+        margin-right: 7px;
+    }
+    
+    .comStakingImgCard input {
+        width: 20.002px;
+        height: 20.002px;
+        cursor: pointer;
+        background-color: black;
+    }
+    
+    /* .nonStakingCheckBox{
+        display: none;
+    } */
+    
+    .comStakingCheckBoxCircle{
+        display: inline-block;
+        width: 29.995px;
+        height: 29.995px;
+        border: 0.994px solid #272727;
+        background-color: white;
+        border-radius: 29.995px;
+        cursor: pointer;
+    }
+    
+    .comStakingCheckBoxCircle:after{
+        display: flex;
+        width: 29.995px;
+        height: 29.995px;
+        border: 0.994px solid #272727;
+        background-color: white;
+        border-radius: 29.995px;
+        cursor: pointer;
+        content: "\2764";
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        position: relative;
+        left: -0.994px;
+        top: -0.994px;
+        transition: 0.2s;
+    }
+    
+    .comStakingCheckBox:checked + .comStakingCheckBoxCircle:after{
+        opacity: 1;
+    }
+    
+    .comStakingBtn {
+        display: flex;
+        justify-content: center;
+        margin-top: 40.003px;
+    }
+    .comStakingBtn button {
+        width: 600px;
+    }
 }
+
+.slick-slider.firstSlider {
+    width: 100%;
+}
+
+.slick-slider .firstSlider .slick-initialized {
+    width: 100%;
+}
+
+.slick-prev, .slick-next {
+    width: 2.778vw;
+    height: 2.778vw;
+}
+
