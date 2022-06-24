@@ -4,7 +4,7 @@ import SingleCard from '../components/GamePage/SingleCard';
 import './CardGame.css'
 import { useSelector } from 'react-redux'
 import api from "../redux/api";
-import {GameSetModal} from '../components/index' 
+import { GameSetModal, GameOverModal} from '../components/index' 
 
 const cardImages = [
     {"src": "/img/1.png", matched: false },
@@ -25,6 +25,7 @@ function CardGame() {
   const [disabled, setDisabled] = useState(false);
   const [counts, setCounts] = useState(0);
   const [gameSetModalCheck, setGameSetModalCheck] = useState(false)
+  const [gameOverModalCheck, setGameOverModalCheck] = useState(false)
   const [gzlt , setGzlt] = useState(0)
   const [gamePoint , setGamePoint] = useState(0)
 
@@ -107,7 +108,8 @@ function CardGame() {
 
   const GameOver = () => {
     if(turns > 14) {
-      alert("Game Over");
+      //alert("Game Over");
+      setGameOverModalCheck(true)
       shuffleCards()
     }
   }
@@ -124,6 +126,7 @@ function CardGame() {
   return (
     <>
     { gameSetModalCheck ? <GameSetModal gzlt={gzlt} gamePoint={gamePoint}/> : null }
+    { gameOverModalCheck ? <GameOverModal/> : null }
     <div className="gameMainContainer">
       <div className='cardGameTitle'>
         <h1>Zolaman Memory Game</h1>
