@@ -83,6 +83,7 @@ function CardGame() {
     setCounts(prevCounts => prevCounts + 1);
   }
   
+  
   const GameSet = async() => {
     let result, point;
     if(turns >=6 && turns <= 8) {
@@ -95,16 +96,16 @@ function CardGame() {
       result = 1;
       point = 3;
     }
-    if(counts === 6) {
       const response = await api.post("/memorygame", {account, result});
       if(response.status) {
       //alert(`게임 승리! ${result} GZLT, ${point} GP 획득!`)
+      console.log(result)
         setGameSetModalCheck(true)
         setGzlt(result);
         setGamePoint(point)
       }
     }
-  }
+
 
   const GameOver = () => {
     if(turns > 14) {
@@ -115,8 +116,6 @@ function CardGame() {
   }
   GameOver();
 
-  // setTimeout(GameSet, 1000)
-  GameSet()
 
   useEffect(() => {
     shuffleCards();
