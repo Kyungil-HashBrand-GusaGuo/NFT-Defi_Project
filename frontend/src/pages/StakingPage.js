@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import Slider from "react-slick";
@@ -17,11 +16,6 @@ import 'react-magic-slider-dots/dist/magic-dots.css';
 
 
 const StakingPage = () => {
-  const dispatch = useDispatch();
-  const { account } = useSelector((state) => state.account);
-  const { myNftList, stakingNftString, stakingReward, getStakingReward } =
-    useSelector((state) => state.stakingView);
-  const [checkNft, setCheckNft] = useState(false);
 
   const settings = {
     
@@ -59,9 +53,9 @@ const StakingPage = () => {
       dispatch(stakingCancelAction.stakingCancelAct(account, edition))
     }
 
-  const changeState = () => {
-    dispatch(stakingViewAction.stakingViewAct(account));
-  };
+    const changeState = () =>{
+      dispatch(stakingViewAction.stakingViewAct(account))
+    }
 
     let unStakeArr = []
     let comStakeArr = []
@@ -79,24 +73,19 @@ const StakingPage = () => {
       }
       console.log("Non스테이팅 배열확인", unStakeArr)
     }
-    console.log("Non스테이팅 배열확인", nonStakeArr);
-    // let testaa = nonStakeArr
-    //setShowid(...nonStakeArr)
-  };
 
-  const comStake = (id) => {
-    if (comStakeArr.includes(id)) {
-      for (let i = 0; i < comStakeArr.length; i++) {
-        if (comStakeArr[i] === id) {
-          comStakeArr.splice(i, 1);
+    const comStake = (id) => {
+      if(comStakeArr.includes(id)){
+        for(let i = 0; i < comStakeArr.length; i++) {
+          if(comStakeArr[i] === id)  {
+            comStakeArr.splice(i, 1);
+          }
         }
+      } else {
+        comStakeArr.push(id)
       }
-    } else {
-      comStakeArr.push(id);
+      console.log("스테이킹 배열확인", comStakeArr)
     }
-    console.log("스테이킹 배열확인", comStakeArr);
-  };
-
 
     const checkingNft = (e) => {
       if(e.checked){
@@ -106,15 +95,13 @@ const StakingPage = () => {
       }
     } 
 
-
-  console.log(account);
-  useEffect(() => {
-    dispatch(stakingViewAction.stakingViewAct(account));
-  }, [account]);
+    console.log(account)
+    useEffect( () => {
+        dispatch(stakingViewAction.stakingViewAct(account))
+    },[account])
 
   return (
     <>
-
     { claimModal ? <ClaimModal account={account}/> : null }
     { successStaking ? <StakingModal/> : null }
     { successUnStaking ? <UnStakingModal/> : null }
@@ -164,17 +151,15 @@ const StakingPage = () => {
         <h1>My NFTs</h1>
         <div className='stakingPageTitle'>
           <span className='stakingPageSpan1'>
-
             Total : {myNftList.length + stakingNftString.length}
           </span>
-          <span className="stakingPageSpan1">
+          <span className='stakingPageSpan1'>
             Not Staking : {myNftList.length}
           </span>
-          <span className="stakingPageSpan2">
+          <span className='stakingPageSpan2'> 
             Staking : {stakingNftString.length}
           </span>
         </div>
-
           {/* Stake Section */}
           <div className='unStakingContainer'>
             <div className='unStakingBoxContainer'>
@@ -263,9 +248,8 @@ const StakingPage = () => {
           </div>
       </div>
     </div>
-
     </>
-  );
-};
+  )
+}
 
-export default StakingPage;
+export default StakingPage
