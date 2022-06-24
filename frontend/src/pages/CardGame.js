@@ -118,11 +118,8 @@ function CardGame() {
   }
   GameOver();
 
-<<<<<<< HEAD
-=======
   // setTimeout(GameSet, 1000)
   // GameSet()
->>>>>>> acd86674839f6768961fa4792c62f17391d3ca8e
 
   useEffect(() => {
     shuffleCards();
