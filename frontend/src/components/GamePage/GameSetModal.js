@@ -21,7 +21,7 @@ const GameSetModal = ({gzlt, gamePoint}) => {
               <button className='gameModalEndButton' onClick={goToStake}>Go to Staking</button> 
             </div>
             : <h2 className='gameModalMessage'> Claim Loading...</h2> } */}
-              <h1 className='gameModalComMessage'>Game Clear!!!</h1>
+              <h2 className='gameModalComMessage'>Game Clear!!!</h2>
               <h2 className='gameModalComMessage'>Get : {gzlt} GZLT<img className='gameModalIco' src={headzol2}/>  
               
                 / {gamePoint} GP

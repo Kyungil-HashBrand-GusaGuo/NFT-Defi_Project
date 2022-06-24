@@ -3,11 +3,32 @@
     /* min-width: auto; */
     min-height: auto;
     /* margin-bottom: 40px auto; */
-    padding-top: 120px;
     padding-left: 200px;
     padding-right: 200px;
     padding-bottom: 50px;
   }
+
+  .cardGameTitleContainer {
+    padding-top: 150px;
+    height: 4.167vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform:rotate(-3deg);
+    top: -2.083vw;
+    margin-bottom: 50px;
+}
+
+.cardGameTitleContainer h2{
+    font-size: 2.778vw;
+    color: whitesmoke;
+    background-color: #272727;
+    padding: 0.781vw;
+    padding-left: 1.042vw;
+    padding-right: 1.042vw;
+    border: 0.052vw solid #272727;
+    border-radius: 0.521vw;
+}
 
   .cardGameTitle {
     display: flex;

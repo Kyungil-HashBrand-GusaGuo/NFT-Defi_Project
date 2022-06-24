@@ -20,6 +20,8 @@ import ClaimModal from './StakingPage/ClaimModal'
 import StakingModal from './StakingPage/StakingModal'
 import UnStakingModal from './StakingPage/UnStakingModal'
 import GameSetModal from './GamePage/GameSetModal'
+import Hangman from './GamePage/Hangman'
+import WordAndAlphabet from './GamePage/WordAndAlphabet'
 import GameOverModal from './GamePage/GameOverModal'
 
 export { 
@@ -45,5 +47,7 @@ export {
     StakingModal,
     UnStakingModal,
     GameSetModal,
+    Hangman,
+    WordAndAlphabet,
     GameOverModal
 }
