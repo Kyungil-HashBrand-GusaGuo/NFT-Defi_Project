@@ -1,3 +1,4 @@
+
 import api from '../api'
 
 function stakingViewAct(account) {
@@ -16,10 +17,10 @@ function stakingViewAct(account) {
                 
                 let stakingNftNumberData = []
 
-                for(let i=0; i < stakingNft.data.length; i++){ 
-                    let data = Number(stakingNft.data[i])
-                    stakingNftNumberData.push(data)
-                  }
+        for (let i = 0; i < stakingNft.data.length; i++) {
+          let data = Number(stakingNft.data[i]);
+          stakingNftNumberData.push(data);
+        }
 
                 console.log("나의 NFT목록",myNftList.data)
                 console.log("스테이킹 NFT",stakingNftNumberData)
@@ -49,6 +50,7 @@ function stakingViewAct(account) {
             console.error(error)
         }
     }
+  };
 }
 
-export const stakingViewAction = {stakingViewAct}
+export const stakingViewAction = { stakingViewAct };
