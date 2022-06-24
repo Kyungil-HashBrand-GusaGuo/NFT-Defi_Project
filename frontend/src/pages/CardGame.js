@@ -119,6 +119,9 @@ function CardGame() {
       <div className='cardGameTitle'>
         <h1>Zolaman Memory Game</h1>
       </div>
+      <div className='collectionTitleContainer'>
+        <h2>Zolaman Memory Game</h2>
+      </div>
       <div className='allCardGameContainer'>
         <div className='cardGameContainer'>
         <button className='startBtn' onClick={shuffleCards}>New game</button>
