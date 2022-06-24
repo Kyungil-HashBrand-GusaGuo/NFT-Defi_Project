@@ -38,7 +38,7 @@ const StakingPage = () => {
     const navigate = useNavigate()
     const dispatch = useDispatch()
     const {account} = useSelector(state => state.account)
-    const {myNftList, stakingNftString, stakingReward , getStakingReward, successStaking, successUnStaking} = useSelector(state => state.stakingView)
+    const {myNftList, stakingNftString, stakingReward , getStakingReward, getGameTokenBalance, successStaking, successUnStaking} = useSelector(state => state.stakingView)
     const [claimModal, setClaimModal] = useState(false)
 
     const staking = (edition) => {
@@ -137,6 +137,10 @@ const StakingPage = () => {
           <div className='myZolTokenSection'>
             <div className='myZolTokenTitle'> <span>Total Zolaman Tokens Received</span> </div>
             <div className='myZolTokenAmount'> <span>{getStakingReward} ZLT</span> </div>
+          </div>
+          <div className='myZolGameTokenSection'>
+            <div className='myZolTokenTitle'> <span>Zolaman Game Tokens Received</span> </div>
+            <div className='myZolTokenAmount'> <span>{getGameTokenBalance} GZLT</span> </div>
           </div>
           <div>
             <button onClick={()=>setClaimModal(true)} className='claimBtn'>Claim</button>

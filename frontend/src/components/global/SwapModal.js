@@ -5,10 +5,10 @@ import {CgArrowsExchangeV, CgCloseO} from "react-icons/cg";
 import {FaCaretDown} from "react-icons/fa";
 import klayIcon2 from '../../images/klaytn.png'
 import headzol from '../../images/headzol.png'
+import headzol2 from '../../images/headzol2.png'
 import { stakingViewAction } from '../../redux/actions/stakingViewAction'
 import { swapModalAction } from '../../redux/actions/swapModalAction';
 import { SwapActModal } from '../index'
-import { IoLogoGameControllerB } from "react-icons/io";
 
 const SwapModal = () => {
 
@@ -18,7 +18,7 @@ const SwapModal = () => {
     const [toggleState, setToggleState] = useState(false)
     const [pageState, setPageState] = useState(false)
     const {account} = useSelector(state => state.account)
-    const {getKlayBalance, getTokenBalance} = useSelector(state => state.stakingView)
+    const {getKlayBalance, getTokenBalance, getGameTokenBalance} = useSelector(state => state.stakingView)
     
     const closePage = () => {
         dispatch(swapModalAction.swapModalAct())
@@ -73,7 +73,7 @@ const SwapModal = () => {
                     <div className='swapModalInfoSection'>
                         <div className='swapModalBalance'>
                             <div>From</div>
-                            <div>Balance : 0</div>
+                            <div>Balance : {getGameTokenBalance}</div>
                         </div>
                         <div className='swapModalInput'>
                             <div className='swapModalInputLeft'>
@@ -83,8 +83,7 @@ const SwapModal = () => {
                                     </button> : null
                                 }
                                 <div className='swapModalInputIcoSection'>
-                                    <IoLogoGameControllerB className='swapModalGameIco'/>
-                                    {/* <img className='swapModalInputIco' src={headzol}/> */}
+                                    <img className='swapModalInputIco' src={headzol2}/>
                                 </div>
                                 <div className='swapModalInputName'>GZLT</div>    
                                 <button className='swapModalInputToggle'onClick={()=>changeToggle()}><FaCaretDown/></button>
@@ -121,11 +120,11 @@ const SwapModal = () => {
                             <div>From</div>
                             <div>Balance : {getTokenBalance}</div>
                         </div>
-                        <div className='swapModalInput'>
+                        <div className='swapModalInput'> 
                             <div className='swapModalInputLeft'>
                                 {
                                     toggleState ? <button className='swapModalInputTest' onClick={()=>changePage()}>
-                                        <IoLogoGameControllerB className='swapModalGameIco'/>
+                                        <img className='swapModalInputIco' src={headzol2}/>
                                     </button> : null
                                 }
                                 <div className='swapModalInputIcoSection'>

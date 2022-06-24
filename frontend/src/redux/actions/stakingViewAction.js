@@ -10,8 +10,9 @@ function stakingViewAct(account) {
                 const getStakingRewardApi = api.post("/stakers", { account });
                 const getKlayBalanceApi = api.post("/balanceKlay", { account });
                 const getTokenBalanceApi = api.post("/balanceOf", { account });
-                
-                let [ myNftList, stakingNft, stakingReward, getStakingReward, getKlayBalance, getTokenBalance ] = await Promise.all([myNftListApi, stakingNftApi, stakingRewardApi, getStakingRewardApi, getKlayBalanceApi, getTokenBalanceApi ])
+                const getGameTokenBalanceApi = api.post("/balanceOfGZLT", {account})               
+
+                let [ myNftList, stakingNft, stakingReward, getStakingReward, getKlayBalance, getTokenBalance, getGameTokenBalance ] = await Promise.all([myNftListApi, stakingNftApi, stakingRewardApi, getStakingRewardApi, getKlayBalanceApi, getTokenBalanceApi, getGameTokenBalanceApi ])
                 
                 let stakingNftNumberData = []
 
@@ -26,6 +27,8 @@ function stakingViewAct(account) {
                 console.log("받은 스테이킹 리워드",getStakingReward.data.rewardsReleased / 10**18)
                 console.log("클레이밸런스 확인",Number(getKlayBalance.data) / 10**18)
                 console.log("토큰밸런스 확인 : ", getTokenBalance.data / 10**18);
+                console.log("게임토큰밸런스 확인 : ", getGameTokenBalance.data / 10**18);
+                
 
                 dispatch({
                     type : "GET_STAKING_VIEW_SUCCESS",
@@ -36,7 +39,8 @@ function stakingViewAct(account) {
                         stakingReward : (stakingReward.data / 10**18).toFixed(3),
                         getStakingReward : (getStakingReward.data.rewardsReleased / 10**18).toFixed(3),
                         getKlayBalance : (Number(getKlayBalance.data) / 10**18).toFixed(3), // klay라서 이렇게 하는게 맞을려나 모르겠다(내 돈이 버려지는거니까)
-                        getTokenBalance : getTokenBalance.data / 10**18
+                        getTokenBalance : getTokenBalance.data / 10**18,
+                        getGameTokenBalance : getGameTokenBalance.data / 10**18
                     }
                 })
             }
