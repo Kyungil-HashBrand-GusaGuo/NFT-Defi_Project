@@ -125,10 +125,7 @@ function CardGame() {
     <>
     { gameSetModalCheck ? <GameSetModal gzlt={gzlt} gamePoint={gamePoint}/> : null }
     <div className="gameMainContainer">
-      <div className='cardGameTitle'>
-        <h1>Zolaman Memory Game</h1>
-      </div>
-      <div className='collectionTitleContainer'>
+      <div className='cardGameTitleContainer'>
         <h2>Zolaman Memory Game</h2>
       </div>
       <div className='allCardGameContainer'>

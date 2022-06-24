@@ -19,6 +19,8 @@ import ClaimModal from './StakingPage/ClaimModal'
 import StakingModal from './StakingPage/StakingModal'
 import UnStakingModal from './StakingPage/UnStakingModal'
 import GameSetModal from './GamePage/GameSetModal'
+import Hangman from './GamePage/Hangman'
+import WordAndAlphabet from './GamePage/WordAndAlphabet'
 
 export { 
     Navbar, 
@@ -41,5 +43,7 @@ export {
     ClaimModal,
     StakingModal,
     UnStakingModal,
-    GameSetModal
+    GameSetModal,
+    Hangman,
+    WordAndAlphabet,
 }

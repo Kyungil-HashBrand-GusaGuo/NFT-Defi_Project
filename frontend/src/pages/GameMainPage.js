@@ -11,12 +11,13 @@ const GameMainPage = () => {
     const goToCardGame = () => {
         navigate('/cardgame')
     }
+    const goToHangManGame = () => {
+        navigate('/hangmangame')
+    }
   return (
     <div className='gamePageMainContainer'>
-        <div className='gamePageTitle'>
-            <span>
-                Game Main Page
-            </span>
+        <div className='cardGameTitleContainer'>
+        <h2>Zolaman Game</h2>
         </div>
         <div className='gameScoreTable'>
           <table>
@@ -69,10 +70,10 @@ const GameMainPage = () => {
                 </div>
                 <div className='testmain2'>
                     <div className='gameTitle'>
-                        <span>Game2</span>
+                        <span>Zolaman HangMan Game</span>
                     </div>
                     <div className='gameStartBtn'>
-                        <button onClick={goToCardGame} className="learn-more">Start</button>
+                        <button onClick={goToHangManGame} className="learn-more">Start</button>
                     </div>
 
                 </div>

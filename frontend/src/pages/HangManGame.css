@@ -1,0 +1,265 @@
+/* body,
+html {
+  margin: 0;
+  padding: 0;
+  background-color: rgb(243, 233, 213);
+  font-family: "Shadows Into Light", cursive;
+} */
+
+.HangManMainContainer {
+    padding-top: 150px;
+}
+
+.HangManContainer {
+  text-align: center;
+}
+
+h1 {
+  text-transform: uppercase;
+  letter-spacing: 6px;
+  margin: 30px 0px;
+}
+
+.alphabet > div {
+  display: inline;
+}
+
+.main {
+  display: flex;
+  justify-content: space-around;
+}
+
+.word {
+  font-size: 30px;
+  font-weight: bold;
+  color: rgb(85, 61, 34);
+  margin-top: 30px;
+}
+
+.alphabet {
+  margin: 2% 20%;
+}
+
+.alphabet > button {
+  width: 55px;
+  height: 45px;
+  margin: 5px;
+  border-radius: 8px;
+  font-size: 25px;
+  border: 3px solid rgba(128, 83, 47, 0.678);
+  font-family: "Shadows Into Light", cursive;
+  color: rgb(85, 61, 34);
+  font-weight: bold;
+}
+.wrong-guesses {
+  font-size: 24px;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+.wrong-letters {
+  font-size: 22px;
+  letter-spacing: 4px;
+  font-weight: bold;
+}
+
+button:disabled {
+  background-color: rgba(184, 181, 164, 0.849);
+}
+
+.game-over,
+.you-won {
+  font-size: 30px;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+}
+.word-reveal {
+  font-size: 24px;
+}
+
+h2 {
+  margin-bottom: 0px;
+}
+
+.reset {
+  width: 110px;
+  height: 55px;
+  margin: 5px;
+  border-radius: 8px;
+  font-size: 25px;
+  border: 3px solid rgba(128, 83, 47, 0.678);
+  font-family: "Shadows Into Light", cursive;
+  color: rgb(85, 61, 34);
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+
+@media (max-width: 700px) {
+  .letterImg {
+    width: 80%;
+  }
+  .wrong-guesses {
+    font-size: 20px;
+  }
+  .alphabet > button {
+    width: 45px;
+    height: 45px;
+  }
+  .game-over,
+  .you-won {
+    font-size: 18px;
+  }
+  .word-reveal {
+    font-size: 18px;
+  }
+
+  .alphabet {
+    margin-top: 10%;
+  }
+  .word {
+    margin-top: 40px;
+  }
+  .reset {
+    width: 90px;
+    height: 40px;
+    margin: 6px;
+
+    font-size: 22px;
+  }
+}
+
+
+@media (max-width: 550px) {
+  .letterImg {
+    width: 75%;
+  }
+  .alphabet > button {
+    width: 40px;
+    height: 40px;
+  }
+  .game-over,
+  .you-won {
+    font-size: 16px;
+  }
+  .word-reveal {
+    font-size: 16px;
+  }
+  .reset {
+    width: 80px;
+    height: 40px;
+    margin: 6px;
+
+    font-size: 18px;
+  }
+  .alphabet {
+    margin: 20% 10%;
+  }
+  .word {
+    font-size: 25px;
+  
+  }
+}
+
+@media (max-width: 450px) {
+  h1{
+    font-size: 24px;
+  }
+  .letterImg {
+    width: 80%;
+  }
+  .alphabet > button {
+    width: 35px;
+    height: 35px;
+    font-size: 18px;
+  }
+  .game-over,
+  .you-won {
+    font-size: 14px;
+  }
+  .wrong-guesses{
+    font-size: 16px;
+  }
+  .word-reveal {
+    font-size: 14px;
+  }
+  .reset {
+    width: 70px;
+    height: 40px;
+    margin: 6px;
+
+    font-size: 16px;
+  }
+  .alphabet {
+    margin: 25% 10%;
+  }
+}
+@media (max-width: 350px) {
+  h1{
+    font-size: 20px;
+  }
+  .letterImg {
+    width: 80%;
+  }
+  .alphabet > button {
+    width: 30px;
+    height: 30px;
+    font-size: 16px;
+  }
+  .game-over,
+  .you-won {
+    font-size: 12px;
+  }
+  .word-reveal {
+    font-size: 10px;
+  }
+  .reset {
+    width: 60px;
+    height: 30px;
+    margin: 6px;
+
+    font-size: 12px;
+  }
+  .alphabet {
+    margin: 25% 10%;
+  }
+  .word {
+    font-size: 20px;
+  
+  }
+}
+
+@media (max-width: 350px) {
+  h1{
+    font-size: 16px;
+  }
+  .letterImg {
+    width: 80%;
+  }
+  .alphabet > button {
+    width: 25px;
+    height: 25px;
+    font-size: 12px;
+  }
+  .game-over,
+  .you-won {
+    font-size: 10px;
+  }
+  .word-reveal {
+    font-size: 10px;
+  }
+  .reset {
+    width: 50px;
+    height: 30px;
+    margin: 6px;
+
+    font-size: 10px;
+  }
+  .alphabet {
+    margin: 25% 10%;
+  }
+  .word {
+    font-size: 16px;
+  
+  }
+}
