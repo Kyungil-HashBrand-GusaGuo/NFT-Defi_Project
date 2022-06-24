@@ -196,6 +196,24 @@
 				"type": "function"
 			},
 			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_to",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "wrongLetters",
+						"type": "uint256"
+					}
+				],
+				"name": "HangmanGameReward",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
 				"inputs": [],
 				"name": "MINTER_ROLE",
 				"outputs": [
@@ -867,11 +885,11 @@
 			]
 		},
 		"contracts/Game.sol": {
-			"keccak256": "0x69e6d46c8350a006f42941d55c40d26d23f722ca0d6b8c4cb45abb066515a9a0",
+			"keccak256": "0x2cc647d345e4315fcbd222e9612ad1a519d24714f9dbe9c4c088096ddaf2daf7",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://5cef39ae1fe9169d21a9856cf15c06f0031fb8021f3a4c47ea543af2276a065d",
-				"dweb:/ipfs/QmcJeUwDMtP4g9HgK5CyJjifjxRrS8mPWJWdNMdiqM7v16"
+				"bzz-raw://4d4539986da896232d6abbdc5c91316c85ecae3f7982a4412750d5a6825eabaa",
+				"dweb:/ipfs/QmYZ6i6qN5FLxmEbcPpXXtpEUMzxdDyDqaie2V6VEznLRA"
 			]
 		}
 	},
