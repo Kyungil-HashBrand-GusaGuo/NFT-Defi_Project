@@ -18,6 +18,35 @@ const GameMainPage = () => {
                 Game Main Page
             </span>
         </div>
+        <div className='gameScoreTable'>
+          <table>
+            <thead>
+              <tr>
+                <th>User</th>
+                <th>Score</th>
+                <th>Rank</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>6~8</td>
+                <td>5 GZLT</td>
+                <td>10</td>
+              </tr>
+              <tr>
+                <td>9~11</td>
+                <td>3 GZLT</td>
+                <td>5</td>
+              </tr>
+              {/* <tr>
+                <td>12~14</td>
+                <td>1 GZLT</td>
+                <td>3</td>
+              </tr> */}
+              
+            </tbody>
+          </table>
+        </div>
         <div className='anitest1'>
         </div>
         <div className='testmain'>
@@ -28,7 +57,7 @@ const GameMainPage = () => {
                     </div>
                     <div className='gameDescriptionTxt'>
                         <span>
-                            뒤집어진 카드를 맞춰서 GMT 토큰을 획득 해보세요!
+                            뒤집어진 카드를 맞춰서 GZLT 토큰을 획득 해보세요!
                         </span>
                     </div>
                     <div className='gameThumbnail'>
