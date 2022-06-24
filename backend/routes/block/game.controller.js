@@ -14,7 +14,7 @@ const MemoryGameReward = async (req, res) => {
   // 행맨 게임 관리자 계정 자동 처리 함수
 const HangmanGameReward = async (req, res) => {
     const result = await GameContract.methods
-      .HangmanGameReward(req.body.account, req.body.wrongLetters)
+      .HangmanGameReward(req.body.account, req.body.wrongLetter)
       .send({from:adminAccount.address, gas : 3000000});
     res.json(result);
   };

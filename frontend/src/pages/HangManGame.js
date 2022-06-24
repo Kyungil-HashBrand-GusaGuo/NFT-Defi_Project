@@ -1,7 +1,6 @@
 import React, {useEffect, useState} from 'react'
 import './HangManGame.css'
 import {Hangman} from '../components'
-
 import { WordAndAlphabet}  from '../components'
 import { words } from '../components/GamePage/wordBank'
 
@@ -12,12 +11,11 @@ const HangManGame = () => {
       const [playable, setPlayable] = useState(true);
       const [won, setWon] = useState(false);
       const [selectedWord, setSelectedWord] = useState('')
-    
+
       const playAgain = () => {
         setPlayable(true);
         setCorrectLetters([]);
         setWrongLetters([]);
-        //selectedWord = words[Math.floor(Math.random() * words.length)];
         setWon(false);
         const buttons = document.querySelectorAll("button");
         buttons.forEach((button) => {
