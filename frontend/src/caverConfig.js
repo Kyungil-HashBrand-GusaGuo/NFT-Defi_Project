@@ -2643,9 +2643,9 @@ export const STAKING_CONTRACT_ABI = [
 ]
 
 export const GAME_CONTRACT_ADDRESS = 
-"0x4190aB33939544CA4e2D6Db6DB45a28756fc9C84"
+"0xFB41aEbA9D04411DCBe6e286dFA9fe463637d30B"
 
-export const GAME_CONTRACT_ABI = [
+export const GAME_CONTRACT_ABI =[
 	{
 		"anonymous": false,
 		"inputs": [
@@ -2789,6 +2789,24 @@ export const GAME_CONTRACT_ABI = [
 			}
 		],
 		"name": "grantRole",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "_to",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "wrongLetters",
+				"type": "uint256"
+			}
+		],
+		"name": "HangmanGameReward",
 		"outputs": [],
 		"stateMutability": "nonpayable",
 		"type": "function"

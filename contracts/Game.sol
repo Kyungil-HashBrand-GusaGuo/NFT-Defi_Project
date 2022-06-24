@@ -12,18 +12,34 @@ contract Game is GameJolamanToken, Ownable {
         if (result == 1) {
             _mint(_to, GZLTERC20);
         }
-        else if (result == 2) {
-            _mint(_to, GZLTERC20 * 2);
-        }
         else if (result == 3) {
             _mint(_to, GZLTERC20 * 3);
-        }
-        else if (result == 4) {
-            _mint(_to, GZLTERC20 * 4);
         }
         else if (result == 5) {
             _mint(_to, GZLTERC20 * 5);
         }
+    }
+
+    function HangmanGameReward(address _to, uint wrongLetters) public onlyOwner {
+        if (wrongLetters == 0) {
+            _mint(_to, GZLTERC20 * 6);
+        }
+        else if(wrongLetters == 1) {
+            _mint(_to, GZLTERC20 * 5);
+        }
+        else if(wrongLetters == 2) {
+            _mint(_to, GZLTERC20 * 4);
+        }
+        else if(wrongLetters == 3) {
+            _mint(_to, GZLTERC20 * 3);
+        }
+        else if(wrongLetters == 2) {
+            _mint(_to, GZLTERC20 * 2);
+        }
+        else if(wrongLetters == 1) {
+            _mint(_to, GZLTERC20 * 1);
+        }
+
     }
 
     function DepositToContract() public payable onlyOwner {

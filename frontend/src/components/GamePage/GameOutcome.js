@@ -1,6 +1,10 @@
 
 
 function GameOutcome({ wrongLetters, playable, playAgain , won, word}) {
+
+
+
+
   if (!playable && won === false) {      
     return (
       <div className="game-over">
@@ -11,7 +15,8 @@ function GameOutcome({ wrongLetters, playable, playAgain , won, word}) {
         </button>
       </div>
     );
-  } else if (!playable && won === true) {      
+  } else if (!playable && won === true) {    
+    console.log(wrongLetters.length)  
     return (
       <div className="you-won">
         <h2>That's correct !</h2>
