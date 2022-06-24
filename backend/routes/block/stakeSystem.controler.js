@@ -27,6 +27,7 @@ const stakers = async (req, res) => {
   res.json(result);
 };
 
+// 내 보유 ZLT 조회 함수 
 const balanceOf = async (req, res) => {
   const result = await stakeSystemContract.methods
     .balanceOf(req.body.account)
