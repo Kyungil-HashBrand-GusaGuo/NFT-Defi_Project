@@ -8,13 +8,14 @@ import headzol from '../../images/headzol.png'
 import headzol2 from '../../images/headzol2.png'
 import { stakingViewAction } from '../../redux/actions/stakingViewAction'
 import { swapModalAction } from '../../redux/actions/swapModalAction';
-import { SwapActModal } from '../index'
+import { SwapActModal, SwapGzltModal } from '../index'
 
 const SwapModal = () => {
 
     const dispatch = useDispatch()
     const [amount, setAmount] = useState('')
-    const [swapActModalCheck, setSwapActModalCheck] = useState(false)
+    const [zltSwapActModalCheck, setZltSwapActModalCheck] = useState(false)
+    const [gzltSwapActModalCheck, setGzltSwapActModalCheck] = useState(false)
     const [toggleState, setToggleState] = useState(false)
     const [pageState, setPageState] = useState(false)
     const {account} = useSelector(state => state.account)
@@ -46,8 +47,12 @@ const SwapModal = () => {
         }
     }
 
-    const swapBtn = () => {
-        setSwapActModalCheck(true)
+    const zltSwapBtn = () => {
+        setZltSwapActModalCheck(true)
+    }
+
+    const gzltSwapBtn = () => {
+        setGzltSwapActModalCheck(true)
     }
 
 
@@ -58,14 +63,13 @@ const SwapModal = () => {
 
   return (
     <div className='overlay'>
-    {
-        swapActModalCheck ? <SwapActModal account={account} amount={amount}/> : null
-    }
+    { zltSwapActModalCheck ? <SwapActModal account={account} amount={amount}/> : null }
+    { gzltSwapActModalCheck ? <SwapGzltModal account={account} amount={amount}/> : null }
         <div className='swapModalContainer'>
             <div className='swapModalSection'>
                 <div className='swapModalTitle'>
                     <h2>Swap Page</h2>
-                    <h1 onClick={closePage}><CgCloseO/></h1>
+                    <h2 onClick={closePage}><CgCloseO/></h2>
                 </div> 
                 {
                     pageState ?
@@ -110,7 +114,7 @@ const SwapModal = () => {
                         </div>
                     </div>  
                     <div className='swapModalBtnSection'>
-                        <button className='swapModalBtn'>GZLT SWAP</button>
+                        <button className='swapModalBtn' onClick={gzltSwapBtn}>GZLT SWAP</button>
                     </div>
                     </> 
                     :
@@ -151,11 +155,11 @@ const SwapModal = () => {
                                 </div>
                                 <div>KLAY</div>
                             </div>
-                            <input value={amount} disabled/>
+                            <input value={amount/2} disabled/>
                         </div>
                     </div>  
                     <div className='swapModalBtnSection'>
-                        <button className='swapModalBtn' onClick={swapBtn}>ZLT SWAP</button>
+                        <button className='swapModalBtn' onClick={zltSwapBtn}>ZLT SWAP</button>
                     </div>
                     </> 
                 } 

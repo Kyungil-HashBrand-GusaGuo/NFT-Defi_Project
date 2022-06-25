@@ -1,6 +1,6 @@
 import './App.css';
 import { Routes, Route } from 'react-router-dom';
-import { MainPage, PreMintingPage, AdminPage, MyPage, AllMintPage, SellPage, MarketPage, BuyPage, StakingPage, GamePage, GameMainPage } from './pages';
+import { MainPage, PreMintingPage, AdminPage, MyPage, AllMintPage, SellPage, MarketPage, BuyPage, StakingPage, CardGame, GameMainPage, HangManGame } from './pages';
 import { Navbar, Footer } from './components'
 
 
@@ -21,7 +21,8 @@ function App() {
         <Route path='/marketpage/:edition' element={<BuyPage/>}/>
         <Route path='/staking' element={<StakingPage/>}/>
         <Route path='/gamemain' element={<GameMainPage/>}/>
-        <Route path='/cardgame' element={<GamePage/>}/>
+        <Route path='/cardgame' element={<CardGame/>}/>
+        <Route path='/hangmangame' element={<HangManGame/>}/>
       </Routes>
     </div>
       <Footer/>

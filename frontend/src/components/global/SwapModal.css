@@ -31,7 +31,7 @@
     justify-content: space-between;
 }
 
-.swapModalTitle h1{
+.swapModalTitle h2{
     cursor: pointer;
 }
 
@@ -41,7 +41,7 @@
     background-color: white;
     font-size: 25px;
     border-radius: 10px;
-    margin-top: 15px;
+    margin-top: 30px;
 }
 
 .swapModalBalance {
