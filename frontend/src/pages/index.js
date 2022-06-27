@@ -10,5 +10,6 @@ import StakingPage from "./StakingPage"
 import CardGame from "./CardGame"
 import GameMainPage from "./GameMainPage"
 import HangManGame from "./HangManGame"
+import NotFound from './NotFound'
 
-export { MainPage, PreMintingPage, AdminPage, MyPage, AllMintPage, SellPage, MarketPage, BuyPage, StakingPage, CardGame, GameMainPage, HangManGame }
+export { MainPage, PreMintingPage, AdminPage, MyPage, AllMintPage, SellPage, MarketPage, BuyPage, StakingPage, CardGame, GameMainPage, HangManGame, NotFound }
