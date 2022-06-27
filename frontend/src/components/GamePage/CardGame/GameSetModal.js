@@ -1,7 +1,7 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
 import "./GameModal.css"
-import headzol2 from '../../images/headzol2.png'
+import headzol2 from '../../../images/headzol2.png'
 
 const GameSetModal = ({gzlt, gamePoint}) => {
 

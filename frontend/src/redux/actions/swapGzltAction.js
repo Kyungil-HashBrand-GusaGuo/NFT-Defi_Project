@@ -22,6 +22,7 @@ function swapGzltAct(account,amount) {
             })
           } catch (error){
             console.error(error);
+            window.location.reload()
           }
     }
 }

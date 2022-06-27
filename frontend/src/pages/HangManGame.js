@@ -1,8 +1,9 @@
 import React, {useEffect, useState} from 'react'
 import './HangManGame.css'
-import {Hangman} from '../components'
-import { WordAndAlphabet}  from '../components'
-import { words } from '../components/GamePage/wordBank'
+import { WordAndAlphabet, Hangman, HangmanGameSetModal}  from '../components/index'
+import { words } from '../components/GamePage/HangmanGame/wordBank'
+import { SellModal } from '../components/index'
+import { useSelector } from 'react-redux'
 
 const HangManGame = () => {
 
@@ -11,6 +12,9 @@ const HangManGame = () => {
       const [playable, setPlayable] = useState(true);
       const [won, setWon] = useState(false);
       const [selectedWord, setSelectedWord] = useState('')
+      const [test, setTest] = useState(false);
+      const { account } = useSelector(state => state.account)
+
 
       const playAgain = () => {
         setPlayable(true);
@@ -30,7 +34,17 @@ const HangManGame = () => {
         setSelectedWord(selectedRandomWord)
       },[])
 
+      useEffect(() =>{
+        if(won) {
+          //console.log("asdfasdfad")
+          //console.log(wrongLetters.length)
+          setTest(true)
+        }
+      },[won])
+
   return (
+    <>
+    { test ? <HangmanGameSetModal account={account} wrongLetters={wrongLetters}/> : null }
     <div className='HangManMainContainer'>
       {
         selectedWord !== '' ?
@@ -57,6 +71,7 @@ const HangManGame = () => {
         : null
       }
     </div>
+    </>
   )
 }
 
