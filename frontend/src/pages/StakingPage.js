@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import Slider from "react-slick";
 import './StakingPage.css'
+import headzol from '../images/headzol.png'
+import headzol2 from '../images/headzol2.png'
 import { stakingViewAction } from '../redux/actions/stakingViewAction'
 import { stakingAction } from '../redux/actions/stakingAction'
 import { stakingCancelAction } from '../redux/actions/stakingCancelAction'
@@ -147,15 +149,15 @@ const StakingPage = () => {
         <div className='zolTokenAmountContainer'>
           <div className='miningZolTokenSection'>
             <div className='miningZolTokenTitle'> <span>Zolaman Token currently being mined</span> </div>
-            <div className='miningZolTokenAmount'> <span>{stakingReward} ZLT</span> </div>
+            <div className='miningZolTokenAmount'> <span>{stakingReward} ZLT <img className='swapModalInputIco' src={headzol}/></span> </div>
           </div>
           <div className='myZolTokenSection'>
             <div className='myZolTokenTitle'> <span>Total Zolaman Tokens Received</span> </div>
-            <div className='myZolTokenAmount'> <span>{getStakingReward} ZLT</span> </div>
+            <div className='myZolTokenAmount'> <span>{getStakingReward} ZLT <img className='swapModalInputIco' src={headzol}/></span> </div>
           </div>
           <div className='myZolGameTokenSection'>
             <div className='myZolTokenTitle'> <span>Zolaman Game Tokens Received</span> </div>
-            <div className='myZolTokenAmount'> <span>{getGameTokenBalance} GZLT</span> </div>
+            <div className='myZolTokenAmount'> <span>{getGameTokenBalance} GZLT <img className='swapModalInputIco' src={headzol2}/></span> </div>
           </div>
           <div>
             <button onClick={()=>setClaimModal(true)} className='claimBtn'>Claim</button>
