@@ -1,6 +1,6 @@
 import React from 'react'
 import { useEffect, useState } from 'react';
-import SingleCard from '../components/GamePage/SingleCard';
+import SingleCard from '../components/GamePage/CardGame/SingleCard';
 import './CardGame.css'
 import { useSelector } from 'react-redux'
 import api from "../redux/api";

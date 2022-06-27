@@ -44,8 +44,12 @@ const StakingPage = () => {
     const [claimModal, setClaimModal] = useState(false)
 
     const staking = (edition) => {
-      console.log("스테이킹되는 목록", edition )
-      dispatch(stakingAction.stakingAct(account, edition))
+      if(edition.length == 0){
+        alert("하나 이상의 NFT를 선택해 주세요.")
+      } else {
+        console.log("스테이킹되는 목록", edition )
+        dispatch(stakingAction.stakingAct(account, edition))
+      }
     }
 
     const goToGamePage = () => {
@@ -53,7 +57,11 @@ const StakingPage = () => {
     }
 
     const cancelStaking = (edition) => {
-      dispatch(stakingCancelAction.stakingCancelAct(account, edition))
+      if(edition.length == 0){
+        alert("하나 이상의 NFT를 선택해 주세요.")
+      } else {
+        dispatch(stakingCancelAction.stakingCancelAct(account, edition))
+      }
     }
 
     const changeState = () =>{

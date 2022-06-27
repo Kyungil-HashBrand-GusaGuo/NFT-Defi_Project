@@ -19,10 +19,11 @@ import SwapGzltModal from './global/SwapGzltModal'
 import ClaimModal from './StakingPage/ClaimModal'
 import StakingModal from './StakingPage/StakingModal'
 import UnStakingModal from './StakingPage/UnStakingModal'
-import GameSetModal from './GamePage/GameSetModal'
-import Hangman from './GamePage/Hangman'
-import WordAndAlphabet from './GamePage/WordAndAlphabet'
-import GameOverModal from './GamePage/GameOverModal'
+import GameSetModal from './GamePage/CardGame/GameSetModal'
+import GameOverModal from './GamePage/CardGame/GameOverModal'
+import Hangman from './GamePage/HangmanGame/Hangman'
+import WordAndAlphabet from './GamePage/HangmanGame/WordAndAlphabet'
+import HangmanGameSetModal from './GamePage/HangmanGame/HangmanGameSetModal';
 
 export { 
     Navbar, 
@@ -47,7 +48,8 @@ export {
     StakingModal,
     UnStakingModal,
     GameSetModal,
+    GameOverModal,
     Hangman,
     WordAndAlphabet,
-    GameOverModal
+    HangmanGameSetModal
 }
