@@ -3,18 +3,18 @@ import './HangManGame.css'
 import {Hangman} from '../components'
 
 import { WordAndAlphabet}  from '../components'
-import { words } from '../components/GamePage/wordBank'
+import { words } from './wordBank'
 
 const HangManGame = () => {
 
     let selectedWord = words[Math.floor(Math.random() * words.length)];
 
     const [correctLetters, setCorrectLetters] = useState([]);
-      const [wrongLetters, setWrongLetters] = useState([]);
-      const [playable, setPlayable] = useState(true);
-      const [won, setWon] = useState(false);
+    const [wrongLetters, setWrongLetters] = useState([]);
+    const [playable, setPlayable] = useState(true);
+    const [won, setWon] = useState(false);
     
-      const playAgain = () => {
+    const playAgain = () => {
         setPlayable(true);
         setCorrectLetters([]);
         setWrongLetters([]);
