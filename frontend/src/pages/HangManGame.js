@@ -1,54 +1,77 @@
-import React, {useState} from 'react'
+import React, {useEffect, useState} from 'react'
 import './HangManGame.css'
-import {Hangman} from '../components'
-
-import { WordAndAlphabet}  from '../components'
-import { words } from './wordBank'
+import { WordAndAlphabet, Hangman, HangmanGameSetModal}  from '../components/index'
+import { words } from '../components/GamePage/HangmanGame/wordBank'
+import { SellModal } from '../components/index'
+import { useSelector } from 'react-redux'
 
 const HangManGame = () => {
 
-    let selectedWord = words[Math.floor(Math.random() * words.length)];
+      const [correctLetters, setCorrectLetters] = useState([]);
+      const [wrongLetters, setWrongLetters] = useState([]);
+      const [playable, setPlayable] = useState(true);
+      const [won, setWon] = useState(false);
+      const [selectedWord, setSelectedWord] = useState('')
+      const [test, setTest] = useState(false);
+      const { account } = useSelector(state => state.account)
 
-    const [correctLetters, setCorrectLetters] = useState([]);
-    const [wrongLetters, setWrongLetters] = useState([]);
-    const [playable, setPlayable] = useState(true);
-    const [won, setWon] = useState(false);
-    
-    const playAgain = () => {
+
+      const playAgain = () => {
         setPlayable(true);
         setCorrectLetters([]);
         setWrongLetters([]);
-        selectedWord = words[Math.floor(Math.random() * words.length)];
         setWon(false);
         const buttons = document.querySelectorAll("button");
         buttons.forEach((button) => {
           button.disabled = false; 
         });
+        let selectedRandomWord = words[Math.floor(Math.random() * words.length)];
+        setSelectedWord(selectedRandomWord)
       }
     
+      useEffect ( () => {
+        let selectedRandomWord = words[Math.floor(Math.random() * words.length)];
+        setSelectedWord(selectedRandomWord)
+      },[])
+
+      useEffect(() =>{
+        if(won) {
+          //console.log("asdfasdfad")
+          //console.log(wrongLetters.length)
+          setTest(true)
+        }
+      },[won])
+
   return (
+    <>
+    { test ? <HangmanGameSetModal account={account} wrongLetters={wrongLetters}/> : null }
     <div className='HangManMainContainer'>
-    <div className='HangManContainer'>
-        <Hangman
-        wrongLetters={wrongLetters}
-        playable={playable}
-        playAgain={playAgain}
-        won={won}
-        word = {selectedWord}
-      />
-      <WordAndAlphabet
-        word={selectedWord}
-        wrongLetters={wrongLetters}
-        setWrongLetters={setWrongLetters}
-        correctLetters={correctLetters}
-        setCorrectLetters={setCorrectLetters}
-        setPlayable={setPlayable}
-        playable={playable}
-        setWon={setWon}
-        
-      />
+      {
+        selectedWord !== '' ?
+        <div className='HangManContainer'>
+            <Hangman
+            wrongLetters={wrongLetters}
+            playable={playable}
+            playAgain={playAgain}
+            won={won}
+            word = {selectedWord}
+          />
+          <WordAndAlphabet
+            word={selectedWord}
+            wrongLetters={wrongLetters}
+            setWrongLetters={setWrongLetters}
+            correctLetters={correctLetters}
+            setCorrectLetters={setCorrectLetters}
+            setPlayable={setPlayable}
+            playable={playable}
+            setWon={setWon}
+            
+          />
+        </div>
+        : null
+      }
     </div>
-    </div>
+    </>
   )
 }
 

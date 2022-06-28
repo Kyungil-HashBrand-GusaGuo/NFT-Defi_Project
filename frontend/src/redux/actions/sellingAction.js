@@ -11,7 +11,7 @@ function sellAction(edition, account, price) {
   // console.log(edition)
   // console.log(account)
   // console.log(price)
-
+  
   return async (dispatch) => {
     //onsole.log(edition)
     try {
@@ -52,6 +52,7 @@ function sellAction(edition, account, price) {
       }
     } catch (error) {
       console.error(error);
+      window.location.reload()
     }
   };
 }

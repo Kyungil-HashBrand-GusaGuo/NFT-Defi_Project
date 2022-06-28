@@ -34,6 +34,7 @@ router.post("/balanceOf", stakeController.balanceOf);
 
 // game controller 
 router.post("/memorygame", gameController.MemoryGameReward);
+router.post("/hangmangamereward", gameController.HangmanGameReward);
 router.post("/balanceOfGZLT", gameController.balanceOfGZLT);
 
 module.exports = router;

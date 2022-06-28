@@ -69,7 +69,7 @@ const SwapModal = () => {
             <div className='swapModalSection'>
                 <div className='swapModalTitle'>
                     <h2>Swap Page</h2>
-                    <h1 onClick={closePage}><CgCloseO/></h1>
+                    <h2 onClick={closePage}><CgCloseO/></h2>
                 </div> 
                 {
                     pageState ?

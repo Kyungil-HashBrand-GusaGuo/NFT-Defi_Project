@@ -1,6 +1,6 @@
 import React from 'react'
 import { useEffect, useState } from 'react';
-import SingleCard from '../components/GamePage/SingleCard';
+import SingleCard from '../components/GamePage/CardGame/SingleCard';
 import './CardGame.css'
 import { useSelector } from 'react-redux'
 import api from "../redux/api";
@@ -98,7 +98,7 @@ function CardGame() {
     if(counts === 6) {
       const response = await api.post("/memorygame", {account, result});
       if(response.status) {
-      alert(`게임 승리! ${result} GZLT, ${point} GP 획득!`)
+      //lert(`게임 승리! ${result} GZLT, ${point} GP 획득!`)
         setGameSetModalCheck(true)
         setGzlt(result);
         setGamePoint(point)

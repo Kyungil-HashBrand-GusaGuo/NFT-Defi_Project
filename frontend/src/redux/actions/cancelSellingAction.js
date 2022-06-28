@@ -23,6 +23,7 @@ function cancelSellAction(edition, account) {
             }
                 } catch(error) {
                 console.error(error);
+                window.location.reload()
             }
     }
 }

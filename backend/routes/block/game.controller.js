@@ -3,10 +3,18 @@ const {
     adminAccount
   } = require("../../contracts/game");
 
-// 메모리 게임 관리자 계정 자동 처리 함수  
+  // 메모리 게임 관리자 계정 자동 처리 함수  
 const MemoryGameReward = async (req, res) => {
     const result = await GameContract.methods
       .MemoryGameReward(req.body.account, req.body.result)
+      .send({from:adminAccount.address, gas : 3000000});
+    res.json(result);
+  };
+
+  // 행맨 게임 관리자 계정 자동 처리 함수
+const HangmanGameReward = async (req, res) => {
+    const result = await GameContract.methods
+      .HangmanGameReward(req.body.account, req.body.wrongLetter)
       .send({from:adminAccount.address, gas : 3000000});
     res.json(result);
   };
@@ -21,5 +29,6 @@ const balanceOfGZLT = async(req, res) => {
 
   module.exports = {
     MemoryGameReward,
+    HangmanGameReward,
     balanceOfGZLT
   }

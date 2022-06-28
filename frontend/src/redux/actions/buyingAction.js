@@ -32,6 +32,7 @@ function buyAction(edition, account) {
             }
             } catch(error) {
                 console.error(error);
+                window.location.reload()
             }
     }
 }

@@ -44,7 +44,7 @@ function stakingViewAct(account) {
                     }
                 })
             }
-        } 
+        }
         catch(error) {
             console.error(error)
         }

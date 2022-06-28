@@ -133,6 +133,11 @@ div.style-five {
     justify-content: center;
 }
 
+.miningZolTokenAmount span{
+    display: flex;
+    align-items: center;
+}
+
 .myZolTokenSection {
     margin-left: 2.083vw;
     border: 0.208vw solid red;
@@ -174,6 +179,11 @@ div.style-five {
 .myZolTokenAmount {
     display: flex;
     justify-content: center;
+}
+
+.myZolTokenAmount span{
+    display: flex;
+    align-items: center;
 }
 
 .slick-slider.firstSlider {
