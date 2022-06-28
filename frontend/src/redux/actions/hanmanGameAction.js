@@ -14,10 +14,44 @@ function hanmanGameAct(account, wrongLetter) {
                     type: "CLEAR_HANGMAN_GAME",
                     payload: { clearHangmanGame: true }
                 })
+
+                switch(wrongLetter){
+                    case 0 :
+                        return dispatch({
+                            type: "GET_HANGMAN_GAME_REWARD",
+                            payload: { hangmanRewardGZLT: 6, hangmanRewardGP : 10}
+                        })
+                    case 1 :
+                        return dispatch({
+                            type: "GET_HANGMAN_GAME_REWARD",
+                            payload: { hangmanRewardGZLT: 5, hangmanRewardGP : 8}
+                        })
+                    case 2 :
+                        return dispatch({
+                            type: "GET_HANGMAN_GAME_REWARD",
+                            payload: { hangmanRewardGZLT: 4, hangmanRewardGP : 6}
+                        })
+                    case 3 :
+                        return dispatch({
+                            type: "GET_HANGMAN_GAME_REWARD",
+                            payload: { hangmanRewardGZLT: 3, hangmanRewardGP : 4}
+                        })
+                    case 4 :
+                        return dispatch({
+                            type: "GET_HANGMAN_GAME_REWARD",
+                            payload: { hangmanRewardGZLT: 2, hangmanRewardGP : 2}
+                        })
+                    case 5 :
+                        return dispatch({
+                            type: "GET_HANGMAN_GAME_REWARD",
+                            payload: { hangmanRewardGZLT: 1, hangmanRewardGP : 1}
+                        })
+                    default :
+                        return null
+                }
             }
           } catch (error){
             console.error(error);
-            // 페이지 리로드
           }
     }
 }
