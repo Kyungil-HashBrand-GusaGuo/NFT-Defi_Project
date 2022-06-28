@@ -72,6 +72,11 @@ const GameMainPage = () => {
                     <div className='gameTitle'>
                         <span>Zolaman HangMan Game</span>
                     </div>
+                    <div>
+                      <span className='gameDescriptionTxt'>
+                        코인이름을 맞춰서 GZLT 토큰을 획득 해보세요!
+                      </span>
+                    </div>
                     <div className='gameStartBtn'>
                         <button onClick={goToHangManGame} className="learn-more">Start</button>
                     </div>
