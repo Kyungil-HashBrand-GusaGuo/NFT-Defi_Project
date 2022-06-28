@@ -1,7 +1,7 @@
 import React from 'react'
 import './GameMainPage.css'
 import { useNavigate } from 'react-router-dom'
-import { Thum1 } from '../images'
+import { Game1, Game2 } from '../images'
 
 
 const GameMainPage = () => {
@@ -62,7 +62,7 @@ const GameMainPage = () => {
                         </span>
                     </div>
                     <div className='gameThumbnail'>
-                        <img src={Thum1}></img>
+                        <img src={Game1}></img>
                     </div>
                     <div className='gameStartBtn'>
                         <button onClick={goToCardGame} className="learn-more">Start</button>
@@ -76,6 +76,9 @@ const GameMainPage = () => {
                       <span className='gameDescriptionTxt'>
                         코인이름을 맞춰서 GZLT 토큰을 획득 해보세요!
                       </span>
+                    </div>
+                    <div className='gameThumbnail'>
+                        <img src={Game2}></img>
                     </div>
                     <div className='gameStartBtn'>
                         <button onClick={goToHangManGame} className="learn-more">Start</button>
