@@ -5,8 +5,8 @@
     justify-content: center;
     align-items: center;
     transform:rotate(-3deg);
-    top: -29.995px;
-    margin-bottom: 0.694vw;
+    top: -2.083vw;
+    margin-bottom: 9.994px;
 }
 
 .marketTitleContainer h2{
@@ -68,13 +68,21 @@ hr.style-five1 {
 
     .leftTop.is-active .leftMarketSection {
         position: fixed;
-        top: 0px;
-        width: 400px;
+        top: -5.243vw;
+        width: 31.25vw;
     }
 
-    .test1 {
-        /* position: fixed; */
-        margin-top: 13.889vw;
+    .leftTop.is-active {
+
+    }
+
+    /* .leftTop.is-active .leftMarketSection .leftMarketBtn {
+        margin-bottom: 50px;
+    } */
+
+    .leftMarketTitle {
+        display: flex;
+        align-items: center;
     }
 
 
@@ -82,11 +90,9 @@ hr.style-five1 {
         padding: 0.694vw 0.694vw 0.694vw 0.694vw;
     }
 
-    /* .test1 {
-        position: fixed;
-        top: 110px;
-        left: 40px;
-    } */
+    .leftMarketCardTxt1 {
+        margin-right: 0.694vw;
+    }
 
     .leftMarketCardTxt1 span {
         font-size: 3.472vw;
@@ -97,7 +103,8 @@ hr.style-five1 {
     }
 
     .leftMarketCardName {
-        margin-top: 0.347vw;
+        display: flex;
+        align-items: center;
         font-size: 2.083vw;
     }
     
@@ -117,7 +124,7 @@ hr.style-five1 {
 
     .leftMarketTestSecion {
         display: flex;
-        margin-top: 0.347vw;
+        align-items: center;
         width: 23.611vw;
         /* height: 2.778vw; */
     }
@@ -139,8 +146,7 @@ hr.style-five1 {
 
     .leftMarketBtn {
         display: flex;
-        margin-top: 1.389vw;
-        margin-bottom: 2.083vw;
+        /* margin-top: 1.389vw; */
     }
 
     .leftMarketBtn button {
@@ -156,18 +162,13 @@ hr.style-five1 {
 
     .rightMarketContainer {
         flex: 70%;
-        /* background-color: aqua; */
         padding: 3.472vw 2.083vw 2.083vw 3.472vw;
-        /* height: 100%; */
         
     }
 
     .rightMarketSection {
         width: 100%;
         height: 100%;
-        /* background-color: firebrick; */
-        /* margin-bottom: 6.944vw; */
-
     }
 
     .rightMarketTitle {
@@ -181,29 +182,20 @@ hr.style-five1 {
 
     .rightMarketCardContainer {
         height: 100%;
-        /* background-color: chartreuse; */
         width: 100%;
         display: flex;
-    /* align-items: center; */
-    /* margin-top: 2.083vw; */
         justify-content: center;
         flex-direction: row ;
         flex-wrap: wrap; 
     }
 
     .rightMarketMainCardList:hover {
-        /* margin-top: 0.694vw; */
         cursor: pointer;
-
     }
 
-   
-
     .rightMarketCardList {
-        /* display: flex; */
         width: 17.361vw;
         height: 25vw;
-        /* border: 2.002px solid black; */
         border-radius: 1.042vw;
         box-shadow:gray 0vw 0.139vw 1.389vw;
         margin-bottom: 1.042vw;
@@ -212,8 +204,7 @@ hr.style-five1 {
         margin-left: 1.042vw;
     }
     
-    .rightMarketCardList:hover {
-        
+    .rightMarketCardList:hover { 
         border: 2.995px solid rgba(44, 14, 2, 0.35)
     }
     
@@ -225,53 +216,73 @@ hr.style-five1 {
     }
 
     .rightMarketCardTxtContainer {
-        width: 15.972vw;
-        height: 7.639vw;
-        /* border-radius: 1.042vw; */
-        /* background-color: aqua; */
-        padding: 0.694vw 0.694vw 0.694vw 0.694vw;
+        width: 16.111vw;
+        height: 7.778vw;
+        padding:  0.625vw 0.625vw 0.625vw 0.625vw
     }
 
     .rightMarketCardTxtSection {
-
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 100%;
+    } 
+    
+    .rightMarketCardDnaTxt {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        flex-direction: row;
     }
     
     .rightMarketCardDnaTxt1 {
         font-size: 1.042vw;
+        display: flex;
+        margin-right: 0.695vw;
+
     }
 
     .rightMarketCardDnaTxt2 {
-        margin-right: 1.389vw;
-        
     }
+
     .rightMarketCardDnaTxt span {
         font-size: 0.903vw;
     }
 
+    .rightMarketCardNum {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+    }
+
     .rightMarketCardNum span{
-        /* background-color: blue; */
-        font-size: 1.389vw;
+        font-size: 22.669px;
+    }
+
+    .rightMarketPrice {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        height: 100%;
     }
 
     .rightMarketPrice span{
         font-size: 1.25vw;
     }
 
-    
-
     .rightMarketOwner{
         display: flex;
+        align-items: center;
         font-size: 0.903vw;
+        width: 100%;
+        height: 100%;
     }
 
     .rightMarketOwner1 {
         margin-right: 0.694vw;
     }
-
-
-
-
-
 
     /* Dropdown style */
 @keyframes slide-fade-in-dropdown-animation {
@@ -320,117 +331,34 @@ hr.style-five1 {
     list-style: none;
   }
 
+
   /* 반응형 */
-@media only screen and (max-width: 1190.002px){
-    .leftMarketContainer {
-        flex: 30%;
-        padding-top: 24px;
-        padding-bottom: 41px;
-        padding-left: 66px;
-    }
-
-    .leftMarketSection {
-        margin-top: 157px;
-        width: 100%;
-        height: 100%;        
-    }
-
-    .leftMarketTxtContainer {
-        padding: 8.2px 8.2px 8.2px 8.2px;
-    }
-
-    .leftMarketCardTxt1 span {
-        font-size: 18px;
-    }
-
-    .lefttMarketCardTxt2 span {
-        font-size: 18px;
-    }
-
-    .leftMarketCardName {
-        margin-top: 4.997px;
-        font-size: 24px;
-    }
-
-    .leftMarketCardContainer {
-        display: flex;
-        justify-content: center;
-    }
-
-    .leftMarketNftCardImg {
-        border: 0.139vw solid black;
-        border-radius: 15.005px;
-        width: 276px;
-        height: 252px;
-        background-size: cover;
-    }
-
-
-    .leftMarketTestSecion {
-        display: flex;
-        margin-top: 4.104px;
-        width: 281.002px;
-        height: 33px;
-    }
-
-    .leftMarketCardPrice{
-        font-size: 16px;
-        margin-right: 15.998px;
-    }
-    .leftMarketCardNum {
-        font-size: 16px;
-        margin-left: 15.998px;
-    }
-
-    .leftMarketcolhr {
-        border-left: 2.995px solid black;
-        height: 33px;
-        
-    }
-
-    .leftMarketBtn {
-        display: flex;
-        margin-top: 16px;
-        margin-bottom: 24px;
-    }
-
-    .leftMarketBtn button {
-        width: 276px;
-    }
-
-    .lefthr {
-        height: 4.997px;
-        background-color: black;
-        border-radius: 20.002px;
-
-    }
+/* @media only screen and (max-width: 900px){
 
     .marketTitleContainer {
-        /* padding-top: 150.005px; */
         height: 60.005px;
         display: flex;
         justify-content: center;
         align-items: center;
         transform:rotate(-3deg);
         top: -2.083vw;
-        margin-bottom: 8px;
+        margin-bottom: 6px;
     }
     
     .marketTitleContainer h2{
-        font-size: 33px;
+        font-size: 25px;
         color: whitesmoke;
         background-color: #272727;
-        padding: 11.246px;
+        padding: 7px;
         padding-left: 9px;
-        padding-right: 12px;
-        border: 0.749px solid #272727;
-        border-radius: 7.502px;
+        padding-right: 9px;
+        border: 0.052vw solid #272727;
+        border-radius: 0.521vw;
     }
     
     
     div.style-five1 {
         height: 5.556vw;
-        /* background: url(../images/zolhr.png) no-repeat scroll left; */
         background-size: 5.556vw 5.208vw;
         }
         
@@ -438,258 +366,131 @@ hr.style-five1 {
         border-radius: 1.389vw;
         width: 80%;
         height: 0.347vw;
-        margin-left: 5.556vw;
-        margin-top: -1.389vw;
+        margin-left: 62.006px;
         border: 0;
-        /* border-bottom: 0.208vw dashed #272727; */
         background: #272727;
-        /* background: rgb(222,127,127);
-        background: linear-gradient(90deg, rgba(222,127,127,1) 0%, rgba(240,26,26,1) 100%); */
         }
-    .rightMarketContainer {
-        flex: 70%;
-        padding: 49.997px 29.995px 29.995px 49.997px;
-        
-    }
-
-    .rightMarketSection {
-        width: 100%;
-        height: 100%;
-
-    }
-
-    .rightMarketTitle {
-        margin-bottom: 29.995px;
-        font-size: 40.003px;
-
-    }
-
-    .rightMarketTitle p {
-    }
-
-    .rightMarketCardContainer {
+    .mainMarketContainer {
+        display: flex;
         height: 100%;
         width: 100%;
-        display: flex;
-
-        justify-content: center;
-        flex-direction: row ;
-        flex-wrap: wrap; 
+        margin-bottom: 99.994px;
+        padding-top: 100px;
+        padding-bottom: 3.472vw;
     }
 
-    .rightMarketMainCardList:hover {
-        margin-top: 9.994px;
-        cursor: pointer;
-
-    }
-
-    .rightMarketCardList {
-        width: 207px;
-        height: 290.002px;
-        border-radius: 15.005px;
-        box-shadow:gray 0px 2.002px 20.002px;
-        margin-bottom: 15.005px;
-        background-color: white;
-        margin-right: 15.005px;
-        margin-left: 15.005px;
-    }
-    
-    .rightMarketCardList:hover {
-        
-        border: 0.208vw solid rgba(44, 14, 2, 0.35)
-    }
-    
-    .rightMarketNftCard {
-        width: 207px;
-        height: 180px;
-        background-size: cover;
-        border-radius: 15.005px;
-    }
-
-    .rightMarketCardTxtContainer {
-        width: 229.997px;
-        height: 110.002px;
-        padding: 9.994px 9.994px 9.994px 9.994px;
-    }
-
-    .rightMarketCardTxtSection {
-
-    }
-    
-    .rightMarketCardDnaTxt1 {
-        font-size: 9.994px;
-    }
-
-    .rightMarketCardDnaTxt2 {
-        margin-right: 15.998px;
-        
-    }
-    .rightMarketCardDnaTxt span {
-        font-size: 9.994px;
-    }
-
-    .rightMarketCardNum span{
-        font-size: 15.998px;
-    }
-
-    .rightMarketPrice span{
-        font-size: 13.997px;
-    }
-
-    
-
-    .rightMarketOwner{
-        display: flex;
-        font-size: 9.994px;
-    }
-
-    .rightMarketOwner1 {
-        margin-right: 9.994px;
-    }
-}
-
-  /* 반응형 */
-  @media only screen and (max-width: 735px){
     .leftMarketContainer {
         flex: 30%;
-        padding-top: 24px;
-        padding-bottom: 41px;
-        padding-left: 66px;
+        padding-top: 15px;
+        padding-bottom: 25px;
+        padding-left: 50px;
     }
 
     .leftMarketSection {
-        margin-top: 157px;
+        margin-top: 120px;
         width: 100%;
         height: 100%;
-        
     }
 
+    .leftTop.is-active .leftMarketSection {
+        position: fixed;
+        top: 0px;
+        width: 400px;
+    }
+
+
     .leftMarketTxtContainer {
-        padding: 8.2px 8.2px 8.2px 8.2px;
+        padding: 6.2px 6.2px 6.2px 6.2px
+    }
+
+    .leftMarketTitle {
+        display: flex;
+        align-items: center;
+    }
+
+    .leftMarketCardTxt1 {
+        margin-right: 6.2px;
     }
 
     .leftMarketCardTxt1 span {
-        font-size: 18px;
+        font-size: 10px;
     }
 
-    .lefttMarketCardTxt2 span {
-        font-size: 18px;
+    .leftMarketCardTxt2 span{
+        font-size: 10px;
     }
 
     .leftMarketCardName {
-        margin-top: 4.997px;
-        font-size: 24px;
+        margin-top: 3.1px;
+        font-size: 18px;
     }
-
+    
     .leftMarketCardContainer {
         display: flex;
         justify-content: center;
     }
 
     .leftMarketNftCardImg {
-        border: 0.139vw solid black;
-        border-radius: 15.005px;
-        width: 276px;
-        height: 252px;
+        border: 2.002px solid black;
+        border-radius: 1.042vw;
+        width: 210px;
+        height: 191px;
         background-size: cover;
     }
 
 
     .leftMarketTestSecion {
         display: flex;
-        margin-top: 4.104px;
-        width: 281.002px;
-        height: 33px;
+        margin-top: 3.1px;
+        width: 156px;
     }
 
     .leftMarketCardPrice{
-        font-size: 16px;
-        margin-right: 15.998px;
+        font-size: 12px;
+        margin-right: 12px;
     }
     .leftMarketCardNum {
-        font-size: 16px;
-        margin-left: 15.998px;
+        font-size: 12px;
+        margin-left: 12px;
     }
 
     .leftMarketcolhr {
-        border-left: 2.995px solid black;
-        height: 33px;
+        border-left: 0.208vw solid black;
+        height: 2.778vw;
         
     }
 
     .leftMarketBtn {
         display: flex;
-        margin-top: 16px;
-        margin-bottom: 24px;
+        margin-top: 12px;
+        margin-bottom: 18px;
     }
 
     .leftMarketBtn button {
-        width: 276px;
+        width: 206px;
     }
 
     .lefthr {
-        height: 4.997px;
-        background-color: black;
-        border-radius: 20.002px;
-
-    }
-
-    .marketTitleContainer {
-        /* padding-top: 150.005px; */
-        height: 60.005px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        transform:rotate(-3deg);
-        top: -2.083vw;
-        margin-bottom: 8px;
-    }
-    
-    .marketTitleContainer h2{
-        font-size: 25px;
-        color: whitesmoke;
-        background-color: #272727;
-        padding: 11.246px;
-        padding-left: 9px;
-        padding-right: 12px;
-        border: 0.749px solid #272727;
-        border-radius: 7.502px;
-    }
-    
-    
-    div.style-five1 {
-        height: 5.556vw;
-        /* background: url(../images/zolhr.png) no-repeat scroll left; */
-        background-size: 5.556vw 5.208vw;
-        }
-        
-    hr.style-five1 {
-        border-radius: 1.389vw;
-        width: 198.994px;
         height: 0.347vw;
-        margin-left: 29.995px;
-        margin-top: -1.389vw;
-        border: 0;
-        /* border-bottom: 0.208vw dashed #272727; */
-        background: #272727;
-        /* background: rgb(222,127,127);
-        background: linear-gradient(90deg, rgba(222,127,127,1) 0%, rgba(240,26,26,1) 100%); */
-        }
+        background-color: black;
+        border-radius: 1.389vw;
+
+    }
+
     .rightMarketContainer {
         flex: 70%;
-        padding: 49.997px 29.995px 29.995px 49.997px;
+        padding: 31px 18px 18px 31px;
         
     }
 
     .rightMarketSection {
         width: 100%;
         height: 100%;
-
     }
 
     .rightMarketTitle {
         margin-bottom: 29.995px;
-        font-size: 40.003px;
+        font-size: 25px;
 
     }
 
@@ -700,80 +501,375 @@ hr.style-five1 {
         height: 100%;
         width: 100%;
         display: flex;
-
         justify-content: center;
         flex-direction: row ;
         flex-wrap: wrap; 
     }
 
     .rightMarketMainCardList:hover {
-        margin-top: 9.994px;
         cursor: pointer;
-
     }
 
     .rightMarketCardList {
-        width: 207px;
-        height: 290.002px;
-        border-radius: 15.005px;
-        box-shadow:gray 0px 2.002px 20.002px;
-        margin-bottom: 15.005px;
+        width: 156px;
+        height: 224px;
+        border-radius: 1.042vw;
+        box-shadow:gray 0vw 0.139vw 1.389vw;
+        margin-bottom: 1.042vw;
         background-color: white;
-        margin-right: 15.005px;
-        margin-left: 15.005px;
+        margin-right: 1.042vw;
+        margin-left: 1.042vw;
     }
     
-    .rightMarketCardList:hover {
-        
-        border: 0.208vw solid rgba(44, 14, 2, 0.35)
+    .rightMarketCardList:hover { 
+        border: 2.995px solid rgba(44, 14, 2, 0.35)
     }
     
     .rightMarketNftCard {
-        width: 207px;
-        height: 180px;
+        width: 156px;
+        height: 143px;
         background-size: cover;
-        border-radius: 15.005px;
+        border-radius: 1.042vw;
     }
 
     .rightMarketCardTxtContainer {
-        width: 229.997px;
-        height: 110.002px;
-        padding: 9.994px 9.994px 9.994px 9.994px;
+        width: 134.8px;
+        height: 81px;
+        padding: 3px 5.6px 5.6px 5.6px
     }
 
     .rightMarketCardTxtSection {
-
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 100%;
+    } 
+    
+    .rightMarketCardDnaTxt {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        flex-direction: row;
     }
     
     .rightMarketCardDnaTxt1 {
-        font-size: 9.994px;
+        font-size: 10px;
+        display: flex;
+        margin-right: 6.2px;
+
     }
 
     .rightMarketCardDnaTxt2 {
-        margin-right: 15.998px;
-        
     }
+
     .rightMarketCardDnaTxt span {
-        font-size: 9.994px;
+        font-size: 10px;
+    }
+
+    .rightMarketCardNum {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        height: 100%;
     }
 
     .rightMarketCardNum span{
-        font-size: 15.998px;
+        font-size: 12.5px;
+    }
+
+    .rightMarketPrice {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        height: 100%;
     }
 
     .rightMarketPrice span{
-        font-size: 13.997px;
+        font-size: 1.25vw;
     }
-
-    
 
     .rightMarketOwner{
         display: flex;
-        font-size: 9.994px;
+        align-items: center;
+        font-size: 10px;
+        width: 100%;
+        height: 100%;
     }
 
     .rightMarketOwner1 {
-        margin-right: 9.994px;
+        margin-right: 6.2px
+    }
+} */
+
+@media only screen and (max-width: 843px){
+
+    .marketTitleContainer {
+        height: 60.005px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transform:rotate(-3deg);
+        top: -2.083vw;
+        margin-bottom: 6px;
+    }
+    
+    .marketTitleContainer h2{
+        font-size: 25px;
+        color: whitesmoke;
+        background-color: #272727;
+        padding: 7px;
+        padding-left: 9px;
+        padding-right: 9px;
+        border: 0.052vw solid #272727;
+        border-radius: 0.521vw;
+    }
+    
+    
+    div.style-five1 {
+        height: 5.556vw;
+        background-size: 5.556vw 5.208vw;
+        }
+        
+    hr.style-five1 {
+        border-radius: 1.389vw;
+        width: 80%;
+        height: 0.347vw;
+        margin-left: 62.006px;
+        border: 0;
+        background: #272727;
+        }
+    .mainMarketContainer {
+        display: flex;
+        height: 100%;
+        width: 100%;
+        margin-bottom: 99.994px;
+        padding-top: 100px;
+        padding-bottom: 3.472vw;
+    }
+
+    .leftMarketContainer {
+        flex: 30%;
+        padding-top: 15px;
+        padding-bottom: 25px;
+        padding-left: 50px;
+    }
+
+    .leftMarketSection {
+        margin-top: 120px;
+        width: 100%;
+        height: 100%;
+    }
+
+    .leftTop.is-active .leftMarketSection {
+        position: fixed;
+        top: 0px;
+        width: 500px;
+    }
+
+
+    .leftMarketTxtContainer {
+        padding: 6.2px 6.2px 6.2px 6.2px
+    }
+
+    .leftMarketTitle {
+        display: flex;
+        align-items: center;
+    }
+
+    .leftMarketCardTxt1 {
+        margin-right: 6.2px;
+    }
+
+    .leftMarketCardTxt1 span {
+        font-size: 10px;
+    }
+
+    .leftMarketCardTxt2 span{
+        font-size: 10px;
+    }
+
+    .leftMarketCardName {
+        margin-top: 3.1px;
+        font-size: 18px;
+    }
+    
+    .leftMarketCardContainer {
+        display: flex;
+        justify-content: center;
+    }
+
+    .leftMarketNftCardImg {
+        border: 2.002px solid black;
+        border-radius: 1.042vw;
+        width: 210px;
+        height: 191px;
+        background-size: cover;
+    }
+
+
+    .leftMarketTestSecion {
+        display: flex;
+        margin-top: 3.1px;
+        width: 156px;
+    }
+
+    .leftMarketCardPrice{
+        font-size: 12px;
+        margin-right: 12px;
+    }
+    .leftMarketCardNum {
+        font-size: 12px;
+        margin-left: 12px;
+    }
+
+    .leftMarketcolhr {
+        border-left: 0.208vw solid black;
+        height: 2.778vw;
+        
+    }
+
+    .leftMarketBtn {
+        display: flex;
+        margin-top: 12px;
+        margin-bottom: 18px;
+    }
+
+    .leftMarketBtn button {
+        width: 206px;
+    }
+
+    .lefthr {
+        height: 0.347vw;
+        background-color: black;
+        border-radius: 1.389vw;
+
+    }
+
+    .rightMarketContainer {
+        flex: 70%;
+        padding: 31px 18px 18px 31px;
+        
+    }
+
+    .rightMarketSection {
+        width: 100%;
+        height: 100%;
+    }
+
+    .rightMarketTitle {
+        margin-bottom: 29.995px;
+        font-size: 25px;
+
+    }
+
+    .rightMarketTitle p {
+    }
+
+    .rightMarketCardContainer {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        flex-direction: row ;
+        flex-wrap: wrap; 
+    }
+
+    .rightMarketMainCardList:hover {
+        cursor: pointer;
+    }
+
+    .rightMarketCardList {
+        width: 156px;
+        height: 224px;
+        border-radius: 1.042vw;
+        box-shadow:gray 0vw 0.139vw 1.389vw;
+        margin-bottom: 1.042vw;
+        background-color: white;
+        margin-right: 1.042vw;
+        margin-left: 1.042vw;
+    }
+    
+    .rightMarketCardList:hover { 
+        border: 2.995px solid rgba(44, 14, 2, 0.35)
+    }
+    
+    .rightMarketNftCard {
+        width: 156px;
+        height: 143px;
+        background-size: cover;
+        border-radius: 1.042vw;
+    }
+
+    .rightMarketCardTxtContainer {
+        width: 134.8px;
+        height: 81px;
+        padding: 3px 5.6px 5.6px 5.6px
+    }
+
+    .rightMarketCardTxtSection {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 100%;
+    } 
+    
+    .rightMarketCardDnaTxt {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+    }
+    
+    .rightMarketCardDnaTxt1 {
+        font-size: 10px;
+        display: flex;
+        margin-right: 6.2px;
+
+    }
+
+    .rightMarketCardDnaTxt2 {
+    }
+
+    .rightMarketCardDnaTxt span {
+        font-size: 10px;
+    }
+
+    .rightMarketCardNum {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+    }
+
+    .rightMarketCardNum span{
+        font-size: 12.5px;
+    }
+
+    .rightMarketPrice {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+    }
+
+    .rightMarketPrice span{
+        font-size: 1.25vw;
+    }
+
+    .rightMarketOwner{
+        display: flex;
+        align-items: center;
+        font-size: 10px;
+        width: 100%;
+        height: 100%;
+    }
+
+    .rightMarketOwner1 {
+        margin-right: 6.2px
     }
 }
-  
+
+
+

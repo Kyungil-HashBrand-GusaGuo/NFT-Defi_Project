@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import Slider from "react-slick";
 import './StakingPage.css'
+import headzol from '../images/headzol.png'
+import headzol2 from '../images/headzol2.png'
 import { stakingViewAction } from '../redux/actions/stakingViewAction'
 import { stakingAction } from '../redux/actions/stakingAction'
 import { stakingCancelAction } from '../redux/actions/stakingCancelAction'
@@ -42,7 +44,12 @@ const StakingPage = () => {
     const [claimModal, setClaimModal] = useState(false)
 
     const staking = (edition) => {
-      dispatch(stakingAction.stakingAct(account, edition))
+      if(edition.length == 0){
+        alert("하나 이상의 NFT를 선택해 주세요.")
+      } else {
+        console.log("스테이킹되는 목록", edition )
+        dispatch(stakingAction.stakingAct(account, edition))
+      }
     }
 
     const goToGamePage = () => {
@@ -50,7 +57,11 @@ const StakingPage = () => {
     }
 
     const cancelStaking = (edition) => {
-      dispatch(stakingCancelAction.stakingCancelAct(account, edition))
+      if(edition.length == 0){
+        alert("하나 이상의 NFT를 선택해 주세요.")
+      } else {
+        dispatch(stakingCancelAction.stakingCancelAct(account, edition))
+      }
     }
 
     const changeState = () =>{
@@ -74,6 +85,13 @@ const StakingPage = () => {
       console.log("Non스테이팅 배열확인", unStakeArr)
     }
 
+    const unStakeAll = () => {
+      for(let i = 0; i < myNftList.length; i++){
+        unStakeArr.push(myNftList[i])
+      }
+      console.log("Non스테이팅 전체선택 배열확인", unStakeArr)
+    }
+
     const comStake = (id) => {
       if(comStakeArr.includes(id)){
         for(let i = 0; i < comStakeArr.length; i++) {
@@ -85,6 +103,13 @@ const StakingPage = () => {
         comStakeArr.push(id)
       }
       console.log("스테이킹 배열확인", comStakeArr)
+    }
+
+    const comStakeAll = () => {
+      for(let i = 0; i < stakingNftString.length; i++){
+        comStakeArr.push(stakingNftString[i])
+      }
+      console.log("스테이팅 전체선택 배열확인", comStakeArr)
     }
 
     const checkingNft = (e) => {
@@ -132,15 +157,15 @@ const StakingPage = () => {
         <div className='zolTokenAmountContainer'>
           <div className='miningZolTokenSection'>
             <div className='miningZolTokenTitle'> <span>Zolaman Token currently being mined</span> </div>
-            <div className='miningZolTokenAmount'> <span>{stakingReward} ZLT</span> </div>
+            <div className='miningZolTokenAmount'> <span>{stakingReward} ZLT <img className='swapModalInputIco' src={headzol}/></span> </div>
           </div>
           <div className='myZolTokenSection'>
             <div className='myZolTokenTitle'> <span>Total Zolaman Tokens Received</span> </div>
-            <div className='myZolTokenAmount'> <span>{getStakingReward} ZLT</span> </div>
+            <div className='myZolTokenAmount'> <span>{getStakingReward} ZLT <img className='swapModalInputIco' src={headzol}/></span> </div>
           </div>
           <div className='myZolGameTokenSection'>
             <div className='myZolTokenTitle'> <span>Zolaman Game Tokens Received</span> </div>
-            <div className='myZolTokenAmount'> <span>{getGameTokenBalance} GZLT</span> </div>
+            <div className='myZolTokenAmount'> <span>{getGameTokenBalance} GZLT <img className='swapModalInputIco' src={headzol2}/></span> </div>
           </div>
           <div>
             <button onClick={()=>setClaimModal(true)} className='claimBtn'>Claim</button>
@@ -166,7 +191,7 @@ const StakingPage = () => {
               <div className='unStakingBoxSection'>
                 <div className='unStakingBoxTitle'>
                   <h2>
-                    UnStake NFT 
+                    UnStake NFT  <button onClick={unStakeAll}>All Select</button>
                   </h2>
                   <span className='unStakeTxt'>
                     Do note that only NFTs that have been staked for afull 24 hours can enjoy the current day's ZLT rebate
@@ -211,7 +236,7 @@ const StakingPage = () => {
               <div className='comStakingBoxSection'>
                 <div className='comStakingBoxTitle'>
                   <h2>
-                    Staking NFT 
+                    Staking NFT <button onClick={comStakeAll}>All Select</button>
                   </h2>
                 </div>
                 <div className='comStakingCardMainContainer'>
