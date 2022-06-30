@@ -1,11 +1,13 @@
 
 
 .HangManMainContainer {
-    padding-top: 150px;
+    padding-top: 5.208vw;
+    height: calc(100vh - 10.417vw);
 }
 
 .HangManContainer {
   text-align: center;
+  padding-top: 5.208vw;
 }
 
 h1 {

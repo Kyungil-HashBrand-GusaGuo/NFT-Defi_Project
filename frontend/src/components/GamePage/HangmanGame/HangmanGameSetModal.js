@@ -13,7 +13,7 @@ const HangmanGameSetModal = ({account, wrongLetters}) => {
     let wrongLetter = wrongLetters.length
     const dispatch = useDispatch()
     const navigate = useNavigate()
-    const { clearHangmanGame } = useSelector(state => state.game)
+    const { clearHangmanGame, hangmanRewardGZLT, hangmanRewardGP } = useSelector(state => state.game)
 
     const goToGameMainPage = () => {
         navigate('/gamemain')
@@ -30,7 +30,7 @@ const HangmanGameSetModal = ({account, wrongLetters}) => {
             { clearHangmanGame ? 
               <>
               <h2 className='gameModalComMessage'>Game Clear!!!</h2>
-              <h2 className='gameModalComMessage'>Get : GZLT<img className='gameModalIco' src={headzol2}/> /  GP</h2>
+              <h2 className='gameModalComMessage'>Get : {hangmanRewardGZLT} GZLT<img className='gameModalIco' src={headzol2}/> / {hangmanRewardGP} GP</h2>
               <button className='gameModalEndButton' onClick={goToGameMainPage}>Go to GamePage</button> 
               </>
               : <h2 className='gameModalComMessage'>Loading ...</h2>

@@ -112,9 +112,9 @@ const BuyPage = () => {
               <div className='rightNftCard'
                 style={{
                   backgroundImage: 
-                      "url(" + 
-                      `${showMint.image}` + 
-                      ")"
+                    "url(https://sean95.s3.ap-northeast-2.amazonaws.com/raw/" + 
+                    `${showMint.edition}` + 
+                    ".png)"
               }}
               >
               </div>
