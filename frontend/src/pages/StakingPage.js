@@ -208,9 +208,9 @@ const StakingPage = () => {
                       <div className='unStakingImgCard'
                         style={{
                           backgroundImage: 
-                              "url(" + 
-                              `https://gateway.pinata.cloud/ipfs/QmfDCXHotQP7tH252h5BPEPX6kLmPJSzKzddnVxQUhrw4m/${item}.png` + 
-                              ")"
+                            "url(https://sean95.s3.ap-northeast-2.amazonaws.com/raw/" + 
+                            `${item}` + 
+                            ".png)"
                         }}>
                         <input type='checkbox' className='unStakingCheckBox' />
                         <label className='unStakingCheckBoxCircle' onClick={(e)=>{unStake(item); checkingNft(e.target.parentNode.children[0]);}}></label>
@@ -250,9 +250,9 @@ const StakingPage = () => {
                       <div className='comStakingImgCard'
                         style={{
                           backgroundImage: 
-                              "url(" + 
-                              `https://gateway.pinata.cloud/ipfs/QmfDCXHotQP7tH252h5BPEPX6kLmPJSzKzddnVxQUhrw4m/${item}.png` + 
-                              ")"
+                            "url(https://sean95.s3.ap-northeast-2.amazonaws.com/raw/" + 
+                            `${item}` + 
+                            ".png)"
                         }}>
                         <input type='checkbox' className='unStakingCheckBox' />
                         <label className='unStakingCheckBoxCircle' onClick={(e)=>{comStake(item); checkingNft(e.target.parentNode.children[0]);}}></label>
