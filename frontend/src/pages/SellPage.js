@@ -38,7 +38,6 @@ const SellPage = () => {
       navigate(`/mypage`)
     }
 
-
     const callSellNft = async() => {
       const response = await api.get("/getOnSaleJolaman");
       const mintJSON = await pinataApi.get(`/${edition}.json`)
@@ -171,9 +170,9 @@ const SellPage = () => {
                   <div className='rightNftCard'
                     style={{
                       backgroundImage: 
-                          "url(" + 
-                          `${showMint.image}` + 
-                          ")"
+                          "url(https://sean95.s3.ap-northeast-2.amazonaws.com/raw/" + 
+                          `${showMint.edition}` + 
+                          ".png)"
                   }}
                   >
                   </div>
