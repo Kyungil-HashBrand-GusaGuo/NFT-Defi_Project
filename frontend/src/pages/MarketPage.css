@@ -68,8 +68,8 @@ hr.style-five1 {
 
     .leftTop.is-active .leftMarketSection {
         position: fixed;
-        top: -3.472vw;
-        width: 400px;
+        top: -5.243vw;
+        width: 31.25vw;
     }
 
     .leftTop.is-active {
@@ -258,7 +258,7 @@ hr.style-five1 {
     }
 
     .rightMarketCardNum span{
-        font-size: 1.389vw;
+        font-size: 22.669px;
     }
 
     .rightMarketPrice {
@@ -664,7 +664,7 @@ hr.style-five1 {
     .leftTop.is-active .leftMarketSection {
         position: fixed;
         top: 0px;
-        width: 400px;
+        width: 500px;
     }
 
 
