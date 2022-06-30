@@ -11,9 +11,12 @@ const AllCardList = () => {
     const { allmintdata } = useSelector(state => state.mintdata)
 
     const revmintdata = [...allmintdata].reverse()
+    console.log(revmintdata)
+
   useEffect(()=> {
     dispatch(collectionAction.collectionAct())
   },[])
+
   return (
     <>
     <div className='AllCradListContainer'>
@@ -23,9 +26,9 @@ const AllCardList = () => {
             <div className='myNftCard'
              style={{
                 backgroundImage:
-                    "url(" + 
-                    `${item.data.image}` + 
-                    ")"
+                    "url(https://sean95.s3.ap-northeast-2.amazonaws.com/raw/" + 
+                    `${item.data.edition}` + 
+                    ".png)"
             }}
             >
             </div> 

@@ -40,9 +40,9 @@ const MyCardList = () => {
             <div className='myNftCard'
              style={{
                 backgroundImage: 
-                    "url(" + 
-                    `${item.data.image}` + 
-                    ")"
+                    "url(https://sean95.s3.ap-northeast-2.amazonaws.com/raw/" + 
+                    `${item.data.edition}` + 
+                    ".png)"
             }}
             >
             </div>

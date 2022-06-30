@@ -61,9 +61,9 @@ const MarketPage = () => {
             <div className='leftMarketNftCardImg'
               style={{
                 backgroundImage: 
-                    "url(" + 
-                    `https://gateway.pinata.cloud/ipfs/QmfDCXHotQP7tH252h5BPEPX6kLmPJSzKzddnVxQUhrw4m/${showId}.png` + 
-                    ")"
+                  "url(https://sean95.s3.ap-northeast-2.amazonaws.com/raw/" + 
+                  `${showId}` + 
+                  ".png)"
               }}
             >
             </div>
@@ -138,9 +138,9 @@ const MarketPage = () => {
                           <div className='rightMarketNftCard'
                             style={{
                               backgroundImage: 
-                                  "url(" + 
-                                  `https://gateway.pinata.cloud/ipfs/QmfDCXHotQP7tH252h5BPEPX6kLmPJSzKzddnVxQUhrw4m/${item.id}.png` + 
-                                  ")"
+                                "url(https://sean95.s3.ap-northeast-2.amazonaws.com/raw/" + 
+                                `${item.id}` + 
+                                ".png)"
                           }}
                           >
                           </div>
@@ -175,9 +175,9 @@ const MarketPage = () => {
                           <div className='rightMarketNftCard'
                             style={{
                               backgroundImage: 
-                                  "url(" + 
-                                  `https://gateway.pinata.cloud/ipfs/QmfDCXHotQP7tH252h5BPEPX6kLmPJSzKzddnVxQUhrw4m/${item.id}.png` + 
-                                  ")"
+                                "url(https://sean95.s3.ap-northeast-2.amazonaws.com/raw/" + 
+                                `${item.id}` + 
+                                ".png)"
                           }}
                           >
                           </div>
