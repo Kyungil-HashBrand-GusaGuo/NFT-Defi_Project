@@ -5,7 +5,7 @@ const config = {
 };
 const caver = new Caver(config.rpcURL);
 const MINT_CONTRACT_ADDRESS = 
-"0x0faE3f23371e22473230f54bd3591465C2AafA47";
+"0x8eFee8B2307d20b5a7C0800239C841E53F2C251C";
 
 const MINT_CONTRACT_ABI = [
 	{
@@ -742,7 +742,7 @@ const MINT_CONTRACT_ABI = [
 			},
 			{
 				"internalType": "bytes",
-				"name": "_data",
+				"name": "data",
 				"type": "bytes"
 			}
 		],
