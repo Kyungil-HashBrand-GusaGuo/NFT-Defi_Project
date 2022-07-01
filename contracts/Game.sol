@@ -33,10 +33,10 @@ contract Game is GameJolamanToken, Ownable {
         else if(wrongLetters == 3) {
             _mint(_to, GZLTERC20 * 3);
         }
-        else if(wrongLetters == 2) {
+        else if(wrongLetters == 4) {
             _mint(_to, GZLTERC20 * 2);
         }
-        else if(wrongLetters == 1) {
+        else if(wrongLetters == 5) {
             _mint(_to, GZLTERC20 * 1);
         }
 

@@ -197,6 +197,14 @@ contract StakingSystem is Ownable, ERC721Holder, JolamanToken {
         return staker.JolamanType;
     }
 
+    function DepositToContract() public payable onlyOwner {
+
+    }
+
+    function CheckContractBalance() public view returns(uint) {
+        return address(this).balance;
+    }
+
     function KlayToToken() public payable{
         require(msg.sender.balance >= msg.value, "Not enough Klay");
         _grantRole(MINTER_ROLE, msg.sender);

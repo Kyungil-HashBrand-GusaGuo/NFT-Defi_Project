@@ -5,7 +5,7 @@ const config = {
 };
 const caver = new Caver(config.rpcURL);
 const SALE_CONTRACT_ADDRESS = 
-"0x780a8823bbEa18945BEf471a0e6787e9A44f3013";
+"0xd7d454a08bFC1490Aa7E88bbA68acd77f08Da670";
 
 const SALE_CONTRACT_ABI = [
 	{
@@ -217,6 +217,7 @@ const SALE_CONTRACT_ABI = [
 		"type": "function"
 	}
 ]
+
 
 const SaleContract = new caver.klay.Contract(
   SALE_CONTRACT_ABI,
