@@ -2,6 +2,10 @@ import React from 'react'
 import './GameMainPage.css'
 import { useNavigate } from 'react-router-dom'
 import { Game1, Game2 } from '../images'
+import { GoldCrown } from '../images'
+import { white6 } from '../images'
+import { white4 } from '../images'
+import { white2 } from '../images'
 
 
 const GameMainPage = () => {
@@ -19,13 +23,37 @@ const GameMainPage = () => {
         <div className='cardGameTitleContainer'>
         <h2>Zolaman Game</h2>
         </div>
+        <div className='nftRankContainer'>
+          <div className='test1'>
+            {/* <span>2위</span> */}
+            <img src={white6}></img>
+            <div className='test2'>
+              <img src={GoldCrown} className="crownIcon"></img>
+            </div>
+          </div>
+          <div>
+            <span>1위</span>
+            <img src={GoldCrown} className="crownIcon"></img>
+            <div className='rankImgContainer'>
+              <img src={white4}></img>
+            </div>
+          </div>
+          <div>
+            <span>3위</span>
+            <img src={GoldCrown} className="crownIcon"></img>
+            <div className='rankImgContainer'>
+              <img src={white2}></img>
+            </div>
+          </div>
+        </div>
+        
         <div className='gameScoreTable'>
           <table>
             <thead>
               <tr>
-                <th>User</th>
-                <th>Score</th>
                 <th>Rank</th>
+                <th>Account</th>
+                <th>GamePoint</th>
               </tr>
             </thead>
             <tbody>
@@ -47,6 +75,11 @@ const GameMainPage = () => {
               
             </tbody>
           </table>
+        </div>
+        <div className='gameTimerContainer'>
+          <span>
+            Timer
+          </span>
         </div>
         <div className='anitest1'>
         </div>

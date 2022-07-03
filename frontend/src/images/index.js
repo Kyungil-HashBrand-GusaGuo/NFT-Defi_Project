@@ -35,6 +35,7 @@ import white20 from './mainsilder/20.png'
 import Thum1 from './ThumNail1.png'
 import Game1 from './Game1.png'
 import Game2 from './Game2.png'
+import GoldCrown from './krone.gif'
 
 
 
@@ -72,7 +73,8 @@ export {HeadImg,
     white20,
     Thum1,
     Game1,
-    Game2
+    Game2,
+    GoldCrown,
 }
 
  

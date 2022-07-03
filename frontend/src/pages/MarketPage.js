@@ -150,7 +150,7 @@ const MarketPage = () => {
                                 <span className='rightMarketCardDnaTxt1'>Create By </span>
                                 <span className='rightMarketCardDnaTxt2'> GusaGuO</span>
                               </div>
-                              <div className='rightMarketCardNum'>
+                              <div className='rightMarketWhiteCardNum'>
                                 <span>WhiteList Zola Man #{item.id - 9999}</span>
                               </div>
                               <div className='rightMarketPrice'>
