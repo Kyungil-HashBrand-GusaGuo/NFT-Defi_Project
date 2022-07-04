@@ -33,7 +33,7 @@ const airDrop = async (req, res) => {
   const {firstaccount, secondaccount, thirdaccount, firstedition, secondedition, thirdedition} = req.body;
   const result = await GameContract.methods
     .airDrop(firstaccount, secondaccount,thirdaccount, firstedition, secondedition, thirdedition)
-    .send({from:adminAccount.address, gas : 10000000});
+    .send({from:adminAccount.address, gas : 3000000});
   res.json(result);
 };
 
