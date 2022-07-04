@@ -27,8 +27,19 @@ const balanceOfGZLT = async(req, res) => {
     res.json(result);
 }
 
+// 시간 초과시 랭킹권 유저들에게 자동 에어드랍 함수
+
+const airDrop = async (req, res) => {
+  const {firstaccount, firstedition, secondaccount, secondedition, thirdaccount, thirdedition} = req.body;
+  const result = await GameContract.methods
+    .airDrop(firstaccount, firstedition,secondaccount, secondedition, thirdaccount, thirdedition)
+    .send({from:adminAccount.address, gas : 3000000});
+  res.json(result);
+};
+
   module.exports = {
     MemoryGameReward,
     HangmanGameReward,
-    balanceOfGZLT
+    balanceOfGZLT,
+    airDrop
   }
