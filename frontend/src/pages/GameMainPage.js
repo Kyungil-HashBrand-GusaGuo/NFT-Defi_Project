@@ -8,7 +8,7 @@ import { white4 } from '../images'
 import { white2 } from '../images'
 import { useDispatch, useSelector } from 'react-redux'
 import { gameViewAction } from '../redux/actions/gameViewAction'
-import axios from 'axios'
+import { Timer } from '../components'
 
 const GameMainPage = () => {
 
@@ -23,57 +23,8 @@ const GameMainPage = () => {
         navigate('/hangmangame')
     }
 
-    let deadline = useRef(); 
-    let timer = useRef(null); 
-    
-    let deadlineDate = new Date('July 05, 2022 12:45:00').getTime();
-    let now = new Date().getTime();
-    let t = deadlineDate - now;
-    let day = Math.floor((t % (1000 * 60 * 60 * 24 * 365)) / (1000 * 60 * 60 * 24));
-    let hours = Math.floor((t % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    let minutes = Math.floor((t % (1000 * 60 * 60)) / (1000 * 60));
-    let seconds = Math.floor((t % (1000 * 60)) / 1000);
-    
-    const [state, setState] = useState({ day, hours, minutes, seconds});
-
-    const count = () => {
-      now = new Date().getTime();
-      t = deadline - now;
-      day = Math.floor((t % (1000 * 60 * 60 * 24 * 365)) / (1000 * 60 * 60 * 24));
-      hours = Math.floor((t % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      minutes = Math.floor((t % (1000 * 60 * 60)) / (1000 * 60));
-      seconds = Math.floor((t % (1000 * 60)) / 1000);
-
-      setState({ day, hours, minutes, seconds });
-
-      if (t < -700 && t > -1500) {
-        clearInterval(timer);
-        setState({ day: 0, hours: 0, minutes: 0, seconds: 0 });
-        console.log("t", t)
-        testFunc()
-      } 
-    }
-
-    const testFunc = async() => {
-      const timerApi = await axios.post("http://localhost:9495/block/airdropapprove")
-      if(timerApi.status){
-        const response = await axios.post("http://localhost:9495/block/airdrop", {
-          firstaccount : "0xaC0d580B21118dB9Ea5d752d8950e9C2436575DE", 
-          secondaccount : "0x663C6cBA85bA17d949F9d14232bDAEE5b543Bac0", 
-          thirdaccount : "0x9390FeF4821750A3FD704380C078D127C1de8dea", 
-          firstedition : 10002, 
-          secondedition : 700, 
-          thirdedition : 241
-        })
-      
-        console.log(response)
-      }
-    }
-
     useEffect(() => {
       dispatch(gameViewAction.gameViewAct())
-      deadline = new Date('July 05, 2022 12:45:00').getTime();
-      timer.current = setInterval(count, 1000);  
     },[])
 
   return (
@@ -104,19 +55,9 @@ const GameMainPage = () => {
             </div>
           </div>
         </div>
-        {/* <div className='gameTimerContainer'>
-          <span>
-            Timer
-          </span>
-        </div> */}
+
         <div className='gameTimerContainer'>
-          <span>민팅 까지 남은 시간</span><br />
-          <span>
-            {state.day < 10 ? `0${state.day}` : state.day}D 
-            &nbsp;{state.hours < 10 ? `0${state.hours}` : state.hours}h 
-            &nbsp;{state.minutes < 10 ? `0${state.minutes}` : state.minutes}m
-            &nbsp;{state.seconds < 10 ? `0${state.seconds}` : state.seconds}s
-          </span>
+          <Timer/>
         </div>
 
         <div className='gameScoreTable'>

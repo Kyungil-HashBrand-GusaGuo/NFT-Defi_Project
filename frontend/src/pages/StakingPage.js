@@ -83,13 +83,6 @@ const StakingPage = () => {
       console.log("Non스테이팅 배열확인", unStakeArr)
     }
 
-    const unStakeAll = () => {
-      for(let i = 0; i < myNftList.length; i++){
-        unStakeArr.push(myNftList[i])
-      }
-      console.log("Non스테이팅 전체선택 배열확인", unStakeArr)
-    }
-
     const comStake = (id) => {
       if(comStakeArr.includes(id)){
         for(let i = 0; i < comStakeArr.length; i++) {
@@ -101,13 +94,6 @@ const StakingPage = () => {
         comStakeArr.push(id)
       }
       console.log("스테이킹 배열확인", comStakeArr)
-    }
-
-    const comStakeAll = () => {
-      for(let i = 0; i < stakingNftString.length; i++){
-        comStakeArr.push(stakingNftString[i])
-      }
-      console.log("스테이팅 전체선택 배열확인", comStakeArr)
     }
 
     const checkingNft = (e) => {
@@ -189,7 +175,7 @@ const StakingPage = () => {
               <div className='unStakingBoxSection'>
                 <div className='unStakingBoxTitle'>
                   <h2>
-                    UnStake NFT  <button onClick={unStakeAll}>All Select</button>
+                    UnStake NFT
                   </h2>
                   <span className='unStakeTxt'>
                     Do note that only NFTs that have been staked for afull 24 hours can enjoy the current day's ZLT rebate
@@ -234,7 +220,7 @@ const StakingPage = () => {
               <div className='comStakingBoxSection'>
                 <div className='comStakingBoxTitle'>
                   <h2>
-                    Staking NFT <button onClick={comStakeAll}>All Select</button>
+                    Staking NFT
                   </h2>
                 </div>
                 <div className='comStakingCardMainContainer'>
