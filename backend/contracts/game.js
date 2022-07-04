@@ -13,9 +13,63 @@ const keyring = caver.wallet.keyring.create(process.env.ADMIN_ACCOUNT, process.e
 caver.wallet.add(keyring);
 
 const GAME_CONTRACT_ADDRESS = 
-"0x5975D19AF020A83958865Df1b45438f99aa85f11"
+"0x7819Ba895f6c3c06fFe18442a190b6c8f51f8F7F"
 
 const GAME_CONTRACT_ABI =[
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "account1",
+				"type": "address"
+			},
+			{
+				"internalType": "address",
+				"name": "account2",
+				"type": "address"
+			},
+			{
+				"internalType": "address",
+				"name": "account3",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_JolamanType",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_JolamanType2",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_JolamanType3",
+				"type": "uint256"
+			}
+		],
+		"name": "airDrop",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "_setdata",
+				"type": "address"
+			},
+			{
+				"internalType": "contract IERC721",
+				"name": "_randomJolaman",
+				"type": "address"
+			}
+		],
+		"stateMutability": "nonpayable",
+		"type": "constructor"
+	},
 	{
 		"anonymous": false,
 		"inputs": [
@@ -238,6 +292,40 @@ const GAME_CONTRACT_ABI =[
 		],
 		"name": "mint",
 		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			},
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			},
+			{
+				"internalType": "bytes",
+				"name": "",
+				"type": "bytes"
+			}
+		],
+		"name": "onERC721Received",
+		"outputs": [
+			{
+				"internalType": "bytes4",
+				"name": "",
+				"type": "bytes4"
+			}
+		],
 		"stateMutability": "nonpayable",
 		"type": "function"
 	},
@@ -483,6 +571,19 @@ const GAME_CONTRACT_ABI =[
 		"type": "function"
 	},
 	{
+		"inputs": [],
+		"name": "_owner",
+		"outputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
 		"inputs": [
 			{
 				"internalType": "address",
@@ -652,6 +753,32 @@ const GAME_CONTRACT_ABI =[
 		"outputs": [
 			{
 				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "randomJolaman",
+		"outputs": [
+			{
+				"internalType": "contract IERC721",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "setdata",
+		"outputs": [
+			{
+				"internalType": "contract SetData",
 				"name": "",
 				"type": "address"
 			}
