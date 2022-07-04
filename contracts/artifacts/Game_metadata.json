@@ -1087,11 +1087,11 @@
 			]
 		},
 		"contracts/Game.sol": {
-			"keccak256": "0xd24a8161dfad184199d257ac74ca3cb6d567e2e958a9bf856de1c47ab1009574",
+			"keccak256": "0x8a214442d7d02d35a5df499fbfd5f36839aff247dbd4b2242ccb8fddff5e6c89",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://ecce082d880d1a5b98dcc2492e1384f31f356973bf271895b46aef2f107cd4b0",
-				"dweb:/ipfs/QmS8bxpvqn5rWufgWF2sVnnGBrfPHL3NaGg61QhkFatb9S"
+				"bzz-raw://2cabfc3cd8669aa672a7046e818398b1ae59a4ecfc2116a4d50e09e55f7fabae",
+				"dweb:/ipfs/QmfU2CQNFZUWxyqNW3P3J2gDwtMDbcLqzarTSqHcWvMDWT"
 			]
 		},
 		"contracts/RandomJolaman.sol": {

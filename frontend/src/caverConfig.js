@@ -1,6 +1,6 @@
 import Caver from "caver-js";
 export const MINT_CONTRACT_ADDRESS = 
-"0x7D7a4D4d151a487e8D23C00C9E85b7F9BA7Cf73D";
+"0xd9E19748c06DCBf2D1B9220a7C4BF7C1836778a7";
 
 export const MINT_CONTRACT_ABI = [
 	{
@@ -945,7 +945,7 @@ export const caver = new Caver(window.caver);
 
 
 export const DATA_CONTRACT_ADDRESS = 
-"0x8Eccf28A6dAfaA71Bf6D8B65b02448896B4E8101";
+"0x1783fb30D24b751F07fA8D78f83E2885dc3517a4";
 
 export const DATA_CONTRACT_ABI = [
 	{
@@ -1478,7 +1478,7 @@ export const DATA_CONTRACT_ABI = [
 ]
 
 export const SALE_CONTRACT_ADDRESS = 
-"0x9c53E0D405530963ad8b00b6fDd59f07e348Da14";
+"0x6a573f58B9b1e9717CeF2d9468C3D9Ba435B2b53";
 
 export const SALE_CONTRACT_ABI = [
 	{
@@ -1692,7 +1692,7 @@ export const SALE_CONTRACT_ABI = [
 ]
 
 export const STAKING_CONTRACT_ADDRESS = 
-"0xe81281636ea3a8ee23E9aC527F3C47b167C365A7";
+"0x1887616ba1767f00Bc6f5196Ef32745AB5B3DF78";
 
 export const STAKING_CONTRACT_ABI = [
 	{
@@ -2663,7 +2663,7 @@ export const STAKING_CONTRACT_ABI = [
 ]
 
 export const GAME_CONTRACT_ADDRESS = 
-"0xBCA8fB126cf60B9f59D7731be42b3FC40939E2CC"
+"0x7319c114BD53DFFa94fe98aA9A41106536003013"
 
 export const GAME_CONTRACT_ABI =[
 	{
@@ -3482,7 +3482,6 @@ export const GAME_CONTRACT_ABI =[
 		"type": "function"
 	}
 ]
-
 
 export const RandomJolamanContract = new caver.klay.Contract(
     MINT_CONTRACT_ABI,
