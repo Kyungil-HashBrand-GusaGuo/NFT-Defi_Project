@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import './GameMainPage.css'
 import { useNavigate } from 'react-router-dom'
 import { Game1, Game2 } from '../images'
@@ -6,18 +6,26 @@ import { GoldCrown } from '../images'
 import { white6 } from '../images'
 import { white4 } from '../images'
 import { white2 } from '../images'
-
+import { useDispatch, useSelector } from 'react-redux'
+import { gameViewAction } from '../redux/actions/gameViewAction'
 
 const GameMainPage = () => {
 
+    const dispatch = useDispatch()
     const navigate = useNavigate()
-
+    const { gamePointRank } = useSelector(state => state.game)
+    console.log("게임페이지", gamePointRank)
     const goToCardGame = () => {
         navigate('/cardgame')
     }
     const goToHangManGame = () => {
         navigate('/hangmangame')
     }
+
+    useEffect(() => {
+      dispatch(gameViewAction.gameViewAct())
+    },[])
+
   return (
     <div className='gamePageMainContainer'>
         <div className='cardGameTitleContainer'>
@@ -57,31 +65,17 @@ const GameMainPage = () => {
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td>1</td>
-                <td>5 GZLT</td>
-                <td>10</td>
-              </tr>
-              <tr>
-                <td>2</td>
-                <td>3 GZLT</td>
-                <td>5</td>
-              </tr>
-              <tr>
-                <td>3</td>
-                <td>3 GZLT</td>
-                <td>5</td>
-              </tr>
-              <tr>
-                <td>4</td>
-                <td>3 GZLT</td>
-                <td>5</td>
-              </tr>
-              <tr>
-                <td>5</td>
-                <td>3 GZLT</td>
-                <td>5</td>
-              </tr>             
+              {
+                gamePointRank !== null ?
+                  gamePointRank.map((arr, index) => {
+                    return <tr key={index}>
+                      <td>{index + 1}</td>
+                      <td>{arr.account}</td>
+                      <td>{arr.point}</td>
+                    </tr>
+                  })
+                : null
+              }
             </tbody>
           </table>
         </div>
