@@ -13,7 +13,7 @@ const keyring = caver.wallet.keyring.create(process.env.ADMIN_ACCOUNT, process.e
 caver.wallet.add(keyring);
 
 const MINT_CONTRACT_ADDRESS = 
-"0x8eFee8B2307d20b5a7C0800239C841E53F2C251C";
+"0x7D7a4D4d151a487e8D23C00C9E85b7F9BA7Cf73D";
 
 const MINT_CONTRACT_ABI = [
 	{
