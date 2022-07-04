@@ -26,7 +26,7 @@ const GameMainPage = () => {
     let deadline = useRef(); 
     let timer = useRef(null); 
     
-    let deadlineDate = new Date('July 05, 2022 12:35:00').getTime();
+    let deadlineDate = new Date('July 05, 2022 12:45:00').getTime();
     let now = new Date().getTime();
     let t = deadlineDate - now;
     let day = Math.floor((t % (1000 * 60 * 60 * 24 * 365)) / (1000 * 60 * 60 * 24));
@@ -62,8 +62,8 @@ const GameMainPage = () => {
           secondaccount : "0x663C6cBA85bA17d949F9d14232bDAEE5b543Bac0", 
           thirdaccount : "0x9390FeF4821750A3FD704380C078D127C1de8dea", 
           firstedition : 10002, 
-          secondedition : 192, 
-          thirdedition : 33
+          secondedition : 700, 
+          thirdedition : 241
         })
       
         console.log(response)
@@ -72,7 +72,7 @@ const GameMainPage = () => {
 
     useEffect(() => {
       dispatch(gameViewAction.gameViewAct())
-      deadline = new Date('July 05, 2022 12:35:00').getTime();
+      deadline = new Date('July 05, 2022 12:45:00').getTime();
       timer.current = setInterval(count, 1000);  
     },[])
 
@@ -138,7 +138,11 @@ const GameMainPage = () => {
                       <td>{arr.point}</td>
                     </tr>
                   })
-                : null
+                : <tr>
+                    <td>asdf</td>
+                    <td>appendDots</td>
+                    <td></td>
+                  </tr>
               }
             </tbody>
           </table>
