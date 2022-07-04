@@ -7,7 +7,7 @@ const {
 } = require("../../contracts/randomZolaman");
 
 const {
-  GAME_CONTRACT_ADDRESS
+  GAME_CONTRACT_ADDRESS,
 } = require("../../contracts/game");
 
 // 화이트리스트 체크
@@ -64,8 +64,9 @@ const BalanceKlay = async (req, res) => {
 // airdrop시 자동 권한 설정 함수
 
 const setApprovedForAll = async (req, res) => {
-  const result = await GameContract.methods
-    .setApprovedForAll(GAME_CONTRACT_ADDRESS, true)
+
+  const result = await RandomJolamanContract.methods
+    .setApprovalForAll(GAME_CONTRACT_ADDRESS, true)
     .send({from:adminAccount.address, gas : 3000000});
   res.json(result);
 };
