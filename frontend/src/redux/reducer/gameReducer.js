@@ -1,7 +1,8 @@
 let initialState = {
     clearHangmanGame : false,
     hangmanRewardGZLT : null,
-    hangmanRewardGP : null
+    hangmanRewardGP : null,
+    gamePointRank : null
 }
 
 function gameReducer(state=initialState,action) {
@@ -15,6 +16,11 @@ function gameReducer(state=initialState,action) {
             return {...state, 
                 hangmanRewardGZLT : payload.hangmanRewardGZLT,
                 hangmanRewardGP : payload.hangmanRewardGP
+            }
+
+        case "GET_GAMEPOINT_RANK" :
+            return {...state, 
+                gamePointRank : payload.gamePointRank,
             }
 
         default :

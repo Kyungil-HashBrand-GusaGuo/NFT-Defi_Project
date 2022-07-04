@@ -16,11 +16,9 @@ import 'slick-carousel/slick/slick-theme.css';
 import MagicSliderDots from 'react-magic-slider-dots';
 import 'react-magic-slider-dots/dist/magic-dots.css';
 
-
 const StakingPage = () => {
 
   const settings = {
-    
       dots: true,
       infinite: false,
       speed: 200,

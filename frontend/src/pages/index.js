@@ -11,5 +11,6 @@ import CardGame from "./CardGame"
 import GameMainPage from "./GameMainPage"
 import HangManGame from "./HangManGame"
 import NotFound from './NotFound'
+import BlackJackGame from './BlackJackGame'
 
-export { MainPage, PreMintingPage, AdminPage, MyPage, AllMintPage, SellPage, MarketPage, BuyPage, StakingPage, CardGame, GameMainPage, HangManGame, NotFound }
+export { MainPage, PreMintingPage, AdminPage, MyPage, AllMintPage, SellPage, MarketPage, BuyPage, StakingPage, CardGame, GameMainPage, HangManGame, NotFound, BlackJackGame  }

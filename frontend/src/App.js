@@ -1,8 +1,9 @@
 import './App.css';
 import { Routes, Route } from 'react-router-dom';
-import { MainPage, PreMintingPage, AdminPage, MyPage, AllMintPage, SellPage, MarketPage, BuyPage, StakingPage, CardGame, GameMainPage, HangManGame, NotFound } from './pages';
+import { MainPage, PreMintingPage, AdminPage, MyPage, AllMintPage, SellPage, MarketPage, BuyPage, StakingPage, CardGame, GameMainPage, HangManGame, NotFound, BlackJackGame } from './pages';
 import { Navbar, Footer } from './components'
 import { useSelector } from 'react-redux'
+
 
 
 function App() {
@@ -27,6 +28,7 @@ function App() {
         <Route path='/gamemain' element={<GameMainPage/>}/>
         <Route path='/cardgame' element={<CardGame/>}/>
         <Route path='/hangmangame' element={<HangManGame/>}/>
+        <Route path='/blackjackgame' element={<BlackJackGame/>}/>
       </Routes>
     </div>
       <Footer/>
