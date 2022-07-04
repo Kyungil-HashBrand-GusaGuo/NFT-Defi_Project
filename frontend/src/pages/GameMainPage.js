@@ -54,7 +54,11 @@ const GameMainPage = () => {
             </div>
           </div>
         </div>
-        
+        <div className='gameTimerContainer'>
+          <span>
+            Timer
+          </span>
+        </div>
         <div className='gameScoreTable'>
           <table>
             <thead>
@@ -78,11 +82,6 @@ const GameMainPage = () => {
               }
             </tbody>
           </table>
-        </div>
-        <div className='gameTimerContainer'>
-          <span>
-            Timer
-          </span>
         </div>
         <div className='anitest1'>
         </div>
