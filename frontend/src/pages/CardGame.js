@@ -4,6 +4,7 @@ import SingleCard from '../components/GamePage/CardGame/SingleCard';
 import './CardGame.css'
 import { useSelector } from 'react-redux'
 import api from "../redux/api";
+import axios from 'axios';
 import { GameSetModal, GameOverModal} from '../components/index' 
 
 const cardImages = [
@@ -102,6 +103,8 @@ function CardGame() {
         setGameSetModalCheck(true)
         setGzlt(result);
         setGamePoint(point)
+        const postCardGamePoint = await axios.post("http://localhost:9495/data/player", {account, point})
+        console.log("카드게임 POST요청", postCardGamePoint)
       }
 
       console.log("게임토큰", result)

@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import "../CardGame/GameModal.css"
 import headzol2 from '../../../images/headzol2.png'
 import { useDispatch, useSelector } from 'react-redux'
-import { hanmanGameAction } from '../../../redux/actions/hanmanGameAction'
+import { hangmanGameAction } from '../../../redux/actions/hangmanGameAction'
 
 const HangmanGameSetModal = ({account, wrongLetters}) => {
 
@@ -20,7 +20,7 @@ const HangmanGameSetModal = ({account, wrongLetters}) => {
     }
 
     useEffect(() => {
-      dispatch(hanmanGameAction.hanmanGameAct(account, wrongLetter))
+      dispatch(hangmanGameAction.hangmanGameAct(account, wrongLetter))
     },[])
 
   return (

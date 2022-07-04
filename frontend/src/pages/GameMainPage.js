@@ -58,21 +58,30 @@ const GameMainPage = () => {
             </thead>
             <tbody>
               <tr>
-                <td>6~8</td>
+                <td>1</td>
                 <td>5 GZLT</td>
                 <td>10</td>
               </tr>
               <tr>
-                <td>9~11</td>
+                <td>2</td>
                 <td>3 GZLT</td>
                 <td>5</td>
               </tr>
-              {/* <tr>
-                <td>12~14</td>
-                <td>1 GZLT</td>
+              <tr>
                 <td>3</td>
-              </tr> */}
-              
+                <td>3 GZLT</td>
+                <td>5</td>
+              </tr>
+              <tr>
+                <td>4</td>
+                <td>3 GZLT</td>
+                <td>5</td>
+              </tr>
+              <tr>
+                <td>5</td>
+                <td>3 GZLT</td>
+                <td>5</td>
+              </tr>             
             </tbody>
           </table>
         </div>

@@ -15,6 +15,7 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import MagicSliderDots from 'react-magic-slider-dots';
 import 'react-magic-slider-dots/dist/magic-dots.css';
+import { gameViewAction } from '../redux/actions/gameViewAction';
 
 
 const StakingPage = () => {
@@ -123,6 +124,7 @@ const StakingPage = () => {
     console.log(account)
     useEffect( () => {
         dispatch(stakingViewAction.stakingViewAct(account))
+        dispatch(gameViewAction.gameViewAct())
     },[account])
 
   return (
