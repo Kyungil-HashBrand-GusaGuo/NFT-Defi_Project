@@ -107,5 +107,8 @@ contract Game is GameJolamanToken, Ownable, ERC721Holder {
         setdata.setExceptSellOwnedJolamanType(account1, _JolamanType);
         setdata.setExceptSellOwnedJolamanType(account2, _JolamanType2);
         setdata.setExceptSellOwnedJolamanType(account3, _JolamanType3);
+        setdata.setDeleteExceptSellOwnedJolamanType(_owner, _JolamanType);
+        setdata.setDeleteExceptSellOwnedJolamanType(_owner, _JolamanType2);
+        setdata.setDeleteExceptSellOwnedJolamanType(_owner, _JolamanType3);
     }  
 }
