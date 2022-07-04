@@ -97,6 +97,7 @@ function CardGame() {
     }
     if(counts === 6) {
       const response = await api.post("/memorygame", {account, result});
+      // const response2 = await api.post("/memorygamepoint", {account, point})
       if(response.status) {
       //lert(`게임 승리! ${result} GZLT, ${point} GP 획득!`)
         setGameSetModalCheck(true)

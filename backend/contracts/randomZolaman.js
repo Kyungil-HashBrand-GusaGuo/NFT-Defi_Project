@@ -1,9 +1,17 @@
 const Caver = require("caver-js");
+require("dotenv").config();
 
 const config = {
   rpcURL: "https://api.baobab.klaytn.net:8651",
 };
 const caver = new Caver(config.rpcURL);
+
+const adminAccount = caver.klay.accounts.wallet.add(process.env.PRIVATE_KEY)
+
+const keyring = caver.wallet.keyring.create(process.env.ADMIN_ACCOUNT, process.env.PRIVATE_KEY)
+
+caver.wallet.add(keyring);
+
 const MINT_CONTRACT_ADDRESS = 
 "0x8eFee8B2307d20b5a7C0800239C841E53F2C251C";
 
@@ -955,4 +963,5 @@ module.exports = {
   MINT_CONTRACT_ADDRESS,
   RandomJolamanContract,
   caver,
+  adminAccount
 };
