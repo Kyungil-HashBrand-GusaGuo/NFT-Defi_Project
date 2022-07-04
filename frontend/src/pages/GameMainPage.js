@@ -138,7 +138,11 @@ const GameMainPage = () => {
                       <td>{arr.point}</td>
                     </tr>
                   })
-                : null
+                : <tr>
+                    <td>asdf</td>
+                    <td>appendDots</td>
+                    <td></td>
+                  </tr>
               }
             </tbody>
           </table>
