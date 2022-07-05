@@ -12,7 +12,6 @@ function Navbar() {
 
     const dispatch = useDispatch();
     const [showLinks, setShowLinks] = useState(false); 
-    const [swapModal, setSwalModal] = useState(false);
     const [userInfoCheck, setUserInfoCheck] = useState('none')
     const {account, whiteListCheck, adminAccount} = useSelector(state => state.account)
     const {swapModalChange} = useSelector(state => state.stakingView)
@@ -35,11 +34,6 @@ function Navbar() {
     }
 
     const changeSwapModal = () => {
-        // if(swapModal){
-        //     setSwalModal(false)
-        // } else {
-        //     setSwalModal(true)
-        // }
         dispatch(swapModalAction.swapModalAct("open"))
     }
 

@@ -24,6 +24,8 @@ import GameOverModal from './GamePage/CardGame/GameOverModal'
 import Hangman from './GamePage/HangmanGame/Hangman'
 import WordAndAlphabet from './GamePage/HangmanGame/WordAndAlphabet'
 import HangmanGameSetModal from './GamePage/HangmanGame/HangmanGameSetModal';
+import Timer from './GamePage/Timer'
+import AirdropModal from './Adminpage/AirdropModal'
 
 export { 
     Navbar, 
@@ -51,5 +53,7 @@ export {
     GameOverModal,
     Hangman,
     WordAndAlphabet,
-    HangmanGameSetModal
+    HangmanGameSetModal,
+    Timer,
+    AirdropModal
 }
