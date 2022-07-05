@@ -17,20 +17,6 @@
   justify-content: center;
 }
 
-.gameRank {
-  position: relative;
-  width: 200px;
-  height: 200px;
-  
-}
-
-.gameRankIcon {
-  position: absolute;
-  top: 5px;
-  left: 5px;
-  margin-left: 20px;
-}
-
 .crownIcon {
   width: 50px;
   height: 50px;
@@ -130,8 +116,8 @@ opacity: 0.9;
 .gameThumbnail {
     display: flex;
     justify-content: center;
-    width: 100%;
-    height: 100%;
+    /* width: 100%;
+    height: 100%; */
 }
 
 .gameThumbnail img {
@@ -162,7 +148,7 @@ opacity: 0.9;
     /* background-color: bisque; */
     width: 100%;
     height: 500px;
-    padding: 50px 20px 50px 20px;
+    padding: 20px 20px 50px 20px;
     border: 2px solid black;
     border-radius: 30px;
 }

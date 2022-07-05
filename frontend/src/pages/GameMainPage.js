@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react'
 import './GameMainPage.css'
 import { useNavigate } from 'react-router-dom'
-import { Game1, Game2 } from '../images'
+import { Game1, Game2, Game3 } from '../images'
 import { GoldCrown } from '../images'
 import { white6 } from '../images'
 import { white4 } from '../images'
@@ -24,6 +24,10 @@ const GameMainPage = () => {
         navigate('/hangmangame')
     }
 
+    const goToBlackJackGame =() => {
+      navigate('/blackjackgame')
+    }
+
     useEffect(() => {
       dispatch(gameViewAction.gameViewAct())
       dispatch(rewardEditionGetAction.rewardEditionGetAct())
@@ -37,11 +41,11 @@ const GameMainPage = () => {
         {
           airdropReward !== null ?
             <div className='nftRankContainer'>
-              <div className='test1'>
+              <div>
                 <span>2위</span>
-                <img src={"https://sean95.s3.ap-northeast-2.amazonaws.com/raw/" + `${airdropReward[1]}` + ".png"}></img>
-                <div className='test2'>
-                  <img src={GoldCrown} className="crownIcon"></img>
+                <img src={GoldCrown} className="crownIcon"></img>
+                <div className='rankImgContainer'>
+                  <img src={"https://sean95.s3.ap-northeast-2.amazonaws.com/raw/" + `${airdropReward[1]}` + ".png"}></img>
                 </div>
               </div>
               <div>
@@ -133,7 +137,15 @@ const GameMainPage = () => {
                 </div>
                 <div className='gameBox3'>
                     <div className='gameTitle'>
-                        <span>Game3</span>
+                        <span>BlackJack Game</span>
+                    </div>
+                    <div>
+                      <span className='gameDescriptionTxt'>
+                        딜러와 게임을 해서 GZLT 토큰을 획득 해보세요!
+                      </span>
+                    </div>
+                    <div className='gameThumbnail'>
+                      <img src={Game3}></img>
                     </div>
                     <div className='gameStartBtn'>
                         <button onClick={goToBlackJackGame} className="learn-more">Start</button>
