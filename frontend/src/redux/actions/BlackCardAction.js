@@ -1,4 +1,4 @@
-import { Suits, Ranks } from '../constants/CardInfo';
+import { Suits, Ranks } from '../../constants/CardInfo';
 export const HIT = 'HIT';
 
 export const hit = () => ({
