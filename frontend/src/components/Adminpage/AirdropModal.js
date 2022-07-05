@@ -6,7 +6,8 @@ import Slider from "react-slick";
 import MagicSliderDots from 'react-magic-slider-dots';
 import { useDispatch, useSelector } from 'react-redux';
 import { stakingViewAction } from '../../redux/actions/stakingViewAction';
-import { airdropAction } from '../../redux/actions/airdropAction';
+import { rewardEditionSetAction } from '../../redux/actions/rewardEditionSetAction';
+import { useNavigate } from 'react-router-dom';
 
 const AirdropModal = ({setSwapModal}) => {
 
@@ -24,10 +25,11 @@ const AirdropModal = ({setSwapModal}) => {
   };
 
   const dispatch = useDispatch()
+  const navigate = useNavigate()
 
   const {account} = useSelector(state => state.account)
   const {myNftList} = useSelector(state => state.stakingView)
-  const [test, setTest] = useState()
+  const {setAirdropRewardSuccess} = useSelector(state => state.game)
 
   const closePage = () => {
     setSwapModal(false)
@@ -39,25 +41,43 @@ const AirdropModal = ({setSwapModal}) => {
     if(seletedArr.length < 3){
       seletedArr.push(item)
       console.log(seletedArr)
+      if(seletedArr.length == 3){
+        alert("모두 선택되었습니다!")
+      }
     } else {
-      alert("모두 선택되었습니다")
+      alert("더이상 선택할 수 없습니다!")
     }
   }
 
+  const checkingNft = (e) => {
+    if(e.checked){
+      e.checked = false
+    } else {
+      e.checked = true;
+    }
+  } 
+
   const airdrop = (arr) => {
-    dispatch(airdropAction.airdropAct(arr))
+    dispatch(rewardEditionSetAction.rewardEditionSetAct(arr))
+  }
+
+  const toGamePage = () => {
+    navigate('/gamemain')
   }
 
   useEffect( () => {
     dispatch(stakingViewAction.stakingViewAct(account))
-  },[account])
+    if(setAirdropRewardSuccess){
+      alert("NFT 선택 완료!")
+    }
+  },[account, setAirdropRewardSuccess])
 
   return (
     <div className='overlay'>
       <div className='airdropModalContainer'>
         <div className='airdropModalSection'>
           <div className='airdropModalTitle'>
-            <h1>Select AirDrop NFT</h1>
+            <h2>Select AirDrop NFT</h2>
             <h1 onClick={closePage}><CgCloseO/></h1>
           </div>
           <div className='airdropModalSliderSection'>
@@ -68,13 +88,15 @@ const AirdropModal = ({setSwapModal}) => {
                   myNftList.map((item, index)=> {
                   return<div className='nftListContainer'  key={index}>
                     
-                      <div className='nftListCard' onClick={()=>selectNft(item)}
+                      <div className='nftListCard' 
                         style={{
                           backgroundImage: 
                             "url(https://sean95.s3.ap-northeast-2.amazonaws.com/raw/" + 
                             `${item}` + 
                             ".png)"
                         }}>
+                        <input type='checkbox' className='nftCheckBox' />
+                        <label className='nftCheckBoxCircle' onClick={(e)=>{selectNft(item); checkingNft(e.target.parentNode.children[0]);}}></label>
                       </div>
                     </div>
                   })
@@ -83,11 +105,13 @@ const AirdropModal = ({setSwapModal}) => {
                     : null
               }  
           </div>
-          <div className='airdropModalSelectSection'>
-            <div>Selected : {test} / {seletedArr[1]} / {seletedArr[2]}</div>
-          </div>
           <div className='airdropModalButtonSection'>
-            <button className='airdropModalButton' onClick={()=>airdrop(seletedArr)}>Select NFT</button>
+            {
+              setAirdropRewardSuccess ?
+              <button className='airdropModalButton' onClick={()=>toGamePage()}>Go to GamePage</button>  
+              : <button className='airdropModalButton' onClick={()=>airdrop(seletedArr)}>Select NFT</button>
+            }
+        
           </div>
         </div>
       </div>

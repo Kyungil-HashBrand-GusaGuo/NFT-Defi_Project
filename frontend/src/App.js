@@ -19,8 +19,8 @@ function App() {
         <Route path='/' element={<MainPage/>} />
         <Route path='/mypage' element={<MyPage/>} />
         <Route path='/pre-minting' element={<PreMintingPage/>} />
-        {/* { adminAccount === account ? <Route path='/admin' element={<AdminPage/>} /> : null}  */}
-        <Route path='/admin' element={<AdminPage/>}/>
+        { adminAccount === account ? <Route path='/admin' element={<AdminPage/>} /> : null} 
+        {/* <Route path='/admin' element={<AdminPage/>}/> */}
         <Route path='/all-minting' element={<AllMintPage/>} />
         <Route path='/sellpage/:edition' element={<SellPage/>}/>
         <Route path='/market' element={<MarketPage/>}/>
