@@ -36,6 +36,10 @@ const Timer = () => {
       } 
     }
 
+    const testBtn = () => {
+      clearTimeout(this.timer)
+    }
+
     useEffect(() => {
       deadline = new Date('July 14, 2022 16:43:30').getTime();
       timer.current = setInterval(count, 1000);  
@@ -50,6 +54,7 @@ const Timer = () => {
             &nbsp;{state.minutes < 10 ? `0${state.minutes}` : state.minutes}m
             &nbsp;{state.seconds < 10 ? `0${state.seconds}` : state.seconds}s
         </span>
+        <button onClick={()=>testBtn()}>강제종료</button>
     </div>
   )
 }
