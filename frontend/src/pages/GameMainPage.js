@@ -23,6 +23,10 @@ const GameMainPage = () => {
         navigate('/hangmangame')
     }
 
+    const goToBlackJackGame = () => {
+      navigate('/blackjackgame')
+    }
+
     let deadline = useRef(); 
     let timer = useRef(null); 
     
@@ -82,10 +86,10 @@ const GameMainPage = () => {
         <h2>Zolaman Game</h2>
         </div>
         <div className='nftRankContainer'>
-          <div className='test1'>
+          <div className='gameRank'>
             {/* <span>2위</span> */}
             <img src={white6}></img>
-            <div className='test2'>
+            <div className='gameRankIcon'>
               <img src={GoldCrown} className="crownIcon"></img>
             </div>
           </div>
@@ -149,9 +153,9 @@ const GameMainPage = () => {
         </div>
         <div className='anitest1'>
         </div>
-        <div className='testmain'>
-            <div className='testsection'>
-                <div className='testmain1'>
+        <div className='gameSelectContainer'>
+            <div className='gameSelectSection'>
+                <div className='gameBox1'>
                     <div className='gameTitle'>
                         <span>Zolaman Memory Game</span>
                     </div>
@@ -167,7 +171,7 @@ const GameMainPage = () => {
                         <button onClick={goToCardGame} className="learn-more">Start</button>
                     </div>
                 </div>
-                <div className='testmain2'>
+                <div className='gameBox2'>
                     <div className='gameTitle'>
                         <span>Zolaman HangMan Game</span>
                     </div>
@@ -184,12 +188,12 @@ const GameMainPage = () => {
                     </div>
 
                 </div>
-                <div className='testmain3'>
+                <div className='gameBox3'>
                     <div className='gameTitle'>
                         <span>Game3</span>
                     </div>
                     <div className='gameStartBtn'>
-                        <button onClick={goToCardGame} className="learn-more">Start</button>
+                        <button onClick={goToBlackJackGame} className="learn-more">Start</button>
                     </div>
                 </div>
             </div>

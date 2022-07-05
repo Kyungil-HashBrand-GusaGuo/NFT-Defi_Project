@@ -5,7 +5,7 @@
     padding-bottom: 100px;
 }
 
-.testmain {
+.gameSelectContainer {
     padding: 50px 100px 0px 100px;
     /* width: 100%; */
     height: 100%;
@@ -17,14 +17,14 @@
   justify-content: center;
 }
 
-.test1 {
+.gameRank {
   position: relative;
   width: 200px;
   height: 200px;
   
 }
 
-.test2 {
+.gameRankIcon {
   position: absolute;
   top: 5px;
   left: 5px;
@@ -91,18 +91,18 @@ opacity: 0.9;
 .gamePageTitle span {
     font-size: 30px;
 }
-.testsection {
+.gameSelectSection {
     /* background-color: brown; */
     width: 100%;
     height: 100%;
     display: flex;
 }
 
-.testmain1{
+.gameBox1{
     flex: 33%;
     /* background-color: aqua; */
     width: 100%;
-    height: 430px; 
+    height: 500px; 
     display: flex;
     flex-direction: column;  
     padding: 20px 20px 50px 20px;
@@ -145,11 +145,11 @@ opacity: 0.9;
     /* align-items: flex-end; */
 }
 
-.testmain2{
+.gameBox2{
     flex: 33%;
     /* background-color: #f0a591; */
     width: 100%;
-    height: 430px; 
+    height: 500px; 
     display: flex;
     flex-direction: column;  
     padding: 20px 20px 50px 20px;
@@ -157,11 +157,11 @@ opacity: 0.9;
     border-radius: 30px;
 }
 
-.testmain3 {
+.gameBox3 {
     flex:33%;
     /* background-color: bisque; */
     width: 100%;
-    height: 400px;
+    height: 500px;
     padding: 50px 20px 50px 20px;
     border: 2px solid black;
     border-radius: 30px;

@@ -1,3 +1,7 @@
+.blackJackMainContainer {
+    padding-top: 100px;
+}
+
 .center {
     display: flex;
     justify-content: center;

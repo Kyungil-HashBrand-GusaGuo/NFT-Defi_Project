@@ -19,6 +19,7 @@ import onek from '../images/blackjack/onek.png';
 import Buttons from '../components/GamePage/BlackJackGame/Buttons/buttons';
 import StarterCard from '../components/GamePage/BlackJackGame/Card/StarterCard';
 import Chip from '../components/GamePage/BlackJackGame/Buttons/Chip';
+import { BlackGameOverModal } from '../components/index'
 
 import 'tachyons';
 import './BlackJackGame.css';
@@ -53,7 +54,9 @@ const BlackJackGame = () => {
       const [title, setTitle] = useState('');
       const [playerScore, setPlayerScore] = useState(0);
       const [dealerScore, setDealerScore] = useState(0);
-      const { total, bet } = useSelector((state) => state.setChips);
+      const [gameOverModal, setGameOverModal] = useState(false);
+      const [turns, setTurns] = useState(0);
+      const { total, bet } = useSelector((state) => state.blackjack);
       const dispatch = useDispatch();
     
       const Hit = () => {
@@ -66,9 +69,11 @@ const BlackJackGame = () => {
     
         setPlayerScore(score);
         setPlayerCards(updatedCards);
+
     
         if (score > 21) {
           setTitle('Bust!');
+          setTurns(turns +1);
           setGameState(POST);
         }
       };
@@ -107,18 +112,25 @@ const BlackJackGame = () => {
           setTitle('You Win!');
           dispatch(takeChip(bet * 2));
           setGameState(POST);
+          setTurns(turns +1);
+
           return;
         }
         if (score === playerScore) {
           setTitle('Tie!');
           dispatch(takeChip(bet));
           setGameState(POST);
+          setTurns(turns +1);
+
           return;
         }
         if (playerScore < score) {
           setTitle('Dealer Win!');
           setGameState(POST);
+          setTurns(turns +1);
+
         }
+        console.log("게임턴",setTurns);
       };
     
       const Stand = () => {
@@ -126,6 +138,9 @@ const BlackJackGame = () => {
         if (playerScore < dealerScore) {
           setTitle('Dealer Win!');
           setGameState(POST);
+          setTurns(turns +1);
+
+        //   setTurns(0);
         }
       };
     
@@ -134,6 +149,7 @@ const BlackJackGame = () => {
         setDealerCards(Dealer);
         setPlayerScore(0);
         setDealerScore(0);
+        // setTurns(0);
         dispatch(betChip());
         setTitle('');
       };
@@ -146,10 +162,13 @@ const BlackJackGame = () => {
       const pickChip = (value) => {
         dispatch(addChip(value));
         setTitle(`$${value + bet}`);
+
+
       };
     
       const StartGame = () => {
         setGameState(GAME);
+
         if (
           (playerCards[0].rank === 'A' &&
             RanksValues[playerCards[1].rank] === 10) ||
@@ -158,6 +177,7 @@ const BlackJackGame = () => {
           dispatch(takeChip(bet * 2));
           setTitle('Blackjack!');
           setGameState(POST);
+          setTurns(turns +1);
         }
         setPlayerScore(
           RanksValues[playerCards[0].rank] + RanksValues[playerCards[1].rank]
@@ -166,11 +186,26 @@ const BlackJackGame = () => {
           RanksValues[dealerCards[0].rank] + RanksValues[dealerCards[1].rank]
         );
       };
+
+    //   const GameTurn = () => {
+    //   }
+      const GameOver = () => {
+        if(turns === 2) {
+            setGameOverModal(true)
+        } 
+      }
+      GameOver();
+    //   console.log(GameOver,"sdfdsfsdf");
+    // console.log("게임턴",GameTurn);
+
+
   return (
+    <div className='blackJackMainContainer'>
     <div>
       <div className="center">
         <img style={{ width: 300 }} alt="logo" src={logo} />
       </div>
+      { gameOverModal ? <BlackGameOverModal/> : null }
       {gameState === LOSE ? (
         <div className="center f3">
           <h1>You've lost it all!</h1>
@@ -257,10 +292,12 @@ const BlackJackGame = () => {
               className="pa1 ba b--black bg-yellow"
             >
               <h2>{`Total: $${total}`}</h2>
+              <p>Turns:{turns}</p>
             </div>
           </div>
         </div>
       )}
+    </div>
     </div>
   )
 }
