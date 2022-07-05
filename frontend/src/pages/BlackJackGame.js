@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import {
   Suits,
   Ranks,
@@ -149,7 +149,7 @@ const BlackJackGame = () => {
         setDealerCards(Dealer);
         setPlayerScore(0);
         setDealerScore(0);
-        // setTurns(0);
+        setTurns(0);
         dispatch(betChip());
         setTitle('');
       };
@@ -187,25 +187,27 @@ const BlackJackGame = () => {
         );
       };
 
-    //   const GameTurn = () => {
-    //   }
-      const GameOver = () => {
-        if(turns === 2) {
-            setGameOverModal(true)
-        } 
-      }
-      GameOver();
-    //   console.log(GameOver,"sdfdsfsdf");
-    // console.log("게임턴",GameTurn);
+
+      // const GameOver = () => {
+      //     setGameOverModal(true)
+      // }
+      
+      // useEffect( () => {
+      //   if(turns == 2){
+      //     console.log("2번째턴")
+      //     GameOver();
+      //   }
+      // },[turns])
+
 
 
   return (
     <div className='blackJackMainContainer'>
     <div>
+      { gameOverModal ? <BlackGameOverModal/> : null }
       <div className="center">
         <img style={{ width: 300 }} alt="logo" src={logo} />
       </div>
-      { gameOverModal ? <BlackGameOverModal/> : null }
       {gameState === LOSE ? (
         <div className="center f3">
           <h1>You've lost it all!</h1>
