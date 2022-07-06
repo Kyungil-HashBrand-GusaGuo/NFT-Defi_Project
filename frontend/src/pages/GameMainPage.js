@@ -18,7 +18,9 @@ const GameMainPage = () => {
     const navigate = useNavigate()
     const [swapModal, setSwapModal] = useState(false);
     const { gamePointRank, airdropReward } = useSelector(state => state.game)
-    console.log("게임페이지", gamePointRank)
+    // console.log("게임포인트랭크", gamePointRank)
+    // console.log("에어드랍리워드",airdropReward)
+    
     const goToCardGame = () => {
         navigate('/cardgame')
     }
@@ -74,7 +76,7 @@ const GameMainPage = () => {
         }
 
         <div className='gameTimerContainer'>
-          <Timer/>
+          <Timer gamePointRank={gamePointRank} airdropReward={airdropReward}/>
         </div>
 
         <div className='gameScoreTable'>
