@@ -25,8 +25,10 @@ import Hangman from './GamePage/HangmanGame/Hangman'
 import WordAndAlphabet from './GamePage/HangmanGame/WordAndAlphabet'
 import HangmanGameSetModal from './GamePage/HangmanGame/HangmanGameSetModal';
 import BlackGameOverModal from './GamePage/BlackJackGame/Modal/BlackGameOverModal'
+import BlackJackGameSetModal from './GamePage/BlackJackGame/Modal/BlackJackGameSetModal'
 import Timer from './GamePage/Timer'
 import AirdropModal from './Adminpage/AirdropModal'
+import SelectGameNftModal from './GamePage/SelectGameNftModal';
 
 export { 
     Navbar, 
@@ -58,4 +60,6 @@ export {
     BlackGameOverModal,
     Timer,
     AirdropModal,
+    BlackJackGameSetModal,
+    SelectGameNftModal,
 }

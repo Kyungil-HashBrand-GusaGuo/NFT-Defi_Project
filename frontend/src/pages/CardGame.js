@@ -107,7 +107,6 @@ function CardGame() {
         const postCardGamePoint = await axios.post("http://localhost:9495/data/player", {account, point})
         console.log("카드게임 POST요청", postCardGamePoint)
       }
-
       console.log("게임토큰", result)
       console.log("게임포인튼", point)
     }

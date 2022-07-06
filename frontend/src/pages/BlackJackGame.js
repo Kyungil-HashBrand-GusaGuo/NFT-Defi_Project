@@ -1,4 +1,8 @@
+<<<<<<< HEAD
+import React, { useEffect,useState } from 'react';
+=======
 import React, { useEffect, useState } from 'react';
+>>>>>>> d074647bf89fe37f606dd4b576561a6b5907d60a
 import {
   Suits,
   Ranks,
@@ -20,6 +24,8 @@ import Buttons from '../components/GamePage/BlackJackGame/Buttons/buttons';
 import StarterCard from '../components/GamePage/BlackJackGame/Card/StarterCard';
 import Chip from '../components/GamePage/BlackJackGame/Buttons/Chip';
 import { BlackGameOverModal } from '../components/index'
+import {BlackJackGameSetModal} from '../components/index'
+import {white1} from '../images'
 
 import 'tachyons';
 import './BlackJackGame.css';
@@ -54,7 +60,8 @@ const BlackJackGame = () => {
       const [title, setTitle] = useState('');
       const [playerScore, setPlayerScore] = useState(0);
       const [dealerScore, setDealerScore] = useState(0);
-      const [gameOverModal, setGameOverModal] = useState(false);
+    //   const [gameOverModal, setGameOverModal] = useState(false);
+      const [gameSetModal, setGameSetModal] = useState(false);
       const [turns, setTurns] = useState(0);
       const { total, bet } = useSelector((state) => state.blackjack);
       const dispatch = useDispatch();
@@ -187,6 +194,22 @@ const BlackJackGame = () => {
         );
       };
 
+<<<<<<< HEAD
+    //   const GameTurn = () => {
+    //   }
+      const GameSet = () => {
+        if(turns === 5) {
+            setGameSetModal(true)
+        } 
+      }
+
+      useEffect(() =>{
+            GameSet()
+        }
+      )
+    //   console.log(GameOver,"sdfdsfsdf");
+    // console.log("게임턴",GameTurn);
+=======
 
       // const GameOver = () => {
       //     setGameOverModal(true)
@@ -199,12 +222,18 @@ const BlackJackGame = () => {
       //   }
       // },[turns])
 
+>>>>>>> d074647bf89fe37f606dd4b576561a6b5907d60a
 
 
   return (
     <div className='blackJackMainContainer'>
     <div>
+<<<<<<< HEAD
+      {/* { gameOverModal ? <BlackGameOverModal/> : null } */}
+      { gameSetModal ? <BlackJackGameSetModal/> : null }
+=======
       { gameOverModal ? <BlackGameOverModal/> : null }
+>>>>>>> d074647bf89fe37f606dd4b576561a6b5907d60a
       <div className="center">
         <img style={{ width: 300 }} alt="logo" src={logo} />
       </div>
@@ -219,7 +248,11 @@ const BlackJackGame = () => {
           className="center"
           style={{ display: 'flex', flexDirection: 'row' }}
         >
-          <div style={{ width: '20%' }} />
+          <div className='myGameNftContainer' style={{ width: '20%' }}>
+            <div className='myGameNftSection'>
+                <img src={white1}></img>
+            </div>
+          </div>
           <div style={{ width: '40%', minWidth: 350, paddingTop: '20px' }}>
             <StarterCard
               cardList={dealerCards}
@@ -252,31 +285,31 @@ const BlackJackGame = () => {
             {gameState === BET ? (
               <div style={{ display: 'flex', flexDirection: 'column' }}>
                 <Chip
-                  value={10}
+                  value={1}
                   total={total}
                   addChip={pickChip}
                   imgSrc={ten}
                 />
                 <Chip
-                  value={20}
+                  value={3}
                   total={total}
                   addChip={pickChip}
                   imgSrc={quart}
                 />
                 <Chip
-                  value={50}
+                  value={5}
                   total={total}
                   addChip={pickChip}
                   imgSrc={half}
                 />
                 <Chip
-                  value={100}
+                  value={10}
                   total={total}
                   addChip={pickChip}
                   imgSrc={hundo}
                 />
                 <Chip
-                  value={1000}
+                  value={20}
                   total={total}
                   addChip={pickChip}
                   imgSrc={onek}

@@ -1,0 +1,209 @@
+
+.selectGameNftoverlay {
+    background-color: rgba(0, 0, 0, 0.7);
+    position: fixed;
+    /* padding-top: 100px; */
+    width: 100%;
+    height: 100%;
+    color: white;
+    display: flex;
+    justify-content: center;
+    z-index: 20;
+    
+}
+
+.selectGameNftModalContainer {
+    width: 65%;
+    height: 65%;
+    margin-top: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #141414;
+    border-radius: 30px;
+    background-color: rgba(245, 245, 245, 0.808);
+}
+
+.selectGameNftModalSection {
+    width: 100%;
+    height: 100%;
+    margin: 100px;
+    color: #141414;
+}
+
+.selectGameNftModalTitle {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 100px 0px 100px;
+}
+
+.selectGameNftModalTitle h1 {
+    cursor: pointer;
+}
+
+.selectGameNftModalSliderSection {
+    height: 400px;
+    background-color: whitesmoke;
+    display: flex;
+    justify-content: center;
+}
+
+.gameNftListContainer {
+    display: flex;
+    margin-top: 2.778vw;
+}
+
+.gameNftListCard {
+    width: 13.889vw;
+    height: 13.889vw;
+    border: 1px solid black;
+    background-size: cover;
+    border-radius: 1.389vw;
+    display: flex;
+    justify-content: space-between;
+}
+
+.slick-slider.selectGameNftSlider {
+    width: 80%;
+}
+
+.slick-slider .selectGameNftSlider .slick-initialized {
+    width: 80%;
+}
+
+.slick-prev, .slick-next {
+    width: 2.778vw;
+    height: 2.778vw;
+}
+
+.slick-slider .slick-track, .slick-slider .slick-list  {
+    margin-left: 0.694vw;
+}
+
+.gameNftCheckBox{
+    visibility: hidden;
+    /* display: none; */
+    /* 아예 꺼버리는것과 숨기는것. 함수가 동작하지 않을 수 있음 */
+}
+
+.gameNftCheckBoxCircle{
+    display: inline-block;
+    width: 2.083vw;
+    height: 2.083vw;
+    border: 0.069vw solid #272727;
+    background-color: white;
+    border-radius: 2.083vw;
+    cursor: pointer;
+    margin: 0.694vw;
+}
+
+.gameNftCheckBoxCircle:after{
+    display: flex;
+    width: 2.083vw;
+    height: 2.083vw;
+    border: 0.069vw solid #272727;
+    background-color: white;
+    border-radius: 2.083vw;
+    cursor: pointer;
+    content: "\2764";
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    position: relative;
+    left: -0.069vw;
+    top: -0.069vw;
+    transition: 0.2s;
+}
+
+.gameNftCheckBox:checked + .gameNftCheckBoxCircle:after{
+    opacity: 1;
+}
+
+/* .airdropModalSelectSection{
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+} */
+
+.selectGameNftModalButtonSection {
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.selectGameNftModalButton {
+    width: 250px;
+    height: 40px;
+    font-size: 20px;
+    color: #141414;
+    border: 2px solid #141414;
+    border-radius: 30px;
+}
+
+.selectGameNftModalButton:hover{
+    background-color: #141414;
+    color: whitesmoke;
+}
+
+@media only screen and (max-width: 700px) {
+    .selectGameNftoverlay {
+        background-color: rgba(0, 0, 0, 0.7);
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        color: white;
+        display: flex;
+        justify-content: center;
+    }
+    
+    .selectGameNftModalContainer {
+        width: 500px;
+        height: 300px;
+        margin-top: 150px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 2px solid #141414;
+        border-radius: 30px;
+        background-color: whitesmoke;
+    }
+    
+    .mintingImageSection {
+        width: 200px;
+        height: 220px;
+        margin: 15px;
+        border: 2px solid #141414;
+        border-radius: 10px;
+        background-size: contain;
+    }
+    
+    .airdropModalInfoSection {
+        width: 200px;
+        height: 220px;
+        margin: 15px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid whitesmoke;
+        color: #193257;
+    }
+    
+    .selectGameNftModalTitle {
+        margin-bottom: 90px;
+    }
+    
+    .modalEndButton {
+        width: 150px;
+        height: 30px;
+        font-size: 15px;
+        color: #141414;
+        border: 2px solid #141414;
+        border-radius: 30px;
+    }
+
+}
