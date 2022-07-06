@@ -27,6 +27,7 @@ const Timer = () => {
       seconds = Math.floor((t % (1000 * 60)) / 1000);
 
       setState({ day, hours, minutes, seconds });
+      console.log(t)
 
       if (t < -700 && t > -1500) {
         clearInterval(timer);
@@ -36,6 +37,8 @@ const Timer = () => {
       } 
     }
 
+
+
     useEffect(() => {
       deadline = new Date('July 14, 2022 16:43:30').getTime();
       timer.current = setInterval(count, 1000);  
@@ -44,8 +47,9 @@ const Timer = () => {
   return (
     <div>
         <span>민팅 까지 남은 시간</span><br />
+
         <span>
-            {state.day < 10 ? `0${state.day}` : state.day}D 
+            {state.day < 10 ? `0${state.day}` : state.day}
             &nbsp;{state.hours < 10 ? `0${state.hours}` : state.hours}h 
             &nbsp;{state.minutes < 10 ? `0${state.minutes}` : state.minutes}m
             &nbsp;{state.seconds < 10 ? `0${state.seconds}` : state.seconds}s
