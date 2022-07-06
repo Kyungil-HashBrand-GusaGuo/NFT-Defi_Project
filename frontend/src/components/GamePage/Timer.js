@@ -41,6 +41,7 @@ const Timer = ({gamePointRank, airdropReward}) => {
       clearInterval(timer.current);
       setState({ day: 0, hours: 0, minutes: 0, seconds: 0 });
       dispatch(timerAction.timerAct(gamePointRank, airdropReward))
+      console.log(t)
     }
 
     useEffect(() => {
