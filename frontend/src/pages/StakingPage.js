@@ -185,23 +185,23 @@ const StakingPage = () => {
                 {
                   myNftList !== '' ?
                 <Slider className='firstSlider' {...settings} >
-                {
-                  myNftList.map((item, index)=> {
-                  return<div className='unStakingCardContainer'  key={index}>
-                    
-                      <div className='unStakingImgCard'
-                        style={{
-                          backgroundImage: 
-                            "url(https://sean95.s3.ap-northeast-2.amazonaws.com/raw/" + 
-                            `${item}` + 
-                            ".png)"
-                        }}>
-                        <input type='checkbox' className='unStakingCheckBox' />
-                        <label className='unStakingCheckBoxCircle' onClick={(e)=>{unStake(item); checkingNft(e.target.parentNode.children[0]);}}></label>
+                  {
+                    myNftList.map((item, index)=> {
+                    return<><div className='unStakingCardContainer'  key={index}>
+                      
+                        <div className='unStakingImgCard'
+                          style={{
+                            backgroundImage: 
+                              "url(https://sean95.s3.ap-northeast-2.amazonaws.com/raw/" + 
+                              `${item}` + 
+                              ".png)"
+                          }}>
+                          <input type='checkbox' className='unStakingCheckBox' />
+                          <label className='unStakingCheckBoxCircle' onClick={(e)=>{unStake(item); checkingNft(e.target.parentNode.children[0]);}}></label>
+                        </div>
                       </div>
-                    </div>
-                  })
-                }
+                      </>})
+                  }
                   </Slider>
                     : null
                 }   
@@ -226,24 +226,24 @@ const StakingPage = () => {
                 <div className='comStakingCardMainContainer'>
                 {
                   stakingNftString !== '' ? 
-                <Slider className='firstSlider' {...settings} >
-                {
-                  stakingNftString.map((item, index)=> {
-                  return<div className='comStakingCardContainer'  key={index}>
+                <Slider className='firstSlider' {...settings} >                 
+                  {
+                    stakingNftString.map((item, index)=> {
+                    return<div className='comStakingCardContainer'  key={index}>
 
-                      <div className='comStakingImgCard'
-                        style={{
-                          backgroundImage: 
-                            "url(https://sean95.s3.ap-northeast-2.amazonaws.com/raw/" + 
-                            `${item}` + 
-                            ".png)"
-                        }}>
-                        <input type='checkbox' className='unStakingCheckBox' />
-                        <label className='unStakingCheckBoxCircle' onClick={(e)=>{comStake(item); checkingNft(e.target.parentNode.children[0]);}}></label>
+                        <div className='comStakingImgCard'
+                          style={{
+                            backgroundImage: 
+                              "url(https://sean95.s3.ap-northeast-2.amazonaws.com/raw/" + 
+                              `${item}` + 
+                              ".png)"
+                          }}>
+                          <input type='checkbox' className='unStakingCheckBox' />
+                          <label className='unStakingCheckBoxCircle' onClick={(e)=>{comStake(item); checkingNft(e.target.parentNode.children[0]);}}></label>
+                        </div>
                       </div>
-                    </div>
-                  })
-                }
+                    })
+                  }
                   </Slider>
                     : null
                 }   

@@ -1,23 +1,30 @@
 import api from '../api'
 
-function timerAct() {
+function timerAct(gamePointRank, airdropReward) {
     return async (dispatch) => {
-        //console.log("액션 잘 됩니다")
+        console.log("액션 잘 됩니다")
+        console.log("1등 계정 : ", gamePointRank[0].account)
+        console.log("2등 계정 : ", gamePointRank[1].account)
+        console.log("3등 계정 : ", gamePointRank[2].account)
+        console.log("1등 airdrop edition : ", airdropReward[0])
+        console.log("2등 airdrop edition : ", airdropReward[1])
+        console.log("3등 airdrop edition : ", airdropReward[2])
+
         try {
-            const timerApi = api.post("/airdropapprove")
+            // const timerApi = api.post("/airdropapprove")
 
-            if(timerApi.status){
-                const response = api.post("/airdrop", {
-                  firstaccount : "0xaC0d580B21118dB9Ea5d752d8950e9C2436575DE", 
-                  secondaccount : "0x663C6cBA85bA17d949F9d14232bDAEE5b543Bac0", 
-                  thirdaccount : "0x9390FeF4821750A3FD704380C078D127C1de8dea", 
-                  firstedition : 10002, 
-                  secondedition : 700, 
-                  thirdedition : 241
-                })
+            // if(timerApi.status){
+            //     const response = api.post("/airdrop", {
+            //       firstaccount : gamePointRank[0].account, 
+            //       secondaccount : gamePointRank[1].account, 
+            //       thirdaccount : gamePointRank[2].account, 
+            //       firstedition : airdropReward[0], 
+            //       secondedition : airdropReward[1], 
+            //       thirdedition : airdropReward[2]
+            //     })
 
-                console.log("에어드랍성공")
-            }
+            //     console.log("에어드랍성공")
+            // }
         }
         catch(error) {
             console.error(error)

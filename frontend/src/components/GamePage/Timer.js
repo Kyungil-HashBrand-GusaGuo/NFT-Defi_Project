@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react'
 import { useDispatch } from 'react-redux';
 import { timerAction } from '../../redux/actions/timerAction';
 
-const Timer = () => {
+const Timer = ({gamePointRank, airdropReward}) => {
 
     const dispatch = useDispatch()
     let deadline = useRef(); 
@@ -33,11 +33,15 @@ const Timer = () => {
         clearInterval(timer);
         setState({ day: 0, hours: 0, minutes: 0, seconds: 0 });
         console.log("t", t)
-        dispatch(timerAction.timerAct())
+        dispatch(timerAction.timerAct(gamePointRank, airdropReward))
       } 
     }
 
-
+    const endTimer = () => {
+      clearInterval(timer.current);
+      setState({ day: 0, hours: 0, minutes: 0, seconds: 0 });
+      dispatch(timerAction.timerAct(gamePointRank, airdropReward))
+    }
 
     useEffect(() => {
       deadline = new Date('July 14, 2022 16:43:30').getTime();
@@ -54,6 +58,8 @@ const Timer = () => {
             &nbsp;{state.minutes < 10 ? `0${state.minutes}` : state.minutes}m
             &nbsp;{state.seconds < 10 ? `0${state.seconds}` : state.seconds}s
         </span>
+        <br/>
+        <button onClick={()=>endTimer()}>강제종료</button>
     </div>
   )
 }

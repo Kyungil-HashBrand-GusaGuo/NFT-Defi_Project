@@ -2,7 +2,8 @@
 
 .HangManMainContainer {
     padding-top: 5.208vw;
-    height: calc(100vh - 10.417vw);
+    height: calc(100vh - 6.944vw);
+    /* height: 100vh; */
 }
 
 .HangManContainer {
