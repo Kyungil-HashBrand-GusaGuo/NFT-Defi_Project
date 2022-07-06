@@ -1,0 +1,113 @@
+import React, { useEffect, useState } from 'react'
+import './SelectGameNftModal.css'
+import { CgCloseO } from "react-icons/cg";
+import { TbArrowBigLeftLines, TbArrowBigRightLines } from "react-icons/tb";
+import Slider from "react-slick";
+import MagicSliderDots from 'react-magic-slider-dots';
+import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
+import { stakingViewAction } from '../../redux/actions/stakingViewAction';
+
+
+
+
+
+const SelectGameNftModal = ({setSwapModal}) => {
+
+    const settings = {
+        dots: true,
+        infinite: false,
+        speed: 200,
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        nextArrow: <TbArrowBigRightLines color='black' className='nextArrowBtn' />,
+        prevArrow: <TbArrowBigLeftLines color='black'  className='preArrowBtn'/>,
+        appendDots: dots => {
+          return <MagicSliderDots dots={dots} numDotsToShow={5} dotWidth={30} />;
+        }
+      };
+
+      const dispatch = useDispatch()
+      const navigate = useNavigate()
+
+      const {account} = useSelector(state => state.account)
+      const {myNftList} = useSelector(state => state.stakingView)
+
+      const closePage = () => {
+        setSwapModal(false)
+      }
+
+      let seletedGameArr = []
+
+      const selectGameNft = (item) => {
+        if(seletedGameArr.length < 2){
+            seletedGameArr.push(item)
+          console.log(seletedGameArr)
+          if(seletedGameArr.length == 1){
+            alert("Nft가 선택되었습니다!")
+          }
+        } else {
+          alert("하나만 선택할 수 있습니다.")
+        }
+      }
+      const checkingNft = (e) => {
+        if(e.checked){
+          e.checked = false
+        } else {
+          e.checked = true;
+        }
+      }
+
+      const goToBlackJackGame = () => {
+        navigate('/blackjackgame')
+      }
+
+      useEffect(()=> {
+        dispatch(stakingViewAction.stakingViewAct(account))
+      },[account])
+
+
+  return (
+    <div className='selectGameNftoverlay'>
+      <div className='selectGameNftModalContainer'>
+        <div className='selectGameNftModalSection'>
+          <div className='selectGameNftModalTitle'>
+            <h2>Select NFT</h2>
+            <h1 onClick={closePage}><CgCloseO/></h1>
+          </div>
+          <div className='selectGameNftModalSliderSection'>
+              {
+                myNftList !== '' ?
+                <Slider className='selectGameNftSlider' {...settings} >
+                {
+                  myNftList.map((item, index)=> {
+                  return<div className='gameNftListContainer'  key={index}>
+                    
+                      <div className='gameNftListCard' 
+                        style={{
+                          backgroundImage: 
+                            "url(https://sean95.s3.ap-northeast-2.amazonaws.com/raw/" + 
+                            `${item}` + 
+                            ".png)"
+                        }}>
+                        <input type='checkbox' className='gameNftCheckBox' />
+                        <label className='gameNftCheckBoxCircle' onClick={(e)=>{selectGameNft(item); checkingNft(e.target.parentNode.children[0]);}}></label>
+                      </div>
+                    </div>
+                  })
+                }
+                  </Slider>
+                    : null
+              }  
+          </div>
+          <div className='selectGameNftModalButtonSection'>
+              <button className='selectGameNftModalButton' onClick={()=>selectGameNft(seletedGameArr)} >Select NFT</button>  
+              <button className='selectGameNftModalButton' onClick={()=>goToBlackJackGame()} >Start</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+export default SelectGameNftModal

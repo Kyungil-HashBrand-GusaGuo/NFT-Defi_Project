@@ -10,11 +10,13 @@ import { useDispatch, useSelector } from 'react-redux'
 import { gameViewAction } from '../redux/actions/gameViewAction'
 import { rewardEditionGetAction } from '../redux/actions/rewardEditionGetAction'
 import { Timer } from '../components'
+import {SelectGameNftModal} from '../components/index'
 
 const GameMainPage = () => {
 
     const dispatch = useDispatch()
     const navigate = useNavigate()
+    const [swapModal, setSwapModal] = useState(false);
     const { gamePointRank, airdropReward } = useSelector(state => state.game)
     console.log("게임페이지", gamePointRank)
     const goToCardGame = () => {
@@ -28,6 +30,10 @@ const GameMainPage = () => {
       navigate('/blackjackgame')
     }
 
+    const changeSwapModal = () => {
+      setSwapModal(true)
+    }
+
     useEffect(() => {
       dispatch(gameViewAction.gameViewAct())
       dispatch(rewardEditionGetAction.rewardEditionGetAct())
@@ -35,6 +41,7 @@ const GameMainPage = () => {
 
   return (
     <div className='gamePageMainContainer'>
+        { swapModal ? <SelectGameNftModal setSwapModal={setSwapModal}/> : null}
         <div className='cardGameTitleContainer'>
         <h2>Zolaman Game</h2>
         </div>
@@ -148,7 +155,8 @@ const GameMainPage = () => {
                       <img src={Game3}></img>
                     </div>
                     <div className='gameStartBtn'>
-                        <button onClick={goToBlackJackGame} className="learn-more">Start</button>
+                        <button onClick={changeSwapModal} className="learn-more">Modal</button>
+                        <button onClick={goToBlackJackGame} className="learn-more">Black</button>
                     </div>
                 </div>
             </div>
