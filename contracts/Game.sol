@@ -56,6 +56,14 @@ contract Game is GameJolamanToken, Ownable, ERC721Holder {
 
     }
 
+    function blackJackWin(address _to, uint _betPrice) public onlyOwner {
+        _mint(_to, GZLTERC20 * _betPrice);
+    }
+
+    function blackJackLose(address _to, uint _betPrice) public onlyOwner {
+        _burn(_to, GZLTERC20 * _betPrice);
+    }
+
     function DepositToContract() public payable onlyOwner {
 
     }

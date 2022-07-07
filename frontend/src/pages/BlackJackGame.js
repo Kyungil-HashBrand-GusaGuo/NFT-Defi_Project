@@ -27,8 +27,12 @@ import 'tachyons';
 import './BlackJackGame.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { addChip, betChip, takeChip } from '../redux/actions/BlackBetAction';
+import { useLocation } from 'react-router-dom';
 
 const BlackJackGame = () => {
+
+    const { state } = useLocation();
+    console.log("번호",state);
 
     const Dealer = [
         {
@@ -78,6 +82,7 @@ const BlackJackGame = () => {
           setTitle('Bust!');
           setTurns(turns +1);
           setGameState(POST);
+          setGameSetModal(true)
         }
       };
     
@@ -113,10 +118,10 @@ const BlackJackGame = () => {
     
         if (score > 21) {
           setTitle('You Win!');
-          dispatch(takeChip(bet * 2));
+          //dispatch(takeChip(bet * 2));
           setGameState(POST);
           setTurns(turns +1);
-
+          setGameSetModal(true)
           return;
         }
         if (score === playerScore) {
@@ -124,14 +129,14 @@ const BlackJackGame = () => {
           dispatch(takeChip(bet));
           setGameState(POST);
           setTurns(turns +1);
-
+          setGameSetModal(true)
           return;
         }
         if (playerScore < score) {
           setTitle('Dealer Win!');
           setGameState(POST);
           setTurns(turns +1);
-
+          setGameSetModal(true)
         }
         console.log("게임턴",setTurns);
       };
@@ -142,8 +147,7 @@ const BlackJackGame = () => {
           setTitle('Dealer Win!');
           setGameState(POST);
           setTurns(turns +1);
-
-        //   setTurns(0);
+          setGameSetModal(true)
         }
       };
     
@@ -177,10 +181,11 @@ const BlackJackGame = () => {
             RanksValues[playerCards[1].rank] === 10) ||
           (playerCards[1].rank === 'A' && RanksValues[playerCards[0].rank] === 10)
         ) {
-          dispatch(takeChip(bet * 2));
+          //dispatch(takeChip(bet * 2));
           setTitle('Blackjack!');
           setGameState(POST);
           setTurns(turns +1);
+          setGameSetModal(true)
         }
         setPlayerScore(
           RanksValues[playerCards[0].rank] + RanksValues[playerCards[1].rank]
@@ -190,18 +195,17 @@ const BlackJackGame = () => {
         );
       };
 
-    //   const GameTurn = () => {
-    //   }
-      const GameSet = () => {
-        if(turns === 5) {
-            setGameSetModal(true)
-        } 
-      }
+  
+      // const GameSet = () => {
+      //   if(turns === 1) {
+      //       setGameSetModal(true)
+      //   } 
+      // }
 
-      useEffect(() =>{
-            GameSet()
-        }
-      )
+      // useEffect(() =>{
+      //       GameSet()
+      //   }
+      // )
     //   console.log(GameOver,"sdfdsfsdf");
     // console.log("게임턴",GameTurn);
 
@@ -210,7 +214,7 @@ const BlackJackGame = () => {
     <div className='blackJackMainContainer'>
     <div>
       {/* { gameOverModal ? <BlackGameOverModal/> : null } */}
-      { gameSetModal ? <BlackJackGameSetModal/> : null }
+      { gameSetModal ? <BlackJackGameSetModal title={title} bet={bet}/> : null }
       <div className="center">
         <img style={{ width: 300 }} alt="logo" src={logo} />
       </div>
@@ -227,7 +231,7 @@ const BlackJackGame = () => {
         >
           <div className='myGameNftContainer' style={{ width: '20%' }}>
             <div className='myGameNftSection'>
-                <img src={white1}></img>
+                <img src={"https://sean95.s3.ap-northeast-2.amazonaws.com/raw/" + `${state[0]}` + ".png"}></img>
             </div>
           </div>
           <div style={{ width: '40%', minWidth: 350, paddingTop: '20px' }}>

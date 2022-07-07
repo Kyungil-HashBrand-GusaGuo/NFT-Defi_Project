@@ -394,6 +394,42 @@
 			{
 				"inputs": [
 					{
+						"internalType": "address",
+						"name": "_to",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_betPrice",
+						"type": "uint256"
+					}
+				],
+				"name": "blackJackLose",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_to",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_betPrice",
+						"type": "uint256"
+					}
+				],
+				"name": "blackJackWin",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
 						"internalType": "uint256",
 						"name": "amount",
 						"type": "uint256"
@@ -1087,11 +1123,11 @@
 			]
 		},
 		"contracts/Game.sol": {
-			"keccak256": "0x8a214442d7d02d35a5df499fbfd5f36839aff247dbd4b2242ccb8fddff5e6c89",
+			"keccak256": "0xc6b667562a66d7a66471c6fb185cc63ea35cae3ee132d913ac6124b0919ced40",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://2cabfc3cd8669aa672a7046e818398b1ae59a4ecfc2116a4d50e09e55f7fabae",
-				"dweb:/ipfs/QmfU2CQNFZUWxyqNW3P3J2gDwtMDbcLqzarTSqHcWvMDWT"
+				"bzz-raw://3c6042a89ec29bd9758d4ffe0c69840a62bd474ab9cf9de5fee54aff60d65267",
+				"dweb:/ipfs/QmVz8JzdSG6ZySEPoytM7RqLnpGYNKEzkanKDfgHJ23TqH"
 			]
 		},
 		"contracts/RandomJolaman.sol": {
