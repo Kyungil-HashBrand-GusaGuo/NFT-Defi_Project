@@ -27,7 +27,6 @@ const Timer = ({gamePointRank, airdropReward}) => {
       seconds = Math.floor((t % (1000 * 60)) / 1000);
 
       setState({ day, hours, minutes, seconds });
-      console.log(t)
 
       if (t < -700 && t > -1500) {
         clearInterval(timer);
