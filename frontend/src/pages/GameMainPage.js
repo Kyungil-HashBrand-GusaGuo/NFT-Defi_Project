@@ -165,8 +165,7 @@ const GameMainPage = () => {
                       <img src={Game3}></img>
                     </div>
                     <div className='gameStartBtn'>
-                        <button onClick={changeSwapModal} className="learn-more">Modal</button>
-                        <button onClick={goToBlackJackGame} className="learn-more">Black</button>
+                        <button onClick={changeSwapModal} className="learn-more">Start</button>
                     </div>
                 </div>
             </div>

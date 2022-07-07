@@ -27,8 +27,12 @@ import 'tachyons';
 import './BlackJackGame.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { addChip, betChip, takeChip } from '../redux/actions/BlackBetAction';
+import { useLocation } from 'react-router-dom';
 
 const BlackJackGame = () => {
+
+    const { state } = useLocation();
+    console.log("번호",state);
 
     const Dealer = [
         {
@@ -227,7 +231,7 @@ const BlackJackGame = () => {
         >
           <div className='myGameNftContainer' style={{ width: '20%' }}>
             <div className='myGameNftSection'>
-                <img src={white1}></img>
+                <img src={"https://sean95.s3.ap-northeast-2.amazonaws.com/raw/" + `${state[0]}` + ".png"}></img>
             </div>
           </div>
           <div style={{ width: '40%', minWidth: 350, paddingTop: '20px' }}>

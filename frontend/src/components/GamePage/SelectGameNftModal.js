@@ -37,7 +37,7 @@ const SelectGameNftModal = ({setSwapModal}) => {
         setSwapModal(false)
       }
 
-      let seletedGameArr= []
+      let seletedGameArr = []
 
       const selectGameNft = (item) => {
         if(seletedGameArr < 2){
@@ -59,8 +59,12 @@ const SelectGameNftModal = ({setSwapModal}) => {
         }
       }
 
-      const goToBlackJackGame = () => {
-        navigate('/blackjackgame')
+      const goToBlackJackGame = (seletedGameArr) => {
+        if(seletedGameArr.length == 0) {
+          alert("NFT를 선택해주세요")
+        } else {
+          navigate('/blackjackgame', {state : seletedGameArr})
+        }
       }
 
       useEffect(()=> {
@@ -102,8 +106,7 @@ const SelectGameNftModal = ({setSwapModal}) => {
               }  
           </div>
           <div className='selectGameNftModalButtonSection'>
-                <button className='selectGameNftModalButton' onClick={()=>selectGameNft(seletedGameArr)} >Select NFT</button>  
-                <button className='selectGameNftModalButton' onClick={()=>goToBlackJackGame()} >Start</button>
+                <button className='selectGameNftModalButton' onClick={()=>goToBlackJackGame(seletedGameArr)}>Start</button>
           </div>
         </div>
       </div>
