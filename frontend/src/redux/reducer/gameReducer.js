@@ -2,9 +2,9 @@ let initialState = {
     clearHangmanGame : false,
     hangmanRewardGZLT : null,
     hangmanRewardGP : null,
-    gamePointRank : null,
+    gamePointRank : [],
     setAirdropRewardSuccess : false,
-    airdropReward : null
+    airdropReward : []
 }
 
 function gameReducer(state=initialState,action) {
