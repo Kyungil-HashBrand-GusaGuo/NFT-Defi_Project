@@ -1,4 +1,5 @@
 import React from 'react';
+import './Chip.css'
 
 const Chip = ({ value, total, imgSrc, addChip }) => {
   if (value > total) {
@@ -6,8 +7,10 @@ const Chip = ({ value, total, imgSrc, addChip }) => {
   } else {
     return (
       <img
-        style={{ width: 100 }}
+        style={{ width: 100,
+        }}
         className="ma2 pointer grow"
+        id='chipimg'
         alt="chip"
         src={imgSrc}
         onClick={() => {

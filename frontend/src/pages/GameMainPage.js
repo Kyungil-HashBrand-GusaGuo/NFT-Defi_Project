@@ -1,11 +1,8 @@
-import React, { useState, useEffect, useRef } from 'react'
+import React, { useState, useEffect } from 'react'
 import './GameMainPage.css'
 import { useNavigate } from 'react-router-dom'
 import { Game1, Game2, Game3 } from '../images'
 import { GoldCrown } from '../images'
-import { white6 } from '../images'
-import { white4 } from '../images'
-import { white2 } from '../images'
 import { useDispatch, useSelector } from 'react-redux'
 import { gameViewAction } from '../redux/actions/gameViewAction'
 import { rewardEditionGetAction } from '../redux/actions/rewardEditionGetAction'
@@ -165,8 +162,7 @@ const GameMainPage = () => {
                       <img src={Game3}></img>
                     </div>
                     <div className='gameStartBtn'>
-                        <button onClick={changeSwapModal} className="learn-more">Modal</button>
-                        <button onClick={goToBlackJackGame} className="learn-more">Black</button>
+                        <button onClick={changeSwapModal} className="learn-more">Start</button>
                     </div>
                 </div>
             </div>
