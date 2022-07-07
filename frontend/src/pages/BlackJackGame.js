@@ -21,6 +21,7 @@ import StarterCard from '../components/GamePage/BlackJackGame/Card/StarterCard';
 import Chip from '../components/GamePage/BlackJackGame/Buttons/Chip';
 import { BlackGameOverModal } from '../components/index'
 import {BlackJackGameSetModal} from '../components/index'
+import { stakingViewAction } from '../redux/actions/stakingViewAction'
 import {white1} from '../images'
 
 import 'tachyons';
@@ -64,6 +65,9 @@ const BlackJackGame = () => {
       const [gameSetModal, setGameSetModal] = useState(false);
       const [turns, setTurns] = useState(0);
       const { total, bet } = useSelector((state) => state.blackjack);
+      const { getGameTokenBalance } = useSelector(state=> state.stakingView);
+      const {account} = useSelector(state => state.account);
+
       const dispatch = useDispatch();
     
       const Hit = () => {
@@ -195,6 +199,9 @@ const BlackJackGame = () => {
         );
       };
 
+      useEffect( () => {
+        dispatch(stakingViewAction.stakingViewAct(account))
+    },[account])
   
       // const GameSet = () => {
       //   if(turns === 1) {
@@ -307,8 +314,8 @@ const BlackJackGame = () => {
               }}
               className="pa1 ba b--black bg-yellow"
             >
-              <h2>{`Total: $${total}`}</h2>
-              <p>Turns:{turns}</p>
+              <h2>{`Token: $${getGameTokenBalance}`}</h2>
+              {/* <p>Turns:{turns}</p> */}
             </div>
           </div>
         </div>
