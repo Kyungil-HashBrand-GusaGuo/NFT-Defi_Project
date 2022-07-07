@@ -11,6 +11,7 @@ import { gameViewAction } from '../redux/actions/gameViewAction'
 import { rewardEditionGetAction } from '../redux/actions/rewardEditionGetAction'
 import { Timer } from '../components'
 import {SelectGameNftModal} from '../components/index'
+import {MainLeftZol, MainRightZol} from '../images/index'
 
 const GameMainPage = () => {
 
@@ -47,9 +48,13 @@ const GameMainPage = () => {
         <div className='cardGameTitleContainer'>
         <h2>Zolaman Game</h2>
         </div>
+        
         {
           airdropReward !== null ?
             <div className='nftRankContainer'>
+              <div className='leftZolImgContainer'>
+                <img src={MainLeftZol}></img>
+              </div>
               <div>
                 <span>2위</span>
                 <img src={GoldCrown} className="crownIcon"></img>
@@ -70,6 +75,9 @@ const GameMainPage = () => {
                 <div className='rankImgContainer'>
                   <img src={"https://sean95.s3.ap-northeast-2.amazonaws.com/raw/" + `${airdropReward[2]}` + ".png"}></img>
                 </div>
+              </div>
+              <div className='rightZolImgContainer'>
+                <img src={MainRightZol}></img>
               </div>
             </div>
           : null
