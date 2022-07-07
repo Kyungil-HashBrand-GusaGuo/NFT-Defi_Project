@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-import React, { useEffect,useState } from 'react';
-=======
 import React, { useEffect, useState } from 'react';
->>>>>>> d074647bf89fe37f606dd4b576561a6b5907d60a
 import {
   Suits,
   Ranks,
@@ -194,7 +190,6 @@ const BlackJackGame = () => {
         );
       };
 
-<<<<<<< HEAD
     //   const GameTurn = () => {
     //   }
       const GameSet = () => {
@@ -209,31 +204,13 @@ const BlackJackGame = () => {
       )
     //   console.log(GameOver,"sdfdsfsdf");
     // console.log("게임턴",GameTurn);
-=======
-
-      // const GameOver = () => {
-      //     setGameOverModal(true)
-      // }
-      
-      // useEffect( () => {
-      //   if(turns == 2){
-      //     console.log("2번째턴")
-      //     GameOver();
-      //   }
-      // },[turns])
-
->>>>>>> d074647bf89fe37f606dd4b576561a6b5907d60a
 
 
   return (
     <div className='blackJackMainContainer'>
     <div>
-<<<<<<< HEAD
       {/* { gameOverModal ? <BlackGameOverModal/> : null } */}
       { gameSetModal ? <BlackJackGameSetModal/> : null }
-=======
-      { gameOverModal ? <BlackGameOverModal/> : null }
->>>>>>> d074647bf89fe37f606dd4b576561a6b5907d60a
       <div className="center">
         <img style={{ width: 300 }} alt="logo" src={logo} />
       </div>

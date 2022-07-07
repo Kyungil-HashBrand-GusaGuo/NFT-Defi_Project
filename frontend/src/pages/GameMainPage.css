@@ -15,6 +15,24 @@
 .nftRankContainer {
   display: flex;
   justify-content: center;
+  position: relative;
+}
+.leftZolImgContainer {
+  position: absolute;
+  left: 40px;
+}
+.leftZolImgContainer img {
+  width: 300px;
+  height: 300px;
+}
+.rightZolImgContainer {
+  position: absolute;
+  right: 40px;
+}
+
+.rightZolImgContainer img {
+  width: 300px;
+  height: 300px;
 }
 
 .crownIcon {
