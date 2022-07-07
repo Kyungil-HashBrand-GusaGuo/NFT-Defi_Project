@@ -28,6 +28,7 @@ import './BlackJackGame.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { addChip, betChip, takeChip } from '../redux/actions/BlackBetAction';
 import { useLocation } from 'react-router-dom';
+import { stakingViewAction } from '../redux/actions/stakingViewAction';
 
 const BlackJackGame = () => {
 
@@ -64,6 +65,8 @@ const BlackJackGame = () => {
       const [gameSetModal, setGameSetModal] = useState(false);
       const [turns, setTurns] = useState(0);
       const { total, bet } = useSelector((state) => state.blackjack);
+      const {account} = useSelector(state => state.account)
+      const {getGameTokenBalance } = useSelector(state => state.stakingView);
       const dispatch = useDispatch();
     
       const Hit = () => {
@@ -206,6 +209,10 @@ const BlackJackGame = () => {
             GameSet()
         }
       )
+
+      useEffect( () => {
+        dispatch(stakingViewAction.stakingViewAct(account))
+    },[account])
     //   console.log(GameOver,"sdfdsfsdf");
     // console.log("게임턴",GameTurn);
 
@@ -267,31 +274,31 @@ const BlackJackGame = () => {
               <div style={{ display: 'flex', flexDirection: 'column' }}>
                 <Chip
                   value={1}
-                  total={total}
+                  total={getGameTokenBalance}
                   addChip={pickChip}
                   imgSrc={ten}
                 />
                 <Chip
                   value={3}
-                  total={total}
+                  total={getGameTokenBalance}
                   addChip={pickChip}
                   imgSrc={quart}
                 />
                 <Chip
                   value={5}
-                  total={total}
+                  total={getGameTokenBalance}
                   addChip={pickChip}
                   imgSrc={half}
                 />
                 <Chip
                   value={10}
-                  total={total}
+                  total={getGameTokenBalance}
                   addChip={pickChip}
                   imgSrc={hundo}
                 />
                 <Chip
                   value={20}
-                  total={total}
+                  total={getGameTokenBalance}
                   addChip={pickChip}
                   imgSrc={onek}
                 />
@@ -307,8 +314,9 @@ const BlackJackGame = () => {
               }}
               className="pa1 ba b--black bg-yellow"
             >
-              <h2>{`Total: $${total}`}</h2>
-              <p>Turns:{turns}</p>
+              <h2>{`Token: $${getGameTokenBalance}`}</h2>
+              {/* <h2>Token:{getGameTokenBalance}</h2> */}
+              {/* <p>Turns:{turns}</p> */}
             </div>
           </div>
         </div>
