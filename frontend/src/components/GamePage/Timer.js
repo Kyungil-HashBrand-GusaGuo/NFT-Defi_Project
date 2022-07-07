@@ -40,6 +40,7 @@ const Timer = ({gamePointRank, airdropReward}) => {
       clearInterval(timer.current);
       setState({ day: 0, hours: 0, minutes: 0, seconds: 0 });
       dispatch(timerAction.timerAct(gamePointRank, airdropReward))
+      console.log(t)
     }
 
     useEffect(() => {
@@ -50,8 +51,9 @@ const Timer = ({gamePointRank, airdropReward}) => {
   return (
     <div>
         <span>민팅 까지 남은 시간</span><br />
+
         <span>
-            {state.day < 10 ? `0${state.day}` : state.day}D 
+            {state.day < 10 ? `0${state.day}` : state.day}
             &nbsp;{state.hours < 10 ? `0${state.hours}` : state.hours}h 
             &nbsp;{state.minutes < 10 ? `0${state.minutes}` : state.minutes}m
             &nbsp;{state.seconds < 10 ? `0${state.seconds}` : state.seconds}s
