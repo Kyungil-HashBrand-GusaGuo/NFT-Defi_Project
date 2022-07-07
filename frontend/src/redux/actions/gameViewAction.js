@@ -5,7 +5,6 @@ function gameViewAct(account) {
         try {
                 const getGamePointApi = await axios.get("http://localhost:9495/data/gameRank");
                 console.log("게임랭크 GET요청",getGamePointApi.data)
-                console.log("게임랭크 GET요청2",(getGamePointApi.data).isArray)
 
                 let rankAllArr = []
 

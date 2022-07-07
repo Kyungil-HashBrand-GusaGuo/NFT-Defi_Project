@@ -77,11 +77,11 @@ const GameMainPage = () => {
                 <img src={MainRightZol}></img>
               </div>
             </div>
-          : null
+          : <h3>AirDrop 준비중입니다..</h3>
         }
 
         <div className='gameTimerContainer'>
-          <Timer gamePointRank={gamePointRank} airdropReward={airdropReward}/>
+          <Timer/>
         </div>
 
         <div className='gameScoreTable'>

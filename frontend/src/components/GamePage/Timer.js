@@ -1,14 +1,14 @@
 import React, { useState, useEffect, useRef } from 'react'
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { timerAction } from '../../redux/actions/timerAction';
 
-const Timer = ({gamePointRank, airdropReward}) => {
+const Timer = () => {
 
     const dispatch = useDispatch()
     let deadline = useRef(); 
     let timer = useRef(null); 
     
-    let deadlineDate = new Date('July 14, 2022 16:43:30').getTime();
+    let deadlineDate = new Date('July 8, 2022 19:19:00').getTime();
     let now = new Date().getTime();
     let t = deadlineDate - now;
     let day = Math.floor((t % (1000 * 60 * 60 * 24 * 365)) / (1000 * 60 * 60 * 24));
@@ -17,8 +17,10 @@ const Timer = ({gamePointRank, airdropReward}) => {
     let seconds = Math.floor((t % (1000 * 60)) / 1000);
     
     const [state, setState] = useState({ day, hours, minutes, seconds});
+    const { gamePointRank, airdropReward } = useSelector(state => state.game)
 
     const count = () => {
+
       now = new Date().getTime();
       t = deadline - now;
       day = Math.floor((t % (1000 * 60 * 60 * 24 * 365)) / (1000 * 60 * 60 * 24));
@@ -27,12 +29,11 @@ const Timer = ({gamePointRank, airdropReward}) => {
       seconds = Math.floor((t % (1000 * 60)) / 1000);
 
       setState({ day, hours, minutes, seconds });
+      // console.log("찍히나", gamePointRank)
+      // console.log("찍히나2", airdropReward)
 
       if (t < -700 && t > -1500) {
-        clearInterval(timer);
-        setState({ day: 0, hours: 0, minutes: 0, seconds: 0 });
-        console.log("t", t)
-        dispatch(timerAction.timerAct(gamePointRank, airdropReward))
+        endTimer()    
       } 
     }
 
@@ -43,9 +44,11 @@ const Timer = ({gamePointRank, airdropReward}) => {
     }
 
     useEffect(() => {
-      deadline = new Date('July 14, 2022 16:43:30').getTime();
-      timer.current = setInterval(count, 1000);  
-    },[])
+      if(gamePointRank.length && airdropReward.length){
+        deadline = new Date('July 8, 2022 19:19:00').getTime();
+        timer.current = setInterval(count, 1000);
+      }     
+    },[gamePointRank.length , airdropReward.length])
 
   return (
     <div>
