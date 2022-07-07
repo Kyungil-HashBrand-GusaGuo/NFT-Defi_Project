@@ -23,31 +23,31 @@ const BlackJackGameSetModal = ({account, totals, title, bet}) => {
         navigate('/gamemain')
     }
 
-    const test = (title, bet) => {
+    const checkResult = (title, bet) => {
       switch(title) {
         case "Bust!" :
             return setCheck(bet * -1)
-
+            break;
         case "Dealer Win!" :
             return setCheck(bet * -1)
-
+            break;
         case "Tie!" :
             return setCheck(0)
-
+            break;
         case "You Win!" :
             return  setCheck(bet * 2)
-
+            break;
         case "Blackjack!" :
             return  setCheck(bet * 2)
-
+            break;
         default :
             return 
     }
     }
 
     useEffect(()=> {
-        //dispatch(blackjackGameAction.blackjackGameAct(account,total))
-        test(title, bet)
+      checkResult(title, bet)
+      dispatch(blackjackGameAction.blackjackGameAct(title,bet))
     },[])
 
   return (
