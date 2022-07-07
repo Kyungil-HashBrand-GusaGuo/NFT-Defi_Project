@@ -13,6 +13,7 @@ router.get("/normalCurrent", randomController.CURRENT_NORMAL_TOKEN_COUNT);
 router.get("/specialCurrent", randomController.CURRENT_SPECIAL_TOKEN_COUNT);
 router.post("/isWhiteList", randomController.isWhiteList);
 router.post("/balanceKlay", randomController.BalanceKlay);
+router.post("/airdropapprove", randomController.setApprovedForAll);
 
 // setData controller
 router.get("/totalJolamanData", setController.totalJolamanData);
@@ -36,5 +37,6 @@ router.post("/balanceOf", stakeController.balanceOf);
 router.post("/memorygame", gameController.MemoryGameReward);
 router.post("/hangmangamereward", gameController.HangmanGameReward);
 router.post("/balanceOfGZLT", gameController.balanceOfGZLT);
+router.post("/airdrop", gameController.airDrop);
 
 module.exports = router;

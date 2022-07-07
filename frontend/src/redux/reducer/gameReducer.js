@@ -1,7 +1,10 @@
 let initialState = {
     clearHangmanGame : false,
     hangmanRewardGZLT : null,
-    hangmanRewardGP : null
+    hangmanRewardGP : null,
+    gamePointRank : null,
+    setAirdropRewardSuccess : false,
+    airdropReward : null
 }
 
 function gameReducer(state=initialState,action) {
@@ -15,6 +18,21 @@ function gameReducer(state=initialState,action) {
             return {...state, 
                 hangmanRewardGZLT : payload.hangmanRewardGZLT,
                 hangmanRewardGP : payload.hangmanRewardGP
+            }
+
+        case "GET_GAMEPOINT_RANK" :
+            return {...state, 
+                gamePointRank : payload.gamePointRank,
+            }
+
+        case "SET_AIRDROP_REWARD_SUCCESS" :
+            return {...state, 
+                setAirdropRewardSuccess : payload.setAirdropRewardSuccess,
+            }
+
+        case "GET_AIRDROP_REWARD" :
+            return {...state, 
+                airdropReward : payload.airdropReward,
             }
 
         default :

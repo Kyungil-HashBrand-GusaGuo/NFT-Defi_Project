@@ -16,11 +16,9 @@ import 'slick-carousel/slick/slick-theme.css';
 import MagicSliderDots from 'react-magic-slider-dots';
 import 'react-magic-slider-dots/dist/magic-dots.css';
 
-
 const StakingPage = () => {
 
   const settings = {
-    
       dots: true,
       infinite: false,
       speed: 200,
@@ -85,13 +83,6 @@ const StakingPage = () => {
       console.log("Non스테이팅 배열확인", unStakeArr)
     }
 
-    const unStakeAll = () => {
-      for(let i = 0; i < myNftList.length; i++){
-        unStakeArr.push(myNftList[i])
-      }
-      console.log("Non스테이팅 전체선택 배열확인", unStakeArr)
-    }
-
     const comStake = (id) => {
       if(comStakeArr.includes(id)){
         for(let i = 0; i < comStakeArr.length; i++) {
@@ -103,13 +94,6 @@ const StakingPage = () => {
         comStakeArr.push(id)
       }
       console.log("스테이킹 배열확인", comStakeArr)
-    }
-
-    const comStakeAll = () => {
-      for(let i = 0; i < stakingNftString.length; i++){
-        comStakeArr.push(stakingNftString[i])
-      }
-      console.log("스테이팅 전체선택 배열확인", comStakeArr)
     }
 
     const checkingNft = (e) => {
@@ -191,7 +175,7 @@ const StakingPage = () => {
               <div className='unStakingBoxSection'>
                 <div className='unStakingBoxTitle'>
                   <h2>
-                    UnStake NFT  <button onClick={unStakeAll}>All Select</button>
+                    UnStake NFT
                   </h2>
                   <span className='unStakeTxt'>
                     Do note that only NFTs that have been staked for afull 24 hours can enjoy the current day's ZLT rebate
@@ -201,23 +185,23 @@ const StakingPage = () => {
                 {
                   myNftList !== '' ?
                 <Slider className='firstSlider' {...settings} >
-                {
-                  myNftList.map((item, index)=> {
-                  return<div className='unStakingCardContainer'  key={index}>
-                    
-                      <div className='unStakingImgCard'
-                        style={{
-                          backgroundImage: 
-                            "url(https://sean95.s3.ap-northeast-2.amazonaws.com/raw/" + 
-                            `${item}` + 
-                            ".png)"
-                        }}>
-                        <input type='checkbox' className='unStakingCheckBox' />
-                        <label className='unStakingCheckBoxCircle' onClick={(e)=>{unStake(item); checkingNft(e.target.parentNode.children[0]);}}></label>
+                  {
+                    myNftList.map((item, index)=> {
+                    return<><div className='unStakingCardContainer'  key={index}>
+                      
+                        <div className='unStakingImgCard'
+                          style={{
+                            backgroundImage: 
+                              "url(https://sean95.s3.ap-northeast-2.amazonaws.com/raw/" + 
+                              `${item}` + 
+                              ".png)"
+                          }}>
+                          <input type='checkbox' className='unStakingCheckBox' />
+                          <label className='unStakingCheckBoxCircle' onClick={(e)=>{unStake(item); checkingNft(e.target.parentNode.children[0]);}}></label>
+                        </div>
                       </div>
-                    </div>
-                  })
-                }
+                      </>})
+                  }
                   </Slider>
                     : null
                 }   
@@ -236,30 +220,30 @@ const StakingPage = () => {
               <div className='comStakingBoxSection'>
                 <div className='comStakingBoxTitle'>
                   <h2>
-                    Staking NFT <button onClick={comStakeAll}>All Select</button>
+                    Staking NFT
                   </h2>
                 </div>
                 <div className='comStakingCardMainContainer'>
                 {
                   stakingNftString !== '' ? 
-                <Slider className='firstSlider' {...settings} >
-                {
-                  stakingNftString.map((item, index)=> {
-                  return<div className='comStakingCardContainer'  key={index}>
+                <Slider className='firstSlider' {...settings} >                 
+                  {
+                    stakingNftString.map((item, index)=> {
+                    return<div className='comStakingCardContainer'  key={index}>
 
-                      <div className='comStakingImgCard'
-                        style={{
-                          backgroundImage: 
-                            "url(https://sean95.s3.ap-northeast-2.amazonaws.com/raw/" + 
-                            `${item}` + 
-                            ".png)"
-                        }}>
-                        <input type='checkbox' className='unStakingCheckBox' />
-                        <label className='unStakingCheckBoxCircle' onClick={(e)=>{comStake(item); checkingNft(e.target.parentNode.children[0]);}}></label>
+                        <div className='comStakingImgCard'
+                          style={{
+                            backgroundImage: 
+                              "url(https://sean95.s3.ap-northeast-2.amazonaws.com/raw/" + 
+                              `${item}` + 
+                              ".png)"
+                          }}>
+                          <input type='checkbox' className='unStakingCheckBox' />
+                          <label className='unStakingCheckBoxCircle' onClick={(e)=>{comStake(item); checkingNft(e.target.parentNode.children[0]);}}></label>
+                        </div>
                       </div>
-                    </div>
-                  })
-                }
+                    })
+                  }
                   </Slider>
                     : null
                 }   

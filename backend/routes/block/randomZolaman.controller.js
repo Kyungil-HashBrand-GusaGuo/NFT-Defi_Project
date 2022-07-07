@@ -3,7 +3,13 @@ const {
   RandomJolamanContract,
   MINT_CONTRACT_ADDRESS,
   caver,
+  adminAccount
 } = require("../../contracts/randomZolaman");
+
+const {
+  GAME_CONTRACT_ADDRESS,
+  GameContract
+} = require("../../contracts/game");
 
 // 화이트리스트 체크
 const isWhiteList = async (req, res) => {
@@ -56,6 +62,15 @@ const BalanceKlay = async (req, res) => {
   res.json(result);
 };
 
+// airdrop시 자동 권한 설정 함수
+
+const setApprovedForAll = async (req, res) => {
+  const result = await RandomJolamanContract.methods
+    .setApprovalForAll(GAME_CONTRACT_ADDRESS, true)
+    .send({from:adminAccount.address, gas : 3000000});
+  res.json(result);
+};
+
 module.exports = {
   isWhiteList,
   MAX_NORMAL_TOKEN_COUNT,
@@ -63,4 +78,5 @@ module.exports = {
   CURRENT_NORMAL_TOKEN_COUNT,
   CURRENT_SPECIAL_TOKEN_COUNT,
   BalanceKlay,
+  setApprovedForAll
 };

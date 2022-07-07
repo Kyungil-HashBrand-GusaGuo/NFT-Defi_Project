@@ -14,7 +14,7 @@ const Buttons = ({
   Result,
   Bet,
 }) => {
-  const { total } = useSelector((state) => state.setChips);
+  const { total } = useSelector((state) => state.blackjack);
   const dispatch = useDispatch();
   switch (gameState) {
     case GAME:

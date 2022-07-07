@@ -1,0 +1,28 @@
+import axios from "axios"; /* backend */
+import api from "../api"; /* contracts */
+
+function blackjackGameAct(account, total) {
+    
+    return async (dispatch) => {
+        try {
+            console.log("계정확인",account)
+            console.log("total양 확인",total)
+            const response = await api.post("/blackjackgamereward", {account, total});
+
+            if(response.status) {
+                dispatch({
+                    type: "CLEAR_BLACKJACK_GAME",
+                    payload: { clearBlackJackGame: true}
+                })
+                if(total) {
+                    
+                }
+            }
+            
+        } catch (error) {
+            console.log(error);
+        }
+    }   
+}
+
+export const blackjackGameAction = {blackjackGameAct}
