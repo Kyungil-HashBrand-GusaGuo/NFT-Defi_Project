@@ -7,5 +7,6 @@ router.post("/setrewardedition", dataController.setRewardEdition);
 
 router.get("/gameRank", dataController.gameRank);
 router.get("/getrewardedition", dataController.getRewardEdition);
+router.get("/reset", dataController.reset);
 
 module.exports = router;
