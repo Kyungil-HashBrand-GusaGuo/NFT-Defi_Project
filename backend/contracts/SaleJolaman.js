@@ -4,25 +4,23 @@ const config = {
   rpcURL: "https://api.baobab.klaytn.net:8651",
 };
 const caver = new Caver(config.rpcURL);
+
 const SALE_CONTRACT_ADDRESS = 
-"0x4Fc4f41a815f5AE2D5bb517D23272367D24f3ae1";
+"0xe43b6419457D17f0fD02309d6eB16eb0fC763Ec7";
 
 const SALE_CONTRACT_ABI = [
 	{
+		"anonymous": false,
 		"inputs": [
 			{
-				"internalType": "address",
-				"name": "_setdata",
-				"type": "address"
-			},
-			{
-				"internalType": "contract IERC721",
-				"name": "_randomJolaman",
-				"type": "address"
+				"indexed": false,
+				"internalType": "uint8",
+				"name": "version",
+				"type": "uint8"
 			}
 		],
-		"stateMutability": "nonpayable",
-		"type": "constructor"
+		"name": "Initialized",
+		"type": "event"
 	},
 	{
 		"inputs": [],
@@ -97,6 +95,24 @@ const SALE_CONTRACT_ABI = [
 			}
 		],
 		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "_setdata",
+				"type": "address"
+			},
+			{
+				"internalType": "contract IERC721",
+				"name": "_randomJolaman",
+				"type": "address"
+			}
+		],
+		"name": "initialize",
+		"outputs": [],
+		"stateMutability": "nonpayable",
 		"type": "function"
 	},
 	{
@@ -208,7 +224,7 @@ const SALE_CONTRACT_ABI = [
 		"name": "setdata",
 		"outputs": [
 			{
-				"internalType": "contract SetData",
+				"internalType": "contract setData",
 				"name": "",
 				"type": "address"
 			}
