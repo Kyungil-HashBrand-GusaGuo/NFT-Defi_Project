@@ -6,7 +6,7 @@ const config = {
 const caver = new Caver(config.rpcURL);
 
 const STAKING_CONTRACT_ADDRESS = 
-"0x1887616ba1767f00Bc6f5196Ef32745AB5B3DF78";
+"0x62fe0709dF8BaC70Caf064EDfDFccB8D8d794f8f";
 
 const STAKING_CONTRACT_ABI = [
 	{
