@@ -1,17 +1,17 @@
 .AllMintPageContainer {
     width: 100%;
     display: flex;
-    margin-top: 20px;
+    margin-top: 3.646vw;
 }
 .collectionTitleContainer {
-    padding-top: 150px;
+    padding-top: 200px;
     height: 4.167vw;
     display: flex;
     justify-content: center;
     align-items: center;
     transform:rotate(-3deg);
-    top: -2.083vw;
-    margin-bottom: 0.694vw;
+    /* top: -2.083vw; */
+    margin-bottom: 1.563vw;
 }
 
 .collectionTitleContainer h2{
@@ -26,11 +26,11 @@
 }
 
 
-div.style-five {
+/* div.style-five {
     height: 80px;
     background-size: 80px 75px;
     margin-left: 60px;
-    }
+    } */
 
 hr.style-five {
     border-radius: 20px;

@@ -39,7 +39,7 @@ const SellPage = () => {
     }
 
     const callSellNft = async() => {
-      const response = await api.get("/getOnSaleJolaman");
+      const response = await api.get("/block/getOnSaleJolaman");
       const mintJSON = await pinataApi.get(`/${edition}.json`)
       let state = response.data[0].includes(edition)
       // console.log("민트데이터",mintJSON)

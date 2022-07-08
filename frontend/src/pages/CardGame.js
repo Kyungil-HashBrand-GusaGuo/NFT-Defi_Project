@@ -4,7 +4,6 @@ import SingleCard from '../components/GamePage/CardGame/SingleCard';
 import './CardGame.css'
 import { useSelector } from 'react-redux'
 import api from "../redux/api";
-import axios from 'axios';
 import { GameSetModal, GameOverModal} from '../components/index' 
 
 const cardImages = [
@@ -97,14 +96,14 @@ function CardGame() {
       point = 3;
     }
     if(counts === 6) {
-      const response = await api.post("/memorygame", {account, result});
+      const response = await api.post("/block/memorygame", {account, result});
       // const response2 = await api.post("/memorygamepoint", {account, point})
       if(response.status) {
       //lert(`게임 승리! ${result} GZLT, ${point} GP 획득!`)
         setGameSetModalCheck(true)
         setGzlt(result);
         setGamePoint(point)
-        const postCardGamePoint = await axios.post("http://localhost:9495/data/player", {account, point})
+        const postCardGamePoint = await api.post("/data/player", {account, point})
         console.log("카드게임 POST요청", postCardGamePoint)
       }
       console.log("게임토큰", result)

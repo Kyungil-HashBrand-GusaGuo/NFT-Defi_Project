@@ -4,13 +4,13 @@ function stakingViewAct(account) {
     return async (dispatch) => {
         try {
             if(account !== ''){
-                const myNftListApi = api.post("/getExceptSellOwnedJolamanType", { account });
-                const stakingNftApi = api.post("/stakedJolaman", { account });
-                const stakingRewardApi = api.post("/updateReward", { account });
-                const getStakingRewardApi = api.post("/stakers", { account });
-                const getKlayBalanceApi = api.post("/balanceKlay", { account });
-                const getTokenBalanceApi = api.post("/balanceOf", { account });
-                const getGameTokenBalanceApi = api.post("/balanceOfGZLT", {account})               
+                const myNftListApi = api.post("/block/getExceptSellOwnedJolamanType", { account });
+                const stakingNftApi = api.post("/block/stakedJolaman", { account });
+                const stakingRewardApi = api.post("/block/updateReward", { account });
+                const getStakingRewardApi = api.post("/block/stakers", { account });
+                const getKlayBalanceApi = api.post("/block/balanceKlay", { account });
+                const getTokenBalanceApi = api.post("/block/balanceOf", { account });
+                const getGameTokenBalanceApi = api.post("/block/balanceOfGZLT", {account})               
 
                 let [ myNftList, stakingNft, stakingReward, getStakingReward, getKlayBalance, getTokenBalance, getGameTokenBalance ] = await Promise.all([myNftListApi, stakingNftApi, stakingRewardApi, getStakingRewardApi, getKlayBalanceApi, getTokenBalanceApi, getGameTokenBalanceApi ])
                 

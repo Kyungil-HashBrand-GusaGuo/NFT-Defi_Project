@@ -1,4 +1,3 @@
-import axios from "axios"; /* backend */
 import api from "../api"; /* contracts */
 
 function blackjackGameAct(title, bet) {
@@ -8,7 +7,7 @@ function blackjackGameAct(title, bet) {
         try {
             // console.log("계정확인",account)
             // console.log("total양 확인",total)
-            // const response = await api.post("/blackjackgamereward", {account, total});
+            // const response = await api.post("/block/blackjackgamereward", {account, total});
 
             // if(response.status) {
             //     dispatch({

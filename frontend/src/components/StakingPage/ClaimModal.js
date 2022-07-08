@@ -25,7 +25,6 @@ const ClaimModal = ({account}) => {
             <div>
               <h2 className='stakingMintingComMessage'>Claim Success!!!</h2>
               <button className='stakingModalEndButton' onClick={goToStake}>Go to Staking</button> 
-              <button className='stakingModalEndButton'></button> 
             </div>
             : <h2 className='stakingMintingMessage'> Claim Loading...</h2> }
           </div>

@@ -50,7 +50,8 @@ function Navbar() {
             </div>
             <div className='rightSide'>
                 <div className='links' id={showLinks ? "hidden" : ""}>
-                    <Link to="/pre-minting">Pre-Minting</Link>
+                    {/* <Link to="/pre-minting">Pre-Minting</Link> */}
+                    <a href='/pre-minting'>Pre-Minting</a>
                     <Link to="/all-minting">Collection</Link>
                     <Link to="/mypage">MyPage</Link>
                     <Link to="/market">Market</Link>

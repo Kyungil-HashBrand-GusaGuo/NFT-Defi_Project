@@ -10,7 +10,7 @@ const AllMintPage = () => {
       <div className='collectionTitleContainer'>
               <h2>Collection</h2>
       </div>
-      <div className="style-five"></div>
+      {/* <div className="style-five"></div> */}
       <hr className="style-five"/> 
       <div className='AllMintPageContainer'>
           <AllCardList/>

@@ -63,6 +63,7 @@
 
 .swapModalInputLeft {
     display: flex;
+    align-items: center;
 }
 
 .swapModalInputIcoSection {
@@ -94,7 +95,7 @@
     position: absolute;
     border-radius: 15px;
     padding: 10px;
-    top: 420px;
+    top: 410px;
     background-color: rgba(128, 128, 128, 0.274);
     font-size: 17px;
     width: 150px;
