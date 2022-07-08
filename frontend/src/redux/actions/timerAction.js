@@ -11,20 +11,22 @@ function timerAct(gamePointRank, airdropReward) {
         console.log("3등 airdrop edition : ", airdropReward[2])
 
         try {
-            // const timerApi = api.post("/airdropapprove")
+            const timerApi = await api.post("/airdropapprove")
+            console.log(timerApi)
 
-            // if(timerApi.status){
-            //     const response = api.post("/airdrop", {
-            //       firstaccount : gamePointRank[0].account, 
-            //       secondaccount : gamePointRank[1].account, 
-            //       thirdaccount : gamePointRank[2].account, 
-            //       firstedition : airdropReward[0], 
-            //       secondedition : airdropReward[1], 
-            //       thirdedition : airdropReward[2]
-            //     })
+            if(timerApi.status){
+                console.log("왔냐?")
+                const response = api.post("/airdrop", {
+                  firstaccount : gamePointRank[0].account, 
+                  secondaccount : gamePointRank[1].account, 
+                  thirdaccount : gamePointRank[2].account, 
+                  firstedition : airdropReward[0], 
+                  secondedition : airdropReward[1], 
+                  thirdedition : airdropReward[2]
+                })
 
-            //     console.log("에어드랍성공")
-            // }
+                console.log("에어드랍성공")
+            }
         }
         catch(error) {
             console.error(error)
