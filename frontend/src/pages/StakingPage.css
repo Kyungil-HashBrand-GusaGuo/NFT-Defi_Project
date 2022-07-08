@@ -1,12 +1,12 @@
 .stakingTitleContainer {
-    padding-top: 150.005px;
+    padding-top: 200px;
     height: 4.167vw;
     display: flex;
     justify-content: center;
     align-items: center;
     transform:rotate(-3deg);
-    top: -2.083vw;
-    margin-bottom: 0.694vw;
+    /* top: -2.083vw; */
+    margin-bottom: 1.563vw;
 }
 
 .stakingTitleContainer h2{
@@ -21,11 +21,11 @@
 }
 
 
-div.style-five {
+/* div.style-five {
     height: 80px;
     background-size: 5.556vw 5.208vw;
     margin-left: 4.167vw;
-    }
+    } */
     hr.style-five
     {
     border-radius: 1.389vw;
@@ -43,6 +43,7 @@ div.style-five {
 
 .stakingPageContainer {
     height: 100%;
+    margin-top: 35px;
     /* padding: 50px 100px 100px 100px; */
     /* background-color: red; */
 }
