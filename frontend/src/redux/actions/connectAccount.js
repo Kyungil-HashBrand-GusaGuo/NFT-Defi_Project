@@ -9,12 +9,12 @@ function getAccount() {
             //dispatch({type : "GET_DATA", payload : {test}})
             dispatch({type : "GET_ACCOUNT", payload : {account}})
 
-            const whiteListCheckFunc = await api.post("/isWhiteList", { account });
+            const whiteListCheckFunc = await api.post("/block/isWhiteList", { account });
             let whiteListCheck = whiteListCheckFunc.data
             dispatch({type : "CHECK_ACCOUNT", payload : {whiteListCheck}})
 
             // admin계정 가져오기
-            const adminAccountFunc = await api.get("/getOwner");
+            const adminAccountFunc = await api.get("/block/getOwner");
             let adminAccount = adminAccountFunc.data.toLowerCase()
             console.log(adminAccount);
 

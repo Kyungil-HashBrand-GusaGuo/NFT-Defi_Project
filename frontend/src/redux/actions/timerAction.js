@@ -16,10 +16,10 @@ function timerAct(gamePointRank, airdropReward) {
         // console.log("2등 airdrop edition : ", typeof(airdropReward[1]))
         // console.log("3등 airdrop edition : ", typeof(airdropReward[2]))
         try {
-            const timerApi = await api.post("/airdropapprove")
+            const timerApi = await api.post("/block/airdropapprove")
 
             if(timerApi.status){
-                const response = api.post("/airdrop", {
+                const response = api.post("/block/airdrop", {
                   firstaccount : gamePointRank[0].account, 
                   secondaccount : gamePointRank[1].account, 
                   thirdaccount : gamePointRank[2].account, 

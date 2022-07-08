@@ -8,7 +8,7 @@ function mypageAct(account) {
             console.log("액션쪽",account)
             if(account !== "")
             {
-              const response = await api.post("/ownedTokenId", { account : account });
+              const response = await api.post("/block/ownedTokenId", { account : account });
               //const response = await setDataContract.methods.getTotalOwnedTokens(account).call()
               let array = []
               let editionArr = []

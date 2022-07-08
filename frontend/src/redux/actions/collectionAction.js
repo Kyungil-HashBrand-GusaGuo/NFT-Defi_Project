@@ -6,7 +6,7 @@ function collectionAct() {
     return async (dispatch) => {
         try {
 
-          const response = await api.get("/totalJolamanData")
+          const response = await api.get("/block/totalJolamanData")
           
           let array = []
           let allMintingData = response.data

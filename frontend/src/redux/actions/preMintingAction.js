@@ -1,5 +1,4 @@
 import { caver, RandomJolamanContract, MINT_CONTRACT_ADDRESS, setDataContract } from "../../caverConfig";
-import axios from "axios";
 import pinataApi from "../pinataApi";
 
 function preMintAction(account) {
