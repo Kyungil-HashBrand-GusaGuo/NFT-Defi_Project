@@ -4,7 +4,8 @@ let initialState = {
     hangmanRewardGP : null,
     gamePointRank : [],
     setAirdropRewardSuccess : false,
-    airdropReward : []
+    airdropReward : [],
+    airdropSuccess : false
 }
 
 function gameReducer(state=initialState,action) {
@@ -33,6 +34,11 @@ function gameReducer(state=initialState,action) {
         case "GET_AIRDROP_REWARD" :
             return {...state, 
                 airdropReward : payload.airdropReward,
+            }
+
+        case "SUCCESS_AIRDROP" :
+            return {...state, 
+                airdropSuccess : payload.airdropSuccess,
             }
 
         default :

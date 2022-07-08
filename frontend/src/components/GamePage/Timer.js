@@ -1,6 +1,8 @@
 import React, { useState, useEffect, useRef } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { timerAction } from '../../redux/actions/timerAction';
+import { timerGetAction } from '../../redux/actions/timerGetAction';
+import { timerPostAction } from '../../redux/actions/timerPostAction';
 
 const Timer = () => {
 
@@ -8,7 +10,7 @@ const Timer = () => {
     let deadline = useRef(); 
     let timer = useRef(null); 
     
-    let deadlineDate = new Date('July 8, 2022 19:19:00').getTime();
+    let deadlineDate = new Date('July 18, 2022 19:19:00').getTime();
     let now = new Date().getTime();
     let t = deadlineDate - now;
     let day = Math.floor((t % (1000 * 60 * 60 * 24 * 365)) / (1000 * 60 * 60 * 24));
@@ -17,7 +19,7 @@ const Timer = () => {
     let seconds = Math.floor((t % (1000 * 60)) / 1000);
     
     const [state, setState] = useState({ day, hours, minutes, seconds});
-    const { gamePointRank, airdropReward } = useSelector(state => state.game)
+    const { gamePointRank, airdropReward, airdropSuccess } = useSelector(state => state.game)
 
     const count = () => {
 
@@ -41,15 +43,23 @@ const Timer = () => {
       clearInterval(timer.current);
       setState({ day: 0, hours: 0, minutes: 0, seconds: 0 });
       dispatch(timerAction.timerAct(gamePointRank, airdropReward))
+      dispatch(timerGetAction.timerGetAct())
+      dispatch(timerPostAction.timerPostAct())
       console.log(t)
     }
 
     useEffect(() => {
       if(gamePointRank.length && airdropReward.length){
-        deadline = new Date('July 8, 2022 19:19:00').getTime();
+        deadline = new Date('July 18, 2022 19:19:00').getTime();
         timer.current = setInterval(count, 1000);
       }     
     },[gamePointRank.length , airdropReward.length])
+
+    useEffect(() => {
+      if(airdropSuccess){
+        alert("NFT AirDrop이 완료되었습니다!", window.location.reload())
+      }
+    },[airdropSuccess])
 
   return (
     <div>
