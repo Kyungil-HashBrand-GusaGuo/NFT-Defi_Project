@@ -8,8 +8,9 @@ const MintingModal = ({premintdata, whitemintdata}) => {
 
     const navigate = useNavigate();
     const [state, setState] = useState();
-    
+
     const goToMypage = () => {
+      //dispatch({type: "CHANGE_MINTING_MODAL", payload : { mintModal : false }})
       navigate('/mypage')
     }
     
@@ -23,25 +24,25 @@ const MintingModal = ({premintdata, whitemintdata}) => {
     
 
   return (
-    <div className='overlay'>
-      <div className='modalContainer'>
-        {
-          state != null ?
-          <div className='mintingImageSection'
-            style={{backgroundImage:
-              "url(https://sean95.s3.ap-northeast-2.amazonaws.com/raw/" + state.edition + ".png)"
-            }}
-          > 
+      <div className='overlay'>
+        <div className='modalContainer'>
+          {
+            state != null ?
+            <div className='mintingImageSection'
+              style={{backgroundImage:
+                "url(https://sean95.s3.ap-northeast-2.amazonaws.com/raw/" + state.edition + ".png)"
+              }}
+            > 
+            </div>
+            : null
+          }
+          <div className='mintingInfoSection'>
+            { state != null ? <h2 className='mintingName'>{state.name}</h2> : null }  
+            <h3 className='mintingMessage'>Minting Success !!</h3>
+            <button className='modalEndButton' onClick={goToMypage}>Go to Mypage</button>
           </div>
-          : null
-        }
-        <div className='mintingInfoSection'>
-          { state != null ? <h2 className='mintingName'>{state.name}</h2> : null }  
-          <h3 className='mintingMessage'>Minting Success !!</h3>
-          <button className='modalEndButton' onClick={goToMypage}>Go to Mypage</button>
         </div>
       </div>
-    </div>
   )
 }
 

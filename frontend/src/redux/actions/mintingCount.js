@@ -25,6 +25,8 @@ function mintCount() {
                     }
                 })
 
+                //dispatch({type: "CHANGE_MINTING_MODAL", payload : { mintModal : true }})
+
           } catch (error){
             console.error(error);
           }
