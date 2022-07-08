@@ -53,16 +53,14 @@ const Timer = () => {
 
   return (
     <div>
-        <span>민팅 까지 남은 시간</span><br />
-
+        <span>COUNT DOWN &nbsp;: </span>&nbsp;
         <span>
-            {state.day < 10 ? `0${state.day}` : state.day}
-            &nbsp;{state.hours < 10 ? `0${state.hours}` : state.hours}h 
-            &nbsp;{state.minutes < 10 ? `0${state.minutes}` : state.minutes}m
-            &nbsp;{state.seconds < 10 ? `0${state.seconds}` : state.seconds}s
+            {state.day < 10 ? `0${state.day}` : state.day}D
+            &nbsp;{state.hours < 10 ? `0${state.hours}` : state.hours}H 
+            &nbsp;{state.minutes < 10 ? `0${state.minutes}` : state.minutes}M
+            &nbsp;{state.seconds < 10 ? `0${state.seconds}` : state.seconds}S
         </span>
-        <br/>
-        <button onClick={()=>endTimer()}>강제종료</button>
+        <button onClick={()=>endTimer()}>AirDrop</button>
     </div>
   )
 }
