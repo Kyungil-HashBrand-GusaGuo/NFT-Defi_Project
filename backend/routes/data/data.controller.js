@@ -51,6 +51,7 @@ const getRewardEdition = async (req, res) => {
 };
 
 const reset = async (req, res) => {
+  console.log("success~?")
   await pool.query(`DELETE FROM gamePoint`);
   res.json("success");
 };
