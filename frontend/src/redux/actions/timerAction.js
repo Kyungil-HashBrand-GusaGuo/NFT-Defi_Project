@@ -16,7 +16,7 @@ function timerAct(gamePointRank, airdropReward) {
         console.log("1등 airdrop edition : ", typeof(airdropReward[0]))
         console.log("2등 airdrop edition : ", typeof(airdropReward[1]))
         console.log("3등 airdrop edition : ", typeof(airdropReward[2]))
-
+        let arr = []
         try {
             const timerApi = await api.post("/airdropapprove")
 
@@ -30,11 +30,10 @@ function timerAct(gamePointRank, airdropReward) {
                   thirdedition : airdropReward[2]
                 })
                 console.log("에어드랍 성공")
-                let arr = []
                 const setRewardApi = await axios.post("http://localhost:9495/data/setrewardedition", { editionNumber : arr})
                 const getDeleteRankingTable = await axios.get("http://localhost:9495/data/reset")
-                console.log("데이터삭제 완료")
             }
+            console.log("데이터삭제 완료")
         }
         catch(error) {
             console.error(error)

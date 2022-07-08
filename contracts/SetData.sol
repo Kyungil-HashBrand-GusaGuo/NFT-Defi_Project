@@ -51,9 +51,10 @@ contract SetData {
     // 보유 토큰 판매시 토큰 보유 배열에서 삭제
     function SellOwnedToken(address sellOwnerAddress, uint _JolamanType) external {
         for(uint i = 0; i < totalOwnedTokens[sellOwnerAddress].length; i++) {
-            if(totalOwnedTokens[sellOwnerAddress][i] == _JolamanType)
+            if(totalOwnedTokens[sellOwnerAddress][i] == _JolamanType) {
             totalOwnedTokens[sellOwnerAddress][i] = totalOwnedTokens[sellOwnerAddress][totalOwnedTokens[sellOwnerAddress].length - 1];
             totalOwnedTokens[sellOwnerAddress].pop();
+            }
         }
     }
 
