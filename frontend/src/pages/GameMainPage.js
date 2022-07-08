@@ -47,73 +47,73 @@ const GameMainPage = () => {
         </div>
         
         {
-          airdropReward !== null ?
+          airdropReward.length !== 1 ?
             <div className='nftRankContainer'>
-              <div className='leftZolImgContainer'>
+              {/* <div className='leftZolImgContainer'>
                 <img src={MainLeftZol}></img>
-              </div>
-              <div>
-                <span>2위</span>
-                <img src={GoldCrown} className="crownIcon"></img>
-                <div className='rankImgContainer'>
-                  <img src={"https://sean95.s3.ap-northeast-2.amazonaws.com/raw/" + `${airdropReward[1]}` + ".png"}></img>
+              </div> */}
+              <div className='airdropConatiner'>
+                <div className='gameRewardContainer'>
+                  <div>
+                    <span>2위</span>
+                    <img src={GoldCrown} className="crownIcon"></img>
+                    <div className='rankImgContainer'>
+                      <img src={"https://sean95.s3.ap-northeast-2.amazonaws.com/raw/" + `${airdropReward[1]}` + ".png"}></img>
+                    </div>
+                  </div>
+                  <div>
+                    <span>1위</span>
+                    <img src={GoldCrown} className="crownIcon"></img>
+                    <div className='rankImgContainer'>
+                      <img src={"https://sean95.s3.ap-northeast-2.amazonaws.com/raw/" + `${airdropReward[0]}` + ".png"}></img>
+                    </div>
+                  </div>
+                  <div>
+                    <span>3위</span>
+                    <img src={GoldCrown} className="crownIcon"></img>
+                    <div className='rankImgContainer'>
+                      <img src={"https://sean95.s3.ap-northeast-2.amazonaws.com/raw/" + `${airdropReward[2]}` + ".png"}></img>
+                    </div>
+                  </div>
+                </div>
+                  {/* <div className='rightZolImgContainer'>
+                    <img src={MainRightZol}></img>
+                  </div> */}
+                <div className='gameTimerContainer'>
+                  <Timer/>
                 </div>
               </div>
-              <div>
-                <span>1위</span>
-                <img src={GoldCrown} className="crownIcon"></img>
-                <div className='rankImgContainer'>
-                  <img src={"https://sean95.s3.ap-northeast-2.amazonaws.com/raw/" + `${airdropReward[0]}` + ".png"}></img>
-                </div>
-              </div>
-              <div>
-                <span>3위</span>
-                <img src={GoldCrown} className="crownIcon"></img>
-                <div className='rankImgContainer'>
-                  <img src={"https://sean95.s3.ap-northeast-2.amazonaws.com/raw/" + `${airdropReward[2]}` + ".png"}></img>
-                </div>
-              </div>
-              <div className='rightZolImgContainer'>
-                <img src={MainRightZol}></img>
+              <div className='gameScoreTable'>
+                <table>
+                  <thead>
+                    <tr>
+                      <th>Rank</th>
+                      <th>Account</th>
+                      <th>GamePoint</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {
+                      gamePointRank !== null ?
+                        gamePointRank.map((arr, index) => {
+                          return <tr key={index}>
+                            <td>{index + 1}</td>
+                            <td>{arr.account}</td>
+                            <td>{arr.point}</td>
+                          </tr>
+                        })
+                      : <tr>
+                          <td>asdf</td>
+                          <td>appendDots</td>
+                          <td></td>
+                        </tr>
+                    }
+                  </tbody>
+                </table>
               </div>
             </div>
-          : <h3>AirDrop 준비중입니다..</h3>
+          : <div className='alertAirdrop'><h1>AirDrop 준비중입니다..</h1></div>
         }
-
-        <div className='gameTimerContainer'>
-          <Timer/>
-        </div>
-
-        <div className='gameScoreTable'>
-          <table>
-            <thead>
-              <tr>
-                <th>Rank</th>
-                <th>Account</th>
-                <th>GamePoint</th>
-              </tr>
-            </thead>
-            <tbody>
-              {
-                gamePointRank !== null ?
-                  gamePointRank.map((arr, index) => {
-                    return <tr key={index}>
-                      <td>{index + 1}</td>
-                      <td>{arr.account}</td>
-                      <td>{arr.point}</td>
-                    </tr>
-                  })
-                : <tr>
-                    <td>asdf</td>
-                    <td>appendDots</td>
-                    <td></td>
-                  </tr>
-              }
-            </tbody>
-          </table>
-        </div>
-        <div className='anitest1'>
-        </div>
         <div className='gameSelectContainer'>
             <div className='gameSelectSection'>
                 <div className='gameBox1'>
