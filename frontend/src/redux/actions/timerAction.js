@@ -32,7 +32,7 @@ function timerAct(gamePointRank, airdropReward) {
                 console.log("에어드랍 성공")
                 let arr = []
                 const setRewardApi = await axios.post("http://localhost:9495/data/setrewardedition", { editionNumber : arr})
-                const getDeleteRankingTable = await axios.post("http://localhost:9495/data/reset")
+                const getDeleteRankingTable = await axios.get("http://localhost:9495/data/reset")
                 console.log("데이터삭제 완료")
             }
         }
