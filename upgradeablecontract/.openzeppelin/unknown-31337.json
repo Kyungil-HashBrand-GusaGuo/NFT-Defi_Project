@@ -1,0 +1,260 @@
+{
+  "manifestVersion": "3.2",
+  "admin": {
+    "address": "0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512",
+    "txHash": "0x3cff8a65721980f78591f5792688bc9b77bab7c4fad5dd9a0101db75bb74ce16"
+  },
+  "proxies": [
+    {
+      "address": "0x9fE46736679d2D9a65F0992F2272dE9f3c7fa6e0",
+      "txHash": "0x427aa671d793cf907cd9251b1d8769b60d55f0b602488b47df7af48e0904af21",
+      "kind": "transparent"
+    }
+  ],
+  "impls": {
+    "470542085fca52086437a36a4eae89a1065f351e7632894884ab7767677886c1": {
+      "address": "0x5FbDB2315678afecb367f032d93F642f64180aa3",
+      "txHash": "0xf8c52fedd2281ca1ffba2b9568a28c49b4b3dbc6fbb5a59a87658d80bf3f8014",
+      "layout": {
+        "storage": [
+          {
+            "label": "_owner",
+            "offset": 0,
+            "slot": "0",
+            "type": "t_address",
+            "contract": "setDataUpgrade",
+            "src": "contracts\\setdata.sol:9"
+          },
+          {
+            "label": "initialized",
+            "offset": 20,
+            "slot": "0",
+            "type": "t_bool",
+            "contract": "setDataUpgrade",
+            "src": "contracts\\setdata.sol:10"
+          },
+          {
+            "label": "tokenOwner",
+            "offset": 0,
+            "slot": "1",
+            "type": "t_mapping(t_uint256,t_address)",
+            "contract": "setDataUpgrade",
+            "src": "contracts\\setdata.sol:19"
+          },
+          {
+            "label": "totalOwnedTokens",
+            "offset": 0,
+            "slot": "2",
+            "type": "t_mapping(t_address,t_array(t_uint256)dyn_storage)",
+            "contract": "setDataUpgrade",
+            "src": "contracts\\setdata.sol:20"
+          },
+          {
+            "label": "totalJolamanData",
+            "offset": 0,
+            "slot": "3",
+            "type": "t_array(t_uint256)dyn_storage",
+            "contract": "setDataUpgrade",
+            "src": "contracts\\setdata.sol:23"
+          },
+          {
+            "label": "jolamanTokenTypeOfOwner",
+            "offset": 0,
+            "slot": "4",
+            "type": "t_mapping(t_uint256,t_address)",
+            "contract": "setDataUpgrade",
+            "src": "contracts\\setdata.sol:25"
+          },
+          {
+            "label": "typeToId",
+            "offset": 0,
+            "slot": "5",
+            "type": "t_mapping(t_uint256,t_uint256)",
+            "contract": "setDataUpgrade",
+            "src": "contracts\\setdata.sol:26"
+          },
+          {
+            "label": "SellingJol",
+            "offset": 0,
+            "slot": "6",
+            "type": "t_mapping(t_uint256,t_bool)",
+            "contract": "setDataUpgrade",
+            "src": "contracts\\setdata.sol:30"
+          },
+          {
+            "label": "StakedJolamanType",
+            "offset": 0,
+            "slot": "7",
+            "type": "t_mapping(t_uint256,t_bool)",
+            "contract": "setDataUpgrade",
+            "src": "contracts\\setdata.sol:35"
+          },
+          {
+            "label": "exceptSellOwnedJolamanType",
+            "offset": 0,
+            "slot": "8",
+            "type": "t_mapping(t_address,t_array(t_uint256)dyn_storage)",
+            "contract": "setDataUpgrade",
+            "src": "contracts\\setdata.sol:36"
+          }
+        ],
+        "types": {
+          "t_address": {
+            "label": "address",
+            "numberOfBytes": "20"
+          },
+          "t_array(t_uint256)dyn_storage": {
+            "label": "uint256[]",
+            "numberOfBytes": "32"
+          },
+          "t_bool": {
+            "label": "bool",
+            "numberOfBytes": "1"
+          },
+          "t_mapping(t_address,t_array(t_uint256)dyn_storage)": {
+            "label": "mapping(address => uint256[])",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_uint256,t_address)": {
+            "label": "mapping(uint256 => address)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_uint256,t_bool)": {
+            "label": "mapping(uint256 => bool)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_uint256,t_uint256)": {
+            "label": "mapping(uint256 => uint256)",
+            "numberOfBytes": "32"
+          },
+          "t_uint256": {
+            "label": "uint256",
+            "numberOfBytes": "32"
+          }
+        }
+      }
+    },
+    "aa849ede869402af450dd3b6964ce9f0e6a3d9559c3cfb28fcc185cda89b9c5a": {
+      "address": "0xDc64a140Aa3E981100a9becA4E685f962f0cF6C9",
+      "txHash": "0xcb2a7bf48e356e934ce3fe368641d30aa87882721014f26e977bd3c99959e1f4",
+      "layout": {
+        "storage": [
+          {
+            "label": "_owner",
+            "offset": 0,
+            "slot": "0",
+            "type": "t_address",
+            "contract": "setDataUpgradeV2",
+            "src": "contracts\\setdataV2.sol:9"
+          },
+          {
+            "label": "initialized",
+            "offset": 20,
+            "slot": "0",
+            "type": "t_bool",
+            "contract": "setDataUpgradeV2",
+            "src": "contracts\\setdataV2.sol:10"
+          },
+          {
+            "label": "tokenOwner",
+            "offset": 0,
+            "slot": "1",
+            "type": "t_mapping(t_uint256,t_address)",
+            "contract": "setDataUpgradeV2",
+            "src": "contracts\\setdataV2.sol:19"
+          },
+          {
+            "label": "totalOwnedTokens",
+            "offset": 0,
+            "slot": "2",
+            "type": "t_mapping(t_address,t_array(t_uint256)dyn_storage)",
+            "contract": "setDataUpgradeV2",
+            "src": "contracts\\setdataV2.sol:20"
+          },
+          {
+            "label": "totalJolamanData",
+            "offset": 0,
+            "slot": "3",
+            "type": "t_array(t_uint256)dyn_storage",
+            "contract": "setDataUpgradeV2",
+            "src": "contracts\\setdataV2.sol:22"
+          },
+          {
+            "label": "jolamanTokenTypeOfOwner",
+            "offset": 0,
+            "slot": "4",
+            "type": "t_mapping(t_uint256,t_address)",
+            "contract": "setDataUpgradeV2",
+            "src": "contracts\\setdataV2.sol:24"
+          },
+          {
+            "label": "typeToId",
+            "offset": 0,
+            "slot": "5",
+            "type": "t_mapping(t_uint256,t_uint256)",
+            "contract": "setDataUpgradeV2",
+            "src": "contracts\\setdataV2.sol:25"
+          },
+          {
+            "label": "SellingJol",
+            "offset": 0,
+            "slot": "6",
+            "type": "t_mapping(t_uint256,t_bool)",
+            "contract": "setDataUpgradeV2",
+            "src": "contracts\\setdataV2.sol:29"
+          },
+          {
+            "label": "StakedJolamanType",
+            "offset": 0,
+            "slot": "7",
+            "type": "t_mapping(t_uint256,t_bool)",
+            "contract": "setDataUpgradeV2",
+            "src": "contracts\\setdataV2.sol:34"
+          },
+          {
+            "label": "exceptSellOwnedJolamanType",
+            "offset": 0,
+            "slot": "8",
+            "type": "t_mapping(t_address,t_array(t_uint256)dyn_storage)",
+            "contract": "setDataUpgradeV2",
+            "src": "contracts\\setdataV2.sol:35"
+          }
+        ],
+        "types": {
+          "t_address": {
+            "label": "address",
+            "numberOfBytes": "20"
+          },
+          "t_array(t_uint256)dyn_storage": {
+            "label": "uint256[]",
+            "numberOfBytes": "32"
+          },
+          "t_bool": {
+            "label": "bool",
+            "numberOfBytes": "1"
+          },
+          "t_mapping(t_address,t_array(t_uint256)dyn_storage)": {
+            "label": "mapping(address => uint256[])",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_uint256,t_address)": {
+            "label": "mapping(uint256 => address)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_uint256,t_bool)": {
+            "label": "mapping(uint256 => bool)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_uint256,t_uint256)": {
+            "label": "mapping(uint256 => uint256)",
+            "numberOfBytes": "32"
+          },
+          "t_uint256": {
+            "label": "uint256",
+            "numberOfBytes": "32"
+          }
+        }
+      }
+    }
+  }
+}
