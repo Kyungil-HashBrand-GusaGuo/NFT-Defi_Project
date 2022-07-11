@@ -2556,7 +2556,7 @@
             "label": "randomJolaman",
             "offset": 2,
             "slot": "0",
-            "type": "t_contract(IERC721)3791",
+            "type": "t_contract(IERC721)3772",
             "contract": "SaleJolaman",
             "src": "contracts\\SaleJolaman.sol:13"
           },
@@ -2564,7 +2564,7 @@
             "label": "setdata",
             "offset": 0,
             "slot": "1",
-            "type": "t_contract(setData)7070",
+            "type": "t_contract(setData)7568",
             "contract": "SaleJolaman",
             "src": "contracts\\SaleJolaman.sol:14"
           },
@@ -2610,11 +2610,11 @@
             "label": "bool",
             "numberOfBytes": "1"
           },
-          "t_contract(IERC721)3791": {
+          "t_contract(IERC721)3772": {
             "label": "contract IERC721",
             "numberOfBytes": "20"
           },
-          "t_contract(setData)7070": {
+          "t_contract(setData)7568": {
             "label": "contract setData",
             "numberOfBytes": "20"
           },
