@@ -3,18 +3,21 @@ import { useNavigate } from 'react-router-dom'
 import "../../CardGame/GameModal.css"
 import headzol2 from '../../../../images/headzol2.png'
 import { useDispatch, useSelector } from 'react-redux'
-import { blackjackGameAction } from '../../../../redux/actions/blackjackGameAction'
+import { blackjackGameAction }  from '../../../../redux/actions/blackjackGameAction'
 
 const BlackJackGameSetModal = ({account, totals, title, bet}) => {
 
     console.log("블랙잭모달계정", account)
     console.log("블랙잭토탈양", totals)
     console.log("블랙잭결과", title)
+    console.log("배팅금액", bet)
+
+    let betPrice = bet
 
     //let total = totals.length
     const dispatch = useDispatch()
     const navigate = useNavigate()
-    const { clearBlackjackGame, blackjackRewardGZLT, blackjactRewardGP} = useSelector(state => state.blackjack)
+    const { winBlackJackGame, loseBlackJackGame } = useSelector(state => state.blackjacktest)
     const [check, setCheck] = useState()
 
     console.log(bet)
@@ -24,6 +27,7 @@ const BlackJackGameSetModal = ({account, totals, title, bet}) => {
     }
 
     const checkResult = (title, bet) => {
+
       switch(title) {
         case "Bust!" :
             return setCheck(bet * -1)
@@ -46,13 +50,14 @@ const BlackJackGameSetModal = ({account, totals, title, bet}) => {
     }
 
     useEffect(()=> {
-      checkResult(title, bet)
-      dispatch(blackjackGameAction.blackjackGameAct(title,bet))
+        checkResult(title, bet)
+        dispatch(blackjackGameAction.blackjackGameAct(title, betPrice))
     },[])
 
   return (
     <div className='overlay'>
     <div className='gameModalContainer'>
+    {winBlackJackGame ?
       <div className='gameModalInfoSection'>
         {/* { clearBlackjackGame ? 
           <>
@@ -65,6 +70,8 @@ const BlackJackGameSetModal = ({account, totals, title, bet}) => {
         <h2 className='gameModalComMessage'>{title}</h2>
         <h2 className='gameModalComMessage'>{check}</h2>
       </div>
+      : null
+  }
   </div>
 </div>
   )

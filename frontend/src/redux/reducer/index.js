@@ -4,7 +4,8 @@ import mintingReducer from "./mintingReducer";
 import transactionReducer from "./transactionReducer"
 import stakingViewReducer from "./stakingViewReducer";
 import gameReducer from "./gameReducer";
-import  blackjackReducer from "./BlackBetReducer";
+import blackjackReducer from "./BlackBetReducer";
+import blackjackTestReducer from "./blackJackReducer"
 
 export default combineReducers({
     account : accountReducer,
@@ -13,6 +14,7 @@ export default combineReducers({
     stakingView : stakingViewReducer,
     game : gameReducer,
     blackjack : blackjackReducer,
+    blackjacktest : blackjackTestReducer
 
 
 })

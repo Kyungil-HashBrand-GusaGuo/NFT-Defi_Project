@@ -6,10 +6,13 @@ const initialState = {
   total: 10,
   bet: 0,
   playerCards: [],
+  winBlackJackGame : true,
+  loseBlackJackGame : true
 };
 
 function blackjackReducer(state = initialState, action = {}) {
-  switch (action.type) {
+  let{ payload } = action
+  switch (action.type , payload) {
     case ADD_CHIP:
       return Object.assign({}, state, {
         bet: state.bet + action.payload,
@@ -28,6 +31,13 @@ function blackjackReducer(state = initialState, action = {}) {
       return Object.assign({}, state, {
         playerCards: state.playerCards.concat(action.payload),
       });
+
+    case "WIN_BLACKJACK_GAME" :
+        return {...state, winBlackJackGame : payload.winBlackJackGame }
+    
+    case "LOSE_BLACKJACK_GAME" :
+        return {...state, loseBlackJackGame : payload.loseBlackJackGame }
+
     
     default:
       return state;

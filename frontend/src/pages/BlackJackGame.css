@@ -6,12 +6,47 @@
   /* background-color: blue; */
 }
 
+.blackjackgameRoleTable {
+  display: flex;
+  justify-content: center;
+  margin-top: 2.083vw;
+  margin-bottom: 1.389vw;
+}
+
+.blackjackgameRoleTable table {
+  border: 0.139vw solid black;
+  width: 300px;
+  height: 200px;
+  border-collapse: collapse;
+  text-align: center;
+  font-size: 25px;
+}
+
+.blackjackgameRoleTable th, td {
+  border: 0.139vw solid black;
+  padding: 0.694vw 0.139vw;
+  
+}
+
+.blackjackgameRoleTable tbody {
+/* background-image: url('../images/5.png'); */
+background-size: cover;
+background-repeat: no-repeat;
+color: black;
+opacity: 0.9;
+}
+
+.blackjackgameRoleTable th {
+  background-color: black;
+  color: white;
+}
+
 .myGameNftSection {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100%;
-  height: 100%;
+  /* width: 100%;
+  height: 100%; */
   /* border: 3px solid black; */
 }
 
