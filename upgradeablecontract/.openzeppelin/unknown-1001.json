@@ -144,6 +144,26 @@
       "address": "0xae1CB0153118bbFA4d45c770C8fa4C827B59F7b5",
       "txHash": "0x2b31b601e7ad133b90f09cc592eb749fc6f0d24d13065f76b0fc7980a7f0a310",
       "kind": "transparent"
+    },
+    {
+      "address": "0x10e844550E4364bAFe98Bb9Abd5f4978DfeB7f94",
+      "txHash": "0x5e439565a075477cd9d5daf4b3b8de6a49a2f696dc29be57048ceded70c15fc6",
+      "kind": "transparent"
+    },
+    {
+      "address": "0xb30247648120DC2bAD8Be257E746d4c397a1173D",
+      "txHash": "0xcb247ad39708ecfb05603fd42e27d001923cf1fc2998abe38711e0177a503fd5",
+      "kind": "transparent"
+    },
+    {
+      "address": "0x797cCCaf87Bd8E172d6a65A7cb23718F4880CD23",
+      "txHash": "0xa23c7c354bf91cec25c7112fe07df0bf7734ad574db120df001a69d5156bdb2b",
+      "kind": "transparent"
+    },
+    {
+      "address": "0xAe1FF3F1061cC9cE6E11a140ae8f0A6A83d731C2",
+      "txHash": "0xaf2dc504e75c3d76e5dad9b8067e27bda769b045d2d6f6416a851f25ad846a07",
+      "kind": "transparent"
     }
   ],
   "impls": {
@@ -3709,7 +3729,7 @@
             "label": "randomJolaman",
             "offset": 0,
             "slot": "152",
-            "type": "t_contract(RandomJolaman)5935",
+            "type": "t_contract(RandomJolaman)5984",
             "contract": "StakingSystem",
             "src": "contracts\\StakeSystem.sol:19"
           },
@@ -3717,7 +3737,7 @@
             "label": "setdata",
             "offset": 0,
             "slot": "153",
-            "type": "t_contract(setData)7571",
+            "type": "t_contract(setData)8429",
             "contract": "StakingSystem",
             "src": "contracts\\StakeSystem.sol:20"
           },
@@ -3749,7 +3769,7 @@
             "label": "stakers",
             "offset": 0,
             "slot": "157",
-            "type": "t_mapping(t_address,t_struct(Staker)6405_storage)",
+            "type": "t_mapping(t_address,t_struct(Staker)7263_storage)",
             "contract": "StakingSystem",
             "src": "contracts\\StakeSystem.sol:44"
           },
@@ -3787,11 +3807,11 @@
             "label": "bool",
             "numberOfBytes": "1"
           },
-          "t_contract(RandomJolaman)5935": {
+          "t_contract(RandomJolaman)5984": {
             "label": "contract RandomJolaman",
             "numberOfBytes": "20"
           },
-          "t_contract(setData)7571": {
+          "t_contract(setData)8429": {
             "label": "contract setData",
             "numberOfBytes": "20"
           },
@@ -3799,7 +3819,7 @@
             "label": "mapping(address => mapping(address => uint256))",
             "numberOfBytes": "32"
           },
-          "t_mapping(t_address,t_struct(Staker)6405_storage)": {
+          "t_mapping(t_address,t_struct(Staker)7263_storage)": {
             "label": "mapping(address => struct StakingSystem.Staker)",
             "numberOfBytes": "32"
           },
@@ -3819,7 +3839,7 @@
             "label": "string",
             "numberOfBytes": "32"
           },
-          "t_struct(Staker)6405_storage": {
+          "t_struct(Staker)7263_storage": {
             "label": "struct StakingSystem.Staker",
             "members": [
               {
@@ -4916,6 +4936,271 @@
           "t_uint64": {
             "label": "uint64",
             "numberOfBytes": "8"
+          },
+          "t_uint8": {
+            "label": "uint8",
+            "numberOfBytes": "1"
+          }
+        }
+      }
+    },
+    "cfe00a1114d95eecd65c3bdf43a60a10c3da035a45541e02113c3c67641859e6": {
+      "address": "0x6Af5ccf89B54EDE6D691D6Fc6e761CEC2C1F314D",
+      "txHash": "0xb304b0c30c699cbbdc54ac06356cc51f187d956ec3f0d5724e1698d0f9d4728e",
+      "layout": {
+        "storage": [
+          {
+            "label": "_initialized",
+            "offset": 0,
+            "slot": "0",
+            "type": "t_uint8",
+            "contract": "Initializable",
+            "src": "@openzeppelin\\contracts-upgradeable\\proxy\\utils\\Initializable.sol:62",
+            "retypedFrom": "bool"
+          },
+          {
+            "label": "_initializing",
+            "offset": 1,
+            "slot": "0",
+            "type": "t_bool",
+            "contract": "Initializable",
+            "src": "@openzeppelin\\contracts-upgradeable\\proxy\\utils\\Initializable.sol:67"
+          },
+          {
+            "label": "__gap",
+            "offset": 0,
+            "slot": "1",
+            "type": "t_array(t_uint256)50_storage",
+            "contract": "ContextUpgradeable",
+            "src": "@openzeppelin\\contracts-upgradeable\\utils\\ContextUpgradeable.sol:36"
+          },
+          {
+            "label": "_owner",
+            "offset": 0,
+            "slot": "51",
+            "type": "t_address",
+            "contract": "OwnableUpgradeable",
+            "src": "@openzeppelin\\contracts-upgradeable\\access\\OwnableUpgradeable.sol:22"
+          },
+          {
+            "label": "__gap",
+            "offset": 0,
+            "slot": "52",
+            "type": "t_array(t_uint256)49_storage",
+            "contract": "OwnableUpgradeable",
+            "src": "@openzeppelin\\contracts-upgradeable\\access\\OwnableUpgradeable.sol:94"
+          },
+          {
+            "label": "_balances",
+            "offset": 0,
+            "slot": "101",
+            "type": "t_mapping(t_address,t_uint256)",
+            "contract": "ERC20Upgradeable",
+            "src": "@openzeppelin\\contracts-upgradeable\\token\\ERC20\\ERC20Upgradeable.sol:37"
+          },
+          {
+            "label": "_allowances",
+            "offset": 0,
+            "slot": "102",
+            "type": "t_mapping(t_address,t_mapping(t_address,t_uint256))",
+            "contract": "ERC20Upgradeable",
+            "src": "@openzeppelin\\contracts-upgradeable\\token\\ERC20\\ERC20Upgradeable.sol:39"
+          },
+          {
+            "label": "_totalSupply",
+            "offset": 0,
+            "slot": "103",
+            "type": "t_uint256",
+            "contract": "ERC20Upgradeable",
+            "src": "@openzeppelin\\contracts-upgradeable\\token\\ERC20\\ERC20Upgradeable.sol:41"
+          },
+          {
+            "label": "_name",
+            "offset": 0,
+            "slot": "104",
+            "type": "t_string_storage",
+            "contract": "ERC20Upgradeable",
+            "src": "@openzeppelin\\contracts-upgradeable\\token\\ERC20\\ERC20Upgradeable.sol:43"
+          },
+          {
+            "label": "_symbol",
+            "offset": 0,
+            "slot": "105",
+            "type": "t_string_storage",
+            "contract": "ERC20Upgradeable",
+            "src": "@openzeppelin\\contracts-upgradeable\\token\\ERC20\\ERC20Upgradeable.sol:44"
+          },
+          {
+            "label": "__gap",
+            "offset": 0,
+            "slot": "106",
+            "type": "t_array(t_uint256)45_storage",
+            "contract": "ERC20Upgradeable",
+            "src": "@openzeppelin\\contracts-upgradeable\\token\\ERC20\\ERC20Upgradeable.sol:394"
+          },
+          {
+            "label": "initialized",
+            "offset": 0,
+            "slot": "151",
+            "type": "t_bool",
+            "contract": "JolamanToken",
+            "src": "contracts\\GST_Token.sol:15"
+          },
+          {
+            "label": "Contractowner",
+            "offset": 1,
+            "slot": "151",
+            "type": "t_address",
+            "contract": "StakingSystemV2",
+            "src": "contracts\\StakeSystemV2.sol:18"
+          },
+          {
+            "label": "randomJolaman",
+            "offset": 0,
+            "slot": "152",
+            "type": "t_contract(RandomJolaman)5350",
+            "contract": "StakingSystemV2",
+            "src": "contracts\\StakeSystemV2.sol:19"
+          },
+          {
+            "label": "setdata",
+            "offset": 0,
+            "slot": "153",
+            "type": "t_contract(setData)6986",
+            "contract": "StakingSystemV2",
+            "src": "contracts\\StakeSystemV2.sol:20"
+          },
+          {
+            "label": "stakedTotal",
+            "offset": 0,
+            "slot": "154",
+            "type": "t_uint256",
+            "contract": "StakingSystemV2",
+            "src": "contracts\\StakeSystemV2.sol:21"
+          },
+          {
+            "label": "stakingStartTime",
+            "offset": 0,
+            "slot": "155",
+            "type": "t_uint256",
+            "contract": "StakingSystemV2",
+            "src": "contracts\\StakeSystemV2.sol:22"
+          },
+          {
+            "label": "initialized",
+            "offset": 0,
+            "slot": "156",
+            "type": "t_bool",
+            "contract": "StakingSystemV2",
+            "src": "contracts\\StakeSystemV2.sol:27"
+          },
+          {
+            "label": "stakers",
+            "offset": 0,
+            "slot": "157",
+            "type": "t_mapping(t_address,t_struct(Staker)5820_storage)",
+            "contract": "StakingSystemV2",
+            "src": "contracts\\StakeSystemV2.sol:44"
+          },
+          {
+            "label": "tokenOwner",
+            "offset": 0,
+            "slot": "158",
+            "type": "t_mapping(t_uint256,t_address)",
+            "contract": "StakingSystemV2",
+            "src": "contracts\\StakeSystemV2.sol:45"
+          }
+        ],
+        "types": {
+          "t_address": {
+            "label": "address",
+            "numberOfBytes": "20"
+          },
+          "t_array(t_uint256)45_storage": {
+            "label": "uint256[45]",
+            "numberOfBytes": "1440"
+          },
+          "t_array(t_uint256)49_storage": {
+            "label": "uint256[49]",
+            "numberOfBytes": "1568"
+          },
+          "t_array(t_uint256)50_storage": {
+            "label": "uint256[50]",
+            "numberOfBytes": "1600"
+          },
+          "t_array(t_uint256)dyn_storage": {
+            "label": "uint256[]",
+            "numberOfBytes": "32"
+          },
+          "t_bool": {
+            "label": "bool",
+            "numberOfBytes": "1"
+          },
+          "t_contract(RandomJolaman)5350": {
+            "label": "contract RandomJolaman",
+            "numberOfBytes": "20"
+          },
+          "t_contract(setData)6986": {
+            "label": "contract setData",
+            "numberOfBytes": "20"
+          },
+          "t_mapping(t_address,t_mapping(t_address,t_uint256))": {
+            "label": "mapping(address => mapping(address => uint256))",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_address,t_struct(Staker)5820_storage)": {
+            "label": "mapping(address => struct StakingSystemV2.Staker)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_address,t_uint256)": {
+            "label": "mapping(address => uint256)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_uint256,t_address)": {
+            "label": "mapping(uint256 => address)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_uint256,t_uint256)": {
+            "label": "mapping(uint256 => uint256)",
+            "numberOfBytes": "32"
+          },
+          "t_string_storage": {
+            "label": "string",
+            "numberOfBytes": "32"
+          },
+          "t_struct(Staker)5820_storage": {
+            "label": "struct StakingSystemV2.Staker",
+            "members": [
+              {
+                "label": "JolamanType",
+                "type": "t_array(t_uint256)dyn_storage",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "tokenStakingCoolDown",
+                "type": "t_mapping(t_uint256,t_uint256)",
+                "offset": 0,
+                "slot": "1"
+              },
+              {
+                "label": "balance",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "2"
+              },
+              {
+                "label": "rewardsReleased",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "3"
+              }
+            ],
+            "numberOfBytes": "128"
+          },
+          "t_uint256": {
+            "label": "uint256",
+            "numberOfBytes": "32"
           },
           "t_uint8": {
             "label": "uint8",
