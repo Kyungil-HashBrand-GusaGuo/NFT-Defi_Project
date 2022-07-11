@@ -34,7 +34,6 @@ contract RandomJolaman is Initializable, ERC721EnumerableUpgradeable, OwnableUpg
     bytes32 public constant MINTER_ROLE = keccak256("MINTER_ROLE");
     bytes32 public constant SPECIAL_MINTER_ROLE = keccak256("SPECIAL_MINTER_ROLE"); // whitelist 전용 minter role
 
-    uint64 public mintingPrice; 
     uint private totalIncome; // 총 판매량
 
     uint constant public MAX_NORMAL_TOKEN_COUNT = 1000;
@@ -56,9 +55,12 @@ contract RandomJolaman is Initializable, ERC721EnumerableUpgradeable, OwnableUpg
         _normalTokenIdCount = 0;
         _specialTokenIdCount = 10000;
         initialized = true;
-        mintingPrice = 2*10**18;
+
         // _grantRole(DEFAULT_ADMIN_ROLE, msg.sender);
     }
+
+    uint64 public mintingPrice = 2 * 10 ** 18;
+
 
     struct JolamanTokenData {
         uint jolamanTokenType; //일반 1~1000 , special 10000~10019
