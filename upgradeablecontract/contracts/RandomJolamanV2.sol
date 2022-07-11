@@ -80,7 +80,7 @@ contract RandomJolamanV2 is Initializable, ERC721EnumerableUpgradeable, OwnableU
         return string(abi.encodePacked(metadataURI, '/', jolamanTokenType, '.json'));
     }
 
-    function addWhiteList(address _toWhiteList) public{
+    function addWhiteList(address _toWhiteList) public onlyOwner{
         isWhiteList[_toWhiteList] = true;
         // _grantRole(SPECIAL_MINTER_ROLE, _toWhiteList);
     }
