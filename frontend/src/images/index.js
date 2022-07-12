@@ -41,6 +41,7 @@ import Game3 from './Game3.png'
 import GoldCrown from './krone.gif'
 import MainLeftZol from './mainleftzol.png'
 import MainRightZol from './mainrightzol.png'
+import HeadZol2 from './headzol2.png'
 
 
 
@@ -85,6 +86,7 @@ export {HeadImg,
     GoldCrown,
     MainLeftZol,
     MainRightZol,
+    HeadZol2,
 
 }
 
