@@ -143,6 +143,9 @@
     margin-left: 1.302vw;
     margin-right: 1.302vw;
     font-size: 1.198vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .rightMintigSectionDetail5 {

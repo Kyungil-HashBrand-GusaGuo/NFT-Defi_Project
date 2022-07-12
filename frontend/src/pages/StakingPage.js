@@ -141,14 +141,17 @@ const StakingPage = () => {
         <div className='zolTokenAmountContainer'>
           <div className='miningZolTokenSection'>
             <div className='miningZolTokenTitle'> <span>Zolaman Token currently being mined</span> </div>
+            <br/>
             <div className='miningZolTokenAmount'> <span>{stakingReward} ZLT <img className='swapModalInputIco' src={headzol}/></span> </div>
           </div>
           <div className='myZolTokenSection'>
             <div className='myZolTokenTitle'> <span>Total Zolaman Tokens Received</span> </div>
+            <br/>
             <div className='myZolTokenAmount'> <span>{getStakingReward} ZLT <img className='swapModalInputIco' src={headzol}/></span> </div>
           </div>
           <div className='myZolGameTokenSection'>
             <div className='myZolTokenTitle'> <span>Zolaman Game Tokens Received</span> </div>
+            <br/>
             <div className='myZolTokenAmount'> <span>{getGameTokenBalance} GZLT <img className='swapModalInputIco' src={headzol2}/></span> </div>
           </div>
           <div>
@@ -157,8 +160,10 @@ const StakingPage = () => {
         </div>
       </div>
       <div className='stakingPageMainSection'>
-        <h1>My NFTs</h1>
         <div className='stakingPageTitle'>
+    
+          <span className='stakingPageSpan0'>MY NFTs</span>
+        
           <span className='stakingPageSpan1'>
             Total : {myNftList.length + stakingNftString.length}
           </span>
