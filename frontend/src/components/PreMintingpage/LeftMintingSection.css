@@ -146,6 +146,9 @@ button {
     margin-left: 1.302vw;
     margin-right: 1.302vw;
     font-size: 1.198vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .mintKlayicon {
@@ -153,6 +156,7 @@ button {
     height: 1.389vw;
     margin-left: 0.26vw;
     margin-right: 0.26vw;
+    margin-bottom: 0.26vw;
 }
 
 .leftMintigSectionDetail5 {
