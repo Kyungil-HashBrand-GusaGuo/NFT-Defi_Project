@@ -40,12 +40,13 @@ const GameMainPage = () => {
     },[])
 
   return (
-    <div className='gamePageMainContainer'>
-        { swapModal ? <SelectGameNftModal setSwapModal={setSwapModal}/> : null}
-        <div className='cardGameTitleContainer'>
+    <>
+      { swapModal ? <SelectGameNftModal setSwapModal={setSwapModal} /> : null}
+      <div className='cardGameTitleContainer'>
         <h2>Zolaman Game</h2>
-        </div>
-        
+      </div>
+      <hr class="style-five"/> 
+      <div className='gamePageMainContainer'>
         {
           airdropReward.length !== 1 ?
             <div className='nftRankContainer'>
@@ -55,22 +56,22 @@ const GameMainPage = () => {
               <div className='airdropConatiner'>
                 <div className='gameRewardContainer'>
                   <div>
-                    <span>2위</span>
                     <img src={GoldCrown} className="crownIcon"></img>
+                    <span>2위</span>
                     <div className='rankImgContainer'>
                       <img src={"https://sean95.s3.ap-northeast-2.amazonaws.com/raw/" + `${airdropReward[1]}` + ".png"}></img>
                     </div>
                   </div>
                   <div>
-                    <span>1위</span>
                     <img src={GoldCrown} className="crownIcon"></img>
+                    <span>1위</span>
                     <div className='rankImgContainer'>
                       <img src={"https://sean95.s3.ap-northeast-2.amazonaws.com/raw/" + `${airdropReward[0]}` + ".png"}></img>
                     </div>
                   </div>
                   <div>
-                    <span>3위</span>
                     <img src={GoldCrown} className="crownIcon"></img>
+                    <span>3위</span>
                     <div className='rankImgContainer'>
                       <img src={"https://sean95.s3.ap-northeast-2.amazonaws.com/raw/" + `${airdropReward[2]}` + ".png"}></img>
                     </div>
@@ -98,7 +99,7 @@ const GameMainPage = () => {
                         gamePointRank.map((arr, index) => {
                           return <tr key={index}>
                             <td>{index + 1}</td>
-                            <td>{arr.account}</td>
+                            <td>{arr.account.substr(0,10)}...{arr.account.slice(-10)}</td>
                             <td>{arr.point}</td>
                           </tr>
                         })
@@ -184,7 +185,7 @@ const GameMainPage = () => {
         
        
     </div>
-    
+    </>
   )
 }
 
