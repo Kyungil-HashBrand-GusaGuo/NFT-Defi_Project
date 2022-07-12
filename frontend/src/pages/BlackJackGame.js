@@ -357,7 +357,7 @@ const BlackJackGame = () => {
               }}
               className="pa1 ba b--black bg-yellow"
             >
-              <h2>{`Token: $${getGameTokenBalance}`}</h2>
+              <h2>{`Token: $${getGameTokenBalance-bet}`}</h2>
               {/* <p>Turns:{turns}</p> */}
             </div>
           </div>
