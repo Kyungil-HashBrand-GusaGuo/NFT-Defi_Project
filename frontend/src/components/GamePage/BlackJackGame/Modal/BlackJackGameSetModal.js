@@ -25,7 +25,7 @@ const BlackJackGameSetModal = ({account, totals, title, bet}) => {
     }
 
     const goToBlackJackGamePage = () => {
-        navigate('/blackjackgame')
+      window.location.reload()
     }
 
     const checkResult = (title, bet) => {
@@ -68,7 +68,7 @@ const BlackJackGameSetModal = ({account, totals, title, bet}) => {
         }   */}
         <h2 className='gameModalComMessage'>{title}</h2>
         <h2 className='gameModalComMessage'>Get : {check} GZLT<img className='gameModalIco' src={HeadZol2} /> / {point} GP</h2>
-        {/* <button className='gameModalEndButton' onClick={goToBlackJackGamePage}>Restart</button>  */}
+        <button className='gameModalEndButton' onClick={goToBlackJackGamePage}>Restart</button> 
         <button className='gameModalEndButton' onClick={goToGameMainPage}>Go to GamePage</button> 
 
       </div>
