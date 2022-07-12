@@ -16,8 +16,12 @@ const BlackJackGameSetModal = ({account, totals, title, bet}) => {
     const navigate = useNavigate()
     // const { clearBlackjackGame, blackjackRewardGZLT, blackjactRewardGP} = useSelector(state => state.blackjack)
     const [check, setCheck] = useState()
+<<<<<<< HEAD
     const [point, setPoint] = useState()
 
+=======
+ 
+>>>>>>> cfcf5d51e58add23b34628281e0dd8c502b4163b
     console.log(bet)
 
     const goToGameMainPage =() => {

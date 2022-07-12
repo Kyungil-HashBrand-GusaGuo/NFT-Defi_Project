@@ -11,6 +11,8 @@ import logo_DCcomics from './logo_DCcomics.png'
 import logo_Diseny from './logo_Diseny.png'
 import logo_Marvel from './logo_Marvel.png'
 import logo_PolaBear from './logo_PolaBear.png'
+import logo_Kyungil from './logo_Kyungil.png'
+import logo_HashBrand from './logo_HashBrand.png'
 import zolca10 from './zolca10.png'
 import white1 from './mainsilder/1.png'
 import white2 from './mainsilder/2.png'
@@ -54,6 +56,8 @@ export {HeadImg,
     logo_Diseny, 
     logo_Marvel,
     logo_PolaBear,
+    logo_Kyungil,
+    logo_HashBrand,
     zolca10,
     white1,
     white2,
