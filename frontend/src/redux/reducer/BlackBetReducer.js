@@ -3,7 +3,7 @@ import { HIT } from '../actions/BlackCardAction';
 
 
 const initialState = {
-  total: 10,
+  total: 200,
   bet: 0,
   playerCards: [],
 };

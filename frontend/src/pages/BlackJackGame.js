@@ -23,6 +23,7 @@ import { BlackGameOverModal } from '../components/index'
 import {BlackJackGameSetModal} from '../components/index'
 import { stakingViewAction } from '../redux/actions/stakingViewAction'
 import {white1} from '../images'
+import {HeadZol2} from "../images/index"
 
 import 'tachyons';
 import './BlackJackGame.css';
@@ -65,7 +66,7 @@ const BlackJackGame = () => {
     //   const [gameOverModal, setGameOverModal] = useState(false);
       const [gameSetModal, setGameSetModal] = useState(false);
       const [turns, setTurns] = useState(0);
-      const { total, bet } = useSelector((state) => state.blackjack);
+      const { total, bet, } = useSelector((state) => state.blackjack);
       const { getGameTokenBalance } = useSelector(state=> state.stakingView);
       const {account} = useSelector(state => state.account);
 
@@ -76,7 +77,7 @@ const BlackJackGame = () => {
           rank: Ranks[Math.floor(Math.random() * Ranks.length)],
           suit: Suits[Math.floor(Math.random() * Suits.length)],
         };
-        const updatedCards = playerCards.concat(newCards);
+        const updatedCards = playerCards.concat(newCards)
         let score = CountCard(updatedCards);
     
         setPlayerScore(score);
@@ -174,13 +175,11 @@ const BlackJackGame = () => {
       const pickChip = (value) => {
         dispatch(addChip(value));
         setTitle(`$${value + bet}`);
+        setSubToken(0);
 
 
       };
 
-      const subtractionToken = () => {
-
-      }
     
       const StartGame = () => {
         setGameState(GAME);
@@ -243,38 +242,43 @@ const BlackJackGame = () => {
         >
           <div className='myGameNftContainer' style={{ width: '20%' }}>
             <div className='blackjackgameRoleTable'>
-          <table>
-            <thead>
-              <tr>
-                <th>Score</th>
-                <th>Get</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Win</td>
-                <td>My GZLT X 2</td>
-              </tr>
-              <tr>
-                <td>BlackJack</td>
-                <td>My GZLT X 2</td>
-              </tr>
-              <tr>
-                <td>Tie</td>
-                <td>0 GZLT</td>
-              </tr>
-              <tr>
-                <td>Bust</td>
-                <td>0 GZLT</td>
-              </tr>
-              <tr>
-                <td>Lose</td>
-                <td>- My GZLT X 2</td>
-              </tr>
-            </tbody>
-          </table>
+              <table>
+                <thead>
+                  <tr>
+                    <th>Score</th>
+                    <th>Token</th>
+                    <th>GamePoint</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Win</td>
+                    <td><img className='gameModalIco' src={HeadZol2} /> X 2</td>
+                    <td>5</td>
+                  </tr>
+                  <tr>
+                    <td>BlackJack</td>
+                    <td><img className='gameModalIco' src={HeadZol2} /> X 2</td>
+                    <td>5</td>
+                  </tr>
+                  <tr>
+                    <td>Tie</td>
+                    <td><img className='gameModalIco' src={HeadZol2} /> 0 </td>
+                    <td>3</td>
+                  </tr>
+                  <tr>
+                    <td>Bust</td>
+                    <td> - <img className='gameModalIco' src={HeadZol2} /> X 2</td>
+                    <td>2</td>
+                  </tr>
+                  <tr>
+                    <td>Lose</td>
+                    <td> - <img className='gameModalIco' src={HeadZol2} /> X 2</td>
+                    <td>2</td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
-
             <div className='myGameNftSection'>
                 <img src={"https://sean95.s3.ap-northeast-2.amazonaws.com/raw/" + `${state[0]}` + ".png"}></img>
             </div>
@@ -315,6 +319,7 @@ const BlackJackGame = () => {
                   total={total}
                   addChip={pickChip}
                   imgSrc={ten}
+                  
                 />
                 <Chip
                   value={3}
