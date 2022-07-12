@@ -1,7 +1,6 @@
 import React , { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import "../../CardGame/GameModal.css"
-import headzol2 from '../../../../images/headzol2.png'
 import { useDispatch, useSelector } from 'react-redux'
 import { blackjackGameAction } from '../../../../redux/actions/blackjackGameAction'
 

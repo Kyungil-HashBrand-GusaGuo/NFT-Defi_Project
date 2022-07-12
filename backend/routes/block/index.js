@@ -38,5 +38,7 @@ router.post("/memorygame", gameController.MemoryGameReward);
 router.post("/hangmangamereward", gameController.HangmanGameReward);
 router.post("/balanceOfGZLT", gameController.balanceOfGZLT);
 router.post("/airdrop", gameController.airDrop);
+router.post("/blackjackwin", gameController.blackJackWin);
+router.post("/blackjacklose", gameController.blackJackLose);
 
 module.exports = router;

@@ -1,4 +1,4 @@
-import axios from "axios";
+import api from "../api"
 
 function rewardEditionSetAct(arr) {
   
@@ -10,7 +10,7 @@ function rewardEditionSetAct(arr) {
               type:"SET_AIRDROP_REWARD_SUCCESS", 
               payload : {setAirdropRewardSuccess : true},
             })
-            const setRewardApi = await axios.post("http://localhost:9495/data/setrewardedition", { editionNumber : arr})
+            const setRewardApi = await api.post("/data/setrewardedition", { editionNumber : arr })
 
           } catch(error) {
             console.error(error);

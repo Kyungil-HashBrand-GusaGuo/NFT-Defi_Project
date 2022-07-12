@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { stakingRewardAction } from '../../redux/actions/stakingRewardAction'
 import "./Modal.css"
+//import { Link } from 'react-router-dom'
 
 const ClaimModal = ({account}) => {
 

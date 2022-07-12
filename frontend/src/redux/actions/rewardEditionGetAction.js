@@ -1,4 +1,4 @@
-import axios from "axios";
+import api from "../api"
 
 function rewardEditionGetAct() {
   
@@ -6,7 +6,7 @@ function rewardEditionGetAct() {
 
   return async (dispatch) => {
         try {
-            const getRewardApi = await axios.get("http://localhost:9495/data/getrewardedition")
+            const getRewardApi = await api.get("/data/getrewardedition")
             console.log("확인", getRewardApi.data)
 
             dispatch({

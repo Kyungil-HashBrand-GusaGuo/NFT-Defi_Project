@@ -34,25 +34,32 @@ const gameRank = async (req, res) => {
   res.json(result);
 };
 
-const setRewardEdition = async(req, res) => {
-  const {editionNumber} = req.body;
+const setRewardEdition = async (req, res) => {
+  const { editionNumber } = req.body;
   const [result] = await pool.query(
     `INSERT INTO nftReward(rewardEdition) VALUES("${editionNumber}")`
-  )
+  );
   console.log(result);
-}
+};
 
-const getRewardEdition = async(req, res) => {
+const getRewardEdition = async (req, res) => {
   const [result] = await pool.query(
-  `SELECT * FROM nftReward ORDER BY season DESC LIMIT 1`
-  )
+    `SELECT * FROM nftReward ORDER BY season DESC LIMIT 1`
+  );
   console.log(result[0].rewardEdition);
-  res.json(result[0].rewardEdition.split(','));
-}
+  res.json(result[0].rewardEdition.split(","));
+};
+
+const reset = async (req, res) => {
+  console.log("success~?")
+  await pool.query(`DELETE FROM gamePoint`);
+  res.json("success");
+};
 
 module.exports = {
   player,
   gameRank,
   setRewardEdition,
-  getRewardEdition
+  getRewardEdition,
+  reset,
 };

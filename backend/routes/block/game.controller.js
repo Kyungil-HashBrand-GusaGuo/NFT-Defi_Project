@@ -27,6 +27,22 @@ const balanceOfGZLT = async(req, res) => {
     res.json(result);
 }
 
+// 블랙잭 게임 이겼을떄 보상 자동 처리 함수
+const blackJackWin = async (req, res) => {
+  const result = await GameContract.methods
+    .blackJackWin(req.body.account, req.body.betPrice)
+    .send({from:adminAccount.address, gas : 3000000});
+  res.json(result);
+};
+
+// 블랙잭 게임 졌을떄 보상 자동 처리 함수
+const blackJackLose = async (req, res) => {
+  const result = await GameContract.methods
+    .blackJackLose(req.body.account, req.body.betPrice)
+    .send({from:adminAccount.address, gas : 3000000});
+  res.json(result);
+};
+
 // 시간 초과시 랭킹권 유저들에게 자동 에어드랍 함수
 
 const airDrop = async (req, res) => {
@@ -41,5 +57,7 @@ const airDrop = async (req, res) => {
     MemoryGameReward,
     HangmanGameReward,
     balanceOfGZLT,
-    airDrop
+    airDrop,
+    blackJackWin,
+    blackJackLose
   }

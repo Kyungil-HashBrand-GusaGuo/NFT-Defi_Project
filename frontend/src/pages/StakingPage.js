@@ -118,7 +118,7 @@ const StakingPage = () => {
     <div className='stakingTitleContainer'>
               <h2>Staking</h2>
     </div>
-    <div className="style-five"></div>
+    {/* <div className="style-five"></div> */}
     <hr className="style-five"/> 
     <div className='stakingPageContainer'>
       <div className='stakingPageTopSection'>

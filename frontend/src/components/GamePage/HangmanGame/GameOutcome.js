@@ -25,7 +25,7 @@ function GameOutcome({ wrongLetters, playable, playAgain , won, word}) {
     // const getReward = async() => {
     //   console.log("계정확인",account)
     //   console.log("틀린거확인",wrongLetter)
-    //   const response = await api.post("/hangmangamereward", {account, wrongLetter});
+    //   const response = await api.post("/block/hangmangamereward", {account, wrongLetter});
     //   if(response.status) {
     //     console.log("오 잘됨")
     //   }

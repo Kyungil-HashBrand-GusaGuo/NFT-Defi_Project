@@ -6,6 +6,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { connectAccount } from '../../redux/actions/connectAccount' 
 import { SwapModal } from '../index'
 import { swapModalAction } from '../../redux/actions/swapModalAction'
+import { Link } from 'react-router-dom'
 
 
 function Navbar() {
@@ -45,16 +46,17 @@ function Navbar() {
         <>
         <div className='Navbar'>
             <div className='leftSide'>
-                <a href='/'><img className='headimg' src={HeadImg}></img></a>
+                <Link to="/"><img className='headimg' src={HeadImg}></img></Link>
             </div>
             <div className='rightSide'>
                 <div className='links' id={showLinks ? "hidden" : ""}>
+                    {/* <Link to="/pre-minting">Pre-Minting</Link> */}
                     <a href='/pre-minting'>Pre-Minting</a>
-                    <a href='/all-minting'>Collection</a>
-                    <a href='/mypage'>MyPage</a>
-                    <a href='/market'>Market</a>
-                    <a href='/staking'>Staking</a>
-                    { adminAccount === account ? <a href='/admin'>AdminPage</a> : null}                    
+                    <Link to="/all-minting">Collection</Link>
+                    <Link to="/mypage">MyPage</Link>
+                    <Link to="/market">Market</Link>
+                    <Link to="/staking">Staking</Link>
+                    { adminAccount === account ? <Link to="/admin">AdminPage</Link> : null}                    
                     {
                         account === ''  
                         ?   <a><button onClick={connectWallet}>Connect Wallet</button></a> 
