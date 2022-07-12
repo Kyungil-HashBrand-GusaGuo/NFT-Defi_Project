@@ -221,7 +221,7 @@ const BlackJackGame = () => {
     <div className='blackJackMainContainer'>
     <div>
       {/* { gameOverModal ? <BlackGameOverModal/> : null } */}
-      { gameSetModal ? <BlackJackGameSetModal title={title} bet={bet}/> : null }
+      { gameSetModal ? <BlackJackGameSetModal title={title} bet={bet} account={account} totals={getGameTokenBalance}/> : null }
       <div className="center">
         <img style={{ width: 300 }} alt="logo" src={logo} />
       </div>
