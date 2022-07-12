@@ -1,6 +1,7 @@
 import React , { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import "../../CardGame/GameModal.css"
+import {HeadZol2} from "../../../../images/index"
 import { useDispatch, useSelector } from 'react-redux'
 import { blackjackGameAction } from '../../../../redux/actions/blackjackGameAction'
 
@@ -13,8 +14,9 @@ const BlackJackGameSetModal = ({account, totals, title, bet}) => {
     //let total = totals.length
     const dispatch = useDispatch()
     const navigate = useNavigate()
-    const { clearBlackjackGame, blackjackRewardGZLT, blackjactRewardGP} = useSelector(state => state.blackjack)
+    // const { clearBlackjackGame, blackjackRewardGZLT, blackjactRewardGP} = useSelector(state => state.blackjack)
     const [check, setCheck] = useState()
+    const [point, setPoint] = useState()
 
     console.log(bet)
 
@@ -22,22 +24,26 @@ const BlackJackGameSetModal = ({account, totals, title, bet}) => {
         navigate('/gamemain')
     }
 
+    const goToBlackJackGamePage = () => {
+        navigate('/blackjackgame')
+    }
+
     const checkResult = (title, bet) => {
       switch(title) {
         case "Bust!" :
-            return setCheck(bet * -1)
+            return setCheck(bet * -1), setPoint(2)
             break;
         case "Dealer Win!" :
-            return setCheck(bet * -1)
+            return setCheck(bet * -1), setPoint(2)
             break;
         case "Tie!" :
-            return setCheck(0)
+            return setCheck(0), setPoint(3)
             break;
         case "You Win!" :
-            return  setCheck(bet * 2)
+            return  setCheck(bet * 2), setPoint(5)
             break;
         case "Blackjack!" :
-            return  setCheck(bet * 2)
+            return  setCheck(bet * 2), setPoint(5)
             break;
         default :
             return 
@@ -46,7 +52,7 @@ const BlackJackGameSetModal = ({account, totals, title, bet}) => {
 
     useEffect(()=> {
       checkResult(title, bet)
-      dispatch(blackjackGameAction.blackjackGameAct(title,bet))
+      dispatch(blackjackGameAction.blackjackGameAct(title,bet,account))
     },[])
 
   return (
@@ -57,12 +63,14 @@ const BlackJackGameSetModal = ({account, totals, title, bet}) => {
           <>
           <h2 className='gameModalComMessage'>Game Clear!!!</h2>
           <h2 className='gameModalComMessage'>Get : {blackjackRewardGZLT} GZLT<img className='gameModalIco' src={headzol2}/> / {blackjactRewardGP} GP</h2>
-          <button className='gameModalEndButton' onClick={goToGameMainPage}>Go to GamePage</button> 
           </>
           : <h2 className='gameModalComMessage'>Loading ...</h2>
         }   */}
         <h2 className='gameModalComMessage'>{title}</h2>
-        <h2 className='gameModalComMessage'>{check}</h2>
+        <h2 className='gameModalComMessage'>Get : {check} GZLT<img className='gameModalIco' src={HeadZol2} /> / {point} GP</h2>
+        {/* <button className='gameModalEndButton' onClick={goToBlackJackGamePage}>Restart</button>  */}
+        <button className='gameModalEndButton' onClick={goToGameMainPage}>Go to GamePage</button> 
+
       </div>
   </div>
 </div>

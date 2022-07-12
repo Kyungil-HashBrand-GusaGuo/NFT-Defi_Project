@@ -61,6 +61,7 @@ const BlackJackGame = () => {
       const [title, setTitle] = useState('');
       const [playerScore, setPlayerScore] = useState(0);
       const [dealerScore, setDealerScore] = useState(0);
+      const [subToken, setSubToken] = useState(0);
     //   const [gameOverModal, setGameOverModal] = useState(false);
       const [gameSetModal, setGameSetModal] = useState(false);
       const [turns, setTurns] = useState(0);
@@ -176,6 +177,10 @@ const BlackJackGame = () => {
 
 
       };
+
+      const subtractionToken = () => {
+
+      }
     
       const StartGame = () => {
         setGameState(GAME);
@@ -237,6 +242,39 @@ const BlackJackGame = () => {
           style={{ display: 'flex', flexDirection: 'row' }}
         >
           <div className='myGameNftContainer' style={{ width: '20%' }}>
+            <div className='blackjackgameRoleTable'>
+          <table>
+            <thead>
+              <tr>
+                <th>Score</th>
+                <th>Get</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Win</td>
+                <td>My GZLT X 2</td>
+              </tr>
+              <tr>
+                <td>BlackJack</td>
+                <td>My GZLT X 2</td>
+              </tr>
+              <tr>
+                <td>Tie</td>
+                <td>0 GZLT</td>
+              </tr>
+              <tr>
+                <td>Bust</td>
+                <td>0 GZLT</td>
+              </tr>
+              <tr>
+                <td>Lose</td>
+                <td>- My GZLT X 2</td>
+              </tr>
+            </tbody>
+          </table>
+            </div>
+
             <div className='myGameNftSection'>
                 <img src={"https://sean95.s3.ap-northeast-2.amazonaws.com/raw/" + `${state[0]}` + ".png"}></img>
             </div>
