@@ -268,12 +268,12 @@ const BlackJackGame = () => {
                   </tr>
                   <tr>
                     <td>Bust</td>
-                    <td> - <img className='gameModalIco' src={HeadZol2} /> X 2</td>
+                    <td><img className='gameModalIco' src={HeadZol2} /> X -2</td>
                     <td>2</td>
                   </tr>
                   <tr>
                     <td>Lose</td>
-                    <td> - <img className='gameModalIco' src={HeadZol2} /> X 2</td>
+                    <td><img className='gameModalIco' src={HeadZol2} /> X -2</td>
                     <td>2</td>
                   </tr>
                 </tbody>
@@ -322,7 +322,7 @@ const BlackJackGame = () => {
                   
                 />
                 <Chip
-                  value={3}
+                  value={2}
                   total={total}
                   addChip={pickChip}
                   imgSrc={quart}
