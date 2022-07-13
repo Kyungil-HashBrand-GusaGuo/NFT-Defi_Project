@@ -186,12 +186,6 @@ opacity: 0.9;
     flex: 33%;
     /* background-color: aqua; */
     width: 100%;
-    height: 500px; 
-    display: flex;
-    flex-direction: column;  
-    padding: 20px 20px 50px 20px;
-    border: 2px solid black;
-    border-radius: 30px;
 }
 
 
@@ -233,22 +227,12 @@ opacity: 0.9;
     flex: 33%;
     /* background-color: #f0a591; */
     width: 100%;
-    height: 500px; 
-    display: flex;
-    flex-direction: column;  
-    padding: 20px 20px 50px 20px;
-    border: 2px solid black;
-    border-radius: 30px;
 }
 
 .gameBox3 {
     flex:33%;
     /* background-color: bisque; */
     width: 100%;
-    height: 500px;
-    padding: 20px 20px 50px 20px;
-    border: 2px solid black;
-    border-radius: 30px;
 }
 
 .gameBoxContainer {
@@ -269,8 +253,8 @@ opacity: 0.9;
   /* top: 50%;
   left: 50%; */
   /* transform: translate(-50%, -50%); */
-  width: 400px;
-  height: 500px;
+  width: 27.778vw;
+  height: 34.722vw;
   /* background: #111845a6; */
   box-sizing: border-box;
   overflow: hidden;

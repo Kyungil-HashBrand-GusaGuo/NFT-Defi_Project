@@ -117,7 +117,7 @@ const GameMainPage = () => {
         }
         <div className='gameSelectContainer'>
         <div className="testBorderContainer">
-          <div className="test1234">
+          <div className="gameBox1">
             <div class="box12">
               <span></span>
               <span></span>
@@ -141,7 +141,7 @@ const GameMainPage = () => {
               </div>
             </div>
           </div>
-          <div className="test1234">
+          <div className="gameBox2">
             <div class="box12">
               <span></span>
               <span></span>
@@ -167,7 +167,7 @@ const GameMainPage = () => {
               </div>
             </div>
           </div>
-          <div className="test1234">
+          <div className="gameBox3">
             <div class="box12">
               <span></span>
               <span></span>
