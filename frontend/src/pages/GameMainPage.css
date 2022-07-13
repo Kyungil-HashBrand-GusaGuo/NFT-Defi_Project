@@ -132,11 +132,11 @@ hr.style-five {
 
 .gameScoreTable table {
   border: 0.139vw solid black;
-  width: 800px;
-  height: 200px;
+  width: 41.667vw;
+  height: 10.417vw;
   border-collapse: collapse;
   text-align: center;
-  font-size: 25px;
+  font-size: 1.302vw;
 }
 
 .gameScoreTable th, td {
