@@ -125,8 +125,6 @@
 │      │  │  │  │      StarterCard.js
 │      │  │  │  │
 │      │  │  │  └─Modal
-│      │  │  │          BlackGameOverModal.css
-│      │  │  │          BlackGameOverModal.js
 │      │  │  │          BlackJackGameSetModal.js
 │      │  │  │
 │      │  │  ├─CardGame
@@ -247,7 +245,6 @@
 │      │      SellPage.js
 │      │      StakingPage.css
 │      │      StakingPage.js
-│      │      wordBank.js
 │      │
 │      └─redux
 │          │  api.js
@@ -288,7 +285,6 @@
 │          └─reducer
 │                  accountReducer.js
 │                  BlackBetReducer.js
-│                  BlackJactReducer.js
 │                  gameReducer.js
 │                  index.js
 │                  mintingReducer.js
