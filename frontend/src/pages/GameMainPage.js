@@ -41,11 +41,11 @@ const GameMainPage = () => {
 
   return (
     <>
+    { swapModal ? <SelectGameNftModal setSwapModal={setSwapModal}/> : null}
     <div className='cardGameTitleContainer'>
       <h2>Zolaman Game</h2>
     </div>
     <hr class="style-five"/> 
-        { swapModal ? <SelectGameNftModal setSwapModal={setSwapModal}/> : null}
     <div className='gamePageMainContainer'>
         {
           airdropReward.length !== 1 ?
@@ -168,22 +168,6 @@ const GameMainPage = () => {
                 </div>
             </div>
         </div>
-        {/* <div className='gameBoxContainer'>
-                        <div class="box">
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                            <div class="content">
-                            <h2>Zolaman Memory Game</h2>
-                            <p>
-                                <button onClick={goToCardGame}>Start</button>
-                            </p>
-                            </div>
-                        </div>
-                    </div> */}
-        
-       
     </div>
     </>
   )
