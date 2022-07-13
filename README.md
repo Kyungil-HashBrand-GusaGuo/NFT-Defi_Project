@@ -1,7 +1,7 @@
 # 🐢 프로젝트명 - 프로젝트 간단 설명
 
 ## 📅 프로젝트 진행 기간
-2022.06.02(목) ~ 2022.07.25(월) (--일간 진행)
+2022.06.02(목) ~ 2022.07.25(월) (54일간 진행)
 </br>
 경일게임 아카데미 블록체인 4기 기업협약 프로젝트(with HashBrand)
 
@@ -15,6 +15,12 @@
 
 ## 🚩 주요 기능
 ---
+- ### NFT Minting
+- ### NFT Staking System
+- ### Coin Swap
+- ### NFT Market Place
+- ### 게임을 통한 자체 Token 발행
+- ### NFT AirDrop
 
 </br>
 
@@ -45,22 +51,12 @@
 
 ## ✔ 프로젝트 구조
 ---
-
+- 정리된 ppt 사진 넣기
 
 ## ✔ 프로젝트 파일 구조
 ---
 ### Frontend
 ```
-│  .DS_Store
-│  .gitignore
-│  package-lock.json
-│  package.json
-│  README.md
-│  truffle-config.js
-│  yarn.lock
-│
-
-
 ├─frontend
 │  │  .gitignore
 │  │  config-overrides.js
@@ -298,45 +294,6 @@
 │                  mintingReducer.js
 │                  stakingViewReducer.js
 │                  transactionReducer.js
-│
-├─migrations
-│      1_initial_migration.js
-│      2_random_jolaman.js
-│
-└─upgradeablecontract
-    │  .gitignore
-    │  hardhat.config.js
-    │  package-lock.json
-    │  package.json
-    │  README.md
-    │
-    ├─.openzeppelin
-    │      unknown-1001.json
-    │      unknown-31337.json
-    │
-    ├─contracts
-    │      Game.sol
-    │      Greeter.sol
-    │      GST_Token.sol
-    │      RandomJolaman.sol
-    │      RandomJolamanV2.sol
-    │      SaleJolaman.sol
-    │      setdata.sol
-    │      setdataV2.sol
-    │      StakeSystem.sol
-    │
-    ├─scripts
-    │      gameUpgrade.deploy.js
-    │      JolamanTokenUpgrade.deploy.js
-    │      randomJolamanUpgrade.deploy.js
-    │      saleJolamanUpgrade.deploy.js
-    │      saleJolamanUpgradeV2.deploy.js
-    │      sample-script.js
-    │      setDataUpgrade.deploy.js
-    │      setDataUpgradeV2.deploy.js
-    │      stakesystemUpgrade.deploy.js
-    │      testRandomJol.deploy.js
-
 ```
 ### Backend
 ```
@@ -479,7 +436,43 @@
 │      │
 │      └─hardhat
 │              console.sol
+├─migrations
+│      1_initial_migration.js
+│      2_random_jolaman.js
 │
+└─upgradeablecontract
+    │  .gitignore
+    │  hardhat.config.js
+    │  package-lock.json
+    │  package.json
+    │  README.md
+    │
+    ├─.openzeppelin
+    │      unknown-1001.json
+    │      unknown-31337.json
+    │
+    ├─contracts
+    │      Game.sol
+    │      Greeter.sol
+    │      GST_Token.sol
+    │      RandomJolaman.sol
+    │      RandomJolamanV2.sol
+    │      SaleJolaman.sol
+    │      setdata.sol
+    │      setdataV2.sol
+    │      StakeSystem.sol
+    │
+    ├─scripts
+    │      gameUpgrade.deploy.js
+    │      JolamanTokenUpgrade.deploy.js
+    │      randomJolamanUpgrade.deploy.js
+    │      saleJolamanUpgrade.deploy.js
+    │      saleJolamanUpgradeV2.deploy.js
+    │      sample-script.js
+    │      setDataUpgrade.deploy.js
+    │      setDataUpgradeV2.deploy.js
+    │      stakesystemUpgrade.deploy.js
+    │      testRandomJol.deploy.js
 ```
 
 
@@ -488,7 +481,9 @@
 - Github
 - Notion
 - Discord
+- Gather Town
 
 
 ## ✔ 팀원 역할 분배
 ---
+- 정리된 ppt 사진 넣기
