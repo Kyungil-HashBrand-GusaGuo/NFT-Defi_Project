@@ -116,74 +116,85 @@ const GameMainPage = () => {
           : <div className='alertAirdrop'><h1>AirDrop 준비중입니다..</h1></div>
         }
         <div className='gameSelectContainer'>
-            <div className='gameSelectSection'>
-                <div className='gameBox1'>
-                    <div className='gameTitle'>
-                        <span>Zolaman Memory Game</span>
-                    </div>
-                    <div className='gameDescriptionTxt'>
-                        <span>
-                            뒤집어진 카드를 맞춰서 GZLT 토큰을 획득 해보세요!
-                        </span>
-                    </div>
-                    <div className='gameThumbnail'>
-                        <img src={Game1}></img>
-                    </div>
-                    <div className='gameStartBtn'>
-                        <button onClick={goToCardGame} className="learn-more">Start</button>
-                    </div>
+        <div className="testBorderContainer">
+          <div className="test1234">
+            <div class="box12">
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <div class="content12">
+                <div className="gameTitle">
+                  <p>Zolaman Memory Game</p>
                 </div>
-                <div className='gameBox2'>
-                    <div className='gameTitle'>
-                        <span>Zolaman HangMan Game</span>
-                    </div>
-                    <div>
-                      <span className='gameDescriptionTxt'>
-                        코인이름을 맞춰서 GZLT 토큰을 획득 해보세요!
-                      </span>
-                    </div>
-                    <div className='gameThumbnail'>
-                        <img src={Game2}></img>
-                    </div>
-                    <div className='gameStartBtn'>
-                        <button onClick={goToHangManGame} className="learn-more">Start</button>
-                    </div>
-
+                <div className="gameDescriptionTxt">
+                  <p>뒤집어진 카드를 맞춰서 GZLT 토큰을 획득 해보세요!</p>
                 </div>
-                <div className='gameBox3'>
-                    <div className='gameTitle'>
-                        <span>BlackJack Game</span>
-                    </div>
-                    <div>
-                      <span className='gameDescriptionTxt'>
-                        딜러와 게임을 해서 GZLT 토큰을 획득 해보세요!
-                      </span>
-                    </div>
-                    <div className='gameThumbnail'>
-                      <img src={Game3}></img>
-                    </div>
-                    <div className='gameStartBtn'>
-                        <button onClick={changeSwapModal} className="learn-more">Start</button>
-                    </div>
+                <div className="gameThumbnail">
+                  <img src={Game1}></img>
                 </div>
+                <div className="gameStartBtn">
+                  <button onClick={goToCardGame} className="learn-more">
+                    Start
+                  </button>
+                </div>
+              </div>
             </div>
+          </div>
+          <div className="test1234">
+            <div class="box12">
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <div class="content12">
+                <div className="gameTitle">
+                  <p>Zolaman HangMan Game</p>
+                </div>
+                <div>
+                  <p className="gameDescriptionTxt">
+                    코인이름을 맞춰서 GZLT 토큰을 획득 해보세요!
+                  </p>
+                </div>
+                <div className="gameThumbnail">
+                  <img src={Game2}></img>
+                </div>
+                <div className="gameStartBtn">
+                  <button onClick={goToHangManGame} className="learn-more">
+                    Start
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="test1234">
+            <div class="box12">
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <div class="content12">
+                <div className="gameTitle">
+                  <p>BlackJack Game</p>
+                </div>
+                <div>
+                  <p className="gameDescriptionTxt">
+                    딜러와 게임을 해서 GZLT 토큰을 획득 해보세요!
+                  </p>
+                </div>
+                <div className="gameThumbnail">
+                  <img src={Game3}></img>
+                </div>
+                <div className="gameStartBtn">
+                  <button onClick={changeSwapModal} className="learn-more">
+                    Start
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-        {/* <div className='gameBoxContainer'>
-                        <div class="box">
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                            <div class="content">
-                            <h2>Zolaman Memory Game</h2>
-                            <p>
-                                <button onClick={goToCardGame}>Start</button>
-                            </p>
-                            </div>
-                        </div>
-                    </div> */}
-        
-       
+      </div>
     </div>
     </>
   )
