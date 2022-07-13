@@ -1,5 +1,5 @@
 import React from 'react'
-import {logo_PolaBear, logo_Kyungil,logo_HashBrand } from '../../images'
+import {logo_PolaBear, logo_Kyungil,logo_HashBrand } from '../../images/index'
 import './Partners.css'
 
 

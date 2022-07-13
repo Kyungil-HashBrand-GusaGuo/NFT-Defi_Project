@@ -22,7 +22,7 @@ import Chip from '../components/GamePage/BlackJackGame/Buttons/Chip';
 import { BlackGameOverModal } from '../components/index'
 import {BlackJackGameSetModal} from '../components/index'
 import { stakingViewAction } from '../redux/actions/stakingViewAction'
-import {white1} from '../images'
+import {white1} from '../images/index'
 import {HeadZol2} from "../images/index"
 
 import 'tachyons';

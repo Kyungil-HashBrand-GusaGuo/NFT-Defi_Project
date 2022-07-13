@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react'
 import './Navbar.css';
 import { MdReorder } from "react-icons/md";
-import {HeadImg} from '../../images'
+import {HeadImg} from '../../images/index'
 import { useDispatch, useSelector } from 'react-redux';
 import { connectAccount } from '../../redux/actions/connectAccount' 
 import { SwapModal } from '../index'

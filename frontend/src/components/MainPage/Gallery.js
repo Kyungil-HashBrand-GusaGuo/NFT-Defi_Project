@@ -4,7 +4,7 @@ import './Gallery.css'
 import { white1, white2, white3, white4, white5, 
     white6, white7, white8, white9, white10, 
     white11, white12, white13, white14, white15,
-    white16, white17, white18, white19, white20,} from '../../images'
+    white16, white17, white18, white19, white20,} from '../../images/index'
 
 const Gallery = () => {
 
