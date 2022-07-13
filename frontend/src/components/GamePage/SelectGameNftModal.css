@@ -43,7 +43,7 @@
 }
 
 .selectGameNftModalSliderSection {
-    height: 350px;
+    height: 20.833vw;
     background-color: whitesmoke;
     display: flex;
     justify-content: center;
@@ -129,7 +129,7 @@
 } */
 
 .selectGameNftModalButtonSection {
-    height: 100px;
+    height: 5.208vw;
     display: flex;
     justify-content: center;
     align-items: center;

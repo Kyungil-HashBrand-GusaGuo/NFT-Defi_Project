@@ -143,7 +143,6 @@ function CardGame() {
       </div>
       <div className='allCardGameContainer'>
         <div className='cardGameContainer'>
-        <button className='startBtn' onClick={shuffleCards}>New game</button>
         <p>Turns: {turns}</p>
         <div className="card-grid">
             {cards.map(card => (
