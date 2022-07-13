@@ -357,8 +357,11 @@ const BlackJackGame = () => {
               }}
               className="pa1 ba b--black bg-yellow"
             >
-              <h2>{`Token: $${getGameTokenBalance-bet}`}</h2>
-              {/* <p>Turns:{turns}</p> */}
+              {
+                getGameTokenBalance-bet < 0 ?
+                  alert("보유한 Token보다 크게 배팅할 수 없습니다.", window.location.reload())
+                : <h2>{`Token: $${getGameTokenBalance-bet}`}</h2>
+              }
             </div>
           </div>
         </div>
