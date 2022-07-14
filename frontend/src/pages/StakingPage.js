@@ -183,7 +183,7 @@ const StakingPage = () => {
                     UnStake NFT
                   </h2>
                   <span className='unStakeTxt'>
-                    Do note that only NFTs that have been staked for afull 24 hours can enjoy the current day's ZLT rebate
+                    Do note that only NFTs that have been staked for afull 24 hours can enjoy the current day's ZLT rebate                    
                   </span>
                 </div>
                 <div className='unStakingCardMainContainer'>
