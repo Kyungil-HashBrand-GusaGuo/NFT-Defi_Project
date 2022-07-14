@@ -206,13 +206,16 @@ opacity: 0.9;
 
 .gameTitle p {
     font-size: 1.302vw;
-    
+    font-weight: bold;
 }
 
 .gameDescriptionTxt {
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    font-size: 0.938vw
+    font-size: 1.042vw;
+    margin-top: 0.781vw;
+    margin-bottom: 0.781vw;
 }
 
 .gameThumbnail {
@@ -225,6 +228,7 @@ opacity: 0.9;
 .gameThumbnail img {
     width: 15.625vw;
     height: 15.625vw;
+    margin-bottom: 0.781vw;
 }
 
 .gameStartBtn {
@@ -278,7 +282,7 @@ opacity: 0.9;
   left: 50%; */
   /* transform: translate(-50%, -50%); */
   width: 20.833vw;
-  height: 26.042vw;
+  height: 28.604vw;
   /* background: #111845a6; */
   box-sizing: border-box;
   overflow: hidden;

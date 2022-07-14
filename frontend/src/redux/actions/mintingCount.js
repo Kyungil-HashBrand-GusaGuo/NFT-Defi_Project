@@ -9,7 +9,11 @@ function mintCount() {
                 const NORMAL_TOKEN_COUNT = api.get("/block/normalCurrent")
                 const SPECIAL_TOKEN_COUNT = api.get("/block/specialCurrent")
 
-                let [ maxNormalTokenCount, maxSpecialTokenCount, normalTokenCount, specialTokenCount ] = await Promise.all([MAX_NORMAL_TOKEN_COUNT, MAX_SPECIAL_TOKEN_COUNT, NORMAL_TOKEN_COUNT, SPECIAL_TOKEN_COUNT])
+                let [ maxNormalTokenCount, 
+                    maxSpecialTokenCount, 
+                    normalTokenCount, 
+                    specialTokenCount ] 
+                = await Promise.all([MAX_NORMAL_TOKEN_COUNT, MAX_SPECIAL_TOKEN_COUNT, NORMAL_TOKEN_COUNT, SPECIAL_TOKEN_COUNT])
                 // console.log("MAX_NORMAL_TOKEN_COUNT",maxNormalTokenCount)
                 // console.log("MAX_SPECIAL_TOKEN_COUNT",maxSpecialTokenCount)
                 // console.log("NORMAL_TOKEN_COUNT",normalTokenCount)
@@ -24,9 +28,6 @@ function mintCount() {
                         specialTokenCount : specialTokenCount.data
                     }
                 })
-
-                //dispatch({type: "CHANGE_MINTING_MODAL", payload : { mintModal : true }})
-
           } catch (error){
             console.error(error);
           }

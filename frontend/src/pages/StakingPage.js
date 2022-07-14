@@ -29,12 +29,8 @@ const StakingPage = () => {
       appendDots: dots => {
         return <MagicSliderDots dots={dots} numDotsToShow={5} dotWidth={30} />;
       }
-    // afterChange: function(index) {
-    //   console.log(
-    //     `Slider Changed to: ${index + 1}, background: #222; color: #bada55`
-    //   );
-    // }
   };
+
     const navigate = useNavigate()
     const dispatch = useDispatch()
     const {account} = useSelector(state => state.account)
@@ -104,7 +100,6 @@ const StakingPage = () => {
       }
     } 
 
-    console.log(account)
     useEffect( () => {
         dispatch(stakingViewAction.stakingViewAct(account))
     },[account])
