@@ -1,10 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Kdam+Thmor+Pro&display=swap');
 @import "~slick-carousel/slick/slick.css"; 
 @import "~slick-carousel/slick/slick-theme.css";
-
-/* @import url("https://fonts.googleapis.com/css?family=Press+Start+2P");
-@import url("https://fonts.googleapis.com/css?family=VT323"); */
-
+@import url('https://fonts.googleapis.com/css?family=Jua:400');
 
 
 :root {
@@ -48,8 +45,7 @@
  
 
 *{
-	font-family: 'Kdam Thmor Pro', sans-serif;
-	/* font-family: "Press Start 2P", "VT323"; */
+	font-family: 'Kdam Thmor Pro', 'Jua';
     margin: 0;
     padding: 0;
 

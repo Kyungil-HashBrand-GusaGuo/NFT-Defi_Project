@@ -134,7 +134,8 @@ const GameMainPage = () => {
                   <p>Zolaman Memory Game</p>
                 </div>
                 <div className="gameDescriptionTxt">
-                  <p>뒤집어진 카드를 맞춰서 GZLT 토큰을 획득 해보세요!</p>
+                  <p>뒤집어진 카드를 맞춰서</p>
+                  <p>GZLT 토큰을 획득 해보세요!</p>
                 </div>
                 <div className="gameThumbnail">
                   <img src={Game1}></img>
