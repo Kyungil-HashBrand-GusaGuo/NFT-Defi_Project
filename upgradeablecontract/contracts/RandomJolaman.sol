@@ -6,7 +6,6 @@ import "hardhat/console.sol";
 
 
 import "@openzeppelin/contracts-upgradeable/token/ERC721/ERC721Upgradeable.sol";
-import "@openzeppelin/contracts-upgradeable/token/ERC721/extensions/ERC721URIStorageUpgradeable.sol";
 import "@openzeppelin/contracts-upgradeable/token/ERC721/extensions/ERC721EnumerableUpgradeable.sol";
 import "@openzeppelin/contracts-upgradeable/access/OwnableUpgradeable.sol";
 
@@ -38,7 +37,7 @@ contract RandomJolaman is Initializable, ERC721EnumerableUpgradeable, OwnableUpg
 
     uint constant public MAX_NORMAL_TOKEN_COUNT = 1000;
     uint constant public MAX_SPECIAL_TOKEN_COUNT = 10020;
-
+    uint64 public mintingPrice; 
     address public _owner;
 
     string public metadataURI; // metadata url public? or private?
@@ -54,12 +53,11 @@ contract RandomJolaman is Initializable, ERC721EnumerableUpgradeable, OwnableUpg
         totalIncome = 0;
         _normalTokenIdCount = 0;
         _specialTokenIdCount = 10000;
+        mintingPrice = 2 * 10 ** 18;
         initialized = true;
-
-        // _grantRole(DEFAULT_ADMIN_ROLE, msg.sender);
     }
 
-    uint64 public mintingPrice = 2 * 10 ** 18;
+    
 
 
     struct JolamanTokenData {
@@ -76,19 +74,14 @@ contract RandomJolaman is Initializable, ERC721EnumerableUpgradeable, OwnableUpg
     function tokenURI(uint _tokenId) override public view returns (string memory) {
         // String.toString() openzeppelin 형변환 라이브러리 사용
         string memory jolamanTokenType = Strings.toString(mappedJolamanTokenData[_tokenId].jolamanTokenType);
-
-        // abi.encodePacked(arg) arg들을 하나로 합쳐주는 함수
-        // https://gateway.pinata.cloud/ipfs/QmT4Hef2VNKxr7fuJqZQMKfEPkm5jCLLPKraNrFJeSpg1s
         return string(abi.encodePacked(metadataURI, '/', jolamanTokenType, '.json'));
     }
 
     function addWhiteList(address _toWhiteList) public onlyOwner{
         isWhiteList[_toWhiteList] = true;
-        // _grantRole(SPECIAL_MINTER_ROLE, _toWhiteList);
     }
     function removeWhiteList(address _toWhiteList) public onlyOwner{
         isWhiteList[_toWhiteList] = false;
-        // _revokeRole(SPECIAL_MINTER_ROLE, _toWhiteList);
     }
 
     //   payment는 msg.value 값을 넘겨줘야함
@@ -99,13 +92,9 @@ contract RandomJolaman is Initializable, ERC721EnumerableUpgradeable, OwnableUpg
         require(success, "Failed to send money");
 
         totalIncome = totalIncome.add(msg.value);
-
-        // _grantRole(MINTER_ROLE, msg.sender);
-
         return true;
     }
 
-    // function safeMint(address to) public payable onlyRole(MINTER_ROLE) {
     function safeMint(address to) public payable {
         require(MAX_NORMAL_TOKEN_COUNT > _normalTokenIdCount, "No more minting is possible");
         require(mintingPrice <= msg.value, "Not enough klay");
@@ -128,15 +117,12 @@ contract RandomJolaman is Initializable, ERC721EnumerableUpgradeable, OwnableUpg
     }
 
     function payandMint() public payable {
-        // bool paymentStatus = payment();
         if (payment()) {
             safeMint(msg.sender);
-            // renounceRole(MINTER_ROLE, msg.sender);
         }
     }
 
     function safeMintforWhitelist(address to) public payable {
-    // function safeMintforWhitelist(address to) public payable onlyRole(SPECIAL_MINTER_ROLE) {
         require(isWhiteList[msg.sender] == true);
         require(MAX_SPECIAL_TOKEN_COUNT > _specialTokenIdCount, "No more minting is possible");
         require(mintingPrice <= msg.value, "Not enough klay");
@@ -213,8 +199,6 @@ contract RandomJolaman is Initializable, ERC721EnumerableUpgradeable, OwnableUpg
         mintingPrice = _price;
        
     }
-
-    // The following functions are overrides required by Solidity.
 
     function supportsInterface(bytes4 interfaceId)
         public
