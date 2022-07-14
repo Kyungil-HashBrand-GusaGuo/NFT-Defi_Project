@@ -1,15 +1,9 @@
 import {
     caver,
-    RandomJolamanContract,
-    MINT_CONTRACT_ADDRESS,
     SALE_CONTRACT_ADDRESS,
-    setDataContract,
     SaleContract
   
   } from "../../caverConfig.js";
-
-
-//const res = await setDataContract.methods.gettypeToId().call()
 
 function buyAction(edition, account) {
     return async (dispatch) => {
