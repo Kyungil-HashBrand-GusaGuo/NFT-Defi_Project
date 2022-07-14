@@ -1,6 +1,6 @@
 import './App.css';
 import { Routes, Route } from 'react-router-dom';
-import { MainPage, PreMintingPage, AdminPage, MyPage, AllMintPage, SellPage, MarketPage, BuyPage, StakingPage, CardGame, GameMainPage, HangManGame, NotFound, BlackJackGame } from './pages';
+import { MainPage, PreMintingPage, AdminPage, MyPage, AllMintPage, SellPage, MarketPage, BuyPage, StakingPage, CardGame, GameMainPage, HangManGame, NotFound, BlackJackGame } from './pages/_index';
 import { Navbar, Footer } from './components'
 import { useSelector } from 'react-redux'
 
@@ -20,7 +20,6 @@ function App() {
         <Route path='/mypage' element={<MyPage/>} />
         <Route path='/pre-minting' element={<PreMintingPage/>} />
         { adminAccount === account ? <Route path='/admin' element={<AdminPage/>} /> : null} 
-        {/* <Route path='/admin' element={<AdminPage/>}/> */}
         <Route path='/all-minting' element={<AllMintPage/>} />
         <Route path='/sellpage/:edition' element={<SellPage/>}/>
         <Route path='/market' element={<MarketPage/>}/>

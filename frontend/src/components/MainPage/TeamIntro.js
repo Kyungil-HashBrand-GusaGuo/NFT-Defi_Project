@@ -1,6 +1,6 @@
 import React from 'react'
 import './TeamIntro.css'
-import {Team1, Team2, Team3, Team4, Team5} from '../../images';
+import {Team1, Team2, Team3, Team4, Team5} from '../../images/index';
 
 const TeamIntro = () => {
   return (

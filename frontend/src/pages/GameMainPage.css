@@ -1,14 +1,49 @@
 .gamePageMainContainer {
     /* width: 100%; */
     height: 100%;
-    /* background: yellow; */
+    margin-top: 100px;
     padding-bottom: 100px;
 }
 
+.cardGameTitleContainer{
+  padding-top: 200px;
+  height: 4.167vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform:rotate(-3deg);
+  /* top: -2.083vw; */
+  margin-bottom: 1.563vw;
+}
+
+.cardGameTitleContainer h2{
+  font-size: 2.778vw;
+  color: whitesmoke;
+  background-color: #272727;
+  padding: 0.781vw;
+  padding-left: 1.042vw;
+  padding-right: 1.042vw;
+  border: 0.052vw solid #272727;
+  border-radius: 0.521vw;
+}
+
+
+
+hr.style-five {
+  border-radius: 20px;
+  width: 80%;
+  height: 5px;
+  margin-left: 130px;
+  margin-top: -20px;
+  border: 0;
+  background: #272727;
+}
+
 .gameSelectContainer {
-    padding: 50px 100px 0px 100px;
+    /* padding: 50px 100px 0px 100px; */
     /* width: 100%; */
     height: 100%;
+    margin-top: 50px;
     /* background-color: #2a3cad; */
 }
 
@@ -44,6 +79,12 @@
   display: flex;
 }
 
+.rankIconContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .gameTimerContainer{
   display: flex;
   align-items: center;
@@ -70,6 +111,7 @@
 .crownIcon {
   width: 50px;
   height: 50px;
+  margin-left: 20px;
 }
 
 .rankImgContainer {
@@ -90,17 +132,18 @@
 .gameScoreTable {
   display: flex;
   justify-content: center;
+  align-items: center;
   margin-top: 2.083vw;
   margin-bottom: 1.389vw;
 }
 
 .gameScoreTable table {
   border: 0.139vw solid black;
-  width: 800px;
-  height: 200px;
+  width: 41.667vw;
+  height: 10.417vw;
   border-collapse: collapse;
   text-align: center;
-  font-size: 25px;
+  font-size: 1.302vw;
 }
 
 .gameScoreTable th, td {
@@ -141,16 +184,17 @@ opacity: 0.9;
     display: flex;
 }
 
+.testBorderContainer {
+  display: flex;
+  height: 100%;
+}
+
 .gameBox1{
+    display: flex;
+    justify-content: center;
     flex: 33%;
     /* background-color: aqua; */
-    width: 100%;
-    height: 500px; 
-    display: flex;
-    flex-direction: column;  
-    padding: 20px 20px 50px 20px;
-    border: 2px solid black;
-    border-radius: 30px;
+    /* width: 100%; */
 }
 
 
@@ -160,14 +204,15 @@ opacity: 0.9;
 
 }
 
-.gameTitle span {
-    font-size: 30px;
+.gameTitle p {
+    font-size: 1.302vw;
     
 }
 
 .gameDescriptionTxt {
     display: flex;
     justify-content: center;
+    font-size: 0.938vw
 }
 
 .gameThumbnail {
@@ -178,8 +223,8 @@ opacity: 0.9;
 }
 
 .gameThumbnail img {
-    width: 300px;
-    height: 300px;
+    width: 15.625vw;
+    height: 15.625vw;
 }
 
 .gameStartBtn {
@@ -188,144 +233,156 @@ opacity: 0.9;
     /* align-items: flex-end; */
 }
 
+.gameStartBtn button{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 120px;
+  height: 50px;
+}
+
 .gameBox2{
+    display: flex;
+    justify-content: center;
     flex: 33%;
     /* background-color: #f0a591; */
-    width: 100%;
-    height: 500px; 
-    display: flex;
-    flex-direction: column;  
-    padding: 20px 20px 50px 20px;
-    border: 2px solid black;
-    border-radius: 30px;
+    /* width: 100%; */
 }
 
 .gameBox3 {
+    display: flex;
+    justify-content: center;
     flex:33%;
     /* background-color: bisque; */
-    width: 100%;
-    height: 500px;
-    padding: 20px 20px 50px 20px;
-    border: 2px solid black;
-    border-radius: 30px;
+    /* width: 100%; */
 }
 
 .gameBoxContainer {
     display: flex;
 }
-  
-  .content h2{ font-size:19px;}
-  
-  .box{
-    position: absolute;
-    top: 40%;
-    left: 40%;
-    transform: translate(-50%, -50%);
-    width: 300px;
-    height: 300px;
-    background: #111845a6;
-    box-sizing: border-box;
-    overflow: hidden;
-    box-shadow: 0 20px 50px rgb(23, 32, 90);
-    border: 2px solid #2a3cad;
-    color: white;
-    padding: 20px;
-  }
-  
-  .box:before{
-    content: '';
-    position:absolute;
-    top:0;
-    left:-100%;
-    width:100%;
-    height:100%;
-    background: rgba(255,255,255,0.1);
-    transition:0.5s;
-    pointer-events: none;
-  }
-  
-  .box:hover:before{
-    left:-50%;
-    transform: skewX(-5deg);
-  }
-  
-  
-  .box .content{
-    position:absolute;
-    top:15px;
-    left:15px;
-    right:15px;
-    bottom:15px;
-    border:1px solid #f0a591;
-    padding:20px;
-    text-align:center;
-    box-shadow: 0 5px 10px rgba(9,0,0,0.5);
-    
-  }
-  
-  .box span{
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: block;
-    box-sizing: border-box;
-    
-  }
-  
-  .box span:nth-child(1)
-  {
-    transform:rotate(0deg);
-  }
-  
-  .box span:nth-child(2)
-  {
-    transform:rotate(90deg);
-  }
-  
-  .box span:nth-child(3)
-  {
-    transform:rotate(180deg);
-  }
-  
-  .box span:nth-child(4)
-  {
-    transform:rotate(270deg);
-  }
-  
-  .box span:before
-  {
-    content: '';
-    position: absolute;
-    width:100%;
-    height: 2px;
-    background: #50dfdb;
-    animation: animate 4s linear infinite;
-  }
-  
-  @keyframes animate {
-    0% {
-    transform:scaleX(0);
-    transform-origin: left;
-    }
-    50%
-    {
-      transform:scaleX(1);
-    transform-origin: left;
-    }
-    50.1%
-    {
-      transform:scaleX(1);
-    transform-origin: right;
-      
-    }
-    
-    100%
-    {
-      transform:scaleX(0);
-    transform-origin: right;
-      
-    }
 
-  } 
+.testBorderContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.test1234 {
+  margin-right: 3.125vw;
+  margin-left: 3.125vw;
+}
+
+
+.box12{
+  position: relative;
+  /* top: 50%;
+  left: 50%; */
+  /* transform: translate(-50%, -50%); */
+  width: 20.833vw;
+  height: 26.042vw;
+  /* background: #111845a6; */
+  box-sizing: border-box;
+  overflow: hidden;
+  box-shadow: 0.365vw 0.365vw 0.365vw 0.365vw rgb(132 81 61 / 80%);
+  border: 2px solid #2a3cad;
+  border-radius: 1.042vw;
+  color: black;
+  padding: 1.042vw;
+}
+
+.box12:before{
+  content: '';
+  position:absolute;
+  top:0;
+  width:100%;
+  height:100%;
+  background: rgba(255,255,255,0.1);
+  transition:0.5s;
+  pointer-events: none;
+}
+
+.box12:hover:before{
+  left:-50%;
+  transform: skewX(-5deg);
+}
+
+
+.box12 .content12{
+  position:absolute;
+  top:0.781vw;
+  left:0.781vw;
+  right:0.781vw;
+  bottom:0.781vw;
+  /* border:0.052vw solid black; */
+  padding:1.042vw;
+  text-align:center;
+  /* box-shadow: 0 5px 10px rgba(9,0,0,0.5); */
+  
+}
+
+.box12 span{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  box-sizing: border-box;
+  
+}
+
+.box12 span:nth-child(1)
+{
+  transform:rotate(0deg);
+}
+
+.box12 span:nth-child(2)
+{
+  transform:rotate(90deg);
+}
+
+.box12 span:nth-child(3)
+{
+  transform:rotate(180deg);
+}
+
+.box12 span:nth-child(4)
+{
+  transform:rotate(270deg);
+}
+
+.box12 span:before
+{
+  content: '';
+  position: absolute;
+  width:100%;
+  height: 2px;
+  background: purple;
+  animation: animate 4s linear infinite;
+}
+
+@keyframes animate {
+  0% {
+  transform:scaleX(0);
+  transform-origin: left;
+  }
+  50%
+  {
+    transform:scaleX(1);
+  transform-origin: left;
+  }
+  50.1%
+  {
+    transform:scaleX(1);
+  transform-origin: right;
+    
+  }
+  
+  100%
+  {
+    transform:scaleX(0);
+  transform-origin: right;
+    
+  }
+  
+  
+}

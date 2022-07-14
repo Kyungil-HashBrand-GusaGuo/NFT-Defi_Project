@@ -11,6 +11,8 @@ import logo_DCcomics from './logo_DCcomics.png'
 import logo_Diseny from './logo_Diseny.png'
 import logo_Marvel from './logo_Marvel.png'
 import logo_PolaBear from './logo_PolaBear.png'
+import logo_Kyungil from './logo_Kyungil.png'
+import logo_HashBrand from './logo_HashBrand.png'
 import zolca10 from './zolca10.png'
 import white1 from './mainsilder/1.png'
 import white2 from './mainsilder/2.png'
@@ -37,8 +39,11 @@ import Game1 from './Game1.png'
 import Game2 from './Game2.png'
 import Game3 from './Game3.png'
 import GoldCrown from './krone.gif'
+import BrownCrown from './brown.gif'
+import SliverCrown from './sliver.gif'
 import MainLeftZol from './mainleftzol.png'
 import MainRightZol from './mainrightzol.png'
+import HeadZol2 from './headzol2.png'
 
 
 
@@ -53,6 +58,8 @@ export {HeadImg,
     logo_Diseny, 
     logo_Marvel,
     logo_PolaBear,
+    logo_Kyungil,
+    logo_HashBrand,
     zolca10,
     white1,
     white2,
@@ -79,8 +86,12 @@ export {HeadImg,
     Game2,
     Game3,
     GoldCrown,
+    BrownCrown,
+    SliverCrown,
     MainLeftZol,
     MainRightZol,
+    HeadZol2,
+
 
 }
 

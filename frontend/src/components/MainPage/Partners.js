@@ -1,5 +1,5 @@
 import React from 'react'
-import { logo_DCcomics, logo_Marvel, logo_Diseny, logo_PolaBear } from '../../images'
+import {logo_PolaBear, logo_Kyungil,logo_HashBrand } from '../../images/index'
 import './Partners.css'
 
 
@@ -11,10 +11,9 @@ const Partners = () => {
         </div>
         <div className='partnerslogofContainer'>
             <div className='logoSection'>
-              <div className='partnerLogo' style={{backgroundImage:"url(" + logo_DCcomics + ")"}}></div>
-              <div className='partnerLogo' style={{backgroundImage:"url(" + logo_Marvel + ")"}}></div>
-              <div className='partnerLogo' style={{backgroundImage:"url(" + logo_Diseny + ")"}}></div>
-              <div className='partnerLogo' style={{backgroundImage:"url(" + logo_PolaBear + ")"}}></div>
+              <a href='http://www.kiweb.or.kr/?view=pc' target='_blank'><div className='partnerLogo' style={{backgroundImage:"url(" + logo_Kyungil + ")"}}></div>            </a>
+              <a href='https://angrypolarbears.com/' target='_blank'><div className='partnerLogo' style={{backgroundImage:"url(" + logo_PolaBear + ")"}}></div>            </a>
+              <a href='https://www.hashbrand.kr/' target='_blank'><div className='partnerLogo' style={{backgroundImage:"url(" + logo_HashBrand + ")"}}></div>            </a>
             </div>
         </div>
     </div>

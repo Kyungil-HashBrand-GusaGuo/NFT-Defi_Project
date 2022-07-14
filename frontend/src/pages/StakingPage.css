@@ -244,17 +244,29 @@
 
 .stakingPageTitle {
     /* background-color: yellow; */
-    margin-top: 2.083vw;
-    margin-bottom: 0.694vw;
+    margin-top: 0.083vw;
+    margin-bottom: 1.694vw;
+    /* display: flex;
+    align-items: center; */
+}
+
+.stakingPageSpan0{
+    font-size: 40px;
+    margin-right: 30px;
+    padding-left: 0.694vw;
 }
 
 .stakingPageSpan1 {
+    font-size: 20px;
     border-right: 0.139vw solid black;
-    padding: 0.694vw;
+    padding-left: 0.694vw;
+    padding-right: 0.694vw;
 }
 
 .stakingPageSpan2 {
-    padding: 0.694vw;
+    font-size: 20px;
+    padding-left: 0.694vw;
+    padding-right: 0.694vw;
 }
 
 .unStakingContainer {
