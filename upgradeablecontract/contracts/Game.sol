@@ -27,6 +27,7 @@ contract Game is Initializable, GameJolamanToken, OwnableUpgradeable, ERC721Hold
     uint constant GZLTERC20 = 10 ** 18;
     uint constant valuePortion = 10 ** 17;
 
+    // 카드 뒤집기 GZLT 보상 함수
     function MemoryGameReward(address _to, uint result) public onlyOwner{
         if (result == 1) {
             _mint(_to, GZLTERC20);
@@ -39,6 +40,7 @@ contract Game is Initializable, GameJolamanToken, OwnableUpgradeable, ERC721Hold
         }
     }
 
+    // 행맨 게임 GZLT 보상 함수
     function HangmanGameReward(address _to, uint wrongLetters) public onlyOwner {
         if (wrongLetters == 0) {
             _mint(_to, GZLTERC20 * 6);
@@ -61,22 +63,25 @@ contract Game is Initializable, GameJolamanToken, OwnableUpgradeable, ERC721Hold
 
     }
 
+    // 블랙잭 게임이겼을시 보상 함수
     function blackJackWin(address _to, uint _betPrice) public onlyOwner {
         _mint(_to, GZLTERC20 * _betPrice);
     }
-
+    // 블랙잭 게임 패배시 패널티 함수
     function blackJackLose(address _to, uint _betPrice) public onlyOwner {
         _burn(_to, GZLTERC20 * _betPrice);
     }
 
+    // GameContract 입금 함수
     function DepositToContract() public payable onlyOwner {
 
     }
-
+    // GameContract 잔고 확인 함수
     function CheckContractBalance() public view returns(uint) {
         return address(this).balance;
     }
 
+    // GZLT토큰을 KLAYTN 으로 swap 함수
     function TokenToKlay(uint amount) public {
         require(balanceOf(msg.sender) >= amount * GZLTERC20, "Not enough GZLT");
         require(address(this).balance >= amount * valuePortion, "Not enough Contract Balance");
@@ -84,6 +89,7 @@ contract Game is Initializable, GameJolamanToken, OwnableUpgradeable, ERC721Hold
         _burn(msg.sender, amount * GZLTERC20);
     }
 
+    // 게임 RankSystem 순위 받아서 nft 보상 지급 함수
     function airDrop(address account1, address account2, address account3, uint _JolamanType, uint _JolamanType2, uint _JolamanType3) public {
 
         require(_owner == msg.sender, "only Contract Owner can call this Function");

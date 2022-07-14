@@ -26,6 +26,7 @@ contract StakingSystem is Initializable, OwnableUpgradeable, ERC721Holder, Jolam
     uint256 constant valuePortion = 10 ** 17 * 5;
     bool private initialized;
     
+    // Staker에대한 필요한 정보들 저장 구조체
     struct Staker {
         uint256[] JolamanType;
         mapping(uint256 => uint256) tokenStakingCoolDown;
@@ -41,7 +42,9 @@ contract StakingSystem is Initializable, OwnableUpgradeable, ERC721Holder, Jolam
         OwnableUpgradeable.__Ownable_init();
     }
 
+    // 주소 입력시 해당 주소의 staking data 반환 매핑
     mapping(address => Staker) public stakers;
+    // 졸라맨 타입 입력시 해당 토큰 주인 반환 매핑
     mapping(uint256 => address) public tokenOwner;
 
 
@@ -124,7 +127,7 @@ contract StakingSystem is Initializable, OwnableUpgradeable, ERC721Holder, Jolam
 
         stakedTotal--;
     }
-
+    
     function find(uint value, uint[] storage JolamanType) private view returns(uint)  {
         uint i = 0;
         while (JolamanType[i] != value) {
@@ -197,28 +200,26 @@ contract StakingSystem is Initializable, OwnableUpgradeable, ERC721Holder, Jolam
         Staker storage staker = stakers[_user];
         return staker.JolamanType;
     }
-
+    // contract 입금 함수
     function DepositToContract() public payable onlyOwner {
 
     }
-
+    // contract 잔고 확인 함수
     function CheckContractBalance() public view returns(uint) {
         return address(this).balance;
     }
 
+    // klaytn을 ZLT토큰으로 swap 함수
     function KlayToToken() public payable{
         require(msg.sender.balance >= msg.value, "Not enough Klay");
         mint(msg.sender, msg.value);
     }
 
+    // ZLT토큰을 클레이튼으로 swap 함수 
     function TokenToKlay(uint amount) public {
         require(balanceOf(msg.sender) >= amount * ERCToken, "Not enough ZLT");
         require(address(this).balance >= amount * valuePortion, "Not enough Contract Balance");
         payable(msg.sender).transfer(amount * valuePortion);
         burn(msg.sender, amount * ERCToken);
-    }
-
-    function AddressBalance() public view returns(uint){
-        return address(this).balance;
     }
 }
