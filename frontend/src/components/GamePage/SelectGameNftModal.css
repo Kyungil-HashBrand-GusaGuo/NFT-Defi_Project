@@ -136,12 +136,12 @@
 }
 
 .selectGameNftModalButton {
-    width: 250px;
-    height: 40px;
-    font-size: 20px;
+    width: 17.361vw;
+    height: 2.778vw;
+    font-size: 1.389vw;
     color: #141414;
-    border: 2px solid #141414;
-    border-radius: 30px;
+    border: 0.139vw solid #141414;
+    border-radius: 2.083vw;
 }
 
 .selectGameNftModalButton:hover{
