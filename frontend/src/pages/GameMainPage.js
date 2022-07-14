@@ -26,10 +26,6 @@ const GameMainPage = () => {
         navigate('/hangmangame')
     }
 
-    const goToBlackJackGame =() => {
-      navigate('/blackjackgame')
-    }
-
     const changeSwapModal = () => {
       setSwapModal(true)
     }
