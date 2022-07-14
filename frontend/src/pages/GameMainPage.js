@@ -58,7 +58,7 @@ const GameMainPage = () => {
                   <div>
                     <div className='rankIconContainer'>
                       <img src={SliverCrown} className="crownIcon"></img>
-                      <span>2st</span>
+                      <span>2nd</span>
                     </div>
                     <div className='rankImgContainer'>
                       <img src={"https://sean95.s3.ap-northeast-2.amazonaws.com/raw/" + `${airdropReward[1]}` + ".png"}></img>
@@ -76,7 +76,7 @@ const GameMainPage = () => {
                   <div>
                     <div className='rankIconContainer'>
                       <img src={BrownCrown} className="crownIcon"></img>
-                      <span>3st</span>
+                      <span>3rd</span>
                     </div>
                     <div className='rankImgContainer'>
                       <img src={"https://sean95.s3.ap-northeast-2.amazonaws.com/raw/" + `${airdropReward[2]}` + ".png"}></img>
@@ -109,11 +109,7 @@ const GameMainPage = () => {
                             <td>{arr.point}</td>
                           </tr>
                         })
-                      : <tr>
-                          <td>asdf</td>
-                          <td>appendDots</td>
-                          <td></td>
-                        </tr>
+                      : null
                     }
                   </tbody>
                 </table>
@@ -158,10 +154,9 @@ const GameMainPage = () => {
                 <div className="gameTitle">
                   <p>Zolaman HangMan Game</p>
                 </div>
-                <div>
-                  <p className="gameDescriptionTxt">
-                    코인이름을 맞춰서 GZLT 토큰을 획득 해보세요!
-                  </p>
+                <div className="gameDescriptionTxt">
+                  <p>코인 이름을 맞추고</p>
+                  <p>GZLT 토큰을 획득 해보세요!</p>
                 </div>
                 <div className="gameThumbnail">
                   <img src={Game2}></img>
@@ -184,10 +179,9 @@ const GameMainPage = () => {
                 <div className="gameTitle">
                   <p>BlackJack Game</p>
                 </div>
-                <div>
-                  <p className="gameDescriptionTxt">
-                    딜러와 게임을 해서 GZLT 토큰을 획득 해보세요!
-                  </p>
+                <div className="gameDescriptionTxt">
+                  <p>딜러와 게임을 해서</p>
+                  <p>GZLT 토큰을 획득 해보세요!</p>
                 </div>
                 <div className="gameThumbnail">
                   <img src={Game3}></img>

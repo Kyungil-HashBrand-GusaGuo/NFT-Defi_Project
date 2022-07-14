@@ -9,7 +9,7 @@ function mypageAct(account) {
             if(account !== "")
             {
               const response = await api.post("/block/ownedTokenId", { account : account });
-              //const response = await setDataContract.methods.getTotalOwnedTokens(account).call()
+
               let array = []
               let editionArr = []
               let myMintingData = response.data
@@ -17,7 +17,6 @@ function mypageAct(account) {
               for(let i=0; i < myMintingData.length; i++){
           
                 const mintJSON = await pinataApi.get(`/${myMintingData[i]}.json`)
-                //console.log("여기 어대고",typeof(mintJSON.data.edition))
                 array.push(mintJSON)
                 editionArr.push(mintJSON.data.edition)
               }
@@ -27,8 +26,6 @@ function mypageAct(account) {
                    mymintEditionData : editionArr
                   }})
             }
-            //console.log("액션다음",account)
-            //console.log("내민팅확인",response);
           } catch (error){
             console.error(error);
           }
