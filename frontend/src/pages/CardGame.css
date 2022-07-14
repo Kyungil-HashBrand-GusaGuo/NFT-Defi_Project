@@ -16,7 +16,7 @@
     align-items: center;
     transform:rotate(-3deg);
     top: -2.083vw;
-    margin-bottom: 50px;
+    /* margin-bottom: 100px; */
 }
 
 .cardGameTitleContainer h2{
@@ -37,7 +37,9 @@
   }
 
   .allCardGameContainer {
+    /* padding-top: 200px; */
     display: flex;
+    margin-top: 100px;
   }
 
 

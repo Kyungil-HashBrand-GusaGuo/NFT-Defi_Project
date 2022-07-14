@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import './GameMainPage.css'
 import { useNavigate } from 'react-router-dom'
 import { Game1, Game2, Game3 } from '../images'
-import { GoldCrown } from '../images'
+import { GoldCrown,BrownCrown,SliverCrown } from '../images'
 import { useDispatch, useSelector } from 'react-redux'
 import { gameViewAction } from '../redux/actions/gameViewAction'
 import { rewardEditionGetAction } from '../redux/actions/rewardEditionGetAction'
@@ -56,22 +56,28 @@ const GameMainPage = () => {
               <div className='airdropConatiner'>
                 <div className='gameRewardContainer'>
                   <div>
-                    <img src={GoldCrown} className="crownIcon"></img>
-                    <span>2위</span>
+                    <div className='rankIconContainer'>
+                      <img src={SliverCrown} className="crownIcon"></img>
+                      <span>2st</span>
+                    </div>
                     <div className='rankImgContainer'>
                       <img src={"https://sean95.s3.ap-northeast-2.amazonaws.com/raw/" + `${airdropReward[1]}` + ".png"}></img>
                     </div>
                   </div>
                   <div>
-                    <img src={GoldCrown} className="crownIcon"></img>
-                    <span>1위</span>
+                    <div className='rankIconContainer'>
+                      <img src={GoldCrown} className="crownIcon"></img>
+                      <span>1st</span>
+                    </div>
                     <div className='rankImgContainer'>
                       <img src={"https://sean95.s3.ap-northeast-2.amazonaws.com/raw/" + `${airdropReward[0]}` + ".png"}></img>
                     </div>
                   </div>
                   <div>
-                    <img src={GoldCrown} className="crownIcon"></img>
-                    <span>3위</span>
+                    <div className='rankIconContainer'>
+                      <img src={BrownCrown} className="crownIcon"></img>
+                      <span>3st</span>
+                    </div>
                     <div className='rankImgContainer'>
                       <img src={"https://sean95.s3.ap-northeast-2.amazonaws.com/raw/" + `${airdropReward[2]}` + ".png"}></img>
                     </div>
