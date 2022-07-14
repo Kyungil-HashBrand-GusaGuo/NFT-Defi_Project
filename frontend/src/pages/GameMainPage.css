@@ -40,9 +40,10 @@ hr.style-five {
 }
 
 .gameSelectContainer {
-    padding: 50px 100px 0px 100px;
+    /* padding: 50px 100px 0px 100px; */
     /* width: 100%; */
     height: 100%;
+    margin-top: 50px;
     /* background-color: #2a3cad; */
 }
 
@@ -76,6 +77,12 @@ hr.style-five {
 
 .gameRewardContainer{
   display: flex;
+}
+
+.rankIconContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .gameTimerContainer{
@@ -177,21 +184,17 @@ opacity: 0.9;
     display: flex;
 }
 
-.test1234 {
+.testBorderContainer {
   display: flex;
   height: 100%;
 }
 
 .gameBox1{
+    display: flex;
+    justify-content: center;
     flex: 33%;
     /* background-color: aqua; */
-    width: 100%;
-    height: 500px; 
-    display: flex;
-    flex-direction: column;  
-    padding: 20px 20px 50px 20px;
-    border: 2px solid black;
-    border-radius: 30px;
+    /* width: 100%; */
 }
 
 
@@ -230,31 +233,28 @@ opacity: 0.9;
     /* align-items: flex-end; */
 }
 
-/* .gameStartBtn button{
+.gameStartBtn button{
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 120px;
   height: 50px;
-} */
+}
 
 .gameBox2{
+    display: flex;
+    justify-content: center;
     flex: 33%;
     /* background-color: #f0a591; */
-    width: 100%;
-    height: 500px; 
-    display: flex;
-    flex-direction: column;  
-    padding: 20px 20px 50px 20px;
-    border: 2px solid black;
-    border-radius: 30px;
+    /* width: 100%; */
 }
 
 .gameBox3 {
+    display: flex;
+    justify-content: center;
     flex:33%;
     /* background-color: bisque; */
-    width: 100%;
-    height: 500px;
-    padding: 20px 20px 50px 20px;
-    border: 2px solid black;
-    border-radius: 30px;
+    /* width: 100%; */
 }
 
 .gameBoxContainer {
