@@ -62,7 +62,6 @@
 │  │  config-overrides.js
 │  │  package-lock.json
 │  │  package.json
-│  │  README.md
 │  │  yarn.lock
 │  │
 │  ├─public
@@ -71,26 +70,17 @@
 │  │  │
 │  │  └─img
 │  │          1.png
-│  │          2.png
-│  │          3.png
-│  │          4.png
-│  │          5.png
-│  │          6.png
+│  │          ...
 │  │          cover.jpg
 │  │
 │  └─src
-│      │  API.js
 │      │  App.css
 │      │  App.js
-│      │  Apptest.js
 │      │  caverConfig.js
 │      │  index.js
 │      │  reportWebVitals.js
-│      │  SaleApi.js
 │      │  service-worker.js
 │      │  serviceWorker.js
-│      │  setupTests.js
-│      │  StakingApi.js
 │      │
 │      ├─components
 │      │  │  index.js
@@ -196,14 +186,17 @@
 │      │      CardInfo.js
 │      │
 │      ├─images
-│      │  │  01.arrow.png
+│      │  │  10.png
 │      │  │  ...
-│      │  │  17.Team5.png
+│      │  │  ThumNail1.png
 │      │  │
 │      │  ├─blackjack
-│      │  │      01.half.png
-│      │  │      ...
-│      │  │      06.ten.png
+│      │  │      half.png
+│      │  │      hundred.png
+│      │  │      logo.png
+│      │  │      onek.png
+│      │  │      quart.png
+│      │  │      ten.png
 │      │  │
 │      │  ├─hangmang
 │      │  │      0.png
@@ -230,7 +223,6 @@
 │      │      GameMainPage.js
 │      │      HangManGame.css
 │      │      HangManGame.js
-│      │      index.js
 │      │      MainPage.css
 │      │      MainPage.js
 │      │      MarketPage.css
@@ -245,6 +237,7 @@
 │      │      SellPage.js
 │      │      StakingPage.css
 │      │      StakingPage.js
+│      │      _index.js
 │      │
 │      └─redux
 │          │  api.js
@@ -307,24 +300,20 @@
 │  │      setData.js
 │  │      stakeSystem.js
 │  │
-│  ├─routes
-│  │  │  index.js
-│  │  │
-│  │  ├─block
-│  │  │      game.controller.js
-│  │  │      index.js
-│  │  │      randomZolaman.controller.js
-│  │  │      saleZolaman.controller.js
-│  │  │      setData.controller.js
-│  │  │      stakeSystem.controler.js
-│  │  │
-│  │  └─data
-│  │          data.controller.js
-│  │          index.js
-│  │
-│  └─views
-│          index.html
-│
+│  └─routes
+│      │  index.js
+│      │
+│      ├─block
+│      │      game.controller.js
+│      │      index.js
+│      │      randomZolaman.controller.js
+│      │      saleZolaman.controller.js
+│      │      setData.controller.js
+│      │      stakeSystem.controler.js
+│      │
+│      └─data
+│              data.controller.js
+│              index.js
 ```
 ### BlockChain
 ```
@@ -432,10 +421,6 @@
 │      │
 │      └─hardhat
 │              console.sol
-├─migrations
-│      1_initial_migration.js
-│      2_random_jolaman.js
-│
 └─upgradeablecontract
     │  .gitignore
     │  hardhat.config.js
@@ -458,20 +443,18 @@
     │      setdataV2.sol
     │      StakeSystem.sol
     │
-    ├─scripts
-    │      gameUpgrade.deploy.js
-    │      JolamanTokenUpgrade.deploy.js
-    │      randomJolamanUpgrade.deploy.js
-    │      saleJolamanUpgrade.deploy.js
-    │      saleJolamanUpgradeV2.deploy.js
-    │      sample-script.js
-    │      setDataUpgrade.deploy.js
-    │      setDataUpgradeV2.deploy.js
-    │      stakesystemUpgrade.deploy.js
-    │      testRandomJol.deploy.js
+    └─scripts
+           gameUpgrade.deploy.js
+           JolamanTokenUpgrade.deploy.js
+           randomJolamanUpgrade.deploy.js
+           saleJolamanUpgrade.deploy.js
+           saleJolamanUpgradeV2.deploy.js
+           sample-script.js
+           setDataUpgrade.deploy.js
+           setDataUpgradeV2.deploy.js
+           stakesystemUpgrade.deploy.js
+           testRandomJol.deploy.js
 ```
-
-
 ## ✔ 협업 툴
 ---
 - Github

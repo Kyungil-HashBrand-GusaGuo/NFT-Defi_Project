@@ -6,8 +6,6 @@ import "@openzeppelin/contracts/access/AccessControl.sol";
 import "@openzeppelin/contracts-upgradeable/token/ERC20/ERC20Upgradeable.sol";
 
 contract JolamanToken is Initializable, ERC20Upgradeable {
-    bytes32 public constant MINTER_ROLE = keccak256("MINTER_ROLE");
-    bytes32 public constant BURNER_ROLE = keccak256("BURNER_ROLE");
     uint public constant ERC20Token = 10 ** 18;
     bool private initialized;
 
@@ -26,8 +24,6 @@ contract JolamanToken is Initializable, ERC20Upgradeable {
 }
 
 contract GameJolamanToken is Initializable, ERC20Upgradeable {
-    bytes32 public constant MINTER_ROLE = keccak256("MINTER_ROLE");
-    bytes32 public constant BURNER_ROLE = keccak256("BURNER_ROLE");
     bool private initialized;
 
         function initialize() public initializer {
