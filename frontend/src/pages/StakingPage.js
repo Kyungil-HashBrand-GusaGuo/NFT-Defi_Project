@@ -37,6 +37,8 @@ const StakingPage = () => {
     const {myNftList, stakingNftString, stakingReward , getStakingReward, getGameTokenBalance, successStaking, successUnStaking} = useSelector(state => state.stakingView)
     const [claimModal, setClaimModal] = useState(false)
 
+    console.log("여기 랭스?", myNftList.length)
+
     const staking = (edition) => {
       if(edition.length == 0){
         alert("하나 이상의 NFT를 선택해 주세요.")
@@ -47,7 +49,11 @@ const StakingPage = () => {
     }
 
     const goToGamePage = () => {
-      navigate('/gamemain')
+      if(myNftList.length == 0){
+        alert("하나 이상의 minting NFT가 있어야 참여 가능합니다.")
+      } else {
+        navigate('/gamemain')
+      }
     }
 
     const cancelStaking = (edition) => {
