@@ -61,10 +61,8 @@ const RoadMap = () => {
             </div>
             <div className='roadMaptxtSectionDetail2'>
               <p>
-              {/* Limited edition NFT ‘VERYVERYSTRONG ZOLAMAN’
-              Scheduled to open so that only holders can purchase */}
-              가나다라 마바사
-              이게 어떻게 나오는지 잘 모르겠다
+              Limited edition NFT ‘VERY VERY STRONG ZOLAMAN’
+              Scheduled to open so that only holders can purchase
               </p>
             </div> 
           </div>
@@ -102,50 +100,6 @@ const RoadMap = () => {
           </div>
         </div>
       </div>
-      {/* <div className='roadMapContainer3'>
-        <div className='roadtxtContainer'>
-          <div className='roadMaptxtSection'>
-            <div className='roadMaptxtSectionDetail1'>
-              <h2>Pre-Sale Minting</h2>
-            </div>
-            <div className='roadMaptxtSectionDetail2'>
-              <p>
-                dfdsfds
-              </p>
-            </div> 
-          </div>
-        </div>
-        <div className='arrowContainer'>
-          <img className='arrowImg' src={arrowIcon} ></img>
-        </div>
-        <div className='roadtxtContainer'>
-          <div className='roadMaptxtSection'>
-            <div className='roadMaptxtSectionDetail1'>
-              <h2>Pre-Sale Minting</h2>
-            </div>
-            <div className='roadMaptxtSectionDetail2'>
-              <p>
-                dfdsfds
-              </p>
-            </div> 
-          </div>
-        </div>
-        <div className='arrowContainer'>
-          <img className='arrowImg' src={arrowIcon} ></img>
-        </div>
-        <div className='roadtxtContainer'>
-          <div className='roadMaptxtSection'>
-            <div className='roadMaptxtSectionDetail1'>
-              <h2>Pre-Sale Minting</h2>
-            </div>
-            <div className='roadMaptxtSectionDetail2'>
-              <p>
-                dfdsfds
-              </p>
-            </div> 
-          </div>
-        </div>
-      </div>  */}
     </div>
     
     </>
