@@ -79,8 +79,10 @@ const StakingPage = () => {
             unStakeArr.splice(i, 1);
           }
         }
-      } else {
+      } else if(unStakeArr.length < 10){
         unStakeArr.push(id)
+      } else {
+          alert("최대 선택가능한 NFT 10개를 모두 선택했습니다")
       }
       console.log("Non스테이팅 배열확인", unStakeArr)
     }
@@ -92,8 +94,10 @@ const StakingPage = () => {
             comStakeArr.splice(i, 1);
           }
         }
-      } else {
+      } else if(comStakeArr.length < 10){
         comStakeArr.push(id)
+      } else {
+          alert("최대 선택가능한 NFT 10개를 모두 선택했습니다")
       }
       console.log("스테이킹 배열확인", comStakeArr)
     }
