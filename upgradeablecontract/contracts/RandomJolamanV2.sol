@@ -6,7 +6,6 @@ import "hardhat/console.sol";
 
 
 import "@openzeppelin/contracts-upgradeable/token/ERC721/ERC721Upgradeable.sol";
-import "@openzeppelin/contracts-upgradeable/token/ERC721/extensions/ERC721URIStorageUpgradeable.sol";
 import "@openzeppelin/contracts-upgradeable/token/ERC721/extensions/ERC721EnumerableUpgradeable.sol";
 import "@openzeppelin/contracts-upgradeable/access/OwnableUpgradeable.sol";
 
@@ -28,23 +27,19 @@ contract RandomJolamanV2 is Initializable, ERC721EnumerableUpgradeable, OwnableU
     uint private normal_token_index;
     uint private special_token_index;
 
-    uint public _normalTokenIdCount;
+    uint public _normalTokenIdCount; // normal token count
     uint public _specialTokenIdCount; // whitelist 전용 token count
-
-    bytes32 public constant MINTER_ROLE = keccak256("MINTER_ROLE");
-    bytes32 public constant SPECIAL_MINTER_ROLE = keccak256("SPECIAL_MINTER_ROLE"); // whitelist 전용 minter role
-
-    uint64 public mintingPrice; 
     uint private totalIncome; // 총 판매량
 
-    uint constant public MAX_NORMAL_TOKEN_COUNT = 1000;
-    uint constant public MAX_SPECIAL_TOKEN_COUNT = 10020;
-
+    uint constant public MAX_NORMAL_TOKEN_COUNT = 1000; // 일반 nft 최대 발행 번호
+    uint constant public MAX_SPECIAL_TOKEN_COUNT = 10020; // whiteList nft 최대 발행 번호
+    uint64 public mintingPrice; 
     address public _owner;
 
     string public metadataURI; // metadata url public? or private?
     setData public setdata;
 
+    // constructor 역할 배포시 자동실행
 
     function initialize(string memory _metadataURI, address _setdata) public initializer {
         __ERC721_init("Jolaman", "JLT");
@@ -55,18 +50,20 @@ contract RandomJolamanV2 is Initializable, ERC721EnumerableUpgradeable, OwnableU
         totalIncome = 0;
         _normalTokenIdCount = 0;
         _specialTokenIdCount = 10000;
+        mintingPrice = 2 * 10 ** 18;
         initialized = true;
-        mintingPrice = 2*10**18;
-        // _grantRole(DEFAULT_ADMIN_ROLE, msg.sender);
     }
 
+    // TokenType 구조체
     struct JolamanTokenData {
         uint jolamanTokenType; //일반 1~1000 , special 10000~10019
     }
 
     // tokenId를 넣으면 그에맞는 졸라맨 타입 출력 매핑
     mapping(uint => JolamanTokenData) public mappedJolamanTokenData;
+    // 주소입력시 whitelist인지 확인 매핑
     mapping(address => bool) public isWhiteList;
+    // 졸라맨 타입 입력시 이미 발행된 졸라맨 타입인지 확인 매핑
     mapping(uint => bool) public AlreadyMint; 
 
 
@@ -74,22 +71,20 @@ contract RandomJolamanV2 is Initializable, ERC721EnumerableUpgradeable, OwnableU
     function tokenURI(uint _tokenId) override public view returns (string memory) {
         // String.toString() openzeppelin 형변환 라이브러리 사용
         string memory jolamanTokenType = Strings.toString(mappedJolamanTokenData[_tokenId].jolamanTokenType);
-
-        // abi.encodePacked(arg) arg들을 하나로 합쳐주는 함수
-        // https://gateway.pinata.cloud/ipfs/QmT4Hef2VNKxr7fuJqZQMKfEPkm5jCLLPKraNrFJeSpg1s
         return string(abi.encodePacked(metadataURI, '/', jolamanTokenType, '.json'));
     }
 
-    function addWhiteList(address _toWhiteList) public onlyOwner{
+    // whiteList 추가 함수 contract owner만 실행 가능
+    function addWhiteList(address _toWhiteList) public {
         isWhiteList[_toWhiteList] = true;
-        // _grantRole(SPECIAL_MINTER_ROLE, _toWhiteList);
-    }
-    function removeWhiteList(address _toWhiteList) public onlyOwner{
-        isWhiteList[_toWhiteList] = false;
-        // _revokeRole(SPECIAL_MINTER_ROLE, _toWhiteList);
     }
 
-    //   payment는 msg.value 값을 넘겨줘야함
+    // whiteList 제거 함수 contract owner만 실행 가능
+    function removeWhiteList(address _toWhiteList) public {
+        isWhiteList[_toWhiteList] = false;
+    }
+
+    //   payment는 msg.value 값을 넘겨줘야함 (민팅 가격 지불 함수)
     function payment() public payable returns (bool) {
         require(msg.sender.balance >= msg.value, "check balance");
         require(mintingPrice == msg.value, "check price");
@@ -97,13 +92,10 @@ contract RandomJolamanV2 is Initializable, ERC721EnumerableUpgradeable, OwnableU
         require(success, "Failed to send money");
 
         totalIncome = totalIncome.add(msg.value);
-
-        // _grantRole(MINTER_ROLE, msg.sender);
-
         return true;
     }
 
-    // function safeMint(address to) public payable onlyRole(MINTER_ROLE) {
+    // 민팅 세부 로직 함수
     function safeMint(address to) public payable {
         require(MAX_NORMAL_TOKEN_COUNT > _normalTokenIdCount, "No more minting is possible");
         require(mintingPrice <= msg.value, "Not enough klay");
@@ -125,16 +117,15 @@ contract RandomJolamanV2 is Initializable, ERC721EnumerableUpgradeable, OwnableU
         _mint(to, tokenId);
     }
 
+    // 실제 민팅시 연결할 함수 지불이 성공적으로 이루어지면 민팅 진행
     function payandMint() public payable {
-        // bool paymentStatus = payment();
         if (payment()) {
             safeMint(msg.sender);
-            // renounceRole(MINTER_ROLE, msg.sender);
         }
     }
 
+    // whiteList 민팅 세부 로직 함수
     function safeMintforWhitelist(address to) public payable {
-    // function safeMintforWhitelist(address to) public payable onlyRole(SPECIAL_MINTER_ROLE) {
         require(isWhiteList[msg.sender] == true);
         require(MAX_SPECIAL_TOKEN_COUNT > _specialTokenIdCount, "No more minting is possible");
         require(mintingPrice <= msg.value, "Not enough klay");
@@ -158,6 +149,7 @@ contract RandomJolamanV2 is Initializable, ERC721EnumerableUpgradeable, OwnableU
         _mint(to, tokenId);
     }
 
+    // 실제 whiteList 민팅시 연결할 함수 지불이 성공적으로 이루어지면 민팅 진행
     function specialPayandMint() public payable {
         bool paymentStatus = payment();
         if (paymentStatus) {
@@ -170,7 +162,7 @@ contract RandomJolamanV2 is Initializable, ERC721EnumerableUpgradeable, OwnableU
         return mappedJolamanTokenData[_tokenId].jolamanTokenType;
     }
 
-    // 랜덤 jolamanTokenType 발행 함수 => jolamanTokenType.toString().json == metadata
+    // 랜덤 normal jolamanTokenType 발행 함수 => jolamanTokenType.toString().json == metadata
     function randomGenerator() private returns (JolamanTokenData memory) {
         JolamanTokenData memory randomTokenData;
         uint256 _random = uint256(keccak256(abi.encodePacked(normal_token_index, msg.sender, block.timestamp, blockhash(block.number-1))));
@@ -179,6 +171,8 @@ contract RandomJolamanV2 is Initializable, ERC721EnumerableUpgradeable, OwnableU
         return randomTokenData;
 
     }
+    
+    // 랜덤 whiteList Type 반행 함수
     function specialRandomGenerator() private returns (JolamanTokenData memory) {
         JolamanTokenData memory randomTokenData;
         uint256 _random = uint256(keccak256(abi.encodePacked(special_token_index, msg.sender, block.timestamp, blockhash(block.number-1))));
@@ -187,7 +181,7 @@ contract RandomJolamanV2 is Initializable, ERC721EnumerableUpgradeable, OwnableU
         return randomTokenData;
     }
 
-
+    // 랜덤 추출 로직
     function getRandTokenType(uint random) private returns (uint) {
         uint len = normal_token_ids.length - normal_token_index++;
         require(len > 0, 'no ids left');
@@ -197,6 +191,8 @@ contract RandomJolamanV2 is Initializable, ERC721EnumerableUpgradeable, OwnableU
         normal_token_ids[len - 1] = 0;
         return id;
     }
+
+    // 랜덤 whiteList 추출 로직
     function getRandSpecialTokenType(uint random) private returns (uint) {
         uint len = special_token_ids.length - special_token_index++;
         require(len > 0, 'no ids left');
@@ -207,12 +203,11 @@ contract RandomJolamanV2 is Initializable, ERC721EnumerableUpgradeable, OwnableU
         return id;
     }
 
+    // 민팅가격 변경 함수
     function setMintingPrice(uint64 _price) public {
         mintingPrice = _price;
        
     }
-
-    // The following functions are overrides required by Solidity.
 
     function supportsInterface(bytes4 interfaceId)
         public
