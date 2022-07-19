@@ -50,6 +50,7 @@ hr.style-five {
 .nftRankContainer {
   display: flex;
   justify-content: center;
+  flex-direction: column;
   position: relative;
 }
 .leftZolImgContainer {
@@ -77,6 +78,7 @@ hr.style-five {
 
 .gameRewardContainer{
   display: flex;
+  justify-content: center;
 }
 
 .rankIconContainer {
