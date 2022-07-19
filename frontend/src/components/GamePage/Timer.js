@@ -10,7 +10,7 @@ const Timer = () => {
     let deadline = useRef(); 
     let timer = useRef(null); 
     
-    let deadlineDate = new Date('July 28, 2022 19:19:00').getTime();
+    let deadlineDate = new Date('July 22, 2022 19:19:00').getTime();
     let now = new Date().getTime();
     let t = deadlineDate - now;
     let day = Math.floor((t % (1000 * 60 * 60 * 24 * 365)) / (1000 * 60 * 60 * 24));
@@ -50,7 +50,7 @@ const Timer = () => {
 
     useEffect(() => {
       if(gamePointRank.length && airdropReward.length){
-        deadline = new Date('July 28, 2022 19:19:00').getTime();
+        deadline = new Date('July 22, 2022 19:19:00').getTime();
         timer.current = setInterval(count, 1000);
       }     
     },[gamePointRank.length , airdropReward.length])
