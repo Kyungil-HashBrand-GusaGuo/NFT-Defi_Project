@@ -29,17 +29,15 @@ const StakingPage = () => {
       appendDots: dots => {
         return <MagicSliderDots dots={dots} numDotsToShow={5} dotWidth={30} />;
       }
-    // afterChange: function(index) {
-    //   console.log(
-    //     `Slider Changed to: ${index + 1}, background: #222; color: #bada55`
-    //   );
-    // }
   };
+
     const navigate = useNavigate()
     const dispatch = useDispatch()
     const {account} = useSelector(state => state.account)
     const {myNftList, stakingNftString, stakingReward , getStakingReward, getGameTokenBalance, successStaking, successUnStaking} = useSelector(state => state.stakingView)
     const [claimModal, setClaimModal] = useState(false)
+
+    console.log("여기 랭스?", myNftList.length)
 
     const staking = (edition) => {
       if(edition.length == 0){
@@ -51,7 +49,11 @@ const StakingPage = () => {
     }
 
     const goToGamePage = () => {
-      navigate('/gamemain')
+      if(myNftList.length == 0){
+        alert("하나 이상의 minting NFT가 있어야 참여 가능합니다.")
+      } else {
+        navigate('/gamemain')
+      }
     }
 
     const cancelStaking = (edition) => {
@@ -104,7 +106,6 @@ const StakingPage = () => {
       }
     } 
 
-    console.log(account)
     useEffect( () => {
         dispatch(stakingViewAction.stakingViewAct(account))
     },[account])
@@ -183,7 +184,7 @@ const StakingPage = () => {
                     UnStake NFT
                   </h2>
                   <span className='unStakeTxt'>
-                    Do note that only NFTs that have been staked for afull 24 hours can enjoy the current day's ZLT rebate
+                    Do note that only NFTs that have been staked for afull 24 hours can enjoy the current day's ZLT rebate                    
                   </span>
                 </div>
                 <div className='unStakingCardMainContainer'>

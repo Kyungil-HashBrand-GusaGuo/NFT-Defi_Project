@@ -30,7 +30,6 @@ contract SaleJolaman is Initializable, ERC721Holder {
     mapping(uint => uint) public sellingJolamanTypeToPrice;    
 
     // 판매중인 졸라맨 타입, 가격 배열
-    
     uint[] public onSaleJolamanType;
     uint[] public onSaleJolamanPrice;
 
@@ -104,7 +103,6 @@ contract SaleJolaman is Initializable, ERC721Holder {
 
 
     // 판매중인 토큰 배열 조회 함수
-
     function getOnSaleJolamanTypeAndPrice() public view returns(uint[] memory, uint[] memory) {
         return (onSaleJolamanType, onSaleJolamanPrice);
     }

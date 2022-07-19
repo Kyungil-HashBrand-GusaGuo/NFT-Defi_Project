@@ -61,8 +61,10 @@ const RoadMap = () => {
             </div>
             <div className='roadMaptxtSectionDetail2'>
               <p>
-              Limited edition NFT ‘VERYVERYSTRONG ZOLAMAN’
-              Scheduled to open so that only holders can purchase
+              {/* Limited edition NFT ‘VERYVERYSTRONG ZOLAMAN’
+              Scheduled to open so that only holders can purchase */}
+              가나다라 마바사
+              이게 어떻게 나오는지 잘 모르겠다
               </p>
             </div> 
           </div>
