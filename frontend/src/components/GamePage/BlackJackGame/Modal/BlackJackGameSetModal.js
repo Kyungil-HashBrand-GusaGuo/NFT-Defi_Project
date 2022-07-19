@@ -40,10 +40,10 @@ const BlackJackGameSetModal = ({account, totals, title, bet}) => {
             return setCheck(0), setPoint(3)
             break;
         case "You Win!" :
-            return  setCheck(bet * 2), setPoint(5)
+            return  setCheck(bet), setPoint(5)
             break;
         case "Blackjack!" :
-            return  setCheck(bet * 2), setPoint(5)
+            return  setCheck(bet), setPoint(5)
             break;
         default :
             return 
