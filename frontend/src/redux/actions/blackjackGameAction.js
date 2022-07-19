@@ -20,7 +20,7 @@ function blackjackGameAct(title, bet,account) {
 
            } else if ((title === "You Win!") || (title === "Blackjack!")) {
                 console.log(title,"이김")
-                const winBlackJackGame = await api.post("/block/blackJackWin", {account, betPrice:bet*2 })
+                const winBlackJackGame = await api.post("/block/blackJackWin", {account, betPrice:bet })
                 const winBackBlack = await api.post("/data/player", {account, point : 5})
            }  
         } catch (error) {
