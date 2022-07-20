@@ -1,11 +1,4 @@
 import HeadImg from './headzol.png'
-// import HeadImg from './zol1.png'
-// import SpImg from './spbg.jpeg'
-import Team1 from './Team1.png'
-import Team2 from './Team2.png'
-import Team3 from './Team3.png'
-import Team4 from './Team4.png'
-import Team5 from './Team5.png'
 import logo_PolaBear from './logo_PolaBear.png'
 import logo_Kyungil from './logo_Kyungil.png'
 import logo_HashBrand from './logo_HashBrand.png'
@@ -43,11 +36,6 @@ import HeadZol2 from './headzol2.png'
 
 
 export {HeadImg,
-    Team1,
-    Team2,
-    Team3,
-    Team4,
-    Team5,
     logo_PolaBear,
     logo_Kyungil,
     logo_HashBrand,

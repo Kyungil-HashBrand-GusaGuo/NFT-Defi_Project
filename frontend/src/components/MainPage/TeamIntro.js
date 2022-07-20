@@ -1,6 +1,6 @@
 import React from 'react'
 import './TeamIntro.css'
-import {Team1, Team2, Team3, Team4, Team5} from '../../images/index';
+import { white1, white7, white10, white17, white18,} from '../../images/index'
 
 const TeamIntro = () => {
   return (
@@ -10,7 +10,7 @@ const TeamIntro = () => {
             <div className='TeamIntro'>
                 <div className='Team'>
                     <div className='teamimg'>
-                        <img src={Team1}></img>
+                        <img src={white7}></img>
                     </div>
                     <div className='teamtxt'>
                         <span className='spanName'>JunghyunB</span>
@@ -19,7 +19,7 @@ const TeamIntro = () => {
                 </div>
                 <div className='Team'>
                     <div className='teamimg'>
-                        <img src={Team2}></img>
+                        <img src={white18}></img>
                     </div>
                     <div className='teamtxt'>
                         <span  className='spanName'>Rmfkxhxh</span>
@@ -28,7 +28,7 @@ const TeamIntro = () => {
                 </div>
                 <div className='Team'>
                     <div className='teamimg'>
-                        <img src={Team3}></img>
+                        <img src={white1}></img>
                     </div>
                     <div className='teamtxt'>
                         <span className='spanName'>Sieun95</span>
@@ -37,7 +37,7 @@ const TeamIntro = () => {
                 </div>
                 <div className='Team'>
                     <div className='teamimg'>
-                        <img src={Team4}></img>
+                        <img src={white17}></img>
                     </div>
                     <div className='teamtxt'>
                         <span className='spanName'>Jaewoneeee</span>
@@ -46,7 +46,7 @@ const TeamIntro = () => {
                 </div>
                 <div className='Team'>
                     <div className='teamimg'>
-                        <img src={Team5}></img>
+                        <img src={white10}></img>
                     </div>
                     <div className='teamtxt'>
                         <span className='spanName'>Taehhh8</span>
