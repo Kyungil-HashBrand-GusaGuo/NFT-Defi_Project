@@ -36,10 +36,12 @@ const StakingPage = () => {
     const navigate = useNavigate()
     const dispatch = useDispatch()
     const {account} = useSelector(state => state.account)
+    const {mymintdata} = useSelector(state => state.mintdata)
     const {myNftList, stakingNftString, stakingReward , getStakingReward, getGameTokenBalance, successStaking, successUnStaking} = useSelector(state => state.stakingView)
     const [claimModal, setClaimModal] = useState(false)
 
     console.log("여기 랭스?", myNftList.length)
+    console.log("나의 민팅 NFT", mymintdata)
 
     const staking = (edition) => {
       if(edition.length == 0){
@@ -57,7 +59,7 @@ const StakingPage = () => {
     }
 
     const goToGamePage = () => {
-      if(myNftList.length == 0){
+      if((myNftList.length + stakingNftString.length + mymintdata.length) == 0){
         // alert("하나 이상의 minting NFT가 있어야 참여 가능합니다.")
         Swal.fire({
           title: 'Warning!',
