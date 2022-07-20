@@ -13,7 +13,7 @@ const keyring = caver.wallet.keyring.create(process.env.ADMIN_ACCOUNT, process.e
 caver.wallet.add(keyring);
 
 const MINT_CONTRACT_ADDRESS = 
-"0x084eB7FF7225a19405FAcf27fDA5Bcd7e613b4F6";
+"0xAb8c03C195e905B9eEe38338C48944E7D5F66Eba";
 
 const MINT_CONTRACT_ABI = [
 	{
@@ -163,32 +163,6 @@ const MINT_CONTRACT_ABI = [
 				"internalType": "uint256",
 				"name": "",
 				"type": "uint256"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [],
-		"name": "MINTER_ROLE",
-		"outputs": [
-			{
-				"internalType": "bytes32",
-				"name": "",
-				"type": "bytes32"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [],
-		"name": "SPECIAL_MINTER_ROLE",
-		"outputs": [
-			{
-				"internalType": "bytes32",
-				"name": "",
-				"type": "bytes32"
 			}
 		],
 		"stateMutability": "view",

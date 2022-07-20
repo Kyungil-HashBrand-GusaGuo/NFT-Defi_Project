@@ -13,7 +13,7 @@ const keyring = caver.wallet.keyring.create(process.env.ADMIN_ACCOUNT, process.e
 caver.wallet.add(keyring);
 
 const GAME_CONTRACT_ADDRESS = 
-"0x83eAA11F4805FF3ff74eDF58904aF8047AefaBa3"
+"0xcE685cb1AD8816CbbA465ba086203C6D5b054565"
 
 const GAME_CONTRACT_ABI =[
 	{
@@ -100,19 +100,6 @@ const GAME_CONTRACT_ABI =[
 	},
 	{
 		"inputs": [],
-		"name": "BURNER_ROLE",
-		"outputs": [
-			{
-				"internalType": "bytes32",
-				"name": "",
-				"type": "bytes32"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [],
 		"name": "CheckContractBalance",
 		"outputs": [
 			{
@@ -147,19 +134,6 @@ const GAME_CONTRACT_ABI =[
 		"name": "HangmanGameReward",
 		"outputs": [],
 		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [],
-		"name": "MINTER_ROLE",
-		"outputs": [
-			{
-				"internalType": "bytes32",
-				"name": "",
-				"type": "bytes32"
-			}
-		],
-		"stateMutability": "view",
 		"type": "function"
 	},
 	{

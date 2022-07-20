@@ -6,7 +6,7 @@ const config = {
 const caver = new Caver(config.rpcURL);
 
 const STAKING_CONTRACT_ADDRESS = 
-"0xf1e28b855278980175D34a745fb8De646D21903F";
+"0x980C261d5B08221227f5e95185EaB2563B1AC120";
 
 const STAKING_CONTRACT_ABI = [
 	{
@@ -93,32 +93,6 @@ const STAKING_CONTRACT_ABI = [
 	},
 	{
 		"inputs": [],
-		"name": "AddressBalance",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [],
-		"name": "BURNER_ROLE",
-		"outputs": [
-			{
-				"internalType": "bytes32",
-				"name": "",
-				"type": "bytes32"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [],
 		"name": "CheckContractBalance",
 		"outputs": [
 			{
@@ -168,19 +142,6 @@ const STAKING_CONTRACT_ABI = [
 		"name": "KlayToToken",
 		"outputs": [],
 		"stateMutability": "payable",
-		"type": "function"
-	},
-	{
-		"inputs": [],
-		"name": "MINTER_ROLE",
-		"outputs": [
-			{
-				"internalType": "bytes32",
-				"name": "",
-				"type": "bytes32"
-			}
-		],
-		"stateMutability": "view",
 		"type": "function"
 	},
 	{

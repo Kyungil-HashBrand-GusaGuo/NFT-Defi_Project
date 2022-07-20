@@ -1,6 +1,6 @@
 import Caver from "caver-js";
 export const MINT_CONTRACT_ADDRESS = 
-"0x084eB7FF7225a19405FAcf27fDA5Bcd7e613b4F6";
+"0xAb8c03C195e905B9eEe38338C48944E7D5F66Eba";
 
 export const MINT_CONTRACT_ABI = [
 	{
@@ -150,32 +150,6 @@ export const MINT_CONTRACT_ABI = [
 				"internalType": "uint256",
 				"name": "",
 				"type": "uint256"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [],
-		"name": "MINTER_ROLE",
-		"outputs": [
-			{
-				"internalType": "bytes32",
-				"name": "",
-				"type": "bytes32"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [],
-		"name": "SPECIAL_MINTER_ROLE",
-		"outputs": [
-			{
-				"internalType": "bytes32",
-				"name": "",
-				"type": "bytes32"
 			}
 		],
 		"stateMutability": "view",
@@ -775,7 +749,7 @@ export const caver = new Caver(window.caver);
 
 
 export const DATA_CONTRACT_ADDRESS = 
-"0x38f0f20C2E1E8D2C72e66D2B0a322Dcd5a53E974";
+"0xaB75CB8f441BE3Cc486F6d36bC26A43959cB5b5d";
 
 export const DATA_CONTRACT_ABI = [
 	{
@@ -1310,9 +1284,53 @@ export const DATA_CONTRACT_ABI = [
 ]
 
 export const SALE_CONTRACT_ADDRESS = 
-"0x1B07046505D79bFb244323Ac2109000C8cF391Dd";
+"0xff304C9ec69A67b45DD7A959A186d242c029057f";
 
 export const SALE_CONTRACT_ABI = [
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": false,
+				"internalType": "uint8",
+				"name": "version",
+				"type": "uint8"
+			}
+		],
+		"name": "Initialized",
+		"type": "event"
+	},
+	{
+		"inputs": [],
+		"name": "KlayTn",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_JolamanType",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_price",
+				"type": "uint256"
+			}
+		],
+		"name": "SellJolamanToken",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
 	{
 		"inputs": [
 			{
@@ -1340,6 +1358,24 @@ export const SALE_CONTRACT_ABI = [
 		"type": "function"
 	},
 	{
+		"inputs": [],
+		"name": "getOnSaleJolamanTypeAndPrice",
+		"outputs": [
+			{
+				"internalType": "uint256[]",
+				"name": "",
+				"type": "uint256[]"
+			},
+			{
+				"internalType": "uint256[]",
+				"name": "",
+				"type": "uint256[]"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
 		"inputs": [
 			{
 				"internalType": "address",
@@ -1356,19 +1392,6 @@ export const SALE_CONTRACT_ABI = [
 		"outputs": [],
 		"stateMutability": "nonpayable",
 		"type": "function"
-	},
-	{
-		"anonymous": false,
-		"inputs": [
-			{
-				"indexed": false,
-				"internalType": "uint8",
-				"name": "version",
-				"type": "uint8"
-			}
-		],
-		"name": "Initialized",
-		"type": "event"
 	},
 	{
 		"inputs": [
@@ -1402,55 +1425,6 @@ export const SALE_CONTRACT_ABI = [
 			}
 		],
 		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "uint256",
-				"name": "_JolamanType",
-				"type": "uint256"
-			},
-			{
-				"internalType": "uint256",
-				"name": "_price",
-				"type": "uint256"
-			}
-		],
-		"name": "SellJolamanToken",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [],
-		"name": "getOnSaleJolamanTypeAndPrice",
-		"outputs": [
-			{
-				"internalType": "uint256[]",
-				"name": "",
-				"type": "uint256[]"
-			},
-			{
-				"internalType": "uint256[]",
-				"name": "",
-				"type": "uint256[]"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [],
-		"name": "KlayTn",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"stateMutability": "view",
 		"type": "function"
 	},
 	{
@@ -1539,7 +1513,7 @@ export const SALE_CONTRACT_ABI = [
 ]
 
 export const STAKING_CONTRACT_ADDRESS = 
-"0xf1e28b855278980175D34a745fb8De646D21903F";
+"0x980C261d5B08221227f5e95185EaB2563B1AC120";
 
 export const STAKING_CONTRACT_ABI = [
 	{
@@ -1626,32 +1600,6 @@ export const STAKING_CONTRACT_ABI = [
 	},
 	{
 		"inputs": [],
-		"name": "AddressBalance",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [],
-		"name": "BURNER_ROLE",
-		"outputs": [
-			{
-				"internalType": "bytes32",
-				"name": "",
-				"type": "bytes32"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [],
 		"name": "CheckContractBalance",
 		"outputs": [
 			{
@@ -1701,19 +1649,6 @@ export const STAKING_CONTRACT_ABI = [
 		"name": "KlayToToken",
 		"outputs": [],
 		"stateMutability": "payable",
-		"type": "function"
-	},
-	{
-		"inputs": [],
-		"name": "MINTER_ROLE",
-		"outputs": [
-			{
-				"internalType": "bytes32",
-				"name": "",
-				"type": "bytes32"
-			}
-		],
-		"stateMutability": "view",
 		"type": "function"
 	},
 	{
@@ -2297,7 +2232,7 @@ export const STAKING_CONTRACT_ABI = [
 ]
 
 export const GAME_CONTRACT_ADDRESS = 
-"0x83eAA11F4805FF3ff74eDF58904aF8047AefaBa3"
+"0xcE685cb1AD8816CbbA465ba086203C6D5b054565"
 
 export const GAME_CONTRACT_ABI =[
 	{
@@ -2384,19 +2319,6 @@ export const GAME_CONTRACT_ABI =[
 	},
 	{
 		"inputs": [],
-		"name": "BURNER_ROLE",
-		"outputs": [
-			{
-				"internalType": "bytes32",
-				"name": "",
-				"type": "bytes32"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [],
 		"name": "CheckContractBalance",
 		"outputs": [
 			{
@@ -2431,19 +2353,6 @@ export const GAME_CONTRACT_ABI =[
 		"name": "HangmanGameReward",
 		"outputs": [],
 		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [],
-		"name": "MINTER_ROLE",
-		"outputs": [
-			{
-				"internalType": "bytes32",
-				"name": "",
-				"type": "bytes32"
-			}
-		],
-		"stateMutability": "view",
 		"type": "function"
 	},
 	{
