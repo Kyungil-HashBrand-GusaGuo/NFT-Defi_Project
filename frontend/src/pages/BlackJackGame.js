@@ -365,11 +365,15 @@ const BlackJackGame = () => {
                     title: 'Error!',
                     text: '보유한 Token보다 크게 배팅할 수 없습니다.',
                     icon: 'error',
-                    confirmButtonText: 'Back'
-                },window.location.reload())
+                    confirmButtonText: 'Back',
+                }).then(function(){
+                  window.location.reload();
+                })
                   // alert("보유한 Token보다 크게 배팅할 수 없습니다.", window.location.reload())
                 : <h2>{`Token: $${getGameTokenBalance-bet}`}</h2>
+                
               }
+              
             </div>
           </div>
         </div>
