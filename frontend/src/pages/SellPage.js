@@ -102,7 +102,6 @@ const SellPage = () => {
                           <th>{showMint.attributes[3].trait_type}</th>
                           <th>{showMint.attributes[4].trait_type}</th>
                           <th>{showMint.attributes[5].trait_type}</th>
-                          <th>{showMint.attributes[6].trait_type}</th>
                         </tr>
                       </thead>
                       <tbody>
@@ -113,7 +112,6 @@ const SellPage = () => {
                           <td>{showMint.attributes[3].value}</td>
                           <td>{showMint.attributes[4].value}</td>
                           <td>{showMint.attributes[5].value}</td>
-                          <td>{showMint.attributes[6].value}</td>
                         </tr>
                       </tbody>
                     </table>
