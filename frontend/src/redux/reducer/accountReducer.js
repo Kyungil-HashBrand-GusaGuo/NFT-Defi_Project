@@ -1,7 +1,9 @@
 let initialState = {
     account : '',
     whiteListCheck : false,
-    adminAccount : ''
+    adminAccount : '',
+    addWhiteList : false,
+    deleteWhiteList : false
 }
 
 function accountReducer(state=initialState,action) {
@@ -16,6 +18,12 @@ function accountReducer(state=initialState,action) {
 
         case "GET_ADMIN_ACCOUNT" :
             return {...state, adminAccount : payload.adminAccount}
+
+        case "GET_ADMIN_ACCOUNT" :
+            return {...state, addWhiteList : payload.addWhiteList}
+
+        case "DELETE_WHITELIST" :
+            return {...state, deleteWhiteList : payload.deleteWhiteList}
 
         default :
             return {...state}

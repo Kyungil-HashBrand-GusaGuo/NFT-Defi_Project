@@ -14,6 +14,7 @@ function deleteWhiteList(account, address) {
                 data: RandomJolamanContract.methods.removeWhiteList(address).encodeABI(),
               });
             console.log(response)
+            dispatch({type:"DELETE_WHITELIST", payload : {deleteWhiteList : true}})
           } catch(error) {
             console.error(error);
           }
