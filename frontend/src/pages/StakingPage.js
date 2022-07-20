@@ -234,7 +234,7 @@ const StakingPage = () => {
                         <div className='unStakingImgCard'
                           style={{
                             backgroundImage: 
-                              "url(https://sean95.s3.ap-northeast-2.amazonaws.com/raw/" + 
+                              "url(https://sean95.s3.ap-northeast-2.amazonaws.com/raw/Zolaman/" + 
                               `${item}` + 
                               ".png)"
                           }}>
@@ -276,7 +276,7 @@ const StakingPage = () => {
                         <div className='comStakingImgCard'
                           style={{
                             backgroundImage: 
-                              "url(https://sean95.s3.ap-northeast-2.amazonaws.com/raw/" + 
+                              "url(https://sean95.s3.ap-northeast-2.amazonaws.com/raw/Zolaman/" + 
                               `${item}` + 
                               ".png)"
                           }}>

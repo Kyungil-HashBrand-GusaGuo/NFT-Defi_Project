@@ -30,7 +30,7 @@ const MintingModal = ({premintdata, whitemintdata}) => {
             state != null ?
             <div className='mintingImageSection'
               style={{backgroundImage:
-                "url(https://sean95.s3.ap-northeast-2.amazonaws.com/raw/" + state.edition + ".png)"
+                "url(https://sean95.s3.ap-northeast-2.amazonaws.com/raw/Zolaman/" + state.edition + ".png)"
               }}
             > 
             </div>
