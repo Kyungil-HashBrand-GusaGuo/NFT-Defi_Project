@@ -14,10 +14,12 @@ const AdminPage = () => {
 
   const addWhiteList = () => {
     dispatch(addWhiteListAccount.addWhiteList(account, address))
+    alert("화이트리스트 계정 등록이 완료되었습니다.")
   }
 
   const deleteWhiteList = () => {
     dispatch(deleteWhiteListAccount.deleteWhiteList(account, address))
+    alert("화이트리스트 계정 삭제가 완료되었습니다.")
   }
 
   const changeAddress = (e) => {
