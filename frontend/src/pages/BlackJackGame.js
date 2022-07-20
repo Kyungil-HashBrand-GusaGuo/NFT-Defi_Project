@@ -253,27 +253,27 @@ const BlackJackGame = () => {
                 <tbody>
                   <tr>
                     <td>Win</td>
-                    <td><img className='gameModalIco' src={HeadZol2} /> X 2</td>
+                    <td className='tdCenter'><img className='gameModalIco' src={HeadZol2} /><p>X 2</p></td>
                     <td>5</td>
                   </tr>
                   <tr>
                     <td>BlackJack</td>
-                    <td><img className='gameModalIco' src={HeadZol2} /> X 2</td>
+                    <td className='tdCenter'><img className='gameModalIco' src={HeadZol2} /><p>X 2</p></td>
                     <td>5</td>
                   </tr>
                   <tr>
                     <td>Tie</td>
-                    <td><img className='gameModalIco' src={HeadZol2} /> 0 </td>
+                    <td className='tdCenter'><img className='gameModalIco' src={HeadZol2} /><p>0</p></td>
                     <td>3</td>
                   </tr>
                   <tr>
                     <td>Bust</td>
-                    <td><img className='gameModalIco' src={HeadZol2} /> X -2</td>
+                    <td className='tdCenter'><img className='gameModalIco' src={HeadZol2} /><p>X -1</p></td>
                     <td>2</td>
                   </tr>
                   <tr>
                     <td>Lose</td>
-                    <td><img className='gameModalIco' src={HeadZol2} /> X -2</td>
+                    <td className='tdCenter'><img className='gameModalIco' src={HeadZol2} /><p>X -1</p></td>
                     <td>2</td>
                   </tr>
                 </tbody>
