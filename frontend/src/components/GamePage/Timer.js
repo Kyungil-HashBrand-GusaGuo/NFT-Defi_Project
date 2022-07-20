@@ -48,7 +48,7 @@ const Timer = () => {
       dispatch(timerAction.timerAct(gamePointRank, airdropReward))
       dispatch(timerGetAction.timerGetAct())
       dispatch(timerPostAction.timerPostAct())
-      console.log(t)
+      // console.log(t)
     }
 
     useEffect(() => {

@@ -23,9 +23,9 @@ const SellPage = () => {
     const [showMint, setShowMint] = useState();
     const [price, setPrice] = useState();
     const [sellPrice, setSellPrice] = useState();
-    console.log("NFT데이터 스테이킹?",stakingNftString)
-    console.log("NFT데이터 스테이킹?",stakingNftString.includes(edition))
-    console.log(typeof(edition))
+    // console.log("NFT데이터 스테이킹?",stakingNftString)
+    // console.log("NFT데이터 스테이킹?",stakingNftString.includes(edition))
+    // console.log(typeof(edition))
 
     const changeSellModalState = () => {
       setSellModal(true)
@@ -49,7 +49,7 @@ const SellPage = () => {
       setCheckSell(state)
       setShowMint(mintJSON.data);
 
-      console.log("NFT데이터22",sellingAllNftData)
+      // console.log("NFT데이터22",sellingAllNftData)
 
       for(let i=0; i < sellingAllNftData.length; i++){
         let check = edition

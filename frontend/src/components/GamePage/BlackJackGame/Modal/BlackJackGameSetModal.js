@@ -7,9 +7,9 @@ import { blackjackGameAction } from '../../../../redux/actions/blackjackGameActi
 
 const BlackJackGameSetModal = ({account, totals, title, bet}) => {
 
-    console.log("블랙잭모달계정", account)
-    console.log("블랙잭토탈양", totals)
-    console.log("블랙잭결과", title)
+    // console.log("블랙잭모달계정", account)
+    // console.log("블랙잭토탈양", totals)
+    // console.log("블랙잭결과", title)
 
     //let total = totals.length
     const dispatch = useDispatch()
@@ -18,7 +18,7 @@ const BlackJackGameSetModal = ({account, totals, title, bet}) => {
     const [check, setCheck] = useState()
     const [point, setPoint] = useState()
 
-    console.log(bet)
+    // console.log(bet)
 
     const goToGameMainPage =() => {
         navigate('/gamemain')

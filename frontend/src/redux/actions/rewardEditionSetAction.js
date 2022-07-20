@@ -2,7 +2,7 @@ import api from "../api"
 
 function rewardEditionSetAct(arr) {
   
-    console.log("확인", arr)  
+    // console.log("확인", arr)  
 
   return async (dispatch) => {
         try {

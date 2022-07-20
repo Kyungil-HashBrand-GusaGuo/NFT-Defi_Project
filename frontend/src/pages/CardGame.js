@@ -104,10 +104,10 @@ function CardGame() {
         setGzlt(result);
         setGamePoint(point)
         const postCardGamePoint = await api.post("/data/player", {account, point})
-        console.log("카드게임 POST요청", postCardGamePoint)
+        // console.log("카드게임 POST요청", postCardGamePoint)
       }
-      console.log("게임토큰", result)
-      console.log("게임포인튼", point)
+      // console.log("게임토큰", result)
+      // console.log("게임포인튼", point)
     }
   }
 
@@ -131,7 +131,7 @@ function CardGame() {
     GameSet();
   }, [counts])
 
-  console.log("콘솔몇번찍힐까")
+  // console.log("콘솔몇번찍힐까")
 
   return (
     <>

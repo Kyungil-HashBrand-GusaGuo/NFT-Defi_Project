@@ -7,8 +7,8 @@ import { hangmanGameAction } from '../../../redux/actions/hangmanGameAction'
 
 const HangmanGameSetModal = ({account, wrongLetters}) => {
 
-    console.log("행맨모달 계정", account)
-    console.log("행맨모달 틀린갯수", wrongLetters)
+    // console.log("행맨모달 계정", account)
+    // console.log("행맨모달 틀린갯수", wrongLetters)
 
     let wrongLetter = wrongLetters.length
     const dispatch = useDispatch()

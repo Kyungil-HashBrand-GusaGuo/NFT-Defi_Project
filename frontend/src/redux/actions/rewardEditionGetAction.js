@@ -7,7 +7,7 @@ function rewardEditionGetAct() {
   return async (dispatch) => {
         try {
             const getRewardApi = await api.get("/data/getrewardedition")
-            console.log("확인", getRewardApi.data)
+            // console.log("확인", getRewardApi.data)
 
             dispatch({
                 type:"GET_AIRDROP_REWARD", 

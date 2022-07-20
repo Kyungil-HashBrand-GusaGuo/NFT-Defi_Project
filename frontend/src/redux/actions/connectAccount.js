@@ -14,7 +14,7 @@ function getAccount() {
             // admin계정 가져오기
             const adminAccountFunc = await api.get("/block/getOwner");
             let adminAccount = adminAccountFunc.data.toLowerCase()
-            console.log(adminAccount);
+            // console.log(adminAccount);
 
             dispatch({type : "GET_ADMIN_ACCOUNT", payload : {adminAccount}})
         } 

@@ -29,10 +29,10 @@ function sellAction(edition, account, price) {
             .encodeABI(),
         });
         // 판매 등록 함수 판매 등록시 두번쨰 함수
-        console.log(response);
+        // console.log(response);
         if (response.status) {
-          console.log("들어오나?");
-          console.log("계정확인", account);    
+          // console.log("들어오나?");
+          // console.log("계정확인", account);    
             const res2 = await caver.klay.sendTransaction({
               from: account,
               to: SALE_CONTRACT_ADDRESS,
@@ -41,7 +41,7 @@ function sellAction(edition, account, price) {
                 .SellJolamanToken(edition, price)
                 .encodeABI(),
             });
-            console.log(res2.status)
+            // console.log(res2.status)
             if(res2.status) {
               dispatch({
                 type: "SUCCESS_SELL_NFT",

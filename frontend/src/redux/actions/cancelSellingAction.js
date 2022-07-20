@@ -6,10 +6,10 @@ import {
   } from "../../caverConfig.js";
 
 function cancelSellAction(edition, account) {
-    console.log(edition)
-    console.log(account)
+    // console.log(edition)
+    // console.log(account)
     return async (dispatch) => {
-        console.log(edition)
+        // console.log(edition)
         try {
             if(edition && account !== ""){
                 const response = await caver.klay.sendTransaction({
@@ -18,7 +18,7 @@ function cancelSellAction(edition, account) {
                     gas: "3000000",
                     data: SaleContract.methods.cancleSellJolamnaToken(edition).encodeABI()
                 })
-                console.log(response);
+                // console.log(response);
                 dispatch({type:"CANCEL_SELL_NFT", payload : {sellingNftCancel : true}})
             }
                 } catch(error) {

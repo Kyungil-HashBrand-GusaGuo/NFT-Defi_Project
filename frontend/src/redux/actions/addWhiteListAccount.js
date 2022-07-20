@@ -13,7 +13,7 @@ function addWhiteList(account, address) {
               gas: "3000000",
               data: RandomJolamanContract.methods.addWhiteList(address).encodeABI(),
             });
-            console.log(response)
+            // console.log(response)
             dispatch({type:"ADD_WHITELIST", payload : {addWhiteList : true}})
           } catch(error) {
             console.error(error);

@@ -7,8 +7,8 @@ import {
 
 function buyAction(edition, account) {
     return async (dispatch) => {
-        console.log(edition)
-        console.log(account)
+        // console.log(edition)
+        // console.log(account)
         try {
             if(edition && account !== ""){
                 const basicPrice = await SaleContract.methods.sellingJolamanTypeToPrice(edition).call()

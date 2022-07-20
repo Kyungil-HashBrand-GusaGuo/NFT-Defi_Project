@@ -10,8 +10,8 @@ const LeftMintingSection = () => {
 
     const {account} = useSelector(state => state.account)
     const {premintdata, maxNormalTokenCount, normalTokenCount} = useSelector(state => state.mintdata)
-    console.log("프리민팅 데이터",premintdata)
-    console.log("account", account)
+    // console.log("프리민팅 데이터",premintdata)
+    // console.log("account", account)
    
     const minting = () => {
         dispatch(preMintingAction.preMintAction(account))

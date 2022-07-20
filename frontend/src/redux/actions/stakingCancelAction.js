@@ -2,8 +2,8 @@ import { caver, STAKING_CONTRACT_ADDRESS, StakingContract } from "../../caverCon
 
 function stakingCancelAct(account, edition) {
 
-    console.log(account)
-    console.log(edition)
+    // console.log(account)
+    // console.log(edition)
 
     return async (dispatch) => {
         try {

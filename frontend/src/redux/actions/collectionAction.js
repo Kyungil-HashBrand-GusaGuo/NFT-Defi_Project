@@ -18,7 +18,7 @@ function collectionAct() {
               // console.log(mintJSON.data.name)
               array.push(mintJSON)
           }
-            console.log(array)
+            // console.log(array)
             dispatch({type: "GET_ALL_MINTDATA", payload : { allmintdata : array }})
 
           } catch (error){

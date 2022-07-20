@@ -3,7 +3,7 @@ import pinataApi from "../pinataApi";
 
 function whiteMintAction(account) {
 
-    console.log(account)
+    // console.log(account)
 
     return async (dispatch) => {
         try {
@@ -14,13 +14,13 @@ function whiteMintAction(account) {
                 gas: "3000000",
                 data: RandomJolamanContract.methods.specialPayandMint().encodeABI(),
             })
-            console.log("화이트 if문 전",response)
+            // console.log("화이트 if문 전",response)
             if(response.status) {
                 const response = await setDataContract.methods.getTotalOwnedTokens(account).call()
                 let metaDataURI = response[response.length-1]; 
                 const getMetaData = async() => {
                 const response = await pinataApi.get(`/${metaDataURI}.json`);
-                console.log( "if문 안",response.data)
+                // console.log( "if문 안",response.data)
                 dispatch({type : "GET_WHITE_MINTDATA", payload : {whitemintdata : response.data}})         
               }
               getMetaData();

@@ -41,7 +41,7 @@ const AirdropModal = ({setSwapModal}) => {
   const selectNft = (item) => {
     if(seletedArr.length < 3){
       seletedArr.push(item)
-      console.log(seletedArr)
+      // console.log(seletedArr)
       if(seletedArr.length == 3){
         // alert("모두 선택되었습니다!")
         Swal.fire({

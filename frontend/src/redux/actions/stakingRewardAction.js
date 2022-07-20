@@ -2,7 +2,7 @@ import { caver, STAKING_CONTRACT_ADDRESS, StakingContract } from "../../caverCon
 
 function stakingRewardAct(account) {
 
-    console.log(account)
+    // console.log(account)
 
     return async (dispatch) => {
         try {
