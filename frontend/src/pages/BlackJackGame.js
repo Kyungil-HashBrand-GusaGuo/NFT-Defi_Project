@@ -30,6 +30,8 @@ import './BlackJackGame.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { addChip, betChip, takeChip } from '../redux/actions/BlackBetAction';
 import { useLocation } from 'react-router-dom';
+import Swal from 'sweetalert2'
+
 
 const BlackJackGame = () => {
 
@@ -359,7 +361,13 @@ const BlackJackGame = () => {
             >
               {
                 getGameTokenBalance-bet < 0 ?
-                  alert("보유한 Token보다 크게 배팅할 수 없습니다.", window.location.reload())
+                  Swal.fire({
+                    title: 'Error!',
+                    text: '보유한 Token보다 크게 배팅할 수 없습니다.',
+                    icon: 'error',
+                    confirmButtonText: 'Back'
+                },window.location.reload())
+                  // alert("보유한 Token보다 크게 배팅할 수 없습니다.", window.location.reload())
                 : <h2>{`Token: $${getGameTokenBalance-bet}`}</h2>
               }
             </div>

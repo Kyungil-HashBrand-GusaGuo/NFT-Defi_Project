@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { timerAction } from '../../redux/actions/timerAction';
 import { timerGetAction } from '../../redux/actions/timerGetAction';
 import { timerPostAction } from '../../redux/actions/timerPostAction';
+import Swal from 'sweetalert2'
 
 const Timer = () => {
 
@@ -59,7 +60,13 @@ const Timer = () => {
 
     useEffect(() => {
       if(airdropSuccess){
-        alert("NFT AirDrop이 완료되었습니다!", window.location.reload())
+        // alert("NFT AirDrop이 완료되었습니다!", window.location.reload())
+        Swal.fire({
+          title: 'Success!',
+          text: 'NFT AirDrop이 완료되었습니다!',
+          icon: 'success',
+          confirmButtonText: 'OK'
+      },window.location.reload())
       }
     },[airdropSuccess])
 
