@@ -13,7 +13,7 @@ function buyAction(edition, account) {
             if(edition && account !== ""){
                 const basicPrice = await SaleContract.methods.sellingJolamanTypeToPrice(edition).call()
                 let price = basicPrice / 10**18
-                console.log(price)
+                // console.log(price)
                 const response = await caver.klay.sendTransaction({
                     from: account,
                     to: SALE_CONTRACT_ADDRESS,
@@ -21,7 +21,7 @@ function buyAction(edition, account) {
                     gas: "3000000",
                     data: SaleContract.methods.buyJolamanToken(edition).encodeABI()
                 })
-                console.log(response)             
+                // console.log(response)             
                 dispatch({type:"SUCCESS_BUY_NFT", payload : {buyingNftSuccess : true}})
             }
             } catch(error) {
