@@ -14,6 +14,7 @@ function addWhiteList(account, address) {
               data: RandomJolamanContract.methods.addWhiteList(address).encodeABI(),
             });
             console.log(response)
+            dispatch({type:"ADD_WHITELIST", payload : {addWhiteList : true}})
           } catch(error) {
             console.error(error);
           }
