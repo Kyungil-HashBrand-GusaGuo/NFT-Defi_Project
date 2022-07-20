@@ -282,7 +282,7 @@ const BlackJackGame = () => {
               </table>
             </div>
             <div className='myGameNftSection'>
-                <img src={"https://sean95.s3.ap-northeast-2.amazonaws.com/raw/" + `${state[0]}` + ".png"}></img>
+                <img src={"https://sean95.s3.ap-northeast-2.amazonaws.com/raw/Zolaman/" + `${state[0]}` + ".png"}></img>
             </div>
           </div>
           <div style={{ width: '40%', minWidth: 350, paddingTop: '20px' }}>

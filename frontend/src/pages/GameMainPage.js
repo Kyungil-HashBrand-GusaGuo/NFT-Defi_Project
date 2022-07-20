@@ -57,7 +57,7 @@ const GameMainPage = () => {
                       <span>2nd</span>
                     </div>
                     <div className='rankImgContainer'>
-                      <img src={"https://sean95.s3.ap-northeast-2.amazonaws.com/raw/" + `${airdropReward[1]}` + ".png"}></img>
+                      <img src={"https://sean95.s3.ap-northeast-2.amazonaws.com/raw/Zolaman/" + `${airdropReward[1]}` + ".png"}></img>
                     </div>
                   </div>
                   <div>
@@ -66,7 +66,7 @@ const GameMainPage = () => {
                       <span>1st</span>
                     </div>
                     <div className='rankImgContainer'>
-                      <img src={"https://sean95.s3.ap-northeast-2.amazonaws.com/raw/" + `${airdropReward[0]}` + ".png"}></img>
+                      <img src={"https://sean95.s3.ap-northeast-2.amazonaws.com/raw/Zolaman/" + `${airdropReward[0]}` + ".png"}></img>
                     </div>
                   </div>
                   <div>
@@ -75,7 +75,7 @@ const GameMainPage = () => {
                       <span>3rd</span>
                     </div>
                     <div className='rankImgContainer'>
-                      <img src={"https://sean95.s3.ap-northeast-2.amazonaws.com/raw/" + `${airdropReward[2]}` + ".png"}></img>
+                      <img src={"https://sean95.s3.ap-northeast-2.amazonaws.com/raw/Zolaman/" + `${airdropReward[2]}` + ".png"}></img>
                     </div>
                   </div>
                 </div>

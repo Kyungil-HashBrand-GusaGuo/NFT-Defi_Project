@@ -58,7 +58,7 @@ const MarketPage = () => {
                 className="leftMarketNftCardImg"
                 style={{
                   backgroundImage:
-                    "url(https://sean95.s3.ap-northeast-2.amazonaws.com/raw/" +
+                    "url(https://sean95.s3.ap-northeast-2.amazonaws.com/raw/Zolaman/" +
                     `${showId}` +
                     ".png)",
                 }}
@@ -143,7 +143,7 @@ const MarketPage = () => {
                               className="rightMarketNftCard"
                               style={{
                                 backgroundImage:
-                                  "url(https://sean95.s3.ap-northeast-2.amazonaws.com/raw/" +
+                                  "url(https://sean95.s3.ap-northeast-2.amazonaws.com/raw/Zolaman/" +
                                   `${item.id}` +
                                   ".png)",
                               }}
@@ -189,7 +189,7 @@ const MarketPage = () => {
                                 className="rightMarketNftCard"
                                 style={{
                                   backgroundImage:
-                                    "url(https://sean95.s3.ap-northeast-2.amazonaws.com/raw/" +
+                                    "url(https://sean95.s3.ap-northeast-2.amazonaws.com/raw/Zolaman/" +
                                     `${item.id}` +
                                     ".png)",
                                 }}
