@@ -66,7 +66,9 @@ const Timer = () => {
           text: 'NFT AirDrop이 완료되었습니다!',
           icon: 'success',
           confirmButtonText: 'OK'
-      },window.location.reload())
+      }).then(function(){
+        window.location.reload();
+      })
       }
     },[airdropSuccess])
 
