@@ -10,7 +10,7 @@ const Timer = () => {
     let deadline = useRef(); 
     let timer = useRef(null); 
     
-    let deadlineDate = new Date('July 22, 2022 19:19:00').getTime();
+    let deadlineDate = new Date('July 29, 2022 12:00:00').getTime();
     let now = new Date().getTime();
     let t = deadlineDate - now;
     let day = Math.floor((t % (1000 * 60 * 60 * 24 * 365)) / (1000 * 60 * 60 * 24));
@@ -20,6 +20,8 @@ const Timer = () => {
     
     const [state, setState] = useState({ day, hours, minutes, seconds});
     const { gamePointRank, airdropReward, airdropSuccess } = useSelector(state => state.game)
+    const { account, adminAccount } = useSelector(state => state.account)
+
 
     const count = () => {
 
@@ -50,7 +52,7 @@ const Timer = () => {
 
     useEffect(() => {
       if(gamePointRank.length && airdropReward.length){
-        deadline = new Date('July 22, 2022 19:19:00').getTime();
+        deadline = new Date('July 29, 2022 12:00:00').getTime();
         timer.current = setInterval(count, 1000);
       }     
     },[gamePointRank.length , airdropReward.length])
@@ -70,7 +72,7 @@ const Timer = () => {
             &nbsp;{state.minutes < 10 ? `0${state.minutes}` : state.minutes}M
             &nbsp;{state.seconds < 10 ? `0${state.seconds}` : state.seconds}S
         </span>
-        <button onClick={()=>endTimer()}>AirDrop</button>
+        { adminAccount === account ? <button onClick={()=>endTimer()}>AirDrop</button> : null}                    
     </div>
   )
 }
