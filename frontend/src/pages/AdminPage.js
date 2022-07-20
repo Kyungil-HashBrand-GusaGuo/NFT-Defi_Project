@@ -5,6 +5,8 @@ import { FiUserPlus, FiUserMinus } from "react-icons/fi";
 import { addWhiteListAccount } from '../redux/actions/addWhiteListAccount';
 import { deleteWhiteListAccount } from '../redux/actions/deleteWhiteListAccount';
 import { AirdropModal } from '../components/index'
+import Swal from 'sweetalert2'
+
 
 const AdminPage = () => {
   const dispatch = useDispatch();
@@ -31,9 +33,22 @@ const AdminPage = () => {
 
   useEffect(() => {
     if(addWhiteList){
-      alert("화이트리스트 계정 등록이 완료되었습니다.")
+      // alert("화이트리스트 계정 등록이 완료되었습니다.")
+      Swal.fire({
+        title: 'Success!',
+        text: '화이트리스트 계정 등록이 완료되었습니다!',
+        icon: 'success',
+        confirmButtonText: 'OK'
+      })
+
     } else if(deleteWhiteList){
-      alert("화이트리스트 계정 삭제가 완료되었습니다.")
+      // alert("화이트리스트 계정 삭제가 완료되었습니다.")
+      Swal.fire({
+        title: 'Success!',
+        text: '화이트리스트 계정 삭제가 완료되었습니다!',
+        icon: 'success',
+        confirmButtonText: 'OK'
+      })
     }
   },[addWhiteList,deleteWhiteList])
 

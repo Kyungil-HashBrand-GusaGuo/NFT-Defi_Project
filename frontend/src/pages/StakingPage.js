@@ -15,6 +15,8 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import MagicSliderDots from 'react-magic-slider-dots';
 import 'react-magic-slider-dots/dist/magic-dots.css';
+import Swal from 'sweetalert2'
+
 
 const StakingPage = () => {
 
@@ -41,7 +43,13 @@ const StakingPage = () => {
 
     const staking = (edition) => {
       if(edition.length == 0){
-        alert("하나 이상의 NFT를 선택해 주세요.")
+        // alert("하나 이상의 NFT를 선택해 주세요.")
+        Swal.fire({
+          title: 'Warning!',
+          text: '하나 이상의 NFT를 선택해 주세요.',
+          icon: 'warning',
+          confirmButtonText: 'OK'
+      })
       } else {
         console.log("스테이킹되는 목록", edition )
         dispatch(stakingAction.stakingAct(account, edition))
@@ -50,7 +58,13 @@ const StakingPage = () => {
 
     const goToGamePage = () => {
       if(myNftList.length == 0){
-        alert("하나 이상의 minting NFT가 있어야 참여 가능합니다.")
+        // alert("하나 이상의 minting NFT가 있어야 참여 가능합니다.")
+        Swal.fire({
+          title: 'Warning!',
+          text: '하나 이상의 minting NFT가 있어야 참여 가능합니다.',
+          icon: 'warning',
+          confirmButtonText: 'OK'
+      })
       } else {
         navigate('/gamemain')
       }
@@ -58,7 +72,13 @@ const StakingPage = () => {
 
     const cancelStaking = (edition) => {
       if(edition.length == 0){
-        alert("하나 이상의 NFT를 선택해 주세요.")
+        // alert("하나 이상의 NFT를 선택해 주세요.")
+        Swal.fire({
+          title: 'Warning!',
+          text: '하나 이상의 NFT를 선택해 주세요.',
+          icon: 'warning',
+          confirmButtonText: 'OK'
+      })
       } else {
         dispatch(stakingCancelAction.stakingCancelAct(account, edition))
       }
@@ -82,7 +102,13 @@ const StakingPage = () => {
       } else if(unStakeArr.length < 10){
         unStakeArr.push(id)
       } else {
-          alert("최대 선택가능한 NFT 10개를 모두 선택했습니다")
+          // alert("최대 선택가능한 NFT 10개를 모두 선택했습니다")
+          Swal.fire({
+            title: 'Warning!',
+            text: '최대 선택가능한 NFT 10개를 모두 선택했습니다.',
+            icon: 'warning',
+            confirmButtonText: 'OK'
+        })
       }
       console.log("Non스테이팅 배열확인", unStakeArr)
     }
@@ -97,7 +123,13 @@ const StakingPage = () => {
       } else if(comStakeArr.length < 10){
         comStakeArr.push(id)
       } else {
-          alert("최대 선택가능한 NFT 10개를 모두 선택했습니다")
+          // alert("최대 선택가능한 NFT 10개를 모두 선택했습니다")
+          Swal.fire({
+            title: 'Warning!',
+            text: '최대 선택가능한 NFT 10개를 모두 선택했습니다.',
+            icon: 'warning',
+            confirmButtonText: 'OK'
+        })
       }
       console.log("스테이킹 배열확인", comStakeArr)
     }

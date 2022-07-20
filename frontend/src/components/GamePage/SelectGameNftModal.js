@@ -7,6 +7,8 @@ import MagicSliderDots from 'react-magic-slider-dots';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { stakingViewAction } from '../../redux/actions/stakingViewAction';
+import Swal from 'sweetalert2'
+
 
 
 
@@ -45,10 +47,22 @@ const SelectGameNftModal = ({setSwapModal}) => {
           console.log(seletedGameArr)
           console.log("계정주소",account);
           if(seletedGameArr.length == 1){
-            alert("Nft가 선택되었습니다!")
+            // alert("Nft가 선택되었습니다!")
+            Swal.fire({
+              title: 'Success!',
+              text: 'Nft가 선택되었습니다!',
+              icon: 'success',
+              confirmButtonText: 'OK'
+          })
           }
         } else {
-          alert("하나만 선택할 수 있습니다.")
+          // alert("하나만 선택할 수 있습니다.")
+          Swal.fire({
+            title: 'Error!',
+            text: '하나만 선택할 수 있습니다.',
+            icon: 'error',
+            confirmButtonText: 'Back'
+        })
         }
       }
       const checkingNft = (e) => {
@@ -61,7 +75,13 @@ const SelectGameNftModal = ({setSwapModal}) => {
 
       const goToBlackJackGame = (seletedGameArr) => {
         if(seletedGameArr.length == 0) {
-          alert("NFT를 선택해주세요")
+          // alert("NFT를 선택해주세요")
+          Swal.fire({
+            title: 'Warning!',
+            text: 'NFT를 선택해주세요',
+            icon: 'warning',
+            confirmButtonText: 'Back'
+        })
         } else {
           navigate('/blackjackgame', {state : seletedGameArr})
         }

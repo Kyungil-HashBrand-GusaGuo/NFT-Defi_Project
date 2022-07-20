@@ -8,6 +8,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { stakingViewAction } from '../../redux/actions/stakingViewAction';
 import { rewardEditionSetAction } from '../../redux/actions/rewardEditionSetAction';
 import { useNavigate } from 'react-router-dom';
+import Swal from 'sweetalert2'
 
 const AirdropModal = ({setSwapModal}) => {
 
@@ -42,10 +43,22 @@ const AirdropModal = ({setSwapModal}) => {
       seletedArr.push(item)
       console.log(seletedArr)
       if(seletedArr.length == 3){
-        alert("모두 선택되었습니다!")
+        // alert("모두 선택되었습니다!")
+        Swal.fire({
+          title: 'Success!',
+          text: '모두 선택되었습니다!',
+          icon: 'success',
+          confirmButtonText: 'OK'
+      })
       }
     } else {
-      alert("더이상 선택할 수 없습니다!")
+      // alert("더이상 선택할 수 없습니다!")
+      Swal.fire({
+        title: 'Error!',
+        text: '더이상 선택할 수 없습니다!',
+        icon: 'error',
+        confirmButtonText: 'Back'
+    })
     }
   }
 
@@ -68,7 +81,13 @@ const AirdropModal = ({setSwapModal}) => {
   useEffect( () => {
     dispatch(stakingViewAction.stakingViewAct(account))
     if(setAirdropRewardSuccess){
-      alert("NFT 선택 완료!")
+      // alert("NFT 선택 완료!")
+      Swal.fire({
+        title: 'Success!',
+        text: 'NFT 선택 완료!',
+        icon: 'success',
+        confirmButtonText: 'OK'
+    })
     }
   },[account, setAirdropRewardSuccess])
 
