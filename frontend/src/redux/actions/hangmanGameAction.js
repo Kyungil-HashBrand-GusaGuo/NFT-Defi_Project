@@ -5,8 +5,8 @@ function hangmanGameAct(account, wrongLetter) {
     return async (dispatch) => {
         //console.log("game 모달 실행됨")
         try {
-            console.log("계정확인",account)
-            console.log("틀린거확인",wrongLetter)
+            // console.log("계정확인",account)
+            // console.log("틀린거확인",wrongLetter)
             const response = await api.post("/block/hangmangamereward", {account, wrongLetter});
 
             if(response.status) {

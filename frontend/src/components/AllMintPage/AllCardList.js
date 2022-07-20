@@ -11,7 +11,7 @@ const AllCardList = () => {
     const { allmintdata } = useSelector(state => state.mintdata)
 
     const revmintdata = [...allmintdata].reverse()
-    console.log(revmintdata)
+    // console.log(revmintdata)
 
   useEffect(()=> {
     dispatch(collectionAction.collectionAct())

@@ -40,8 +40,8 @@ const StakingPage = () => {
     const {myNftList, stakingNftString, stakingReward , getStakingReward, getGameTokenBalance, successStaking, successUnStaking} = useSelector(state => state.stakingView)
     const [claimModal, setClaimModal] = useState(false)
 
-    console.log("여기 랭스?", myNftList.length)
-    console.log("나의 민팅 NFT", mymintdata)
+    // console.log("여기 랭스?", myNftList.length)
+    // console.log("나의 민팅 NFT", mymintdata)
 
     const staking = (edition) => {
       if(edition.length == 0){
@@ -53,7 +53,7 @@ const StakingPage = () => {
           confirmButtonText: 'OK'
       })
       } else {
-        console.log("스테이킹되는 목록", edition )
+        // console.log("스테이킹되는 목록", edition )
         dispatch(stakingAction.stakingAct(account, edition))
       }
     }
@@ -112,7 +112,7 @@ const StakingPage = () => {
             confirmButtonText: 'OK'
         })
       }
-      console.log("Non스테이팅 배열확인", unStakeArr)
+      // console.log("Non스테이팅 배열확인", unStakeArr)
     }
 
     const comStake = (id) => {
@@ -133,7 +133,7 @@ const StakingPage = () => {
             confirmButtonText: 'OK'
         })
       }
-      console.log("스테이킹 배열확인", comStakeArr)
+      // console.log("스테이킹 배열확인", comStakeArr)
     }
 
     const checkingNft = (e) => {

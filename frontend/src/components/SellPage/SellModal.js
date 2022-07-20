@@ -9,7 +9,7 @@ const SellModal = ({edition, account, price}) => {
     const dispatch = useDispatch()
     const navigate = useNavigate()
     const { sellingNftSuccess } = useSelector(state => state.transactionNFT)
-    console.log("숫자",price)
+    // console.log("숫자",price)
 
     const goToMarket = () => {
       navigate('/market')

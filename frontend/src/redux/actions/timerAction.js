@@ -2,13 +2,13 @@ import api from '../api'
 
 function timerAct(gamePointRank, airdropReward) {
     return async (dispatch) => {
-        console.log("액션 잘 됩니다")
-        console.log("1등 계정 : ", gamePointRank[0].account)
-        console.log("2등 계정 : ", gamePointRank[1].account)
-        console.log("3등 계정 : ", gamePointRank[2].account)
-        console.log("1등 airdrop edition : ", airdropReward[0])
-        console.log("2등 airdrop edition : ", airdropReward[1])
-        console.log("3등 airdrop edition : ", airdropReward[2])
+        // console.log("액션 잘 됩니다")
+        // console.log("1등 계정 : ", gamePointRank[0].account)
+        // console.log("2등 계정 : ", gamePointRank[1].account)
+        // console.log("3등 계정 : ", gamePointRank[2].account)
+        // console.log("1등 airdrop edition : ", airdropReward[0])
+        // console.log("2등 airdrop edition : ", airdropReward[1])
+        // console.log("3등 airdrop edition : ", airdropReward[2])
         // console.log("1등 계정 : ", typeof(gamePointRank[0].account))
         // console.log("2등 계정 : ", typeof(gamePointRank[1].account))
         // console.log("3등 계정 : ", typeof(gamePointRank[2].account))
@@ -31,7 +31,7 @@ function timerAct(gamePointRank, airdropReward) {
                     type: "SUCCESS_AIRDROP",
                     payload: { airdropSuccess: true },
                   });
-                console.log("에어드랍 성공")
+                // console.log("에어드랍 성공")
             }
         }
         catch(error) {

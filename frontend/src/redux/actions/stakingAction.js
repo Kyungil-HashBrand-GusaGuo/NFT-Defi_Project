@@ -2,8 +2,8 @@ import { caver, RandomJolamanContract, MINT_CONTRACT_ADDRESS, STAKING_CONTRACT_A
 
 function stakingAct(account, edition) {
 
-    console.log(account)
-    console.log(edition)
+    // console.log(account)
+    // console.log(edition)
 
     return async (dispatch) => {
         try {
@@ -18,7 +18,7 @@ function stakingAct(account, edition) {
             // data: RandomJolamanContract.methods.approve(STAKING_CONTRACT_ADDRESS, tokenId).encodeABI()   
             data: RandomJolamanContract.methods.setApprovalForAll(STAKING_CONTRACT_ADDRESS, true).encodeABI()   
             })
-            console.log("스테이킹 if문 전",response)
+            // console.log("스테이킹 if문 전",response)
             if(response.status) {
                 const response = await caver.klay.sendTransaction({
                     from: account,
@@ -26,7 +26,7 @@ function stakingAct(account, edition) {
                     gas: "3000000",
                     data: StakingContract.methods.stakeBatch(edition).encodeABI()
                 })
-                console.log("스테이킹 if문 안",response)
+                // console.log("스테이킹 if문 안",response)
                 dispatch({
                     type:"SUCCESS_STAKING", 
                     payload : {successStaking : true}

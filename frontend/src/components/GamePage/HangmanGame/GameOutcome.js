@@ -18,7 +18,7 @@ function GameOutcome({ wrongLetters, playable, playAgain , won, word}) {
       </div>
     );
   } else if (!playable && won === true) {    
-    console.log(wrongLetters.length) 
+    // console.log(wrongLetters.length) 
     
     let wrongLetter = wrongLetters.length
 

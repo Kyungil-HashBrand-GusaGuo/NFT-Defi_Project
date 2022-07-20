@@ -15,7 +15,7 @@ const MarketPage = () => {
 
   const [showPrice, setShowPrice] = useState(""); // item.price
   const [showId, setShowId] = useState(""); // item.id
-  console.log("나의 NFT", mymintEditionData);
+  // console.log("나의 NFT", mymintEditionData);
   // console.log("나의 NFT 타입",typeof(mymintdata[0].data.edition))
   // console.log("판매중 NFT",sellingAllNftData)
   // console.log("판매중 NFT 타입",typeof(sellingAllNftData[0].id))

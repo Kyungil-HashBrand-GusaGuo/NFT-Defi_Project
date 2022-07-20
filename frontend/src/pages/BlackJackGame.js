@@ -36,7 +36,7 @@ import Swal from 'sweetalert2'
 const BlackJackGame = () => {
 
     const { state } = useLocation();
-    console.log("번호",state);
+    // console.log("번호",state);
 
     const Dealer = [
         {
@@ -146,7 +146,7 @@ const BlackJackGame = () => {
           setTurns(turns +1);
           setGameSetModal(true)
         }
-        console.log("게임턴",setTurns);
+        // console.log("게임턴",setTurns);
       };
     
       const Stand = () => {

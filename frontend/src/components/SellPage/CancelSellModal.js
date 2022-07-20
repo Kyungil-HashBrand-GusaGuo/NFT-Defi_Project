@@ -8,7 +8,7 @@ const CancelSellModal = ({edition, account}) => {
     const dispatch = useDispatch()
     const navigate = useNavigate()
     const { sellingNftCancel } = useSelector(state => state.transactionNFT)
-    console.log("Cancel 모달창에서 확인",sellingNftCancel)
+    // console.log("Cancel 모달창에서 확인",sellingNftCancel)
 
     const goToMypage = () => {
       navigate('/mypage')

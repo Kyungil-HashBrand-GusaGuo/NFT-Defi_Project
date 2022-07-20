@@ -4,7 +4,7 @@ function gameViewAct(account) {
     return async (dispatch) => {
         try {
                 const getGamePointApi = await api.get("/data/gameRank");
-                console.log("게임랭크 GET요청",getGamePointApi.data)
+                // console.log("게임랭크 GET요청",getGamePointApi.data)
 
                 let rankAllArr = []
 

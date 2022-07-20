@@ -44,8 +44,8 @@ const SelectGameNftModal = ({setSwapModal}) => {
       const selectGameNft = (item) => {
         if(seletedGameArr < 2){
             seletedGameArr.push(item)
-          console.log(seletedGameArr)
-          console.log("계정주소",account);
+          // console.log(seletedGameArr)
+          // console.log("계정주소",account);
           if(seletedGameArr.length == 1){
             // alert("Nft가 선택되었습니다!")
             Swal.fire({

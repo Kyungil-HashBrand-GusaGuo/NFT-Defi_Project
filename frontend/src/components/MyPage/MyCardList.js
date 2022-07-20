@@ -16,9 +16,9 @@ const MyCardList = () => {
     const { sellingNftId } = useSelector(state => state.transactionNFT)
     const { stakingNftNumber } = useSelector(state => state.stakingView)
 
-    console.log("판매중인 Id 확인", sellingNftId)
-    console.log("나의 민팅데이터",mymintdata)
-    console.log("스테이킹 NFT",stakingNftNumber)
+    // console.log("판매중인 Id 확인", sellingNftId)
+    // console.log("나의 민팅데이터",mymintdata)
+    // console.log("스테이킹 NFT",stakingNftNumber)
 
     const revmymintdata = [...mymintdata].reverse() 
 

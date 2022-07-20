@@ -1,8 +1,8 @@
 import api from "../api"; /* contracts */
 
 function blackjackGameAct(title, bet,account) {
-    console.log(title)
-    console.log(bet)
+    // console.log(title)
+    // console.log(bet)
     return async (dispatch) => {
         try {
             // console.log("계정확인", account)
@@ -10,16 +10,16 @@ function blackjackGameAct(title, bet,account) {
             // console.log("title", title)
             
            if((title === "Bust!") || (title === "Dealer Win!")) {
-                console.log(title,"짐")
+                // console.log(title,"짐")
                 const loseBlackJackGame = await api.post("/block/blackJackLose", {account, betPrice:bet })
                 const loseBackBlack = await api.post("/data/player", {account, point : 2})
 
            } else if (title === "Tie!") {
-                console.log(title,"비김")
+                // console.log(title,"비김")
                 const tieBackBlack = await api.post("/data/player", {account, point : 3})
 
            } else if ((title === "You Win!") || (title === "Blackjack!")) {
-                console.log(title,"이김")
+                // console.log(title,"이김")
                 const winBlackJackGame = await api.post("/block/blackJackWin", {account, betPrice:bet })
                 const winBackBlack = await api.post("/data/player", {account, point : 5})
            }  

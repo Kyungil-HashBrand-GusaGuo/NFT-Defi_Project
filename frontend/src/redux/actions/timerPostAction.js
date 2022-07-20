@@ -5,7 +5,7 @@ function timerPostAct() {
         let arr = []
         try {
             const setRewardApi = await api.post("/data/setrewardedition", { editionNumber : arr })
-            console.log("edition 삭제 완료")
+            // console.log("edition 삭제 완료")
         }
         catch(error) {
             console.error(error)

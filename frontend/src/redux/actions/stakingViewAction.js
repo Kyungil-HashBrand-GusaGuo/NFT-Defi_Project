@@ -21,13 +21,13 @@ function stakingViewAct(account) {
                     stakingNftNumberData.push(data)
                   }
 
-                console.log("나의 NFT목록",myNftList.data)
-                console.log("스테이킹 NFT",stakingNftNumberData)
-                console.log("받을 스테이킹 리워드",stakingReward.data / 10**18)
-                console.log("받은 스테이킹 리워드",getStakingReward.data.rewardsReleased / 10**18)
-                console.log("클레이밸런스 확인",Number(getKlayBalance.data) / 10**18)
-                console.log("토큰밸런스 확인 : ", getTokenBalance.data / 10**18);
-                console.log("게임토큰밸런스 확인 : ", getGameTokenBalance.data / 10**18);
+                // console.log("나의 NFT목록",myNftList.data)
+                // console.log("스테이킹 NFT",stakingNftNumberData)
+                // console.log("받을 스테이킹 리워드",stakingReward.data / 10**18)
+                // console.log("받은 스테이킹 리워드",getStakingReward.data.rewardsReleased / 10**18)
+                // console.log("클레이밸런스 확인",Number(getKlayBalance.data) / 10**18)
+                // console.log("토큰밸런스 확인 : ", getTokenBalance.data / 10**18);
+                // console.log("게임토큰밸런스 확인 : ", getGameTokenBalance.data / 10**18);
                 
 
                 dispatch({

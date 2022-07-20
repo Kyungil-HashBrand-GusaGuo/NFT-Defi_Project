@@ -5,7 +5,7 @@ function mypageAct(account) {
 
     return async (dispatch) => {
         try {
-            console.log("액션쪽",account)
+            // console.log("액션쪽",account)
             if(account !== "")
             {
               const response = await api.post("/block/ownedTokenId", { account : account });

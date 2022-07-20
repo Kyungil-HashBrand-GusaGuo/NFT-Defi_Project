@@ -27,33 +27,51 @@ const player = async (req, res) => {
 };
 
 const gameRank = async (req, res) => {
-  const [result] = await pool.query(
-    `SELECT account, point FROM gamePoint ORDER BY point DESC`
-  );
-  console.log(result);
-  res.json(result);
+  try{
+    const [result] = await pool.query(
+      `SELECT account, point FROM gamePoint ORDER BY point DESC`
+    );
+    console.log(result);
+    res.json(result);
+  }catch(err) {
+    console.error(err)
+  }
+
 };
 
 const setRewardEdition = async (req, res) => {
-  const { editionNumber } = req.body;
-  const [result] = await pool.query(
-    `INSERT INTO nftReward(rewardEdition) VALUES("${editionNumber}")`
-  );
-  console.log(result);
+  try{
+    const { editionNumber } = req.body;
+    const [result] = await pool.query(
+      `INSERT INTO nftReward(rewardEdition) VALUES("${editionNumber}")`
+    );
+    console.log(result);
+  }catch(err) {
+    console.error(err)
+  }
+
 };
 
 const getRewardEdition = async (req, res) => {
-  const [result] = await pool.query(
-    `SELECT * FROM nftReward ORDER BY season DESC LIMIT 1`
-  );
-  console.log(result[0].rewardEdition);
-  res.json(result[0].rewardEdition.split(","));
+  try{
+    const [result] = await pool.query(
+      `SELECT * FROM nftReward ORDER BY season DESC LIMIT 1`
+    );
+    console.log(result[0].rewardEdition);
+    res.json(result[0].rewardEdition.split(","));
+  }catch(err) {
+    console.error(err)
+  }
+
 };
 
 const reset = async (req, res) => {
-  console.log("success~?")
-  await pool.query(`DELETE FROM gamePoint`);
-  res.json("success");
+  try{
+    await pool.query(`DELETE FROM gamePoint`);
+    res.json("success");
+  }catch(err) {
+    console.error(err)
+  }
 };
 
 module.exports = {

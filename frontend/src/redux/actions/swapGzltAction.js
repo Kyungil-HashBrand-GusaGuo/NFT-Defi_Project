@@ -2,8 +2,8 @@ import { caver, GAME_CONTRACT_ADDRESS, GameContract } from "../../caverConfig";
 
 function swapGzltAct(account,amount) {
     
-    console.log(account)
-    console.log(amount)
+    // console.log(account)
+    // console.log(amount)
     
     return async (dispatch) => {
         try {
@@ -13,7 +13,7 @@ function swapGzltAct(account,amount) {
                 gas: "3000000",
                 data: GameContract.methods.TokenToKlay(amount).encodeABI()
             })
-            console.log(response);
+            // console.log(response);
 
             //일단 이부분은 stakingReducer로 보내고있음
             dispatch({
