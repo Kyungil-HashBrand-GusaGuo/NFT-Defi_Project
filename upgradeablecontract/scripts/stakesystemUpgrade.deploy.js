@@ -4,15 +4,15 @@ const hre = require("hardhat");
 async function main() {
 
     //TODO 배포 스크립트 
-    const setdataContract = "0x38f0f20C2E1E8D2C72e66D2B0a322Dcd5a53E974";
-    const RandomJolamanContract = "0x084eB7FF7225a19405FAcf27fDA5Bcd7e613b4F6";
+    const setdataContract = "0xaB75CB8f441BE3Cc486F6d36bC26A43959cB5b5d";
+    const RandomJolamanContract = "0xAb8c03C195e905B9eEe38338C48944E7D5F66Eba";
 
     const StakingSystem = await hre.ethers.getContractFactory("StakingSystem");
     const ssu = await upgrades.deployProxy(StakingSystem, [RandomJolamanContract, setdataContract], {initializer: "initializeV"});
 
     console.log("StakingSystem deployed to : ", ssu.address);
 
-    // 0xf1e28b855278980175D34a745fb8De646D21903F
+    // 0x980C261d5B08221227f5e95185EaB2563B1AC120
   }
 
   main()
