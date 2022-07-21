@@ -61,6 +61,18 @@ align-items: center;
 margin-bottom: 50px;
 }
 
+.BlackJackBetToken {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.betTokenImg {
+  margin-left: 5px;
+  width: 30px;
+  height: 30px;
+}
+
 .myGameNftSection img {
 width: 200px;
 height: 250px;

@@ -24,7 +24,7 @@ const BuyModal = ({edition, account}) => {
                 { buyingNftSuccess ? 
                 <div>
                   <h2 className='sellMintingComMessage'>Buy Success!!!</h2>
-                  <button className='sellModalEndButton' onClick={goToMypage}>Go to Market</button> 
+                  <button className='sellModalEndButton' onClick={goToMypage}>Go to MyPage</button> 
                 </div>
                 : <h2 className='sellMintingMessage'> Buy Loading...</h2> }
                 {/* <button className='sellModalEndButton' onClick={goToMypage}>Go to Mypage</button> : null } */}
