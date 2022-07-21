@@ -370,7 +370,14 @@ const BlackJackGame = () => {
                   window.location.reload();
                 })
                   // alert("보유한 Token보다 크게 배팅할 수 없습니다.", window.location.reload())
-                : <h2>{`Token: $${getGameTokenBalance-bet}`}</h2>
+                : 
+                <>
+                    <h2>Token</h2>
+                <div className='BlackJackBetToken'>
+                    <h2>{`${getGameTokenBalance-bet}`} </h2>
+                    <img src={HeadZol2} className="betTokenImg"/>
+                </div>
+                </>
                 
               }
               
