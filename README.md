@@ -8,18 +8,28 @@
 </br>
 
 
-## 📖 프로젝트명 - 개요
+## 📖 ZOLALAND - 프로젝트 개요
+---
+### NFT & DEFI & P2E   통합플랫폼
+NFT Minting, Buy & Sell, Staking, 간단한 P2E 시스템이 접목된 통합 BlockChain Dapp 구축
 
-**NFTicket**은 프로젝트 개요 적어보기
+### Holder BeneFit
+NFT 보유자는 P2E, Staking 시스템을 이용하여 발행된 ZLT, GZLT 토큰을 획득, 이로 인한 지속적인 수익 창출이 가능   
+
+### 적극적인 참여 보상
+게임에 참여하면서 얻은 게임 포인트로 랭킹권 Holder 에게 매주 다양한 NFT 보상 지급
 </br>
 
 ## 🚩 주요 기능
 ---
+- ### KaiKas 지갑연결
+- ### PFP 아트 생성
 - ### NFT Minting
+- ### NFT Marketplace
 - ### NFT Staking System
-- ### Coin Swap
-- ### NFT Market Place
-- ### 게임을 통한 자체 Token 발행
+- ### Token Swap
+- ### P2E 게임 연동
+- ### 게임 Token Reward
 - ### NFT AirDrop
 
 </br>
@@ -43,15 +53,13 @@
 
 **Frontend**
 - React
-- Redux
-
-
-**Environment**
-
+- Redux, Redux-thunk
+- caver.js
 
 ## ✔ 프로젝트 구조
 ---
-- 정리된 ppt 사진 넣기
+![image](https://user-images.githubusercontent.com/93761302/180718765-a4208ff8-8e3d-45aa-ae85-57f61962bdf1.png)
+
 
 ## ✔ 프로젝트 파일 구조
 ---
@@ -465,4 +473,4 @@
 
 ## ✔ 팀원 역할 분배
 ---
-- 정리된 ppt 사진 넣기
+![image](https://user-images.githubusercontent.com/93761302/180718613-f27025f4-d3ee-4df2-94b4-976ab2f0b140.png)
