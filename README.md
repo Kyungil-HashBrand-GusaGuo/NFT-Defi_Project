@@ -1,4 +1,4 @@
-# 🐢 프로젝트명 - 프로젝트 간단 설명
+# 🐢 ZOLARAND - NFT Defi Project
 
 ## 📅 프로젝트 진행 기간
 2022.06.02(목) ~ 2022.07.25(월) (54일간 진행)
@@ -55,6 +55,13 @@ NFT 보유자는 P2E, Staking 시스템을 이용하여 발행된 ZLT, GZLT 토�
 - React
 - Redux, Redux-thunk
 - caver.js
+
+## ✔ 협업 툴
+---
+- Github
+- Notion
+- Discord
+- Gather Town
 
 ## ✔ 프로젝트 구조
 ---
@@ -463,13 +470,6 @@ NFT 보유자는 P2E, Staking 시스템을 이용하여 발행된 ZLT, GZLT 토�
            stakesystemUpgrade.deploy.js
            testRandomJol.deploy.js
 ```
-## ✔ 협업 툴
----
-- Github
-- Notion
-- Discord
-- Gather Town
-
 
 ## ✔ 팀원 역할 분배
 ---
