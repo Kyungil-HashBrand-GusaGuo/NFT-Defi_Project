@@ -1,5 +1,40 @@
 # 🐢 프로젝트명 - 프로젝트 간단 설명
 
+## FrontEnd 김재원
+- 기본적인 와이어프레임 설계와 함께 UI/UX 디자인 작업을 했습니다.
+- 프로젝트 전반에 걸친 Redux 상태관리 구조를 설계했습니다.
+- Contract 기능 및 RESTful API연결을 관리 및 진행했습니다.
+
+---
+
+### Code 경로
+
+BlockChain Contract 
+
+ - backend/contracts
+
+Contract에 접근하는 방법 
+
+- backend/routes/block
+
+DB 데이터 관리 / Contract 함수랑 구분지
+
+- backend/routes/data
+
+---
+
+### 폴더 구조
+
+계획할때 mvc패턴을 참고했습니다. 
+
+이유는 유지보수가 쉽고 다른 파트 팀원이 Back API를 사용하기 편리합니다. 
+
+index.js 파일만 보면 바로 사용할 수 있습니다.
+
+환경변수는 .env에 저장했습니다.
+
+---
+
 ## 📅 프로젝트 진행 기간
 2022.06.02(목) ~ 2022.07.25(월) (54일간 진행)
 </br>
@@ -26,27 +61,11 @@
 
 ## ✔ 주요 기술
 ---
-
-**Backend - Express.js**
-- Visual Studio Code
-- Node.js 16.14
-- MariaDB
-
-**BlockChain - Ethereum**
-- Solidity 0.4.22 < 0.9.0
-- openzeppelin/contracts
-- Truffle
-
-**Storage**
-- IPFS
-- IPFS-Cluster
-
 **Frontend**
 - React
 - Redux
 
 
-**Environment**
 
 
 ## ✔ 프로젝트 구조
