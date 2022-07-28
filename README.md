@@ -8,23 +8,18 @@
 ---
 
 ### Code 경로
+0.pages/AllMintPage.js
+1. components/AllMintPage/AllCardList.js
+2. redux/actions/collectionAction.js
+3. redux/reducer/mintingReducer.js
 
-BlockChain Contract 
+다음과 같은 순으로 코드를 보시면 됩니다.
 
- - backend/contracts
-
-Contract에 접근하는 방법 
-
-- backend/routes/block
-
-DB 데이터 관리 / Contract 함수랑 구분지
-
-- backend/routes/data
 
 ---
 
 ### Frontend 폴더 구조
-
+- 각 page에서 사용되는 component를 page이름 폴더명에 넣어 분리하였습니다.
 - pages, components, images 등등 import시 코드가 길어지는것을 방지하기 위해 각 폴더의 index.js에서 export했습니다.
 - axios.create()릴 이용하여 API주소 변경시 한번에 수정가능하도록 분리했습니다.
 - 기능단위로 action을 분류하여 비동기처리를 하였고, 같은 페이지 혹은 컴포넌트에서 사용하는 비슷한 state값들은 같은 reducer에서 관리하였습니다.
