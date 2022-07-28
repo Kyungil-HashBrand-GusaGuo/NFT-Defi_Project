@@ -8,10 +8,10 @@
 ---
 
 ### Code 경로
-0.pages/AllMintPage.js
-1. components/AllMintPage/AllCardList.js
-2. redux/actions/collectionAction.js
-3. redux/reducer/mintingReducer.js
+1. pages/AllMintPage.js
+2. components/AllMintPage/AllCardList.js
+3. redux/actions/collectionAction.js
+4. redux/reducer/mintingReducer.js
 
 다음과 같은 순으로 코드를 보시면 됩니다.
 
