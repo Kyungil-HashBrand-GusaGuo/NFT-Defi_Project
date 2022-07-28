@@ -11,7 +11,33 @@
 - NginX를 사용하여 WebServer 구현
 - AWS(EC2, S3)를 활용하여 서비스 배포
 
+---
 
+### Code 경로
+
+BlockChain Contract 
+
+ - backend/contracts
+
+Contract에 접근하는 방법 
+
+- backend/routes/block
+
+DB 데이터 관리 / Contract 함수랑 구분지
+
+- backend/routes/data
+
+---
+
+### 폴더 구조
+
+계획할때 mvc패턴을 참고했습니다. 
+
+이유는 유지보수가 쉽고 다른 파트 팀원이 Back API를 사용하기 편리합니다. 
+
+index.js 파일만 보면 바로 사용할 수 있습니다.
+
+환경변수는 .env에 저장했습니다.
 
 ---
 
