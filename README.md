@@ -33,7 +33,8 @@ redux 상태관리
 
     react 공식문서 및 구글링을 통해 프로젝트에 최적화된 폴더구조를 짯습니다.
 
-    <img width="205" alt="스크린샷 2022-07-29 오전 11 16 19" src="https://user-images.githubusercontent.com/95203882/181669343-3a6a60ef-a268-445e-a2da-2093d283e8e3.png">
+    <img width="205" alt="스크린샷 2022-07-29 오전 11 16 19" src="https://user-images.githubusercontent.com/95203882/181670294-04888656-3f22-4777-b5df-f56216055277.png">
+
 
     import시 복잡한코드 구조를 방지하기 위해 각 폴더의 index.js에서 export하였습니다.
 
