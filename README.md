@@ -40,7 +40,39 @@ index.js 파일만 보면 바로 사용할 수 있습니다.
 환경변수는 .env에 저장했습니다.
 
 ---
+### Backend
 
+```
+├─backend
+│  │  db.js
+│  │  db.sql
+│  │  package-lock.json
+│  │  package.json
+│  │  server.js
+│  │
+│  ├─contracts
+│  │      game.js
+│  │      randomZolaman.js
+│  │      SaleJolaman.js
+│  │      setData.js
+│  │      stakeSystem.js
+│  │
+│  └─routes
+│      │  index.js
+│      │
+│      ├─block
+│      │      game.controller.js
+│      │      index.js
+│      │      randomZolaman.controller.js
+│      │      saleZolaman.controller.js
+│      │      setData.controller.js
+│      │      stakeSystem.controler.js
+│      │
+│      └─data
+│              data.controller.js
+│              index.js
+```
+---
 ## 📅 프로젝트 진행 기간
 
 2022.06.02(목) ~ 2022.07.25(월) (54일간 진행)
@@ -134,39 +166,7 @@ NFT 보유자는 P2E, Staking 시스템을 이용하여 발행된 ZLT, GZLT 토�
 
 ------
 
-### Backend
 
-```
-├─backend
-│  │  db.js
-│  │  db.sql
-│  │  package-lock.json
-│  │  package.json
-│  │  server.js
-│  │
-│  ├─contracts
-│  │      game.js
-│  │      randomZolaman.js
-│  │      SaleJolaman.js
-│  │      setData.js
-│  │      stakeSystem.js
-│  │
-│  └─routes
-│      │  index.js
-│      │
-│      ├─block
-│      │      game.controller.js
-│      │      index.js
-│      │      randomZolaman.controller.js
-│      │      saleZolaman.controller.js
-│      │      setData.controller.js
-│      │      stakeSystem.controler.js
-│      │
-│      └─data
-│              data.controller.js
-│              index.js
-```
----
 
 ## ✔ 팀원 역할 분배
 
