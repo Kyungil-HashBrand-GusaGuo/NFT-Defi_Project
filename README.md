@@ -42,10 +42,11 @@ NFT 보유자는 P2E, Staking 시스템을 이용하여 발행된 ZLT, GZLT 토�
 - Node.js 16.14
 - MariaDB
 
-**BlockChain - Ethereum**
+**BlockChain - Klaytn**
 - Solidity 0.4.22 < 0.9.0
 - openzeppelin/contracts
-- Truffle
+- hardhat
+- klaytn IDE
 
 **Storage**
 - IPFS
